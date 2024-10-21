@@ -31,7 +31,7 @@ Materiāls ir izstrādāts R, izmantojot {bookdown}. Saturā raksturotā datu ap
 
 * *pamācība ģeoprocesēšanā*. Šajā materiāla ir apkopotas tās pieejas, kuras tā izstrādes brīdī autoru kolektīvas ir zināmas kā efektīvākās (apstrādei nepieciešamā laika, operatīvās atmiņas un cietā diska apjoma, izpildes garantiju un uzticamības ziņā), bet noteikti nav vienīgās;
 
-* *copy/paste gatavs produkts*. Lai gan komandu rindu lietošana un publiskošana ir ar tendenci būt mērķiem paredzēta, situācijā, kad darbam izmantoti liela apjoma un vismaz daļēji - ierobežotas pieejamības dati, tas gluži vienkārši nav iespējams. Tas, kas iztrūkst (ir jānodrošina katrai šo materiaālu lietojošajai personai individuāli) ir precīzi ceļi uz failiem - tos koriģējot uzdevumi ir atkārtojami un rezultāti - replicējami.
+* *copy/paste gatavs produkts*. Lai gan komandu rindu lietošana un publiskošana ir ar tendenci būt šiem mērķiem paredzētai, situācijā, kad darbam izmantoti liela apjoma un vismaz daļēji - ierobežotas pieejamības dati, tas gluži vienkārši nav iespējams. Tas, kas iztrūkst (ir jānodrošina katrai šo materiaālu lietojošai personai personīgi) ir precīzi ceļi uz failiem - tos koriģējot, uzdevumi ir atkārtojami un rezultāti - replicējami.
 
 ## Kas ir šis materiāls un kā to lietot?
 
@@ -73,7 +73,7 @@ Vispārīgā darba un informācijas plūsma projektā ir ilustrēta sekojošajā
 
 1. Sugu saraksts un pamata apraksti
 
-2. Ar modeļiem aptveramā telpa
+2. Ar modeļiem aptveramā telpa un standartizācijas faili
 
 3. Ievades ģeodati
 
