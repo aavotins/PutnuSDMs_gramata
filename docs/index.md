@@ -5,19 +5,17 @@ date: "2024-10-21"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
-# url: your book url like https://bookdown.org/yihui/bookdown
+# url: https://aavotins.github.io/PutnuSDMs_gramata/
 # cover-image: path to the social sharing image like images/cover.jpg
 description: |
-  This is a minimal example of using the bookdown package to write a book.
-  The HTML output format for this example is bookdown::gitbook,
-  set in the _output.yml file.
+  Putnu sugu izplatības modelēšana biodaudzveidības aizsardzībai: materiāli reproducējamībai.
 link-citations: yes
 github-repo: rstudio/bookdown-demo
 ---
 
 # Par šo materiālu
 
-Šis materiāls ir izstrādāts LVAFA finansētā projekta "" () ietvaros. Tā mēŗķis ir demonstrēt un skaidrot darba gaitu un pieņemtos lēmumus, lai nodrošinātu tā atkārtojamību un reproducējamību.
+Šis materiāls ir izstrādāts LVAFA finansētā projekta "" () ietvaros. Tā mērķis ir demonstrēt un skaidrot darba gaitu un pieņemtos lēmumus, lai nodrošinātu tā atkārtojamību un reproducējamību.
 
 Materiāls ir izstrādāts R, izmantojot {bookdown}. Saturā raksturotā datu apstrāde un analīze galvenokārt ir veikta R un viens no nozīmīgiem iemesliem šī materiāla tapšanai ir informācijas par darba atkārtošanu, izmantojot pārbaudītas komandu rindas, nodošana. Kā vēlamais blakusprodukts - veicināt zinātniskās prakses un praktiskās zinātnes atvērtību un reproducējamību.
 
