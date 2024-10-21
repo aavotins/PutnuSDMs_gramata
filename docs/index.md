@@ -15,7 +15,7 @@ github-repo: rstudio/bookdown-demo
 
 # Par šo materiālu
 
-Šis materiāls ir izstrādāts LVAFA finansētā projekta "" () ietvaros. Tā mērķis ir demonstrēt un skaidrot darba gaitu un pieņemtos lēmumus, lai nodrošinātu tā atkārtojamību un reproducējamību.
+Šis materiāls ir izstrādāts Latvijas Vides Aizsardzības Fonda administrācijas finansētā projekta "Esošo aizsargāto teritoriju pārklājuma ģeotelpisko datu slāņa sagatavošana ES Bioloģiskās daudzveidības stratēģijas 2030 ieviešanai" (Nr. 1-08/73/2023) ietvaros. Šī materiāla mērķis ir demonstrēt un skaidrot darba gaitu un pieņemtos lēmumus, lai nodrošinātu tā atkārtojamību un reproducējamību. Projekta mērķis ir ģeotelpisko datu slāņu sagatavošana aizsargājamo teritoriju pārklājuma paplašināšanai.
 
 Materiāls ir izstrādāts R, izmantojot {bookdown}. Saturā raksturotā datu apstrāde un analīze galvenokārt ir veikta R un viens no nozīmīgiem iemesliem šī materiāla tapšanai ir informācijas par darba atkārtošanu, izmantojot pārbaudītas komandu rindas, nodošana. Kā vēlamais blakusprodukts - veicināt zinātniskās prakses un praktiskās zinātnes atvērtību un reproducējamību.
 
