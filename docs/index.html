@@ -160,14 +160,14 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
+<li><a href="./">Putnu SDMs</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Par šo materiālu</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#kas-nav-šis-materiāls"><i class="fa fa-check"></i><b>1.1</b> Kas nav šis materiāls?</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#kas-ir-šis-materiāls"><i class="fa fa-check"></i><b>1.2</b> Kas ir šis materiāls?</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#preview-book"><i class="fa fa-check"></i><b>1.3</b> Preview book</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#kas-ir-šis-materiāls-un-kā-to-lietot"><i class="fa fa-check"></i><b>1.2</b> Kas ir šis materiāls un kā to lietot?</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#satura-izklāsts-orientācijai"><i class="fa fa-check"></i><b>1.3</b> Satura izklāsts (orientācijai)</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="hello-bookdown.html"><a href="hello-bookdown.html"><i class="fa fa-check"></i><b>2</b> Hello bookdown</a>
 <ul>
@@ -231,25 +231,45 @@ div.csl-indent {
 <p>Materiāls ir izstrādāts R, izmantojot {bookdown}. Saturā raksturotā datu apstrāde un analīze galvenokārt ir veikta R un viens no nozīmīgiem iemesliem šī materiāla tapšanai ir informācijas par darba atkārtošanu, izmantojot pārbaudītas komandu rindas, nodošana. Kā vēlamais blakusprodukts - veicināt zinātniskās prakses un praktiskās zinātnes atvērtību un reproducējamību.</p>
 <div id="kas-nav-šis-materiāls" class="section level2 hasAnchor" number="1.1">
 <h2><span class="header-section-number">1.1</span> Kas nav šis materiāls?<a href="index.html#kas-nav-šis-materiāls" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Each <strong>bookdown</strong> chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter <em>must</em> start with a first-level heading: <code># A good chapter</code>, and can contain one (and only one) first-level heading.</p>
-<p>Use second-level and higher headings within chapters like: <code>## A short section</code> or <code>### An even shorter section</code>.</p>
-<p>The <code>index.Rmd</code> file is required, and is also your first book chapter. It will be the homepage when you render the book.</p>
+<p>Šis materiāls <strong>nav</strong>:</p>
+<ul>
+<li><p><em>iepazīstināšana ar R vai citu programmēšanas valodu</em>. Gluži pretēji - lietderīgākais tas būs personām ar izpratni komandu rindu lietošanā. Tomēr informatīvs par izmantotajām pieejām tas būs jebkuram;</p></li>
+<li><p><em>pamācība ģeoprocesēšanā</em>. Šajā materiāla ir apkopotas tās pieejas, kuras tā izstrādes brīdī autoru kolektīvas ir zināmas kā efektīvākās (apstrādei nepieciešamā laika, operatīvās atmiņas un cietā diska apjoma, izpildes garantiju un uzticamības ziņā), bet noteikti nav vienīgās;</p></li>
+<li><p><em>copy/paste gatavs produkts</em>. Lai gan komandu rindu lietošana un publiskošana ir ar tendenci būt mērķiem paredzēta, situācijā, kad darbam izmantoti liela apjoma un vismaz daļēji - ierobežotas pieejamības dati, tas gluži vienkārši nav iespējams. Tas, kas iztrūkst (ir jānodrošina katrai šo materiaālu lietojošajai personai individuāli) ir precīzi ceļi uz failiem - tos koriģējot uzdevumi ir atkārtojami un rezultāti - replicējami.</p></li>
+</ul>
 </div>
-<div id="kas-ir-šis-materiāls" class="section level2 hasAnchor" number="1.2">
-<h2><span class="header-section-number">1.2</span> Kas ir šis materiāls?<a href="index.html#kas-ir-šis-materiāls" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>You can render the HTML version of this example book without changing anything:</p>
+<div id="kas-ir-šis-materiāls-un-kā-to-lietot" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Kas ir šis materiāls un kā to lietot?<a href="index.html#kas-ir-šis-materiāls-un-kā-to-lietot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Šis materiāls ir sagatavots, lai sniegtu reproducējamu darba gaitu, aprakstot pieņemtos lēmumus un ieviestos risinājumus putnu sugu izplatības (dzīvotņu piemērotības) modelēšanai biodaudzveidības aizsardzības plānošanai. Mazākā mērā arī rezultātu demonstrēšanai.</p>
+<p>Lielākoties šis materiāls sastāv no:</p>
+<ul>
+<li><p><em>paskaidrojošā teksta</em>, kas ir atpazīstams kā teksts;</p></li>
+<li><p><em>komandu rindām</em>, kas ir atpazīstamas kā ar pelēku fonu izcelti strukturēta teksta apgabali, piemēram,:</p></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" tabindex="-1"></a>objekts<span class="ot">=</span><span class="fu">funkcija</span>(arguments1,arguments2,</span>
+<span id="cb1-2"><a href="index.html#cb1-2" tabindex="-1"></a>                 ceļš<span class="ot">=</span><span class="st">&quot;./ceļš/failu/kokā/objekts.paplašinājums&quot;</span>)</span>
+<span id="cb1-3"><a href="index.html#cb1-3" tabindex="-1"></a><span class="co"># komentārs</span></span></code></pre></div>
+<p>Augstāk esošajā piemērā pirmajā rindā ir izveidots objekts (“objekts”), kurš ir funkcijas (“funkcija()”) rezultāts. Funkcijai ir trīs argumenti (“arguments1”, “arguments2” un “ceļš”), kas ir atdalīti ar komantu (kā visu funkciju argumenti R). Trešais arguments ir ceļš failu kokā (tas atrodas jaunā rindā, bet ir turpinājums iepriekšējās rindas funkcijai, jo iekavas nav noslēgtas), kuram aiz vienādības zīmes (un pēdiņās) ir norādīts šis ceļš (uzmanība vēršama sākumam “./”, kurš apzīmē relatīvo ceļu - novietojums failu kokā ir relatīvs projekta atrašanās vietai).</p>
+<p>Augstāk esošā piemēra otrā rinda ir komentārs - viss aiz “#” ir komentārs. Jebkam komandu rindā pirms “#” ir jābūt izpildāmai funkcijai vai objektam. Komentārs var saturēt jebko un atrasties vienā rindā ar izpildāmu funkciju (tās beigās).</p>
+<p>Komandu rindas ir nozīmīgākā šī materiāla sastāvdaļa reproducējamībai. Tomēr personai, kas tās lieto, pašai ir jānodrošina ievades datu pieejamība un jāuztur korketi ceļi failu kokā.</p>
+<p>Reizēm tekstā atsaukšos uz R pakotnēm, tās likšu figūriekavās, piemēram {pakotne}.</p>
+<ul>
+<li><p><em>grafikām</em> - dažādām diagrammām, kas raksturo darba plūsmu vai datu īpašības, bet lielākoties, kartēm;</p></li>
+<li><p><em>saitēm uz citiem resursiem</em>, jo sevišķi uz augstāka līmeņa produktiem un rezultātiem, kas radīti projekta ietvaros, bet arī ievades datiem, ja tie ir publiski pieejami. Rezultāti ir paredzēti izmantošanai praksē.</p></li>
+</ul>
+</div>
+<div id="satura-izklāsts-orientācijai" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Satura izklāsts (orientācijai)<a href="index.html#satura-izklāsts-orientācijai" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Vispārīgā darba un informācijas plūsma projektā ir ilustrēta sekojošajā attēlā. Tā ir izmantota par pamatu šī materiāla dalījumam nodaļās (nosauktas un īsi raksturotas zemāk). Nodaļām var būt vairāku līmeņu apakšnodaļas, jo sevišķi attiecībā uz konkrētiem ekoģeogrāfiskajiem mainīgajiem un sugu modelēšanas rezultātiem.</p>
 <ol style="list-style-type: decimal">
-<li><p>Find the <strong>Build</strong> pane in the RStudio IDE, and</p></li>
-<li><p>Click on <strong>Build Book</strong>, then select your output format, or select “All formats” if you’d like to use multiple formats from the same book source files.</p></li>
+<li><p>Sugu saraksts un pamata apraksti</p></li>
+<li><p>Ar modeļiem aptveramā telpa</p></li>
+<li><p>Ievades ģeodati</p></li>
+<li><p>Ekoģeogrāfiskie mainīgie</p></li>
+<li><p>Novērojumu atlase</p></li>
+<li><p>Sugu izplatības (dzīvotņu piemērotības) modeļi</p></li>
+<li><p>Vietu prioritizēšana aizsardzībai</p></li>
 </ol>
-<p>Or build the book from the R console:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>()</span></code></pre></div>
-<p>To render this example to PDF as a <code>bookdown::pdf_book</code>, you’ll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <a href="https://yihui.org/tinytex/" class="uri">https://yihui.org/tinytex/</a>.</p>
-</div>
-<div id="preview-book" class="section level2 hasAnchor" number="1.3">
-<h2><span class="header-section-number">1.3</span> Preview book<a href="index.html#preview-book" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in “Preview book”, or from the R console:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">serve_book</span>()</span></code></pre></div>
 
 </div>
 </div>
@@ -290,7 +310,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/index.Rmd",
+"link": "https://github.com/aavotins/PutnuSDMs_gramata/edit/BRANCH/index.Rmd",
 "text": "Edit"
 },
 "history": {

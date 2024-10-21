@@ -4,8 +4,8 @@ eq:binom
 thm:tri
 par-šo-materiālu
 kas-nav-šis-materiāls
-kas-ir-šis-materiāls
-preview-book
+kas-ir-šis-materiāls-un-kā-to-lietot
+satura-izklāsts-orientācijai
 hello-bookdown
 a-section
 cross
