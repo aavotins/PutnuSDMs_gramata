@@ -2,9 +2,9 @@ fig:nice-fig
 tab:nice-tab
 eq:binom
 thm:tri
-about
-usage
-render-book
+par-šo-materiālu
+kas-nav-šis-materiāls
+kas-ir-šis-materiāls
 preview-book
 hello-bookdown
 a-section

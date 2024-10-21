@@ -1,6 +1,6 @@
 --- 
-title: "A Minimal Book Example"
-author: "John Doe"
+title: "Putnu sugu izplatības modelēšana biodaudzveidības aizsardzībai: materiāli reproducējamībai"
+author: "Andris Avotiņš"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
@@ -15,11 +15,13 @@ link-citations: yes
 github-repo: rstudio/bookdown-demo
 ---
 
-# About
+# Par šo materiālu
 
-This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports; for example, a math equation $a^2 + b^2 = c^2$.
+Šis materiāls ir izstrādāts LVAFA finansētā projekta "" () ietvaros. Tā mēŗķis ir demonstrēt un skaidrot darba gaitu un pieņemtos lēmumus, lai nodrošinātu tā atkārtojamību un reproducējamību.
 
-## Usage 
+Materiāls ir izstrādāts R, izmantojot {bookdown}. Saturā raksturotā datu apstrāde un analīze galvenokārt ir veikta R un viens no nozīmīgiem iemesliem šī materiāla tapšanai ir informācijas par darba atkārtošanu, izmantojot pārbaudītas komandu rindas, nodošana. Kā vēlamais blakusprodukts - veicināt zinātniskās prakses un praktiskās zinātnes atvērtību un reproducējamību.
+
+## Kas nav šis materiāls?
 
 Each **bookdown** chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter *must* start with a first-level heading: `# A good chapter`, and can contain one (and only one) first-level heading.
 
@@ -27,7 +29,7 @@ Use second-level and higher headings within chapters like: `## A short section` 
 
 The `index.Rmd` file is required, and is also your first book chapter. It will be the homepage when you render the book.
 
-## Render book
+## Kas ir šis materiāls?
 
 You can render the HTML version of this example book without changing anything:
 
