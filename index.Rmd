@@ -74,7 +74,7 @@ Reizēm tekstā atsaukšos uz R pakotnēm, tās likšu figūriekavās, piemēram
 
 ## Satura izklāsts (orientācijai)
 
-Vispārīgā darba un informācijas plūsma projektā ir ilustrēta sekojošajā attēlā. Tā ir izmantota par pamatu šī materiāla dalījumam nodaļās (nosauktas un īsi raksturotas zemāk). Nodaļām var būt vairāku līmeņu apakšnodaļas, jo sevišķi attiecībā uz konkrētiem ekoģeogrāfiskajiem mainīgajiem un sugu modelēšanas rezultātiem.
+Vispārīgā darba un informācijas plūsma projektā ir ilustrēta sekojošajā attēlā \@ref(fig:General-workflow). Tā ir izmantota par pamatu šī materiāla dalījumam nodaļās (nosauktas un īsi raksturotas zemāk). 
 
 ```{r General-workflow,echo=FALSE, fig.cap='Darba plūsma un saistība starp šī dokumenta nodaļām'}
 suppressPackageStartupMessages(library(DiagrammeR))
@@ -153,6 +153,9 @@ grViz("digraph flowchart {
 
 ```
 
+<br>
+
+Katrai no šī materiāla nodaļām (tātad, uzdevumiem darba plūsmā) būt vairāku līmeņu apakšnodaļas (apakšuzdevumi). Tos vislabāk apskatīt konkrētajās nodaļās, vismaz sākotnēji sekojot secībai iepriekšējā attēlā. Nedaudz plašāks nodaļu apraksts (galvenie izstrādātāji):
 
 1. Sugu saraksts un pamata apraksti (A. Avotiņš, A. Auniņš, J. Butkeviča, A. Baumane)
 
