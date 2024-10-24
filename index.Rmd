@@ -74,7 +74,7 @@ Reizēm tekstā atsaukšos uz R pakotnēm, tās likšu figūriekavās, piemēram
 
 ## Satura izklāsts (orientācijai)
 
-Vispārīgā darba un informācijas plūsma projektā ir ilustrēta sekojošajā attēlā \@ref(fig:General-workflow). Tā ir izmantota par pamatu šī materiāla dalījumam nodaļās (nosauktas un īsi raksturotas zemāk). 
+Vispārīgā darba un informācijas plūsma projektā ir ilustrēta sekojošajā attēlā \@ref(fig:General-workflow). Tā ir izmantota par pamatu šī materiāla dalījumam nodaļās (nosauktas un īsi raksturotas zemāk), kuru nosaukumi vispārīgi sakrīt ar uzdevumiem (etapiem) darba plūsmas vizualizācijā. 
 
 ```{r General-workflow,echo=FALSE, fig.cap='Darba plūsma un saistība starp šī dokumenta nodaļām'}
 suppressPackageStartupMessages(library(DiagrammeR))
@@ -113,12 +113,17 @@ grViz("digraph flowchart {
     node [label='Novērojumu atlase']; labais2;
   }
 
+  # node type 4: Pecapstrade
+  node [fontname = Helvetica, shape = rectangle];{
+    node [label='Modeļu pēcapstrāde']; pec1;
+  }
+
   
   # specify which nodes are of the same 'rank' so that they'll be drawn at the same level
       {rank = same; step0 vidus1 labais1}
       {rank = same; step1 DWexp vidus2 labais2}
       {rank = same; step2 vidus3}
-      {rank = same; step3 vidus4}
+      {rank = same; step3 vidus4 pec1}
       {rank = same; step4 vidus5}
   
   # edge definitions with the node IDs
@@ -147,6 +152,10 @@ grViz("digraph flowchart {
   labais1 -> vidus4
   labais2 -> vidus4
   vidus1 -> vidus3
+  
+  vidus4 -> pec1
+  vidus5 -> pec1
+  pec1 -> vidus5
   }
 
   ")
@@ -157,27 +166,29 @@ grViz("digraph flowchart {
 
 Katrai no šī materiāla nodaļām (tātad, uzdevumiem darba plūsmā) būt vairāku līmeņu apakšnodaļas (apakšuzdevumi). Tos vislabāk apskatīt konkrētajās nodaļās, vismaz sākotnēji sekojot secībai iepriekšējā attēlā. Nedaudz plašāks nodaļu apraksts (galvenie izstrādātāji):
 
-1. Sugu saraksts un pamata apraksti (A. Avotiņš, A. Auniņš, J. Butkeviča, A. Baumane)
+1. [Sugu saraksts un pamata apraksti](#Chapter1) (A. Avotiņš, A. Auniņš, J. Butkeviča, A. Baumane)
 
-2. Ar modeļiem aptveramā (analīzes) telpa un standartizācijas faili (A. Avotiņš)
+2. [Ar modeļiem aptveramā (analīzes) telpa un standartizācijas faili](#Chapter2) (A. Avotiņš)
 
-3. Ievades ģeodati (A. Avotiņš, I. Vinogradovs, A. Auniņš)
+3. [Ievades ģeodati](#Chapter3) (A. Avotiņš, I. Vinogradovs, A. Auniņš)
 
-4. *Dynamic World* izpēte (A. Avotiņš, B. Rubene)
+4. [*Dynamic World* izpēte](#Chapter4) (A. Avotiņš, B. Rubene)
 
-5. Ekoģeogrāfiskie mainīgie (A. Avotiņš, A. Auniņš)
+5. [Ekoģeogrāfiskie mainīgie](#Chapter5) (A. Avotiņš, A. Auniņš)
 
-6. Novērojumu atlase (A. Avotiņš)
+6. [Novērojumu atlase](#Chapter6) (A. Avotiņš)
 
-7. Sugu izplatības (dzīvotņu piemērotības) modeļi (A. Avotiņš, A. Auniņš)
+7. [Sugu izplatības (dzīvotņu piemērotības) modeļi](#Chapter7) (A. Avotiņš, A. Auniņš)
 
-8. Vietu prioritizēšana aizsardzībai (A. Avotiņš, I. Vinogradovs, A. Auniņš)
+8. [Modeļu pēcapstrāde](#Chapter8) (A. Avotiņš, I. Vinogradovs, A. Auniņš)
 
-9. Rezultāti (A. Avotiņš)
+9. [Vietu prioritizēšana aizsardzībai](#Chapter9) (A. Avotiņš, I. Vinogradovs, A. Auniņš)
+
+10. [Rezultāti](#Chapter10) (A. Avotiņš)
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages
 knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+  .packages(), 'bookdown', 'knitr', 'rmarkdown',"DiagrammeR"
 ), 'packages.bib')
 ```

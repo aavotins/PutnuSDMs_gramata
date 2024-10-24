@@ -1,4 +1,4 @@
-# Sugu saraksts un pamata apraksti  {#Chapter1}
+# Ekoģeogrāfiskie mainīgie  {#Chapter5}
 
 All chapters start with a first-level heading followed by your chapter title, like the line above. There should be only one first-level heading (`#`) per .Rmd file.
 

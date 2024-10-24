@@ -1,4 +1,4 @@
-# Sugu saraksts un pamata apraksti  {#Chapter1}
+# *Dynamic World* izpēte  {#Chapter4}
 
 All chapters start with a first-level heading followed by your chapter title, like the line above. There should be only one first-level heading (`#`) per .Rmd file.
 
