@@ -36,7 +36,8 @@ Sākotnējais modelēšanai izvēlēto sugu saraksts (ar nomenklatūru un saīsi
 
 ```{r SuguIzvele, results='asis',echo=FALSE,fig.width=6,fig.height=6}
 suguizvele=readxl::read_excel("./Papilddati/SuguIzvele.xlsx")
-knitr::kable(suguizvele, caption = 'Sākotnējais sugu saraksts (BirdLife International 2023. gada nomenklatūras saraksta numurs; sugas kods; atbilstība iekļaušanas kritērijiem un 1 km kvadrātu, kuros projektā Life for Species atlasē saglabājusies sugas klātbūtne, skaits)')
+knitr::kable(suguizvele, caption = 'Sākotnējais sugu saraksts (BirdLife International 2023. gada nomenklatūras saraksta numurs; sugas kods; atbilstība iekļaušanas kritērijiem un 1 km kvadrātu, kuros projektā Life for Species atlasē saglabājusies sugas klātbūtne, skaits)', 
+             longtable = TRUE, booktabs = TRUE)
 ```
 
 
