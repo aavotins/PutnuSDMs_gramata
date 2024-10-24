@@ -61,6 +61,70 @@
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
   
@@ -106,7 +170,7 @@ div.csl-indent {
 <li><a href="./">Putnu SDMs</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: https://aavotins.github.io/PutnuSDMs_gramata/</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Par šo materiālu</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#kas-nav-šis-materiāls"><i class="fa fa-check"></i><b>1.1</b> Kas nav šis materiāls?</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#kas-ir-šis-materiāls-un-kā-to-lietot"><i class="fa fa-check"></i><b>1.2</b> Kas ir šis materiāls un kā to lietot?</a></li>
@@ -337,13 +401,10 @@ div.csl-indent {
 <div style="border: 0px;overflow-x: scroll; width:100%; ">
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:SuguIzvele">Table 2.1: </span><span id="tab:SuguIzvele">Table 2.2: </span>Sākotnējais sugu saraksts (BirdLife International 2023. gada nomenklatūras saraksta numurs; sugas kods; atbilstība iekļaušanas kritērijiem un 1 km kvadrātu, kuros projektā Life for Species atlasē saglabājusies sugas klātbūtne, skaits)
+<span id="tab:SuguIzvele">Table 2.1: </span><span id="tab:SuguIzvele">Table 2.2: </span>Sākotnējais sugu saraksts (sugas kods; nosaukums; atbilstība iekļaušanas kritērijiem un 1 km kvadrātu, kuros projekta Life for Species atlasē saglabājusies sugas klātbūtne, skaits)
 </caption>
 <thead>
 <tr>
-<th style="text-align:right;">
-Numurs
-</th>
 <th style="text-align:left;">
 Kods
 </th>
@@ -381,9 +442,6 @@ Kvadrāti
 </thead>
 <tbody>
 <tr>
-<td style="text-align:right;">
-1
-</td>
 <td style="text-align:left;">
 COTCOT
 </td>
@@ -413,9 +471,6 @@ paipala Coturnix coturnix
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-2
-</td>
 <td style="text-align:left;">
 PERPER
 </td>
@@ -444,9 +499,6 @@ laukirbe Perdix perdix
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-3
-</td>
 <td style="text-align:left;">
 BONBON
 </td>
@@ -479,9 +531,6 @@ mežirbe Bonasa bonasia
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-5
-</td>
 <td style="text-align:left;">
 TETURO
 </td>
@@ -513,9 +562,6 @@ mednis Tetrao urogallus
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-6
-</td>
 <td style="text-align:left;">
 LYRTET
 </td>
@@ -546,9 +592,6 @@ rubenis Lyrurus tetrix
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-9
-</td>
 <td style="text-align:left;">
 CYGCYG
 </td>
@@ -579,9 +622,6 @@ ziemeļu gulbis Cygnus cygnus
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-15
-</td>
 <td style="text-align:left;">
 ANSANS
 </td>
@@ -611,9 +651,6 @@ meža zoss Anser anser
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-32
-</td>
 <td style="text-align:left;">
 TADTAD
 </td>
@@ -643,9 +680,6 @@ Sāmsalas dižpīle Tadorna tadorna
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-35
-</td>
 <td style="text-align:left;">
 AYTFER
 </td>
@@ -675,9 +709,6 @@ brūnkaklis Aythya ferina
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-37
-</td>
 <td style="text-align:left;">
 AYTFUL
 </td>
@@ -707,9 +738,6 @@ cekulpīle Aythya fuligula
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-39
-</td>
 <td style="text-align:left;">
 SPAQUE
 </td>
@@ -740,9 +768,6 @@ prīkšķe Spatula querquedula
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-40
-</td>
 <td style="text-align:left;">
 SPACLY
 </td>
@@ -773,9 +798,6 @@ platknābis Spatula clypeata
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-41
-</td>
 <td style="text-align:left;">
 MARSTR
 </td>
@@ -806,9 +828,6 @@ pelēkā pīle Mareca strepera
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-42
-</td>
 <td style="text-align:left;">
 MARPEN
 </td>
@@ -838,9 +857,6 @@ baltvēderis Mareca penelope
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-46
-</td>
 <td style="text-align:left;">
 TACRUF
 </td>
@@ -869,9 +885,6 @@ mazais dūkuris Tachybaptus ruficollis
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-47
-</td>
 <td style="text-align:left;">
 PODGRI
 </td>
@@ -901,9 +914,6 @@ pelēkvaigu dūkuris Podiceps grisegena
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-48
-</td>
 <td style="text-align:left;">
 PODCRI
 </td>
@@ -933,9 +943,6 @@ cekuldūkuris Podiceps cristatus
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-54
-</td>
 <td style="text-align:left;">
 STRTUR
 </td>
@@ -966,9 +973,6 @@ parastā ūbele Streptopelia turtur
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-58
-</td>
 <td style="text-align:left;">
 CAPEUR
 </td>
@@ -998,9 +1002,6 @@ vakarlēpis Caprimulgus europaeus
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-61
-</td>
 <td style="text-align:left;">
 RALAQU
 </td>
@@ -1029,9 +1030,6 @@ dumbrcālis Rallus aquaticus
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-62
-</td>
 <td style="text-align:left;">
 CRECRE
 </td>
@@ -1064,9 +1062,6 @@ grieze Crex crex
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-63
-</td>
 <td style="text-align:left;">
 PORPOR
 </td>
@@ -1097,9 +1092,6 @@ ormanītis Porzana porzana
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-64
-</td>
 <td style="text-align:left;">
 ZAPPAR
 </td>
@@ -1130,9 +1122,6 @@ mazais ormanītis Zapornia parva
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-67
-</td>
 <td style="text-align:left;">
 FULATR
 </td>
@@ -1161,9 +1150,6 @@ laucis Fulica atra
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-68
-</td>
 <td style="text-align:left;">
 GRUGRU
 </td>
@@ -1193,9 +1179,6 @@ dzērve Grus grus
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-78
-</td>
 <td style="text-align:left;">
 CICNIG
 </td>
@@ -1226,9 +1209,6 @@ melnais stārķis Ciconia nigra
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-79
-</td>
 <td style="text-align:left;">
 CICCIC
 </td>
@@ -1260,9 +1240,6 @@ baltais stārķis Ciconia ciconia
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-82
-</td>
 <td style="text-align:left;">
 BOTSTE
 </td>
@@ -1294,9 +1271,6 @@ lielais dumpis Botaurus stellaris
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-83
-</td>
 <td style="text-align:left;">
 IXOMIN
 </td>
@@ -1327,9 +1301,6 @@ mazais dumpis Ixobrychus minutus
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-95
-</td>
 <td style="text-align:left;">
 HAEOST
 </td>
@@ -1361,9 +1332,6 @@ jūrasžagata Haematopus ostralegus
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-99
-</td>
 <td style="text-align:left;">
 PLUAPR
 </td>
@@ -1395,9 +1363,6 @@ dzeltenais tārtiņš Pluvialis apricaria
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-102
-</td>
 <td style="text-align:left;">
 CHAHIA
 </td>
@@ -1427,9 +1392,6 @@ smilšu tārtiņš Charadrius hiaticula
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-103
-</td>
 <td style="text-align:left;">
 CHADUB
 </td>
@@ -1459,9 +1421,6 @@ upes tārtiņš Charadrius dubius
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-106
-</td>
 <td style="text-align:left;">
 VANVAN
 </td>
@@ -1494,9 +1453,6 @@ VANVAN
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-107
-</td>
 <td style="text-align:left;">
 NUMPHA
 </td>
@@ -1527,9 +1483,6 @@ lietuvainis Numenius phaeopus
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-108
-</td>
 <td style="text-align:left;">
 NUMARQ
 </td>
@@ -1561,9 +1514,6 @@ kuitala Numenius arquata
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-110
-</td>
 <td style="text-align:left;">
 LIMLIM
 </td>
@@ -1595,9 +1545,6 @@ melnā puskuitala Limosa limosa
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-124
-</td>
 <td style="text-align:left;">
 GALMED
 </td>
@@ -1629,9 +1576,6 @@ GALMED
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-125
-</td>
 <td style="text-align:left;">
 GALGAL
 </td>
@@ -1661,9 +1605,6 @@ mērkaziņa Gallinago gallinago
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-133
-</td>
 <td style="text-align:left;">
 TRINEB
 </td>
@@ -1693,9 +1634,6 @@ lielā tilbīte Tringa nebularia
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-134
-</td>
 <td style="text-align:left;">
 TRITOT
 </td>
@@ -1726,9 +1664,6 @@ pļavu tilbīte Tringa totanus
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-135
-</td>
 <td style="text-align:left;">
 TRIGLA
 </td>
@@ -1760,9 +1695,6 @@ purva tilbīte Tringa glareola
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-174
-</td>
 <td style="text-align:left;">
 GLAPAS
 </td>
@@ -1794,9 +1726,6 @@ apodziņš Glaucidium passerinum
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-176
-</td>
 <td style="text-align:left;">
 AEGFUN
 </td>
@@ -1828,9 +1757,6 @@ bikšainais apogs Aegolius funereus
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-178
-</td>
 <td style="text-align:left;">
 ASIOTU
 </td>
@@ -1861,9 +1787,6 @@ ausainā pūce Asio otus
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-180
-</td>
 <td style="text-align:left;">
 STRALU
 </td>
@@ -1892,9 +1815,6 @@ meža pūce Strix aluco
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-181
-</td>
 <td style="text-align:left;">
 STRURA
 </td>
@@ -1925,9 +1845,6 @@ urālpūce Strix uralensis
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-184
-</td>
 <td style="text-align:left;">
 BUBBUB
 </td>
@@ -1959,9 +1876,6 @@ BUBBUB
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-185
-</td>
 <td style="text-align:left;">
 PANHAL
 </td>
@@ -1992,9 +1906,6 @@ zivjērglis Pandion haliaetus
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-187
-</td>
 <td style="text-align:left;">
 PERAPI
 </td>
@@ -2025,9 +1936,6 @@ PERAPI
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-191
-</td>
 <td style="text-align:left;">
 CLAPOM
 </td>
@@ -2057,9 +1965,6 @@ mazais ērglis Clanga pomarina
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-197
-</td>
 <td style="text-align:left;">
 CIRAER
 </td>
@@ -2091,9 +1996,6 @@ niedru lija Circus aeruginosus
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-201
-</td>
 <td style="text-align:left;">
 ACCNIS
 </td>
@@ -2122,9 +2024,6 @@ zvirbuļvanags Accipiter nisus
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-202
-</td>
 <td style="text-align:left;">
 ACCGEN
 </td>
@@ -2155,9 +2054,6 @@ vistu vanags Accipiter gentilis
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-203
-</td>
 <td style="text-align:left;">
 HALALB
 </td>
@@ -2188,9 +2084,6 @@ jūras ērglis Haliaeetus albicilla
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-204
-</td>
 <td style="text-align:left;">
 MILMIL
 </td>
@@ -2221,9 +2114,6 @@ sarkanā klija Milvus milvus
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-205
-</td>
 <td style="text-align:left;">
 MILMIG
 </td>
@@ -2253,9 +2143,6 @@ melnā klija Milvus migrans
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-207
-</td>
 <td style="text-align:left;">
 BUTBUT
 </td>
@@ -2285,9 +2172,6 @@ peļu klijāns Buteo buteo
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-208
-</td>
 <td style="text-align:left;">
 UPUEPO
 </td>
@@ -2316,9 +2200,6 @@ pupuķis Upupa epops
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-210
-</td>
 <td style="text-align:left;">
 CORGAR
 </td>
@@ -2349,9 +2230,6 @@ zaļā vārna Coracias garrulus
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-212
-</td>
 <td style="text-align:left;">
 JYNTOR
 </td>
@@ -2381,9 +2259,6 @@ tītiņš Jynx torquilla
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-213
-</td>
 <td style="text-align:left;">
 PICCAN
 </td>
@@ -2415,9 +2290,6 @@ pelēkā dzilna Picus canus
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-215
-</td>
 <td style="text-align:left;">
 DRYMAR
 </td>
@@ -2450,9 +2322,6 @@ melnā dzilna Dryocopus martius
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-216
-</td>
 <td style="text-align:left;">
 PICTRI
 </td>
@@ -2486,9 +2355,6 @@ trīspirkstu dzenis Picoides tridactylus
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-217
-</td>
 <td style="text-align:left;">
 LEIMED
 </td>
@@ -2520,9 +2386,6 @@ vidējais dzenis Leiopicus medius
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-218
-</td>
 <td style="text-align:left;">
 DRYMIN
 </td>
@@ -2554,9 +2417,6 @@ mazais dzenis Dryobates minor
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-219
-</td>
 <td style="text-align:left;">
 DENLEU
 </td>
@@ -2589,9 +2449,6 @@ baltmugurdzenis Dendrocopos leucotos
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-220
-</td>
 <td style="text-align:left;">
 DENMAJ
 </td>
@@ -2620,9 +2477,6 @@ dižraibais dzenis Dendrocopos major
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-221
-</td>
 <td style="text-align:left;">
 FALTIN
 </td>
@@ -2652,9 +2506,6 @@ lauku piekūns Falco tinnunculus
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-223
-</td>
 <td style="text-align:left;">
 FALCOL
 </td>
@@ -2685,9 +2536,6 @@ purva piekūns Falco columbarius
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-228
-</td>
 <td style="text-align:left;">
 ORIORI
 </td>
@@ -2716,9 +2564,6 @@ vālodze Oriolus oriolus
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-229
-</td>
 <td style="text-align:left;">
 LANCOL
 </td>
@@ -2751,9 +2596,6 @@ brūnā čakste Lanius collurio
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-233
-</td>
 <td style="text-align:left;">
 LANEXC
 </td>
@@ -2783,9 +2625,6 @@ lielā čakste Lanius excubitor
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-237
-</td>
 <td style="text-align:left;">
 NUCCAR
 </td>
@@ -2816,9 +2655,6 @@ riekstrozis Nucifraga caryocatactes
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-242
-</td>
 <td style="text-align:left;">
 PERATE
 </td>
@@ -2847,9 +2683,6 @@ meža zīlīte Periparus ater
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-243
-</td>
 <td style="text-align:left;">
 LOPCRI
 </td>
@@ -2878,9 +2711,6 @@ cekulzīlīte Lophophanes cristatus
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-244
-</td>
 <td style="text-align:left;">
 POEPAL
 </td>
@@ -2911,9 +2741,6 @@ purva zīlīte Poecile palustris
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-245
-</td>
 <td style="text-align:left;">
 POEMON
 </td>
@@ -2944,9 +2771,6 @@ pelēkā zīlīte Poecile montanus
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-252
-</td>
 <td style="text-align:left;">
 LULARB
 </td>
@@ -2977,9 +2801,6 @@ sila cīrulis Lullula arborea
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-253
-</td>
 <td style="text-align:left;">
 ALAARV
 </td>
@@ -3008,9 +2829,6 @@ lauku cīrulis Alauda arvensis
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-256
-</td>
 <td style="text-align:left;">
 IDUCAL
 </td>
@@ -3039,9 +2857,6 @@ klusais ķauķis Iduna caligata
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-261
-</td>
 <td style="text-align:left;">
 ACRRIS
 </td>
@@ -3070,9 +2885,6 @@ purva ķauķis Acrocephalus palustris
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-264
-</td>
 <td style="text-align:left;">
 ACRARU
 </td>
@@ -3101,9 +2913,6 @@ niedru strazds Acrocephalus arundinaceus
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-268
-</td>
 <td style="text-align:left;">
 LOCFLU
 </td>
@@ -3133,9 +2942,6 @@ upes ķauķis Locustella fluviatilis
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-269
-</td>
 <td style="text-align:left;">
 LOCNAE
 </td>
@@ -3166,9 +2972,6 @@ kārklu ķauķis Locustella naevia
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-272
-</td>
 <td style="text-align:left;">
 HIRRUS
 </td>
@@ -3197,9 +3000,6 @@ bezdelīga Hirundo rustica
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-274
-</td>
 <td style="text-align:left;">
 PHYSIB
 </td>
@@ -3229,9 +3029,6 @@ svirlītis Phylloscopus sibilatrix
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-284
-</td>
 <td style="text-align:left;">
 AEGCAU
 </td>
@@ -3261,9 +3058,6 @@ garastīte Aegithalos caudatus
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-288
-</td>
 <td style="text-align:left;">
 CURNIS
 </td>
@@ -3293,9 +3087,6 @@ svītrainais ķauķis Curruca nisoria
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-290
-</td>
 <td style="text-align:left;">
 CURCOM
 </td>
@@ -3324,9 +3115,6 @@ brūnspārnu ķauķis Curruca communis
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-292
-</td>
 <td style="text-align:left;">
 CERFAM
 </td>
@@ -3355,9 +3143,6 @@ mizložņa Certhia familiaris
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-293
-</td>
 <td style="text-align:left;">
 SITEUR
 </td>
@@ -3386,9 +3171,6 @@ dzilnītis Sitta europaea
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-296
-</td>
 <td style="text-align:left;">
 STUVUL
 </td>
@@ -3417,9 +3199,6 @@ mājas strazds Sturnus vulgaris
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-299
-</td>
 <td style="text-align:left;">
 TURVIS
 </td>
@@ -3448,9 +3227,6 @@ sila strazds Turdus viscivorus
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-301
-</td>
 <td style="text-align:left;">
 TURILI
 </td>
@@ -3480,9 +3256,6 @@ plukšķis Turdus iliacus
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-308
-</td>
 <td style="text-align:left;">
 CYASVE
 </td>
@@ -3513,9 +3286,6 @@ zilrīklīte Cyanecula svecica
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-309
-</td>
 <td style="text-align:left;">
 LUSLUS
 </td>
@@ -3545,9 +3315,6 @@ lakstīgala Luscinia luscinia
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-313
-</td>
 <td style="text-align:left;">
 FICPAR
 </td>
@@ -3579,9 +3346,6 @@ mazais mušķērājs Ficedula parva
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-314
-</td>
 <td style="text-align:left;">
 FICHYP
 </td>
@@ -3610,9 +3374,6 @@ melnais mušķērājs Ficedula hypoleuca
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-318
-</td>
 <td style="text-align:left;">
 SAXRUB
 </td>
@@ -3643,9 +3404,6 @@ lukstu čakstīte Saxicola rubetra
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-324
-</td>
 <td style="text-align:left;">
 REGREG
 </td>
@@ -3674,9 +3432,6 @@ zeltgalvītis Regulus regulus
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-325
-</td>
 <td style="text-align:left;">
 REGIGN
 </td>
@@ -3705,9 +3460,6 @@ sārtgalvītis Regulus ignicapilla
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-330
-</td>
 <td style="text-align:left;">
 PASMON
 </td>
@@ -3736,9 +3488,6 @@ lauku zvirbulis Passer montanus
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-333
-</td>
 <td style="text-align:left;">
 ANTPRA
 </td>
@@ -3768,9 +3517,6 @@ pļavu čipste Anthus pratensis
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-337
-</td>
 <td style="text-align:left;">
 ANTCAM
 </td>
@@ -3803,9 +3549,6 @@ stepes čipste Anthus campestris
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-338
-</td>
 <td style="text-align:left;">
 MOTFLA
 </td>
@@ -3837,9 +3580,6 @@ dzeltenā cielava Motacilla flava
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-340
-</td>
 <td style="text-align:left;">
 MOTCIT
 </td>
@@ -3869,9 +3609,6 @@ citroncielava Motacilla citreola
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-344
-</td>
 <td style="text-align:left;">
 COCCOC
 </td>
@@ -3900,9 +3637,6 @@ dižknābis Coccothraustes coccothraustes
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-345
-</td>
 <td style="text-align:left;">
 CARERY
 </td>
@@ -3933,9 +3667,6 @@ mazais svilpis Carpodacus erythrinus
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-347
-</td>
 <td style="text-align:left;">
 PYRPYR
 </td>
@@ -3964,9 +3695,6 @@ svilpis Pyrrhula pyrrhula
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-348
-</td>
 <td style="text-align:left;">
 CHLCHL
 </td>
@@ -3995,9 +3723,6 @@ zaļžubīte Chloris chloris
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-350
-</td>
 <td style="text-align:left;">
 LINCAN
 </td>
@@ -4026,9 +3751,6 @@ kaņepītis Linaria cannabina
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-353
-</td>
 <td style="text-align:left;">
 LOXCUR
 </td>
@@ -4057,9 +3779,6 @@ egļu krustknābis Loxia curvirostra
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-355
-</td>
 <td style="text-align:left;">
 CARCAR
 </td>
@@ -4088,9 +3807,6 @@ dadzītis Carduelis carduelis
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-362
-</td>
 <td style="text-align:left;">
 EMBHOR
 </td>
@@ -4121,9 +3837,6 @@ dārza stērste Emberiza hortulana
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-363
-</td>
 <td style="text-align:left;">
 EMBCIT
 </td>
@@ -4261,6 +3974,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

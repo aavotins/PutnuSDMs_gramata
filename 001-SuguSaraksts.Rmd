@@ -39,8 +39,11 @@ suppressPackageStartupMessages(library(kableExtra))
 suppressPackageStartupMessages(library(tidyverse))
 opts <- options(knitr.kable.NA = "")
 suguizvele=readxl::read_excel("./Papilddati/SuguIzvele.xlsx")
-knitr::kable(suguizvele, caption = 'Sākotnējais sugu saraksts (BirdLife International 2023. gada nomenklatūras saraksta numurs; sugas kods; atbilstība iekļaušanas kritērijiem un 1 km kvadrātu, kuros projektā Life for Species atlasē saglabājusies sugas klātbūtne, skaits)', 
-             longtable = TRUE, booktabs = TRUE) %>%
+suguizvele=suguizvele %>% dplyr::select(-Numurs)
+tabula=knitr::kable(suguizvele, caption = 'Sākotnējais sugu saraksts (sugas kods; nosaukums; atbilstība iekļaušanas kritērijiem un 1 km kvadrātu, kuros projekta Life for Species atlasē saglabājusies sugas klātbūtne, skaits)', 
+                    booktabs = TRUE, 
+                    longtable = TRUE) 
+tabula %>%
   kable_styling(latex_options = "scale_down") %>%
   scroll_box(width = "100%", box_css = "border: 0px;")
 ```
