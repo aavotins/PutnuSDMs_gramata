@@ -34,7 +34,7 @@ Pēc primārā saraksta, kurš raksturo vispārēju nepieciešamību (vai iespē
 
 Sākotnējais modelēšanai izvēlēto sugu saraksts (ar nomenklatūru un saīsinājumu kodiem) un iekļaušanas pamatojums ir sniegts sekojošajā tabulā \@ref(tab:SuguIzvele).
 
-<div style="border: 0px;overflow-x: scroll; width:80%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:SuguIzvele)(\#tab:SuguIzvele)Sākotnējais sugu saraksts (BirdLife International 2023. gada nomenklatūras saraksta numurs; sugas kods; atbilstība iekļaušanas kritērijiem un 1 km kvadrātu, kuros projektā Life for Species atlasē saglabājusies sugas klātbūtne, skaits)</caption>
  <thead>
   <tr>

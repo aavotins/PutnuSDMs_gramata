@@ -42,7 +42,7 @@ suguizvele=readxl::read_excel("./Papilddati/SuguIzvele.xlsx")
 knitr::kable(suguizvele, caption = 'Sākotnējais sugu saraksts (BirdLife International 2023. gada nomenklatūras saraksta numurs; sugas kods; atbilstība iekļaušanas kritērijiem un 1 km kvadrātu, kuros projektā Life for Species atlasē saglabājusies sugas klātbūtne, skaits)', 
              longtable = TRUE, booktabs = TRUE) %>%
   kable_styling(latex_options = "scale_down") %>%
-  scroll_box(width = "80%", box_css = "border: 0px;")
+  scroll_box(width = "100%", box_css = "border: 0px;")
 ```
 
 
