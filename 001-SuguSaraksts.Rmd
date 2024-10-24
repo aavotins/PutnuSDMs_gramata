@@ -16,44 +16,49 @@ No visām ligzdojošo putnu sugām atlasītas jeb modelēšanai paredzētas:
 
 3. Life for Species projektā [@LifeForSpecies] par apdraudētām klasificētās;
 
-4. ES aizsargājamo biotopu rokasgrāmatā minētās ;
+4. ES aizsargājamo biotopu rokasgrāmatā iekļautās sugas [@ESbiotopurokasgramata];
 
-5. Bioloģiski vērtīgo zālāju indikatorsugas ;
+5. Bioloģiski vērtīgo zālāju indikatorsugas [@BVZmetodika];
 
-6. Lauku putnu indeksā iekļautās sugas ;
+6. Lauku putnu indeksā iekļautās sugas [@LPU2020];
 
-7. Latvijas vai boreālā reģiona meža putnu indeksā iekļautās sugas ;
+7. Latvijas vai boreālā reģiona meža putnu indeksā iekļautās sugas [@LPU2020];
 
-8. Sugas, kurām ir izstrādāti aizsardzības plāni, kuros iekļauta dzīvotņu piemērotības modelēšana ;
+8. Sugas, kurām ir izstrādāti aizsardzības plāni, kuros iekļauta dzīvotņu piemērotības modelēšana [@PucuPlans], [@DzenuPlans];
 
-Pēc primārā saraksta, kurš raksturo vispārēju nepieciešamību modelēšanai, sagatavošanas, tas papildināts ar izslēgšanas kritērijiem:
+Pēc primārā saraksta, kurš raksturo vispārēju nepieciešamību (vai iespējas) modelēšanai, sagatavošanas, tas papildināts ar izslēgšanas kritērijiem:
 
 1. Sugas ekoloģiskā niša ir saistīta ar dzīvotnēm, kuru raksturošanai nepieciešami sevišķi specifiski ekoģeogrāfiskie mainīgie, kuru izstrādei ir sevišķi ierobežota ģeodatu pieejamība. Šeit uzsveram, ka šī projekta uzdevums nav aptvert visas putnu sugas, tas arī nav atrisināt valsts līmenī iztrūkstošu ģeoreferencētu informāciju par specifiskiem vides apstākļiem;
 
-2. Ar ligzdošanu (sugai specifiskiem ligzdošanas ticamības kategorijas sliekšņiem) saistītu novērojumu indikatīvā pieejamība. Šai indikācijai izmantojām Life for Species projektā veiktās datu tīrīšanas rezultātus, kas aptvēra laika periodu no 2012. līdz 2021. gadam, kurus agregējām 1 km Latvijas koordinātu sistēmas kvadrātos. Vērtējot projekta uzdevumu (70 slāņi), par minimālo indikatīvo novērojumu apjoma slieksmi pieņēmām 20 kvadrātus ar vismaz iespējamu ligzdošanu sugām, kuras vides datu pieejamības dēļ netika izslēgtas.
+2. Ar ligzdošanu (sugai specifiskiem ligzdošanas ticamības kategorijas sliekšņiem) saistītu novērojumu indikatīvā pieejamība. Šai indikācijai izmantojām Life for Species [@LifeForSpecies] projektā veiktās datu tīrīšanas rezultātus, kas aptvēra laika periodu no 2012. līdz 2021. gadam, kurus agregējām 1 km Latvijas koordinātu sistēmas kvadrātos. Par minimālo indikatīvo novērojumu apjoma slieksmi pieņēmām 20 kvadrātus ar vismaz iespējamu ligzdošanu sugām, kuras vides datu pieejamības dēļ netika izslēgtas. Tik zems slieksnis izvēlēts, lai gadījumā, ja daļai sugu neizdotos sasniegt izmantošanas vērtu modeļa sniegumu, vēl joprojām būtu sasniegts projekta mērķis (70 slāņi).
 
-Modelēšanai izvēlētais sugu saraksts un iekļaušanas pamatojums ir sniegts zemāk.
+Sākotnējais modelēšanai izvēlēto sugu saraksts (ar nomenklatūru un saīsinājumu kodiem) un iekļaušanas pamatojums ir sniegts sekojošajā tabulā \@ref(tab:SuguIzvele).
 
+```{r SuguIzvele, results='asis',echo=FALSE}
+suguizvele=readxl::read_excel("./Papilddati/SuguIzvele.xlsx")
+knitr::kable(suguizvele, caption = 'Sākotnējais sugu saraksts (BirdLife International 2023. gada nomenklatūras saraksta numurs; sugas kods; atbilstība iekļaušanas kritērijiem un 1 km kvadrātu, kuros projektā Life for Species atlasē saglabājusies sugas klātbūtne, skaits)',
+  booktabs = TRUE)
+```
 
 
 
 ## Pamata apraksti analīzei
 
-Ligzdošanas iecirkņa izmērs
+Ligzdošanas iecirkņa izmērs un ekosistēma
 
 
 ## Pamata apraksti novērojumu atlasei
 
-Ligzdošanas sezona
+Ligzdošanas sezona un zemes seguma un lietojuma veidi
 
 
 ## Pamata apraksti starpsugu svarošanai
 
 
-### Populācijas lielums un pārmaiņas
+### Populācijas lielums un pārmaiņas {-}
 
 
-### Mūža reproduktīvais ieguldījums
+### Mūža reproduktīvais ieguldījums {-}
 
 
 

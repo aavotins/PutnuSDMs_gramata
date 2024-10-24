@@ -1,4 +1,5 @@
 fig:General-workflow
+tab:SuguIzvele
 fig:nice-fig
 tab:nice-tab
 eq:binom
@@ -12,8 +13,6 @@ analizējamo-sugu-izvēle
 pamata-apraksti-analīzei
 pamata-apraksti-novērojumu-atlasei
 pamata-apraksti-starpsugu-svarošanai
-populācijas-lielums-un-pārmaiņas
-mūža-reproduktīvais-ieguldījums
 Chapter2
 m-režģis-latvijā
 references-rastri
@@ -136,4 +135,3 @@ sharing-your-book
 publishing
 pages
 metadata-for-sharing
-url-httpsaavotins.github.ioputnusdms_gramata
