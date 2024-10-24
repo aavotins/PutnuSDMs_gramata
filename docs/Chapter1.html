@@ -112,7 +112,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2" data-path="Chapter1.html"><a href="Chapter1.html"><i class="fa fa-check"></i><b>2</b> Sugu saraksts un pamata apraksti</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="Chapter1.html"><a href="Chapter1.html#analīzējamo-sugu-izvēle"><i class="fa fa-check"></i><b>2.1</b> Analīzējamo sugu izvēle</a></li>
+<li class="chapter" data-level="2.1" data-path="Chapter1.html"><a href="Chapter1.html#analizējamo-sugu-izvēle"><i class="fa fa-check"></i><b>2.1</b> Analizējamo sugu izvēle</a></li>
 <li class="chapter" data-level="2.2" data-path="Chapter1.html"><a href="Chapter1.html#pamata-apraksti-analīzei"><i class="fa fa-check"></i><b>2.2</b> Pamata apraksti analīzei</a></li>
 <li class="chapter" data-level="2.3" data-path="Chapter1.html"><a href="Chapter1.html#pamata-apraksti-novērojumu-atlasei"><i class="fa fa-check"></i><b>2.3</b> Pamata apraksti novērojumu atlasei</a></li>
 <li class="chapter" data-level="2.4" data-path="Chapter1.html"><a href="Chapter1.html#pamata-apraksti-starpsugu-svarošanai"><i class="fa fa-check"></i><b>2.4</b> Pamata apraksti starpsugu svarošanai</a>
@@ -233,6 +233,7 @@ div.csl-indent {
 <li class="chapter" data-level="8.4" data-path="Chapter7.html"><a href="Chapter7.html#parameterisation"><i class="fa fa-check"></i><b>8.4</b> Parameterisation</a></li>
 <li class="chapter" data-level="8.5" data-path="Chapter7.html"><a href="Chapter7.html#model-selection"><i class="fa fa-check"></i><b>8.5</b> Model selection</a></li>
 <li class="chapter" data-level="8.6" data-path="Chapter7.html"><a href="Chapter7.html#final-model-and-output-generation"><i class="fa fa-check"></i><b>8.6</b> Final model and output generation</a></li>
+<li class="chapter" data-level="8.7" data-path="Chapter7.html"><a href="Chapter7.html#rezultāta-uzticamības-izvērtējums"><i class="fa fa-check"></i><b>8.7</b> Rezultāta uzticamības izvērtējums</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="Chapter8.html"><a href="Chapter8.html"><i class="fa fa-check"></i><b>9</b> SDM pēcapstrāde</a>
 <ul>
@@ -310,10 +311,27 @@ div.csl-indent {
 <div id="Chapter1" class="section level1 hasAnchor" number="2">
 <h1><span class="header-section-number">2</span> Sugu saraksts un pamata apraksti<a href="Chapter1.html#Chapter1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Šajā nodaļā sniegts analīzei izvēlēto sugu saraksta pamatojums un demonstrēta informācijas apkopošanas gaita sugu bioloģijas un ekoloģijas aprakstiem, kas tālāk izmantoti modelēšanā.</p>
-<p>Saskaņā ar projekta pieteikumu, ir nepieciešams izstrādāt vismaz 70 slāņus ar dzīvotņu piemērotības analīzes rezultātiem. Sākotnēji analīzei izvēlēto sugu loks ir 116, lai samazinātu spriedzi ap ik sugas rezultāta uzticamību un pielietojamību mērķim.</p>
-<div id="analīzējamo-sugu-izvēle" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> Analīzējamo sugu izvēle<a href="Chapter1.html#analīzējamo-sugu-izvēle" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>All chapter sections start with a second-level (<code>##</code>) or higher heading followed by your section title, like the sections above and below here. You can have as many as you want within a chapter.</p>
+<p>Saskaņā ar projekta pieteikumu, uzdevums ir izstrādāt vismaz 70 slāņus ar dzīvotņu piemērotības analīzes rezultātiem. Sākotnēji analīzei izvēlēto sugu loks ir 116, lai samazinātu spriedzi ap ik sugas rezultāta uzticamību un pielietojamību mērķim.</p>
+<div id="analizējamo-sugu-izvēle" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Analizējamo sugu izvēle<a href="Chapter1.html#analizējamo-sugu-izvēle" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>No 375 Latvijā jebkad konstatētajām putnu sugām <span class="citation">(<a href="#ref-PutniLV">Celmiņš 2024</a>)</span>, 335 ir uzskatāmas par (šobrīd vai vismaz vienu desmitgadi kopš 1900. gada) ligzdotājām <span class="citation">(<a href="#ref-Avotins_etal_2024a:LfS_Conference">Avotiņš et al. 2024</a>)</span>. Tomēr tas nebūt nenozīmē, ka visām par ligzdotājām uzskatāmajām putnu sugām ir pieejami dati (un projektam - resursi) modelēšanai. Tādēļ vaikta tālāka sugu atlase.</p>
+<p>No visām ligzdojošo putnu sugām atlasītas jeb modelēšanai paredzētas:</p>
+<ol style="list-style-type: decimal">
+<li><p>Putnu Direktīvas 1. pielikumā iekļautās sugas;</p></li>
+<li><p>Latvijā šobrīd aizsargājamās vai Life for Species projektā <span class="citation">(<a href="#ref-LifeForSpecies">University of Latvia 2024</a>)</span> par aizsargākajām klasificētās;</p></li>
+<li><p>Life for Species projektā <span class="citation">(<a href="#ref-LifeForSpecies">University of Latvia 2024</a>)</span> par apdraudētām klasificētās;</p></li>
+<li><p>ES aizsargājamo biotopu rokasgrāmatā minētās ;</p></li>
+<li><p>Bioloģiski vērtīgo zālāju indikatorsugas ;</p></li>
+<li><p>Lauku putnu indeksā iekļautās sugas ;</p></li>
+<li><p>Latvijas vai boreālā reģiona meža putnu indeksā iekļautās sugas ;</p></li>
+<li><p>Sugas, kurām ir izstrādāti aizsardzības plāni, kuros iekļauta dzīvotņu piemērotības modelēšana ;</p></li>
+</ol>
+<p>Pēc primārā saraksta, kurš raksturo vispārēju nepieciešamību modelēšanai, sagatavošanas, tas papildināts ar izslēgšanas kritērijiem:</p>
+<ol style="list-style-type: decimal">
+<li><p>Sugas ekoloģiskā niša ir saistīta ar dzīvotnēm, kuru raksturošanai nepieciešami sevišķi specifiski ekoģeogrāfiskie mainīgie, kuru izstrādei ir sevišķi ierobežota ģeodatu pieejamība. Šeit uzsveram, ka šī projekta uzdevums nav aptvert visas putnu sugas, tas arī nav atrisināt valsts līmenī iztrūkstošu ģeoreferencētu informāciju par specifiskiem vides apstākļiem;</p></li>
+<li><p>Ar ligzdošanu (sugai specifiskiem ligzdošanas ticamības kategorijas sliekšņiem) saistītu novērojumu indikatīvā pieejamība. Šai indikācijai izmantojām Life for Species projektā veiktās datu tīrīšanas rezultātus, kas aptvēra laika periodu no 2012. līdz 2021. gadam, kurus agregējām 1 km Latvijas koordinātu sistēmas kvadrātos. Vērtējot projekta uzdevumu (70 slāņi), par minimālo indikatīvo novērojumu apjoma slieksmi pieņēmām 20 kvadrātus ar vismaz iespējamu ligzdošanu sugām, kuras vides datu pieejamības dēļ netika izslēgtas.</p></li>
+</ol>
+<p>Modelēšanai izvēlētais sugu saraksts un iekļaušanas pamatojums ir sniegts zemāk.</p>
 </div>
 <div id="pamata-apraksti-analīzei" class="section level2 hasAnchor" number="2.2">
 <h2><span class="header-section-number">2.2</span> Pamata apraksti analīzei<a href="Chapter1.html#pamata-apraksti-analīzei" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -332,6 +350,18 @@ div.csl-indent {
 <h3><span class="header-section-number">2.4.2</span> Mūža reproduktīvais ieguldījums<a href="Chapter1.html#mūža-reproduktīvais-ieguldījums" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 
 </div>
+</div>
+</div>
+<h3>References<a href="references-1.html#references-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-Avotins_etal_2024a:LfS_Conference" class="csl-entry">
+Avotiņš, Andris, Ainārs Auniņš, Antra Stīpniece, and Viesturs Ķerus. 2024. <span>“Little and a Lot of Data, Both with Their Own Challenges: Approaches Used for the Red Listing of Birds in Latvia.”</span> In <em>Safeguarding Biodiversity: Red Lists and Beyond</em>, edited by Dalius Butkauskas, Gunta Čekstere-Muižniece, Polina Degtjarenko, Līga Jankevica, Nicklas Jansson, Viesturs Ķerus, Valdis Pilāts, and Dmitry Telnov, 14. Institute of Biology, Faculty of Medicine; Life Sciences, University of Latvia.
+</div>
+<div id="ref-PutniLV" class="csl-entry">
+Celmiņš, Agris. 2024. <em>Putni.lv</em>. <a href="http://www.putni.lv/index.html">http://www.putni.lv/index.html</a>.
+</div>
+<div id="ref-LifeForSpecies" class="csl-entry">
+University of Latvia, Latvian Ornithological Society. 2024. <em>Threatened Species in Latvia: Improved Knowledge, Capacity, Data and Awareness (LIFE FOR SPECIES, LIFE19 GIE/LV/000857)</em>. <a href="https://sarkanagramata.lu.lv/en/about/">https://sarkanagramata.lu.lv/en/about/</a>.
 </div>
 </div>
             </section>
