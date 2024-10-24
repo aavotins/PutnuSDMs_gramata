@@ -34,10 +34,14 @@ Pēc primārā saraksta, kurš raksturo vispārēju nepieciešamību (vai iespē
 
 Sākotnējais modelēšanai izvēlēto sugu saraksts (ar nomenklatūru un saīsinājumu kodiem) un iekļaušanas pamatojums ir sniegts sekojošajā tabulā \@ref(tab:SuguIzvele).
 
-```{r SuguIzvele, results='asis',echo=FALSE,fig.width=6,fig.height=6}
+```{r SuguIzvele,echo=FALSE}
+suppressPackageStartupMessages(library(kableExtra))
+suppressPackageStartupMessages(library(tidyverse))
 suguizvele=readxl::read_excel("./Papilddati/SuguIzvele.xlsx")
 knitr::kable(suguizvele, caption = 'Sākotnējais sugu saraksts (BirdLife International 2023. gada nomenklatūras saraksta numurs; sugas kods; atbilstība iekļaušanas kritērijiem un 1 km kvadrātu, kuros projektā Life for Species atlasē saglabājusies sugas klātbūtne, skaits)', 
-             longtable = TRUE, booktabs = TRUE)
+             longtable = TRUE, booktabs = TRUE) %>%
+  kable_styling() %>%
+  scroll_box(width = "100%", box_css = "border: 0px;")
 ```
 
 
