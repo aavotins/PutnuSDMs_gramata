@@ -1,3 +1,4 @@
+fig:General-workflow
 fig:nice-fig
 tab:nice-tab
 eq:binom
@@ -8,6 +9,8 @@ kas-ir-šis-materiāls-un-kā-to-lietot
 satura-izklāsts-orientācijai
 hello-bookdown
 a-section
+hello-bookdown-1
+a-section-1
 cross
 chapters-and-sub-chapters
 captioned-figures-and-tables

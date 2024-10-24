@@ -1,7 +1,7 @@
 --- 
 title: "Putnu sugu izplatības modelēšana biodaudzveidības aizsardzībai: materiāli reproducējamībai"
 author: "Andris Avotiņš"
-date: "2024-10-21"
+date: "2024-10-24"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -31,6 +31,8 @@ Materiāls ir izstrādāts R, izmantojot {bookdown}. Saturā raksturotā datu ap
 
 * *pamācība ģeoprocesēšanā*. Šajā materiāla ir apkopotas tās pieejas, kuras tā izstrādes brīdī autoru kolektīvas ir zināmas kā efektīvākās (apstrādei nepieciešamā laika, operatīvās atmiņas un cietā diska apjoma, izpildes garantiju un uzticamības ziņā), bet noteikti nav vienīgās;
 
+* sugu izplatības (dzīvotņu piemērotības, sastopamības, skaita vai tml.) *modelēšanas rokasgrāmata*. Šis materiāls apraksta darba gaitu un pieņemtos datu analīzes lēmumus, izstrādājot produktu, kas iespējami vienkāršiem un ātriem līdzekļiem vienotā darba plūsmā ļauj iegūt informāciju sugu un biotopu aizsardzības plānošanai. Tātad, rezultātus ir paredzēts vērtēt kopumā, nevis individuālu vietu individuālām sugām izšķirtspējā.
+
 * *copy/paste gatavs produkts*. Lai gan komandu rindu lietošana un publiskošana ir ar tendenci būt šiem mērķiem paredzētai, situācijā, kad darbam izmantoti liela apjoma un vismaz daļēji - ierobežotas pieejamības dati, tas gluži vienkārši nav iespējams. Tas, kas iztrūkst (ir jānodrošina katrai šo materiaālu lietojošai personai personīgi) ir precīzi ceļi uz failiem - tos koriģējot, uzdevumi ir atkārtojami un rezultāti - replicējami.
 
 ## Kas ir šis materiāls un kā to lietot?
@@ -56,7 +58,9 @@ Augstāk esošā piemēra otrā rinda ir komentārs - viss aiz "#" ir komentārs
 
 Komandu rindas ir nozīmīgākā šī materiāla sastāvdaļa reproducējamībai. Tomēr personai, kas tās lieto, pašai ir jānodrošina ievades datu pieejamība un jāuztur korketi ceļi failu kokā.
 
-Reizēm tekstā atsaukšos uz R pakotnēm, tās likšu figūriekavās, piemēram {pakotne}.
+Komandu rindas var atrasties arī tekstā, piemēram, `# komentārs kā komandu rinda tekstā`.
+
+Reizēm tekstā atsaukšos uz R pakotnēm, tās likšu figūriekavās, piemēram, {pakotne}.
 
 * *grafikām* - dažādām diagrammām, kas raksturo darba plūsmu vai datu īpašības, bet lielākoties, kartēm;
 
@@ -69,21 +73,33 @@ Reizēm tekstā atsaukšos uz R pakotnēm, tās likšu figūriekavās, piemēram
 
 Vispārīgā darba un informācijas plūsma projektā ir ilustrēta sekojošajā attēlā. Tā ir izmantota par pamatu šī materiāla dalījumam nodaļās (nosauktas un īsi raksturotas zemāk). Nodaļām var būt vairāku līmeņu apakšnodaļas, jo sevišķi attiecībā uz konkrētiem ekoģeogrāfiskajiem mainīgajiem un sugu modelēšanas rezultātiem.
 
+<div class="figure">
+
+```{=html}
+<div class="grViz html-widget html-fill-item" id="htmlwidget-fbbed66cf877c334f1f3" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-fbbed66cf877c334f1f3">{"x":{"diagram":"digraph flowchart {\n\n  # node type 2: Līmeņi\n  node [fontname = Helvetica, shape = none,style=none,fontface=bold,fontsize=12];{\n    node [label=\"1. solis: Sagatavošanās\"]; step0;\n    node [label=\"2. solis: Ievades informācija\"]; step1;\n    node [label=\"3. solis: Ekoģeogrāfiskie mainīgie\"]; step2;\n    node [label=\"4. solis: Modelēšana\"]; step3;\n    node [label=\"5. solis: Prioritizēšana\"]; step4;\n  }\n  \n  \n  # node type 1: Vidējais\n  node [fontname = Helvetica, shape = rectangle,style=rounded,fontcolor=black]; {\n    node [label=\"Analīzes telpa\"]; vidus1;\n    node [label=\"Ievades \nģeodati\"]; vidus2;\n    node [label=\"Ekoģeogrāfiskie \nmainīgie\"]; vidus3;\n    node [label=\"Sugu izplatības \nmodelēšna\"]; vidus4;\n    node [label=\"Vietu prioritizēšana \naizsardzībai\"]; vidus5;\n  }\n\n  # node type 5: Kreisais \n  node [fontname = Helvetica, shape = rectangle,style=rounded,fontcolor=black,fontsize=12];{\n    node [label=\"*Dynamic World* izpēte\"]; DWexp;\n    }\n\n\n\n  # node type 3: Labais\n  node [fontname = Helvetica, shape = rectangle];{\n    node [label=\"Sugu saraksts \nun apraksti\"]; labais1;\n    node [label=\"Novērojumu atlase\"]; labais2;\n  }\n\n  \n  # specify which nodes are of the same \"rank\" so that they\"ll be drawn at the same level\n      {rank = same; step0 vidus1 labais1}\n      {rank = same; step1 DWexp vidus2 labais2}\n      {rank = same; step2 vidus3}\n      {rank = same; step3 vidus4}\n      {rank = same; step4 vidus5}\n  \n  # edge definitions with the node IDs\n  edge[tailclip = true, headclip = true,color=white];\n  step0 -> step1\n  step1 -> step2\n  step2 -> step3\n  step3->step4\n\n  edge[tailclip = true, headclip = true,color=black];\n  vidus1 -> vidus2\n  vidus2 -> vidus3\n  vidus3 -> vidus4\n  vidus4 -> vidus5\n  \n  vidus1 -> labais2\n  vidus1 -> DWexp\n  DWexp -> vidus2\n  DWexp -> labais2\n\n  labais1 -> labais2\n  labais2 -> vidus3\n  \n  labais1 -> vidus3\n  labais1 -> vidus5\n  labais1 -> vidus4\n  labais2 -> vidus4\n  vidus1 -> vidus3\n  }\n\n  ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+```
+
+<p class="caption">(\#fig:General-workflow)Darba plūsma un saistība starp šī dokumenta nodaļām</p>
+</div>
 
 
-1. Sugu saraksts un pamata apraksti
+1. Sugu saraksts un pamata apraksti (A. Avotiņš, A. Auniņš, J. Butkeviča, A. Baumane)
 
-2. Ar modeļiem aptveramā telpa un standartizācijas faili
+2. Ar modeļiem aptveramā (analīzes) telpa un standartizācijas faili (A. Avotiņš)
 
-3. Ievades ģeodati
+3. Ievades ģeodati (A. Avotiņš, I. Vinogradovs, A. Auniņš)
 
-4. Ekoģeogrāfiskie mainīgie
+4. *Dynamic World* izpēte (A. Avotiņš, B. Rubene)
 
-5. Novērojumu atlase
+5. Ekoģeogrāfiskie mainīgie (A. Avotiņš, A. Auniņš)
 
-6. Sugu izplatības (dzīvotņu piemērotības) modeļi
+6. Novērojumu atlase (A. Avotiņš)
 
-7. Vietu prioritizēšana aizsardzībai
+7. Sugu izplatības (dzīvotņu piemērotības) modeļi (A. Avotiņš, A. Auniņš)
 
+8. Vietu prioritizēšana aizsardzībai (A. Avotiņš, I. Vinogradovs, A. Auniņš)
+
+9. Rezultāti (A. Avotiņš)
 
 
