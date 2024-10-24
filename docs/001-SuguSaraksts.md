@@ -35,7 +35,7 @@ Pēc primārā saraksta, kurš raksturo vispārēju nepieciešamību (vai iespē
 Sākotnējais modelēšanai izvēlēto sugu saraksts (ar nomenklatūru un saīsinājumu kodiem) un iekļaušanas pamatojums ir sniegts sekojošajā tabulā \@ref(tab:SuguIzvele).
 
 <div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
-<caption>(\#tab:SuguIzvele)(\#tab:SuguIzvele)Sākotnējais sugu saraksts (sugas kods; nosaukums; atbilstība iekļaušanas kritērijiem un 1 km kvadrātu, kuros projekta Life for Species atlasē saglabājusies sugas klātbūtne, skaits)</caption>
+<caption>(\#tab:SuguIzvele)Sākotnējais sugu saraksts (sugas kods; nosaukums; atbilstība iekļaušanas kritērijiem un 1 km kvadrātu, kuros projekta Life for Species atlasē saglabājusies sugas klātbūtne, skaits)</caption>
  <thead>
   <tr>
    <th style="text-align:left;"> Kods </th>

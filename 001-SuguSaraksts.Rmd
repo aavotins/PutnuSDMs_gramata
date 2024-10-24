@@ -40,7 +40,7 @@ suppressPackageStartupMessages(library(tidyverse))
 opts <- options(knitr.kable.NA = "")
 suguizvele=readxl::read_excel("./Papilddati/SuguIzvele.xlsx")
 suguizvele=suguizvele %>% dplyr::select(-Numurs)
-tabula=knitr::kable(suguizvele, caption = 'Sākotnējais sugu saraksts (sugas kods; nosaukums; atbilstība iekļaušanas kritērijiem un 1 km kvadrātu, kuros projekta Life for Species atlasē saglabājusies sugas klātbūtne, skaits)', 
+tabula=kableExtra::kbl(suguizvele, caption = 'Sākotnējais sugu saraksts (sugas kods; nosaukums; atbilstība iekļaušanas kritērijiem un 1 km kvadrātu, kuros projekta Life for Species atlasē saglabājusies sugas klātbūtne, skaits)', 
                     booktabs = TRUE, 
                     longtable = TRUE) 
 tabula %>%
