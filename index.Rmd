@@ -5,6 +5,7 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
+csl: biological-conservation.csl
 # url: https://aavotins.github.io/PutnuSDMs_gramata/
 # cover-image: path to the social sharing image like images/cover.jpg
 description: |
