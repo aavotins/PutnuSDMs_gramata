@@ -18,3 +18,6 @@ All chapters start with a first-level heading followed by your chapter title, li
 ## Final model and output generation
 
 
+## Rezultāta uzticamības izvērtējums
+
+
