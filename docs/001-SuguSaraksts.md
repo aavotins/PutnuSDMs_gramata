@@ -1603,7 +1603,7 @@ Tā kā ievērojama daļa modelēšanai potenciāli izmantojamo novērojumu ir s
 
 ### Ligzdošanas sezona {-}
 
-
+Ligzdošanas sezonas raksturošanai izmantota detalizētākā pieejamā informācija no Eiropas [@KrampisVol1], [@KrampisVol2], [@KrampisVol3], [@KrampisVol4], [@KrampisVol5], [@KrampisVol6], [@KrampisVol7], [@KrampisVol8], [@KrampisVol9]. Lai gan šī informācija ir uzskatāma per vismaz pusgadsmitu senu un gandrīz nekad ne Latvijā iegūtu tā tomēr spēj raksturot laiku, kad sugai principā ir sagaidāma ar ligzdošanu saistāmi novērojumi. Kad tas ir bijis iespējams, ligzdošanas sezonas sākums noteikts pēc minimālā olu dēšanas datuma un beigas - pēc maksimālā mazuļu datuma, izmantojot literatūras avotos sniegtās diagrammas. Tām retajām sugām, kurām šādu diagrammu nebija, šī informācija iegūta analizējot rakstīto tekstu un veicot nepieciešamos aprēķinus, kuriem pamatā izmantot turpat tekstā norādītais olu inkubācijas laiks, olu dēšanas ritms u. tml.
 
 ## Pamata apraksti starpsugu svarošanai
 
