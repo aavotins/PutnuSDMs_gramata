@@ -13,7 +13,11 @@ Chapter1
 analizējamo-sugu-izvēle
 pamata-apraksti-analīzei
 pamata-apraksti-novērojumu-atlasei
+nepiemērota-vide
+Chapter1.3.2
 pamata-apraksti-starpsugu-svarošanai
+populācijas-lielums-un-pārmaiņas
+mūža-reproduktīvais-ieguldījums
 Chapter2
 m-režģis-latvijā
 references-rastri
