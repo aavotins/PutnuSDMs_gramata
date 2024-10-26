@@ -133,5 +133,5 @@ Pilnvērtīgam mūža reproduktīvā ieguldījuma aprēķinam būtu nepieciešam
 
 - `Avots`, kurā norādīts olu skaita informācijas avots, saistībā ar lauka `Olu_skaits` skaidrojumu;
 
-- `Dejumu_skaits`, kurā norādīts sugai raksturīgais dējumu skaits (sekojot prioritātēm, kas aprakstītas nodaļā [Ligzdošanas sezona](#Chapter1.3.2))
+- `Dejumu_skaits`, kurā norādīts sugai raksturīgais dējumu skaits (sekojot prioritātēm, kas aprakstītas nodaļā [Ligzdošanas sezona](#Chapter1.3.2)), neieskaitot aizvietojošos dējumus.
 
