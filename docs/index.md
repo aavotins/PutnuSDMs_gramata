@@ -1,7 +1,7 @@
 --- 
 title: "Putnu sugu izplatības modelēšana biodaudzveidības aizsardzībai: materiāli reproducēšanai"
 author: "Andris Avotiņš"
-date: "2024-10-25"
+date: "2024-10-26"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -32,13 +32,13 @@ Materiāls ir izstrādāts R, izmantojot {bookdown}. Saturā raksturotā datu ap
 
 * *pamācība ģeoprocesēšanā*. Šajā materiāla ir apkopotas tās pieejas, kuras tā izstrādes brīdī autoru kolektīvas ir zināmas kā efektīvākās (apstrādei nepieciešamā laika, operatīvās atmiņas un cietā diska apjoma, izpildes garantiju un uzticamības ziņā), bet noteikti nav vienīgās;
 
-* sugu izplatības (dzīvotņu piemērotības, sastopamības, skaita vai tml.) *modelēšanas rokasgrāmata*. Šis materiāls apraksta darba gaitu un pieņemtos datu analīzes lēmumus, izstrādājot produktu, kas iespējami vienkāršiem un ātriem līdzekļiem vienotā darba plūsmā ļauj iegūt informāciju sugu un biotopu aizsardzības plānošanai. Tātad, rezultātus ir paredzēts vērtēt kopumā, nevis individuālu vietu individuālām sugām izšķirtspējā.
+* sugu izplatības (dzīvotņu piemērotības, sastopamības, skaita vai tml.) *modelēšanas rokasgrāmata*. Šis materiāls apraksta darba gaitu un pieņemtos datu analīzes lēmumus, izstrādājot produktu, kas iespējami vienkāršiem un ātriem līdzekļiem vienotā darba plūsmā ļauj iegūt informāciju sugu un biotopu aizsardzības plānošanai. Tātad, eksistē dažādas modelešēnas metodes un to parametrizācijas un vēl vairāk - pieejas, kuras gadījumu no gadījuma var būt piemērotākas sugu izplatības modelēšanai, tomēr šeit uzturēta vienota plūsma un iespējami unificēta pieeja. Tas arī nozīmē, ka šeit iegūtos rezultātus primāri ir paredzēts vērtēt kopumā, nevis individuālu vietu individuālām sugām izšķirtspējā, jo sevišķi, domājot par vietas aizņemtību, tomēr tie siendz nozīmīgu pamatu šādu un līdzīgu varbūtību risināšanai.
 
 * *copy/paste gatavs produkts*. Lai gan komandu rindu lietošana un publiskošana ir ar tendenci būt šiem mērķiem paredzētai, situācijā, kad darbam izmantoti liela apjoma un vismaz daļēji - ierobežotas pieejamības dati, tas gluži vienkārši nav iespējams. Tas, kas iztrūkst (ir jānodrošina katrai šo materiaālu lietojošai personai personīgi) ir precīzi ceļi uz failiem - tos koriģējot, uzdevumi ir atkārtojami un rezultāti - replicējami.
 
 ## Kas ir šis materiāls un kā to lietot?
 
-Šis materiāls ir sagatavots, lai sniegtu reproducējamu darba gaitu, aprakstot pieņemtos lēmumus un ieviestos risinājumus putnu sugu izplatības (dzīvotņu piemērotības) modelēšanai biodaudzveidības aizsardzības plānošanai. Mazākā mērā arī rezultātu demonstrēšanai.
+Šis materiāls ir sagatavots, lai sniegtu reproducējamu darba gaitu, aprakstot pieņemtos lēmumus un ieviestos risinājumus putnu sugu izplatības (dzīvotņu piemērotības) modelēšanai biodaudzveidības aizsardzības plānošanai. Mazākā mērā arī rezultātu demonstrēšanai un to pieejamības nodrošināšanai.
 
 Lielākoties šis materiāls sastāv no:
 
@@ -67,7 +67,7 @@ Reizēm tekstā atsaukšos uz R pakotnēm, tās likšu figūriekavās, piemēram
 
 * *saitēm uz citiem resursiem*, jo sevišķi uz augstāka līmeņa produktiem un rezultātiem, kas radīti projekta ietvaros, bet arī ievades datiem, ja tie ir publiski pieejami. Rezultāti ir paredzēti izmantošanai praksē.
 
-
+Saprāta robežās, materiālā ir raksturotas visas izmantotās datu kopas un sniegti to metadati, kas attiecas uz reproducējamības nodrošināšanu. Tā kā ne visas datu kopas ir brīvi pieejamas, tās pašas par sevi nav publiskotas, tomēr visos gadījumos ir sniegta informācija par to ieguvi šī projekta izstrādei.
 
 
 ## Satura izklāsts (orientācijai)
@@ -77,8 +77,8 @@ Vispārīgā darba un informācijas plūsma projektā ir ilustrēta sekojošajā
 <div class="figure">
 
 ```{=html}
-<div class="grViz html-widget html-fill-item" id="htmlwidget-8fdfd9eb78d8d1c3f19c" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-8fdfd9eb78d8d1c3f19c">{"x":{"diagram":"digraph flowchart {\n\n  # node type 2: Līmeņi\n  node [fontname = Helvetica, shape = none,style=none,fontface=bold,fontsize=12];{\n    node [label=\"1. solis: Sagatavošanās\"]; step0;\n    node [label=\"2. solis: Ievades informācija\"]; step1;\n    node [label=\"3. solis: Ekoģeogrāfiskie mainīgie\"]; step2;\n    node [label=\"4. solis: Modelēšana\"]; step3;\n    node [label=\"5. solis: Prioritizēšana\"]; step4;\n  }\n  \n  \n  # node type 1: Vidējais\n  node [fontname = Helvetica, shape = rectangle,style=rounded,fontcolor=black]; {\n    node [label=\"Analīzes telpa\"]; vidus1;\n    node [label=\"Ievades \nģeodati\"]; vidus2;\n    node [label=\"Ekoģeogrāfiskie \nmainīgie\"]; vidus3;\n    node [label=\"Sugu izplatības \nmodelēšna\"]; vidus4;\n    node [label=\"Vietu prioritizēšana \naizsardzībai\"]; vidus5;\n  }\n\n  # node type 5: Kreisais \n  node [fontname = Helvetica, shape = rectangle,style=rounded,fontcolor=black,fontsize=12];{\n    node [label=\"*Dynamic World* izpēte\"]; DWexp;\n    }\n\n\n\n  # node type 3: Labais\n  node [fontname = Helvetica, shape = rectangle];{\n    node [label=\"Sugu saraksts \nun apraksti\"]; labais1;\n    node [label=\"Novērojumu atlase\"]; labais2;\n  }\n\n  # node type 4: Pecapstrade\n  node [fontname = Helvetica, shape = rectangle];{\n    node [label=\"Modeļu pēcapstrāde\"]; pec1;\n  }\n\n  \n  # specify which nodes are of the same \"rank\" so that they\"ll be drawn at the same level\n      {rank = same; step0 vidus1 labais1}\n      {rank = same; step1 DWexp vidus2 labais2}\n      {rank = same; step2 vidus3}\n      {rank = same; step3 vidus4 pec1}\n      {rank = same; step4 vidus5}\n  \n  # edge definitions with the node IDs\n  edge[tailclip = true, headclip = true,color=white];\n  step0 -> step1\n  step1 -> step2\n  step2 -> step3\n  step3->step4\n\n  edge[tailclip = true, headclip = true,color=black];\n  vidus1 -> vidus2\n  vidus2 -> vidus3\n  vidus3 -> vidus4\n  vidus4 -> vidus5\n  \n  vidus1 -> labais2\n  vidus1 -> DWexp\n  DWexp -> vidus2\n  DWexp -> labais2\n\n  labais1 -> labais2\n  labais2 -> vidus3\n  \n  labais1 -> vidus3\n  labais1 -> vidus5\n  labais1 -> vidus4\n  labais2 -> vidus4\n  vidus1 -> vidus3\n  \n  vidus4 -> pec1\n  vidus5 -> pec1\n  pec1 -> vidus5\n  }\n\n  ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-a4f52cd2158f4c35b507" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-a4f52cd2158f4c35b507">{"x":{"diagram":"digraph flowchart {\n\n  # node type 2: Līmeņi\n  node [fontname = Helvetica, shape = none,style=none,fontface=bold,fontsize=12];{\n    node [label=\"1. solis: Sagatavošanās\"]; step0;\n    node [label=\"2. solis: Ievades informācija\"]; step1;\n    node [label=\"3. solis: Ekoģeogrāfiskie mainīgie\"]; step2;\n    node [label=\"4. solis: Modelēšana\"]; step3;\n    node [label=\"5. solis: Prioritizēšana\"]; step4;\n  }\n  \n  \n  # node type 1: Vidējais\n  node [fontname = Helvetica, shape = rectangle,style=rounded,fontcolor=black]; {\n    node [label=\"Analīzes telpa\"]; vidus1;\n    node [label=\"Ievades \nģeodati\"]; vidus2;\n    node [label=\"Ekoģeogrāfiskie \nmainīgie\"]; vidus3;\n    node [label=\"Sugu izplatības \nmodelēšna\"]; vidus4;\n    node [label=\"Vietu prioritizēšana \naizsardzībai\"]; vidus5;\n  }\n\n  # node type 5: Kreisais \n  node [fontname = Helvetica, shape = rectangle,style=rounded,fontcolor=black,fontsize=12];{\n    node [label=\"*Dynamic World* izpēte\"]; DWexp;\n    }\n\n\n\n  # node type 3: Labais\n  node [fontname = Helvetica, shape = rectangle];{\n    node [label=\"Sugu saraksts \nun apraksti\"]; labais1;\n    node [label=\"Novērojumu atlase\"]; labais2;\n  }\n\n  # node type 4: Pecapstrade\n  node [fontname = Helvetica, shape = rectangle];{\n    node [label=\"Modeļu pēcapstrāde\"]; pec1;\n  }\n\n  \n  # specify which nodes are of the same \"rank\" so that they\"ll be drawn at the same level\n      {rank = same; step0 vidus1 labais1}\n      {rank = same; step1 DWexp vidus2 labais2}\n      {rank = same; step2 vidus3}\n      {rank = same; step3 vidus4 pec1}\n      {rank = same; step4 vidus5}\n  \n  # edge definitions with the node IDs\n  edge[tailclip = true, headclip = true,color=white];\n  step0 -> step1\n  step1 -> step2\n  step2 -> step3\n  step3->step4\n\n  edge[tailclip = true, headclip = true,color=black];\n  vidus1 -> vidus2\n  vidus2 -> vidus3\n  vidus3 -> vidus4\n  vidus4 -> vidus5\n  \n  vidus1 -> labais2\n  vidus1 -> DWexp\n  DWexp -> vidus2\n  DWexp -> labais2\n\n  labais1 -> labais2\n  labais2 -> vidus3\n  \n  labais1 -> vidus3\n  labais1 -> vidus5\n  labais1 -> vidus4\n  labais2 -> vidus4\n  vidus1 -> vidus3\n  \n  vidus4 -> pec1\n  vidus5 -> pec1\n  pec1 -> vidus5\n  }\n\n  ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 <p class="caption">(\#fig:General-workflow)Darba plūsma un saistība starp šī dokumenta nodaļām</p>

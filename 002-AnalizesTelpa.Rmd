@@ -5,5 +5,8 @@ All chapters start with a first-level heading followed by your chapter title, li
 ## 100 m režģis Latvijā
 
 
+### Stratificēšana ģeoprocesēšanas paralelizācijai {-}
+
+
 ## References rastri
 

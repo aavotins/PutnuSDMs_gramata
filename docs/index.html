@@ -23,7 +23,7 @@
 <meta name="author" content="Andris Avotiņš" />
 
 
-<meta name="date" content="2024-10-25" />
+<meta name="date" content="2024-10-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -193,7 +193,10 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3" data-path="Chapter2.html"><a href="Chapter2.html"><i class="fa fa-check"></i><b>3</b> Ar modeļiem aptveramā (analīzes) telpa un standartizācijas faili</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="Chapter2.html"><a href="Chapter2.html#m-režģis-latvijā"><i class="fa fa-check"></i><b>3.1</b> 100 m režģis Latvijā</a></li>
+<li class="chapter" data-level="3.1" data-path="Chapter2.html"><a href="Chapter2.html#m-režģis-latvijā"><i class="fa fa-check"></i><b>3.1</b> 100 m režģis Latvijā</a>
+<ul>
+<li class="chapter" data-level="" data-path="Chapter2.html"><a href="Chapter2.html#stratificēšana-ģeoprocesēšanas-paralelizācijai"><i class="fa fa-check"></i>Stratificēšana ģeoprocesēšanas paralelizācijai</a></li>
+</ul></li>
 <li class="chapter" data-level="3.2" data-path="Chapter2.html"><a href="Chapter2.html#references-rastri"><i class="fa fa-check"></i><b>3.2</b> References rastri</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="Chapter3.html"><a href="Chapter3.html"><i class="fa fa-check"></i><b>4</b> Ievades ģeodati</a>
@@ -381,7 +384,7 @@ div.csl-indent {
 <div id="header">
 <h1 class="title">Putnu sugu izplatības modelēšana biodaudzveidības aizsardzībai: materiāli reproducēšanai</h1>
 <p class="author"><em>Andris Avotiņš</em></p>
-<p class="date"><em>2024-10-25</em></p>
+<p class="date"><em>2024-10-26</em></p>
 </div>
 <div id="par-šo-materiālu" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">1</span> Par šo materiālu<a href="index.html#par-šo-materiālu" class="anchor-section" aria-label="Anchor link to header"></a></h1>
@@ -393,13 +396,13 @@ div.csl-indent {
 <ul>
 <li><p><em>iepazīstināšana ar R vai citu programmēšanas valodu</em>. Gluži pretēji - lietderīgākais tas būs personām ar izpratni komandu rindu lietošanā. Tomēr informatīvs par izmantotajām pieejām tas būs jebkuram;</p></li>
 <li><p><em>pamācība ģeoprocesēšanā</em>. Šajā materiāla ir apkopotas tās pieejas, kuras tā izstrādes brīdī autoru kolektīvas ir zināmas kā efektīvākās (apstrādei nepieciešamā laika, operatīvās atmiņas un cietā diska apjoma, izpildes garantiju un uzticamības ziņā), bet noteikti nav vienīgās;</p></li>
-<li><p>sugu izplatības (dzīvotņu piemērotības, sastopamības, skaita vai tml.) <em>modelēšanas rokasgrāmata</em>. Šis materiāls apraksta darba gaitu un pieņemtos datu analīzes lēmumus, izstrādājot produktu, kas iespējami vienkāršiem un ātriem līdzekļiem vienotā darba plūsmā ļauj iegūt informāciju sugu un biotopu aizsardzības plānošanai. Tātad, rezultātus ir paredzēts vērtēt kopumā, nevis individuālu vietu individuālām sugām izšķirtspējā.</p></li>
+<li><p>sugu izplatības (dzīvotņu piemērotības, sastopamības, skaita vai tml.) <em>modelēšanas rokasgrāmata</em>. Šis materiāls apraksta darba gaitu un pieņemtos datu analīzes lēmumus, izstrādājot produktu, kas iespējami vienkāršiem un ātriem līdzekļiem vienotā darba plūsmā ļauj iegūt informāciju sugu un biotopu aizsardzības plānošanai. Tātad, eksistē dažādas modelešēnas metodes un to parametrizācijas un vēl vairāk - pieejas, kuras gadījumu no gadījuma var būt piemērotākas sugu izplatības modelēšanai, tomēr šeit uzturēta vienota plūsma un iespējami unificēta pieeja. Tas arī nozīmē, ka šeit iegūtos rezultātus primāri ir paredzēts vērtēt kopumā, nevis individuālu vietu individuālām sugām izšķirtspējā, jo sevišķi, domājot par vietas aizņemtību, tomēr tie siendz nozīmīgu pamatu šādu un līdzīgu varbūtību risināšanai.</p></li>
 <li><p><em>copy/paste gatavs produkts</em>. Lai gan komandu rindu lietošana un publiskošana ir ar tendenci būt šiem mērķiem paredzētai, situācijā, kad darbam izmantoti liela apjoma un vismaz daļēji - ierobežotas pieejamības dati, tas gluži vienkārši nav iespējams. Tas, kas iztrūkst (ir jānodrošina katrai šo materiaālu lietojošai personai personīgi) ir precīzi ceļi uz failiem - tos koriģējot, uzdevumi ir atkārtojami un rezultāti - replicējami.</p></li>
 </ul>
 </div>
 <div id="kas-ir-šis-materiāls-un-kā-to-lietot" class="section level2 hasAnchor" number="1.2">
 <h2><span class="header-section-number">1.2</span> Kas ir šis materiāls un kā to lietot?<a href="index.html#kas-ir-šis-materiāls-un-kā-to-lietot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Šis materiāls ir sagatavots, lai sniegtu reproducējamu darba gaitu, aprakstot pieņemtos lēmumus un ieviestos risinājumus putnu sugu izplatības (dzīvotņu piemērotības) modelēšanai biodaudzveidības aizsardzības plānošanai. Mazākā mērā arī rezultātu demonstrēšanai.</p>
+<p>Šis materiāls ir sagatavots, lai sniegtu reproducējamu darba gaitu, aprakstot pieņemtos lēmumus un ieviestos risinājumus putnu sugu izplatības (dzīvotņu piemērotības) modelēšanai biodaudzveidības aizsardzības plānošanai. Mazākā mērā arī rezultātu demonstrēšanai un to pieejamības nodrošināšanai.</p>
 <p>Lielākoties šis materiāls sastāv no:</p>
 <ul>
 <li><p><em>paskaidrojošā teksta</em>, kas ir atpazīstams kā teksts;</p></li>
@@ -417,13 +420,14 @@ div.csl-indent {
 <li><p><em>grafikām</em> - dažādām diagrammām, kas raksturo darba plūsmu vai datu īpašības, bet lielākoties, kartēm;</p></li>
 <li><p><em>saitēm uz citiem resursiem</em>, jo sevišķi uz augstāka līmeņa produktiem un rezultātiem, kas radīti projekta ietvaros, bet arī ievades datiem, ja tie ir publiski pieejami. Rezultāti ir paredzēti izmantošanai praksē.</p></li>
 </ul>
+<p>Saprāta robežās, materiālā ir raksturotas visas izmantotās datu kopas un sniegti to metadati, kas attiecas uz reproducējamības nodrošināšanu. Tā kā ne visas datu kopas ir brīvi pieejamas, tās pašas par sevi nav publiskotas, tomēr visos gadījumos ir sniegta informācija par to ieguvi šī projekta izstrādei.</p>
 </div>
 <div id="satura-izklāsts-orientācijai" class="section level2 hasAnchor" number="1.3">
 <h2><span class="header-section-number">1.3</span> Satura izklāsts (orientācijai)<a href="index.html#satura-izklāsts-orientācijai" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Vispārīgā darba un informācijas plūsma projektā ir ilustrēta sekojošajā attēlā <a href="index.html#fig:General-workflow">1.1</a>. Tā ir izmantota par pamatu šī materiāla dalījumam nodaļās (nosauktas un īsi raksturotas zemāk), kuru nosaukumi vispārīgi sakrīt ar uzdevumiem (etapiem) darba plūsmas vizualizācijā.</p>
 <div class="figure"><span style="display:block;" id="fig:General-workflow"></span>
-<div class="grViz html-widget html-fill-item" id="htmlwidget-8fdfd9eb78d8d1c3f19c" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-8fdfd9eb78d8d1c3f19c">{"x":{"diagram":"digraph flowchart {\n\n  # node type 2: Līmeņi\n  node [fontname = Helvetica, shape = none,style=none,fontface=bold,fontsize=12];{\n    node [label=\"1. solis: Sagatavošanās\"]; step0;\n    node [label=\"2. solis: Ievades informācija\"]; step1;\n    node [label=\"3. solis: Ekoģeogrāfiskie mainīgie\"]; step2;\n    node [label=\"4. solis: Modelēšana\"]; step3;\n    node [label=\"5. solis: Prioritizēšana\"]; step4;\n  }\n  \n  \n  # node type 1: Vidējais\n  node [fontname = Helvetica, shape = rectangle,style=rounded,fontcolor=black]; {\n    node [label=\"Analīzes telpa\"]; vidus1;\n    node [label=\"Ievades \nģeodati\"]; vidus2;\n    node [label=\"Ekoģeogrāfiskie \nmainīgie\"]; vidus3;\n    node [label=\"Sugu izplatības \nmodelēšna\"]; vidus4;\n    node [label=\"Vietu prioritizēšana \naizsardzībai\"]; vidus5;\n  }\n\n  # node type 5: Kreisais \n  node [fontname = Helvetica, shape = rectangle,style=rounded,fontcolor=black,fontsize=12];{\n    node [label=\"*Dynamic World* izpēte\"]; DWexp;\n    }\n\n\n\n  # node type 3: Labais\n  node [fontname = Helvetica, shape = rectangle];{\n    node [label=\"Sugu saraksts \nun apraksti\"]; labais1;\n    node [label=\"Novērojumu atlase\"]; labais2;\n  }\n\n  # node type 4: Pecapstrade\n  node [fontname = Helvetica, shape = rectangle];{\n    node [label=\"Modeļu pēcapstrāde\"]; pec1;\n  }\n\n  \n  # specify which nodes are of the same \"rank\" so that they\"ll be drawn at the same level\n      {rank = same; step0 vidus1 labais1}\n      {rank = same; step1 DWexp vidus2 labais2}\n      {rank = same; step2 vidus3}\n      {rank = same; step3 vidus4 pec1}\n      {rank = same; step4 vidus5}\n  \n  # edge definitions with the node IDs\n  edge[tailclip = true, headclip = true,color=white];\n  step0 -> step1\n  step1 -> step2\n  step2 -> step3\n  step3->step4\n\n  edge[tailclip = true, headclip = true,color=black];\n  vidus1 -> vidus2\n  vidus2 -> vidus3\n  vidus3 -> vidus4\n  vidus4 -> vidus5\n  \n  vidus1 -> labais2\n  vidus1 -> DWexp\n  DWexp -> vidus2\n  DWexp -> labais2\n\n  labais1 -> labais2\n  labais2 -> vidus3\n  \n  labais1 -> vidus3\n  labais1 -> vidus5\n  labais1 -> vidus4\n  labais2 -> vidus4\n  vidus1 -> vidus3\n  \n  vidus4 -> pec1\n  vidus5 -> pec1\n  pec1 -> vidus5\n  }\n\n  ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-a4f52cd2158f4c35b507" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-a4f52cd2158f4c35b507">{"x":{"diagram":"digraph flowchart {\n\n  # node type 2: Līmeņi\n  node [fontname = Helvetica, shape = none,style=none,fontface=bold,fontsize=12];{\n    node [label=\"1. solis: Sagatavošanās\"]; step0;\n    node [label=\"2. solis: Ievades informācija\"]; step1;\n    node [label=\"3. solis: Ekoģeogrāfiskie mainīgie\"]; step2;\n    node [label=\"4. solis: Modelēšana\"]; step3;\n    node [label=\"5. solis: Prioritizēšana\"]; step4;\n  }\n  \n  \n  # node type 1: Vidējais\n  node [fontname = Helvetica, shape = rectangle,style=rounded,fontcolor=black]; {\n    node [label=\"Analīzes telpa\"]; vidus1;\n    node [label=\"Ievades \nģeodati\"]; vidus2;\n    node [label=\"Ekoģeogrāfiskie \nmainīgie\"]; vidus3;\n    node [label=\"Sugu izplatības \nmodelēšna\"]; vidus4;\n    node [label=\"Vietu prioritizēšana \naizsardzībai\"]; vidus5;\n  }\n\n  # node type 5: Kreisais \n  node [fontname = Helvetica, shape = rectangle,style=rounded,fontcolor=black,fontsize=12];{\n    node [label=\"*Dynamic World* izpēte\"]; DWexp;\n    }\n\n\n\n  # node type 3: Labais\n  node [fontname = Helvetica, shape = rectangle];{\n    node [label=\"Sugu saraksts \nun apraksti\"]; labais1;\n    node [label=\"Novērojumu atlase\"]; labais2;\n  }\n\n  # node type 4: Pecapstrade\n  node [fontname = Helvetica, shape = rectangle];{\n    node [label=\"Modeļu pēcapstrāde\"]; pec1;\n  }\n\n  \n  # specify which nodes are of the same \"rank\" so that they\"ll be drawn at the same level\n      {rank = same; step0 vidus1 labais1}\n      {rank = same; step1 DWexp vidus2 labais2}\n      {rank = same; step2 vidus3}\n      {rank = same; step3 vidus4 pec1}\n      {rank = same; step4 vidus5}\n  \n  # edge definitions with the node IDs\n  edge[tailclip = true, headclip = true,color=white];\n  step0 -> step1\n  step1 -> step2\n  step2 -> step3\n  step3->step4\n\n  edge[tailclip = true, headclip = true,color=black];\n  vidus1 -> vidus2\n  vidus2 -> vidus3\n  vidus3 -> vidus4\n  vidus4 -> vidus5\n  \n  vidus1 -> labais2\n  vidus1 -> DWexp\n  DWexp -> vidus2\n  DWexp -> labais2\n\n  labais1 -> labais2\n  labais2 -> vidus3\n  \n  labais1 -> vidus3\n  labais1 -> vidus5\n  labais1 -> vidus4\n  labais2 -> vidus4\n  vidus1 -> vidus3\n  \n  vidus4 -> pec1\n  vidus5 -> pec1\n  pec1 -> vidus5\n  }\n\n  ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figure 1.1: Darba plūsma un saistība starp šī dokumenta nodaļām
 </p>
