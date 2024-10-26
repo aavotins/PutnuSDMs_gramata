@@ -30,6 +30,7 @@ adm_ter=read_sf("./Administrativas_teritorijas_2021.shp")
 # režģis
 tikls100=read_sf("./grid_lv_100.gpkg",layer="grid_lv_100")
 tikls100$yes=1
+tikls100=st_transform(tikls100,crs=3059)
 tikls100_sauszeme=tikls100[adm_ter,,]
 st_write_parquet(tikls100_sauszeme,"./tikls100_sauzeme.parquet")
 
@@ -75,19 +76,42 @@ Dažādu ainavas metriku aprēķināšanai sugu ligzdošanas iecirkņu un tiem a
 ```{r, eval=FALSE}
 if(!require(sf)) {install.packages("sf"); require(sf)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
-if(!require(arrow)) {install.packages("arrow"); require(arrow)}
 if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
 
 # Nepieciešamais slānis
-tikls100=st_read_parquet("./tikls100_sauzeme.parquet")
+rezgis=st_read_parquet("./tikls100_sauzeme.parquet")
 
 # Centra koordinātes
+rezgis$X=st_coordinates(st_centroid(rezgis))[,1]
+rezgis$Y=st_coordinates(st_centroid(rezgis))[,2]
+st_write_parquet(rezgis,"./tikls100_sauzeme.parquet")
 
 
 # Punktu ģeometrijas
+karsu_lapas=levels(factor(rezgis$tks50km))
+rc=data.frame(rezgis) %>% 
+  dplyr::select(-geom) %>% 
+  st_as_sf(coords=c("X","Y"),crs=3059,remove=FALSE)
+st_write_parquet(rc,"./pts100_sauzeme.parquet")
 
 
 # Buferēšana un saglabāšana
+for(i in seq_along(karsu_lapas)){
+  punkti=rc %>% filter(tks50km == lapa)
+  
+  rcbuff500=st_buffer(punkti,dist=500)
+  st_write_parquet(rcbuff500,paste0("./lapas/pts100_r500_",lapa,".parquet"))
+  
+  rcbuff1250=st_buffer(punkti,dist=1250)
+  st_write_parquet(rcbuff1250,paste0("./lapas/pts100_r1250_",lapa,".parquet"))
+  
+  rcbuff3000=st_buffer(punkti,dist=3000)
+  st_write_parquet(rcbuff3000,paste0("./lapas/pts100_r3000_",lapa,".parquet"))
+  
+  rcbuff10000=st_buffer(punkti,dist=10000)
+  st_write_parquet(rcbuff10000,paste0("./lapas/pts100_r10000_",lapa,".parquet"))
+}
+
 
 ```
 

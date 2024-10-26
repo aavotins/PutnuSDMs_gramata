@@ -406,14 +406,15 @@ div.csl-indent {
 <span id="cb2-11"><a href="Chapter2.html#cb2-11" tabindex="-1"></a><span class="co"># režģis</span></span>
 <span id="cb2-12"><a href="Chapter2.html#cb2-12" tabindex="-1"></a>tikls100<span class="ot">=</span><span class="fu">read_sf</span>(<span class="st">&quot;./grid_lv_100.gpkg&quot;</span>,<span class="at">layer=</span><span class="st">&quot;grid_lv_100&quot;</span>)</span>
 <span id="cb2-13"><a href="Chapter2.html#cb2-13" tabindex="-1"></a>tikls100<span class="sc">$</span>yes<span class="ot">=</span><span class="dv">1</span></span>
-<span id="cb2-14"><a href="Chapter2.html#cb2-14" tabindex="-1"></a>tikls100_sauszeme<span class="ot">=</span>tikls100[adm_ter,,]</span>
-<span id="cb2-15"><a href="Chapter2.html#cb2-15" tabindex="-1"></a><span class="fu">st_write_parquet</span>(tikls100_sauszeme,<span class="st">&quot;./tikls100_sauzeme.parquet&quot;</span>)</span>
-<span id="cb2-16"><a href="Chapter2.html#cb2-16" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="Chapter2.html#cb2-17" tabindex="-1"></a><span class="co"># apvienošana</span></span>
-<span id="cb2-18"><a href="Chapter2.html#cb2-18" tabindex="-1"></a>tikls100_apvienots<span class="ot">=</span>tikls100_sauszeme <span class="sc">%&gt;%</span> </span>
-<span id="cb2-19"><a href="Chapter2.html#cb2-19" tabindex="-1"></a>  <span class="fu">group_by</span>(yes) <span class="sc">%&gt;%</span> </span>
-<span id="cb2-20"><a href="Chapter2.html#cb2-20" tabindex="-1"></a>  <span class="fu">summarise</span>()</span>
-<span id="cb2-21"><a href="Chapter2.html#cb2-21" tabindex="-1"></a><span class="fu">st_write</span>(tikls100_apvienots,<span class="st">&quot;./tikls100_apvienots.shp&quot;</span>)</span></code></pre></div>
+<span id="cb2-14"><a href="Chapter2.html#cb2-14" tabindex="-1"></a>tikls100<span class="ot">=</span><span class="fu">st_transform</span>(tikls100,<span class="at">crs=</span><span class="dv">3059</span>)</span>
+<span id="cb2-15"><a href="Chapter2.html#cb2-15" tabindex="-1"></a>tikls100_sauszeme<span class="ot">=</span>tikls100[adm_ter,,]</span>
+<span id="cb2-16"><a href="Chapter2.html#cb2-16" tabindex="-1"></a><span class="fu">st_write_parquet</span>(tikls100_sauszeme,<span class="st">&quot;./tikls100_sauzeme.parquet&quot;</span>)</span>
+<span id="cb2-17"><a href="Chapter2.html#cb2-17" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="Chapter2.html#cb2-18" tabindex="-1"></a><span class="co"># apvienošana</span></span>
+<span id="cb2-19"><a href="Chapter2.html#cb2-19" tabindex="-1"></a>tikls100_apvienots<span class="ot">=</span>tikls100_sauszeme <span class="sc">%&gt;%</span> </span>
+<span id="cb2-20"><a href="Chapter2.html#cb2-20" tabindex="-1"></a>  <span class="fu">group_by</span>(yes) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-21"><a href="Chapter2.html#cb2-21" tabindex="-1"></a>  <span class="fu">summarise</span>()</span>
+<span id="cb2-22"><a href="Chapter2.html#cb2-22" tabindex="-1"></a><span class="fu">st_write</span>(tikls100_apvienots,<span class="st">&quot;./tikls100_apvienots.shp&quot;</span>)</span></code></pre></div>
 <div id="stratificēšana-ģeoprocesēšanas-paralelizācijai" class="section level3 hasAnchor" number="3.1.1">
 <h3><span class="header-section-number">3.1.1</span> Stratificēšana ģeoprocesēšanas paralelizācijai<a href="Chapter2.html#stratificēšana-ģeoprocesēšanas-paralelizācijai" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Lai atvieglotu un paātrinātu ģeoprocesēšanu, analīzes telpu ir nepieciešams sadalīt mazākās daļās. Tam izmantots Envirotech izplatītajā GIS_Latvia_10.2 ģeodatubāzē pieejamais 1993. gada topogrāfisko karšu sistēmas M:50000 rāmis.</p>
@@ -441,19 +442,41 @@ div.csl-indent {
 <p>Dažādu ainavas metriku aprēķināšanai sugu ligzdošanas iecirkņu un tiem atbilstošo ainavu mērogos, sagatavots 100 m režģa centra punktu slānis un, ik TKS karšu lapai atsevišķā failā, atbilstoši buferētu laukumu slāņi.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="Chapter2.html#cb4-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
 <span id="cb4-2"><a href="Chapter2.html#cb4-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
-<span id="cb4-3"><a href="Chapter2.html#cb4-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(arrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;arrow&quot;</span>); <span class="fu">require</span>(arrow)}</span>
-<span id="cb4-4"><a href="Chapter2.html#cb4-4" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sfarrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;sfarrow&quot;</span>); <span class="fu">require</span>(sfarrow)}</span>
-<span id="cb4-5"><a href="Chapter2.html#cb4-5" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="Chapter2.html#cb4-6" tabindex="-1"></a><span class="co"># Nepieciešamais slānis</span></span>
-<span id="cb4-7"><a href="Chapter2.html#cb4-7" tabindex="-1"></a>tikls100<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./tikls100_sauzeme.parquet&quot;</span>)</span>
-<span id="cb4-8"><a href="Chapter2.html#cb4-8" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="Chapter2.html#cb4-9" tabindex="-1"></a><span class="co"># Centra koordinātes</span></span>
-<span id="cb4-10"><a href="Chapter2.html#cb4-10" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="Chapter2.html#cb4-11" tabindex="-1"></a></span>
-<span id="cb4-12"><a href="Chapter2.html#cb4-12" tabindex="-1"></a><span class="co"># Punktu ģeometrijas</span></span>
+<span id="cb4-3"><a href="Chapter2.html#cb4-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sfarrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;sfarrow&quot;</span>); <span class="fu">require</span>(sfarrow)}</span>
+<span id="cb4-4"><a href="Chapter2.html#cb4-4" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="Chapter2.html#cb4-5" tabindex="-1"></a><span class="co"># Nepieciešamais slānis</span></span>
+<span id="cb4-6"><a href="Chapter2.html#cb4-6" tabindex="-1"></a>rezgis<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./tikls100_sauzeme.parquet&quot;</span>)</span>
+<span id="cb4-7"><a href="Chapter2.html#cb4-7" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="Chapter2.html#cb4-8" tabindex="-1"></a><span class="co"># Centra koordinātes</span></span>
+<span id="cb4-9"><a href="Chapter2.html#cb4-9" tabindex="-1"></a>rezgis<span class="sc">$</span>X<span class="ot">=</span><span class="fu">st_coordinates</span>(<span class="fu">st_centroid</span>(rezgis))[,<span class="dv">1</span>]</span>
+<span id="cb4-10"><a href="Chapter2.html#cb4-10" tabindex="-1"></a>rezgis<span class="sc">$</span>Y<span class="ot">=</span><span class="fu">st_coordinates</span>(<span class="fu">st_centroid</span>(rezgis))[,<span class="dv">2</span>]</span>
+<span id="cb4-11"><a href="Chapter2.html#cb4-11" tabindex="-1"></a><span class="fu">st_write_parquet</span>(rezgis,<span class="st">&quot;./tikls100_sauzeme.parquet&quot;</span>)</span>
+<span id="cb4-12"><a href="Chapter2.html#cb4-12" tabindex="-1"></a></span>
 <span id="cb4-13"><a href="Chapter2.html#cb4-13" tabindex="-1"></a></span>
-<span id="cb4-14"><a href="Chapter2.html#cb4-14" tabindex="-1"></a></span>
-<span id="cb4-15"><a href="Chapter2.html#cb4-15" tabindex="-1"></a><span class="co"># Buferēšana un saglabāšana</span></span></code></pre></div>
+<span id="cb4-14"><a href="Chapter2.html#cb4-14" tabindex="-1"></a><span class="co"># Punktu ģeometrijas</span></span>
+<span id="cb4-15"><a href="Chapter2.html#cb4-15" tabindex="-1"></a>karsu_lapas<span class="ot">=</span><span class="fu">levels</span>(<span class="fu">factor</span>(rezgis<span class="sc">$</span>tks50km))</span>
+<span id="cb4-16"><a href="Chapter2.html#cb4-16" tabindex="-1"></a>rc<span class="ot">=</span><span class="fu">data.frame</span>(rezgis) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-17"><a href="Chapter2.html#cb4-17" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>geom) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-18"><a href="Chapter2.html#cb4-18" tabindex="-1"></a>  <span class="fu">st_as_sf</span>(<span class="at">coords=</span><span class="fu">c</span>(<span class="st">&quot;X&quot;</span>,<span class="st">&quot;Y&quot;</span>),<span class="at">crs=</span><span class="dv">3059</span>,<span class="at">remove=</span><span class="cn">FALSE</span>)</span>
+<span id="cb4-19"><a href="Chapter2.html#cb4-19" tabindex="-1"></a><span class="fu">st_write_parquet</span>(rc,<span class="st">&quot;./pts100_sauzeme.parquet&quot;</span>)</span>
+<span id="cb4-20"><a href="Chapter2.html#cb4-20" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="Chapter2.html#cb4-21" tabindex="-1"></a></span>
+<span id="cb4-22"><a href="Chapter2.html#cb4-22" tabindex="-1"></a><span class="co"># Buferēšana un saglabāšana</span></span>
+<span id="cb4-23"><a href="Chapter2.html#cb4-23" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_along</span>(karsu_lapas)){</span>
+<span id="cb4-24"><a href="Chapter2.html#cb4-24" tabindex="-1"></a>  punkti<span class="ot">=</span>rc <span class="sc">%&gt;%</span> <span class="fu">filter</span>(tks50km <span class="sc">==</span> lapa)</span>
+<span id="cb4-25"><a href="Chapter2.html#cb4-25" tabindex="-1"></a>  </span>
+<span id="cb4-26"><a href="Chapter2.html#cb4-26" tabindex="-1"></a>  rcbuff500<span class="ot">=</span><span class="fu">st_buffer</span>(punkti,<span class="at">dist=</span><span class="dv">500</span>)</span>
+<span id="cb4-27"><a href="Chapter2.html#cb4-27" tabindex="-1"></a>  <span class="fu">st_write_parquet</span>(rcbuff500,<span class="fu">paste0</span>(<span class="st">&quot;./lapas/pts100_r500_&quot;</span>,lapa,<span class="st">&quot;.parquet&quot;</span>))</span>
+<span id="cb4-28"><a href="Chapter2.html#cb4-28" tabindex="-1"></a>  </span>
+<span id="cb4-29"><a href="Chapter2.html#cb4-29" tabindex="-1"></a>  rcbuff1250<span class="ot">=</span><span class="fu">st_buffer</span>(punkti,<span class="at">dist=</span><span class="dv">1250</span>)</span>
+<span id="cb4-30"><a href="Chapter2.html#cb4-30" tabindex="-1"></a>  <span class="fu">st_write_parquet</span>(rcbuff1250,<span class="fu">paste0</span>(<span class="st">&quot;./lapas/pts100_r1250_&quot;</span>,lapa,<span class="st">&quot;.parquet&quot;</span>))</span>
+<span id="cb4-31"><a href="Chapter2.html#cb4-31" tabindex="-1"></a>  </span>
+<span id="cb4-32"><a href="Chapter2.html#cb4-32" tabindex="-1"></a>  rcbuff3000<span class="ot">=</span><span class="fu">st_buffer</span>(punkti,<span class="at">dist=</span><span class="dv">3000</span>)</span>
+<span id="cb4-33"><a href="Chapter2.html#cb4-33" tabindex="-1"></a>  <span class="fu">st_write_parquet</span>(rcbuff3000,<span class="fu">paste0</span>(<span class="st">&quot;./lapas/pts100_r3000_&quot;</span>,lapa,<span class="st">&quot;.parquet&quot;</span>))</span>
+<span id="cb4-34"><a href="Chapter2.html#cb4-34" tabindex="-1"></a>  </span>
+<span id="cb4-35"><a href="Chapter2.html#cb4-35" tabindex="-1"></a>  rcbuff10000<span class="ot">=</span><span class="fu">st_buffer</span>(punkti,<span class="at">dist=</span><span class="dv">10000</span>)</span>
+<span id="cb4-36"><a href="Chapter2.html#cb4-36" tabindex="-1"></a>  <span class="fu">st_write_parquet</span>(rcbuff10000,<span class="fu">paste0</span>(<span class="st">&quot;./lapas/pts100_r10000_&quot;</span>,lapa,<span class="st">&quot;.parquet&quot;</span>))</span>
+<span id="cb4-37"><a href="Chapter2.html#cb4-37" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </div>
 <div id="references-rastri" class="section level2 hasAnchor" number="3.2">
