@@ -1635,7 +1635,7 @@ Dati par putnu sugu populāicju lielumiem un to pārmaiņām Eiropas Savienībā
 
 - `Valsts`, kurā raksturota valsts, kuras dati populācijas pārmaiņu raksturošanai;
 
-- `Parmainas_mult`, kurā ievietots aprēķinātais eksponenciālo populāicja spārmaiņu raksturojums. Aprēķiniem izmantota formula $\frac{(100+\Delta)}{100}^\frac{1}{Y},$ kur $\Delta$ ir populācijas pārmaiņu apjoms un $Y$ ir pārmaiņu ilgums gados.
+- `Parmainas_mult`, kurā ievietots aprēķinātais eksponenciālo populāicja spārmaiņu raksturojums. Aprēķiniem izmantota formula $(\frac{100+\Delta}{100})^\frac{1}{Y},$ kur $\Delta$ ir populācijas pārmaiņu apjoms un $Y$ ir pārmaiņu ilgums gados.
 
 ### Mūža reproduktīvais ieguldījums {-}
 
