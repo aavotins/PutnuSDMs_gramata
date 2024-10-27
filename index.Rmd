@@ -181,7 +181,7 @@ Katrai no šī materiāla nodaļām (tātad, uzdevumiem darba plūsmā) būt vai
 
 7. [Sugu izplatības (dzīvotņu piemērotības) modeļi](#Chapter7) (A. Avotiņš, A. Auniņš)
 
-8. [Modeļu pēcapstrāde](#Chapter8) (A. Avotiņš, I. Vinogradovs, A. Auniņš)
+8. [Modeļu pēcapstrāde](#Chapter8) (A. Avotiņš)
 
 9. [Vietu prioritizēšana aizsardzībai](#Chapter9) (A. Avotiņš, I. Vinogradovs, A. Auniņš)
 
