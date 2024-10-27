@@ -8,60 +8,60 @@ All chapters start with a first-level heading followed by your chapter title, li
 
 ### Lauku atbalsts dienesta lauku informācija {#Chapter3.1.2}
 
-### LĢIA topogrāfiskā karte
+### LĢIA topogrāfiskā karte {#Chapter3.1.3}
 
-### MKIS
+### MKIS {#Chapter3.1.4}
 
-### LVM atvērtie dati
+### LVM atvērtie dati {#Chapter3.1.5}
 
-### Corine Land Cover
+### Corine Land Cover {#Chapter3.1.6}
 
-### Sentinel-2
+### Sentinel-2 {#Chapter3.1.7}
 
-### *Dynamic World*
+### *Dynamic World* {#Chapter3.1.8}
 
-### *Global Forest Watch*
+### *Global Forest Watch* {#Chapter3.1.9}
 
-### Palsar Tree cover
+### Palsar Tree cover {#Chapter3.1.10}
 
-### ERA-5 Land
-
-
-### Augsnes auglīgums
-
-### Digitālie reljefa modeļi
+### ERA-5 Land {#Chapter3.1.11}
 
 
-## Ievades produkti
+### Augsnes auglīgums {#Chapter3.1.12}
 
-### Reljefs
-
-### Klimats
-
-### Satelītindeksi
-
-### Augsne
+### Digitālie reljefa modeļi {#Chapter3.1.13}
 
 
-### Ainava
+## Ievades produkti {#Chapter3.2}
 
-### Ceļi
+### Reljefs {#Chapter3.2.1}
 
-### Eiklīda distances
+### Klimats {#Chapter3.2.2}
 
-### Malas
+### Satelītindeksi {#Chapter3.2.3}
 
-### Ūdeņi
-
-### Lauksaimniecībā izmantojamās zemes
-
-### Meži
+### Augsne {#Chapter3.2.4}
 
 
+### Ainava {#Chapter3.2.5}
 
-## Vides pārmaiņas
+### Ceļi {#Chapter3.2.6}
 
-### *Dynamic World*
+### Eiklīda distances {#Chapter3.2.7}
 
-### Koku vainagu segums no Global forest watch
+### Malas {#Chapter3.2.8}
+
+### Ūdeņi {#Chapter3.2.9}
+
+### Lauksaimniecībā izmantojamās zemes {#Chapter3.2.10}
+
+### Meži {#Chapter3.2.11}
+
+
+
+## Vides pārmaiņas {#Chapter3.3}
+
+### *Dynamic World* {#Chapter3.3.1}
+
+### Koku vainagu segums no Global forest watch {#Chapter3.3.2}
 

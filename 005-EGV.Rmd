@@ -17,7 +17,7 @@
 
 **EGV apraksts:**
 
-**Izveidošanas atkarības:**
+**Izveidošanas gaita un atkarības:**
 
 **Izveidošanas komandu rindas:**
 
