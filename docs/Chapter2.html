@@ -23,7 +23,7 @@
 <meta name="author" content="Andris Avotiņš" />
 
 
-<meta name="date" content="2024-10-26" />
+<meta name="date" content="2024-10-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -463,20 +463,21 @@ div.csl-indent {
 <span id="cb4-21"><a href="Chapter2.html#cb4-21" tabindex="-1"></a></span>
 <span id="cb4-22"><a href="Chapter2.html#cb4-22" tabindex="-1"></a><span class="co"># Buferēšana un saglabāšana</span></span>
 <span id="cb4-23"><a href="Chapter2.html#cb4-23" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_along</span>(karsu_lapas)){</span>
-<span id="cb4-24"><a href="Chapter2.html#cb4-24" tabindex="-1"></a>  punkti<span class="ot">=</span>rc <span class="sc">%&gt;%</span> <span class="fu">filter</span>(tks50km <span class="sc">==</span> lapa)</span>
-<span id="cb4-25"><a href="Chapter2.html#cb4-25" tabindex="-1"></a>  </span>
-<span id="cb4-26"><a href="Chapter2.html#cb4-26" tabindex="-1"></a>  rcbuff500<span class="ot">=</span><span class="fu">st_buffer</span>(punkti,<span class="at">dist=</span><span class="dv">500</span>)</span>
-<span id="cb4-27"><a href="Chapter2.html#cb4-27" tabindex="-1"></a>  <span class="fu">st_write_parquet</span>(rcbuff500,<span class="fu">paste0</span>(<span class="st">&quot;./lapas/pts100_r500_&quot;</span>,lapa,<span class="st">&quot;.parquet&quot;</span>))</span>
-<span id="cb4-28"><a href="Chapter2.html#cb4-28" tabindex="-1"></a>  </span>
-<span id="cb4-29"><a href="Chapter2.html#cb4-29" tabindex="-1"></a>  rcbuff1250<span class="ot">=</span><span class="fu">st_buffer</span>(punkti,<span class="at">dist=</span><span class="dv">1250</span>)</span>
-<span id="cb4-30"><a href="Chapter2.html#cb4-30" tabindex="-1"></a>  <span class="fu">st_write_parquet</span>(rcbuff1250,<span class="fu">paste0</span>(<span class="st">&quot;./lapas/pts100_r1250_&quot;</span>,lapa,<span class="st">&quot;.parquet&quot;</span>))</span>
-<span id="cb4-31"><a href="Chapter2.html#cb4-31" tabindex="-1"></a>  </span>
-<span id="cb4-32"><a href="Chapter2.html#cb4-32" tabindex="-1"></a>  rcbuff3000<span class="ot">=</span><span class="fu">st_buffer</span>(punkti,<span class="at">dist=</span><span class="dv">3000</span>)</span>
-<span id="cb4-33"><a href="Chapter2.html#cb4-33" tabindex="-1"></a>  <span class="fu">st_write_parquet</span>(rcbuff3000,<span class="fu">paste0</span>(<span class="st">&quot;./lapas/pts100_r3000_&quot;</span>,lapa,<span class="st">&quot;.parquet&quot;</span>))</span>
-<span id="cb4-34"><a href="Chapter2.html#cb4-34" tabindex="-1"></a>  </span>
-<span id="cb4-35"><a href="Chapter2.html#cb4-35" tabindex="-1"></a>  rcbuff10000<span class="ot">=</span><span class="fu">st_buffer</span>(punkti,<span class="at">dist=</span><span class="dv">10000</span>)</span>
-<span id="cb4-36"><a href="Chapter2.html#cb4-36" tabindex="-1"></a>  <span class="fu">st_write_parquet</span>(rcbuff10000,<span class="fu">paste0</span>(<span class="st">&quot;./lapas/pts100_r10000_&quot;</span>,lapa,<span class="st">&quot;.parquet&quot;</span>))</span>
-<span id="cb4-37"><a href="Chapter2.html#cb4-37" tabindex="-1"></a>}</span></code></pre></div>
+<span id="cb4-24"><a href="Chapter2.html#cb4-24" tabindex="-1"></a>  lapa<span class="ot">=</span>karsu_lapas[i]</span>
+<span id="cb4-25"><a href="Chapter2.html#cb4-25" tabindex="-1"></a>  punkti<span class="ot">=</span>rc <span class="sc">%&gt;%</span> <span class="fu">filter</span>(tks50km <span class="sc">==</span> lapa)</span>
+<span id="cb4-26"><a href="Chapter2.html#cb4-26" tabindex="-1"></a>  </span>
+<span id="cb4-27"><a href="Chapter2.html#cb4-27" tabindex="-1"></a>  rcbuff500<span class="ot">=</span><span class="fu">st_buffer</span>(punkti,<span class="at">dist=</span><span class="dv">500</span>)</span>
+<span id="cb4-28"><a href="Chapter2.html#cb4-28" tabindex="-1"></a>  <span class="fu">st_write_parquet</span>(rcbuff500,<span class="fu">paste0</span>(<span class="st">&quot;./lapas/pts100_r500_&quot;</span>,lapa,<span class="st">&quot;.parquet&quot;</span>))</span>
+<span id="cb4-29"><a href="Chapter2.html#cb4-29" tabindex="-1"></a>  </span>
+<span id="cb4-30"><a href="Chapter2.html#cb4-30" tabindex="-1"></a>  rcbuff1250<span class="ot">=</span><span class="fu">st_buffer</span>(punkti,<span class="at">dist=</span><span class="dv">1250</span>)</span>
+<span id="cb4-31"><a href="Chapter2.html#cb4-31" tabindex="-1"></a>  <span class="fu">st_write_parquet</span>(rcbuff1250,<span class="fu">paste0</span>(<span class="st">&quot;./lapas/pts100_r1250_&quot;</span>,lapa,<span class="st">&quot;.parquet&quot;</span>))</span>
+<span id="cb4-32"><a href="Chapter2.html#cb4-32" tabindex="-1"></a>  </span>
+<span id="cb4-33"><a href="Chapter2.html#cb4-33" tabindex="-1"></a>  rcbuff3000<span class="ot">=</span><span class="fu">st_buffer</span>(punkti,<span class="at">dist=</span><span class="dv">3000</span>)</span>
+<span id="cb4-34"><a href="Chapter2.html#cb4-34" tabindex="-1"></a>  <span class="fu">st_write_parquet</span>(rcbuff3000,<span class="fu">paste0</span>(<span class="st">&quot;./lapas/pts100_r3000_&quot;</span>,lapa,<span class="st">&quot;.parquet&quot;</span>))</span>
+<span id="cb4-35"><a href="Chapter2.html#cb4-35" tabindex="-1"></a>  </span>
+<span id="cb4-36"><a href="Chapter2.html#cb4-36" tabindex="-1"></a>  rcbuff10000<span class="ot">=</span><span class="fu">st_buffer</span>(punkti,<span class="at">dist=</span><span class="dv">10000</span>)</span>
+<span id="cb4-37"><a href="Chapter2.html#cb4-37" tabindex="-1"></a>  <span class="fu">st_write_parquet</span>(rcbuff10000,<span class="fu">paste0</span>(<span class="st">&quot;./lapas/pts100_r10000_&quot;</span>,lapa,<span class="st">&quot;.parquet&quot;</span>))</span>
+<span id="cb4-38"><a href="Chapter2.html#cb4-38" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </div>
 <div id="references-rastri" class="section level2 hasAnchor" number="3.2">
@@ -495,14 +496,16 @@ div.csl-indent {
 <span id="cb5-11"><a href="Chapter2.html#cb5-11" tabindex="-1"></a>adm_ter<span class="sc">$</span>yes<span class="ot">=</span><span class="dv">1</span></span>
 <span id="cb5-12"><a href="Chapter2.html#cb5-12" tabindex="-1"></a></span>
 <span id="cb5-13"><a href="Chapter2.html#cb5-13" tabindex="-1"></a><span class="co"># 10 m</span></span>
-<span id="cb5-14"><a href="Chapter2.html#cb5-14" tabindex="-1"></a>rastrs<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">rast</span>(<span class="at">xmin=</span><span class="dv">302800</span>,<span class="at">xmax=</span><span class="dv">772800</span>,<span class="at">ymin=</span><span class="dv">162900</span>,<span class="at">ymax=</span><span class="dv">448900</span>,<span class="at">resolution=</span><span class="dv">10</span>,<span class="at">crs=</span>b)</span>
-<span id="cb5-15"><a href="Chapter2.html#cb5-15" tabindex="-1"></a>rast_LV<span class="ot">=</span><span class="fu">rasterize</span>(<span class="fu">vect</span>(adm_ter),rastrs)</span>
-<span id="cb5-16"><a href="Chapter2.html#cb5-16" tabindex="-1"></a>terra<span class="sc">::</span><span class="fu">writeRaster</span>(rast_LV,<span class="st">&quot;./LV10m_10km.tif&quot;</span>)</span>
-<span id="cb5-17"><a href="Chapter2.html#cb5-17" tabindex="-1"></a></span>
-<span id="cb5-18"><a href="Chapter2.html#cb5-18" tabindex="-1"></a><span class="co"># 100 m</span></span>
-<span id="cb5-19"><a href="Chapter2.html#cb5-19" tabindex="-1"></a>rastrs100<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">rast</span>(<span class="at">xmin=</span><span class="dv">302800</span>,<span class="at">xmax=</span><span class="dv">772800</span>,<span class="at">ymin=</span><span class="dv">162900</span>,<span class="at">ymax=</span><span class="dv">448900</span>,<span class="at">resolution=</span><span class="dv">100</span>,<span class="at">crs=</span>b)</span>
-<span id="cb5-20"><a href="Chapter2.html#cb5-20" tabindex="-1"></a>rast_LV100<span class="ot">=</span><span class="fu">rasterize</span>(<span class="fu">vect</span>(adm_ter),rastrs100)</span>
-<span id="cb5-21"><a href="Chapter2.html#cb5-21" tabindex="-1"></a>terra<span class="sc">::</span><span class="fu">writeRaster</span>(rast_LV100,<span class="st">&quot;./LV100m_10km.tif&quot;</span>)</span></code></pre></div>
+<span id="cb5-14"><a href="Chapter2.html#cb5-14" tabindex="-1"></a>rastrs<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">rast</span>(<span class="at">xmin=</span><span class="dv">302800</span>,<span class="at">xmax=</span><span class="dv">772800</span>,<span class="at">ymin=</span><span class="dv">162900</span>,<span class="at">ymax=</span><span class="dv">448900</span>,</span>
+<span id="cb5-15"><a href="Chapter2.html#cb5-15" tabindex="-1"></a>                   <span class="at">resolution=</span><span class="dv">10</span>,<span class="at">crs=</span>b)</span>
+<span id="cb5-16"><a href="Chapter2.html#cb5-16" tabindex="-1"></a>rast_LV<span class="ot">=</span><span class="fu">rasterize</span>(<span class="fu">vect</span>(adm_ter),rastrs)</span>
+<span id="cb5-17"><a href="Chapter2.html#cb5-17" tabindex="-1"></a>terra<span class="sc">::</span><span class="fu">writeRaster</span>(rast_LV,<span class="st">&quot;./LV10m_10km.tif&quot;</span>)</span>
+<span id="cb5-18"><a href="Chapter2.html#cb5-18" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="Chapter2.html#cb5-19" tabindex="-1"></a><span class="co"># 100 m</span></span>
+<span id="cb5-20"><a href="Chapter2.html#cb5-20" tabindex="-1"></a>rastrs100<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">rast</span>(<span class="at">xmin=</span><span class="dv">302800</span>,<span class="at">xmax=</span><span class="dv">772800</span>,<span class="at">ymin=</span><span class="dv">162900</span>,<span class="at">ymax=</span><span class="dv">448900</span>,</span>
+<span id="cb5-21"><a href="Chapter2.html#cb5-21" tabindex="-1"></a>                      <span class="at">resolution=</span><span class="dv">100</span>,<span class="at">crs=</span>b)</span>
+<span id="cb5-22"><a href="Chapter2.html#cb5-22" tabindex="-1"></a>rast_LV100<span class="ot">=</span><span class="fu">rasterize</span>(<span class="fu">vect</span>(adm_ter),rastrs100)</span>
+<span id="cb5-23"><a href="Chapter2.html#cb5-23" tabindex="-1"></a>terra<span class="sc">::</span><span class="fu">writeRaster</span>(rast_LV100,<span class="st">&quot;./LV100m_10km.tif&quot;</span>)</span></code></pre></div>
 
 </div>
 </div>

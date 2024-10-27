@@ -99,6 +99,7 @@ st_write_parquet(rc,"./pts100_sauzeme.parquet")
 
 # Buferēšana un saglabāšana
 for(i in seq_along(karsu_lapas)){
+  lapa=karsu_lapas[i]
   punkti=rc %>% filter(tks50km == lapa)
   
   rcbuff500=st_buffer(punkti,dist=500)
@@ -137,12 +138,14 @@ adm_ter=read_sf("./Administrativas_teritorijas_2021.shp")
 adm_ter$yes=1
 
 # 10 m
-rastrs=terra::rast(xmin=302800,xmax=772800,ymin=162900,ymax=448900,resolution=10,crs=b)
+rastrs=terra::rast(xmin=302800,xmax=772800,ymin=162900,ymax=448900,
+                   resolution=10,crs=b)
 rast_LV=rasterize(vect(adm_ter),rastrs)
 terra::writeRaster(rast_LV,"./LV10m_10km.tif")
 
 # 100 m
-rastrs100=terra::rast(xmin=302800,xmax=772800,ymin=162900,ymax=448900,resolution=100,crs=b)
+rastrs100=terra::rast(xmin=302800,xmax=772800,ymin=162900,ymax=448900,
+                      resolution=100,crs=b)
 rast_LV100=rasterize(vect(adm_ter),rastrs100)
 terra::writeRaster(rast_LV100,"./LV100m_10km.tif")
 ```
