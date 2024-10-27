@@ -1,6 +1,6 @@
 # *Dynamic World* izpēte  {#Chapter4}
 
-All chapters start with a first-level heading followed by your chapter title, like the line above. There should be only one first-level heading (`#`) per .Rmd file.
+*Dynamic World* ir relatīvi nesens Zemes novērošanas sistēmu produkts, kurš klasificē zemes segumu un lietojumu deviņās kategorijās (0=water, 1=trees, 2=grass, 3=flooded_vegetation, 4=crops, 5=shrub_and_scrub, 6=built, 7=bare, 8=snow_and_ice), katram ESA Copernicus Sentinel-2 attēlam ar identificēto mākoņainību $\le35%$, pieļaujot filtrēšanu un dažādu agregāciju veidošanu [@DynWorld].
 
 ### Kopējie uzstādījumi analīžu veikšanai
 
