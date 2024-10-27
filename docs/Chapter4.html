@@ -239,8 +239,6 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="5" data-path="Chapter4.html"><a href="Chapter4.html"><i class="fa fa-check"></i><b>5</b> <em>Dynamic World</em> izpēte</a>
 <ul>
-<li class="chapter" data-level="5.0.1" data-path="Chapter4.html"><a href="Chapter4.html#kopējie-uzstādījumi-analīžu-veikšanai"><i class="fa fa-check"></i><b>5.0.1</b> Kopējie uzstādījumi analīžu veikšanai</a></li>
-<li class="chapter" data-level="5.0.2" data-path="Chapter4.html"><a href="Chapter4.html#dw-klases"><i class="fa fa-check"></i><b>5.0.2</b> DW klases</a></li>
 <li class="chapter" data-level="5.1" data-path="Chapter4.html"><a href="Chapter4.html#q0-dw-nosegums"><i class="fa fa-check"></i><b>5.1</b> Q0: DW nosegums</a></li>
 <li class="chapter" data-level="5.2" data-path="Chapter4.html"><a href="Chapter4.html#q1-lauksaimniecības-kultūras"><i class="fa fa-check"></i><b>5.2</b> Q1: Lauksaimniecības kultūras</a>
 <ul>
@@ -383,13 +381,104 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="Chapter4" class="section level1 hasAnchor" number="5">
 <h1><span class="header-section-number">5</span> <em>Dynamic World</em> izpēte<a href="Chapter4.html#Chapter4" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p><em>Dynamic World</em> ir relatīvi nesens Zemes novērošanas sistēmu produkts, kurš klasificē zemes segumu un lietojumu deviņās kategorijās (0=water, 1=trees, 2=grass, 3=flooded_vegetation, 4=crops, 5=shrub_and_scrub, 6=built, 7=bare, 8=snow_and_ice), katram ESA Copernicus Sentinel-2 attēlam ar identificēto mākoņainību <span class="math inline">\(\le35%\)</span>, pieļaujot filtrēšanu un dažādu agregāciju veidošanu <span class="citation">(<a href="#ref-DynWorld">Brown et al., 2022</a>)</span>.</p>
-<div id="kopējie-uzstādījumi-analīžu-veikšanai" class="section level3 hasAnchor" number="5.0.1">
-<h3><span class="header-section-number">5.0.1</span> Kopējie uzstādījumi analīžu veikšanai<a href="Chapter4.html#kopējie-uzstādījumi-analīžu-veikšanai" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-</div>
-<div id="dw-klases" class="section level3 hasAnchor" number="5.0.2">
-<h3><span class="header-section-number">5.0.2</span> DW klases<a href="Chapter4.html#dw-klases" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-</div>
+<p><em>Dynamic World</em> (DW) ir relatīvi nesens Zemes novērošanas sistēmu produkts, kurš klasificē zemes segumu un lietojumu (LULC) deviņās kategorijās (0=water, 1=trees, 2=grass, 3=flooded_vegetation, 4=crops, 5=shrub_and_scrub, 6=built, 7=bare, 8=snow_and_ice), katram ESA Copernicus Sentinel-2 attēlam ar identificēto mākoņainību <span class="math inline">\(\le35%\)</span>, pieļaujot filtrēšanu un dažādu agregāciju veidošanu <span class="citation">(<a href="#ref-DynWorld">Brown et al., 2022</a>)</span>. Salīdzinot ar dažādiem statiskākiem (produktu veidā sagatavotiem konkrētiem gadiem ar smagnēju projicēšanu citiem gadiem) un/vai konkrētu ekosistēmas daļu raksturošanai paredzētiem, piemēram <em>EU Crop Map</em> <span class="citation">(<a href="#ref-CropMap2022">Ghassemi et al., 2024</a>)</span> un <em>ELULC-10</em> <span class="citation">(<a href="#ref-ELULC10">Mirmazloumi et al., 2022</a>)</span>, DW neapšaubāmi ar lielākām sagaidāmajām kļūdām pie klašu (gēotelpiskajām) robežām, tomēr labāku telpisko (klasificēti ir visas izmantojamās satelītainas, nevis vadoties pēc kādas vidi atpazīstošas maskas) un temporālo pārklājumu (dinamiska un tuvu reāllaikam klasifikācijas pieejamība ik satelītainai, nevis atsevišķas projekcijas laikā). Dažādu nesen radīto augstas izšķirtspējas LULC klasifikatoru salīdzinājumos, piemēram, <span class="citation">(<a href="#ref-LULC10salidzinajums_Venter">Venter et al., 2022</a>)</span> un <span class="citation">(<a href="#ref-LULC10salidzinajums_Xu">Xu et al., 2024</a>)</span>, ir konstatētas dažādas atšķirības starp tiem, turklāt DW nav bijis uzskatāms par precīzāko, jo sevišķi spējā detektēt relatīvi šaurus līnijaveida objektus un saistībā ar neironu tīklos balstīto pieeju tieksmi pārspīlēt vertikāli strukturētās klases, tomēr tam ir augstākā temporālā pieejamība. Par šajos salīdzinājumos precīzāko uzskatāmajam <em>ESA WorldCover</em> brīvi pieejama ir informācijai tikai par 2020. un 2021. gadiem (<a href="https://collections.sentinel-hub.com/worldcover/" class="uri">https://collections.sentinel-hub.com/worldcover/</a>). Augstās temporālās pieejamības dēļ, izvēlēts DW, jo pat, ja klases nav vienmēr korekti atpazītas, ir vērts izpētīt spēju atpazīt pārmaiņas to sastopamībā.</p>
+<p>Tā kā šī projekta komandai nav zināmi izsekojami (caurspīdīgi, reproducējami) Latvijā veikti DW klasifikācijas un tās pārmaiņu uzticamības pētījumi, šī resursa izpēte veikta projekta ietvaros. Izpētei ir sekojoši <strong>mērķi</strong>:</p>
+<ol style="list-style-type: decimal">
+<li><p>noskaidrot DW izmantošanas iespējas LĢIA topogrāfiskās kartes aizstāšanai sugu izplatības modelēšanai;</p></li>
+<li><p>noskaidrot labāko sezonu (mēnešu griezumā) Latvijas ainavas (un tās pārmaiņu) raksturošanai dzīvnieku vairošanās un veģetācijas sezonā;</p></li>
+<li><p>iegūt informāciju par DW spēju raksturot ainavas pārmaiņas starp gadiem.</p></li>
+</ol>
+<p>Izpēti fokusējām dzīvnieku vairošanās sezonai, kuras plaši pārklājas ar veģetācijas sezonu, kurā ir sagaidāma augstākā klasifikatoru spēja sniegt informatīvu rezultātu. <strong>Sezonas sākums: aprīlis</strong>, jo:</p>
+<ul>
+<li><p>šis ir mēnesis, kurā daļa valsts teritorijas vēl var būt zem sniega segas, bet lielākajā teritorijas daļā tas jau būs nokusis;</p></li>
+<li><p>šajā mēnesī sākas lapu koku plaukšana, bet tikai sākas, tomēr visbiežāk jau visā valsts teritorijā;</p></li>
+<li><p>lakstaugu veģetācija būs sazaļojusi galvenokārt ziemājos, bet ne dabiskajā veģetācijā; protams, uz mēneša beigām dažādi mauriņi u. tml., bet tas vēl nebūs noticis mēneša sākumā;</p></li>
+<li><p>vajadzētu būt vēl saglabājušamies sniega kušanas ūdeņiem, ja tādi bija uzkrājušies;</p></li>
+</ul>
+<p><strong>Sezonas beigas: augusts</strong>, jo:</p>
+<ul>
+<li><p>tas labi sakrīt ar laiku, kad ligzdošanas un vairošanās sezona ir noslēgusies <em>vairumam</em> dzīvnieku sugu;</p></li>
+<li><p>sākas migrāciju sezona, kas gan ierosina, ka jūlijs varētu būt labāks beigu punkts, bet ir vērts pārbaudīt dažādas kombinācijas;</p></li>
+<li><p>intensīvi sākas rudens aršanas darbi, kas veido (t.sk. iznīcina) dzīvotnes nākošajai sezonai (pat, ja ietekmēta ziemošana, tās reproduktīvā vai teritoriju aizņemtības izpausme būs novērojama nākošajā sezonā); arī šis sliecas ierosināt, ka jūlijs būtu labāks beigu punkts, bet ir vērts pārbaudīt dažādas kombinācijas;</p></li>
+<li><p>šis mēnesis vēl ir svarīgs daudzām bezmugurkaulnieku sugām, to konstatēšanai;</p></li>
+</ul>
+<p><strong>Soļa garums analīzēm: 2-5 secīgi mēneši</strong>, jo</p>
+<ul>
+<li><p>tikai viena mēneša izmantošana nebūtu sevišķi laba doma, ja tas ir, piemēram, tikai viens aprīļa mēnesis, varētu būt problēmas ar jebkādu veģetāciju, bet vasaras mēnešos ar ūdeņainajām vietām utml.;</p></li>
+<li><p>secīgi, jo savādāk nav loģiski;</p></li>
+<li><p>pieci, jo periodā ir tikai pieci;</p></li>
+<li><p>kopējais kombināciju skaits sezonalitātes pārbaudēm sanāk desmit (turpmākajos apzīmējumos lietots pirmā un pēdējā mēneša trīs burtu saīsinājumu angļu valodā apvienojums bez atdalītājiem):</p>
+<ul>
+<li><p>apr-may;</p></li>
+<li><p>apr-may-jun;</p></li>
+<li><p>apr-may-jun-jul;</p></li>
+<li><p>apr-may-jun-jul-aug;</p></li>
+<li><p>may-jun;</p></li>
+<li><p>may-jun-jul;</p></li>
+<li><p>may-jun-jul-aug;</p></li>
+<li><p>jun-jul;</p></li>
+<li><p>jun-jul-aug;</p></li>
+<li><p>jul-aug</p></li>
+</ul></li>
+</ul>
+<p>Mērķa sasniegšanai ir izvirzāmi vairāki <strong>izpētes jautājumi</strong>, kuri ir risināti šīs nodaļas sekojošajās daļās:</p>
+<ol start="0" style="list-style-type: decimal">
+<li><p>Kuros gados un kādos griezumos DW slāņi nosedz visu Latviju, kāda ir datu multi-temporālā un telpiskā pieejamība?;</p></li>
+<li><p>Cik labi tiek atpazītas lauksaimniecības kultūras plašās grupās - nepieciešams, lai šo izmantotu par pamatu turpmākam darbam ainavas klasificēšanā par kultūrām, par kurām nav izpratnes, un vietām, par kurām nav pieejama reģistru informācija, raksturošanai;</p></li>
+<li><p>Kāda ir mežaudzes augstuma (atkarībā no valdošās koku sugas) saistība ar DW mežu/koku un krūmu klasēm - nepieciešama, lai veiktu ainavas klasifikāciju par vietām, kurām nav reģistru, izdalītu koku un krūmu pudurus;</p></li>
+<li><p>Kāds ir topogrāfiskās kartes ar mitrājiem saistāmo klašu sadalījums DW klasēs, kad ir labākā saistība ar vēlamo klasi (un kura tad tā būtu augstajiem purviem un ūdeņu veģetācijai) - nepieciešams gan ainavas, gan pārmaiņu raksturošanai;</p></li>
+<li><p>Kāda ir topogrāfiskās kartes karjeru un kūdras ieguves vietu, kā arī dažādu ceļu saistība ar DW klasēm - nepieciešams gan ainavas, gan pārmaiņu raksturošanai;</p></li>
+<li><p>Kāda ir izcirtuma izmēra (un formas) saistība ar DW klasēm - nepieciešams gan ainavas, gan pārmaiņu raksturošanai;</p></li>
+<li><p>Kāda DW klase tiek piešķirta aramzemēm, kuras pirms gada transformētas no zālājiem - nepieciešams ainavas pārmaiņām.</p></li>
+</ol>
+<p><strong>Kopējie uzstādījumi analīžu veikšanai</strong></p>
+<ul>
+<li><p>poligonu atlasei izmantojam ‘set.seed(0)’, lai nodrošinātu rezultātu reproducējamību;</p></li>
+<li><p>laika taupīšanai, ik analizei nejauši izlozējam 999 vai izmantojam visus pieejamos poligonus;</p></li>
+<li><p>ik analīzi veicam kā zonālo statistiku, aptverot visu pētāmo plankumu;</p></li>
+<li><p>DW ik periodam ir resamplēts sakritībai ar references 10 m šūnu un ietver tikai Latvijas teritoriju.</p></li>
+</ul>
+<p>DW ievades informācija - rastra slānis katrai sezonai katrā gadā - sagtavots Google Earth Engine (GEE) platformā <span class="citation">(<a href="#ref-GEEpaper">Gorelick et al., 2017</a>)</span>, izmantojot <a href="https://code.earthengine.google.com/026fa26868a38566482c1f3191f7be43?noload=true">replicēšanas skriptu</a>. Lai izmantotu šo skriptu, ir nepieciešams <a href="https://code.earthengine.google.com/register">GEE konts un projekts</a> un pietiekošs apjoms vietas Google Drive diskā. Izpildot komandrindas tiks piedāvāta lejuplāde failam, kas aptver laika periodu no vērtības 7. rindā līdz vērtībai 8. rindā - šis skripts nav optimizēts visu sezonālo griezumu visiem gadiem sagatavošanai, lai reproducētu vai paplašinātu šo izpēti, tās nepieciešams manuāli izmainīt.</p>
+<p>Pēc komandrindu izpildes un rezultātu sagatavošanas Google Drive diskā ir redzams, ka katrs visu Latviju aptverošais slānis ir sadalīts vairākās lapās. Tas ir tādēļ, ka, lai nodrošinātu nulles patieso vērtību (klase “water”, nevis fons), slāņi kodēti kā <em>Float</em>, nevis veselie skaitļi. Visas šīs lapas ir nepieciešams lejuplādēt, sekojošās R komandrindas tās apvieno, nodrošinot koordinātu sistēmas un pikseļu atbilstību references rastram.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="Chapter4.html#cb6-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
+<span id="cb6-2"><a href="Chapter4.html#cb6-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb6-3"><a href="Chapter4.html#cb6-3" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="Chapter4.html#cb6-4" tabindex="-1"></a><span class="co"># reference</span></span>
+<span id="cb6-5"><a href="Chapter4.html#cb6-5" tabindex="-1"></a>paraugs<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./LV10m_10km.tif&quot;</span>)</span>
+<span id="cb6-6"><a href="Chapter4.html#cb6-6" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="Chapter4.html#cb6-7" tabindex="-1"></a><span class="co"># saraksts ar lejupielādētajiem failiem, pieņemot, ka tie atrodas direktorijā </span></span>
+<span id="cb6-8"><a href="Chapter4.html#cb6-8" tabindex="-1"></a><span class="do">## &quot;DWE_float&quot;</span></span>
+<span id="cb6-9"><a href="Chapter4.html#cb6-9" tabindex="-1"></a>faili<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">faili=</span><span class="fu">list.files</span>(<span class="st">&quot;./DWE_float/&quot;</span>))</span>
+<span id="cb6-10"><a href="Chapter4.html#cb6-10" tabindex="-1"></a>faili<span class="sc">$</span>celi_sakums<span class="ot">=</span><span class="fu">paste0</span>(<span class="st">&quot;./DWE_float/&quot;</span>,faili<span class="sc">$</span>faili)</span>
+<span id="cb6-11"><a href="Chapter4.html#cb6-11" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="Chapter4.html#cb6-12" tabindex="-1"></a><span class="co"># Korekti projicētu mozaīku sagatavošana</span></span>
+<span id="cb6-13"><a href="Chapter4.html#cb6-13" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="Chapter4.html#cb6-14" tabindex="-1"></a><span class="do">## failu nosaukumi saglabāšanai</span></span>
+<span id="cb6-15"><a href="Chapter4.html#cb6-15" tabindex="-1"></a>faili<span class="ot">=</span>faili <span class="sc">%&gt;%</span> </span>
+<span id="cb6-16"><a href="Chapter4.html#cb6-16" tabindex="-1"></a>  <span class="fu">separate</span>(faili,<span class="at">into=</span><span class="fu">c</span>(<span class="st">&quot;DW&quot;</span>,<span class="st">&quot;gads&quot;</span>,<span class="st">&quot;periods&quot;</span>,<span class="st">&quot;parejais&quot;</span>),<span class="at">sep=</span><span class="st">&quot;_&quot;</span>,<span class="at">remove =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-17"><a href="Chapter4.html#cb6-17" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">unikalais=</span><span class="fu">paste0</span>(DW,<span class="st">&quot;_&quot;</span>,gads,<span class="st">&quot;_&quot;</span>,periods),</span>
+<span id="cb6-18"><a href="Chapter4.html#cb6-18" tabindex="-1"></a>         <span class="at">mosaic_name=</span><span class="fu">paste0</span>(unikalais,<span class="st">&quot;.tif&quot;</span>),</span>
+<span id="cb6-19"><a href="Chapter4.html#cb6-19" tabindex="-1"></a>         <span class="at">masaic_cels=</span><span class="fu">paste0</span>(<span class="st">&quot;./DWE_mosaic/&quot;</span>,mosaic_name))</span>
+<span id="cb6-20"><a href="Chapter4.html#cb6-20" tabindex="-1"></a></span>
+<span id="cb6-21"><a href="Chapter4.html#cb6-21" tabindex="-1"></a><span class="do">## unikālie failu nosaukumi cikla vadībai</span></span>
+<span id="cb6-22"><a href="Chapter4.html#cb6-22" tabindex="-1"></a>unikalie<span class="ot">=</span><span class="fu">levels</span>(<span class="fu">factor</span>(faili<span class="sc">$</span>unikalais))</span>
+<span id="cb6-23"><a href="Chapter4.html#cb6-23" tabindex="-1"></a></span>
+<span id="cb6-24"><a href="Chapter4.html#cb6-24" tabindex="-1"></a><span class="do">## cikls uzdevuma veikšanai</span></span>
+<span id="cb6-25"><a href="Chapter4.html#cb6-25" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_along</span>(unikalie)){</span>
+<span id="cb6-26"><a href="Chapter4.html#cb6-26" tabindex="-1"></a>  unikalais<span class="ot">=</span>faili <span class="sc">%&gt;%</span> <span class="fu">filter</span>(unikalais<span class="sc">==</span>unikalie[i])</span>
+<span id="cb6-27"><a href="Chapter4.html#cb6-27" tabindex="-1"></a>  beigu_cels<span class="ot">=</span><span class="fu">unique</span>(unikalais<span class="sc">$</span>masaic_cels)</span>
+<span id="cb6-28"><a href="Chapter4.html#cb6-28" tabindex="-1"></a>  </span>
+<span id="cb6-29"><a href="Chapter4.html#cb6-29" tabindex="-1"></a>  <span class="do">### ik slānis sastāv no divām lapām</span></span>
+<span id="cb6-30"><a href="Chapter4.html#cb6-30" tabindex="-1"></a>  viens<span class="ot">=</span><span class="fu">rast</span>(unikalais<span class="sc">$</span>celi_sakums[<span class="dv">1</span>])</span>
+<span id="cb6-31"><a href="Chapter4.html#cb6-31" tabindex="-1"></a>  divi<span class="ot">=</span><span class="fu">rast</span>(unikalais<span class="sc">$</span>celi_sakums[<span class="dv">2</span>])</span>
+<span id="cb6-32"><a href="Chapter4.html#cb6-32" tabindex="-1"></a>  </span>
+<span id="cb6-33"><a href="Chapter4.html#cb6-33" tabindex="-1"></a>  viens2<span class="ot">=</span><span class="fu">project</span>(viens,paraugs)</span>
+<span id="cb6-34"><a href="Chapter4.html#cb6-34" tabindex="-1"></a>  divi2<span class="ot">=</span><span class="fu">project</span>(divi,paraugs)</span>
+<span id="cb6-35"><a href="Chapter4.html#cb6-35" tabindex="-1"></a>  </span>
+<span id="cb6-36"><a href="Chapter4.html#cb6-36" tabindex="-1"></a>  mozaika<span class="ot">=</span><span class="fu">mosaic</span>(viens2,divi2,<span class="at">fun=</span><span class="st">&quot;first&quot;</span>)</span>
+<span id="cb6-37"><a href="Chapter4.html#cb6-37" tabindex="-1"></a>  maskets<span class="ot">=</span><span class="fu">mask</span>(mozaika,paraugs,<span class="at">filename=</span>beigu_cels,<span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb6-38"><a href="Chapter4.html#cb6-38" tabindex="-1"></a></span>
+<span id="cb6-39"><a href="Chapter4.html#cb6-39" tabindex="-1"></a>}</span></code></pre></div>
 <div id="q0-dw-nosegums" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> Q0: DW nosegums<a href="Chapter4.html#q0-dw-nosegums" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
@@ -479,7 +568,22 @@ div.csl-indent {
 <h3>References<a href="references-1.html#references-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-DynWorld" class="csl-entry">
-Brown, C.F., Brumby, S.P., Guzder-Williams, B., Birch, T., Hyde, S.B., Mazzariello, J., Czerwinski, W., Pasquarella, V.J., Haertel, R., Ilyushchenko, S., Schwehr, K., Weisse, M., Stolle, F., Hanson, C., Guinan, O., Moore, R., Tait, A.M., 2022. Kas notiek ar ūpi <span>Latvijā</span>, Scientific Data. https://doi.org/<a href="https://doi.org/10.1038/s41597-022-01307-4">https://doi.org/10.1038/s41597-022-01307-4</a>
+Brown, C.F., Brumby, S.P., Guzder-Williams, B., Birch, T., Hyde, S.B., Mazzariello, J., Czerwinski, W., Pasquarella, V.J., Haertel, R., Ilyushchenko, S., Schwehr, K., Weisse, M., Stolle, F., Hanson, C., Guinan, O., Moore, R., Tait, A.M., 2022. <span>Dynamic</span> <span>World</span>, <span>Near</span> real-time global 10 m land use land cover mapping, Scientific Data. https://doi.org/<a href="https://doi.org/10.1038/s41597-022-01307-4">https://doi.org/10.1038/s41597-022-01307-4</a>
+</div>
+<div id="ref-CropMap2022" class="csl-entry">
+Ghassemi, B., Izquierdo-Verdiguier, E., Verhegghen, A., Yordanov, M., Lemoine, G., Martínez, Á.M., Marchi, D.D., Velde, M. van der, Vuolo, F., d’Andrimont, R., 2024. <span>European</span> <span>Union</span> crop map 2022: <span>Earth</span> observation’s 10-meter dive into <span class="nocase">Europe’s</span> crop tapestry, Scientific Data. https://doi.org/<a href="https://doi.org/10.1038/s41597-024-03884-y">https://doi.org/10.1038/s41597-024-03884-y</a>
+</div>
+<div id="ref-GEEpaper" class="csl-entry">
+Gorelick, N., Hancher, M., Dixon, M., Ilyushchenko, S., Thau, D., Moore, R., 2017. <span>Google</span> <span>Earth</span> <span>Engine</span>: <span class="nocase">Planetary-scale</span> geospatial analysis for everyone, Remote Sensing of Environment. https://doi.org/<a href="https://doi.org/10.1016/j.rse.2017.06.031">https://doi.org/10.1016/j.rse.2017.06.031</a>
+</div>
+<div id="ref-ELULC10" class="csl-entry">
+Mirmazloumi, S.M., Kakooei, M., Mohseni, F., Ghorbanian, A., Amani, M., Crosetto, M., Monserrat, O., 2022. ELULC-10, a 10 m <span>European</span> land use and land cover map using <span>Sentinel</span> and <span>Landsat</span> data in <span>Google</span> <span>Earth</span> <span>Engine</span>, Remote Sensing. https://doi.org/<a href="https://doi.org/10.3390/rs14133041">https://doi.org/10.3390/rs14133041</a>
+</div>
+<div id="ref-LULC10salidzinajums_Venter" class="csl-entry">
+Venter, Z.S., Barton, D.N., Chakraborty, T., Simensen, T., Singh, G., 2022. Global 10 m <span>Land</span> <span>Use</span> <span>Land</span> <span>Cover</span> datasets: A comparison of <span>Dynamic</span> <span>World</span>, <span>World</span> <span>Cover</span> and <span>Esri</span> <span>Land</span> <span>Cover</span>, Remote Sensing. https://doi.org/<a href="https://doi.org/10.3390/rs14164101">https://doi.org/10.3390/rs14164101</a>
+</div>
+<div id="ref-LULC10salidzinajums_Xu" class="csl-entry">
+Xu, P., Tsendbazar, N.-E., Herold, M., Bruin, S. de, Koopmans, M., Birch, T., Carter, S., Fritz, S., Lesiv, M., Mazur, E., Pickens, A., Potapov, P., Stolle, F., Tyukavina, A., Kerchove, R.V.D., Zanaga, D., 2024. Comparative validation of recent 10 m-resolution global land cover maps, Remote Sensing of Environment. https://doi.org/<a href="https://doi.org/10.1016/j.rse.2024.114316">https://doi.org/10.1016/j.rse.2024.114316</a>
 </div>
 </div>
             </section>

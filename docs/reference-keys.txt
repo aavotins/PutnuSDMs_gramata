@@ -53,8 +53,6 @@ vides-pārmaiņas
 dynamic-world-1
 koku-vainagu-segums-no-global-forest-watch
 Chapter4
-kopējie-uzstādījumi-analīžu-veikšanai
-dw-klases
 q0-dw-nosegums
 q1-lauksaimniecības-kultūras
 q1.1-ziemāji-aramzemēs
