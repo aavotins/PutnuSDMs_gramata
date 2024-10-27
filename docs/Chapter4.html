@@ -201,10 +201,10 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="4" data-path="Chapter3.html"><a href="Chapter3.html"><i class="fa fa-check"></i><b>4</b> Ievades ģeodati</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="Chapter3.html"><a href="Chapter3.html#ievades-jēldati"><i class="fa fa-check"></i><b>4.1</b> Ievades jēldati</a>
+<li class="chapter" data-level="4.1" data-path="Chapter3.html"><a href="Chapter3.html#Chapter3.1"><i class="fa fa-check"></i><b>4.1</b> Ievades jēldati</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="Chapter3.html"><a href="Chapter3.html#meža-valsts-reģistrs"><i class="fa fa-check"></i><b>4.1.1</b> Meža Valsts reģistrs</a></li>
-<li class="chapter" data-level="4.1.2" data-path="Chapter3.html"><a href="Chapter3.html#lauku-atbalsts-dienesta-lauku-informācija"><i class="fa fa-check"></i><b>4.1.2</b> Lauku atbalsts dienesta lauku informācija</a></li>
+<li class="chapter" data-level="4.1.1" data-path="Chapter3.html"><a href="Chapter3.html#Chapter3.1.1"><i class="fa fa-check"></i><b>4.1.1</b> Meža Valsts reģistrs</a></li>
+<li class="chapter" data-level="4.1.2" data-path="Chapter3.html"><a href="Chapter3.html#Chapter3.1.2"><i class="fa fa-check"></i><b>4.1.2</b> Lauku atbalsts dienesta lauku informācija</a></li>
 <li class="chapter" data-level="4.1.3" data-path="Chapter3.html"><a href="Chapter3.html#lģia-topogrāfiskā-karte"><i class="fa fa-check"></i><b>4.1.3</b> LĢIA topogrāfiskā karte</a></li>
 <li class="chapter" data-level="4.1.4" data-path="Chapter3.html"><a href="Chapter3.html#mkis"><i class="fa fa-check"></i><b>4.1.4</b> MKIS</a></li>
 <li class="chapter" data-level="4.1.5" data-path="Chapter3.html"><a href="Chapter3.html#lvm-atvērtie-dati"><i class="fa fa-check"></i><b>4.1.5</b> LVM atvērtie dati</a></li>
@@ -272,7 +272,10 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="6" data-path="Chapter5.html"><a href="Chapter5.html"><i class="fa fa-check"></i><b>6</b> Ekoģeogrāfiskie mainīgie</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="Chapter5.html"><a href="Chapter5.html#reljefs-1"><i class="fa fa-check"></i><b>6.1</b> Reljefs</a></li>
+<li class="chapter" data-level="6.1" data-path="Chapter5.html"><a href="Chapter5.html#reljefs-1"><i class="fa fa-check"></i><b>6.1</b> Reljefs</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="Chapter5.html"><a href="Chapter5.html#dis_area_r500"><i class="fa fa-check"></i><b>6.1.1</b> DiS_area_r500</a></li>
+</ul></li>
 <li class="chapter" data-level="6.2" data-path="Chapter5.html"><a href="Chapter5.html#klimats-1"><i class="fa fa-check"></i><b>6.2</b> Klimats</a></li>
 <li class="chapter" data-level="6.3" data-path="Chapter5.html"><a href="Chapter5.html#satelītindeksi-1"><i class="fa fa-check"></i><b>6.3</b> Satelītindeksi</a></li>
 <li class="chapter" data-level="6.4" data-path="Chapter5.html"><a href="Chapter5.html#augsne-1"><i class="fa fa-check"></i><b>6.4</b> Augsne</a></li>
@@ -381,10 +384,10 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="Chapter4" class="section level1 hasAnchor" number="5">
 <h1><span class="header-section-number">5</span> <em>Dynamic World</em> izpēte<a href="Chapter4.html#Chapter4" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p><em>Dynamic World</em> (DW) ir relatīvi nesens Zemes novērošanas sistēmu produkts, kurš klasificē zemes segumu un lietojumu (LULC) deviņās kategorijās (0=water, 1=trees, 2=grass, 3=flooded_vegetation, 4=crops, 5=shrub_and_scrub, 6=built, 7=bare, 8=snow_and_ice), katram ESA Copernicus Sentinel-2 attēlam ar identificēto mākoņainību <span class="math inline">\(\le35%\)</span>, pieļaujot filtrēšanu un dažādu agregāciju veidošanu <span class="citation">(<a href="#ref-DynWorld">Brown et al., 2022</a>)</span>. Salīdzinot ar dažādiem statiskākiem (produktu veidā sagatavotiem konkrētiem gadiem ar smagnēju projicēšanu citiem gadiem) un/vai konkrētu ekosistēmas daļu raksturošanai paredzētiem, piemēram <em>EU Crop Map</em> <span class="citation">(<a href="#ref-CropMap2022">Ghassemi et al., 2024</a>)</span> un <em>ELULC-10</em> <span class="citation">(<a href="#ref-ELULC10">Mirmazloumi et al., 2022</a>)</span>, DW neapšaubāmi ar lielākām sagaidāmajām kļūdām pie klašu (gēotelpiskajām) robežām, tomēr labāku telpisko (klasificēti ir visas izmantojamās satelītainas, nevis vadoties pēc kādas vidi atpazīstošas maskas) un temporālo pārklājumu (dinamiska un tuvu reāllaikam klasifikācijas pieejamība ik satelītainai, nevis atsevišķas projekcijas laikā). Dažādu nesen radīto augstas izšķirtspējas LULC klasifikatoru salīdzinājumos, piemēram, <span class="citation">(<a href="#ref-LULC10salidzinajums_Venter">Venter et al., 2022</a>)</span> un <span class="citation">(<a href="#ref-LULC10salidzinajums_Xu">Xu et al., 2024</a>)</span>, ir konstatētas dažādas atšķirības starp tiem, turklāt DW nav bijis uzskatāms par precīzāko, jo sevišķi spējā detektēt relatīvi šaurus līnijaveida objektus un saistībā ar neironu tīklos balstīto pieeju tieksmi pārspīlēt vertikāli strukturētās klases, tomēr tam ir augstākā temporālā pieejamība. Par šajos salīdzinājumos precīzāko uzskatāmajam <em>ESA WorldCover</em> brīvi pieejama ir informācijai tikai par 2020. un 2021. gadiem (<a href="https://collections.sentinel-hub.com/worldcover/" class="uri">https://collections.sentinel-hub.com/worldcover/</a>). Augstās temporālās pieejamības dēļ, izvēlēts DW, jo pat, ja klases nav vienmēr korekti atpazītas, ir vērts izpētīt spēju atpazīt pārmaiņas to sastopamībā.</p>
+<p><em>Dynamic World</em> (DW) ir relatīvi nesens Zemes novērošanas sistēmu produkts, kurš klasificē zemes segumu un lietojumu (LULC) deviņās kategorijās (0=water, 1=trees, 2=grass, 3=flooded_vegetation, 4=crops, 5=shrub_and_scrub, 6=built, 7=bare, 8=snow_and_ice), katram ESA Copernicus Sentinel-2 attēlam ar identificēto mākoņainību <span class="math inline">\(\le35%\)</span>, pieļaujot filtrēšanu un dažādu agregāciju veidošanu <span class="citation">(<a href="#ref-DynWorld">Brown et al., 2022</a>)</span>. Salīdzinot ar dažādiem statiskākiem (produktu veidā sagatavotiem konkrētiem gadiem ar smagnēju projicēšanu citiem gadiem) un/vai konkrētu ekosistēmas daļu raksturošanai paredzētiem, piemēram <em>EU Crop Map</em> <span class="citation">(<a href="#ref-CropMap2022">Ghassemi et al., 2024</a>)</span> un <em>ELULC-10</em> <span class="citation">(<a href="#ref-ELULC10">Mirmazloumi et al., 2022</a>)</span>, DW neapšaubāmi ir ar lielākām sagaidāmajām kļūdām pie klašu (gēotelpiskajām) robežām, tomēr labāku telpisko (klasificēti ir visas izmantojamās satelītainas, nevis vadoties pēc kādas vidi atpazīstošas maskas) un temporālo pārklājumu (dinamiska un tuvu reāllaikam klasifikācijas pieejamība ik satelītainai, nevis atsevišķas projekcijas laikā). Dažādu nesen radīto augstas izšķirtspējas LULC klasifikatoru salīdzinājumos, piemēram, <span class="citation">(<a href="#ref-LULC10salidzinajums_Venter">Venter et al., 2022</a>)</span> un <span class="citation">(<a href="#ref-LULC10salidzinajums_Xu">Xu et al., 2024</a>)</span>, ir konstatētas dažādas atšķirības starp tiem, turklāt DW nav bijis uzskatāms par precīzāko, jo sevišķi spējā detektēt relatīvi šaurus līnijaveida objektus un saistībā ar neironu tīklos balstīto pieeju tieksmi pārspīlēt vertikāli strukturētās klases, tomēr tam ir augstākā temporālā pieejamība. Par šajos salīdzinājumos precīzāko uzskatāmajam <em>ESA WorldCover</em> brīvi pieejama ir informācijai tikai par 2020. un 2021. gadiem (<a href="https://collections.sentinel-hub.com/worldcover/" class="uri">https://collections.sentinel-hub.com/worldcover/</a>). Augstās temporālās pieejamības dēļ, DW izpēte turpināta, jo pat, ja klases nav vienmēr korekti atpazītas, ir vērts izpētīt spēju atpazīt pārmaiņas to sastopamībā.</p>
 <p>Tā kā šī projekta komandai nav zināmi izsekojami (caurspīdīgi, reproducējami) Latvijā veikti DW klasifikācijas un tās pārmaiņu uzticamības pētījumi, šī resursa izpēte veikta projekta ietvaros. Izpētei ir sekojoši <strong>mērķi</strong>:</p>
 <ol style="list-style-type: decimal">
-<li><p>noskaidrot DW izmantošanas iespējas LĢIA topogrāfiskās kartes aizstāšanai sugu izplatības modelēšanai;</p></li>
+<li><p>noskaidrot DW izmantošanas iespējas LĢIA topogrāfiskās kartes (un citu ierobežotas pieejamības resursu) aizstāšanai sugu izplatības modelēšanai;</p></li>
 <li><p>noskaidrot labāko sezonu (mēnešu griezumā) Latvijas ainavas (un tās pārmaiņu) raksturošanai dzīvnieku vairošanās un veģetācijas sezonā;</p></li>
 <li><p>iegūt informāciju par DW spēju raksturot ainavas pārmaiņas starp gadiem.</p></li>
 </ol>
@@ -438,7 +441,7 @@ div.csl-indent {
 <li><p>ik analīzi veicam kā zonālo statistiku, aptverot visu pētāmo plankumu;</p></li>
 <li><p>DW ik periodam ir resamplēts sakritībai ar references 10 m šūnu un ietver tikai Latvijas teritoriju.</p></li>
 </ul>
-<p>DW ievades informācija - rastra slānis katrai sezonai katrā gadā - sagtavots Google Earth Engine (GEE) platformā <span class="citation">(<a href="#ref-GEEpaper">Gorelick et al., 2017</a>)</span>, izmantojot <a href="https://code.earthengine.google.com/026fa26868a38566482c1f3191f7be43?noload=true">replicēšanas skriptu</a>. Lai izmantotu šo skriptu, ir nepieciešams <a href="https://code.earthengine.google.com/register">GEE konts un projekts</a> un pietiekošs apjoms vietas Google Drive diskā. Izpildot komandrindas tiks piedāvāta lejuplāde failam, kas aptver laika periodu no vērtības 7. rindā līdz vērtībai 8. rindā - šis skripts nav optimizēts visu sezonālo griezumu visiem gadiem sagatavošanai, lai reproducētu vai paplašinātu šo izpēti, tās nepieciešams manuāli izmainīt.</p>
+<p>DW ievades informācija - rastra slānis katrai sezonai katrā gadā - sagtavots Google Earth Engine (GEE) platformā <span class="citation">(<a href="#ref-GEEpaper">Gorelick et al., 2017</a>)</span>, izmantojot <a href="https://code.earthengine.google.com/941bb1a16331727787bb3fc1bbbda95b?noload=true">replicēšanas skriptu</a>. Lai izmantotu šo skriptu, ir nepieciešams <a href="https://code.earthengine.google.com/register">GEE konts un projekts</a> un pietiekošs apjoms vietas Google Drive diskā. Izpildot komandrindas tiks piedāvāta lejuplāde failam, kas aptver laika periodu no vērtības 7. rindā līdz vērtībai 8. rindā - šis skripts nav optimizēts visu sezonālo griezumu visiem gadiem sagatavošanai, lai reproducētu vai paplašinātu šo izpēti, tās nepieciešams manuāli izmainīt.</p>
 <p>Pēc komandrindu izpildes un rezultātu sagatavošanas Google Drive diskā ir redzams, ka katrs visu Latviju aptverošais slānis ir sadalīts vairākās lapās. Tas ir tādēļ, ka, lai nodrošinātu nulles patieso vērtību (klase “water”, nevis fons), slāņi kodēti kā <em>Float</em>, nevis veselie skaitļi. Visas šīs lapas ir nepieciešams lejuplādēt, sekojošās R komandrindas tās apvieno, nodrošinot koordinātu sistēmas un pikseļu atbilstību references rastram.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="Chapter4.html#cb6-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
 <span id="cb6-2"><a href="Chapter4.html#cb6-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
@@ -447,45 +450,296 @@ div.csl-indent {
 <span id="cb6-5"><a href="Chapter4.html#cb6-5" tabindex="-1"></a>paraugs<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./LV10m_10km.tif&quot;</span>)</span>
 <span id="cb6-6"><a href="Chapter4.html#cb6-6" tabindex="-1"></a></span>
 <span id="cb6-7"><a href="Chapter4.html#cb6-7" tabindex="-1"></a><span class="co"># saraksts ar lejupielādētajiem failiem, pieņemot, ka tie atrodas direktorijā </span></span>
-<span id="cb6-8"><a href="Chapter4.html#cb6-8" tabindex="-1"></a><span class="do">## &quot;DWE_float&quot;</span></span>
+<span id="cb6-8"><a href="Chapter4.html#cb6-8" tabindex="-1"></a><span class="co"># &quot;DWE_float&quot;</span></span>
 <span id="cb6-9"><a href="Chapter4.html#cb6-9" tabindex="-1"></a>faili<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">faili=</span><span class="fu">list.files</span>(<span class="st">&quot;./DWE_float/&quot;</span>))</span>
 <span id="cb6-10"><a href="Chapter4.html#cb6-10" tabindex="-1"></a>faili<span class="sc">$</span>celi_sakums<span class="ot">=</span><span class="fu">paste0</span>(<span class="st">&quot;./DWE_float/&quot;</span>,faili<span class="sc">$</span>faili)</span>
 <span id="cb6-11"><a href="Chapter4.html#cb6-11" tabindex="-1"></a></span>
 <span id="cb6-12"><a href="Chapter4.html#cb6-12" tabindex="-1"></a><span class="co"># Korekti projicētu mozaīku sagatavošana</span></span>
-<span id="cb6-13"><a href="Chapter4.html#cb6-13" tabindex="-1"></a></span>
-<span id="cb6-14"><a href="Chapter4.html#cb6-14" tabindex="-1"></a><span class="do">## failu nosaukumi saglabāšanai</span></span>
-<span id="cb6-15"><a href="Chapter4.html#cb6-15" tabindex="-1"></a>faili<span class="ot">=</span>faili <span class="sc">%&gt;%</span> </span>
-<span id="cb6-16"><a href="Chapter4.html#cb6-16" tabindex="-1"></a>  <span class="fu">separate</span>(faili,<span class="at">into=</span><span class="fu">c</span>(<span class="st">&quot;DW&quot;</span>,<span class="st">&quot;gads&quot;</span>,<span class="st">&quot;periods&quot;</span>,<span class="st">&quot;parejais&quot;</span>),<span class="at">sep=</span><span class="st">&quot;_&quot;</span>,<span class="at">remove =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-17"><a href="Chapter4.html#cb6-17" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">unikalais=</span><span class="fu">paste0</span>(DW,<span class="st">&quot;_&quot;</span>,gads,<span class="st">&quot;_&quot;</span>,periods),</span>
-<span id="cb6-18"><a href="Chapter4.html#cb6-18" tabindex="-1"></a>         <span class="at">mosaic_name=</span><span class="fu">paste0</span>(unikalais,<span class="st">&quot;.tif&quot;</span>),</span>
-<span id="cb6-19"><a href="Chapter4.html#cb6-19" tabindex="-1"></a>         <span class="at">masaic_cels=</span><span class="fu">paste0</span>(<span class="st">&quot;./DWE_mosaic/&quot;</span>,mosaic_name))</span>
-<span id="cb6-20"><a href="Chapter4.html#cb6-20" tabindex="-1"></a></span>
-<span id="cb6-21"><a href="Chapter4.html#cb6-21" tabindex="-1"></a><span class="do">## unikālie failu nosaukumi cikla vadībai</span></span>
-<span id="cb6-22"><a href="Chapter4.html#cb6-22" tabindex="-1"></a>unikalie<span class="ot">=</span><span class="fu">levels</span>(<span class="fu">factor</span>(faili<span class="sc">$</span>unikalais))</span>
-<span id="cb6-23"><a href="Chapter4.html#cb6-23" tabindex="-1"></a></span>
-<span id="cb6-24"><a href="Chapter4.html#cb6-24" tabindex="-1"></a><span class="do">## cikls uzdevuma veikšanai</span></span>
-<span id="cb6-25"><a href="Chapter4.html#cb6-25" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_along</span>(unikalie)){</span>
-<span id="cb6-26"><a href="Chapter4.html#cb6-26" tabindex="-1"></a>  unikalais<span class="ot">=</span>faili <span class="sc">%&gt;%</span> <span class="fu">filter</span>(unikalais<span class="sc">==</span>unikalie[i])</span>
-<span id="cb6-27"><a href="Chapter4.html#cb6-27" tabindex="-1"></a>  beigu_cels<span class="ot">=</span><span class="fu">unique</span>(unikalais<span class="sc">$</span>masaic_cels)</span>
-<span id="cb6-28"><a href="Chapter4.html#cb6-28" tabindex="-1"></a>  </span>
-<span id="cb6-29"><a href="Chapter4.html#cb6-29" tabindex="-1"></a>  <span class="do">### ik slānis sastāv no divām lapām</span></span>
-<span id="cb6-30"><a href="Chapter4.html#cb6-30" tabindex="-1"></a>  viens<span class="ot">=</span><span class="fu">rast</span>(unikalais<span class="sc">$</span>celi_sakums[<span class="dv">1</span>])</span>
-<span id="cb6-31"><a href="Chapter4.html#cb6-31" tabindex="-1"></a>  divi<span class="ot">=</span><span class="fu">rast</span>(unikalais<span class="sc">$</span>celi_sakums[<span class="dv">2</span>])</span>
-<span id="cb6-32"><a href="Chapter4.html#cb6-32" tabindex="-1"></a>  </span>
-<span id="cb6-33"><a href="Chapter4.html#cb6-33" tabindex="-1"></a>  viens2<span class="ot">=</span><span class="fu">project</span>(viens,paraugs)</span>
-<span id="cb6-34"><a href="Chapter4.html#cb6-34" tabindex="-1"></a>  divi2<span class="ot">=</span><span class="fu">project</span>(divi,paraugs)</span>
-<span id="cb6-35"><a href="Chapter4.html#cb6-35" tabindex="-1"></a>  </span>
-<span id="cb6-36"><a href="Chapter4.html#cb6-36" tabindex="-1"></a>  mozaika<span class="ot">=</span><span class="fu">mosaic</span>(viens2,divi2,<span class="at">fun=</span><span class="st">&quot;first&quot;</span>)</span>
-<span id="cb6-37"><a href="Chapter4.html#cb6-37" tabindex="-1"></a>  maskets<span class="ot">=</span><span class="fu">mask</span>(mozaika,paraugs,<span class="at">filename=</span>beigu_cels,<span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
-<span id="cb6-38"><a href="Chapter4.html#cb6-38" tabindex="-1"></a></span>
-<span id="cb6-39"><a href="Chapter4.html#cb6-39" tabindex="-1"></a>}</span></code></pre></div>
+<span id="cb6-13"><a href="Chapter4.html#cb6-13" tabindex="-1"></a><span class="co"># failu nosaukumi un ceļš saglabāšanai</span></span>
+<span id="cb6-14"><a href="Chapter4.html#cb6-14" tabindex="-1"></a>faili<span class="ot">=</span>faili <span class="sc">%&gt;%</span> </span>
+<span id="cb6-15"><a href="Chapter4.html#cb6-15" tabindex="-1"></a>  <span class="fu">separate</span>(faili,<span class="at">into=</span><span class="fu">c</span>(<span class="st">&quot;DW&quot;</span>,<span class="st">&quot;gads&quot;</span>,<span class="st">&quot;periods&quot;</span>,<span class="st">&quot;parejais&quot;</span>),<span class="at">sep=</span><span class="st">&quot;_&quot;</span>,<span class="at">remove =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-16"><a href="Chapter4.html#cb6-16" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">unikalais=</span><span class="fu">paste0</span>(DW,<span class="st">&quot;_&quot;</span>,gads,<span class="st">&quot;_&quot;</span>,periods),</span>
+<span id="cb6-17"><a href="Chapter4.html#cb6-17" tabindex="-1"></a>         <span class="at">mosaic_name=</span><span class="fu">paste0</span>(unikalais,<span class="st">&quot;.tif&quot;</span>),</span>
+<span id="cb6-18"><a href="Chapter4.html#cb6-18" tabindex="-1"></a>         <span class="at">masaic_cels=</span><span class="fu">paste0</span>(<span class="st">&quot;./DWE_mosaic/&quot;</span>,mosaic_name))</span>
+<span id="cb6-19"><a href="Chapter4.html#cb6-19" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="Chapter4.html#cb6-20" tabindex="-1"></a><span class="co"># unikālie failu nosaukumi cikla vadībai</span></span>
+<span id="cb6-21"><a href="Chapter4.html#cb6-21" tabindex="-1"></a>unikalie<span class="ot">=</span><span class="fu">levels</span>(<span class="fu">factor</span>(faili<span class="sc">$</span>unikalais))</span>
+<span id="cb6-22"><a href="Chapter4.html#cb6-22" tabindex="-1"></a></span>
+<span id="cb6-23"><a href="Chapter4.html#cb6-23" tabindex="-1"></a><span class="co"># cikls uzdevuma veikšanai</span></span>
+<span id="cb6-24"><a href="Chapter4.html#cb6-24" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_along</span>(unikalie)){</span>
+<span id="cb6-25"><a href="Chapter4.html#cb6-25" tabindex="-1"></a>  unikalais<span class="ot">=</span>faili <span class="sc">%&gt;%</span> <span class="fu">filter</span>(unikalais<span class="sc">==</span>unikalie[i])</span>
+<span id="cb6-26"><a href="Chapter4.html#cb6-26" tabindex="-1"></a>  beigu_cels<span class="ot">=</span><span class="fu">unique</span>(unikalais<span class="sc">$</span>masaic_cels)</span>
+<span id="cb6-27"><a href="Chapter4.html#cb6-27" tabindex="-1"></a>  </span>
+<span id="cb6-28"><a href="Chapter4.html#cb6-28" tabindex="-1"></a>  <span class="co"># ik slānis sastāv no divām lapām</span></span>
+<span id="cb6-29"><a href="Chapter4.html#cb6-29" tabindex="-1"></a>  viens<span class="ot">=</span><span class="fu">rast</span>(unikalais<span class="sc">$</span>celi_sakums[<span class="dv">1</span>])</span>
+<span id="cb6-30"><a href="Chapter4.html#cb6-30" tabindex="-1"></a>  divi<span class="ot">=</span><span class="fu">rast</span>(unikalais<span class="sc">$</span>celi_sakums[<span class="dv">2</span>])</span>
+<span id="cb6-31"><a href="Chapter4.html#cb6-31" tabindex="-1"></a>  </span>
+<span id="cb6-32"><a href="Chapter4.html#cb6-32" tabindex="-1"></a>  viens2<span class="ot">=</span><span class="fu">project</span>(viens,paraugs)</span>
+<span id="cb6-33"><a href="Chapter4.html#cb6-33" tabindex="-1"></a>  divi2<span class="ot">=</span><span class="fu">project</span>(divi,paraugs)</span>
+<span id="cb6-34"><a href="Chapter4.html#cb6-34" tabindex="-1"></a>  </span>
+<span id="cb6-35"><a href="Chapter4.html#cb6-35" tabindex="-1"></a>  mozaika<span class="ot">=</span><span class="fu">mosaic</span>(viens2,divi2,<span class="at">fun=</span><span class="st">&quot;first&quot;</span>)</span>
+<span id="cb6-36"><a href="Chapter4.html#cb6-36" tabindex="-1"></a>  maskets<span class="ot">=</span><span class="fu">mask</span>(mozaika,paraugs,<span class="at">filename=</span>beigu_cels,<span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb6-37"><a href="Chapter4.html#cb6-37" tabindex="-1"></a>}</span></code></pre></div>
 <div id="q0-dw-nosegums" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> Q0: DW nosegums<a href="Chapter4.html#q0-dw-nosegums" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Katram gadam (2015-2023) ik iepriekš minētajam sezonas griezumam DW datu pārklājum ir apskatāmi zemāk esošajā attēlā @ref(fig:DW_q00). Kā jau sagaidāms, 2015. gadā ir trūcīgs nosegums. Pārskata periodā resurss ir samērā droši izmantojams kopš 2018. gada, kopš 2016. gada pielietojamība ir vērtējama, atkarībā no mērķiem un vērtējama saistībā ar sezonas griezumiem.</p>
+<div class="figure">
+<img src="Atteli/ch004_missings.png" alt="DW rezultātu pieejamība dažādos sezonālajos griezumos kopš Sentinel-2 programmas datu pieejamības. Pikseļu krāsa attēla daļās raksturo 1 km šūnās esošo klasifikācijas iztŗukumu īpatsvaru, savukārt skaitļi attēla daļās - kopējo klasifikācijas robu īpatsvaru procentos (%)." width="100%" />
+<p class="caption">
+(#fig:DW_q00)DW rezultātu pieejamība dažādos sezonālajos griezumos kopš Sentinel-2 programmas datu pieejamības. Pikseļu krāsa attēla daļās raksturo 1 km šūnās esošo klasifikācijas iztŗukumu īpatsvaru, savukārt skaitļi attēla daļās - kopējo klasifikācijas robu īpatsvaru procentos (%).
+</p>
+</div>
+<p><br></p>
+<p>Komandu rindas reproducēšanai:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="Chapter4.html#cb7-1" tabindex="-1"></a><span class="co"># libs</span></span>
+<span id="cb7-2"><a href="Chapter4.html#cb7-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb7-3"><a href="Chapter4.html#cb7-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
+<span id="cb7-4"><a href="Chapter4.html#cb7-4" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(arrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;arrow&quot;</span>); <span class="fu">require</span>(arrow)}</span>
+<span id="cb7-5"><a href="Chapter4.html#cb7-5" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sfarrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;sfarrow&quot;</span>); <span class="fu">require</span>(sfarrow)}</span>
+<span id="cb7-6"><a href="Chapter4.html#cb7-6" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(exactextractr)) {<span class="fu">install.packages</span>(<span class="st">&quot;exactextractr&quot;</span>); <span class="fu">require</span>(exactextractr)}</span>
+<span id="cb7-7"><a href="Chapter4.html#cb7-7" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(openxlsx)) {<span class="fu">install.packages</span>(<span class="st">&quot;openxlsx&quot;</span>); <span class="fu">require</span>(openxlsx)}</span>
+<span id="cb7-8"><a href="Chapter4.html#cb7-8" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="Chapter4.html#cb7-9" tabindex="-1"></a><span class="co"># 10 m rastra template</span></span>
+<span id="cb7-10"><a href="Chapter4.html#cb7-10" tabindex="-1"></a>paraugs<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./LV10m_10km.tif&quot;</span>)</span>
+<span id="cb7-11"><a href="Chapter4.html#cb7-11" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="Chapter4.html#cb7-12" tabindex="-1"></a><span class="co"># 100 m režģis</span></span>
+<span id="cb7-13"><a href="Chapter4.html#cb7-13" tabindex="-1"></a>kvadrati<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./tikls1k_sauzeme.parquet&quot;</span>)</span>
+<span id="cb7-14"><a href="Chapter4.html#cb7-14" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="Chapter4.html#cb7-15" tabindex="-1"></a><span class="co"># robu analīze</span></span>
+<span id="cb7-16"><a href="Chapter4.html#cb7-16" tabindex="-1"></a>failu_objekts2<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">faili=</span><span class="fu">list.files</span>(<span class="st">&quot;./DWE_mosaic/&quot;</span>))</span>
+<span id="cb7-17"><a href="Chapter4.html#cb7-17" tabindex="-1"></a>failu_objekts2<span class="sc">$</span>celi_sakums<span class="ot">=</span><span class="fu">paste0</span>(<span class="st">&quot;./DWE_mosaic/&quot;</span>,failu_objekts2<span class="sc">$</span>faili)</span>
+<span id="cb7-18"><a href="Chapter4.html#cb7-18" tabindex="-1"></a>failu_objekts2<span class="sc">$</span>celi_beigas<span class="ot">=</span><span class="fu">paste0</span>(<span class="st">&quot;./DWEm_missing/&quot;</span>,<span class="st">&quot;missing_&quot;</span>,failu_objekts2<span class="sc">$</span>faili)</span>
+<span id="cb7-19"><a href="Chapter4.html#cb7-19" tabindex="-1"></a>failu_objekts2<span class="ot">=</span>failu_objekts2 <span class="sc">%&gt;%</span> </span>
+<span id="cb7-20"><a href="Chapter4.html#cb7-20" tabindex="-1"></a>  <span class="fu">separate</span>(faili,<span class="at">into=</span><span class="fu">c</span>(<span class="st">&quot;DW&quot;</span>,<span class="st">&quot;gads&quot;</span>,<span class="st">&quot;sezona&quot;</span>,<span class="st">&quot;ext&quot;</span>),<span class="at">remove =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb7-21"><a href="Chapter4.html#cb7-21" tabindex="-1"></a>failu_objekts2<span class="sc">$</span>celi_parquet<span class="ot">=</span><span class="fu">paste0</span>(<span class="st">&quot;./DWEm_missing/&quot;</span>,<span class="st">&quot;missing_&quot;</span>,<span class="st">&quot;DW_&quot;</span>,</span>
+<span id="cb7-22"><a href="Chapter4.html#cb7-22" tabindex="-1"></a>                                   failu_objekts2<span class="sc">$</span>gads,<span class="st">&quot;_&quot;</span>,</span>
+<span id="cb7-23"><a href="Chapter4.html#cb7-23" tabindex="-1"></a>                                   failu_objekts2<span class="sc">$</span>sezona,</span>
+<span id="cb7-24"><a href="Chapter4.html#cb7-24" tabindex="-1"></a>                                   <span class="st">&quot;.parquet&quot;</span>)</span>
+<span id="cb7-25"><a href="Chapter4.html#cb7-25" tabindex="-1"></a>failu_objekts2<span class="sc">$</span>missings<span class="ot">=</span><span class="cn">NA_real_</span></span>
+<span id="cb7-26"><a href="Chapter4.html#cb7-26" tabindex="-1"></a><span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(failu_objekts2<span class="sc">$</span>faili)){</span>
+<span id="cb7-27"><a href="Chapter4.html#cb7-27" tabindex="-1"></a>    <span class="fu">print</span>(j)</span>
+<span id="cb7-28"><a href="Chapter4.html#cb7-28" tabindex="-1"></a>  cels<span class="ot">=</span>failu_objekts2<span class="sc">$</span>celi_sakums[j]</span>
+<span id="cb7-29"><a href="Chapter4.html#cb7-29" tabindex="-1"></a>  cels_beigas<span class="ot">=</span>failu_objekts2<span class="sc">$</span>celi_beigas[j]</span>
+<span id="cb7-30"><a href="Chapter4.html#cb7-30" tabindex="-1"></a>  cels_parquet<span class="ot">=</span>failu_objekts2<span class="sc">$</span>celi_parquet[j]</span>
+<span id="cb7-31"><a href="Chapter4.html#cb7-31" tabindex="-1"></a>  gads<span class="ot">=</span>failu_objekts2<span class="sc">$</span>gads[j]</span>
+<span id="cb7-32"><a href="Chapter4.html#cb7-32" tabindex="-1"></a>  sezona<span class="ot">=</span>failu_objekts2<span class="sc">$</span>sezona[j]</span>
+<span id="cb7-33"><a href="Chapter4.html#cb7-33" tabindex="-1"></a>  <span class="fu">print</span>(cels)</span>
+<span id="cb7-34"><a href="Chapter4.html#cb7-34" tabindex="-1"></a>  <span class="fu">print</span>(cels_beigas)</span>
+<span id="cb7-35"><a href="Chapter4.html#cb7-35" tabindex="-1"></a>  dw1<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">rast</span>(cels)</span>
+<span id="cb7-36"><a href="Chapter4.html#cb7-36" tabindex="-1"></a>  dw2<span class="ot">=</span><span class="fu">classify</span>(dw1,<span class="fu">cbind</span>(<span class="dv">0</span>,<span class="dv">10</span>,<span class="dv">0</span>))</span>
+<span id="cb7-37"><a href="Chapter4.html#cb7-37" tabindex="-1"></a>  dw3<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">cover</span>(dw2,paraugs,<span class="at">filename=</span>cels_beigas,<span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb7-38"><a href="Chapter4.html#cb7-38" tabindex="-1"></a>  iztrukumi<span class="ot">=</span><span class="fu">global</span>(dw3, <span class="st">&quot;mean&quot;</span>, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb7-39"><a href="Chapter4.html#cb7-39" tabindex="-1"></a>  failu_objekts2<span class="sc">$</span>missings[j]<span class="ot">=</span><span class="fu">round</span>(iztrukumi<span class="sc">$</span>mean<span class="sc">*</span><span class="dv">100</span>,<span class="dv">2</span>)</span>
+<span id="cb7-40"><a href="Chapter4.html#cb7-40" tabindex="-1"></a>  robi_tikla<span class="ot">=</span><span class="fu">exact_extract</span>(dw3,kvadrati,<span class="st">&quot;mean&quot;</span>,<span class="at">max_cells_in_memory=</span><span class="dv">1300000000</span>)</span>
+<span id="cb7-41"><a href="Chapter4.html#cb7-41" tabindex="-1"></a>  kvadrati2<span class="ot">=</span>kvadrati</span>
+<span id="cb7-42"><a href="Chapter4.html#cb7-42" tabindex="-1"></a>  kvadrati2<span class="sc">$</span>robi_tikla<span class="ot">=</span>robi_tikla</span>
+<span id="cb7-43"><a href="Chapter4.html#cb7-43" tabindex="-1"></a>  kvadrati2<span class="sc">$</span>gads<span class="ot">=</span>gads</span>
+<span id="cb7-44"><a href="Chapter4.html#cb7-44" tabindex="-1"></a>  kvadrati2<span class="sc">$</span>sezona<span class="ot">=</span>sezona</span>
+<span id="cb7-45"><a href="Chapter4.html#cb7-45" tabindex="-1"></a>  <span class="fu">st_write_parquet</span>(kvadrati2,cels_parquet)</span>
+<span id="cb7-46"><a href="Chapter4.html#cb7-46" tabindex="-1"></a>}</span>
+<span id="cb7-47"><a href="Chapter4.html#cb7-47" tabindex="-1"></a><span class="fu">write.xlsx</span>(failu_objekts2,<span class="st">&quot;./DWmc_missing.xlsx&quot;</span>)</span>
+<span id="cb7-48"><a href="Chapter4.html#cb7-48" tabindex="-1"></a></span>
+<span id="cb7-49"><a href="Chapter4.html#cb7-49" tabindex="-1"></a><span class="co"># parquet savienošana</span></span>
+<span id="cb7-50"><a href="Chapter4.html#cb7-50" tabindex="-1"></a>robu_kvadrati <span class="ot">&lt;-</span> <span class="fu">map_dfr</span>(<span class="fu">list.files</span>(<span class="st">&quot;./DWEm_missing/&quot;</span>,<span class="at">pattern=</span><span class="st">&quot;.parquet&quot;</span>,</span>
+<span id="cb7-51"><a href="Chapter4.html#cb7-51" tabindex="-1"></a>                                    <span class="at">full.names =</span> <span class="cn">TRUE</span>), </span>
+<span id="cb7-52"><a href="Chapter4.html#cb7-52" tabindex="-1"></a>                 sfarrow<span class="sc">::</span>st_read_parquet, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb7-53"><a href="Chapter4.html#cb7-53" tabindex="-1"></a></span>
+<span id="cb7-54"><a href="Chapter4.html#cb7-54" tabindex="-1"></a>robu_kvadrati2<span class="ot">=</span>robu_kvadrati <span class="sc">%&gt;%</span> </span>
+<span id="cb7-55"><a href="Chapter4.html#cb7-55" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">gads2=</span><span class="fu">as.numeric</span>(gads),</span>
+<span id="cb7-56"><a href="Chapter4.html#cb7-56" tabindex="-1"></a>         <span class="at">sezona2=</span><span class="fu">factor</span>(sezona,<span class="at">ordered=</span><span class="cn">TRUE</span>,</span>
+<span id="cb7-57"><a href="Chapter4.html#cb7-57" tabindex="-1"></a>                        <span class="at">levels=</span><span class="fu">c</span>(<span class="st">&quot;aprmay&quot;</span>,<span class="st">&quot;aprjun&quot;</span>,<span class="st">&quot;aprjul&quot;</span>,<span class="st">&quot;apraug&quot;</span>,<span class="st">&quot;mayjun&quot;</span>,</span>
+<span id="cb7-58"><a href="Chapter4.html#cb7-58" tabindex="-1"></a>                                 <span class="st">&quot;mayjul&quot;</span>,<span class="st">&quot;mayaug&quot;</span>,<span class="st">&quot;junjul&quot;</span>,<span class="st">&quot;junaug&quot;</span>,<span class="st">&quot;julaug&quot;</span>)))</span>
+<span id="cb7-59"><a href="Chapter4.html#cb7-59" tabindex="-1"></a></span>
+<span id="cb7-60"><a href="Chapter4.html#cb7-60" tabindex="-1"></a>failu_objekts2<span class="ot">=</span>failu_objekts2 <span class="sc">%&gt;%</span> </span>
+<span id="cb7-61"><a href="Chapter4.html#cb7-61" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">gads2=</span><span class="fu">as.numeric</span>(gads),</span>
+<span id="cb7-62"><a href="Chapter4.html#cb7-62" tabindex="-1"></a>         <span class="at">sezona2=</span><span class="fu">factor</span>(sezona,<span class="at">ordered=</span><span class="cn">TRUE</span>,</span>
+<span id="cb7-63"><a href="Chapter4.html#cb7-63" tabindex="-1"></a>                        <span class="at">levels=</span><span class="fu">c</span>(<span class="st">&quot;aprmay&quot;</span>,<span class="st">&quot;aprjun&quot;</span>,<span class="st">&quot;aprjul&quot;</span>,<span class="st">&quot;apraug&quot;</span>,<span class="st">&quot;mayjun&quot;</span>,</span>
+<span id="cb7-64"><a href="Chapter4.html#cb7-64" tabindex="-1"></a>                                 <span class="st">&quot;mayjul&quot;</span>,<span class="st">&quot;mayaug&quot;</span>,<span class="st">&quot;junjul&quot;</span>,<span class="st">&quot;junaug&quot;</span>,<span class="st">&quot;julaug&quot;</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-65"><a href="Chapter4.html#cb7-65" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">x=</span><span class="dv">410000</span>,<span class="at">y=</span><span class="dv">210000</span>,</span>
+<span id="cb7-66"><a href="Chapter4.html#cb7-66" tabindex="-1"></a>         <span class="at">missings2=</span><span class="fu">paste0</span>(missings,<span class="st">&quot; %&quot;</span>))</span>
+<span id="cb7-67"><a href="Chapter4.html#cb7-67" tabindex="-1"></a></span>
+<span id="cb7-68"><a href="Chapter4.html#cb7-68" tabindex="-1"></a><span class="co"># rezultāta vizualizācija</span></span>
+<span id="cb7-69"><a href="Chapter4.html#cb7-69" tabindex="-1"></a><span class="fu">ggplot</span>()<span class="sc">+</span></span>
+<span id="cb7-70"><a href="Chapter4.html#cb7-70" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data=</span>robu_kvadrati2,<span class="fu">aes</span>(<span class="at">fill=</span>robi_tikla,<span class="at">col=</span>robi_tikla))<span class="sc">+</span></span>
+<span id="cb7-71"><a href="Chapter4.html#cb7-71" tabindex="-1"></a>  <span class="fu">facet_grid</span>(gads2<span class="sc">~</span>sezona2)<span class="sc">+</span></span>
+<span id="cb7-72"><a href="Chapter4.html#cb7-72" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb7-73"><a href="Chapter4.html#cb7-73" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">datum=</span>sf<span class="sc">::</span><span class="fu">st_crs</span>(<span class="dv">3059</span>))<span class="sc">+</span></span>
+<span id="cb7-74"><a href="Chapter4.html#cb7-74" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data=</span>failu_objekts2,<span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">y=</span>y,<span class="at">label=</span>missings2),<span class="at">size=</span><span class="fl">2.5</span>)<span class="sc">+</span></span>
+<span id="cb7-75"><a href="Chapter4.html#cb7-75" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">fill=</span><span class="st">&quot;Missing&quot;</span>,<span class="at">col=</span><span class="st">&quot;Missing&quot;</span>)<span class="sc">+</span></span>
+<span id="cb7-76"><a href="Chapter4.html#cb7-76" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.ticks =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb7-77"><a href="Chapter4.html#cb7-77" tabindex="-1"></a>        <span class="at">axis.text =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb7-78"><a href="Chapter4.html#cb7-78" tabindex="-1"></a>        <span class="at">axis.title =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb7-79"><a href="Chapter4.html#cb7-79" tabindex="-1"></a>        <span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb7-80"><a href="Chapter4.html#cb7-80" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;./pic_missings.png&quot;</span>,<span class="at">height =</span> <span class="dv">3000</span>,<span class="at">width=</span><span class="dv">5000</span>,<span class="at">units=</span><span class="st">&quot;px&quot;</span>)</span></code></pre></div>
 </div>
 <div id="q1-lauksaimniecības-kultūras" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> Q1: Lauksaimniecības kultūras<a href="Chapter4.html#q1-lauksaimniecības-kultūras" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Ir tādas kultūras, par kurām ir skaidrs, ka tām ir jāsakrīt ar DW klasēm, tās ir apskatāmas, lai pārbaudītu šīs Zemes novērošanas sistēmu (EO) klasifikācijas korektumu.</p>
+<p>Ir tādas kultūras, par kurām nav īsti skaidra šī atbilstība, to ir jānoskaidro pēc pirmās grupas izpētes rezultāta.</p>
+<p>Bet ir arī tādas kultūras, par kurām ir zināmas bažas par EO datu klasifikācijas rezultātu precizitātes iespējamību, piemēram, kukurūza un auzas.</p>
+<p>Aplūkojam sekojošas izpētes grupas:</p>
+<ul>
+<li><p>ziemāji aramzemēs, kur nav sagaidāmas problēmas, piemēram, rudzi, ziemas mieži, ziemas kvieši, ziemas tritikāle;</p></li>
+<li><p>ziemas rapsis;</p></li>
+<li><p>vasarāji aramzemēs, kur nav sagaidāmas problēmas, piemēram, vasaras mieži, vasaras kvieši, vasaras tritikāle;</p></li>
+<li><p>vasaras rapsis;</p></li>
+<li><p>auzas, jo dažādā izpratnē un pētījumos sarežģīti klasificējas EO datos;</p></li>
+<li><p>kukurūza, jo tur ir visādi jautājumi ar augšanu, augstumu un novākšanu - katrā no trim veidiem, lai labāk saprastu šo ainavā un dabas aizsardzībā nozīmīgo grupu;</p></li>
+<li><p>papuves, lai labāk izprastu šo klasi;</p></li>
+<li><p>ilggadīgi zālāji;</p></li>
+<li><p>kultivētās pļavas, lai labāk saprastu šo klasi;</p></li>
+<li><p>augļukoki, kur apvieno, augļu koki, ābeles, bumbieres, lai labāk saprastu šo klasi;</p></li>
+<li><p>ogu-krūmi, kur apvieno avenes, upenes, jāņogas, ērkšķogas, krūmcidonijas, kazenes, lai labāk saprastu šo klasi;</p></li>
+<li><p>zemās ogas, kur apvieno krūmmellenes un lieogu dzērvenes,</p></li>
+<li><p>bezatbalsta platības, kur apvieno kodus 620 un 792</p></li>
+<li><p>vagu un rušināmkultūras, kuru ilustrēšanai izmantošu kodus 821, 825, 843, 844</p></li>
+<li><p>īscirtmeta atvasāji un enerģijas augi, kurā apvienoti kodi 644, 645, 646, 641, 642</p></li>
+</ul>
+<p>Izmantojam 2023. gada DW sezonālos slāņus. Lai gan šajā izpētes solī fokuss ir uz augstāk minētajām grupām, sugu izplatības modelēšanai ir nepieciešams klasificēt visas kultūras, tādēļ jau uzreiz skatām visas kultūras.</p>
+<p>Komandu rindas DW klašu sastopamības izpētei ir zemāk. To ietvaros izmantota <a href="Chapter3.html#Chapter3.1.2">LAD lauku informācija</a> un šajā nodaļā (augstāk) sagatavotās 2023. gada DW sezonālās mozaīkas.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="Chapter4.html#cb8-1" tabindex="-1"></a><span class="co"># libs</span></span>
+<span id="cb8-2"><a href="Chapter4.html#cb8-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb8-3"><a href="Chapter4.html#cb8-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
+<span id="cb8-4"><a href="Chapter4.html#cb8-4" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(arrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;arrow&quot;</span>); <span class="fu">require</span>(arrow)}</span>
+<span id="cb8-5"><a href="Chapter4.html#cb8-5" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sfarrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;sfarrow&quot;</span>); <span class="fu">require</span>(sfarrow)}</span>
+<span id="cb8-6"><a href="Chapter4.html#cb8-6" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(exactextractr)) {<span class="fu">install.packages</span>(<span class="st">&quot;exactextractr&quot;</span>); <span class="fu">require</span>(exactextractr)}</span>
+<span id="cb8-7"><a href="Chapter4.html#cb8-7" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(ggview)) {<span class="fu">install.packages</span>(<span class="st">&quot;ggview&quot;</span>); <span class="fu">require</span>(ggview)}</span>
+<span id="cb8-8"><a href="Chapter4.html#cb8-8" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(readxl)) {<span class="fu">install.packages</span>(<span class="st">&quot;readxl&quot;</span>); <span class="fu">require</span>(readxl)}</span>
+<span id="cb8-9"><a href="Chapter4.html#cb8-9" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(ggrepel)) {<span class="fu">install.packages</span>(<span class="st">&quot;ggrepel&quot;</span>); <span class="fu">require</span>(ggrepel)}</span>
+<span id="cb8-10"><a href="Chapter4.html#cb8-10" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="Chapter4.html#cb8-11" tabindex="-1"></a><span class="co"># ievades dati</span></span>
+<span id="cb8-12"><a href="Chapter4.html#cb8-12" tabindex="-1"></a>LAD <span class="ot">&lt;-</span> <span class="fu">st_read_parquet</span>(<span class="st">&quot;./LAD_lauki.parquet&quot;</span>)</span>
+<span id="cb8-13"><a href="Chapter4.html#cb8-13" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="Chapter4.html#cb8-14" tabindex="-1"></a>AprAug <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">&quot;./DW_2023_apraug.tif&quot;</span>)</span>
+<span id="cb8-15"><a href="Chapter4.html#cb8-15" tabindex="-1"></a>AprJul <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">&quot;./DW_2023_aprjul.tif&quot;</span>)</span>
+<span id="cb8-16"><a href="Chapter4.html#cb8-16" tabindex="-1"></a>AprJun <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">&quot;./DW_2023_aprjun.tif&quot;</span>)</span>
+<span id="cb8-17"><a href="Chapter4.html#cb8-17" tabindex="-1"></a>AprMay <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">&quot;./DW_2023_aprmay.tif&quot;</span>)</span>
+<span id="cb8-18"><a href="Chapter4.html#cb8-18" tabindex="-1"></a>JulAug <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">&quot;./DW_2023_julaug.tif&quot;</span>)</span>
+<span id="cb8-19"><a href="Chapter4.html#cb8-19" tabindex="-1"></a>JunAug <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">&quot;./DW_2023_julaug.tif&quot;</span>)</span>
+<span id="cb8-20"><a href="Chapter4.html#cb8-20" tabindex="-1"></a>JunJul <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">&quot;./DW_2023_junjul.tif&quot;</span>)</span>
+<span id="cb8-21"><a href="Chapter4.html#cb8-21" tabindex="-1"></a>MayAug <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">&quot;./DW_2023_mayaug.tif&quot;</span>)</span>
+<span id="cb8-22"><a href="Chapter4.html#cb8-22" tabindex="-1"></a>MayJul <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">&quot;./DW_2023_mayjul.tif&quot;</span>)</span>
+<span id="cb8-23"><a href="Chapter4.html#cb8-23" tabindex="-1"></a>MayJun <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">&quot;./DW_2023_mayjun.tif&quot;</span>)</span>
+<span id="cb8-24"><a href="Chapter4.html#cb8-24" tabindex="-1"></a></span>
+<span id="cb8-25"><a href="Chapter4.html#cb8-25" tabindex="-1"></a><span class="co"># utility</span></span>
+<span id="cb8-26"><a href="Chapter4.html#cb8-26" tabindex="-1"></a>darbiba <span class="ot">&lt;-</span> <span class="cf">function</span>(raster, vector, period) {</span>
+<span id="cb8-27"><a href="Chapter4.html#cb8-27" tabindex="-1"></a>  <span class="fu">exact_extract</span>(raster, vector, <span class="cf">function</span>(value, coverage_fraction) {</span>
+<span id="cb8-28"><a href="Chapter4.html#cb8-28" tabindex="-1"></a>    <span class="fu">data.frame</span>(<span class="at">value =</span> value,</span>
+<span id="cb8-29"><a href="Chapter4.html#cb8-29" tabindex="-1"></a>               <span class="at">frac =</span> coverage_fraction <span class="sc">/</span> <span class="fu">sum</span>(coverage_fraction, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb8-30"><a href="Chapter4.html#cb8-30" tabindex="-1"></a>      <span class="fu">group_by</span>(value) <span class="sc">%&gt;%</span></span>
+<span id="cb8-31"><a href="Chapter4.html#cb8-31" tabindex="-1"></a>      <span class="fu">summarize</span>(<span class="at">freq =</span> <span class="fu">sum</span>(frac, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">.groups =</span> <span class="st">&#39;drop&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb8-32"><a href="Chapter4.html#cb8-32" tabindex="-1"></a>      <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> <span class="st">&#39;value&#39;</span>,</span>
+<span id="cb8-33"><a href="Chapter4.html#cb8-33" tabindex="-1"></a>                  <span class="at">names_prefix =</span> <span class="st">&#39;freq_&#39;</span>,</span>
+<span id="cb8-34"><a href="Chapter4.html#cb8-34" tabindex="-1"></a>                  <span class="at">values_from =</span> <span class="st">&#39;freq&#39;</span>)</span>
+<span id="cb8-35"><a href="Chapter4.html#cb8-35" tabindex="-1"></a>  }) <span class="sc">%&gt;%</span></span>
+<span id="cb8-36"><a href="Chapter4.html#cb8-36" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">starts_with</span>(<span class="st">&#39;freq&#39;</span>), <span class="sc">~</span><span class="fu">replace_na</span>(., <span class="dv">0</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb8-37"><a href="Chapter4.html#cb8-37" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">periods =</span> period) </span>
+<span id="cb8-38"><a href="Chapter4.html#cb8-38" tabindex="-1"></a>}</span>
+<span id="cb8-39"><a href="Chapter4.html#cb8-39" tabindex="-1"></a></span>
+<span id="cb8-40"><a href="Chapter4.html#cb8-40" tabindex="-1"></a></span>
+<span id="cb8-41"><a href="Chapter4.html#cb8-41" tabindex="-1"></a><span class="co"># DW klašu ekstrakcija ik lauka kultūru nejauši izlozētiem plankumiem</span></span>
+<span id="cb8-42"><a href="Chapter4.html#cb8-42" tabindex="-1"></a><span class="co"># kultūru kodi</span></span>
+<span id="cb8-43"><a href="Chapter4.html#cb8-43" tabindex="-1"></a>kodi<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">kodi=</span><span class="fu">levels</span>(<span class="fu">factor</span>(LAD<span class="sc">$</span>PRODUCT_CODE)))</span>
+<span id="cb8-44"><a href="Chapter4.html#cb8-44" tabindex="-1"></a><span class="co"># saglabāšanas datu pamatne</span></span>
+<span id="cb8-45"><a href="Chapter4.html#cb8-45" tabindex="-1"></a>dati<span class="ot">=</span>LAD[<span class="dv">1</span>,]</span>
+<span id="cb8-46"><a href="Chapter4.html#cb8-46" tabindex="-1"></a>dati<span class="ot">=</span>dati <span class="sc">%&gt;%</span> </span>
+<span id="cb8-47"><a href="Chapter4.html#cb8-47" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">periods=</span><span class="cn">NA_character_</span>,</span>
+<span id="cb8-48"><a href="Chapter4.html#cb8-48" tabindex="-1"></a>         <span class="at">id=</span><span class="cn">NA_real_</span>,</span>
+<span id="cb8-49"><a href="Chapter4.html#cb8-49" tabindex="-1"></a>         <span class="at">freq_0=</span><span class="cn">NA_real_</span>,</span>
+<span id="cb8-50"><a href="Chapter4.html#cb8-50" tabindex="-1"></a>         <span class="at">freq_1=</span><span class="cn">NA_real_</span>,</span>
+<span id="cb8-51"><a href="Chapter4.html#cb8-51" tabindex="-1"></a>         <span class="at">freq_2=</span><span class="cn">NA_real_</span>,</span>
+<span id="cb8-52"><a href="Chapter4.html#cb8-52" tabindex="-1"></a>         <span class="at">freq_3=</span><span class="cn">NA_real_</span>,</span>
+<span id="cb8-53"><a href="Chapter4.html#cb8-53" tabindex="-1"></a>         <span class="at">freq_4=</span><span class="cn">NA_real_</span>,</span>
+<span id="cb8-54"><a href="Chapter4.html#cb8-54" tabindex="-1"></a>         <span class="at">freq_5=</span><span class="cn">NA_real_</span>,</span>
+<span id="cb8-55"><a href="Chapter4.html#cb8-55" tabindex="-1"></a>         <span class="at">freq_6=</span><span class="cn">NA_real_</span>,</span>
+<span id="cb8-56"><a href="Chapter4.html#cb8-56" tabindex="-1"></a>         <span class="at">freq_7=</span><span class="cn">NA_real_</span>,</span>
+<span id="cb8-57"><a href="Chapter4.html#cb8-57" tabindex="-1"></a>         <span class="at">freq_8=</span><span class="cn">NA_real_</span>,</span>
+<span id="cb8-58"><a href="Chapter4.html#cb8-58" tabindex="-1"></a>         <span class="at">freq_NA=</span><span class="cn">NA_real_</span>)</span>
+<span id="cb8-59"><a href="Chapter4.html#cb8-59" tabindex="-1"></a><span class="co"># ekstrakcija ik kodams, veicot izlozi</span></span>
+<span id="cb8-60"><a href="Chapter4.html#cb8-60" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(kodi<span class="sc">$</span>kodi)){</span>
+<span id="cb8-61"><a href="Chapter4.html#cb8-61" tabindex="-1"></a>  kods<span class="ot">=</span>kodi<span class="sc">$</span>kodi[i]</span>
+<span id="cb8-62"><a href="Chapter4.html#cb8-62" tabindex="-1"></a>  <span class="co"># nejaušo plankumu izloze</span></span>
+<span id="cb8-63"><a href="Chapter4.html#cb8-63" tabindex="-1"></a>  <span class="fu">set.seed</span>(<span class="dv">0</span>)</span>
+<span id="cb8-64"><a href="Chapter4.html#cb8-64" tabindex="-1"></a>  lauki <span class="ot">&lt;-</span> LAD <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="st">`</span><span class="at">PRODUCT_CODE</span><span class="st">`</span> <span class="sc">==</span> kods)</span>
+<span id="cb8-65"><a href="Chapter4.html#cb8-65" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">nrow</span>(lauki) <span class="sc">&lt;</span> <span class="dv">999</span>) {rand_l <span class="ot">&lt;-</span> lauki} <span class="cf">else</span> {rand_l <span class="ot">&lt;-</span> lauki <span class="sc">%&gt;%</span> <span class="fu">sample_n</span>(<span class="dv">999</span>)}</span>
+<span id="cb8-66"><a href="Chapter4.html#cb8-66" tabindex="-1"></a>  rand_l <span class="ot">&lt;-</span> rand_l <span class="sc">%&gt;%</span>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="fu">row_number</span>())</span>
+<span id="cb8-67"><a href="Chapter4.html#cb8-67" tabindex="-1"></a>  <span class="co"># ekstrakcija</span></span>
+<span id="cb8-68"><a href="Chapter4.html#cb8-68" tabindex="-1"></a>  a<span class="ot">=</span><span class="fu">cbind</span>(rand_l,<span class="fu">darbiba</span>(AprAug, rand_l, <span class="st">&quot;AprAug&quot;</span>))</span>
+<span id="cb8-69"><a href="Chapter4.html#cb8-69" tabindex="-1"></a>  b<span class="ot">=</span><span class="fu">cbind</span>(rand_l,<span class="fu">darbiba</span>(AprJul, rand_l, <span class="st">&quot;AprJul&quot;</span>))</span>
+<span id="cb8-70"><a href="Chapter4.html#cb8-70" tabindex="-1"></a>  c<span class="ot">=</span><span class="fu">cbind</span>(rand_l,<span class="fu">darbiba</span>(AprJun, rand_l, <span class="st">&quot;AprJun&quot;</span>))</span>
+<span id="cb8-71"><a href="Chapter4.html#cb8-71" tabindex="-1"></a>  d<span class="ot">=</span><span class="fu">cbind</span>(rand_l,<span class="fu">darbiba</span>(AprMay, rand_l, <span class="st">&quot;AprMay&quot;</span>))</span>
+<span id="cb8-72"><a href="Chapter4.html#cb8-72" tabindex="-1"></a>  e<span class="ot">=</span><span class="fu">cbind</span>(rand_l,<span class="fu">darbiba</span>(JulAug, rand_l, <span class="st">&quot;JulAug&quot;</span>))</span>
+<span id="cb8-73"><a href="Chapter4.html#cb8-73" tabindex="-1"></a>  f<span class="ot">=</span><span class="fu">cbind</span>(rand_l,<span class="fu">darbiba</span>(JunAug, rand_l, <span class="st">&quot;JunAug&quot;</span>))</span>
+<span id="cb8-74"><a href="Chapter4.html#cb8-74" tabindex="-1"></a>  g<span class="ot">=</span><span class="fu">cbind</span>(rand_l,<span class="fu">darbiba</span>(JunJul, rand_l, <span class="st">&quot;JunJul&quot;</span>))</span>
+<span id="cb8-75"><a href="Chapter4.html#cb8-75" tabindex="-1"></a>  h<span class="ot">=</span><span class="fu">cbind</span>(rand_l,<span class="fu">darbiba</span>(MayAug, rand_l, <span class="st">&quot;MayAug&quot;</span>))</span>
+<span id="cb8-76"><a href="Chapter4.html#cb8-76" tabindex="-1"></a>  i<span class="ot">=</span><span class="fu">cbind</span>(rand_l,<span class="fu">darbiba</span>(MayJul, rand_l, <span class="st">&quot;MayJul&quot;</span>))</span>
+<span id="cb8-77"><a href="Chapter4.html#cb8-77" tabindex="-1"></a>  j<span class="ot">=</span><span class="fu">cbind</span>(rand_l,<span class="fu">darbiba</span>(MayJun, rand_l, <span class="st">&quot;MayJun&quot;</span>))</span>
+<span id="cb8-78"><a href="Chapter4.html#cb8-78" tabindex="-1"></a>  <span class="co"># rezultātu apvienošana</span></span>
+<span id="cb8-79"><a href="Chapter4.html#cb8-79" tabindex="-1"></a>  rez<span class="ot">=</span><span class="fu">bind_rows</span>(a,b,c,d,e,f,g,h,i,j)</span>
+<span id="cb8-80"><a href="Chapter4.html#cb8-80" tabindex="-1"></a>  dati <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(dati, rez)</span>
+<span id="cb8-81"><a href="Chapter4.html#cb8-81" tabindex="-1"></a>  }</span>
+<span id="cb8-82"><a href="Chapter4.html#cb8-82" tabindex="-1"></a><span class="co"># ērtāki lauku nosaukumi</span></span>
+<span id="cb8-83"><a href="Chapter4.html#cb8-83" tabindex="-1"></a>dati<span class="ot">=</span>dati <span class="sc">%&gt;%</span> </span>
+<span id="cb8-84"><a href="Chapter4.html#cb8-84" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">water=</span>freq_0,</span>
+<span id="cb8-85"><a href="Chapter4.html#cb8-85" tabindex="-1"></a>         <span class="at">trees=</span>freq_1,</span>
+<span id="cb8-86"><a href="Chapter4.html#cb8-86" tabindex="-1"></a>         <span class="at">grass=</span>freq_2,</span>
+<span id="cb8-87"><a href="Chapter4.html#cb8-87" tabindex="-1"></a>         <span class="at">flooded_vegetation=</span>freq_3,</span>
+<span id="cb8-88"><a href="Chapter4.html#cb8-88" tabindex="-1"></a>         <span class="at">crops=</span>freq_4,</span>
+<span id="cb8-89"><a href="Chapter4.html#cb8-89" tabindex="-1"></a>         <span class="at">shrub_and_scrub=</span>freq_5,</span>
+<span id="cb8-90"><a href="Chapter4.html#cb8-90" tabindex="-1"></a>         <span class="at">built=</span>freq_6,</span>
+<span id="cb8-91"><a href="Chapter4.html#cb8-91" tabindex="-1"></a>         <span class="at">bare=</span>freq_7,</span>
+<span id="cb8-92"><a href="Chapter4.html#cb8-92" tabindex="-1"></a>         <span class="at">snow_and_ice=</span>freq_8)</span>
+<span id="cb8-93"><a href="Chapter4.html#cb8-93" tabindex="-1"></a><span class="co"># atbrīvošanās no liekā ieraksta</span></span>
+<span id="cb8-94"><a href="Chapter4.html#cb8-94" tabindex="-1"></a>dati_real<span class="ot">=</span>dati[<span class="sc">-</span><span class="dv">1</span>,]</span>
+<span id="cb8-95"><a href="Chapter4.html#cb8-95" tabindex="-1"></a><span class="co"># rezultāta saglabāšana</span></span>
+<span id="cb8-96"><a href="Chapter4.html#cb8-96" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(dati_real,<span class="st">&quot;./Q1_kulturas.parquet&quot;</span>)</span></code></pre></div>
 <div id="q1.1-ziemāji-aramzemēs" class="section level3 hasAnchor" number="5.2.1">
 <h3><span class="header-section-number">5.2.1</span> Q1.1: Ziemāji aramzemēs<a href="Chapter4.html#q1.1-ziemāji-aramzemēs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Sekojošajā attēlā @ref(fig:DW_q11) ir ilustrēta ziemāju aramzemēs (kultūru kodi “121”,“122”,“132”,“112”,“116”,“151”) saistība ar DW klasēm dažādos temporālajos griezumos. Skaitļi attēlu daļās norāda klases “crops” ar lauka platību svērto vidējo īpatsvaru. Redzams, ka zemākā atbilstība ir izmantojot tikai vasaras mēnešus. Ievērojami zemāka par atlikušajām klasēm ir arī tikai pavasara klasifikācija. Atlikušās ir visai līdzīgas, nedaudz pārāki temporālie griezumi šķiet maijā-jūnijā un maijā-jūlijā.</p>
+<div class="figure">
+<img src="Atteli/ch004_q11.png" alt="Lauksaimniecības kultūru grupas &quot;ziemāji&quot; saistība ar DW klasēm." width="100%" />
+<p class="caption">
+(#fig:DW_q11)Lauksaimniecības kultūru grupas “ziemāji” saistība ar DW klasēm.
+</p>
+</div>
+<p><br></p>
+<p>Komandu rindas attēla sagatavošanas reproducēšanai:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="Chapter4.html#cb9-1" tabindex="-1"></a>dati<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Q1_kulturas.parquet&quot;</span>)</span>
+<span id="cb9-2"><a href="Chapter4.html#cb9-2" tabindex="-1"></a>dati<span class="ot">=</span>dati <span class="sc">%&gt;%</span> </span>
+<span id="cb9-3"><a href="Chapter4.html#cb9-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sezona=</span><span class="fu">factor</span>(periods,<span class="at">ordered=</span><span class="cn">TRUE</span>,</span>
+<span id="cb9-4"><a href="Chapter4.html#cb9-4" tabindex="-1"></a>                       <span class="at">levels=</span><span class="fu">c</span>(<span class="st">&quot;AprMay&quot;</span>,<span class="st">&quot;AprJun&quot;</span>,<span class="st">&quot;AprJul&quot;</span>,<span class="st">&quot;AprAug&quot;</span>,<span class="st">&quot;MayJun&quot;</span>,</span>
+<span id="cb9-5"><a href="Chapter4.html#cb9-5" tabindex="-1"></a>                                <span class="st">&quot;MayJul&quot;</span>,<span class="st">&quot;MayAug&quot;</span>,<span class="st">&quot;JunJul&quot;</span>,<span class="st">&quot;JunAug&quot;</span>,<span class="st">&quot;JulAug&quot;</span>)))</span>
+<span id="cb9-6"><a href="Chapter4.html#cb9-6" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="Chapter4.html#cb9-7" tabindex="-1"></a>ziemaji_aramzemes<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;121&quot;</span>,<span class="st">&quot;122&quot;</span>,<span class="st">&quot;132&quot;</span>,<span class="st">&quot;112&quot;</span>,<span class="st">&quot;116&quot;</span>,<span class="st">&quot;151&quot;</span>)</span>
+<span id="cb9-8"><a href="Chapter4.html#cb9-8" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="Chapter4.html#cb9-9" tabindex="-1"></a>q11data<span class="ot">=</span><span class="fu">data.frame</span>(dati) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-10"><a href="Chapter4.html#cb9-10" tabindex="-1"></a>  <span class="fu">filter</span>(PRODUCT_CODE <span class="sc">%in%</span> ziemaji_aramzemes) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-11"><a href="Chapter4.html#cb9-11" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(PRODUCT_CODE,PRODUCT_DESCRIPTION,SHAPE.AREA,sezona,water<span class="sc">:</span>snow_and_ice) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-12"><a href="Chapter4.html#cb9-12" tabindex="-1"></a>  <span class="fu">group_by</span>(PRODUCT_CODE) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-13"><a href="Chapter4.html#cb9-13" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">skaits=</span><span class="fu">n</span>()<span class="sc">/</span><span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-14"><a href="Chapter4.html#cb9-14" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb9-15"><a href="Chapter4.html#cb9-15" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">nosaukums=</span><span class="fu">paste0</span>(PRODUCT_DESCRIPTION,<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>,<span class="st">&quot;n=&quot;</span>,skaits)) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-16"><a href="Chapter4.html#cb9-16" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols=</span>water<span class="sc">:</span>snow_and_ice,<span class="at">names_to =</span> <span class="st">&quot;klase&quot;</span>,<span class="at">values_to =</span> <span class="st">&quot;proporcija&quot;</span>)</span>
+<span id="cb9-17"><a href="Chapter4.html#cb9-17" tabindex="-1"></a></span>
+<span id="cb9-18"><a href="Chapter4.html#cb9-18" tabindex="-1"></a>q11data2<span class="ot">=</span>q1data <span class="sc">%&gt;%</span> </span>
+<span id="cb9-19"><a href="Chapter4.html#cb9-19" tabindex="-1"></a>  <span class="fu">group_by</span>(nosaukums,sezona,klase) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-20"><a href="Chapter4.html#cb9-20" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">vertiba=</span><span class="fu">round</span>(<span class="fu">weighted.mean</span>(proporcija,<span class="at">w=</span>SHAPE.AREA,<span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">*</span><span class="dv">100</span>,<span class="dv">0</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-21"><a href="Chapter4.html#cb9-21" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb9-22"><a href="Chapter4.html#cb9-22" tabindex="-1"></a>  <span class="fu">filter</span>(klase<span class="sc">==</span><span class="st">&quot;crops&quot;</span>)</span>
+<span id="cb9-23"><a href="Chapter4.html#cb9-23" tabindex="-1"></a></span>
+<span id="cb9-24"><a href="Chapter4.html#cb9-24" tabindex="-1"></a><span class="fu">ggplot</span>(q11data,<span class="fu">aes</span>(sezona,proporcija,<span class="at">col=</span>klase))<span class="sc">+</span></span>
+<span id="cb9-25"><a href="Chapter4.html#cb9-25" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>nosaukums)<span class="sc">+</span></span>
+<span id="cb9-26"><a href="Chapter4.html#cb9-26" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">position=</span><span class="fu">position_dodge</span>(<span class="at">width=</span><span class="fl">0.75</span>),<span class="at">alpha=</span><span class="fl">0.2</span>)<span class="sc">+</span></span>
+<span id="cb9-27"><a href="Chapter4.html#cb9-27" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb9-28"><a href="Chapter4.html#cb9-28" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle=</span><span class="dv">90</span>,<span class="at">vjust=</span><span class="fl">0.5</span>),</span>
+<span id="cb9-29"><a href="Chapter4.html#cb9-29" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb9-30"><a href="Chapter4.html#cb9-30" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_blank</span>())<span class="sc">+</span></span>
+<span id="cb9-31"><a href="Chapter4.html#cb9-31" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data=</span>q11data2,<span class="fu">aes</span>(sezona,<span class="at">y=</span><span class="fl">1.1</span>,<span class="at">label=</span>vertiba),<span class="at">size=</span><span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb9-32"><a href="Chapter4.html#cb9-32" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>()<span class="sc">+</span></span>
+<span id="cb9-33"><a href="Chapter4.html#cb9-33" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels=</span>scales<span class="sc">::</span><span class="fu">label_percent</span>(),<span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="at">by=</span>.<span class="dv">1</span>))<span class="sc">+</span></span>
+<span id="cb9-34"><a href="Chapter4.html#cb9-34" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Sezona&quot;</span>)</span>
+<span id="cb9-35"><a href="Chapter4.html#cb9-35" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
+<span id="cb9-36"><a href="Chapter4.html#cb9-36" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q11.png&quot;</span>,<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
 </div>
 <div id="q1.2-ziemas-rapsis" class="section level3 hasAnchor" number="5.2.2">
 <h3><span class="header-section-number">5.2.2</span> Q1.2: Ziemas rapsis<a href="Chapter4.html#q1.2-ziemas-rapsis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -568,22 +822,22 @@ div.csl-indent {
 <h3>References<a href="references-1.html#references-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-DynWorld" class="csl-entry">
-Brown, C.F., Brumby, S.P., Guzder-Williams, B., Birch, T., Hyde, S.B., Mazzariello, J., Czerwinski, W., Pasquarella, V.J., Haertel, R., Ilyushchenko, S., Schwehr, K., Weisse, M., Stolle, F., Hanson, C., Guinan, O., Moore, R., Tait, A.M., 2022. <span>Dynamic</span> <span>World</span>, <span>Near</span> real-time global 10 m land use land cover mapping, Scientific Data. https://doi.org/<a href="https://doi.org/10.1038/s41597-022-01307-4">https://doi.org/10.1038/s41597-022-01307-4</a>
+Brown, C.F., Brumby, S.P., Guzder-Williams, B., Birch, T., Hyde, S.B., Mazzariello, J., Czerwinski, W., Pasquarella, V.J., Haertel, R., Ilyushchenko, S., Schwehr, K., Weisse, M., Stolle, F., Hanson, C., Guinan, O., Moore, R., Tait, A.M., 2022. <span>Dynamic</span> <span>World</span>, <span>Near</span> real-time global 10 m land use land cover mapping, Scientific Data. <a href="https://doi.org/10.1038/s41597-022-01307-4">https://doi.org/10.1038/s41597-022-01307-4</a>
 </div>
 <div id="ref-CropMap2022" class="csl-entry">
-Ghassemi, B., Izquierdo-Verdiguier, E., Verhegghen, A., Yordanov, M., Lemoine, G., Martínez, Á.M., Marchi, D.D., Velde, M. van der, Vuolo, F., d’Andrimont, R., 2024. <span>European</span> <span>Union</span> crop map 2022: <span>Earth</span> observation’s 10-meter dive into <span class="nocase">Europe’s</span> crop tapestry, Scientific Data. https://doi.org/<a href="https://doi.org/10.1038/s41597-024-03884-y">https://doi.org/10.1038/s41597-024-03884-y</a>
+Ghassemi, B., Izquierdo-Verdiguier, E., Verhegghen, A., Yordanov, M., Lemoine, G., Martínez, Á.M., Marchi, D.D., Velde, M. van der, Vuolo, F., d’Andrimont, R., 2024. <span>European</span> <span>Union</span> crop map 2022: <span>Earth</span> observation’s 10-meter dive into <span class="nocase">Europe’s</span> crop tapestry, Scientific Data. <a href="https://doi.org/10.1038/s41597-024-03884-y">https://doi.org/10.1038/s41597-024-03884-y</a>
 </div>
 <div id="ref-GEEpaper" class="csl-entry">
-Gorelick, N., Hancher, M., Dixon, M., Ilyushchenko, S., Thau, D., Moore, R., 2017. <span>Google</span> <span>Earth</span> <span>Engine</span>: <span class="nocase">Planetary-scale</span> geospatial analysis for everyone, Remote Sensing of Environment. https://doi.org/<a href="https://doi.org/10.1016/j.rse.2017.06.031">https://doi.org/10.1016/j.rse.2017.06.031</a>
+Gorelick, N., Hancher, M., Dixon, M., Ilyushchenko, S., Thau, D., Moore, R., 2017. <span>Google</span> <span>Earth</span> <span>Engine</span>: <span class="nocase">Planetary-scale</span> geospatial analysis for everyone, Remote Sensing of Environment. <a href="https://doi.org/10.1016/j.rse.2017.06.031">https://doi.org/10.1016/j.rse.2017.06.031</a>
 </div>
 <div id="ref-ELULC10" class="csl-entry">
-Mirmazloumi, S.M., Kakooei, M., Mohseni, F., Ghorbanian, A., Amani, M., Crosetto, M., Monserrat, O., 2022. ELULC-10, a 10 m <span>European</span> land use and land cover map using <span>Sentinel</span> and <span>Landsat</span> data in <span>Google</span> <span>Earth</span> <span>Engine</span>, Remote Sensing. https://doi.org/<a href="https://doi.org/10.3390/rs14133041">https://doi.org/10.3390/rs14133041</a>
+Mirmazloumi, S.M., Kakooei, M., Mohseni, F., Ghorbanian, A., Amani, M., Crosetto, M., Monserrat, O., 2022. ELULC-10, a 10 m <span>European</span> land use and land cover map using <span>Sentinel</span> and <span>Landsat</span> data in <span>Google</span> <span>Earth</span> <span>Engine</span>, Remote Sensing. <a href="https://doi.org/10.3390/rs14133041">https://doi.org/10.3390/rs14133041</a>
 </div>
 <div id="ref-LULC10salidzinajums_Venter" class="csl-entry">
-Venter, Z.S., Barton, D.N., Chakraborty, T., Simensen, T., Singh, G., 2022. Global 10 m <span>Land</span> <span>Use</span> <span>Land</span> <span>Cover</span> datasets: A comparison of <span>Dynamic</span> <span>World</span>, <span>World</span> <span>Cover</span> and <span>Esri</span> <span>Land</span> <span>Cover</span>, Remote Sensing. https://doi.org/<a href="https://doi.org/10.3390/rs14164101">https://doi.org/10.3390/rs14164101</a>
+Venter, Z.S., Barton, D.N., Chakraborty, T., Simensen, T., Singh, G., 2022. Global 10 m <span>Land</span> <span>Use</span> <span>Land</span> <span>Cover</span> datasets: A comparison of <span>Dynamic</span> <span>World</span>, <span>World</span> <span>Cover</span> and <span>Esri</span> <span>Land</span> <span>Cover</span>, Remote Sensing. <a href="https://doi.org/10.3390/rs14164101">https://doi.org/10.3390/rs14164101</a>
 </div>
 <div id="ref-LULC10salidzinajums_Xu" class="csl-entry">
-Xu, P., Tsendbazar, N.-E., Herold, M., Bruin, S. de, Koopmans, M., Birch, T., Carter, S., Fritz, S., Lesiv, M., Mazur, E., Pickens, A., Potapov, P., Stolle, F., Tyukavina, A., Kerchove, R.V.D., Zanaga, D., 2024. Comparative validation of recent 10 m-resolution global land cover maps, Remote Sensing of Environment. https://doi.org/<a href="https://doi.org/10.1016/j.rse.2024.114316">https://doi.org/10.1016/j.rse.2024.114316</a>
+Xu, P., Tsendbazar, N.-E., Herold, M., Bruin, S. de, Koopmans, M., Birch, T., Carter, S., Fritz, S., Lesiv, M., Mazur, E., Pickens, A., Potapov, P., Stolle, F., Tyukavina, A., Kerchove, R.V.D., Zanaga, D., 2024. Comparative validation of recent 10 m-resolution global land cover maps, Remote Sensing of Environment. <a href="https://doi.org/10.1016/j.rse.2024.114316">https://doi.org/10.1016/j.rse.2024.114316</a>
 </div>
 </div>
             </section>

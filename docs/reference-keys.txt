@@ -23,9 +23,9 @@ m-režģis-latvijā
 stratificēšana-ģeoprocesēšanas-paralelizācijai
 references-rastri
 Chapter3
-ievades-jēldati
-meža-valsts-reģistrs
-lauku-atbalsts-dienesta-lauku-informācija
+Chapter3.1
+Chapter3.1.1
+Chapter3.1.2
 lģia-topogrāfiskā-karte
 mkis
 lvm-atvērtie-dati
@@ -81,6 +81,7 @@ q6-zālāju-transformācija-uz-aramzemēm
 secinājumi
 Chapter5
 reljefs-1
+dis_area_r500
 klimats-1
 satelītindeksi-1
 augsne-1

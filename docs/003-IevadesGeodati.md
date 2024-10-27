@@ -2,11 +2,11 @@
 
 All chapters start with a first-level heading followed by your chapter title, like the line above. There should be only one first-level heading (`#`) per .Rmd file.
 
-## Ievades jēldati
+## Ievades jēldati {#Chapter3.1}
 
-### Meža Valsts reģistrs
+### Meža Valsts reģistrs {#Chapter3.1.1}
 
-### Lauku atbalsts dienesta lauku informācija
+### Lauku atbalsts dienesta lauku informācija {#Chapter3.1.2}
 
 ### LĢIA topogrāfiskā karte
 

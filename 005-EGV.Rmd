@@ -3,6 +3,29 @@
 
 ## Reljefs
 
+### DiS_area_r500
+
+**Faila nosaukums:**
+
+**Faila pieejamība:**
+
+- [RAW]()
+
+- [centrēts un mērogots]()
+
+**EGV nosaukums:**
+
+**EGV apraksts:**
+
+**Izveidošanas atkarības:**
+
+**Izveidošanas komandu rindas:**
+
+```{r, eval=FALSE}
+
+```
+
+
 ## Klimats
 
 ## Satelītindeksi
