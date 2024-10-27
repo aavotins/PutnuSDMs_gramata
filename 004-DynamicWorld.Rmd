@@ -432,43 +432,1250 @@ ggsave(filename="./pic_q11.png",width=300,height=150,units="mm",dpi=600)
 
 ### Q1.2: Ziemas rapsis
 
+Sekojošajā attēlā \@ref(fig:DWq12) ir ilustrēta ziemas rapša (kultūras kods "212") saistība ar Dynamic World klasēm dažādos temporālajos griezumos. Skaitļi attēlu daļās norāda klases "crops" ar lauka platību svērto vidējo īpatsvaru. Redzams, ka zemākā atbilstība ir izmantojot tikai vasaras mēnešus.
+
+
+```{r DWq12, echo=FALSE, out.width = '60%', fig.cap='Lauksaimniecības kultūru grupas "ziemas rapsis" saistība ar DW klasēm.'}
+knitr::include_graphics("./Atteli/ch004_q12.png")
+```
+
+<br>
+
+
+Komandu rindas attēla sagatavošanas reproducēšanai:
+
+```{r, eval=FALSE}
+dati=sfarrow::st_read_parquet("./Q1_kulturas.parquet")
+dati=dati %>% 
+  mutate(sezona=factor(periods,ordered=TRUE,
+                       levels=c("AprMay","AprJun","AprJul","AprAug","MayJun",
+                                "MayJul","MayAug","JunJul","JunAug","JulAug")))
+ziemas_rapsis=c("212")
+
+q12data=data.frame(dati) %>% 
+  filter(PRODUCT_CODE %in% ziemas_rapsis) %>% 
+  dplyr::select(PRODUCT_CODE,PRODUCT_DESCRIPTION,SHAPE.AREA,sezona,water:snow_and_ice) %>% 
+  group_by(PRODUCT_CODE) %>% 
+  mutate(skaits=n()/10) %>% 
+  ungroup() %>% 
+  mutate(nosaukums=paste0(PRODUCT_DESCRIPTION,"\n","n=",skaits)) %>% 
+  pivot_longer(cols=water:snow_and_ice,names_to = "klase",values_to = "proporcija")
+
+q12data2=q12data %>% 
+  group_by(nosaukums,sezona,klase) %>% 
+  summarise(vertiba=round(weighted.mean(proporcija,w=SHAPE.AREA,na.rm=TRUE)*100,0)) %>% 
+  ungroup() %>% 
+  filter(klase=="crops")
+
+ggplot(q12data,aes(sezona,proporcija,col=klase))+
+  facet_wrap(~nosaukums)+
+  geom_point(position=position_dodge(width=0.75),alpha=0.2)+
+  theme_bw()+
+  theme(axis.title.y = element_blank(),
+        legend.title = element_blank())+
+  geom_text(data=q12data2,aes(sezona,y=1.1,label=vertiba),size=3)+
+  scale_color_viridis_d()+
+  scale_y_continuous(labels=scales::label_percent(),breaks=seq(0,1,by=.1))+
+  labs(x="Sezona")
+ggview(width=200,height=100,units="mm",dpi=600,device="png")
+ggsave(filename="./pic_q12.png",width=200,height=100,units="mm",dpi=600)
+
+
+```
+
+
 
 ### Q1.3: Vasarāji aramzemēs
 
+Sekojošajā attēlā \@ref(fig:DWq13) ir ilustrēta vasarāju aramzemēs (kultūru kodi "131","111","150") saistība ar Dynamic World klasēm dažādos temporālajos griezumos. Skaitļi attēlu daļās norāda klases "crops" ar lauka platību svērto vidējo īpatsvaru. Redzams, ka zemākā atbilstība ir izmantojot tikai vasaras mēnešus.
+
+
+```{r DWq13, echo=FALSE, out.width = '100%', fig.cap='Lauksaimniecības kultūru grupas "vasarāji aramzemēs" saistība ar DW klasēm.'}
+knitr::include_graphics("./Atteli/ch004_q13.png")
+```
+
+<br>
+
+Komandu rindas attēla sagatavošanas reproducēšanai:
+
+```{r, eval=FALSE}
+dati=sfarrow::st_read_parquet("./Q1_kulturas.parquet")
+dati=dati %>% 
+  mutate(sezona=factor(periods,ordered=TRUE,
+                       levels=c("AprMay","AprJun","AprJul","AprAug","MayJun",
+                                "MayJul","MayAug","JunJul","JunAug","JulAug")))
+vasaraji_aramzemes=c("131","111","150")
+q13data=data.frame(dati) %>% 
+  filter(PRODUCT_CODE %in% vasaraji_aramzemes) %>% 
+  dplyr::select(PRODUCT_CODE,PRODUCT_DESCRIPTION,SHAPE.AREA,sezona,water:snow_and_ice) %>% 
+  group_by(PRODUCT_CODE) %>% 
+  mutate(skaits=n()/10) %>% 
+  ungroup() %>% 
+  mutate(nosaukums=paste0(PRODUCT_DESCRIPTION,"\n","n=",skaits)) %>% 
+  pivot_longer(cols=water:snow_and_ice,names_to = "klase",values_to = "proporcija")
+
+q13data2=q13data %>% 
+  group_by(nosaukums,sezona,klase) %>% 
+  summarise(vertiba=round(weighted.mean(proporcija,w=SHAPE.AREA,na.rm=TRUE)*100,0)) %>% 
+  ungroup() %>% 
+  filter(klase=="crops")
+
+ggplot(q13data,aes(sezona,proporcija,col=klase))+
+  facet_wrap(~nosaukums)+
+  geom_point(position=position_dodge(width=0.75),alpha=0.2)+
+  theme_bw()+
+  theme(axis.text.x = element_text(angle=90,vjust=0.5),
+        axis.title.y = element_blank(),
+        legend.title = element_blank())+
+  geom_text(data=q13data2,aes(sezona,y=1.1,label=vertiba),size=3)+
+  scale_color_viridis_d()+
+  scale_y_continuous(labels=scales::label_percent(),breaks=seq(0,1,by=.1))+
+  labs(x="Sezona")
+ggview(width=300,height=100,units="mm",dpi=600,device="png")
+ggsave(filename="./pic_q13.png",width=300,height=100,units="mm",dpi=600)
+
+```
+
+
 ### Q1.4: Vasaras rapsis
+
+
+Sekojošajā attēlā \@ref(fig:DWq14) ir ilustrēta vasaras rapša (kultūras kods "211") saistība ar Dynamic World klasēm dažādos temporālajos griezumos. Skaitļi attēlu daļās norāda klases "crops" ar lauka platību svērto vidējo īpatsvaru. Redzams, ka zemākā atbilstība ir izmantojot tikai vasaras mēnešus.
+
+
+```{r DWq14, echo=FALSE, out.width = '100%', fig.cap='Lauksaimniecības kultūru grupas "vasaras rapsis" saistība ar DW klasēm.'}
+knitr::include_graphics("./Atteli/ch004_q14.png")
+```
+
+<br>
+
+Komandu rindas attēla sagatavošanas reproducēšanai:
+
+```{r, eval=FALSE}
+dati=sfarrow::st_read_parquet("./Q1_kulturas.parquet")
+dati=dati %>% 
+  mutate(sezona=factor(periods,ordered=TRUE,
+                       levels=c("AprMay","AprJun","AprJul","AprAug","MayJun",
+                                "MayJul","MayAug","JunJul","JunAug","JulAug")))
+vasaras_rapsis=c("211")
+q14data=data.frame(dati) %>% 
+  filter(PRODUCT_CODE %in% vasaras_rapsis) %>% 
+  dplyr::select(PRODUCT_CODE,PRODUCT_DESCRIPTION,SHAPE.AREA,sezona,water:snow_and_ice) %>% 
+  group_by(PRODUCT_CODE) %>% 
+  mutate(skaits=n()/10) %>% 
+  ungroup() %>% 
+  mutate(nosaukums=paste0(PRODUCT_DESCRIPTION,"\n","n=",skaits)) %>% 
+  pivot_longer(cols=water:snow_and_ice,names_to = "klase",values_to = "proporcija")
+
+q14data2=q14data %>% 
+  group_by(nosaukums,sezona,klase) %>% 
+  summarise(vertiba=round(weighted.mean(proporcija,w=SHAPE.AREA,na.rm=TRUE)*100,0)) %>% 
+  ungroup() %>% 
+  filter(klase=="crops")
+
+ggplot(q14data,aes(sezona,proporcija,col=klase))+
+  facet_wrap(~nosaukums)+
+  geom_point(position=position_dodge(width=0.75),alpha=0.2)+
+  theme_bw()+
+  theme(axis.title.y = element_blank(),
+        legend.title = element_blank())+
+  geom_text(data=q14data2,aes(sezona,y=1.1,label=vertiba),size=3)+
+  scale_color_viridis_d()+
+  scale_y_continuous(labels=scales::label_percent(),breaks=seq(0,1,by=.1))+
+  labs(x="Sezona")
+ggview(width=200,height=100,units="mm",dpi=600,device="png")
+ggsave(filename="./pic_q14.png",width=200,height=100,units="mm",dpi=600)
+
+```
+
+
 
 ### Q1.5: Auzas
 
+Sekojošajā attēlā \@ref(fig:DWq15) ir ilustrēta auzu (kultūras kods "140") saistība ar Dynamic World klasēm dažādos temporālajos griezumos. Skaitļi attēlu daļās norāda klases "crops" ar lauka platību svērto vidējo īpatsvaru. Redzams, ka zemākā atbilstība ir izmantojot tikai vasaras mēnešus.
+
+
+```{r DWq15, echo=FALSE, out.width = '60%', fig.cap='Lauksaimniecības kultūru grupas "auzas" saistība ar DW klasēm.'}
+knitr::include_graphics("./Atteli/ch004_q15.png")
+```
+
+<br>
+
+Komandu rindas attēla sagatavošanas reproducēšanai:
+
+```{r, eval=FALSE}
+dati=sfarrow::st_read_parquet("./Q1_kulturas.parquet")
+dati=dati %>% 
+  mutate(sezona=factor(periods,ordered=TRUE,
+                       levels=c("AprMay","AprJun","AprJul","AprAug","MayJun",
+                                "MayJul","MayAug","JunJul","JunAug","JulAug")))
+auzas=c("140")
+q15data=data.frame(dati) %>% 
+  filter(PRODUCT_CODE %in% auzas) %>% 
+  dplyr::select(PRODUCT_CODE,PRODUCT_DESCRIPTION,SHAPE.AREA,sezona,water:snow_and_ice) %>% 
+  group_by(PRODUCT_CODE) %>% 
+  mutate(skaits=n()/10) %>% 
+  ungroup() %>% 
+  mutate(nosaukums=paste0(PRODUCT_DESCRIPTION,"\n","n=",skaits)) %>% 
+  pivot_longer(cols=water:snow_and_ice,names_to = "klase",values_to = "proporcija")
+
+q15data2=q15data %>% 
+  group_by(nosaukums,sezona,klase) %>% 
+  summarise(vertiba=round(weighted.mean(proporcija,w=SHAPE.AREA,na.rm=TRUE)*100,0)) %>% 
+  ungroup() %>% 
+  filter(klase=="crops")
+
+ggplot(q15data,aes(sezona,proporcija,col=klase))+
+  facet_wrap(~nosaukums)+
+  geom_point(position=position_dodge(width=0.75),alpha=0.2)+
+  theme_bw()+
+  theme(axis.title.y = element_blank(),
+        legend.title = element_blank())+
+  geom_text(data=q15data2,aes(sezona,y=1.1,label=vertiba),size=3)+
+  scale_color_viridis_d()+
+  scale_y_continuous(labels=scales::label_percent(),breaks=seq(0,1,by=.1))+
+  labs(x="Sezona")
+ggview(width=200,height=100,units="mm",dpi=600,device="png")
+ggsave(filename="./pic_q15.png",width=200,height=100,units="mm",dpi=600)
+
+```
+
+
 ### Q1.6: Kukurūza
+
+
+Sekojošajā attēlā \@ref(fig:DWq16) ir ilustrēta kukurūzas (kultūru kodi "791","741") saistība ar Dynamic World klasēm dažādos temporālajos griezumos. Skaitļi attēlu daļās norāda klases "crops" ar lauka platību svērto vidējo īpatsvaru. Redzams, ka zemākā atbilstība ir izmantojot tikai vasaras mēnešus.
+
+
+```{r DWq16, echo=FALSE, out.width = '60%', fig.cap='Lauksaimniecības kultūru grupas "kukurūza" saistība ar DW klasēm.'}
+knitr::include_graphics("./Atteli/ch004_q16.png")
+```
+
+<br>
+
+Komandu rindas attēla sagatavošanas reproducēšanai:
+
+```{r, eval=FALSE}
+dati=sfarrow::st_read_parquet("./Q1_kulturas.parquet")
+dati=dati %>% 
+  mutate(sezona=factor(periods,ordered=TRUE,
+                       levels=c("AprMay","AprJun","AprJul","AprAug","MayJun",
+                                "MayJul","MayAug","JunJul","JunAug","JulAug")))
+kukuruza=c("791","741")
+q16data=data.frame(dati) %>% 
+  filter(PRODUCT_CODE %in% kukuruza) %>% 
+  dplyr::select(PRODUCT_CODE,PRODUCT_DESCRIPTION,SHAPE.AREA,sezona,water:snow_and_ice) %>% 
+  group_by(PRODUCT_CODE) %>% 
+  mutate(skaits=n()/10) %>% 
+  ungroup() %>% 
+  mutate(nosaukums=paste0(PRODUCT_DESCRIPTION,"\n","n=",skaits)) %>% 
+  pivot_longer(cols=water:snow_and_ice,names_to = "klase",values_to = "proporcija")
+
+q16data2=q16data %>% 
+  group_by(nosaukums,sezona,klase) %>% 
+  summarise(vertiba=round(weighted.mean(proporcija,w=SHAPE.AREA,na.rm=TRUE)*100,0)) %>% 
+  ungroup() %>% 
+  filter(klase=="crops")
+
+ggplot(q16data,aes(sezona,proporcija,col=klase))+
+  facet_wrap(~nosaukums)+
+  geom_point(position=position_dodge(width=0.75),alpha=0.2)+
+  theme_bw()+
+  theme(axis.text.x = element_text(angle=90,vjust=0.5),
+        axis.title.y = element_blank(),
+        legend.title = element_blank())+
+  geom_text(data=q16data2,aes(sezona,y=1.1,label=vertiba),size=3)+
+  scale_color_viridis_d()+
+  scale_y_continuous(labels=scales::label_percent(),breaks=seq(0,1,by=.1))+
+  labs(x="Sezona")
+ggview(width=250,height=100,units="mm",dpi=600,device="png")
+ggsave(filename="./pic_q16.png",width=250,height=100,units="mm",dpi=600)
+
+```
 
 
 ### Q1.7: Papuves
 
 
+Sekojošajā attēlā \@ref(fig:DWq17a) ir ilustrēta papuvju (kultūru kodi "610","612") saistība ar Dynamic World klasēm dažādos temporālajos griezumos. Skaitļi attēlu daļās norāda klases "crops" ar lauka platību svērto vidējo īpatsvaru. Redzams, ka zemākā atbilstība ir izmantojot tikai vasaras mēnešus. Dominējošā klase ir "crops", tomēr nereti pikseļi ir klasificēti kā "grass". Atkarībā no sezonas, par "grass" biežāk sastopama var būt klase "trees", kas, visai droši ir saistāms ar lauka konfigurāciju, kas kā perimetra-laukuma attiecība ir demonstrēts zemāk \@ref(fig:DWq17b).
+
+
+```{r DWq17a, echo=FALSE, out.width = '80%', fig.cap='Lauksaimniecības kultūru grupas "papuves" saistība ar DW klasēm.'}
+knitr::include_graphics("./Atteli/ch004_q17.png")
+```
+
+<br>
+
+```{r DWq17b, echo=FALSE, out.width = '100%', fig.cap='Lauksaimniecības kultūru grupas "papuves" perimetra-laukuma attiecības saistība ar DW klasēm.'}
+knitr::include_graphics("./Atteli/ch004_q17b.png")
+```
+
+<br>
+
+Komandu rindas attēlu sagatavošanas reproducēšanai:
+
+```{r, eval=FALSE}
+dati=sfarrow::st_read_parquet("./Q1_kulturas.parquet")
+dati=dati %>% 
+  mutate(sezona=factor(periods,ordered=TRUE,
+                       levels=c("AprMay","AprJun","AprJul","AprAug","MayJun",
+                                "MayJul","MayAug","JunJul","JunAug","JulAug")))
+papuve=c("610","612")
+
+q17data=data.frame(dati) %>% 
+  filter(PRODUCT_CODE %in% papuve) %>% 
+  dplyr::select(PRODUCT_CODE,PRODUCT_DESCRIPTION,SHAPE.AREA,sezona,water:snow_and_ice) %>% 
+  group_by(PRODUCT_CODE) %>% 
+  mutate(skaits=n()/10) %>% 
+  ungroup() %>% 
+  mutate(nosaukums=paste0(PRODUCT_DESCRIPTION,"\n","n=",skaits)) %>% 
+  pivot_longer(cols=water:snow_and_ice,names_to = "klase",values_to = "proporcija")
+
+q17data2=q17data %>% 
+  group_by(nosaukums,sezona,klase) %>% 
+  summarise(vertiba=round(weighted.mean(proporcija,w=SHAPE.AREA,na.rm=TRUE)*100,0)) %>% 
+  ungroup() %>% 
+  filter(klase=="crops")
+
+ggplot(q17data,aes(sezona,proporcija,col=klase))+
+  facet_wrap(~nosaukums)+
+  geom_point(position=position_dodge(width=0.75),alpha=0.2)+
+  theme_bw()+
+  theme(axis.text.x = element_text(angle=90,vjust=0.5),
+        axis.title.y = element_blank(),
+        legend.title = element_blank())+
+  geom_text(data=q17data2,aes(sezona,y=1.1,label=vertiba),size=3)+
+  scale_color_viridis_d()+
+  scale_y_continuous(labels=scales::label_percent(),breaks=seq(0,1,by=.1))+
+  labs(x="Sezona")
+ggview(width=250,height=100,units="mm",dpi=600,device="png")
+ggsave(filename="./pic_q17.png",width=250,height=100,units="mm",dpi=600)
+
+
+
+q17data3=data.frame(dati) %>% 
+  filter(PRODUCT_CODE %in% papuve) %>% 
+  mutate(PAr=SHAPE.LEN/SHAPE.AREA) %>% 
+  dplyr::select(PRODUCT_CODE,PRODUCT_DESCRIPTION,PAr,SHAPE.AREA,sezona,water:snow_and_ice) %>% 
+  group_by(PRODUCT_CODE) %>% 
+  mutate(skaits=n()/10) %>% 
+  ungroup() %>% 
+  mutate(nosaukums=paste0(PRODUCT_DESCRIPTION,"\n","n=",skaits)) %>% 
+  pivot_longer(cols=water:snow_and_ice,names_to = "klase",values_to = "proporcija")
+
+ggplot(q17data3,aes(PAr,proporcija,col=klase))+
+  facet_wrap(~sezona,ncol=5)+
+  geom_point(alpha=0.2)+
+  geom_smooth()+
+  theme_bw()+
+  coord_cartesian(ylim=c(0,1),xlim=c(0,0.75))+
+  scale_color_viridis_d()+
+  scale_y_continuous(labels=scales::label_percent(),breaks=seq(0,1,by=.1))+
+  theme(axis.title.y = element_blank(),
+        legend.title = element_blank())+
+  labs(x="Perimetra-laukuma attiecība")
+ggview(width=300,height=150,units="mm",dpi=600,device="png")
+ggsave(filename="./pic_q17b.png",width=300,height=150,units="mm",dpi=600)
+
+```
+
+
 ### Q1.8: Ilggadīgie zālāji
+
+
+Sekojošajā attēlā \@ref(fig:DWq18a) ir ilustrēta ilggadīgo zālāju (kultūru kods "710") saistība ar Dynamic World klasēm dažādos temporālajos griezumos. Skaitļi attēlu daļās norāda klases "crops" ar lauka platību svērto vidējo īpatsvaru. Redzams, ka zemākā atbilstība ir izmantojot tikai vasaras mēnešus, tomēr neatkarīgi no temporālā griezuma tā ir uzskatāma par vāju.
+
+Viens no iespējamajiem iemesliem ir laukos un to malās esošie koki un krūmi. Lai par to pārliecinātos, veidoju saistību ar perimetra-laukuma attiecību (sekojošajā attēlā). Kā redzams \@ref(fig:DWq18b), tieši koku piesātinājums laukiem ar proporcionāli garāku malu ir iemesls misklasifikācijai. Tomēr arī šādā griezumā ir redzama sezonālā mainība - pavasara mēnešiem ir nozīme. 
+
+```{r DWq18a, echo=FALSE, out.width = '60%', fig.cap='Lauksaimniecības kultūru grupas "ilggadīgi zālāji" saistība ar DW klasēm.'}
+knitr::include_graphics("./Atteli/ch004_q18.png")
+```
+
+<br>
+
+```{r DWq18b, echo=FALSE, out.width = '100%', fig.cap='Lauksaimniecības kultūru grupas "ilggadīgi zālāji" perimetra-laukuma attiecības saistība ar DW klasēm.'}
+knitr::include_graphics("./Atteli/ch004_q18b.png")
+```
+
+<br>
+
+Komandu rindas attēlu sagatavošanas reproducēšanai:
+
+```{r, eval=FALSE}
+dati=sfarrow::st_read_parquet("./Q1_kulturas.parquet")
+dati=dati %>% 
+  mutate(sezona=factor(periods,ordered=TRUE,
+                       levels=c("AprMay","AprJun","AprJul","AprAug","MayJun",
+                                "MayJul","MayAug","JunJul","JunAug","JulAug")))
+ilggadigi_zalaji=c("710")
+q18data=data.frame(dati) %>% 
+  filter(PRODUCT_CODE %in% ilggadigi_zalaji) %>% 
+  dplyr::select(PRODUCT_CODE,PRODUCT_DESCRIPTION,SHAPE.AREA,sezona,water:snow_and_ice) %>% 
+  group_by(PRODUCT_CODE) %>% 
+  mutate(skaits=n()/10) %>% 
+  ungroup() %>% 
+  mutate(nosaukums=paste0(PRODUCT_DESCRIPTION,"\n","n=",skaits)) %>% 
+  pivot_longer(cols=water:snow_and_ice,names_to = "klase",values_to = "proporcija")
+
+q18data2=q18data %>% 
+  group_by(nosaukums,sezona,klase) %>% 
+  summarise(vertiba=round(weighted.mean(proporcija,w=SHAPE.AREA,na.rm=TRUE)*100,0)) %>% 
+  ungroup() %>% 
+  filter(klase=="grass")
+
+ggplot(q18data,aes(sezona,proporcija,col=klase))+
+  facet_wrap(~nosaukums)+
+  geom_point(position=position_dodge(width=0.75),alpha=0.2)+
+  theme_bw()+
+  theme(axis.title.y = element_blank(),
+        legend.title = element_blank())+
+  geom_text(data=q18data2,aes(sezona,y=1.1,label=vertiba),size=3)+
+  scale_color_viridis_d()+
+  scale_y_continuous(labels=scales::label_percent(),breaks=seq(0,1,by=.1))+
+  labs(x="Sezona")
+ggview(width=200,height=100,units="mm",dpi=600,device="png")
+ggsave(filename="./pic_q18.png",width=200,height=100,units="mm",dpi=600)
+
+q18data3=data.frame(dati) %>% 
+  filter(PRODUCT_CODE %in% ilggadigi_zalaji) %>% 
+  mutate(PAr=SHAPE.LEN/SHAPE.AREA) %>% 
+  dplyr::select(PRODUCT_CODE,PRODUCT_DESCRIPTION,PAr,SHAPE.AREA,sezona,water:snow_and_ice) %>% 
+  group_by(PRODUCT_CODE) %>% 
+  mutate(skaits=n()/10) %>% 
+  ungroup() %>% 
+  mutate(nosaukums=paste0(PRODUCT_DESCRIPTION,"\n","n=",skaits)) %>% 
+  pivot_longer(cols=water:snow_and_ice,names_to = "klase",values_to = "proporcija")
+
+ggplot(q18data3,aes(PAr,proporcija,col=klase))+
+  facet_wrap(~sezona,ncol=5)+
+  geom_point(alpha=0.2)+
+  geom_smooth()+
+  theme_bw()+
+  coord_cartesian(ylim=c(0,1))+
+  scale_color_viridis_d()+
+  scale_x_continuous(breaks=seq(0,0.2,by=0.1))+
+  scale_y_continuous(labels=scales::label_percent(),breaks=seq(0,1,by=.1))+
+  theme(axis.title.y = element_blank(),
+        legend.title = element_blank())+
+  labs(x="Perimetra-laukuma attiecība")
+ggview(width=300,height=150,units="mm",dpi=600,device="png")
+ggsave(filename="./pic_q18b.png",width=300,height=150,units="mm",dpi=600)
+
+```
 
 
 ### Q1.9: Kultivētie zālāji
 
 
+
+Sekojošajā attēlā \@ref(fig:DWq19) ir ilustrēta kultivēto zālāju (kultūru kodi "720","760") saistība ar Dynamic World klasēm dažādos temporālajos griezumos. Skaitļi attēlu daļās norāda klašu "crops" un "grass" ar lauka platību svērto vidējo īpatsvaru. Redzama izteikta mainība starp abām dominējošajām klasēm, kas liecina, ka ne katru galu katrs zālājs tiek ielabots aršanai līdzīgā apjomā. Šī mainība, protams, nav ērta, bet ir pamats izdalīt šo biotopu grupu atsevišķi.
+
+
+```{r DWq19, echo=FALSE, out.width = '100%', fig.cap='Lauksaimniecības kultūru grupas "kultivēti zālāji" saistība ar DW klasēm.'}
+knitr::include_graphics("./Atteli/ch004_q19.png")
+```
+
+<br>
+
+Komandu rindas attēla sagatavošanas reproducēšanai:
+
+```{r, eval=FALSE}
+dati=sfarrow::st_read_parquet("./Q1_kulturas.parquet")
+dati=dati %>% 
+  mutate(sezona=factor(periods,ordered=TRUE,
+                       levels=c("AprMay","AprJun","AprJul","AprAug","MayJun",
+                                "MayJul","MayAug","JunJul","JunAug","JulAug")))
+kultiveti_zalaji=c("720","760")
+q19data=data.frame(dati) %>% 
+  filter(PRODUCT_CODE %in% kultiveti_zalaji) %>% 
+  dplyr::select(PRODUCT_CODE,PRODUCT_DESCRIPTION,SHAPE.AREA,sezona,water:snow_and_ice) %>% 
+  group_by(PRODUCT_CODE) %>% 
+  mutate(skaits=n()/10) %>% 
+  ungroup() %>% 
+  mutate(nosaukums=paste0(PRODUCT_DESCRIPTION,"\n","n=",skaits)) %>% 
+  pivot_longer(cols=water:snow_and_ice,names_to = "klase",values_to = "proporcija")
+
+q19data2=q19data %>% 
+  group_by(nosaukums,sezona,klase) %>% 
+  summarise(vertiba=round(weighted.mean(proporcija,w=SHAPE.AREA,na.rm=TRUE)*100,0)) %>% 
+  ungroup() %>% 
+  filter(klase=="grass")
+q19data3=q19data %>% 
+  group_by(nosaukums,sezona,klase) %>% 
+  summarise(vertiba=round(weighted.mean(proporcija,w=SHAPE.AREA,na.rm=TRUE)*100,0)) %>% 
+  ungroup() %>% 
+  filter(klase=="crops")
+
+ggplot(q19data,aes(sezona,proporcija,col=klase))+
+  facet_wrap(~nosaukums)+
+  geom_point(position=position_dodge(width=0.75),alpha=0.2)+
+  theme_bw()+
+  theme(axis.text.x = element_text(angle=90,vjust=0.5),
+        axis.title.y = element_blank(),
+        legend.title = element_blank())+
+  geom_text(data=q19data2,aes(sezona,y=1.1,label=vertiba),size=3)+
+  geom_text(data=q19data3,aes(sezona,y=1.05,label=vertiba),size=3)+
+  scale_color_viridis_d()+
+  scale_y_continuous(labels=scales::label_percent(),breaks=seq(0,1,by=.1))+
+  labs(x="Sezona")
+ggview(width=300,height=100,units="mm",dpi=600,device="png")
+ggsave(filename="./pic_q19.png",width=300,height=100,units="mm",dpi=600)
+
+```
+
+
 ### Q1.10: Agļukoki
 
+
+
+Sekojošajā attēlā \@ref(fig:DWq110) ir ilustrēta augļukoku (kultūru kodi "911","912","932","914") saistība ar Dynamic World klasēm dažādos temporālajos griezumos. Skaitļi attēlu daļās norāda klašu "trees" un "grass" ar lauka platību svērto vidējo īpatsvaru. Redzams, ka, atkarībā no kultūras, nereti lauki ir klasificēti kā zālāji, nevis koki. No vienas puses tas ir skaidrojams ar telpu starp kokiem, bet var arī būt saistāms ar pašu augļukoku augstumu (šis vairāk tiks apskatīts pie mežaudzēm).
+
+
+```{r DWq110, echo=FALSE, out.width = '100%', fig.cap='Lauksaimniecības kultūru grupas "augļukoki" saistība ar DW klasēm.'}
+knitr::include_graphics("./Atteli/ch004_q110.png")
+```
+
+<br>
+
+Komandu rindas attēla sagatavošanas reproducēšanai:
+
+```{r, eval=FALSE}
+dati=sfarrow::st_read_parquet("./Q1_kulturas.parquet")
+dati=dati %>% 
+  mutate(sezona=factor(periods,ordered=TRUE,
+                       levels=c("AprMay","AprJun","AprJul","AprAug","MayJun",
+                                "MayJul","MayAug","JunJul","JunAug","JulAug")))
+auglukoki=c("911","912","932","914")
+q110data=data.frame(dati) %>% 
+  filter(PRODUCT_CODE %in% auglukoki) %>% 
+  dplyr::select(PRODUCT_CODE,PRODUCT_DESCRIPTION,SHAPE.AREA,sezona,water:snow_and_ice) %>% 
+  group_by(PRODUCT_CODE) %>% 
+  mutate(skaits=n()/10) %>% 
+  ungroup() %>% 
+  mutate(nosaukums=paste0(PRODUCT_DESCRIPTION,"\n","n=",skaits)) %>% 
+  pivot_longer(cols=water:snow_and_ice,names_to = "klase",values_to = "proporcija")
+
+q110data2=q110data %>% 
+  group_by(nosaukums,sezona,klase) %>% 
+  summarise(vertiba=round(weighted.mean(proporcija,w=SHAPE.AREA,na.rm=TRUE)*100,0)) %>% 
+  ungroup() %>% 
+  filter(klase=="grass")
+
+q110data3=q110data %>% 
+  group_by(nosaukums,sezona,klase) %>% 
+  summarise(vertiba=round(weighted.mean(proporcija,w=SHAPE.AREA,na.rm=TRUE)*100,0)) %>% 
+  ungroup() %>% 
+  filter(klase=="trees")
+
+ggplot(q110data,aes(sezona,proporcija,col=klase))+
+  facet_wrap(~nosaukums)+
+  geom_point(position=position_dodge(width=0.75),alpha=0.2)+
+  theme_bw()+
+  theme(axis.text.x = element_text(angle=90,vjust=0.5),
+        axis.title.y = element_blank(),
+        legend.title = element_blank())+
+  geom_text(data=q110data2,aes(sezona,y=1.15,label=vertiba),size=3)+
+  geom_text(data=q110data3,aes(sezona,y=1.07,label=vertiba),size=3)+
+  scale_color_viridis_d()+
+  scale_y_continuous(labels=scales::label_percent(),breaks=seq(0,1,by=.1))+
+  labs(x="Sezona")
+ggview(width=300,height=150,units="mm",dpi=600,device="png")
+ggsave(filename="./pic_q110.png",width=300,height=150,units="mm",dpi=600)
+
+```
+
+
+
+
 ### Q1.11: Ogu-krūmi
+
+Sekojošajā attēlā \@ref(fig:DWq111) ir ilustrēta ogu-krūmu (kultūru kodi "921","922","933","927","928","929") saistība ar Dynamic World klasēm dažādos temporālajos griezumos. Skaitļi attēlu daļās norāda klašu "crops", "grass" un "trees" ar lauka platību svērto vidējo īpatsvaru. Redzams, ka, atkarībā no kultūras, nereti lauki ir klasificēti kā zālāji, vai pat aramzemes, nevis koki vai krūmi. No vienas puses tas ir skaidrojams ar telpu starp kultūras augiem, bet var arī būt saistāms ar pašu augu augstumu (šis vairāk tiks apskatīts pie mežaudzēm). Noteikti ir pamats to izdalīt atsevišķā klasē no aramzemēm un zālājiem, domājot par sugu izplatības modelēšanu.
+
+```{r DWq111, echo=FALSE, out.width = '100%', fig.cap='Lauksaimniecības kultūru grupas "ogu-krūmi" saistība ar DW klasēm.'}
+knitr::include_graphics("./Atteli/ch004_q111.png")
+```
+
+<br>
+
+Komandu rindas attēla sagatavošanas reproducēšanai:
+
+```{r, eval=FALSE}
+dati=sfarrow::st_read_parquet("./Q1_kulturas.parquet")
+dati=dati %>% 
+  mutate(sezona=factor(periods,ordered=TRUE,
+                       levels=c("AprMay","AprJun","AprJul","AprAug","MayJun",
+                                "MayJul","MayAug","JunJul","JunAug","JulAug")))
+ogukrumi=c("921","922","933","927","928","929")
+q111data=data.frame(dati) %>% 
+  filter(PRODUCT_CODE %in% ogukrumi) %>% 
+  dplyr::select(PRODUCT_CODE,PRODUCT_DESCRIPTION,SHAPE.AREA,sezona,water:snow_and_ice) %>% 
+  group_by(PRODUCT_CODE) %>% 
+  mutate(skaits=n()/10) %>% 
+  ungroup() %>% 
+  mutate(nosaukums=paste0(PRODUCT_DESCRIPTION,"\n","n=",skaits)) %>% 
+  pivot_longer(cols=water:snow_and_ice,names_to = "klase",values_to = "proporcija")
+
+q111data2=q111data %>% 
+  group_by(nosaukums,sezona,klase) %>% 
+  summarise(vertiba=round(weighted.mean(proporcija,w=SHAPE.AREA,na.rm=TRUE)*100,0)) %>% 
+  ungroup() %>% 
+  filter(klase=="grass")
+
+q111data3=q111data %>% 
+  group_by(nosaukums,sezona,klase) %>% 
+  summarise(vertiba=round(weighted.mean(proporcija,w=SHAPE.AREA,na.rm=TRUE)*100,0)) %>% 
+  ungroup() %>% 
+  filter(klase=="trees")
+
+q111data4=q111data %>% 
+  group_by(nosaukums,sezona,klase) %>% 
+  summarise(vertiba=round(weighted.mean(proporcija,w=SHAPE.AREA,na.rm=TRUE)*100,0)) %>% 
+  ungroup() %>% 
+  filter(klase=="crops")
+
+ggplot(q111data,aes(sezona,proporcija,col=klase))+
+  facet_wrap(~nosaukums)+
+  geom_point(position=position_dodge(width=0.75),alpha=0.2)+
+  theme_bw()+
+  theme(axis.text.x = element_text(angle=90,vjust=0.5),
+        axis.title.y = element_blank(),
+        legend.title = element_blank())+
+  geom_text(data=q111data2,aes(sezona,y=1.15,label=vertiba),size=3)+
+  geom_text(data=q111data3,aes(sezona,y=1.07,label=vertiba),size=3)+
+  geom_text(data=q111data4,aes(sezona,y=1.22,label=vertiba),size=3)+
+  scale_color_viridis_d()+
+  scale_y_continuous(labels=scales::label_percent(),breaks=seq(0,1,by=.1))+
+  labs(x="Sezona")
+ggview(width=300,height=150,units="mm",dpi=600,device="png")
+ggsave(filename="./pic_q111.png",width=300,height=150,units="mm",dpi=600)
+
+```
 
 
 ### Q1.12: Zemās ogas
 
+Sekojošajā attēlā \@ref(fig:DWq112) ir ilustrēta zema auguma ogu (kultūru kodi "924","934") saistība ar Dynamic World klasēm dažādos temporālajos griezumos. Skaitļi attēlu daļās norāda klašu "crops", "grass", "shrub_and_scrub" un "trees" ar lauka platību svērto vidējo īpatsvaru. Šī klase ir samērā reti sastopama un tās ietvaros ir izteikta heterogenitāte.
+
+```{r DWq112, echo=FALSE, out.width = '100%', fig.cap='Lauksaimniecības kultūru grupas "zemās ogas" saistība ar DW klasēm.'}
+knitr::include_graphics("./Atteli/ch004_q112.png")
+```
+
+<br>
+
+Komandu rindas attēla sagatavošanas reproducēšanai:
+
+```{r, eval=FALSE}
+dati=sfarrow::st_read_parquet("./Q1_kulturas.parquet")
+dati=dati %>% 
+  mutate(sezona=factor(periods,ordered=TRUE,
+                       levels=c("AprMay","AprJun","AprJul","AprAug","MayJun",
+                                "MayJul","MayAug","JunJul","JunAug","JulAug")))
+zemas_ogas=c("924","934")
+q112data=data.frame(dati) %>% 
+  filter(PRODUCT_CODE %in% zemas_ogas) %>% 
+  dplyr::select(PRODUCT_CODE,PRODUCT_DESCRIPTION,SHAPE.AREA,sezona,water:snow_and_ice) %>% 
+  group_by(PRODUCT_CODE) %>% 
+  mutate(skaits=n()/10) %>% 
+  ungroup() %>% 
+  mutate(nosaukums=paste0(PRODUCT_DESCRIPTION,"\n","n=",skaits)) %>% 
+  pivot_longer(cols=water:snow_and_ice,names_to = "klase",values_to = "proporcija")
+
+q112data2=q112data %>% 
+  group_by(nosaukums,sezona,klase) %>% 
+  summarise(vertiba=round(weighted.mean(proporcija,w=SHAPE.AREA,na.rm=TRUE)*100,0)) %>% 
+  ungroup() %>% 
+  filter(klase=="grass")
+
+q112data3=q112data %>% 
+  group_by(nosaukums,sezona,klase) %>% 
+  summarise(vertiba=round(weighted.mean(proporcija,w=SHAPE.AREA,na.rm=TRUE)*100,0)) %>% 
+  ungroup() %>% 
+  filter(klase=="shrub_and_scrub")
+
+q112data4=q112data %>% 
+  group_by(nosaukums,sezona,klase) %>% 
+  summarise(vertiba=round(weighted.mean(proporcija,w=SHAPE.AREA,na.rm=TRUE)*100,0)) %>% 
+  ungroup() %>% 
+  filter(klase=="crops")
+
+q112data5=q112data %>% 
+  group_by(nosaukums,sezona,klase) %>% 
+  summarise(vertiba=round(weighted.mean(proporcija,w=SHAPE.AREA,na.rm=TRUE)*100,0)) %>% 
+  ungroup() %>% 
+  filter(klase=="trees")
+
+ggplot(q112data,aes(sezona,proporcija,col=klase))+
+  facet_wrap(~nosaukums)+
+  geom_point(position=position_dodge(width=0.75),alpha=0.2)+
+  theme_bw()+
+  theme(axis.text.x = element_text(angle=90,vjust=0.5),
+        axis.title.y = element_blank(),
+        legend.title = element_blank())+
+  geom_text(data=q112data3,aes(sezona,y=1.15,label=vertiba),size=3)+
+  geom_text(data=q112data5,aes(sezona,y=1.07,label=vertiba),size=3)+
+  geom_text(data=q112data2,aes(sezona,y=1.23,label=vertiba),size=3)+
+  geom_text(data=q112data4,aes(sezona,y=1.30,label=vertiba),size=3)+
+  scale_color_viridis_d()+
+  scale_y_continuous(labels=scales::label_percent(),breaks=seq(0,1,by=.1))+
+  labs(x="Sezona")
+ggview(width=250,height=100,units="mm",dpi=600,device="png")
+ggsave(filename="./pic_q112.png",width=250,height=100,units="mm",dpi=600)
+
+```
+
+
+
 ### Q1.13: Bezatbalsta platība
+
+Sekojošajā attēlā \@ref(fig:DWq113) ir ilustrēta lauku blokos iekļauto platību, par kurām netiek izmaksāts atbalsts (kultūru kodi "620","792") saistība ar Dynamic World klasēm dažādos temporālajos griezumos. Skaitļi attēlu daļās norāda klašu "crops", "grass", "shrub_and_scrub" un "trees" ar lauka platību svērto vidējo īpatsvaru. Šī klase ir samērā reti sastopama un tās ietvaros ir izteikta heterogenitāte.
+
+```{r DWq113, echo=FALSE, out.width = '100%', fig.cap='Lauksaimniecības kultūru grupas "bezatbalsta platības" saistība ar DW klasēm.'}
+knitr::include_graphics("./Atteli/ch004_q113.png")
+```
+
+<br>
+
+Komandu rindas attēla sagatavošanas reproducēšanai:
+
+```{r, eval=FALSE}
+dati=sfarrow::st_read_parquet("./Q1_kulturas.parquet")
+dati=dati %>% 
+  mutate(sezona=factor(periods,ordered=TRUE,
+                       levels=c("AprMay","AprJun","AprJul","AprAug","MayJun",
+                                "MayJul","MayAug","JunJul","JunAug","JulAug")))
+bezatbalsta=c("620","792")
+q113data=data.frame(dati) %>% 
+  filter(PRODUCT_CODE %in% bezatbalsta) %>% 
+  dplyr::select(PRODUCT_CODE,PRODUCT_DESCRIPTION,SHAPE.AREA,sezona,water:snow_and_ice) %>% 
+  group_by(PRODUCT_CODE) %>% 
+  mutate(skaits=n()/10) %>% 
+  ungroup() %>% 
+  mutate(nosaukums=paste0(PRODUCT_DESCRIPTION,"\n","n=",skaits)) %>% 
+  pivot_longer(cols=water:snow_and_ice,names_to = "klase",values_to = "proporcija")
+
+q113data2=q113data %>% 
+  group_by(nosaukums,sezona,klase) %>% 
+  summarise(vertiba=round(weighted.mean(proporcija,w=SHAPE.AREA,na.rm=TRUE)*100,0)) %>% 
+  ungroup() %>% 
+  filter(klase=="grass")
+
+q113data3=q113data %>% 
+  group_by(nosaukums,sezona,klase) %>% 
+  summarise(vertiba=round(weighted.mean(proporcija,w=SHAPE.AREA,na.rm=TRUE)*100,0)) %>% 
+  ungroup() %>% 
+  filter(klase=="shrub_and_scrub")
+
+q113data4=q113data %>% 
+  group_by(nosaukums,sezona,klase) %>% 
+  summarise(vertiba=round(weighted.mean(proporcija,w=SHAPE.AREA,na.rm=TRUE)*100,0)) %>% 
+  ungroup() %>% 
+  filter(klase=="crops")
+
+q113data5=q113data %>% 
+  group_by(nosaukums,sezona,klase) %>% 
+  summarise(vertiba=round(weighted.mean(proporcija,w=SHAPE.AREA,na.rm=TRUE)*100,0)) %>% 
+  ungroup() %>% 
+  filter(klase=="trees")
+
+ggplot(q113data,aes(sezona,proporcija,col=klase))+
+  facet_wrap(~nosaukums)+
+  geom_point(position=position_dodge(width=0.75),alpha=0.2)+
+  theme_bw()+
+  theme(axis.text.x = element_text(angle=90,vjust=0.5),
+        axis.title.y = element_blank(),
+        legend.title = element_blank())+
+  geom_text(data=q113data3,aes(sezona,y=1.15,label=vertiba),size=3)+
+  geom_text(data=q113data5,aes(sezona,y=1.07,label=vertiba),size=3)+
+  geom_text(data=q113data2,aes(sezona,y=1.23,label=vertiba),size=3)+
+  geom_text(data=q113data4,aes(sezona,y=1.30,label=vertiba),size=3)+
+  scale_color_viridis_d()+
+  scale_y_continuous(labels=scales::label_percent(),breaks=seq(0,1,by=.1))+
+  labs(x="Sezona")
+ggview(width=400,height=100,units="mm",dpi=600,device="png")
+ggsave(filename="./pic_q113.png",width=400,height=100,units="mm",dpi=600)
+
+```
+
 
 
 ### Q1.14: Vagu un rušināmkultūras
 
+Sekojošajā attēlā \@ref(fig:DWq114) ir ilustrēta rušināmkultūru (kultūru kodi "821","825", "843", "844") saistība ar Dynamic World klasēm dažādos temporālajos griezumos. Skaitļi attēlu daļās norāda klašu "crops", "grass" un "trees" ar lauka platību svērto vidējo īpatsvaru. Šīs klases piemēri samērā stabili klasificējas kā aramzemes.
+
+```{r DWq114, echo=FALSE, out.width = '100%', fig.cap='Lauksaimniecības kultūru grupas "vagu un rušināmkultūras" saistība ar DW klasēm.'}
+knitr::include_graphics("./Atteli/ch004_q114.png")
+```
+
+<br>
+
+Komandu rindas attēla sagatavošanas reproducēšanai:
+
+```{r, eval=FALSE}
+dati=sfarrow::st_read_parquet("./Q1_kulturas.parquet")
+dati=dati %>% 
+  mutate(sezona=factor(periods,ordered=TRUE,
+                       levels=c("AprMay","AprJun","AprJul","AprAug","MayJun",
+                                "MayJul","MayAug","JunJul","JunAug","JulAug")))
+rusinamkulturas=c("821","825", "843", "844")
+q114data=data.frame(dati) %>% 
+  filter(PRODUCT_CODE %in% rusinamkulturas) %>% 
+  dplyr::select(PRODUCT_CODE,PRODUCT_DESCRIPTION,SHAPE.AREA,sezona,water:snow_and_ice) %>% 
+  group_by(PRODUCT_CODE) %>% 
+  mutate(skaits=n()/10) %>% 
+  ungroup() %>% 
+  mutate(nosaukums=paste0(PRODUCT_DESCRIPTION,"\n","n=",skaits)) %>% 
+  pivot_longer(cols=water:snow_and_ice,names_to = "klase",values_to = "proporcija")
+
+q114data2=q114data %>% 
+  group_by(nosaukums,sezona,klase) %>% 
+  summarise(vertiba=round(weighted.mean(proporcija,w=SHAPE.AREA,na.rm=TRUE)*100,0)) %>% 
+  ungroup() %>% 
+  filter(klase=="grass")
+
+q114data3=q114data %>% 
+  group_by(nosaukums,sezona,klase) %>% 
+  summarise(vertiba=round(weighted.mean(proporcija,w=SHAPE.AREA,na.rm=TRUE)*100,0)) %>% 
+  ungroup() %>% 
+  filter(klase=="trees")
+
+q114data4=q114data %>% 
+  group_by(nosaukums,sezona,klase) %>% 
+  summarise(vertiba=round(weighted.mean(proporcija,w=SHAPE.AREA,na.rm=TRUE)*100,0)) %>% 
+  ungroup() %>% 
+  filter(klase=="crops")
+
+ggplot(q114data,aes(sezona,proporcija,col=klase))+
+  facet_wrap(~nosaukums)+
+  geom_point(position=position_dodge(width=0.75),alpha=0.2)+
+  theme_bw()+
+  theme(axis.text.x = element_text(angle=90,vjust=0.5),
+        axis.title.y = element_blank(),
+        legend.title = element_blank())+
+  geom_text(data=q114data2,aes(sezona,y=1.15,label=vertiba),size=3)+
+  geom_text(data=q114data3,aes(sezona,y=1.07,label=vertiba),size=3)+
+  geom_text(data=q114data4,aes(sezona,y=1.22,label=vertiba),size=3)+
+  scale_color_viridis_d()+
+  scale_y_continuous(labels=scales::label_percent(),breaks=seq(0,1,by=.1))+
+  labs(x="Sezona")
+ggview(width=300,height=150,units="mm",dpi=600,device="png")
+ggsave(filename="./pic_q114.png",width=300,height=150,units="mm",dpi=600)
+
+```
+
+
+
+
 ### Q1.15: Īscirtmeta atvasāji un enerģijas kultūras
+
+Sekojošajā attēlā \@ref(fig:DWq115) ir ilustrēta īscirtmeta atvasāju un enerģijas kultūru (kultūru kodi "644", "645", "646", "641", "642") saistība ar Dynamic World klasēm dažādos temporālajos griezumos. Skaitļi attēlu daļās norāda klašu "crops", "grass" un "trees" ar lauka platību svērto vidējo īpatsvaru. Šīs klases piemēri ir visai heterogēni. Miežabrālis ir lakstaugs, tādēļ skaidra ir samērā izteiktā zālāju klases dominance, tomēr neatkarīgi no sezonas, plaša pārstāvniecība ir arī citām klasēm, kas apgrūtina tā stratificēšanu. Līdzīgi ar kokaugiem, tomēr dominē atbilstošā koku klase, kur pārējās, visticamāk, ir saistītas ar kultūras vecumu, kas tīri teorētiski būtu pieņemami no sugu izplatības modelēšanas viedokļa.
+
+```{r DWq115, echo=FALSE, out.width = '100%', fig.cap='Lauksaimniecības kultūru grupas "īscirtmeta atvasāji un enerģijas kultūras" saistība ar DW klasēm.'}
+knitr::include_graphics("./Atteli/ch004_q115.png")
+```
+
+<br>
+
+Komandu rindas attēla sagatavošanas reproducēšanai:
+
+```{r, eval=FALSE}
+dati=sfarrow::st_read_parquet("./Q1_kulturas.parquet")
+dati=dati %>% 
+  mutate(sezona=factor(periods,ordered=TRUE,
+                       levels=c("AprMay","AprJun","AprJul","AprAug","MayJun",
+                                "MayJul","MayAug","JunJul","JunAug","JulAug")))
+atvasaji_energy=c("644", "645", "646", "641", "642")
+q115data=data.frame(dati) %>% 
+  filter(PRODUCT_CODE %in% atvasaji_energy) %>% 
+  dplyr::select(PRODUCT_CODE,PRODUCT_DESCRIPTION,SHAPE.AREA,sezona,water:snow_and_ice) %>% 
+  group_by(PRODUCT_CODE) %>% 
+  mutate(skaits=n()/10) %>% 
+  ungroup() %>% 
+  mutate(nosaukums=paste0(PRODUCT_DESCRIPTION,"\n","n=",skaits)) %>% 
+  pivot_longer(cols=water:snow_and_ice,names_to = "klase",values_to = "proporcija")
+
+q115data2=q115data %>% 
+  group_by(nosaukums,sezona,klase) %>% 
+  summarise(vertiba=round(weighted.mean(proporcija,w=SHAPE.AREA,na.rm=TRUE)*100,0)) %>% 
+  ungroup() %>% 
+  filter(klase=="grass")
+
+q115data3=q115data %>% 
+  group_by(nosaukums,sezona,klase) %>% 
+  summarise(vertiba=round(weighted.mean(proporcija,w=SHAPE.AREA,na.rm=TRUE)*100,0)) %>% 
+  ungroup() %>% 
+  filter(klase=="trees")
+
+q115data4=q115data %>% 
+  group_by(nosaukums,sezona,klase) %>% 
+  summarise(vertiba=round(weighted.mean(proporcija,w=SHAPE.AREA,na.rm=TRUE)*100,0)) %>% 
+  ungroup() %>% 
+  filter(klase=="crops")
+
+ggplot(q115data,aes(sezona,proporcija,col=klase))+
+  facet_wrap(~nosaukums)+
+  geom_point(position=position_dodge(width=0.75),alpha=0.2)+
+  theme_bw()+
+  theme(axis.text.x = element_text(angle=90,vjust=0.5),
+        axis.title.y = element_blank(),
+        legend.title = element_blank())+
+  geom_text(data=q115data2,aes(sezona,y=1.15,label=vertiba),size=3)+
+  geom_text(data=q115data3,aes(sezona,y=1.07,label=vertiba),size=3)+
+  geom_text(data=q115data4,aes(sezona,y=1.22,label=vertiba),size=3)+
+  scale_color_viridis_d()+
+  scale_y_continuous(labels=scales::label_percent(),breaks=seq(0,1,by=.1))+
+  labs(x="Sezona")
+ggview(width=300,height=150,units="mm",dpi=600,device="png")
+ggsave(filename="./pic_q115.png",width=300,height=150,units="mm",dpi=600)
+
+```
+
+
+
 
 ### Q1: LAD kultūru stratificēšanai
 
+Ainavas aprakstu veidošanā sugu izplatības modelēšanai ir jācenšas interpretēt to kā sugas uztver vidi un to kombinēt ar pašas vides aprakstiem (datubāzu informāciju), lai izveidotu atbilstošas pazīmes. Attiecībā uz lauksaimniecībā izmantojamām zemēm, mūsu plāns ir veidot sekojošas grupas (smalkākais dalījums, kuru pēc nepieciešamības apvienot):
+
+- aramzemes (labība-vasarāji);
+
+- aramzemes (labība-ziemāji);
+
+- aramzemes (vagu un rušināmkultūras);
+
+- aramzemes (vasaras rapsis un rispsis, kukurūzas, zirņi un pupas, soja, kaņepes);
+
+- aramzemes (ziemas rapsis un ripsis);
+
+- aramzemes (citur neiekļautās);
+
+- augļudārzi;
+
+- krūmveida ilggadīgie stādījumi;
+
+- papuves;
+
+- zālāji (ilggadīgie);
+
+- zālāji (kultivētie);
+
+- zālāji (ārpus lauku blokiem un bezatbalsta platības).
+
+Lai gan šīs klases daļēji atbilst LAD grupām, ir atšķirības un ne vienmēr ir viennozīmīgi skaidrs, kurā grupā konkrētās kultūras iekļaut. Tādēļ veicu principiālo komponentu analīzi (PCA) un K-vidējo (k=12) klāsteranalīzi, lai apskatītu sākotnējo dalījumu un veiktu nepieciešamās korekcijas.
+
+Grupēšanās izpētei, izmantoju (1) Aprīļa-Augusta kultūras kodu vidējās vērtības katrā no Dynamic World klasēm un (2) katras Dynamic World klases ik divu mēnešu ("AprMay","MayJun","JunJul","JulAug") vidējo aritmētisko agregāciju vienotā standartnovirzē kā ievades matricu PCA analīzē. PCA pirmā ass izskaidro 75.5% un otrā ass - 8.4% no kopējās mainības. Kā sekojošajā attēlā \@ref(fig:DWq1klasteri) redzams, starp sākotnēji izdalītajām grupām ir plaša pārklāšanās, jo sevišķi pirmās ass kreisajā malā. Lai gan K-vidējo klāsteranalīze spēj atrast grupas, to apvienošana klāsteranalīzes rezultātos nozīmētu ekoloģiskās jēgas zaudēšanu. Savukārt sugu bioloģijas un ekoloģijas zināšanās un izpratnē par kultūru apsaimniekošanu un veģetācijas attīstības gaitu balstīto grupu sadalīšana smalkākās, radītu nopietnus izaicinājumus sugu izplatības modelēšanā EGV sastopamības dēļ. Tomēr šis vingrinājums arī skaidri uzrādīja atsevišķus kutūru kodus, kuri krasi atšķīrās no pārējām kultūrām savā grupā, tādēļ tie ir pārklasificēti:
+
+- kultūru kodi 924, 934 un 950 ievietoti pie augļudārziem;
+
+- kultūru kodi 878, 930 un 940 ievietoti pie kultivētajiem zālājiem.
+
+Šis vingrinājums demonstrē, ka, ja nepieciešams izdalīt lauksaimniecības kultūras ekoloģisko atšķirību dēļ, DW nav sevišķi izpalīdzīgs. Protams, eksistē arī citi risinājumi, kas ir sevišķi uzmanīgi pret biežākajām lauksaimniecības kultūrām (un to klasēm), tomēr arī tie neveic tādu dalījumu kā šajās analīzēs ir paredzēts. Tādēļ no LAD datubāzes izmantošanas izvairīties nav iespējams.
+
+Šobrīd šķiet, ka Dynamic World varētu sniegt atbalstu platību, kas nav lauku blokos (vai Meža Valsts reģistrā) grupēšanai plašās klasēs, bet, lai par to pārliecinātos, ir jāturpina izpēte.
+
+
+```{r DWq1klasteri, echo=FALSE, out.width = '100%', fig.cap='PCA rezultāti DW klašu sastopamībai sugu izplatības modelēšanai paredzētajā lauku kultūru dalījumā.'}
+knitr::include_graphics("./Atteli/ch004_q1klasteri.png")
+```
+
+<br>
+
+Komandu rindas attēla sagatavošanas un veiktās analīzes reproducēšanai (papildus fails - [sagatavotais un pēc klāsteranalīzes koriģētais kultūru grupējums](./Papilddati/KulturuKodi_2024.xlsx)):
+
+```{r, eval=FALSE}
+dati=sfarrow::st_read_parquet("./Q1_kulturas.parquet")
+dati=dati %>% 
+  mutate(sezona=factor(periods,ordered=TRUE,
+                       levels=c("AprMay","AprJun","AprJul","AprAug","MayJun",
+                                "MayJul","MayAug","JunJul","JunAug","JulAug")))
+kulturam=read_excel("./KulturuKodi_2024.xlsx")
+kulturam$kods=as.character(kulturam$kods)
+dati_means=data.frame(dati) %>% 
+  select(PRODUCT_CODE,sezona,water:snow_and_ice) %>% 
+  filter(sezona %in% c("AprAug")) %>% # izvēlos vienu - garāko sezonu
+  group_by(PRODUCT_CODE) %>% 
+  summarise(across(water:snow_and_ice,mean, .names="mean_{col}")) %>% 
+  ungroup()
+dati_sds=data.frame(dati) %>% 
+  select(PRODUCT_CODE,sezona,water:snow_and_ice) %>% 
+  filter(sezona %in% c("AprMay","MayJun","JunJul","JulAug")) %>% 
+  group_by(PRODUCT_CODE,sezona) %>% 
+  summarise_if(is.numeric,mean) %>% 
+  group_by(PRODUCT_CODE) %>% 
+  summarise(across(water:snow_and_ice,sd, .names="sd_{col}")) %>% 
+  ungroup()
+dati2=dati_means %>% 
+  left_join(dati_sds,by="PRODUCT_CODE") %>% 
+  left_join(kulturam,by=c("PRODUCT_CODE"="kods"))
+
+matrica=dati2 %>% 
+  select(mean_water:sd_snow_and_ice)
+
+klasteri <- kmeans(matrica, centers = 12, nstart = 160/12, iter.max = 999)
+rez_pca = princomp(matrica)
+summary(rez_pca)
+rezultati = data.frame(rez_pca$scores,
+                       klasteris=klasteri$cluster,
+                       SDMgrupa=dati2$SDM_grupa_sakums,
+                       kods=dati2$PRODUCT_CODE)
+
+ggplot(rezultati,aes(Comp.1,Comp.2,col=SDMgrupa,label=kods))+
+  geom_point(alpha=0.5,size=4)+
+  theme_classic()+
+  theme(panel.background = element_rect(color="black"))+
+  labs(x="PCA pirmā ass (75.5%)",y="PCA otrā ass (8.4%)",col="Kultūru grupa")+
+  theme(axis.title = element_text(size=14),
+        axis.text=element_text(size=12),
+        legend.title = element_text(size=14),
+        legend.text=element_text(size=12))
+ggview(width=300,height=150,units="mm",dpi=600,device="png")
+ggsave(filename="./pic_q1klasteri.png",
+       width=300,height=150,units="mm",dpi=600)
+
+```
+
 
 ## Q2: Mežaudzes augstums sugu grupās
+
+Lai labāk saprastu potenciālās atšķirības saistībā ar sezonalitāti, pārbaudi veicām dažādām koku sugām (un to grupām) atsevišķi:
+
+- priedes - tīraudzes;
+
+- egles - tīraudzes;
+
+- apses - tīraudzes;
+
+- bērzi - tīraudzes;
+
+- melnalksnis - tīraudzes;
+
+- platlapji - audzes, kurās platlapju krājas koeficientu summa ir >=8;
+
+- citi - pārējās mežaudzes;
+
+
+Katrā no šīm sugu-grupām veicām nogabalu izlozi katrā vecumgrupā (jaunaudzes, vidēja vecuma audzes, biestaudzes, pieaugušas audzes, pāraugušas audzes) pilnā izlases apjomā, neatkarīgi no apsaimniekošanas vēstures. Tas tad arī veido kokaudzes augstuma gradientu (jaunaudzes, vidēja vecuma un briestaudzes) un ļauj labāk arī saprast veco galu, kurā var būt notikuši jau dažādi dabiskie procesi (pāraugušās audzes).
+
+Izmantojām 2023. gada DW sezonālos slāņus. Lai gan primārā interese ir par to no kāda augstuma mežaudzes ir klasificētas kā "trees", sākumā izmantojām visas DW klases. Kopumā ir novērojama (\@ref(fig:DWq21) att.) augsta Dynamic World klases 'trees' sastopamība. Otrā biežākā klase ir 'grass', izplatīta jaunaudzēs, savukārt jaunaudzēs sagaidāmā 'shrub_and_scrub' ir samērā reti sastopama, tomēr arī jaunaudzēs. Vājākā 'trees' pārstāvniecība ir platlapju mežaudzēs. Rodas iespaids, ka labākā atbilstība ir tikai vasaras sezonā, kas ir pretēji lauksaimniecības zemju analīzē novērotajam. Tādēļ turpinu izpēti saistībā ar kokaudzes augstumu.
+
+Detalizētāka analīze liecina, ka vasaras mēneši, tomēr nav optimālākie, jo sevišķi platlapju un bērzu audzēs, kur augstākajās uzrādās ievērojams 'trees' ar platību svērtā īpatsvara samazinājums (\@ref(fig:DWq22trees) att.). Arī citu koku sugu audzēs jūlija-augusta sezonā ir zemākā atbilstība sagaidāmajai vērtībai.
+
+Mežaudzes virs 10 m augstuma pārējās sezonās ir gandrīz perfekti klasificētas kā 'trees'. Vidējās vērtības pārsniedz 50% jau no zemākajām audzēs (0.1 m) un kopš apmēram 5 m augstuma tās ir vismaz 80% platības klasificētas kā 'trees'. Biežāk sastopamā sekojošā klase ir 'grass', kas ir loģiski saistāms ar zemiem un relatīvi reti izvietotiem kokiem, kas ieauguši zālē. Tomēr tas arī nozīmē, ka aizaugoši zālāji, kas bagāti ar koku atvasēm līdzīgiem augiem bieži būs klasificēti kā 'trees'.
+
+```{r DWq21, echo=FALSE, out.width = '100%', fig.cap='DW klašu sastopamība meža nogabalos ar atšķirīgām valdošajām koku sugu grupām.'}
+knitr::include_graphics("./Atteli/ch004_q21.png")
+```
+
+<br>
+
+```{r DWq22trees, echo=FALSE, out.width = '100%', fig.cap='Ar platību svērtā DW klases "koki" sastapšanas varbūtība dažādās koku sugu grupās, atkarībā no kokaudzes augstuma.'}
+knitr::include_graphics("./Atteli/ch004_q22_trees.png")
+```
+
+<br>
+
+Komandu rindas attēlu sagatavošanas un veiktās analīzes reproducēšanai (tiek izmantoti [Meža Valsts reģistrs](#Chapter3.1.1) dati):
+
+
+```{r, eval=FALSE}
+# libs
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(arrow)) {install.packages("arrow"); require(arrow)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(exactextractr)) {install.packages("exactextractr"); require(exactextractr)}
+if(!require(ggview)) {install.packages("ggview"); require(ggview)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(ggrepel)) {install.packages("ggrepel"); require(ggrepel)}
+
+# meža dati
+MVR <- st_read_parquet("./nogabali_2024janv.parquet")
+
+priedes=c("1","14","22")
+egles=c("3","13","15","23")
+apses=c("8","19","68")
+berzi=c("4")
+melnalksni=c("6")
+platlapji=c("10","11","12","16","17","18","24","25","26","27","28","29","61",
+            "62","63","64","65","66","67","69")
+citi=c("9","20","21","32","35","50")
+
+mvr=MVR %>% 
+  filter(vgr>0&vgr<=5) %>% 
+  mutate(priezu_kk=if_else(s10 %in% priedes,k10,0)+if_else(s11 %in% priedes,k11,0)+
+           if_else(s12 %in% priedes,k12,0)+if_else(s13 %in% priedes,k13,0)+
+           if_else(s14 %in% priedes,k14,0),
+         eglu_kk=if_else(s10 %in% egles,k10,0)+if_else(s11 %in% egles,k11,0)+
+           if_else(s12 %in% egles,k12,0)+if_else(s13 %in% egles,k13,0)+
+           if_else(s14 %in% egles,k14,0),
+         apsu_kk=if_else(s10 %in% apses,k10,0)+if_else(s11 %in% apses,k11,0)+
+           if_else(s12 %in% apses,k12,0)+if_else(s13 %in% apses,k13,0)+
+           if_else(s14 %in% apses,k14,0),
+         berzu_kk=if_else(s10 %in% berzi,k10,0)+if_else(s11 %in% berzi,k11,0)+
+           if_else(s12 %in% berzi,k12,0)+if_else(s13 %in% berzi,k13,0)+
+           if_else(s14 %in% berzi,k14,0),
+         melnalksna_kk=if_else(s10 %in% melnalksni,k10,0)+
+           if_else(s11 %in% melnalksni,k11,0)+if_else(s12 %in% melnalksni,k12,0)+
+           if_else(s13 %in% melnalksni,k13,0)+if_else(s14 %in% melnalksni,k14,0),
+         platlapju_kk=if_else(s10 %in% platlapji,k10,0)+
+           if_else(s11 %in% platlapji,k11,0)+if_else(s12 %in% platlapji,k12,0)+
+           if_else(s13 %in% platlapji,k13,0)+if_else(s14 %in% platlapji,k14,0),
+         citu_kk=if_else(s10 %in% citi,k10,0)+if_else(s11 %in% citi,k11,0)+
+           if_else(s12 %in% citi,k12,0)+if_else(s13 %in% citi,k13,0)+
+           if_else(s14 %in% citi,k14,0)) %>% 
+  mutate(sugai=if_else(priezu_kk==10,"priedes",
+                       if_else(eglu_kk==10,"egles",
+                               if_else(apsu_kk==10,"apses",
+                                       if_else(berzu_kk==10,"berzi",
+                                               if_else(melnalksna_kk==10,"melnalksnis",
+                                                       if_else(platlapju_kk>=8,"platlapji",
+                                                               "citi"))))))) %>% 
+  mutate(vecumgrupas=factor(if_else(vgr==1,"jaunaudze",
+                                    if_else(vgr==2,"vidēja vecuma",
+                                            if_else(vgr==3,"briestaudze",
+                                                    if_else(vgr==4,"pieaugusi audze",
+                                                            "pāraugusi audze")))),
+                            ordered=TRUE,levels=c("jaunaudze","vidēja vecuma",
+                                                  "briestaudze","pieaugusi audze",
+                                                  "pāraugusi audze"))) %>% 
+  mutate(suga_vgr=paste0(sugai,"_",vgr)) %>% 
+  select(sugai,vecumgrupas,suga_vgr,a10,h10,priezu_kk:citu_kk)
+
+
+# DW
+AprAug <- rast("./DW_2023_apraug.tif")
+AprJul <- rast("./DW_2023_aprjul.tif")
+AprJun <- rast("./DW_2023_aprjun.tif")
+AprMay <- rast("./DW_2023_aprmay.tif")
+JulAug <- rast("./DW_2023_julaug.tif")
+JunAug <- rast("./DW_2023_julaug.tif")
+JunJul <- rast("./DW_2023_junjul.tif")
+MayAug <- rast("./DW_2023_mayaug.tif")
+MayJul <- rast("./DW_2023_mayjul.tif")
+MayJun <- rast("./DW_2023_mayjun.tif")
+
+# utility 
+darbiba <- function(raster, vector, period) {
+  exact_extract(raster, vector, function(value, coverage_fraction) {
+    data.frame(value = value,
+               frac = coverage_fraction / sum(coverage_fraction, na.rm = TRUE)) %>%
+      group_by(value) %>%
+      summarize(freq = sum(frac, na.rm = TRUE), .groups = 'drop') %>%
+      pivot_wider(names_from = 'value',
+                  names_prefix = 'freq_',
+                  values_from = 'freq')
+  }) %>%
+    mutate(across(starts_with('freq'), ~replace_na(., 0))) %>%
+    mutate(periods = period) 
+}
+
+
+# DW extraction 
+kodi=data.frame(kods=levels(factor(mvr$suga_vgr)))
+dati=mvr[1,]
+for (i in 1:length(kodi$kods)){
+  kods=kodi$kods[i]
+  set.seed(0)
+  vietas <- mvr %>% filter(suga_vgr == kods)
+  if (nrow(vietas) < 999) {rand_locs <- vietas} else {rand_locs <- vietas %>% sample_n(999)}
+  
+  rand_locs <- rand_locs %>%  mutate(id = row_number())
+  
+  a=cbind(rand_locs,darbiba(AprAug, rand_locs, "AprAug"))
+  b=cbind(rand_locs,darbiba(AprJul, rand_locs, "AprJul"))
+  c=cbind(rand_locs,darbiba(AprJun, rand_locs, "AprJun"))
+  d=cbind(rand_locs,darbiba(AprMay, rand_locs, "AprMay"))
+  e=cbind(rand_locs,darbiba(JulAug, rand_locs, "JulAug"))
+  f=cbind(rand_locs,darbiba(JunAug, rand_locs, "JunAug"))
+  g=cbind(rand_locs,darbiba(JunJul, rand_locs, "JunJul"))
+  h=cbind(rand_locs,darbiba(MayAug, rand_locs, "MayAug"))
+  i=cbind(rand_locs,darbiba(MayJul, rand_locs, "MayJul"))
+  j=cbind(rand_locs,darbiba(MayJun, rand_locs, "MayJun"))
+  
+  
+  rez=bind_rows(a,b,c,d,e,f,g,h,i,j)
+  dati <- bind_rows(dati, rez)
+}
+
+dati=dati %>% 
+  mutate(water=freq_0,
+         trees=freq_1,
+         grass=freq_2,
+         flooded_vegetation=freq_3,
+         crops=freq_4,
+         shrub_and_scrub=freq_5,
+         built=freq_6,
+         bare=freq_7,
+         snow_and_ice=freq_8)
+dati_real=dati[-1,]
+
+dati_real[is.na(dati_real)]=0
+dati_real$area=as.numeric(st_area(dati_real))
+dati_real$perimeter=as.numeric(st_perimeter(dati_real))
+
+sfarrow::st_write_parquet(dati_real,"./Q2_mezaudzes.parquet")
+
+# DW klases MVR grupās 
+dati=sfarrow::st_read_parquet("./Q2_mezaudzes.parquet")
+
+dati=dati %>% 
+  mutate(sezona=factor(periods,ordered=TRUE,
+                       levels=c("AprMay","AprJun","AprJul","AprAug","MayJun",
+                                "MayJul","MayAug","JunJul","JunAug","JulAug")))
+
+
+q21data=data.frame(dati) %>% 
+  select(sugai:suga_vgr,sezona,water:snow_and_ice) %>% 
+  group_by(sugai,vecumgrupas,suga_vgr) %>% 
+  mutate(skaits=n()/10) %>% 
+  ungroup() %>% 
+  pivot_longer(cols=water:snow_and_ice,names_to = "klase",values_to = "proporcija")
+
+ggplot(q21data,aes(sezona,proporcija,col=klase))+
+  facet_grid(vecumgrupas~sugai)+
+  geom_point(position=position_dodge(width=0.75),alpha=0.2)+
+  theme_bw()+
+  theme(axis.text.x = element_text(angle=90,vjust=0.5),
+        axis.title.y = element_blank(),
+        legend.title = element_blank(),
+        axis.title = element_text(size=14),
+        axis.text=element_text(size=12),
+        legend.text=element_text(size=12),
+        strip.text = element_text(size=11))+
+  scale_y_continuous(labels=scales::label_percent(),breaks=seq(0,1,by=.1))+
+  scale_color_viridis_d()+
+  labs(x="Sezona")
+
+ggview(width=400,height=250,units="mm",dpi=600,device="png")
+ggsave(filename="./pic_q21.png",width=400,height=250,units="mm",dpi=600)
+
+
+# Augstumi ----
+
+q22data_trees=data.frame(dati) %>% 
+  select(sugai,vecumgrupas,suga_vgr,sezona,h10,area,trees)  %>% 
+  group_by(sugai,sezona,h10) %>% 
+  summarise(vid_prop=weighted.mean(x=trees,w=area)) %>% 
+  ungroup()
+
+ggplot(q22data_trees,aes(h10,vid_prop,col=sezona))+
+  theme_bw()+
+  facet_wrap(~sugai,nrow=2)+
+  geom_point(alpha=0.1)+
+  geom_smooth(method="loess",se=FALSE)+
+  scale_y_continuous(labels=scales::label_percent(),breaks=seq(0,1,by=.1))+
+  labs(x="Augstums, m",y="Ar platību svērtais klases 'trees' īpatsvars (%)",col="Sezona")+
+  theme(axis.title = element_text(size=14),
+        axis.text=element_text(size=12),
+        strip.text = element_text(size=11),
+        legend.title = element_blank(size=14),
+        legend.text=element_text(size=12))
+
+
+ggview(width=300,height=150,units="mm",dpi=600,device="png")
+ggsave(filename="./pic_q22_trees.png",width=300,height=150,units="mm",dpi=600)
+
+```
 
 
 ## Q3: Topogrāfiskās kartes mitrāji
