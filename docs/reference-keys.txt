@@ -47,7 +47,7 @@ pamata-apraksti-starpsugu-svarošanai
 populācijas-lielums-un-pārmaiņas
 mūža-reproduktīvais-ieguldījums
 Chapter2
-m-režģis-latvijā
+Chapter2.1
 stratificēšana-ģeoprocesēšanas-paralelizācijai
 references-rastri
 Chapter3

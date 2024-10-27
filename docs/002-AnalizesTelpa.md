@@ -8,7 +8,7 @@ Lai definētu analīzes telpu, nodrošinātu slāņu savstarpēju atbilstību un
 
 Šie slāņi savā starpā savienoti un tālāk apstrādāti ērtākai lietošanai.
 
-## 100 m režģis Latvijā
+## 100 m režģis Latvijā  {#Chapter2.1}
 
 Tā kā lejupielādētais režģis ietver arī Latvijas Ekskluzīvās Ekonomiskās Zonas ūdeņus, no tā atlasīti tikai tie kvadrāti, kas pārklājas ar administratīvajām teritorijām. Rezultējošais objekts saglabāts {sf} tieši atbalstītā *geoparquet* formātā turpmāko darbu paātrināšanai.
 
