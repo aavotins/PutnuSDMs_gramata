@@ -43,7 +43,7 @@ st_write(tikls100_apvienots,"./tikls100_apvienots.shp")
 ```
 
 
-### Stratificēšana ģeoprocesēšanas paralelizācijai
+### Stratificēšana ģeoprocesēšanas paralelizācijai  {#Chapter2.2}
 
 Lai atvieglotu un paātrinātu ģeoprocesēšanu, analīzes telpu ir nepieciešams sadalīt mazākās daļās. Tam izmantots Envirotech izplatītajā GIS_Latvia_10.2 ģeodatubāzē pieejamais 1993. gada topogrāfisko karšu sistēmas M:50000 rāmis.
 
@@ -118,7 +118,7 @@ for(i in seq_along(karsu_lapas)){
 
 
 
-## References rastri
+## References rastri  {#Chapter2.3}
 
 Lai nodrošinātu ievades datu (to pirmapstrādes produktu) un ekoģeogrāfisko mainīgo telpisko harmonizētību, sagatavoti references rastri. Tie saglabāti kā Geotiff faili ar diviem šūnas izmēriem - 10 m (ievades datiem) un 100 m (analīzes šūna). Katra rastra telpiskais pārklājums ir par 10 km plašāks nekā Latvijas sauszemes 100 m tīkls, lai nodrošinātu iespēju ainavmetriku aprēķiniem.
 

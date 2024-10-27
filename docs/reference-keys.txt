@@ -48,8 +48,8 @@ populācijas-lielums-un-pārmaiņas
 mūža-reproduktīvais-ieguldījums
 Chapter2
 Chapter2.1
-stratificēšana-ģeoprocesēšanas-paralelizācijai
-references-rastri
+Chapter2.2
+Chapter2.3
 Chapter3
 Chapter3.1
 Chapter3.1.1
@@ -78,8 +78,6 @@ Chapter3.2.9
 Chapter3.2.10
 Chapter3.2.11
 Chapter3.3
-Chapter3.3.1
-Chapter3.3.2
 Chapter4
 q0-dw-nosegums
 q1-lauksaimniecības-kultūras

@@ -195,9 +195,9 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="3.1" data-path="Chapter2.html"><a href="Chapter2.html#Chapter2.1"><i class="fa fa-check"></i><b>3.1</b> 100 m režģis Latvijā</a>
 <ul>
-<li class="chapter" data-level="3.1.1" data-path="Chapter2.html"><a href="Chapter2.html#stratificēšana-ģeoprocesēšanas-paralelizācijai"><i class="fa fa-check"></i><b>3.1.1</b> Stratificēšana ģeoprocesēšanas paralelizācijai</a></li>
+<li class="chapter" data-level="3.1.1" data-path="Chapter2.html"><a href="Chapter2.html#Chapter2.2"><i class="fa fa-check"></i><b>3.1.1</b> Stratificēšana ģeoprocesēšanas paralelizācijai</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="Chapter2.html"><a href="Chapter2.html#references-rastri"><i class="fa fa-check"></i><b>3.2</b> References rastri</a></li>
+<li class="chapter" data-level="3.2" data-path="Chapter2.html"><a href="Chapter2.html#Chapter2.3"><i class="fa fa-check"></i><b>3.2</b> References rastri</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="Chapter3.html"><a href="Chapter3.html"><i class="fa fa-check"></i><b>4</b> Ievades ģeodati</a>
 <ul>
@@ -231,11 +231,7 @@ div.csl-indent {
 <li class="chapter" data-level="4.2.10" data-path="Chapter3.html"><a href="Chapter3.html#Chapter3.2.10"><i class="fa fa-check"></i><b>4.2.10</b> Lauksaimniecībā izmantojamās zemes</a></li>
 <li class="chapter" data-level="4.2.11" data-path="Chapter3.html"><a href="Chapter3.html#Chapter3.2.11"><i class="fa fa-check"></i><b>4.2.11</b> Meži</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="Chapter3.html"><a href="Chapter3.html#Chapter3.3"><i class="fa fa-check"></i><b>4.3</b> Vides pārmaiņas</a>
-<ul>
-<li class="chapter" data-level="4.3.1" data-path="Chapter3.html"><a href="Chapter3.html#Chapter3.3.1"><i class="fa fa-check"></i><b>4.3.1</b> <em>Dynamic World</em></a></li>
-<li class="chapter" data-level="4.3.2" data-path="Chapter3.html"><a href="Chapter3.html#Chapter3.3.2"><i class="fa fa-check"></i><b>4.3.2</b> Koku vainagu segums no Global forest watch</a></li>
-</ul></li>
+<li class="chapter" data-level="4.3" data-path="Chapter3.html"><a href="Chapter3.html#Chapter3.3"><i class="fa fa-check"></i><b>4.3</b> Vides pārmaiņas</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="Chapter4.html"><a href="Chapter4.html"><i class="fa fa-check"></i><b>5</b> <em>Dynamic World</em> izpēte</a>
 <ul>
@@ -416,8 +412,8 @@ div.csl-indent {
 <span id="cb2-20"><a href="Chapter2.html#cb2-20" tabindex="-1"></a>  <span class="fu">group_by</span>(yes) <span class="sc">%&gt;%</span> </span>
 <span id="cb2-21"><a href="Chapter2.html#cb2-21" tabindex="-1"></a>  <span class="fu">summarise</span>()</span>
 <span id="cb2-22"><a href="Chapter2.html#cb2-22" tabindex="-1"></a><span class="fu">st_write</span>(tikls100_apvienots,<span class="st">&quot;./tikls100_apvienots.shp&quot;</span>)</span></code></pre></div>
-<div id="stratificēšana-ģeoprocesēšanas-paralelizācijai" class="section level3 hasAnchor" number="3.1.1">
-<h3><span class="header-section-number">3.1.1</span> Stratificēšana ģeoprocesēšanas paralelizācijai<a href="Chapter2.html#stratificēšana-ģeoprocesēšanas-paralelizācijai" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="Chapter2.2" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Stratificēšana ģeoprocesēšanas paralelizācijai<a href="Chapter2.html#Chapter2.2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Lai atvieglotu un paātrinātu ģeoprocesēšanu, analīzes telpu ir nepieciešams sadalīt mazākās daļās. Tam izmantots Envirotech izplatītajā GIS_Latvia_10.2 ģeodatubāzē pieejamais 1993. gada topogrāfisko karšu sistēmas M:50000 rāmis.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="Chapter2.html#cb3-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
 <span id="cb3-2"><a href="Chapter2.html#cb3-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
@@ -481,8 +477,8 @@ div.csl-indent {
 <span id="cb4-38"><a href="Chapter2.html#cb4-38" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </div>
-<div id="references-rastri" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> References rastri<a href="Chapter2.html#references-rastri" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="Chapter2.3" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> References rastri<a href="Chapter2.html#Chapter2.3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Lai nodrošinātu ievades datu (to pirmapstrādes produktu) un ekoģeogrāfisko mainīgo telpisko harmonizētību, sagatavoti references rastri. Tie saglabāti kā Geotiff faili ar diviem šūnas izmēriem - 10 m (ievades datiem) un 100 m (analīzes šūna). Katra rastra telpiskais pārklājums ir par 10 km plašāks nekā Latvijas sauszemes 100 m tīkls, lai nodrošinātu iespēju ainavmetriku aprēķiniem.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="Chapter2.html#cb5-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
 <span id="cb5-2"><a href="Chapter2.html#cb5-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>

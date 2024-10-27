@@ -195,9 +195,9 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="3.1" data-path="Chapter2.html"><a href="Chapter2.html#Chapter2.1"><i class="fa fa-check"></i><b>3.1</b> 100 m režģis Latvijā</a>
 <ul>
-<li class="chapter" data-level="3.1.1" data-path="Chapter2.html"><a href="Chapter2.html#stratificēšana-ģeoprocesēšanas-paralelizācijai"><i class="fa fa-check"></i><b>3.1.1</b> Stratificēšana ģeoprocesēšanas paralelizācijai</a></li>
+<li class="chapter" data-level="3.1.1" data-path="Chapter2.html"><a href="Chapter2.html#Chapter2.2"><i class="fa fa-check"></i><b>3.1.1</b> Stratificēšana ģeoprocesēšanas paralelizācijai</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="Chapter2.html"><a href="Chapter2.html#references-rastri"><i class="fa fa-check"></i><b>3.2</b> References rastri</a></li>
+<li class="chapter" data-level="3.2" data-path="Chapter2.html"><a href="Chapter2.html#Chapter2.3"><i class="fa fa-check"></i><b>3.2</b> References rastri</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="Chapter3.html"><a href="Chapter3.html"><i class="fa fa-check"></i><b>4</b> Ievades ģeodati</a>
 <ul>
@@ -231,11 +231,7 @@ div.csl-indent {
 <li class="chapter" data-level="4.2.10" data-path="Chapter3.html"><a href="Chapter3.html#Chapter3.2.10"><i class="fa fa-check"></i><b>4.2.10</b> Lauksaimniecībā izmantojamās zemes</a></li>
 <li class="chapter" data-level="4.2.11" data-path="Chapter3.html"><a href="Chapter3.html#Chapter3.2.11"><i class="fa fa-check"></i><b>4.2.11</b> Meži</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="Chapter3.html"><a href="Chapter3.html#Chapter3.3"><i class="fa fa-check"></i><b>4.3</b> Vides pārmaiņas</a>
-<ul>
-<li class="chapter" data-level="4.3.1" data-path="Chapter3.html"><a href="Chapter3.html#Chapter3.3.1"><i class="fa fa-check"></i><b>4.3.1</b> <em>Dynamic World</em></a></li>
-<li class="chapter" data-level="4.3.2" data-path="Chapter3.html"><a href="Chapter3.html#Chapter3.3.2"><i class="fa fa-check"></i><b>4.3.2</b> Koku vainagu segums no Global forest watch</a></li>
-</ul></li>
+<li class="chapter" data-level="4.3" data-path="Chapter3.html"><a href="Chapter3.html#Chapter3.3"><i class="fa fa-check"></i><b>4.3</b> Vides pārmaiņas</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="Chapter4.html"><a href="Chapter4.html"><i class="fa fa-check"></i><b>5</b> <em>Dynamic World</em> izpēte</a>
 <ul>
@@ -404,8 +400,8 @@ div.csl-indent {
 <h2><span class="header-section-number">13.2</span> Captioned figures and tables<a href="cross.html#captioned-figures-and-tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Figures and tables <em>with captions</em> can also be cross-referenced from elsewhere in your book using <code>\@ref(fig:chunk-label)</code> and <code>\@ref(tab:chunk-label)</code>, respectively.</p>
 <p>See Figure <a href="cross.html#fig:nice-fig">13.1</a>.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="cross.html#cb31-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, .<span class="dv">1</span>, .<span class="dv">1</span>))</span>
-<span id="cb31-2"><a href="cross.html#cb31-2" tabindex="-1"></a><span class="fu">plot</span>(pressure, <span class="at">type =</span> <span class="st">&#39;b&#39;</span>, <span class="at">pch =</span> <span class="dv">19</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="cross.html#cb32-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, .<span class="dv">1</span>, .<span class="dv">1</span>))</span>
+<span id="cb32-2"><a href="cross.html#cb32-2" tabindex="-1"></a><span class="fu">plot</span>(pressure, <span class="at">type =</span> <span class="st">&#39;b&#39;</span>, <span class="at">pch =</span> <span class="dv">19</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:nice-fig"></span>
 <img src="102-cross-refs_files/figure-html/nice-fig-1.png" alt="Plot with connected points showing that vapor pressure of mercury increases exponentially as temperature increases." width="80%" />
 <p class="caption">
@@ -413,10 +409,10 @@ Figure 13.1: Here is a nice figure!
 </p>
 </div>
 <p>Don’t miss Table <a href="cross.html#tab:nice-tab">13.1</a>.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="cross.html#cb32-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
-<span id="cb32-2"><a href="cross.html#cb32-2" tabindex="-1"></a>  <span class="fu">head</span>(pressure, <span class="dv">10</span>), <span class="at">caption =</span> <span class="st">&#39;Here is a nice table!&#39;</span>,</span>
-<span id="cb32-3"><a href="cross.html#cb32-3" tabindex="-1"></a>  <span class="at">booktabs =</span> <span class="cn">TRUE</span></span>
-<span id="cb32-4"><a href="cross.html#cb32-4" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="cross.html#cb33-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb33-2"><a href="cross.html#cb33-2" tabindex="-1"></a>  <span class="fu">head</span>(pressure, <span class="dv">10</span>), <span class="at">caption =</span> <span class="st">&#39;Here is a nice table!&#39;</span>,</span>
+<span id="cb33-3"><a href="cross.html#cb33-3" tabindex="-1"></a>  <span class="at">booktabs =</span> <span class="cn">TRUE</span></span>
+<span id="cb33-4"><a href="cross.html#cb33-4" tabindex="-1"></a>)</span></code></pre></div>
 <table>
 <caption><span id="tab:nice-tab">Table 13.1: </span>Here is a nice table!</caption>
 <thead>
