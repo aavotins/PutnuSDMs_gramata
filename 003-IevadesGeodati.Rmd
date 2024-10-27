@@ -32,11 +32,122 @@ g
 
 ### Sentinel-2 {#Chapter3.1.7}
 
-h
+Eiropas Kosmosa Aģentūras (ESA) *Copernicus* programmas *Sentinel-2* misija ir divu (trīs kopš 2024-09-05) identisku satelītu, kas riņo tajā pašā orbītā, konstellācija. Pirmais satelīts - *Sentinel-2A* savu orbītu ieņēma un izgāja kalibrācijas testus 2015-06-23, otrais (*Sentinel-2B*) - 2017-03-07, pirmie attēli bija pieejami jau iepriekš. Katrs satelīts uzņem augstas izšķirtspējas (no 10 m (pie ekvatora) pikseļa izšķirtspējas) attēlus 13 spektrālajos kanālos ar atgriešanās laiku līdz 5 dienām (tuvāk poliem - biežāk) (https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2). Šīs misijas dati ir brīvi pieejami, tajā skaitā *Google Earth Engine* platformā [@GEEpaper] dažādas liela apjoma priekšapstrādes un analīžu veikšanai. Šī projekta ietvaros izmantots harmonizētais otrā līmeņa (Level-2A; https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED#description) produkts, pielietojot mākoņu masku, kura iekļauj ne tikai mākoņu, bet arī to ēnu filtrēšanu, lai katrai pēc filtrēšanas (mākoņu un sezonas - no aprīļa līdz oktobrim un no 2017. līdz 2023. gadam) pieejamajai satelītainais aprēķinātu normalizēto starpības veģetācijas indeksu (NDVI, ) un normalizēto starpības ūdens indeksu (NDWI, ) kā arī dažādas to metrikas. Datu sagatavošanai izmantojams
+[replicēšanas skripts](https://code.earthengine.google.com/0d0c819780aafc82e8fae371e4afd360?noload=true). Lai izmantotu šo skriptu, ir nepieciešams [GEE konts un projekts](https://code.earthengine.google.com/register) un pietiekošs apjoms vietas Google Drive diskā. Izpildot komandrindas tiks piedāvāta lejuplāde sekojošiem failiem:
+
+- `NDVI_p25` - aprīļa līdz oktobra ik pikseļa NDVI 25. procentiles vērtību katram gadam no 2017. līdz 2023. mediāna;
+
+- `NDVI_p75` - aprīļa līdz oktobra ik pikseļa NDVI 75. procentiles vērtību katram gadam no 2017. līdz 2023. mediāna;
+
+- `NDVI_median` - aprīļa līdz oktobra ik pikseļa NDVI mediānas vērtību katram gadam no 2017. līdz 2023. mediāna;
+
+- `NDVI_2023_median` - 2023. gada aprīļa līdz oktobra ik pikseļa NDVI vērtību mediāna;
+
+- `NDVI_IQR` - aprīļa līdz oktobra ik pikseļa NDVI starpkvartiļu apgabala vērtību katram gadam no 2017. līdz 2023. mediāna;
+
+- `NDWI_p25` - aprīļa līdz oktobra ik pikseļa NDWI 25. procentiles vērtību katram gadam no 2017. līdz 2023. mediāna;
+
+- `NDWI_p75` - aprīļa līdz oktobra ik pikseļa NDWI 75. procentiles vērtību katram gadam no 2017. līdz 2023. mediāna;
+
+- `NDWI_median` - aprīļa līdz oktobra ik pikseļa NDWI mediānas vērtību katram gadam no 2017. līdz 2023. mediāna;
+
+- `NDWI_2023_median` - 2023. gada aprīļa līdz oktobra ik pikseļa NDWI vērtību mediāna;
+
+- `NDWI_IQR` - aprīļa līdz oktobra ik pikseļa NDWI starpkvartiļu apgabala vērtību katram gadam no 2017. līdz 2023. mediāna.
+
+Pēc komandrindu izpildes un rezultātu sagatavošanas Google Drive diskā, ir redzams, ka katrs visu Latviju aptverošais slānis ir sadalīts vairākās lapās. Tas ir tādēļ, ka slāņi kodēti kā *Float* un pirms komprecijas GeoTIFF pārsniedz 4 GB izmēru. Visas šīs lapas ir nepieciešams lejuplādēt, sekojošās R komandrindas tās apvieno, nodrošinot koordinātu sistēmas un pikseļu atbilstību references rastram.
+
+```{r, eval=FALSE}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+
+# reference
+paraugs=rast("./LV10m_10km.tif")
+
+# saraksts ar lejupielādētajiem failiem, pieņemot, ka tie atrodas direktorijas 
+# "S2indices" apakšdirektorijā "RAW"
+faili=data.frame(fails=list.files("./S2indices/RAW/"))
+faili$celi_sakums=paste0("./S2indices/RAW/",faili$fails)
+
+# Korekti projicētu mozaīku sagatavošana
+# failu nosaukumi un ceļš saglabāšanai
+faili=faili %>% 
+  separate(fails,into=c("nosaukums","vidus","beigas"),sep="-",remove = FALSE) %>% 
+  mutate(mosaic_name=paste0(nosaukums,".tif"),
+         masaic_cels=paste0("./S2indices/mozaikas/",mosaic_name))
+
+# unikālie failu nosaukumi cikla vadībai
+unikalie=levels(factor(faili$nosaukums))
+
+# cikls uzdevuma veikšanai
+for(i in seq_along(unikalie)){
+  unikalais=faili %>% filter(nosaukums==unikalie[i])
+  beigu_cels=unique(unikalais$masaic_cels)
+  
+  # ik slānis sastāv no divām lapām
+  viens=rast(unikalais$celi_sakums[1])
+  divi=rast(unikalais$celi_sakums[2])
+  
+  viens2=terra::project(viens,paraugs)
+  divi2=terra::project(divi,paraugs)
+  
+  mozaika=terra::merge(viens2,divi2)
+  maskets=mask(mozaika,paraugs,filename=beigu_cels,overwrite=TRUE)
+}
+
+```
+
+
 
 ### *Dynamic World* {#Chapter3.1.8}
 
-i
+*Dynamic World* (DW) ir relatīvi nesens Zemes novērošanas sistēmu produkts, kurš klasificē zemes segumu un lietojumu (LULC) deviņās kategorijās (0=water, 1=trees, 2=grass, 3=flooded_vegetation, 4=crops, 5=shrub_and_scrub, 6=built, 7=bare, 8=snow_and_ice), katram ESA Copernicus Sentinel-2 attēlam ar identificēto mākoņainību $\le35%$, pieļaujot filtrēšanu un dažādu agregāciju veidošanu [@DynWorld] (nedaudz vairāk nodaļā [*Dynamic World* izpēte](#Chapter4)).
+
+DW ievades informācija - rastra slānis katrai sezonai katrā gadā - sagtavots *Google Earth Engine* platformā [@GEEpaper], izmantojot [replicēšanas skriptu](https://code.earthengine.google.com/941bb1a16331727787bb3fc1bbbda95b?noload=true). Lai izmantotu šo skriptu, ir nepieciešams [GEE konts un projekts](https://code.earthengine.google.com/register) un pietiekošs apjoms vietas Google Drive diskā. Izpildot komandrindas tiks piedāvāta lejuplāde failam, kas aptver laika periodu no vērtības 7. rindā līdz vērtībai 8. rindā (faila nosaukums norādāms 32. rindā, tā apraksts - 33. rindā un direktorija Google diskā - 31. rindā vai tas viss norādāms apstiprinot saglabāšanau) - šis skripts nav optimizēts visu sezonālo griezumu visiem gadiem sagatavošanai, lai reproducētu vai paplašinātu šo izpēti, tās nepieciešams manuāli izmainīt.
+
+Pēc komandrindu izpildes un rezultātu sagatavošanas Google Drive diskā, ir redzams, ka katrs visu Latviju aptverošais slānis ir sadalīts vairākās lapās. Tas ir tādēļ, ka, lai nodrošinātu nulles patieso vērtību (klase "water", nevis fons), slāņi kodēti kā *Float*, nevis veselie skaitļi. Visas šīs lapas ir nepieciešams lejuplādēt, sekojošās R komandrindas tās apvieno, nodrošinot koordinātu sistēmas un pikseļu atbilstību references rastram.
+
+```{r, eval=FALSE}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+
+# reference
+paraugs=rast("./LV10m_10km.tif")
+
+# saraksts ar lejupielādētajiem failiem, pieņemot, ka tie atrodas direktorijā 
+# "DWE_float"
+faili=data.frame(faili=list.files("./DWE_float/"))
+faili$celi_sakums=paste0("./DWE_float/",faili$faili)
+
+# Korekti projicētu mozaīku sagatavošana
+# failu nosaukumi un ceļš saglabāšanai
+faili=faili %>% 
+  separate(faili,into=c("DW","gads","periods","parejais"),sep="_",remove = FALSE) %>% 
+  mutate(unikalais=paste0(DW,"_",gads,"_",periods),
+         mosaic_name=paste0(unikalais,".tif"),
+         masaic_cels=paste0("./DWE_mosaic/",mosaic_name))
+
+# unikālie failu nosaukumi cikla vadībai
+unikalie=levels(factor(faili$unikalais))
+
+# cikls uzdevuma veikšanai
+for(i in seq_along(unikalie)){
+  unikalais=faili %>% filter(unikalais==unikalie[i])
+  beigu_cels=unique(unikalais$masaic_cels)
+  
+  # ik slānis sastāv no divām lapām
+  viens=rast(unikalais$celi_sakums[1])
+  divi=rast(unikalais$celi_sakums[2])
+  
+  viens2=project(viens,paraugs)
+  divi2=project(divi,paraugs)
+  
+  mozaika=mosaic(viens2,divi2,fun="first")
+  maskets=mask(mozaika,paraugs,filename=beigu_cels,overwrite=TRUE)
+}
+```
+
+
 
 ### *Global Forest Watch* {#Chapter3.1.9}
 
@@ -67,45 +178,24 @@ o
 
 p
 
-### Klimats {#Chapter3.2.2}
 
-r
+### Ainava {#Chapter3.2.4}
 
-### Satelītindeksi {#Chapter3.2.3}
+- ceļi
 
-s
+- ūdeņi
 
-### Augsne {#Chapter3.2.4}
+- koki un izcirtumi (izcirtumi, mežaudzes, palsar, parki-kapi-alejas)
 
-t
+- mitrāji
 
-### Ainava {#Chapter3.2.5}
+- krūmāji no topo
 
-u
+- LIZ
 
-### Ceļi {#Chapter3.2.6}
+- smiltāji utml
 
-v
-
-### Eiklīda distances {#Chapter3.2.7}
-
-z
-
-### Malas {#Chapter3.2.8}
-
-aa
-
-### Ūdeņi {#Chapter3.2.9}
-
-ab
-
-### Lauksaimniecībā izmantojamās zemes {#Chapter3.2.10}
-
-ac
-
-### Meži {#Chapter3.2.11}
-
-ad
+- robu aizpildījums ar DW, kur klase "trees" pārsaukta par krūmiem
 
 ## Vides pārmaiņas {#Chapter3.3}
 
