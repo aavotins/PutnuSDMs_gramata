@@ -61,6 +61,10 @@ All chapters start with a first-level heading followed by your chapter title, li
 
 ## Vides pārmaiņas {#Chapter3.3}
 
+Vides pārmaiņas nepieciešamas novērojumu filtrēšanai. Daļēji tās būtu iegūstamas no [Meža Valsts reģistrs](#Chapter3.1.1) un [LAD lauku informācija](#Chapter3.1.2) datiem, tomēr projekta darba grupā nav pieejami ik gada raksturojumi (1) un šīs datubāzes neaptver visu valsts teritoriju (2), tādēļ nepieciešams neatkarīgs vērtējums. Tāda izstrādāšanai izmantojām [*Dynamic World* izpēte](#Chapter4) aprīļa līdz augusta ik gada no 2016. līdz 2023. rezultātus un [*Global Forest Watch*](#Chapter3.1.9) datus, raksturojot pārmaiņu apjomus analīzes šūnā (nodaļa [100 m režģis Latvijā](#Chapter2.1)) un putnu ligzdošanas iecirkņu rādiusu grupu (\@ref(fig:AinavTelpas) att.) buferos ap analīzes šūnu centriem.
+
+Šīs informācijas sagatavošanas gaita raksturota sekojošajās apakšnodaļās.
+
 ### *Dynamic World* {#Chapter3.3.1}
 
 ### Koku vainagu segums no Global forest watch {#Chapter3.3.2}
