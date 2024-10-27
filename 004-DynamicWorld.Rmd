@@ -134,9 +134,9 @@ for(i in seq_along(unikalie)){
 
 ## Q0: DW nosegums
 
-Katram gadam (2015-2023) ik iepriekš minētajam sezonas griezumam DW datu pārklājum ir apskatāmi zemāk esošajā attēlā  \@ref(fig:DW_q00). Kā jau sagaidāms, 2015. gadā ir trūcīgs nosegums. Pārskata periodā resurss ir samērā droši izmantojams kopš 2018. gada, kopš 2016. gada pielietojamība ir vērtējama, atkarībā no mērķiem un vērtējama saistībā ar sezonas griezumiem.
+Katram gadam (2015-2023) ik iepriekš minētajam sezonas griezumam DW datu pārklājum ir apskatāmi zemāk esošajā attēlā  \@ref(fig:DWq00) . Kā jau sagaidāms, 2015. gadā ir trūcīgs nosegums. Pārskata periodā resurss ir samērā droši izmantojams kopš 2018. gada, kopš 2016. gada pielietojamība ir vērtējama, atkarībā no mērķiem un vērtējama saistībā ar sezonas griezumiem.
 
-```{r DW_q00, echo=FALSE, out.width = '100%', fig.cap='DW rezultātu pieejamība dažādos sezonālajos griezumos kopš Sentinel-2 programmas datu pieejamības. Pikseļu krāsa attēla daļās raksturo 1 km šūnās esošo klasifikācijas iztŗukumu īpatsvaru, savukārt skaitļi attēla daļās - kopējo klasifikācijas robu īpatsvaru procentos (%).'}
+```{r DWq00, echo=FALSE, out.width = '100%', fig.cap='DW rezultātu pieejamība dažādos sezonālajos griezumos kopš Sentinel-2 programmas datu pieejamības. Pikseļu krāsa attēla daļās raksturo 1 km šūnās esošo klasifikācijas iztŗukumu īpatsvaru, savukārt skaitļi attēla daļās - kopējo klasifikācijas robu īpatsvaru procentos (%).'}
 knitr::include_graphics("./Atteli/ch004_missings.png")
 ```
 
