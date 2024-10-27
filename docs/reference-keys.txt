@@ -2,6 +2,7 @@ fig:General-workflow
 tab:SuguIzvele
 fig:AinavTelpas
 fig:DWq00
+fig:DWq11
 fig:nice-fig
 tab:nice-tab
 eq:binom

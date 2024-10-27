@@ -138,8 +138,8 @@ for(i in seq_along(unikalie)){
 Katram gadam (2015-2023) ik iepriekš minētajam sezonas griezumam DW datu pārklājum ir apskatāmi zemāk esošajā attēlā  \@ref(fig:DWq00). Kā jau sagaidāms, 2015. gadā ir trūcīgs nosegums. Pārskata periodā resurss ir samērā droši izmantojams kopš 2018. gada, kopš 2016. gada pielietojamība ir vērtējama, atkarībā no mērķiem un vērtējama saistībā ar sezonas griezumiem.
 
 <div class="figure">
-<img src="./Atteli/ch004_missings.png" alt="DW rezultātu pieejamība dažādos sezonālajos griezumos kopš Sentinel-2 programmas datu pieejamības. Pikseļu krāsa attēla daļās raksturo 1 km šūnās esošo klasifikācijas iztŗukumu īpatsvaru, savukārt skaitļi attēla daļās - kopējo klasifikācijas robu īpatsvaru procentos (%)." width="100%" />
-<p class="caption">(\#fig:DWq00)DW rezultātu pieejamība dažādos sezonālajos griezumos kopš Sentinel-2 programmas datu pieejamības. Pikseļu krāsa attēla daļās raksturo 1 km šūnās esošo klasifikācijas iztŗukumu īpatsvaru, savukārt skaitļi attēla daļās - kopējo klasifikācijas robu īpatsvaru procentos (%).</p>
+<img src="./Atteli/ch004_missings.png" alt="DW rezultātu pieejamība dažādos sezonālajos griezumos kopš Sentinel-2 programmas datu pieejamības. Pikseļu krāsa attēla daļās raksturo 1 km šūnās esošo klasifikācijas iztrūkumu īpatsvaru, savukārt skaitļi attēla daļās - kopējo klasifikācijas robu īpatsvaru procentos (%)." width="100%" />
+<p class="caption">(\#fig:DWq00)DW rezultātu pieejamība dažādos sezonālajos griezumos kopš Sentinel-2 programmas datu pieejamības. Pikseļu krāsa attēla daļās raksturo 1 km šūnās esošo klasifikācijas iztrūkumu īpatsvaru, savukārt skaitļi attēla daļās - kopējo klasifikācijas robu īpatsvaru procentos (%).</p>
 </div>
 
 <br>
@@ -380,11 +380,11 @@ sfarrow::st_write_parquet(dati_real,"./Q1_kulturas.parquet")
 ### Q1.1: Ziemāji aramzemēs
 
 
-Sekojošajā attēlā \@ref(fig:DW_q11) ir ilustrēta ziemāju aramzemēs (kultūru kodi "121","122","132","112","116","151") saistība ar DW klasēm dažādos temporālajos griezumos. Skaitļi attēlu daļās norāda klases "crops" ar lauka platību svērto vidējo īpatsvaru. Redzams, ka zemākā atbilstība ir izmantojot tikai vasaras mēnešus. Ievērojami zemāka par atlikušajām klasēm ir arī tikai pavasara klasifikācija. Atlikušās ir visai līdzīgas, nedaudz pārāki temporālie griezumi šķiet maijā-jūnijā un maijā-jūlijā.
+Sekojošajā attēlā \@ref(fig:DWq11) ir ilustrēta ziemāju aramzemēs (kultūru kodi "121","122","132","112","116","151") saistība ar DW klasēm dažādos temporālajos griezumos. Skaitļi attēlu daļās norāda klases "crops" ar lauka platību svērto vidējo īpatsvaru. Redzams, ka zemākā atbilstība ir izmantojot tikai vasaras mēnešus. Ievērojami zemāka par atlikušajām klasēm ir arī tikai pavasara klasifikācija. Atlikušās ir visai līdzīgas, nedaudz pārāki temporālie griezumi šķiet maijā-jūnijā un maijā-jūlijā.
 
 <div class="figure">
 <img src="./Atteli/ch004_q11.png" alt="Lauksaimniecības kultūru grupas &quot;ziemāji&quot; saistība ar DW klasēm." width="100%" />
-<p class="caption">(\#fig:DW_q11)Lauksaimniecības kultūru grupas "ziemāji" saistība ar DW klasēm.</p>
+<p class="caption">(\#fig:DWq11)Lauksaimniecības kultūru grupas "ziemāji" saistība ar DW klasēm.</p>
 </div>
 
 <br>
