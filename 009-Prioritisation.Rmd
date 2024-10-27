@@ -4,20 +4,32 @@ All chapters start with a first-level heading followed by your chapter title, li
 
 ## Ik sugas aizsardzībai prioritārās vietas
 
+Vienas sugas zonation
 
 ## Daudzsugu pieeja dabas aizsardzības plānošanai
 
+Šajā nodaļā demonstrēta izmantotā pieeja
 
-### Meži
+### Mežu (putnu) aizsardzībai prioritārās vietas 
 
+Par mežu putniem, kuri iekļaujami plašākā 
 
-### Lauksaimniecībā izmantojamās zemes
+### Lauku (putnu) aizsardzībai prioritārās vietas
 
+Par lauku putniem, kuri iekļaujami plašākā 
 
-### Mitrāji
+### Mitrāju (putnu) aizsardzībai prioritārās vietas
 
+Par mitrāju putniem, kuri iekļaujami plašākā 
 
+### Ūdeņu (putnu) aizsardzībai prioritārās vietas 
+
+Par ūdeņu putniem, kuri iekļaujami plašākā 
+
+### Vietu ar skraju veģetāciju (putnu) aizsardzībai prioritārās vietas
+
+Par šo vietu putniem, kuri iekļaujami plašākā 
 
 ### Valstī kopumā
 
-
+Baigi jau nu bezjēdzīgais

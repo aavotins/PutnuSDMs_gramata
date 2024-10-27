@@ -4,7 +4,16 @@ All chapters start with a first-level heading followed by your chapter title, li
 
 ## Ekoloģiskās nišas dziļumi
 
+a
+
+## Saistība ar aizsargājamām teritorijām
+
+b
 
 ## Saistība ar aizsardzības režīmiem
 
+c
 
+## Saistība ar ekosistēmām
+
+d
