@@ -18,11 +18,87 @@ c
 
 ### LĢIA topogrāfiskā karte {#Chapter3.1.3}
 
-d
+Latvijas Ģeotelpiskās informācijas aģentūras topogrāfiskās kartes M:10000 vekotrodatu ģeodatubāze studiju un pētniecības procesu nodrošināšanai Latvijas Universitātē saņemta 2016. gada jūlijā pēc licences līguma noslēgšanas. Tās aktālizēta (tas ir nepārtraukts process) versija ir pieejama [publiskai apskatei](https://kartes.lgia.gov.lv/karte/), bet vektordatu pieejamība ir ierobežota. 
+
+Šajā projektā izmantoti sekojoši slāņi:
+
+- `bride_L`, kurā raksturoti 3928 tilti kā linijveida objekti;
+
+- `bridge_P`, kurā raksturoti 4551 tilti kā punktveida objekti
+
+- `hidro_A`, kurā raksturoti 264439 ūdensobjektu plankumi;
+
+- `landus_A`, kurā raksturots zemes segums un lietojums ar 1291781 laukumveida ģeometriju;
+
+- `road_A`, kurā raksturoti 32094 ceļi, kas atzīmēti ar laukumu;
+
+- `swamp_A`, kurā raksturoti augstie purvi ar 48105 laukumveida objektu,
+
+kuri pārveidoti par *geoparquet*. Failu formāta maiņas ietvaros pārbaudītas ģeometrijas (tukšās, to validitāte, kas nepieciešamības gadījumā labota).
+
+```{r, eval=FALSE}
+# libs
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(arrow)) {install.packages("arrow"); require(arrow)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+
+# hidro A
+hidro_A=st_read("./Topo10_v3_12_07_2016.gdb/",layer="hidro_A")
+hidro2 = hidro_A[!st_is_empty(hidro_A),,drop=FALSE] # OK
+validity=st_is_valid(hidro2) 
+table(validity) # 12 invalid geometrijas
+hidro3=st_make_valid(hidro2)
+sfarrow::st_write_parquet(hidro3, "Topo_hidroA.parquet")
+
+
+# road A
+road_A=st_read("./Topo10_v3_12_07_2016.gdb/",layer="road_A")
+road2 = road_A[!st_is_empty(road_A),,drop=FALSE] # OK
+validity=st_is_valid(road2) 
+table(validity) # 28 invalid geometrijas
+road3=st_make_valid(road2)
+sfarrow::st_write_parquet(road3, "Topo_roadA.parquet")
+
+# swamp A
+swamp_A=st_read("./Topo10_v3_12_07_2016.gdb/",layer="swamp_A")
+swamp2 = swamp_A[!st_is_empty(swamp_A),,drop=FALSE] # OK
+validity=st_is_valid(swamp2) 
+table(validity) # 17 invalid geometrijas
+swamp3=st_make_valid(swamp2)
+sfarrow::st_write_parquet(swamp3, "Topo_swampA.parquet")
+
+# bridge_L
+bridge_L=st_read("./Topo10_v3_12_07_2016.gdb/",layer="bridge_L")
+bridgeL2 = bridge_L[!st_is_empty(bridge_L),,drop=FALSE] # OK
+validity=st_is_valid(bridgeL2) 
+table(validity) # OK
+sfarrow::st_write_parquet(bridgeL2, "Topo_bridgeL.parquet")
+
+
+# bridge_P
+bridge_P=st_read("./Topo10_v3_12_07_2016.gdb/",layer="bridge_P")
+bridgeP2 = bridge_P[!st_is_empty(bridge_P),,drop=FALSE] # OK
+validity=st_is_valid(bridgeP2) 
+table(validity) # OK
+sfarrow::st_write_parquet(bridgeP2, "Topo_bridgeP.parquet")
+
+
+
+
+# landus A
+landus_A=st_read("./Topo10_v3_12_07_2016.gdb/",layer="landus_A")
+landus2 = landus_A[!st_is_empty(landus_A),,drop=FALSE] # OK
+validity=st_is_valid(landus2) 
+table(validity) # 5734 invalid geometrijas
+landus3=st_make_valid(landus2)
+sfarrow::st_write_parquet(landus3, "Topo_landusA.parquet")
+```
 
 ### Meliorācijas Kadastra Informācijas Sistēmas datubāze {#Chapter3.1.4}
 
-**Jāpieprasa Ivo sniegt ieguves informāciju**
+Meliorācijas Kadastra Informācijas Sistēmas datubāze 2018. gada jūnijā pēc pieprasījuma no Latvijas Universitātes studiju un pētniecības procesu nodrošināšanai saņemta no Zemkopības ministrijas nekustamo īpašumu daļas. Tās saturs pieejams [publiskai apskatei](https://www.melioracija.lv/?loc=540414;308053;1).
+
+Sākotnēji papildus apstrāde šiem datiem nav veikta. Tie izmantoti [Ievades produkti](#Chapter3.2) gan [Reljefa produkti](#Chapter3.2.1), gan [Ainava](#Chapter3.2.2) sagatavošanai.
 
 ### LVM atvērtie dati {#Chapter3.1.5}
 
@@ -44,15 +120,42 @@ d
 
   - grāvji;
   
-  - meliorāicjas sistēmas;
+  - meliorācijas sistēmas;
   
   - atjaunojamie meliorācijas objekti.
 
-Sākotnēji papildus apstrāde šiem datiem nav veikta. 
+Sākotnēji papildus apstrāde šiem datiem nav veikta. Tie izmantoti [Ievades produkti](#Chapter3.2) (specifiskāk, [Ainava](#Chapter3.2.2)) sagatavošanai.
 
 ### Corine Land Cover {#Chapter3.1.6}
 
-g
+Corine Land Cover ir publiski pieejami ģeodati, kas raksturo zemes seguma un lietojuma veidu (LULC) visā aptverot visu Eiropu ilgā laika periodā ar kopumā nemainīgu (salīdzināmu) metodiku (https://land.copernicus.eu/content/corine-land-cover-nomenclature-guidelines/docs/pdf/CLC2018_Nomenclature_illustrated_guide_20190510.pdf), sniedzot rezultātus atsevišķiem gadiem - 1990., 2000., 2006., 2012., 2018. (https://land.copernicus.eu/en/products/corine-land-cover). Lai gan datu kopa ir rupjas izšķirtspēja - kartējamā vienība ir 25 ha laukumi, kas ir vismaz 100 m plati, tā sniedz pietiekošu informāciju vispārīgam lietojumam, piemēram, novērojumu atlasei plašās ainavas klasēs (vairāk nodaļā [Novērojumu atlase](#Chapter6)). Šajā projektā izmantoti 2018. gada dati. 
+
+Lejupielādētā datu kopa transformēta Latvijas koordinātu sistēmā (EPSG:3059), turpmākā darba atvieglošanai un paātrināšanai, failu formāts mainīts uz *geoparquet*. Failu formāta maiņas ietvaros pārbaudītas ģeometrijas (tukšās, validitāte).
+
+```{r, eval=FALSE}
+# libs
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(arrow)) {install.packages("arrow"); require(arrow)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+
+# lejupielādētie dati
+clcLV=st_read("./clcLV.gpkg",layer="clcLV")
+
+# tukšās ģeometrijas
+clcLV2 = clcLV[!st_is_empty(clcLV),,drop=FALSE] # OK
+
+# ģeometriju validēšana
+validity=st_is_valid(clcLV2) 
+table(validity) # 3 non-valid
+clcLV3=st_make_valid(clcLV2)
+
+# koordinātu sistēma
+clcLV3=st_transform(clcLV3,crs=3059)
+
+# saglabāšana
+sfarrow::st_write_parquet(clcLV3, "CLC_LV_2018.parquet")
+```
+
 
 ### Sentinel-2 {#Chapter3.1.7}
 
@@ -239,19 +342,67 @@ fnf_XX=mask(fnf_X,paraugs,filename="./Palsar_Forests.tif",overwrite=TRUE)
 ```
 
 
-### ERA-5 Land {#Chapter3.1.11}
+### ERA5 Land {#Chapter3.1.11}
 
-[@ERA5Land]
+ERA5-Land ir sauszemei veikta klimata (laika apstākļu) pazīmju reanalīze sauszemei 0.1° izšķirtspējā un aptver laika periodu kopš 1950. gada janvāra līdz mūsdienām (datu kopa tiek nepārtraukti papildināta) ar stundas temporālo izšķirtspēju [@ERA5Land]. Oriģināldati lejupielādei ir pieejami *ESA Copernicus Clima Data Store* (https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land?tab=download), tie pieejami arī *Google Earth Engine* platformā [@GEEpaper] kā [dienas](https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_DAILY_AGGR) un [mēneša](https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_MONTHLY_AGGR) līmeņu agregāti. Šie agregāti izmantoti sugu izplatības modelēšanai nepieciešamo pazīmju jēladatu sagatavošanai - [izmantotās komandu rindas](https://code.earthengine.google.com/4f1597f749ad4296ca46b373d8c4bd2f?noload=true). Piedāvātais skripts aprēķina vairākas pazīmes un piedāvā to lejupielādi *Google Drive direktorijā*. Lai izmantotu šo skriptu, ir nepieciešams [GEE konts un projekts](https://code.earthengine.google.com/register) un pietiekošs apjoms vietas Google Drive diskā. Skripta izpildīšana lejupielādei piedāvās sekojošus failus:
 
-Daily (https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_DAILY_AGGR)
+- `FebPrec`, kas raksturo ik pikseļa mediānu starp ik februāra (gada aukstākais mēnesis Latvijā) kopējo nokrišņu summām ik gadā no 2015. līdz 2023.;
 
-Monthly (https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_MONTHLY_AGGR)
+- `FebTempSum`, kas raksturo ik pikseļa mediānu starp ik februāra (gada aukstākais mēnesis Latvijā) ikdienas vidējo gaisa temperatūru (2 m virs zemes) summām ik gadā no 2015. līdz 2023.;
 
-skripts (https://code.earthengine.google.com/4f1597f749ad4296ca46b373d8c4bd2f?noload=true)
+- `JulPrec`, kas raksturo ik pikseļa mediānu starp ik jūlija (gada siltākais mēnesis Latvijā) kopējo nokrišņu summām ik gadā no 2015. līdz 2023.;
 
-```{r}
+- `PosTempDays`, kas raksturo ik pikseļa mediānu starp dienu, kuru vidējā gaisa temperatūra (2 m virs zemes) ir vismaz 275°K (~0°C), skaitu ik gadā no 2015. līdz 2023.;
+
+- `VegTempSums`, kas raksturo ik pikseļa mediānu starp ik dienas, kuras vidējā gaisa temperatūra (2 m virs zemes) ir vismaz 279°K (~5°C), summu ik gadā no 2015. līdz 2023.;
+
+- `YearPrecSum`, kas raksturo ik pikseļa mediānu starp ik mēneša kopējo nokrišņu daudzuma summām ik gadā no 2015. līdz 2023..
+
+Tā kā klimata datu kodējums ir *Float*, tie tiek sagatavoti kā no četrām lapām (katram slānim) sastāvoši GeoTIFF faili, kurua nepieciešams lejupielādēt darba cietajā diskā. Sekojošās komandu rindas nodrošina šo lapu apvienošanu un projektēšu atbilstībai references rastram.
+
+```{r, eval=FALSE}
+# libs
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(arrow)) {install.packages("arrow"); require(arrow)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(exactextractr)){install.packages("exactextractr");require(exactextractr)}
+
+# reference
+template=rast("./LV10m_10km.tif")
+
+# DW export no GEE 
+faili=data.frame(fails=list.files("./RAW/"))
+faili$celi_sakums=paste0("./RAW/",faili$fails)
+
+# Sagatavošana
+faili=faili %>% 
+  separate(fails,into=c("nosaukums","vidus","beigas"),sep="-",remove = FALSE) %>% 
+  mutate(mosaic_name=paste0(nosaukums,".tif"),
+         masaic_cels=paste0("./mozaikas/",mosaic_name))
+
+unikalie=levels(factor(faili$nosaukums))
+for(i in seq_along(unikalie)){
+  unikalais=faili %>% filter(nosaukums==unikalie[i])
+  beigu_cels=unique(unikalais$masaic_cels)
+  # katrs slānis sastāv no četrām lapām
+  viens=rast(unikalais$celi_sakums[1])
+  divi=rast(unikalais$celi_sakums[2])
+  tris=rast(unikalais$celi_sakums[3])
+  cetri=rast(unikalais$celi_sakums[4])
+  
+  viens2=terra::project(viens,paraugs)
+  divi2=terra::project(divi,paraugs)
+  tris2=terra::project(tris,paraugs)
+  cetri2=terra::project(cetri,paraugs)
+  
+  mozaika=terra::merge(viens2,divi2,tris2,cetri2)
+  maskets=mask(mozaika,paraugs,filename=beigu_cels,overwrite=TRUE)
+}
 
 ```
+
 
 
 ### Augsnes auglīgums {#Chapter3.1.12}
