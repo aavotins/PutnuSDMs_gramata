@@ -1,16 +1,18 @@
 # Ievades ģeodati  {#Chapter3}
 
-All chapters start with a first-level heading followed by your chapter title, like the line above. There should be only one first-level heading (`#`) per .Rmd file.
+Nozīmīgs solis sugu izplatības modelēšanā ir ģeogrāfiskajai telpai piesaistītu (ģeoreferencētu) vidi raksturojošu un ekoloģiski pamatotu mainīgo jeb ekoģeogrāfisko mainīgo (EGV) sagatavošana. Visbiežāk eksistējošie ģeodati (ģeoreferencēti vides raksturojumi) paši par sevi nespēj raksturot sugu ekoloģiskās vajadzības, gandrīz nekad to noformējums precīzi neatbilst analīzes uzstādījumiem. Tādēļ ģeodatu ir nepieciešams dažādi pārveidot, strukturēt un kombinēt.
+
+Šajā nodaļā ir raksturoti izmantotie ģeodati un to pirmās apstrādes soļi (harmonizēšana EGV sagatavošanai) raksturota apakšnodaļā [Ievades jēldati](#Chapter3.1), augstāka līmeņa šo datu apstrāde, kas vēl joprojām uzskatāma par soli pirms EGV sagatavošanas, raksturota apakšnodaļā [Ievades produkti](#Chapter3.2)
 
 ## Ievades jēldati {#Chapter3.1}
 
-a
+Izmantotie ģeodatu avoti, to raksturojums un harmonizēšanas procedūru apraksts.
 
-### Meža Valsts reģistrs {#Chapter3.1.1}
+### Valsts Mežu dienesta Meža Valsts reģistrs {#Chapter3.1.1}
 
 b
 
-### Lauku atbalsts dienesta lauku informācija {#Chapter3.1.2}
+### Lauku atbalsta dienesta lauku informācija {#Chapter3.1.2}
 
 c
 
@@ -18,9 +20,9 @@ c
 
 d
 
-### MKIS {#Chapter3.1.4}
+### Meliorācijas Kadastra Informācijas Sistēmas datubāze {#Chapter3.1.4}
 
-e
+**Jāpieprasa Ivo sniegt ieguves informāciju**
 
 ### LVM atvērtie dati {#Chapter3.1.5}
 
@@ -230,18 +232,92 @@ skripts (https://code.earthengine.google.com/4f1597f749ad4296ca46b373d8c4bd2f?no
 
 ### Augsnes auglīgums {#Chapter3.1.12}
 
-m
+**Jāpieprasa Ivo sniegt ieguves informāciju**
 
 ### Digitālie reljefa modeļi {#Chapter3.1.13}
 
-n
+Līdz ar Latvijas teritorijas vienlaidus aerolāzerskenēšanas datu publiskošanu (https://www.lgia.gov.lv/lv/digitalie-augstuma-modeli-0) ir izstrādāti dažādi augstas izšķirtspējas (1 m un augstāka) digitālie virsmas modeļi (DSM) un digitālie reljefa modeļi (DEM). Tā kā ievades dati visos gadījumos ir vieni un tie paši, gandrīz visā valsts teritorijā šo (atbilstošo) modeļu vērtības ir vienādas. Tomēr, ne visai valsts teritorijai ir pieejami aerolāzerskenēšanas dati (1), starp modeļiem ir novērojamas atšķirības aizpildījumā (vērtību pieejamībā) ārpus iekšzemes ūdeņiem (2) un pašu ūdensobjektu aizpildījums (3), tomēr, attiecībā uz ar datiem nosegtajām vietām uz sauszemes, vērtības ir gandrīz identiskas (Pīrsona korelācijas koeficienti starp LU ĢZZF, LVMI Silava un LĢIA izstrādātajiem DEM ir lielāki par 0.999999). 
+
+Kā pamata DEM izmantots LU projektā "Ilgtspējīgas augsnes resursu pārvaldības uzlabošana lauksaimniecībā" sagatavotais vidējais aritmētiskais starp LU ĢZZF un LVMI Silava izstrādātajiem DEM. Šī DEM izšķirtspēja ir 1 m, kas nav nepieciešama sugu izplatības modelēšanas ievades datiem, tādēļ slānis projicēts atbilstībai references 10 m rastram. 
+
+Salīdzinot projicēto DEM ar referenci, ir skaidri izdalāmas vietas, kurās nav datu. Tas risināts, izmantojot Māra Nartiša (LU ĢZZF) 2018. gadā izstrādāto visu Latvijas teritoriju bez pārrāvumiem aptverošais DEM ar 10 m izšķirtspēju. Lai novērstu asu malu veidošanās aizpildījuma vietās (izlīdzinātu pārejas), veidots vidējais aritmētiskais slānis, kurš aptver visu Latvijas teritoriju un sakrīt ar references rastru.
+
+No šī rastra izveidots arī nogāžu slīpuma slānis, kurš projicēts atbilstoši referencei. Slīpums izteikts grādos un rēķināts ar 8-kaimiņu pieeju.
+
+
+```r
+# libs
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(arrow)) {install.packages("arrow"); require(arrow)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(exactextractr)){install.packages("exactextractr");require(exactextractr)}
+
+# reference
+template=rast("./LV10m_10km.tif")
+
+# LiDAR DEM uz 10 m 
+
+lapas_1m=data.frame(faili=list.files("./meanDEM_1mOLD/",pattern="*.tif$"))
+lapas_1m$numurs=substr(lapas_1m$faili,10,13)
+lapas_1m$cels1=paste0("./meanDEM_1mOLD/",lapas_1m$faili)
+lapas_1m$cels2=paste0("./meanDEM_10mOLD/",lapas_1m$faili)
+
+kvadrati=st_read(dsn="GIS_Latvija10.2.gdb",layer="tks93_50000")
+kvadrati$name=as.character(kvadrati$num50tk)
+
+moz2=rast("./dem10_20_kopa.tif")
+
+for(i in 1:length(kvadrati$name)){
+  kvadrats=kvadrati[i,]
+  nosaukums=kvadrats$name
+  telpa=terra::ext(kvadrats)
+  
+  paraugs=crop(template,telpa)
+  nart=crop(moz2,telpa)
+  nart2=project(nart,paraugs,mask=TRUE)
+  
+  dem1m=lapas_1m[lapas_1m$numurs==kvadrats$name,]
+  if(nrow(dem1m)>0){
+    sakumcels=dem1m$cels1
+    dem=rast(sakumcels)
+    reproj=project(dem,paraugs,mask=TRUE,method="bilinear",use_gdal=TRUE)
+    videjais <- ifel(is.na(nart2),nart2,ifel(is.na(reproj),nart2,
+                                             app(c(nart2,reproj), mean)))
+    writeRaster(videjais,overwrite=TRUE,
+                filename=paste0("./meanDEM_10m/","vidDEM_",
+                                nosaukums,".tif"))
+  }
+  else{
+    writeRaster(nart2,overwrite=TRUE,
+                filename=paste0("./meanDEM_10m/","vidDEM_",
+                                nosaukums,".tif"))
+  }
+}
+
+# vrt un mozaika
+lapas_10=data.frame(faili=list.files("./meanDEM_10m/",pattern="*.tif$"))
+lapas_10$celi1=paste0("./meanDEM_10m/",lapas_10$faili)
+mozaikai=vrt(lapas_10$celi1,overwrite=TRUE,
+             filename="./vrtDEM_10m.tif")
+mozaika=rast("./vrtDEM_10m.tif")
+writeRaster(mozaika,"./mozDEM_10m.tif")
+
+
+## slope
+reljefs=rast("./mozDEM_10m.tif")
+slipumi=terrain(reljefs, v="slope", neighbors=8, unit="degrees", 
+                filename="./Slope_10m.tif", overwrite=TRUE)  
+```
+
 
 
 ## Ievades produkti {#Chapter3.2}
 
-Atsevišķos gadījumos ievades datiem veikta relatīvi apjomīga apstrāde (sagatavojot ievades produktus), kas nepieciešama turpmākajam darbam, piemēram, ekoģeogrāfisko mainīgu sagatavošanai un novērojumu filtrēšanai. Šie produkti un to izstrādes gaita raksturota atbilstošajās apakšnodaļās.
+Atsevišķos gadījumos ievades datiem veikta relatīvi apjomīga apstrāde (sagatavojot ievades produktus), kas nepieciešama turpmākajam darbam - ekoģeogrāfisko mainīgu sagatavošanai un novērojumu filtrēšanai. Šie produkti un to izstrādes gaita raksturota atbilstošajās apakšnodaļās.
 
-### Reljefs {#Chapter3.2.1}
+### Reljefa produkti {#Chapter3.2.1}
 
 p
 
