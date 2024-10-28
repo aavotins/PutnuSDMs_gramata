@@ -26,7 +26,29 @@ d
 
 ### LVM atvērtie dati {#Chapter3.1.5}
 
-f
+[AS “Latvijas valsts meži” meža infrastruktūras ģeotelpiskie dati un to apraksts](https://data.gov.lv/dati/lv/dataset/as-latvijas-valsts-mezi-mezsaimniecibas-infrastruktura). No šīs datu kopas projektā izmantoti:
+
+- ceļi:
+
+  - meža ceļi;
+  
+  - attīstāmie meža ceļi;
+  
+  - apgriešanās laukumi;
+  
+  - izmainīšanās vietas;
+  
+  - nobrauktuves;
+
+- meliorācijas sistēmas:
+
+  - grāvji;
+  
+  - meliorāicjas sistēmas;
+  
+  - atjaunojamie meliorācijas objekti.
+
+Sākotnēji papildus apstrāde šiem datiem nav veikta. 
 
 ### Corine Land Cover {#Chapter3.1.6}
 
@@ -72,7 +94,7 @@ paraugs=rast("./LV10m_10km.tif")
 faili=data.frame(fails=list.files("./S2indices/RAW/"))
 faili$celi_sakums=paste0("./S2indices/RAW/",faili$fails)
 
-# Korekti projicētu mozaīku sagatavošana
+# Korekti projektētu mozaīku sagatavošana
 # failu nosaukumi un ceļš saglabāšanai
 faili=faili %>% 
   separate(fails,into=c("nosaukums","vidus","beigas"),sep="-",remove = FALSE) %>% 
@@ -122,7 +144,7 @@ paraugs=rast("./LV10m_10km.tif")
 faili=data.frame(faili=list.files("./DWE_float/"))
 faili$celi_sakums=paste0("./DWE_float/",faili$faili)
 
-# Korekti projicētu mozaīku sagatavošana
+# Korekti projektētu mozaīku sagatavošana
 # failu nosaukumi un ceļš saglabāšanai
 faili=faili %>% 
   separate(faili,into=c("DW","gads","periods","parejais"),sep="_",remove = FALSE) %>% 
@@ -172,7 +194,7 @@ treecoverloss=rast("./RAW/TreeCoverLoss.tif")
 # Fona aivietošana ar iztrūkstošajām vērtībām
 tcl=ifel(treecoverloss<1,NA,treecoverloss)
 
-# Projicēšana un maskēšana ar faila saglabāšanu
+# projektēšana un maskēšana ar faila saglabāšanu
 tcl2=terra::project(tcl,paraugs)
 tcl3=mask(tcl2,paraugs,filename="./TreeCoverLossYear.tif",overwrite=TRUE)
 ```
@@ -181,7 +203,7 @@ tcl3=mask(tcl2,paraugs,filename="./TreeCoverLossYear.tif",overwrite=TRUE)
 
 *Palsar Forests* resurss ir balstīts PALSAR-2 sintētiskās aprertūras radara (SAR) atstarojumu klasifikācijā meža un nemeža zemēs ar 25 m pikseļa izšķirtspēju. Par mežu tiek klasificētas vismaz 0.5 ha plašas ar kokiem klātas teritorijas, kurās koku (vismaz 5 m augstu) seguma ir vismaz 10% [@PALSARForest]. Dati ir pieejami  [GEE](https://developers.google.com/earth-engine/datasets/catalog/JAXA_ALOS_PALSAR_YEARLY_FNF4). Šajā projektā izmantota 4-klašu versija (1=Dense Forest, 2=Non-dense Forest, 3=Non-Forest, 4=Water), kurā pēdējais koku seguma datēšanas gads ir 2020, to sagatavojot lejupielādei GEE platformā ar [šo replicēšanas skriptu](https://code.earthengine.google.com/3ec78ab057e6c8910cb1546002132b34?noload=true). Lai izmantotu šo skriptu, ir nepieciešams [GEE konts un projekts](https://code.earthengine.google.com/register) un pietiekošs apjoms vietas Google Drive diskā. Izpildot komandrindas tiks piedāvāta lejuplāde failam, kuru nepieciešams saglabāt Google diskā.
 
-Pēc komandrindu izpildes un rezultātu sagatavošanas Google Drive diskā, ir lejupielādējami četri faili. Tos nepieciešams projicēt atbilstībai references rastram un apvienot. Šajā resursā koki ir kodēti divās grupās: 1=Dense Forest un 2=Non-dense Forest, kuras nepieciešams apvienot un pārējo pārvērst par iztrūkstošajām vērtībām.
+Pēc komandrindu izpildes un rezultātu sagatavošanas Google Drive diskā, ir lejupielādējami četri faili. Tos nepieciešams projektēt atbilstībai references rastram un apvienot. Šajā resursā koki ir kodēti divās grupās: 1=Dense Forest un 2=Non-dense Forest, kuras nepieciešams apvienot un pārējo pārvērst par iztrūkstošajām vērtībām.
 
 Lai gan šī resursa dati raksturo situāciju 2020. nevis 2023. gadā, tie ir izmantoti, jo koku vainagu seguma izzušanu raksturošanai ir pieejami [*The Global Forest Watch*](#Chapter3.1.9) dati, bet vainagu parādīšanās nav tik strauja, lai būtu nozīmīgas izmaiņas trīs gadu laikā (1), šis gads atrodas pa vidu ar novērojumiem aptvertajam laika periodam (2017.-2023. gadi).
 
@@ -199,7 +221,7 @@ fnf2=rast("./RAW/ForestNonForest-0000023296-0000000000.tif")
 fnf3=rast("./RAW/ForestNonForest-0000000000-0000023296.tif")
 fnf4=rast("./RAW/ForestNonForest-0000000000-0000000000.tif")
 
-# Projicēšana
+# projektēšana
 fnf1p=terra::project(fnf1,paraugs)
 fnf2p=terra::project(fnf2,paraugs)
 fnf3p=terra::project(fnf3,paraugs)
@@ -230,6 +252,7 @@ skripts (https://code.earthengine.google.com/4f1597f749ad4296ca46b373d8c4bd2f?no
 
 
 
+
 ### Augsnes auglīgums {#Chapter3.1.12}
 
 **Jāpieprasa Ivo sniegt ieguves informāciju**
@@ -238,11 +261,11 @@ skripts (https://code.earthengine.google.com/4f1597f749ad4296ca46b373d8c4bd2f?no
 
 Līdz ar Latvijas teritorijas vienlaidus aerolāzerskenēšanas datu publiskošanu (https://www.lgia.gov.lv/lv/digitalie-augstuma-modeli-0) ir izstrādāti dažādi augstas izšķirtspējas (1 m un augstāka) digitālie virsmas modeļi (DSM) un digitālie reljefa modeļi (DEM). Tā kā ievades dati visos gadījumos ir vieni un tie paši, gandrīz visā valsts teritorijā šo (atbilstošo) modeļu vērtības ir vienādas. Tomēr, ne visai valsts teritorijai ir pieejami aerolāzerskenēšanas dati (1), starp modeļiem ir novērojamas atšķirības aizpildījumā (vērtību pieejamībā) ārpus iekšzemes ūdeņiem (2) un pašu ūdensobjektu aizpildījums (3), tomēr, attiecībā uz ar datiem nosegtajām vietām uz sauszemes, vērtības ir gandrīz identiskas (Pīrsona korelācijas koeficienti starp LU ĢZZF, LVMI Silava un LĢIA izstrādātajiem DEM ir lielāki par 0.999999). 
 
-Kā pamata DEM izmantots LU projektā "Ilgtspējīgas augsnes resursu pārvaldības uzlabošana lauksaimniecībā" sagatavotais vidējais aritmētiskais starp LU ĢZZF un LVMI Silava izstrādātajiem DEM. Šī DEM izšķirtspēja ir 1 m, kas nav nepieciešama sugu izplatības modelēšanas ievades datiem, tādēļ slānis projicēts atbilstībai references 10 m rastram. 
+Kā pamata DEM izmantots LU projektā "Ilgtspējīgas augsnes resursu pārvaldības uzlabošana lauksaimniecībā" sagatavotais vidējais aritmētiskais starp LU ĢZZF un LVMI Silava izstrādātajiem DEM. Šī DEM izšķirtspēja ir 1 m, kas nav nepieciešama sugu izplatības modelēšanas ievades datiem, tādēļ slānis projektēts atbilstībai references 10 m rastram. 
 
-Salīdzinot projicēto DEM ar referenci, ir skaidri izdalāmas vietas, kurās nav datu. Tas risināts, izmantojot Māra Nartiša (LU ĢZZF) 2018. gadā izstrādāto visu Latvijas teritoriju bez pārrāvumiem aptverošais DEM ar 10 m izšķirtspēju. Lai novērstu asu malu veidošanās aizpildījuma vietās (izlīdzinātu pārejas), veidots vidējais aritmētiskais slānis, kurš aptver visu Latvijas teritoriju un sakrīt ar references rastru.
+Salīdzinot projektēto DEM ar referenci, ir skaidri izdalāmas vietas, kurās nav datu. Tas risināts, izmantojot Māra Nartiša (LU ĢZZF) 2018. gadā izstrādāto visu Latvijas teritoriju bez pārrāvumiem aptverošais DEM ar 10 m izšķirtspēju. Lai novērstu asu malu veidošanās aizpildījuma vietās (izlīdzinātu pārejas), veidots vidējais aritmētiskais slānis, kurš aptver visu Latvijas teritoriju un sakrīt ar references rastru.
 
-No šī rastra izveidots arī nogāžu slīpuma slānis, kurš projicēts atbilstoši referencei. Slīpums izteikts grādos un rēķināts ar 8-kaimiņu pieeju.
+No šī rastra izveidots arī nogāžu slīpuma slānis, kurš projektēts atbilstoši referencei. Slīpums izteikts grādos un rēķināts ar 8-kaimiņu pieeju.
 
 
 ```r
@@ -319,7 +342,51 @@ Atsevišķos gadījumos ievades datiem veikta relatīvi apjomīga apstrāde (sag
 
 ### Reljefa produkti {#Chapter3.2.1}
 
-p
+Lai izstrādātu daļu ar reljefu saistīto EGV, piemēram, topogrāfisko mitruma indeksu (TWI) un beznotekas depresijas, ir nepieciešams risināt ūdens plūsmu vidē. Tā vairāku soļu procedūra, kas ir loģiska un uzticama kalnu apvidos un vidē ar maz ietekmētu hidroloģiju. Tātad, Latvijas apstākļos tas ir izaicinoši. Šos izaicinājumus var risināt dažādi, piemēram, ja būtu pieejama uzticama (precīza) informācija par upju un grāvji precīzām atrašanās vietām, to varētu iestrādāt reljefā. Diemžēl, pietiekoši precīzas informāicjas nav. Tādēļ izaicinājumu risināšanai izmantota informācija par transporta būvēm no [Meliorācijas Kadastra Informācijas Sistēmas datubāze](#Chapter3.1.4) un tiltiem no [LĢIA topogrāfiskā karte](#Chapter3.1.3) - 30 m buferī ap šīm vietām iestrādāta minimālā augstuma virs jūras līmeņa informācija tālāk izmantojamajā DEM.
+
+
+```r
+# libs
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(arrow)) {install.packages("arrow"); require(arrow)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(exactextractr)){install.packages("exactextractr");require(exactextractr)}
+
+# reference
+template=rast("./LV10m_10km.tif")
+
+# reljefs
+reljefs=rast("./mozDEM_10m.tif")
+
+# caurtekas
+caurtekas=st_read(dsn="./MKIS_20180612.gdb/",layer="TransportStructures")
+caurtekas_buffer=st_buffer(caurtekas,dist=30)
+
+# tilti 
+tiltiL=st_read(dsn="./Topo10_v3_12_07_2016.gdb/",layer="bridge_L")
+tiltiL_buffer=st_buffer(tiltiL,dist=30)
+tiltiP=st_read(dsn="./Topo10_v3_12_07_2016.gdb/",layer="bridge_P")
+tiltiP_buffer=st_buffer(tiltiP,dist=30)
+
+# visi buferi 
+caurtekas_buffer=caurtekas_buffer[,"Shape"]
+tiltiL_buffer=tiltiL_buffer[,"Shape"]
+tiltiP_buffer=tiltiP_buffer[,"Shape"]
+visi_buferi=rbind(caurtekas_buffer,tiltiL_buffer,tiltiP_buffer)
+
+# caurumosana
+visi_buferi$vertiba=exactextractr::exact_extract(reljefs,visi_buferi,"min")
+
+templis=raster::raster(template)
+caurumi=fasterize::fasterize(visi_buferi,templis,field="vertiba")
+caurumi2=rast(caurumi)
+caurumains=app(c(reljefs,caurumi2),fun="min",na.rm=TRUE,
+               overwrite=TRUE,
+               filename="./caurtDEM_10m.tif")
+```
+
 
 
 ### Ainava {#Chapter3.2.2}
