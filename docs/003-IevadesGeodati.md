@@ -8,15 +8,51 @@ Nozīmīgs solis sugu izplatības modelēšanā ir ģeogrāfiskajai telpai piesa
 
 Izmantotie ģeodatu avoti, to raksturojums un harmonizēšanas procedūru apraksts.
 
-### Valsts Mežu dienesta Meža Valsts reģistrs {#Chapter3.1.1}
+### Valsts meža dienesta Meža valsts reģistrs {#Chapter3.1.1}
 
-b
+Meža nogabalus raksturojošos rādītājus un telpiskos datus apkopojošā Valsts meža dienesta Meža valsts reģistra datubāzes (ESRI failu ģeodatubāze) 2024. gada 07. jānvāra versija ir 2024. gada janvārī saņemta Latvijas Universitātē studiju un pētniecības procesu nodrošināšanai. Saņemtās datubāzes versijas struktūra sakrīt ar [Meža valsts reģistra Meža inventarizācijas failu struktūru](https://www.vmd.gov.lv/lv/meza-valsts-registra-meza-inventarizacijas-failu-struktura), bet lauku nosaukumos ir lietoti mazie burti. 
+
+Pēc lejupielādes nodrošinātas ģeometrijas, tās pārbaudītas un saglabātas *geoparquet* formātā.
+
+
+```r
+# libs
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(arrow)) {install.packages("arrow"); require(arrow)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(gdalUtilities)) {install.packages("gdalUtilities"); require(gdalUtilities)}
+
+# datubāze
+nog=read_sf("./VMD.gdb/",layer="Nogabali_pilna_datubaze")
+
+# ģeometriju nodrošināšana
+ensure_multipolygons <- function(X) {
+  tmp1 <- tempfile(fileext = ".gpkg")
+  tmp2 <- tempfile(fileext = ".gpkg")
+  st_write(X, tmp1)
+  ogr2ogr(tmp1, tmp2, f = "GPKG", nlt = "MULTIPOLYGON")
+  Y <- st_read(tmp2)
+  st_sf(st_drop_geometry(X), geom = st_geometry(Y))
+}
+nogabali <- ensure_multipolygons(nog)
+
+# ģeometriju pārbaudes 
+nogabali2 = nogabali[!st_is_empty(nogabali),,drop=FALSE] # 108 tukšas ģeometrijas
+validity=st_is_valid(nogabali2) 
+table(validity) # 1733 invalid ģeometrijas
+nogabali3=st_make_valid(nogabali2)
+
+# saglabāšana
+sfarrow::st_write_parquet(nogabali3, "nogabali.parquet")
+```
+
+
 
 ### Lauku Atbalsta Dienesta lauku informācija {#Chapter3.1.2}
 
 Lauku Atbalsta Dienests uztur [regulāri aktualizētu informāciju atvērto datu portālā](https://data.gov.lv/dati/lv/organization/lad). Tajā ir pieejams arī arhīvs (kopš 2015. gada), izmantojamās datu kopas satur atslēgvārdu "deklarētās platības". Šī projekta ietvaros izmantots WFS pieslēgums datu lejupielādei (2023-11-14).
 
-Pēc lejupielādes nodrošinātas ģeometrijas, tās pārbaudītas un saglabātas *geoparquet* formātā.
+Pēc lejupielādes nodrošinātas ģeometrijas, tās pārbaudītas, dzēšot tukšās un validējot pārējās, un saglabātas *geoparquet* formātā.
 
 
 ```r
@@ -456,7 +492,23 @@ for(i in seq_along(unikalie)){
 
 ### Augsnes auglīgums {#Chapter3.1.12}
 
-**Jāpieprasa Ivo sniegt ieguves informāciju**
+Latvijas Universitātē GeoTIFF fails (EPSG:3857, 100 m) ar organiskā oglekļa līmeni augsnes virsējā slāni saņemts 2024. gada februārī no Eiropas vienotā pētījumu centra (*European Joint Research Center*). Šis slānis tālāk projektēts atbilstībai references rastram un izmantots EGV sagatavošanā.
+
+
+```r
+if(!require(terra)) {install.packages("terra"); require(terra)}
+
+# reference
+template=rast("./LV10m_10km.tif")
+
+# slanis
+oc=rast("./IevadesDati/Augsnes/noIvo/LV_OC.tif")
+
+# projektēšana
+oc2=project(oc,template_100m,use_gdal=TRUE,method="bilinear")
+writeRaster(oc2,"./OrganicCarbon.tif")
+```
+
 
 ### Digitālie reljefa modeļi {#Chapter3.1.13}
 
