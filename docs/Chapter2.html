@@ -49,6 +49,7 @@
 
 
 
+<link href="libs/codefolding-lua-1.1/codefolding-lua.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -401,6 +402,7 @@ div.csl-indent {
 <h2><span class="header-section-number">3.1</span> 100 m režģis Latvijā<a href="Chapter2.html#Chapter2.1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Tā kā lejupielādētais režģis ietver arī Latvijas Ekskluzīvās Ekonomiskās Zonas ūdeņus, no tā atlasīti tikai tie kvadrāti, kas pārklājas ar administratīvajām teritorijām. Rezultējošais objekts saglabāts {sf} tieši atbalstītā <em>geoparquet</em> formātā turpmāko darbu paātrināšanai.</p>
 <p>Lai samazinātu faila apjomu un to izmantotu Zemes novērošanas sistēmas datu filtrēšanai, sagatavots <em>ESRI shapefile</em> slānis, kurā apvienoti visi sauszemes kvadrāti.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="Chapter2.html#cb2-1" tabindex="-1"></a><span class="co"># Pakotnes</span></span>
 <span id="cb2-2"><a href="Chapter2.html#cb2-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
 <span id="cb2-3"><a href="Chapter2.html#cb2-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
@@ -423,9 +425,11 @@ div.csl-indent {
 <span id="cb2-20"><a href="Chapter2.html#cb2-20" tabindex="-1"></a>  <span class="fu">group_by</span>(yes) <span class="sc">%&gt;%</span> </span>
 <span id="cb2-21"><a href="Chapter2.html#cb2-21" tabindex="-1"></a>  <span class="fu">summarise</span>()</span>
 <span id="cb2-22"><a href="Chapter2.html#cb2-22" tabindex="-1"></a><span class="fu">st_write</span>(tikls100_apvienots,<span class="st">&quot;./tikls100_apvienots.shp&quot;</span>)</span></code></pre></div>
+</details>
 <div id="Chapter2.2" class="section level3 hasAnchor" number="3.1.1">
 <h3><span class="header-section-number">3.1.1</span> Stratificēšana ģeoprocesēšanas paralelizācijai<a href="Chapter2.html#Chapter2.2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Lai atvieglotu un paātrinātu ģeoprocesēšanu, analīzes telpu ir nepieciešams sadalīt mazākās daļās. Tam izmantots Envirotech izplatītajā GIS_Latvia_10.2 ģeodatubāzē pieejamais 1993. gada topogrāfisko karšu sistēmas M:50000 rāmis.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="Chapter2.html#cb3-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
 <span id="cb3-2"><a href="Chapter2.html#cb3-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
 <span id="cb3-3"><a href="Chapter2.html#cb3-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(arrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;arrow&quot;</span>); <span class="fu">require</span>(arrow)}</span>
@@ -447,7 +451,9 @@ div.csl-indent {
 <span id="cb3-19"><a href="Chapter2.html#cb3-19" tabindex="-1"></a></span>
 <span id="cb3-20"><a href="Chapter2.html#cb3-20" tabindex="-1"></a><span class="co"># saglabāšana</span></span>
 <span id="cb3-21"><a href="Chapter2.html#cb3-21" tabindex="-1"></a><span class="fu">st_write_parquet</span>(tikls100,<span class="st">&quot;./Templates/TemplateGrids/tikls100_sauzeme.parquet&quot;</span>)</span></code></pre></div>
+</details>
 <p>Dažādu ainavas metriku aprēķināšanai sugu ligzdošanas iecirkņu un tiem atbilstošo ainavu mērogos, sagatavots 100 m režģa centra punktu slānis un, ik TKS karšu lapai atsevišķā failā, atbilstoši buferētu laukumu slāņi.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="Chapter2.html#cb4-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
 <span id="cb4-2"><a href="Chapter2.html#cb4-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
 <span id="cb4-3"><a href="Chapter2.html#cb4-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sfarrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;sfarrow&quot;</span>); <span class="fu">require</span>(sfarrow)}</span>
@@ -486,11 +492,13 @@ div.csl-indent {
 <span id="cb4-36"><a href="Chapter2.html#cb4-36" tabindex="-1"></a>  rcbuff10000<span class="ot">=</span><span class="fu">st_buffer</span>(punkti,<span class="at">dist=</span><span class="dv">10000</span>)</span>
 <span id="cb4-37"><a href="Chapter2.html#cb4-37" tabindex="-1"></a>  <span class="fu">st_write_parquet</span>(rcbuff10000,<span class="fu">paste0</span>(<span class="st">&quot;./lapas/pts100_r10000_&quot;</span>,lapa,<span class="st">&quot;.parquet&quot;</span>))</span>
 <span id="cb4-38"><a href="Chapter2.html#cb4-38" tabindex="-1"></a>}</span></code></pre></div>
+</details>
 </div>
 </div>
 <div id="Chapter2.3" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> References rastri<a href="Chapter2.html#Chapter2.3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Lai nodrošinātu ievades datu (to pirmapstrādes produktu) un ekoģeogrāfisko mainīgo telpisko harmonizētību, sagatavoti references rastri. Tie saglabāti kā Geotiff faili ar diviem šūnas izmēriem - 10 m (ievades datiem) un 100 m (analīzes šūna). Katra rastra telpiskais pārklājums ir par 10 km plašāks nekā Latvijas sauszemes 100 m tīkls, lai nodrošinātu iespēju ainavmetriku aprēķiniem.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="Chapter2.html#cb5-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
 <span id="cb5-2"><a href="Chapter2.html#cb5-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
 <span id="cb5-3"><a href="Chapter2.html#cb5-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(arrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;arrow&quot;</span>); <span class="fu">require</span>(arrow)}</span>
@@ -514,6 +522,7 @@ div.csl-indent {
 <span id="cb5-21"><a href="Chapter2.html#cb5-21" tabindex="-1"></a>                      <span class="at">resolution=</span><span class="dv">100</span>,<span class="at">crs=</span>b)</span>
 <span id="cb5-22"><a href="Chapter2.html#cb5-22" tabindex="-1"></a>rast_LV100<span class="ot">=</span><span class="fu">rasterize</span>(<span class="fu">vect</span>(adm_ter),rastrs100)</span>
 <span id="cb5-23"><a href="Chapter2.html#cb5-23" tabindex="-1"></a>terra<span class="sc">::</span><span class="fu">writeRaster</span>(rast_LV100,<span class="st">&quot;./LV100m_10km.tif&quot;</span>)</span></code></pre></div>
+</details>
 
 </div>
 </div>

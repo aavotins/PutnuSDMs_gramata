@@ -49,6 +49,7 @@
 
 
 
+<link href="libs/codefolding-lua-1.1/codefolding-lua.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -400,6 +401,7 @@ div.csl-indent {
 <h3><span class="header-section-number">4.1.1</span> Valsts meža dienesta Meža valsts reģistrs<a href="Chapter3.html#Chapter3.1.1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Meža nogabalus raksturojošos rādītājus un telpiskos datus apkopojošā Valsts meža dienesta Meža valsts reģistra datubāzes (ESRI failu ģeodatubāze) 2024. gada 07. jānvāra versija ir 2024. gada janvārī saņemta Latvijas Universitātē studiju un pētniecības procesu nodrošināšanai. Saņemtās datubāzes versijas struktūra sakrīt ar <a href="https://www.vmd.gov.lv/lv/meza-valsts-registra-meza-inventarizacijas-failu-struktura">Meža valsts reģistra Meža inventarizācijas failu struktūru</a>, bet lauku nosaukumos ir lietoti mazie burti.</p>
 <p>Pēc lejupielādes nodrošinātas ģeometrijas, tās pārbaudītas un saglabātas <em>geoparquet</em> formātā.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="Chapter3.html#cb6-1" tabindex="-1"></a><span class="co"># libs</span></span>
 <span id="cb6-2"><a href="Chapter3.html#cb6-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
 <span id="cb6-3"><a href="Chapter3.html#cb6-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(arrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;arrow&quot;</span>); <span class="fu">require</span>(arrow)}</span>
@@ -428,11 +430,13 @@ div.csl-indent {
 <span id="cb6-26"><a href="Chapter3.html#cb6-26" tabindex="-1"></a></span>
 <span id="cb6-27"><a href="Chapter3.html#cb6-27" tabindex="-1"></a><span class="co"># saglabāšana</span></span>
 <span id="cb6-28"><a href="Chapter3.html#cb6-28" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(nogabali3, <span class="st">&quot;nogabali.parquet&quot;</span>)</span></code></pre></div>
+</details>
 </div>
 <div id="Chapter3.1.2" class="section level3 hasAnchor" number="4.1.2">
 <h3><span class="header-section-number">4.1.2</span> Lauku Atbalsta Dienesta lauku informācija<a href="Chapter3.html#Chapter3.1.2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Lauku Atbalsta Dienests uztur <a href="https://data.gov.lv/dati/lv/organization/lad">regulāri aktualizētu informāciju atvērto datu portālā</a>. Tajā ir pieejams arī arhīvs (kopš 2015. gada), izmantojamās datu kopas satur atslēgvārdu “deklarētās platības”. Šī projekta ietvaros izmantots WFS pieslēgums datu lejupielādei (2023-11-14).</p>
 <p>Pēc lejupielādes nodrošinātas ģeometrijas, tās pārbaudītas, dzēšot tukšās un validējot pārējās, un saglabātas <em>geoparquet</em> formātā.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="Chapter3.html#cb7-1" tabindex="-1"></a><span class="co"># libs</span></span>
 <span id="cb7-2"><a href="Chapter3.html#cb7-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
 <span id="cb7-3"><a href="Chapter3.html#cb7-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(arrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;arrow&quot;</span>); <span class="fu">require</span>(arrow)}</span>
@@ -476,6 +480,7 @@ div.csl-indent {
 <span id="cb7-41"><a href="Chapter3.html#cb7-41" tabindex="-1"></a></span>
 <span id="cb7-42"><a href="Chapter3.html#cb7-42" tabindex="-1"></a><span class="co"># saglabāšana</span></span>
 <span id="cb7-43"><a href="Chapter3.html#cb7-43" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(dati3, <span class="st">&quot;LAD_lauki.parquet&quot;</span>)</span></code></pre></div>
+</details>
 </div>
 <div id="Chapter3.1.3" class="section level3 hasAnchor" number="4.1.3">
 <h3><span class="header-section-number">4.1.3</span> LĢIA topogrāfiskā karte<a href="Chapter3.html#Chapter3.1.3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -490,6 +495,7 @@ div.csl-indent {
 <li><p><code>swamp_A</code>, kurā raksturoti augstie purvi ar 48105 laukumveida objektu,</p></li>
 </ul>
 <p>kuri pārveidoti par <em>geoparquet</em>. Failu formāta maiņas ietvaros pārbaudītas ģeometrijas (tukšās, to validitāte, kas nepieciešamības gadījumā labota).</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="Chapter3.html#cb8-1" tabindex="-1"></a><span class="co"># libs</span></span>
 <span id="cb8-2"><a href="Chapter3.html#cb8-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
 <span id="cb8-3"><a href="Chapter3.html#cb8-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(arrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;arrow&quot;</span>); <span class="fu">require</span>(arrow)}</span>
@@ -541,6 +547,7 @@ div.csl-indent {
 <span id="cb8-49"><a href="Chapter3.html#cb8-49" tabindex="-1"></a><span class="fu">table</span>(validity) <span class="co"># 5734 invalid geometrijas</span></span>
 <span id="cb8-50"><a href="Chapter3.html#cb8-50" tabindex="-1"></a>landus3<span class="ot">=</span><span class="fu">st_make_valid</span>(landus2)</span>
 <span id="cb8-51"><a href="Chapter3.html#cb8-51" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(landus3, <span class="st">&quot;Topo_landusA.parquet&quot;</span>)</span></code></pre></div>
+</details>
 </div>
 <div id="Chapter3.1.4" class="section level3 hasAnchor" number="4.1.4">
 <h3><span class="header-section-number">4.1.4</span> Meliorācijas Kadastra Informācijas Sistēmas datubāze<a href="Chapter3.html#Chapter3.1.4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -572,6 +579,7 @@ div.csl-indent {
 <h3><span class="header-section-number">4.1.6</span> Corine Land Cover<a href="Chapter3.html#Chapter3.1.6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Corine Land Cover ir publiski pieejami ģeodati, kas raksturo zemes seguma un lietojuma veidu (LULC) visā aptverot visu Eiropu ilgā laika periodā ar kopumā nemainīgu (salīdzināmu) metodiku (<a href="https://land.copernicus.eu/content/corine-land-cover-nomenclature-guidelines/docs/pdf/CLC2018_Nomenclature_illustrated_guide_20190510.pdf" class="uri">https://land.copernicus.eu/content/corine-land-cover-nomenclature-guidelines/docs/pdf/CLC2018_Nomenclature_illustrated_guide_20190510.pdf</a>), sniedzot rezultātus atsevišķiem gadiem - 1990., 2000., 2006., 2012., 2018. (<a href="https://land.copernicus.eu/en/products/corine-land-cover" class="uri">https://land.copernicus.eu/en/products/corine-land-cover</a>). Lai gan datu kopa ir rupjas izšķirtspēja - kartējamā vienība ir 25 ha laukumi, kas ir vismaz 100 m plati, tā sniedz pietiekošu informāciju vispārīgam lietojumam, piemēram, novērojumu atlasei plašās ainavas klasēs (vairāk nodaļā <a href="Chapter6.html#Chapter6">Novērojumu atlase</a>). Šajā projektā izmantoti 2018. gada dati.</p>
 <p>Lejupielādētā datu kopa transformēta Latvijas koordinātu sistēmā (EPSG:3059), turpmākā darba atvieglošanai un paātrināšanai failu formāts mainīts uz <em>geoparquet</em>. Failu formāta maiņas ietvaros pārbaudītas ģeometrijas (tukšās, validitāte).</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="Chapter3.html#cb9-1" tabindex="-1"></a><span class="co"># libs</span></span>
 <span id="cb9-2"><a href="Chapter3.html#cb9-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
 <span id="cb9-3"><a href="Chapter3.html#cb9-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(arrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;arrow&quot;</span>); <span class="fu">require</span>(arrow)}</span>
@@ -593,6 +601,7 @@ div.csl-indent {
 <span id="cb9-19"><a href="Chapter3.html#cb9-19" tabindex="-1"></a></span>
 <span id="cb9-20"><a href="Chapter3.html#cb9-20" tabindex="-1"></a><span class="co"># saglabāšana</span></span>
 <span id="cb9-21"><a href="Chapter3.html#cb9-21" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(clcLV3, <span class="st">&quot;CLC_LV_2018.parquet&quot;</span>)</span></code></pre></div>
+</details>
 </div>
 <div id="Chapter3.1.7" class="section level3 hasAnchor" number="4.1.7">
 <h3><span class="header-section-number">4.1.7</span> Sentinel-2<a href="Chapter3.html#Chapter3.1.7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -611,6 +620,7 @@ div.csl-indent {
 <li><p><code>NDWI_IQR</code> - aprīļa līdz oktobra ik pikseļa NDWI starpkvartiļu apgabala vērtību katram gadam no 2017. līdz 2023. mediāna.</p></li>
 </ul>
 <p>Pēc komandrindu izpildes un rezultātu sagatavošanas Google Drive diskā, ir redzams, ka katrs visu Latviju aptverošais slānis ir sadalīts vairākās lapās. Tas ir tādēļ, ka slāņi kodēti kā <em>Float</em> un pirms komprecijas GeoTIFF pārsniedz 4 GB izmēru. Visas šīs lapas ir nepieciešams lejuplādēt, sekojošās R komandrindas tās apvieno, nodrošinot koordinātu sistēmas un pikseļu atbilstību references rastram.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="Chapter3.html#cb10-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
 <span id="cb10-2"><a href="Chapter3.html#cb10-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
 <span id="cb10-3"><a href="Chapter3.html#cb10-3" tabindex="-1"></a></span>
@@ -647,12 +657,14 @@ div.csl-indent {
 <span id="cb10-34"><a href="Chapter3.html#cb10-34" tabindex="-1"></a>  mozaika<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">merge</span>(viens2,divi2)</span>
 <span id="cb10-35"><a href="Chapter3.html#cb10-35" tabindex="-1"></a>  maskets<span class="ot">=</span><span class="fu">mask</span>(mozaika,paraugs,<span class="at">filename=</span>beigu_cels,<span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
 <span id="cb10-36"><a href="Chapter3.html#cb10-36" tabindex="-1"></a>}</span></code></pre></div>
+</details>
 </div>
 <div id="Chapter3.1.8" class="section level3 hasAnchor" number="4.1.8">
 <h3><span class="header-section-number">4.1.8</span> <em>Dynamic World</em><a href="Chapter3.html#Chapter3.1.8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>Dynamic World</em> (DW) ir relatīvi nesens Zemes novērošanas sistēmu produkts, kurš klasificē zemes segumu un lietojumu (LULC) deviņās kategorijās (0=water, 1=trees, 2=grass, 3=flooded_vegetation, 4=crops, 5=shrub_and_scrub, 6=built, 7=bare, 8=snow_and_ice), katram ESA Copernicus Sentinel-2 attēlam ar identificēto mākoņainību <span class="math inline">\(\le35%\)</span>, pieļaujot filtrēšanu un dažādu agregāciju veidošanu <span class="citation">(<a href="#ref-DynWorld">Brown et al., 2022</a>)</span> (nedaudz vairāk nodaļā <a href="Chapter4.html#Chapter4"><em>Dynamic World</em> izpēte</a>).</p>
 <p>DW ievades informācija - rastra slānis katrai sezonai katrā gadā - sagtavots <em>Google Earth Engine</em> platformā <span class="citation">(<a href="#ref-GEEpaper">Gorelick et al., 2017</a>)</span>, izmantojot <a href="https://code.earthengine.google.com/941bb1a16331727787bb3fc1bbbda95b?noload=true">replicēšanas skriptu</a>. Lai izmantotu šo skriptu, ir nepieciešams <a href="https://code.earthengine.google.com/register">GEE konts un projekts</a> un pietiekošs apjoms vietas Google Drive diskā. Izpildot komandrindas tiks piedāvāta lejuplāde failam, kas aptver laika periodu no vērtības 7. rindā līdz vērtībai 8. rindā (faila nosaukums norādāms 32. rindā, tā apraksts - 33. rindā un direktorija Google diskā - 31. rindā vai tas viss norādāms apstiprinot saglabāšanau) - šis skripts nav optimizēts visu sezonālo griezumu visiem gadiem sagatavošanai, lai reproducētu vai paplašinātu šo izpēti, tās nepieciešams manuāli izmainīt.</p>
 <p>Pēc komandrindu izpildes un rezultātu sagatavošanas Google Drive diskā, ir redzams, ka katrs visu Latviju aptverošais slānis ir sadalīts vairākās lapās. Tas ir tādēļ, ka, lai nodrošinātu nulles patieso vērtību (klase “water”, nevis fons), slāņi kodēti kā <em>Float</em>, nevis veselie skaitļi. Visas šīs lapas ir nepieciešams lejuplādēt, sekojošās R komandrindas tās apvieno, nodrošinot koordinātu sistēmas un pikseļu atbilstību references rastram.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="Chapter3.html#cb11-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
 <span id="cb11-2"><a href="Chapter3.html#cb11-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
 <span id="cb11-3"><a href="Chapter3.html#cb11-3" tabindex="-1"></a></span>
@@ -690,11 +702,13 @@ div.csl-indent {
 <span id="cb11-35"><a href="Chapter3.html#cb11-35" tabindex="-1"></a>  mozaika<span class="ot">=</span><span class="fu">mosaic</span>(viens2,divi2,<span class="at">fun=</span><span class="st">&quot;first&quot;</span>)</span>
 <span id="cb11-36"><a href="Chapter3.html#cb11-36" tabindex="-1"></a>  maskets<span class="ot">=</span><span class="fu">mask</span>(mozaika,paraugs,<span class="at">filename=</span>beigu_cels,<span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
 <span id="cb11-37"><a href="Chapter3.html#cb11-37" tabindex="-1"></a>}</span></code></pre></div>
+</details>
 </div>
 <div id="Chapter3.1.9" class="section level3 hasAnchor" number="4.1.9">
 <h3><span class="header-section-number">4.1.9</span> <em>The Global Forest Watch</em><a href="Chapter3.html#Chapter3.1.9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>The Global Forest Watch</em> (GFW) ir plaši pazīstam produkts, kurš raksturo koku vainagu segumu 2000. gadā, tā ikgadējo pieaugumu no 2001. gada līdz 2012. gadam un zudumu katrā gadā kopš 2001. gada līdz aktuālajai versijai, kas ik gadu tiek papildināta <span class="citation">(<a href="#ref-theGFW">Hansen et al., 2013</a>)</span>. Dati ir pieejami gan <a href="https://data.globalforestwatch.org/documents/941f17325a494ed78c4817f9bb20f33a/explore">projekta mājaslapā</a>, gan <a href="https://developers.google.com/earth-engine/datasets/catalog/UMD_hansen_global_forest_change_2023_v1_11">GEE</a>, kurā tie ir izstrādāti. Šajā projektā izmantota v1.11, kurā pēdējais koku izzušanas datēšanas gads ir 2023, to sagatavojot lejupielādei GEE platformā ar <a href="https://code.earthengine.google.com/1878026f59c5118080cac0a8c976c744?noload=true">šo replicēšanas skriptu</a>. Lai izmantotu šo skriptu, ir nepieciešams <a href="https://code.earthengine.google.com/register">GEE konts un projekts</a> un pietiekošs apjoms vietas Google Drive diskā. Izpildot komandrindas tiks piedāvāta lejuplāde failam, kuru nepieciešams saglabāt Google diskā.</p>
 <p>Pēc komandrindu izpildes un rezultātu sagatavošanas Google Drive diskā, darba cietajā diskā ir lejupielādējams viens fails un tas pielāgojams references rastram.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="Chapter3.html#cb12-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
 <span id="cb12-2"><a href="Chapter3.html#cb12-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
 <span id="cb12-3"><a href="Chapter3.html#cb12-3" tabindex="-1"></a></span>
@@ -710,12 +724,14 @@ div.csl-indent {
 <span id="cb12-13"><a href="Chapter3.html#cb12-13" tabindex="-1"></a><span class="co"># projektēšana un maskēšana ar faila saglabāšanu</span></span>
 <span id="cb12-14"><a href="Chapter3.html#cb12-14" tabindex="-1"></a>tcl2<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">project</span>(tcl,paraugs)</span>
 <span id="cb12-15"><a href="Chapter3.html#cb12-15" tabindex="-1"></a>tcl3<span class="ot">=</span><span class="fu">mask</span>(tcl2,paraugs,<span class="at">filename=</span><span class="st">&quot;./TreeCoverLossYear.tif&quot;</span>,<span class="at">overwrite=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+</details>
 </div>
 <div id="Chapter3.1.10" class="section level3 hasAnchor" number="4.1.10">
 <h3><span class="header-section-number">4.1.10</span> Palsar Forests<a href="Chapter3.html#Chapter3.1.10" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>Palsar Forests</em> resurss ir balstīts PALSAR-2 sintētiskās aprertūras radara (SAR) atstarojumu klasifikācijā meža un nemeža zemēs ar 25 m pikseļa izšķirtspēju. Par mežu tiek klasificētas vismaz 0.5 ha plašas ar kokiem klātas teritorijas, kurās koku (vismaz 5 m augstu) seguma ir vismaz 10% <span class="citation">(<a href="#ref-PALSARForest">Shimada et al., 2013</a>)</span>. Dati ir pieejami <a href="https://developers.google.com/earth-engine/datasets/catalog/JAXA_ALOS_PALSAR_YEARLY_FNF4">GEE</a>. Šajā projektā izmantota 4-klašu versija (1=Dense Forest, 2=Non-dense Forest, 3=Non-Forest, 4=Water), kurā pēdējais koku seguma datēšanas gads ir 2020, to sagatavojot lejupielādei GEE platformā ar <a href="https://code.earthengine.google.com/3ec78ab057e6c8910cb1546002132b34?noload=true">šo replicēšanas skriptu</a>. Lai izmantotu šo skriptu, ir nepieciešams <a href="https://code.earthengine.google.com/register">GEE konts un projekts</a> un pietiekošs apjoms vietas Google Drive diskā. Izpildot komandrindas tiks piedāvāta lejuplāde failam, kuru nepieciešams saglabāt Google diskā.</p>
 <p>Pēc komandrindu izpildes un rezultātu sagatavošanas Google Drive diskā, ir lejupielādējami četri faili. Tos nepieciešams projektēt atbilstībai references rastram un apvienot. Šajā resursā koki ir kodēti divās grupās: 1=Dense Forest un 2=Non-dense Forest, kuras nepieciešams apvienot un pārējo pārvērst par iztrūkstošajām vērtībām.</p>
 <p>Lai gan šī resursa dati raksturo situāciju 2020. nevis 2023. gadā, tie ir izmantoti, jo koku vainagu seguma izzušanu raksturošanai ir pieejami <a href="Chapter3.html#Chapter3.1.9"><em>The Global Forest Watch</em></a> dati, bet vainagu parādīšanās nav tik strauja, lai būtu nozīmīgas izmaiņas trīs gadu laikā, un šis gads atrodas pa vidu ar novērojumiem aptvertajam laika periodam (2017.-2023. gadi).</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="Chapter3.html#cb13-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
 <span id="cb13-2"><a href="Chapter3.html#cb13-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
 <span id="cb13-3"><a href="Chapter3.html#cb13-3" tabindex="-1"></a></span>
@@ -744,6 +760,7 @@ div.csl-indent {
 <span id="cb13-26"><a href="Chapter3.html#cb13-26" tabindex="-1"></a></span>
 <span id="cb13-27"><a href="Chapter3.html#cb13-27" tabindex="-1"></a><span class="co"># Maskēšana un saglabāšana</span></span>
 <span id="cb13-28"><a href="Chapter3.html#cb13-28" tabindex="-1"></a>fnf_XX<span class="ot">=</span><span class="fu">mask</span>(fnf_X,paraugs,<span class="at">filename=</span><span class="st">&quot;./Palsar_Forests.tif&quot;</span>,<span class="at">overwrite=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+</details>
 </div>
 <div id="Chapter3.1.11" class="section level3 hasAnchor" number="4.1.11">
 <h3><span class="header-section-number">4.1.11</span> ERA5 Land<a href="Chapter3.html#Chapter3.1.11" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -757,6 +774,7 @@ div.csl-indent {
 <li><p><code>YearPrecSum</code>, kas raksturo ik pikseļa mediānu starp ik mēneša kopējo nokrišņu daudzuma summām ik gadā no 2015. līdz 2023..</p></li>
 </ul>
 <p>Tā kā klimata datu kodējums ir <em>Float</em>, tie tiek sagatavoti kā no četrām lapām (katram slānim) sastāvoši GeoTIFF faili, kurua nepieciešams lejupielādēt darba cietajā diskā. Sekojošās komandu rindas nodrošina šo lapu apvienošanu un projektēšu atbilstībai references rastram.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="Chapter3.html#cb14-1" tabindex="-1"></a><span class="co"># libs</span></span>
 <span id="cb14-2"><a href="Chapter3.html#cb14-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
 <span id="cb14-3"><a href="Chapter3.html#cb14-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
@@ -796,10 +814,12 @@ div.csl-indent {
 <span id="cb14-37"><a href="Chapter3.html#cb14-37" tabindex="-1"></a>  mozaika<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">merge</span>(viens2,divi2,tris2,cetri2)</span>
 <span id="cb14-38"><a href="Chapter3.html#cb14-38" tabindex="-1"></a>  maskets<span class="ot">=</span><span class="fu">mask</span>(mozaika,paraugs,<span class="at">filename=</span>beigu_cels,<span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
 <span id="cb14-39"><a href="Chapter3.html#cb14-39" tabindex="-1"></a>}</span></code></pre></div>
+</details>
 </div>
 <div id="Chapter3.1.12" class="section level3 hasAnchor" number="4.1.12">
 <h3><span class="header-section-number">4.1.12</span> Augsnes auglīgums<a href="Chapter3.html#Chapter3.1.12" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Latvijas Universitātē GeoTIFF fails (EPSG:3857, 100 m) ar organiskā oglekļa līmeni augsnes virsējā slāni saņemts 2024. gada februārī no Eiropas vienotā pētījumu centra (<em>European Joint Research Center</em>). Šis slānis tālāk projektēts atbilstībai references rastram un izmantots EGV sagatavošanā.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="Chapter3.html#cb15-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
 <span id="cb15-2"><a href="Chapter3.html#cb15-2" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="Chapter3.html#cb15-3" tabindex="-1"></a><span class="co"># reference</span></span>
@@ -811,6 +831,7 @@ div.csl-indent {
 <span id="cb15-9"><a href="Chapter3.html#cb15-9" tabindex="-1"></a><span class="co"># projektēšana</span></span>
 <span id="cb15-10"><a href="Chapter3.html#cb15-10" tabindex="-1"></a>oc2<span class="ot">=</span><span class="fu">project</span>(oc,template_100m,<span class="at">use_gdal=</span><span class="cn">TRUE</span>,<span class="at">method=</span><span class="st">&quot;bilinear&quot;</span>)</span>
 <span id="cb15-11"><a href="Chapter3.html#cb15-11" tabindex="-1"></a><span class="fu">writeRaster</span>(oc2,<span class="st">&quot;./OrganicCarbon.tif&quot;</span>)</span></code></pre></div>
+</details>
 </div>
 <div id="Chapter3.1.13" class="section level3 hasAnchor" number="4.1.13">
 <h3><span class="header-section-number">4.1.13</span> Digitālie reljefa modeļi<a href="Chapter3.html#Chapter3.1.13" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -818,6 +839,7 @@ div.csl-indent {
 <p>Kā pamata DEM izmantots LU projektā “Ilgtspējīgas augsnes resursu pārvaldības uzlabošana lauksaimniecībā” sagatavotais vidējais aritmētiskais starp LU ĢZZF un LVMI Silava izstrādātajiem DEM. Šī DEM izšķirtspēja ir 1 m, kas nav nepieciešama sugu izplatības modelēšanas ievades datiem, tādēļ slānis projektēts atbilstībai references 10 m rastram.</p>
 <p>Salīdzinot projektēto DEM ar referenci, ir skaidri izdalāmas vietas, kurās nav datu. Tas risināts, izmantojot Māra Nartiša (LU ĢZZF) 2018. gadā izstrādāto visu Latvijas teritoriju bez pārrāvumiem aptverošais DEM ar 10 m izšķirtspēju. Lai novērstu asu malu veidošanās aizpildījuma vietās (izlīdzinātu pārejas), veidots vidējais aritmētiskais slānis, kurš aptver visu Latvijas teritoriju un sakrīt ar references rastru.</p>
 <p>No šī rastra izveidots arī nogāžu slīpuma slānis, kurš projektēts atbilstoši referencei. Slīpums izteikts grādos un rēķināts ar 8-kaimiņu pieeju.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="Chapter3.html#cb16-1" tabindex="-1"></a><span class="co"># libs</span></span>
 <span id="cb16-2"><a href="Chapter3.html#cb16-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
 <span id="cb16-3"><a href="Chapter3.html#cb16-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
@@ -881,6 +903,7 @@ div.csl-indent {
 <span id="cb16-61"><a href="Chapter3.html#cb16-61" tabindex="-1"></a>reljefs<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./mozDEM_10m.tif&quot;</span>)</span>
 <span id="cb16-62"><a href="Chapter3.html#cb16-62" tabindex="-1"></a>slipumi<span class="ot">=</span><span class="fu">terrain</span>(reljefs, <span class="at">v=</span><span class="st">&quot;slope&quot;</span>, <span class="at">neighbors=</span><span class="dv">8</span>, <span class="at">unit=</span><span class="st">&quot;degrees&quot;</span>, </span>
 <span id="cb16-63"><a href="Chapter3.html#cb16-63" tabindex="-1"></a>                <span class="at">filename=</span><span class="st">&quot;./Slope_10m.tif&quot;</span>, <span class="at">overwrite=</span><span class="cn">TRUE</span>)  </span></code></pre></div>
+</details>
 </div>
 </div>
 <div id="Chapter3.2" class="section level2 hasAnchor" number="4.2">
@@ -889,6 +912,7 @@ div.csl-indent {
 <div id="Chapter3.2.1" class="section level3 hasAnchor" number="4.2.1">
 <h3><span class="header-section-number">4.2.1</span> Reljefa produkti<a href="Chapter3.html#Chapter3.2.1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Lai izstrādātu daļu ar reljefu saistīto EGV, piemēram, topogrāfisko mitruma indeksu (TWI) un beznotekas depresijas, ir nepieciešams risināt ūdens plūsmu vidē. Tā vairāku soļu procedūra, kas ir loģiska un uzticama kalnu apvidos un vidē ar maz ietekmētu hidroloģiju. Tātad, Latvijas apstākļos tas ir izaicinoši. Šos izaicinājumus var risināt dažādi, piemēram, ja būtu pieejama uzticama (precīza) informācija par upju un grāvji precīzām atrašanās vietām, to varētu iestrādāt reljefā. Diemžēl, pietiekoši precīzas informāicjas nav. Tādēļ izaicinājumu risināšanai izmantota informācija par transporta būvēm no <a href="Chapter3.html#Chapter3.1.4">Meliorācijas Kadastra Informācijas Sistēmas datubāze</a> un tiltiem no <a href="Chapter3.html#Chapter3.1.3">LĢIA topogrāfiskā karte</a> - 30 m buferī ap šīm vietām iestrādāta minimālā augstuma virs jūras līmeņa informācija tālāk izmantojamajā DEM.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="Chapter3.html#cb17-1" tabindex="-1"></a><span class="co"># libs</span></span>
 <span id="cb17-2"><a href="Chapter3.html#cb17-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
 <span id="cb17-3"><a href="Chapter3.html#cb17-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
@@ -928,6 +952,7 @@ div.csl-indent {
 <span id="cb17-37"><a href="Chapter3.html#cb17-37" tabindex="-1"></a>caurumains<span class="ot">=</span><span class="fu">app</span>(<span class="fu">c</span>(reljefs,caurumi2),<span class="at">fun=</span><span class="st">&quot;min&quot;</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>,</span>
 <span id="cb17-38"><a href="Chapter3.html#cb17-38" tabindex="-1"></a>               <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
 <span id="cb17-39"><a href="Chapter3.html#cb17-39" tabindex="-1"></a>               <span class="at">filename=</span><span class="st">&quot;./caurtDEM_10m.tif&quot;</span>)</span></code></pre></div>
+</details>
 </div>
 <div id="Chapter3.2.2" class="section level3 hasAnchor" number="4.2.2">
 <h3><span class="header-section-number">4.2.2</span> Ainava<a href="Chapter3.html#Chapter3.2.2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -947,6 +972,7 @@ div.csl-indent {
 <p>Vides pārmaiņas nepieciešamas novērojumu filtrēšanai. Daļēji tās būtu iegūstamas no <a href="Chapter3.html#Chapter3.1.1">Meža Valsts reģistrs</a> un <a href="Chapter3.html#Chapter3.1.2">LAD lauku informācija</a> datiem, tomēr projekta darba grupā nav pieejami ik gada raksturojumi (1) un šīs datubāzes neaptver visu valsts teritoriju (2), tādēļ nepieciešams neatkarīgs vērtējums. Tāda izstrādāšanai izmantojām <a href="Chapter4.html#Chapter4"><em>Dynamic World</em> izpēte</a> aprīļa līdz augusta ik gadam no 2017. līdz 2023. rezultātus un <a href="Chapter3.html#Chapter3.1.9"><em>Global Forest Watch</em></a> datus, raksturojot pārmaiņu apjomus analīzes šūnā (nodaļa <a href="Chapter2.html#Chapter2.1">100 m režģis Latvijā</a>) un putnu ligzdošanas iecirkņu rādiusu grupu (<a href="Chapter1.html#fig:AinavTelpas">2.1</a> att.) buferos ap analīzes šūnu centriem.</p>
 <p>Saskaņā ar <a href="Chapter4.html#Chapter4"><em>Dynamic World</em> izpēte</a> rezultātiem, ir vērts izmantot šo resursu vides kopējo pārmaiņu analīzē kopš 2017. gada. Par kopējām pārmaiņām uzskatīta jebkura izmaiņa Dynamic World klasē, to salīdzinot ik 10 m pikselim aprīļa-augusta sezonā starp katriem diviem secīgiem gadiem. Pārmaiņu apjoms raksturots kā platības īpatsvars 100 m šūnā vai putnu ligzdošanas iecirkņu rādiusu grupu buferos ap šīs šūnas centru. Tā kā pārmaiņas analizētas vienos un tajos pašos rastros, izmantojot dažādus laukumveida objektus, kurus nepieciešams apvienot vienā failā, katras ģeometrijas raksturojums iestrādāts lauku nosaukumos.</p>
 <p>Kopumā līdzīga procedūra veikta koku vainagu seguma izzušanas apjoma (īpatsvara no telpas kopumā) raksturošanai. Tomēr šī informācija ir iestrādāta vienā rastra slānī, notikuma gadu norādot kā pikseļa vērtību. Tas ikgadējā samazinājuma apjoma aprēķināšanu apgrūtina, tomēr nepadara par neiespējamu (skatīt komandu rindas zemāk, specifiski - funkciju <code>darbiba</code>). Līdz ar ik gadu zudušā koku vainagu seguma īpatsvara no analīzes telpas platības iegūšanu, tā pievienota analizētajai ģeometrijai kā atsevišķs lauks katram notikuma gadam. Tāpat kā iepriekš - lauku nosaukumi harmonizēti, tajos iestrādājot analīzes telpas raksturojumu, un rezultāti pievienoti 100 m režģa atbilstošajām šūnām.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="Chapter3.html#cb18-1" tabindex="-1"></a><span class="co"># libs</span></span>
 <span id="cb18-2"><a href="Chapter3.html#cb18-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
 <span id="cb18-3"><a href="Chapter3.html#cb18-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
@@ -1246,6 +1272,7 @@ div.csl-indent {
 <span id="cb18-297"><a href="Chapter3.html#cb18-297" tabindex="-1"></a></span>
 <span id="cb18-298"><a href="Chapter3.html#cb18-298" tabindex="-1"></a><span class="co"># rezultāta saglabāšana</span></span>
 <span id="cb18-299"><a href="Chapter3.html#cb18-299" tabindex="-1"></a><span class="fu">st_write_parquet</span>(vides_parmainas,<span class="st">&quot;./VidesParmainas_visas.parquet&quot;</span>)</span></code></pre></div>
+</details>
 
 </div>
 </div>

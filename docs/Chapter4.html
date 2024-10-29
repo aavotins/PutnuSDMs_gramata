@@ -49,6 +49,7 @@
 
 
 
+<link href="libs/codefolding-lua-1.1/codefolding-lua.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -450,6 +451,7 @@ div.csl-indent {
 </ul>
 <p>DW ievades informācija - rastra slānis katrai sezonai katrā gadā - sagtavots Google Earth Engine (GEE) platformā <span class="citation">(<a href="#ref-GEEpaper">Gorelick et al., 2017</a>)</span>, izmantojot <a href="https://code.earthengine.google.com/941bb1a16331727787bb3fc1bbbda95b?noload=true">replicēšanas skriptu</a>. Lai izmantotu šo skriptu, ir nepieciešams <a href="https://code.earthengine.google.com/register">GEE konts un projekts</a> un pietiekošs apjoms vietas Google Drive diskā. Izpildot komandrindas tiks piedāvāta lejuplāde failam, kas aptver laika periodu no vērtības 7. rindā līdz vērtībai 8. rindā (faila nosaukums norādāms 32. rindā, tā apraksts - 33. rindā un direktorija Google diskā - 31. rindā vai tas viss norādāms apstiprinot saglabāšanau) - šis skripts nav optimizēts visu sezonālo griezumu visiem gadiem sagatavošanai, lai reproducētu vai paplašinātu šo izpēti, tās nepieciešams manuāli izmainīt.</p>
 <p>Pēc komandrindu izpildes un rezultātu sagatavošanas Google Drive diskā, ir redzams, ka katrs visu Latviju aptverošais slānis ir sadalīts vairākās lapās. Tas ir tādēļ, ka, lai nodrošinātu nulles patieso vērtību (klase “water”, nevis fons), slāņi kodēti kā <em>Float</em>, nevis veselie skaitļi. Visas šīs lapas ir nepieciešams lejuplādēt, sekojošās R komandrindas tās apvieno, nodrošinot koordinātu sistēmas un pikseļu atbilstību references rastram.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="Chapter4.html#cb19-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
 <span id="cb19-2"><a href="Chapter4.html#cb19-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
 <span id="cb19-3"><a href="Chapter4.html#cb19-3" tabindex="-1"></a></span>
@@ -487,6 +489,7 @@ div.csl-indent {
 <span id="cb19-35"><a href="Chapter4.html#cb19-35" tabindex="-1"></a>  mozaika<span class="ot">=</span><span class="fu">mosaic</span>(viens2,divi2,<span class="at">fun=</span><span class="st">&quot;first&quot;</span>)</span>
 <span id="cb19-36"><a href="Chapter4.html#cb19-36" tabindex="-1"></a>  maskets<span class="ot">=</span><span class="fu">mask</span>(mozaika,paraugs,<span class="at">filename=</span>beigu_cels,<span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
 <span id="cb19-37"><a href="Chapter4.html#cb19-37" tabindex="-1"></a>}</span></code></pre></div>
+</details>
 <div id="q0-dw-nosegums" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> Q0: DW nosegums<a href="Chapter4.html#q0-dw-nosegums" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Katram gadam (2015-2023) ik iepriekš minētajam sezonas griezumam DW datu pārklājum ir apskatāmi zemāk esošajā attēlā <a href="Chapter4.html#fig:DWq00">5.1</a>. Kā jau sagaidāms, 2015. gadā ir trūcīgs nosegums. Pārskata periodā resurss ir samērā droši izmantojams kopš 2018. gada, kopš 2016. gada pielietojamība ir vērtējama, atkarībā no mērķiem un vērtējama saistībā ar sezonas griezumiem.</p>
@@ -498,6 +501,7 @@ Figure 5.1: DW rezultātu pieejamība dažādos sezonālajos griezumos kopš Sen
 </div>
 <p><br></p>
 <p>Komandu rindas reproducēšanai:</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="Chapter4.html#cb20-1" tabindex="-1"></a><span class="co"># libs</span></span>
 <span id="cb20-2"><a href="Chapter4.html#cb20-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
 <span id="cb20-3"><a href="Chapter4.html#cb20-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
@@ -578,6 +582,7 @@ Figure 5.1: DW rezultātu pieejamība dažādos sezonālajos griezumos kopš Sen
 <span id="cb20-78"><a href="Chapter4.html#cb20-78" tabindex="-1"></a>        <span class="at">axis.title =</span> <span class="fu">element_blank</span>(),</span>
 <span id="cb20-79"><a href="Chapter4.html#cb20-79" tabindex="-1"></a>        <span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>())</span>
 <span id="cb20-80"><a href="Chapter4.html#cb20-80" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;./pic_missings.png&quot;</span>,<span class="at">height =</span> <span class="dv">3000</span>,<span class="at">width=</span><span class="dv">5000</span>,<span class="at">units=</span><span class="st">&quot;px&quot;</span>)</span></code></pre></div>
+</details>
 </div>
 <div id="q1-lauksaimniecības-kultūras" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> Q1: Lauksaimniecības kultūras<a href="Chapter4.html#q1-lauksaimniecības-kultūras" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -604,6 +609,7 @@ Figure 5.1: DW rezultātu pieejamība dažādos sezonālajos griezumos kopš Sen
 </ul>
 <p>Izmantojam 2023. gada DW sezonālos slāņus. Lai gan šajā izpētes solī fokuss ir uz augstāk minētajām grupām, sugu izplatības modelēšanai ir nepieciešams klasificēt visas kultūras, tādēļ jau uzreiz skatām visas kultūras.</p>
 <p>Komandu rindas DW klašu sastopamības izpētei ir zemāk. To ietvaros izmantota <a href="Chapter3.html#Chapter3.1.2">LAD lauku informācija</a> un šajā nodaļā (augstāk) sagatavotās 2023. gada DW sezonālās mozaīkas.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="Chapter4.html#cb21-1" tabindex="-1"></a><span class="co"># libs</span></span>
 <span id="cb21-2"><a href="Chapter4.html#cb21-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
 <span id="cb21-3"><a href="Chapter4.html#cb21-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
@@ -700,6 +706,7 @@ Figure 5.1: DW rezultātu pieejamība dažādos sezonālajos griezumos kopš Sen
 <span id="cb21-94"><a href="Chapter4.html#cb21-94" tabindex="-1"></a>dati_real<span class="ot">=</span>dati[<span class="sc">-</span><span class="dv">1</span>,]</span>
 <span id="cb21-95"><a href="Chapter4.html#cb21-95" tabindex="-1"></a><span class="co"># rezultāta saglabāšana</span></span>
 <span id="cb21-96"><a href="Chapter4.html#cb21-96" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(dati_real,<span class="st">&quot;./Q1_kulturas.parquet&quot;</span>)</span></code></pre></div>
+</details>
 <div id="q1.1-ziemāji-aramzemēs" class="section level3 hasAnchor" number="5.2.1">
 <h3><span class="header-section-number">5.2.1</span> Q1.1: Ziemāji aramzemēs<a href="Chapter4.html#q1.1-ziemāji-aramzemēs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Sekojošajā attēlā <a href="Chapter4.html#fig:DWq11">5.2</a> ir ilustrēta ziemāju aramzemēs (kultūru kodi “121”,“122”,“132”,“112”,“116”,“151”) saistība ar DW klasēm dažādos temporālajos griezumos. Skaitļi attēlu daļās norāda klases “crops” ar lauka platību svērto vidējo īpatsvaru. Redzams, ka zemākā atbilstība ir izmantojot tikai vasaras mēnešus. Ievērojami zemāka par atlikušajām klasēm ir arī tikai pavasara klasifikācija. Atlikušās ir visai līdzīgas, nedaudz pārāki temporālie griezumi šķiet maijā-jūnijā un maijā-jūlijā.</p>
@@ -711,6 +718,7 @@ Figure 5.2: Lauksaimniecības kultūru grupas “ziemāji” saistība ar DW kla
 </div>
 <p><br></p>
 <p>Komandu rindas attēla sagatavošanas reproducēšanai:</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="Chapter4.html#cb22-1" tabindex="-1"></a>dati<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Q1_kulturas.parquet&quot;</span>)</span>
 <span id="cb22-2"><a href="Chapter4.html#cb22-2" tabindex="-1"></a>dati<span class="ot">=</span>dati <span class="sc">%&gt;%</span> </span>
 <span id="cb22-3"><a href="Chapter4.html#cb22-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sezona=</span><span class="fu">factor</span>(periods,<span class="at">ordered=</span><span class="cn">TRUE</span>,</span>
@@ -747,6 +755,7 @@ Figure 5.2: Lauksaimniecības kultūru grupas “ziemāji” saistība ar DW kla
 <span id="cb22-34"><a href="Chapter4.html#cb22-34" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Sezona&quot;</span>)</span>
 <span id="cb22-35"><a href="Chapter4.html#cb22-35" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb22-36"><a href="Chapter4.html#cb22-36" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q11.png&quot;</span>,<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
+</details>
 </div>
 <div id="q1.2-ziemas-rapsis" class="section level3 hasAnchor" number="5.2.2">
 <h3><span class="header-section-number">5.2.2</span> Q1.2: Ziemas rapsis<a href="Chapter4.html#q1.2-ziemas-rapsis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -759,6 +768,7 @@ Figure 5.3: Lauksaimniecības kultūru grupas “ziemas rapsis” saistība ar D
 </div>
 <p><br></p>
 <p>Komandu rindas attēla sagatavošanas reproducēšanai:</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="Chapter4.html#cb23-1" tabindex="-1"></a>dati<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Q1_kulturas.parquet&quot;</span>)</span>
 <span id="cb23-2"><a href="Chapter4.html#cb23-2" tabindex="-1"></a>dati<span class="ot">=</span>dati <span class="sc">%&gt;%</span> </span>
 <span id="cb23-3"><a href="Chapter4.html#cb23-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sezona=</span><span class="fu">factor</span>(periods,<span class="at">ordered=</span><span class="cn">TRUE</span>,</span>
@@ -793,6 +803,7 @@ Figure 5.3: Lauksaimniecības kultūru grupas “ziemas rapsis” saistība ar D
 <span id="cb23-32"><a href="Chapter4.html#cb23-32" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Sezona&quot;</span>)</span>
 <span id="cb23-33"><a href="Chapter4.html#cb23-33" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">200</span>,<span class="at">height=</span><span class="dv">100</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb23-34"><a href="Chapter4.html#cb23-34" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q12.png&quot;</span>,<span class="at">width=</span><span class="dv">200</span>,<span class="at">height=</span><span class="dv">100</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
+</details>
 </div>
 <div id="q1.3-vasarāji-aramzemēs" class="section level3 hasAnchor" number="5.2.3">
 <h3><span class="header-section-number">5.2.3</span> Q1.3: Vasarāji aramzemēs<a href="Chapter4.html#q1.3-vasarāji-aramzemēs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -805,6 +816,7 @@ Figure 5.4: Lauksaimniecības kultūru grupas “vasarāji aramzemēs” saistī
 </div>
 <p><br></p>
 <p>Komandu rindas attēla sagatavošanas reproducēšanai:</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="Chapter4.html#cb24-1" tabindex="-1"></a>dati<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Q1_kulturas.parquet&quot;</span>)</span>
 <span id="cb24-2"><a href="Chapter4.html#cb24-2" tabindex="-1"></a>dati<span class="ot">=</span>dati <span class="sc">%&gt;%</span> </span>
 <span id="cb24-3"><a href="Chapter4.html#cb24-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sezona=</span><span class="fu">factor</span>(periods,<span class="at">ordered=</span><span class="cn">TRUE</span>,</span>
@@ -839,6 +851,7 @@ Figure 5.4: Lauksaimniecības kultūru grupas “vasarāji aramzemēs” saistī
 <span id="cb24-32"><a href="Chapter4.html#cb24-32" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Sezona&quot;</span>)</span>
 <span id="cb24-33"><a href="Chapter4.html#cb24-33" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">100</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb24-34"><a href="Chapter4.html#cb24-34" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q13.png&quot;</span>,<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">100</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
+</details>
 </div>
 <div id="q1.4-vasaras-rapsis" class="section level3 hasAnchor" number="5.2.4">
 <h3><span class="header-section-number">5.2.4</span> Q1.4: Vasaras rapsis<a href="Chapter4.html#q1.4-vasaras-rapsis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -851,6 +864,7 @@ Figure 5.5: Lauksaimniecības kultūru grupas “vasaras rapsis” saistība ar 
 </div>
 <p><br></p>
 <p>Komandu rindas attēla sagatavošanas reproducēšanai:</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="Chapter4.html#cb25-1" tabindex="-1"></a>dati<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Q1_kulturas.parquet&quot;</span>)</span>
 <span id="cb25-2"><a href="Chapter4.html#cb25-2" tabindex="-1"></a>dati<span class="ot">=</span>dati <span class="sc">%&gt;%</span> </span>
 <span id="cb25-3"><a href="Chapter4.html#cb25-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sezona=</span><span class="fu">factor</span>(periods,<span class="at">ordered=</span><span class="cn">TRUE</span>,</span>
@@ -884,6 +898,7 @@ Figure 5.5: Lauksaimniecības kultūru grupas “vasaras rapsis” saistība ar 
 <span id="cb25-31"><a href="Chapter4.html#cb25-31" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Sezona&quot;</span>)</span>
 <span id="cb25-32"><a href="Chapter4.html#cb25-32" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">200</span>,<span class="at">height=</span><span class="dv">100</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb25-33"><a href="Chapter4.html#cb25-33" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q14.png&quot;</span>,<span class="at">width=</span><span class="dv">200</span>,<span class="at">height=</span><span class="dv">100</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
+</details>
 </div>
 <div id="q1.5-auzas" class="section level3 hasAnchor" number="5.2.5">
 <h3><span class="header-section-number">5.2.5</span> Q1.5: Auzas<a href="Chapter4.html#q1.5-auzas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -896,6 +911,7 @@ Figure 5.6: Lauksaimniecības kultūru grupas “auzas” saistība ar DW klasē
 </div>
 <p><br></p>
 <p>Komandu rindas attēla sagatavošanas reproducēšanai:</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="Chapter4.html#cb26-1" tabindex="-1"></a>dati<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Q1_kulturas.parquet&quot;</span>)</span>
 <span id="cb26-2"><a href="Chapter4.html#cb26-2" tabindex="-1"></a>dati<span class="ot">=</span>dati <span class="sc">%&gt;%</span> </span>
 <span id="cb26-3"><a href="Chapter4.html#cb26-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sezona=</span><span class="fu">factor</span>(periods,<span class="at">ordered=</span><span class="cn">TRUE</span>,</span>
@@ -929,6 +945,7 @@ Figure 5.6: Lauksaimniecības kultūru grupas “auzas” saistība ar DW klasē
 <span id="cb26-31"><a href="Chapter4.html#cb26-31" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Sezona&quot;</span>)</span>
 <span id="cb26-32"><a href="Chapter4.html#cb26-32" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">200</span>,<span class="at">height=</span><span class="dv">100</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb26-33"><a href="Chapter4.html#cb26-33" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q15.png&quot;</span>,<span class="at">width=</span><span class="dv">200</span>,<span class="at">height=</span><span class="dv">100</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
+</details>
 </div>
 <div id="q1.6-kukurūza" class="section level3 hasAnchor" number="5.2.6">
 <h3><span class="header-section-number">5.2.6</span> Q1.6: Kukurūza<a href="Chapter4.html#q1.6-kukurūza" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -941,6 +958,7 @@ Figure 5.7: Lauksaimniecības kultūru grupas “kukurūza” saistība ar DW kl
 </div>
 <p><br></p>
 <p>Komandu rindas attēla sagatavošanas reproducēšanai:</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="Chapter4.html#cb27-1" tabindex="-1"></a>dati<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Q1_kulturas.parquet&quot;</span>)</span>
 <span id="cb27-2"><a href="Chapter4.html#cb27-2" tabindex="-1"></a>dati<span class="ot">=</span>dati <span class="sc">%&gt;%</span> </span>
 <span id="cb27-3"><a href="Chapter4.html#cb27-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sezona=</span><span class="fu">factor</span>(periods,<span class="at">ordered=</span><span class="cn">TRUE</span>,</span>
@@ -975,6 +993,7 @@ Figure 5.7: Lauksaimniecības kultūru grupas “kukurūza” saistība ar DW kl
 <span id="cb27-32"><a href="Chapter4.html#cb27-32" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Sezona&quot;</span>)</span>
 <span id="cb27-33"><a href="Chapter4.html#cb27-33" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">250</span>,<span class="at">height=</span><span class="dv">100</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb27-34"><a href="Chapter4.html#cb27-34" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q16.png&quot;</span>,<span class="at">width=</span><span class="dv">250</span>,<span class="at">height=</span><span class="dv">100</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
+</details>
 </div>
 <div id="q1.7-papuves" class="section level3 hasAnchor" number="5.2.7">
 <h3><span class="header-section-number">5.2.7</span> Q1.7: Papuves<a href="Chapter4.html#q1.7-papuves" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -994,6 +1013,7 @@ Figure 5.9: Lauksaimniecības kultūru grupas “papuves” perimetra-laukuma at
 </div>
 <p><br></p>
 <p>Komandu rindas attēlu sagatavošanas reproducēšanai:</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="Chapter4.html#cb28-1" tabindex="-1"></a>dati<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Q1_kulturas.parquet&quot;</span>)</span>
 <span id="cb28-2"><a href="Chapter4.html#cb28-2" tabindex="-1"></a>dati<span class="ot">=</span>dati <span class="sc">%&gt;%</span> </span>
 <span id="cb28-3"><a href="Chapter4.html#cb28-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sezona=</span><span class="fu">factor</span>(periods,<span class="at">ordered=</span><span class="cn">TRUE</span>,</span>
@@ -1055,6 +1075,7 @@ Figure 5.9: Lauksaimniecības kultūru grupas “papuves” perimetra-laukuma at
 <span id="cb28-59"><a href="Chapter4.html#cb28-59" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Perimetra-laukuma attiecība&quot;</span>)</span>
 <span id="cb28-60"><a href="Chapter4.html#cb28-60" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb28-61"><a href="Chapter4.html#cb28-61" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q17b.png&quot;</span>,<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
+</details>
 </div>
 <div id="q1.8-ilggadīgie-zālāji" class="section level3 hasAnchor" number="5.2.8">
 <h3><span class="header-section-number">5.2.8</span> Q1.8: Ilggadīgie zālāji<a href="Chapter4.html#q1.8-ilggadīgie-zālāji" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1075,6 +1096,7 @@ Figure 5.11: Lauksaimniecības kultūru grupas “ilggadīgi zālāji” perimet
 </div>
 <p><br></p>
 <p>Komandu rindas attēlu sagatavošanas reproducēšanai:</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="Chapter4.html#cb29-1" tabindex="-1"></a>dati<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Q1_kulturas.parquet&quot;</span>)</span>
 <span id="cb29-2"><a href="Chapter4.html#cb29-2" tabindex="-1"></a>dati<span class="ot">=</span>dati <span class="sc">%&gt;%</span> </span>
 <span id="cb29-3"><a href="Chapter4.html#cb29-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sezona=</span><span class="fu">factor</span>(periods,<span class="at">ordered=</span><span class="cn">TRUE</span>,</span>
@@ -1133,6 +1155,7 @@ Figure 5.11: Lauksaimniecības kultūru grupas “ilggadīgi zālāji” perimet
 <span id="cb29-56"><a href="Chapter4.html#cb29-56" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Perimetra-laukuma attiecība&quot;</span>)</span>
 <span id="cb29-57"><a href="Chapter4.html#cb29-57" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb29-58"><a href="Chapter4.html#cb29-58" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q18b.png&quot;</span>,<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
+</details>
 </div>
 <div id="q1.9-kultivētie-zālāji" class="section level3 hasAnchor" number="5.2.9">
 <h3><span class="header-section-number">5.2.9</span> Q1.9: Kultivētie zālāji<a href="Chapter4.html#q1.9-kultivētie-zālāji" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1145,6 +1168,7 @@ Figure 5.12: Lauksaimniecības kultūru grupas “kultivēti zālāji” saistī
 </div>
 <p><br></p>
 <p>Komandu rindas attēla sagatavošanas reproducēšanai:</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="Chapter4.html#cb30-1" tabindex="-1"></a>dati<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Q1_kulturas.parquet&quot;</span>)</span>
 <span id="cb30-2"><a href="Chapter4.html#cb30-2" tabindex="-1"></a>dati<span class="ot">=</span>dati <span class="sc">%&gt;%</span> </span>
 <span id="cb30-3"><a href="Chapter4.html#cb30-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sezona=</span><span class="fu">factor</span>(periods,<span class="at">ordered=</span><span class="cn">TRUE</span>,</span>
@@ -1185,6 +1209,7 @@ Figure 5.12: Lauksaimniecības kultūru grupas “kultivēti zālāji” saistī
 <span id="cb30-38"><a href="Chapter4.html#cb30-38" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Sezona&quot;</span>)</span>
 <span id="cb30-39"><a href="Chapter4.html#cb30-39" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">100</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb30-40"><a href="Chapter4.html#cb30-40" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q19.png&quot;</span>,<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">100</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
+</details>
 </div>
 <div id="q1.10-agļukoki" class="section level3 hasAnchor" number="5.2.10">
 <h3><span class="header-section-number">5.2.10</span> Q1.10: Agļukoki<a href="Chapter4.html#q1.10-agļukoki" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1197,6 +1222,7 @@ Figure 5.13: Lauksaimniecības kultūru grupas “augļukoki” saistība ar DW 
 </div>
 <p><br></p>
 <p>Komandu rindas attēla sagatavošanas reproducēšanai:</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="Chapter4.html#cb31-1" tabindex="-1"></a>dati<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Q1_kulturas.parquet&quot;</span>)</span>
 <span id="cb31-2"><a href="Chapter4.html#cb31-2" tabindex="-1"></a>dati<span class="ot">=</span>dati <span class="sc">%&gt;%</span> </span>
 <span id="cb31-3"><a href="Chapter4.html#cb31-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sezona=</span><span class="fu">factor</span>(periods,<span class="at">ordered=</span><span class="cn">TRUE</span>,</span>
@@ -1238,6 +1264,7 @@ Figure 5.13: Lauksaimniecības kultūru grupas “augļukoki” saistība ar DW 
 <span id="cb31-39"><a href="Chapter4.html#cb31-39" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Sezona&quot;</span>)</span>
 <span id="cb31-40"><a href="Chapter4.html#cb31-40" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb31-41"><a href="Chapter4.html#cb31-41" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q110.png&quot;</span>,<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
+</details>
 </div>
 <div id="q1.11-ogu-krūmi" class="section level3 hasAnchor" number="5.2.11">
 <h3><span class="header-section-number">5.2.11</span> Q1.11: Ogu-krūmi<a href="Chapter4.html#q1.11-ogu-krūmi" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1250,6 +1277,7 @@ Figure 5.14: Lauksaimniecības kultūru grupas “ogu-krūmi” saistība ar DW 
 </div>
 <p><br></p>
 <p>Komandu rindas attēla sagatavošanas reproducēšanai:</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="Chapter4.html#cb32-1" tabindex="-1"></a>dati<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Q1_kulturas.parquet&quot;</span>)</span>
 <span id="cb32-2"><a href="Chapter4.html#cb32-2" tabindex="-1"></a>dati<span class="ot">=</span>dati <span class="sc">%&gt;%</span> </span>
 <span id="cb32-3"><a href="Chapter4.html#cb32-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sezona=</span><span class="fu">factor</span>(periods,<span class="at">ordered=</span><span class="cn">TRUE</span>,</span>
@@ -1298,6 +1326,7 @@ Figure 5.14: Lauksaimniecības kultūru grupas “ogu-krūmi” saistība ar DW 
 <span id="cb32-46"><a href="Chapter4.html#cb32-46" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Sezona&quot;</span>)</span>
 <span id="cb32-47"><a href="Chapter4.html#cb32-47" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb32-48"><a href="Chapter4.html#cb32-48" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q111.png&quot;</span>,<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
+</details>
 </div>
 <div id="q1.12-zemās-ogas" class="section level3 hasAnchor" number="5.2.12">
 <h3><span class="header-section-number">5.2.12</span> Q1.12: Zemās ogas<a href="Chapter4.html#q1.12-zemās-ogas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1310,6 +1339,7 @@ Figure 5.15: Lauksaimniecības kultūru grupas “zemās ogas” saistība ar DW
 </div>
 <p><br></p>
 <p>Komandu rindas attēla sagatavošanas reproducēšanai:</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="Chapter4.html#cb33-1" tabindex="-1"></a>dati<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Q1_kulturas.parquet&quot;</span>)</span>
 <span id="cb33-2"><a href="Chapter4.html#cb33-2" tabindex="-1"></a>dati<span class="ot">=</span>dati <span class="sc">%&gt;%</span> </span>
 <span id="cb33-3"><a href="Chapter4.html#cb33-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sezona=</span><span class="fu">factor</span>(periods,<span class="at">ordered=</span><span class="cn">TRUE</span>,</span>
@@ -1365,6 +1395,7 @@ Figure 5.15: Lauksaimniecības kultūru grupas “zemās ogas” saistība ar DW
 <span id="cb33-53"><a href="Chapter4.html#cb33-53" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Sezona&quot;</span>)</span>
 <span id="cb33-54"><a href="Chapter4.html#cb33-54" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">250</span>,<span class="at">height=</span><span class="dv">100</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb33-55"><a href="Chapter4.html#cb33-55" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q112.png&quot;</span>,<span class="at">width=</span><span class="dv">250</span>,<span class="at">height=</span><span class="dv">100</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
+</details>
 </div>
 <div id="q1.13-bezatbalsta-platība" class="section level3 hasAnchor" number="5.2.13">
 <h3><span class="header-section-number">5.2.13</span> Q1.13: Bezatbalsta platība<a href="Chapter4.html#q1.13-bezatbalsta-platība" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1377,6 +1408,7 @@ Figure 5.16: Lauksaimniecības kultūru grupas “bezatbalsta platības” saist
 </div>
 <p><br></p>
 <p>Komandu rindas attēla sagatavošanas reproducēšanai:</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="Chapter4.html#cb34-1" tabindex="-1"></a>dati<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Q1_kulturas.parquet&quot;</span>)</span>
 <span id="cb34-2"><a href="Chapter4.html#cb34-2" tabindex="-1"></a>dati<span class="ot">=</span>dati <span class="sc">%&gt;%</span> </span>
 <span id="cb34-3"><a href="Chapter4.html#cb34-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sezona=</span><span class="fu">factor</span>(periods,<span class="at">ordered=</span><span class="cn">TRUE</span>,</span>
@@ -1432,6 +1464,7 @@ Figure 5.16: Lauksaimniecības kultūru grupas “bezatbalsta platības” saist
 <span id="cb34-53"><a href="Chapter4.html#cb34-53" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Sezona&quot;</span>)</span>
 <span id="cb34-54"><a href="Chapter4.html#cb34-54" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">400</span>,<span class="at">height=</span><span class="dv">100</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb34-55"><a href="Chapter4.html#cb34-55" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q113.png&quot;</span>,<span class="at">width=</span><span class="dv">400</span>,<span class="at">height=</span><span class="dv">100</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
+</details>
 </div>
 <div id="q1.14-vagu-un-rušināmkultūras" class="section level3 hasAnchor" number="5.2.14">
 <h3><span class="header-section-number">5.2.14</span> Q1.14: Vagu un rušināmkultūras<a href="Chapter4.html#q1.14-vagu-un-rušināmkultūras" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1444,6 +1477,7 @@ Figure 5.17: Lauksaimniecības kultūru grupas “vagu un rušināmkultūras” 
 </div>
 <p><br></p>
 <p>Komandu rindas attēla sagatavošanas reproducēšanai:</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="Chapter4.html#cb35-1" tabindex="-1"></a>dati<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Q1_kulturas.parquet&quot;</span>)</span>
 <span id="cb35-2"><a href="Chapter4.html#cb35-2" tabindex="-1"></a>dati<span class="ot">=</span>dati <span class="sc">%&gt;%</span> </span>
 <span id="cb35-3"><a href="Chapter4.html#cb35-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sezona=</span><span class="fu">factor</span>(periods,<span class="at">ordered=</span><span class="cn">TRUE</span>,</span>
@@ -1492,6 +1526,7 @@ Figure 5.17: Lauksaimniecības kultūru grupas “vagu un rušināmkultūras” 
 <span id="cb35-46"><a href="Chapter4.html#cb35-46" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Sezona&quot;</span>)</span>
 <span id="cb35-47"><a href="Chapter4.html#cb35-47" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb35-48"><a href="Chapter4.html#cb35-48" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q114.png&quot;</span>,<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
+</details>
 </div>
 <div id="q1.15-īscirtmeta-atvasāji-un-enerģijas-kultūras" class="section level3 hasAnchor" number="5.2.15">
 <h3><span class="header-section-number">5.2.15</span> Q1.15: Īscirtmeta atvasāji un enerģijas kultūras<a href="Chapter4.html#q1.15-īscirtmeta-atvasāji-un-enerģijas-kultūras" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1504,6 +1539,7 @@ Figure 5.18: Lauksaimniecības kultūru grupas “īscirtmeta atvasāji un ener�
 </div>
 <p><br></p>
 <p>Komandu rindas attēla sagatavošanas reproducēšanai:</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="Chapter4.html#cb36-1" tabindex="-1"></a>dati<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Q1_kulturas.parquet&quot;</span>)</span>
 <span id="cb36-2"><a href="Chapter4.html#cb36-2" tabindex="-1"></a>dati<span class="ot">=</span>dati <span class="sc">%&gt;%</span> </span>
 <span id="cb36-3"><a href="Chapter4.html#cb36-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sezona=</span><span class="fu">factor</span>(periods,<span class="at">ordered=</span><span class="cn">TRUE</span>,</span>
@@ -1552,6 +1588,7 @@ Figure 5.18: Lauksaimniecības kultūru grupas “īscirtmeta atvasāji un ener�
 <span id="cb36-46"><a href="Chapter4.html#cb36-46" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Sezona&quot;</span>)</span>
 <span id="cb36-47"><a href="Chapter4.html#cb36-47" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb36-48"><a href="Chapter4.html#cb36-48" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q115.png&quot;</span>,<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
+</details>
 </div>
 <div id="q1-lad-kultūru-stratificēšanai" class="section level3 hasAnchor" number="5.2.16">
 <h3><span class="header-section-number">5.2.16</span> Q1: LAD kultūru stratificēšanai<a href="Chapter4.html#q1-lad-kultūru-stratificēšanai" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1586,6 +1623,7 @@ Figure 5.19: PCA rezultāti DW klašu sastopamībai sugu izplatības modelēšan
 </div>
 <p><br></p>
 <p>Komandu rindas attēla sagatavošanas un veiktās analīzes reproducēšanai (papildus fails - <a href="./Papilddati/KulturuKodi_2024.xlsx">sagatavotais un pēc klāsteranalīzes koriģētais kultūru grupējums</a>):</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="Chapter4.html#cb37-1" tabindex="-1"></a>dati<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Q1_kulturas.parquet&quot;</span>)</span>
 <span id="cb37-2"><a href="Chapter4.html#cb37-2" tabindex="-1"></a>dati<span class="ot">=</span>dati <span class="sc">%&gt;%</span> </span>
 <span id="cb37-3"><a href="Chapter4.html#cb37-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sezona=</span><span class="fu">factor</span>(periods,<span class="at">ordered=</span><span class="cn">TRUE</span>,</span>
@@ -1634,6 +1672,7 @@ Figure 5.19: PCA rezultāti DW klašu sastopamībai sugu izplatības modelēšan
 <span id="cb37-46"><a href="Chapter4.html#cb37-46" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb37-47"><a href="Chapter4.html#cb37-47" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q1klasteri.png&quot;</span>,</span>
 <span id="cb37-48"><a href="Chapter4.html#cb37-48" tabindex="-1"></a>       <span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
+</details>
 </div>
 </div>
 <div id="q2-mežaudzes-augstums-sugu-grupās" class="section level2 hasAnchor" number="5.3">
@@ -1667,6 +1706,7 @@ Figure 5.21: Ar platību svērtā DW klases “koki” sastapšanas varbūtība 
 </div>
 <p><br></p>
 <p>Komandu rindas attēlu sagatavošanas un veiktās analīzes reproducēšanai (tiek izmantoti <a href="Chapter3.html#Chapter3.1.1">Meža Valsts reģistrs</a> dati):</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="Chapter4.html#cb38-1" tabindex="-1"></a><span class="co"># libs</span></span>
 <span id="cb38-2"><a href="Chapter4.html#cb38-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
 <span id="cb38-3"><a href="Chapter4.html#cb38-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
@@ -1864,6 +1904,7 @@ Figure 5.21: Ar platību svērtā DW klases “koki” sastapšanas varbūtība 
 <span id="cb38-195"><a href="Chapter4.html#cb38-195" tabindex="-1"></a></span>
 <span id="cb38-196"><a href="Chapter4.html#cb38-196" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb38-197"><a href="Chapter4.html#cb38-197" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q22_trees.png&quot;</span>,<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
+</details>
 </div>
 <div id="q3-topogrāfiskās-kartes-mitrāji" class="section level2 hasAnchor" number="5.4">
 <h2><span class="header-section-number">5.4</span> Q3: Topogrāfiskās kartes mitrāji<a href="Chapter4.html#q3-topogrāfiskās-kartes-mitrāji" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -1886,6 +1927,7 @@ Figure 5.22: Topogrāfiskās kartes mitrāju plankumu saistība ar DW klasēm.
 </p>
 </div>
 <p>Komandu rindas attēlu sagatavošanas un veiktās analīzes reproducēšanai (tiek izmantoti <a href="Chapter3.html#Chapter3.1.3">LĢIA topogrāfiskā karte</a> dati):</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="Chapter4.html#cb39-1" tabindex="-1"></a><span class="co"># libs</span></span>
 <span id="cb39-2"><a href="Chapter4.html#cb39-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
 <span id="cb39-3"><a href="Chapter4.html#cb39-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
@@ -2024,6 +2066,7 @@ Figure 5.22: Topogrāfiskās kartes mitrāju plankumu saistība ar DW klasēm.
 <span id="cb39-136"><a href="Chapter4.html#cb39-136" tabindex="-1"></a></span>
 <span id="cb39-137"><a href="Chapter4.html#cb39-137" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">200</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb39-138"><a href="Chapter4.html#cb39-138" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q31.png&quot;</span>,<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">200</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
+</details>
 </div>
 <div id="q4-karjeri-kūdras-ieguves-vietas-un-ceļi" class="section level2 hasAnchor" number="5.5">
 <h2><span class="header-section-number">5.5</span> Q4: Karjeri, kūdras ieguves vietas un ceļi<a href="Chapter4.html#q4-karjeri-kūdras-ieguves-vietas-un-ceļi" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -2043,6 +2086,7 @@ Figure 5.23: Topogrāfiskās kartes atklātās augsnes un ceļu plankumu saistī
 </p>
 </div>
 <p>Komandu rindas attēlu sagatavošanas un veiktās analīzes reproducēšanai (tiek izmantoti <a href="Chapter3.html#Chapter3.1.3">LĢIA topogrāfiskā karte</a> dati):</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="Chapter4.html#cb40-1" tabindex="-1"></a><span class="co"># libs</span></span>
 <span id="cb40-2"><a href="Chapter4.html#cb40-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
 <span id="cb40-3"><a href="Chapter4.html#cb40-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
@@ -2180,6 +2224,7 @@ Figure 5.23: Topogrāfiskās kartes atklātās augsnes un ceļu plankumu saistī
 <span id="cb40-135"><a href="Chapter4.html#cb40-135" tabindex="-1"></a></span>
 <span id="cb40-136"><a href="Chapter4.html#cb40-136" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">200</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb40-137"><a href="Chapter4.html#cb40-137" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q41.png&quot;</span>,<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">200</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
+</details>
 </div>
 <div id="q5-izcirtuma-izmērs-un-forma" class="section level2 hasAnchor" number="5.6">
 <h2><span class="header-section-number">5.6</span> Q5: Izcirtuma izmērs un forma<a href="Chapter4.html#q5-izcirtuma-izmērs-un-forma" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -2221,6 +2266,7 @@ Figure 5.26: Ar platību svērtā 2023. gada DW klases “koki” sastapšanas v
 </div>
 <p><br></p>
 <p>Komandu rindas attēlu sagatavošanas un veiktās analīzes reproducēšanai (tiek izmantoti <a href="Chapter3.html#Chapter3.1.1">Meža Valsts reģistrs</a> dati):</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="Chapter4.html#cb41-1" tabindex="-1"></a><span class="co"># libs</span></span>
 <span id="cb41-2"><a href="Chapter4.html#cb41-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
 <span id="cb41-3"><a href="Chapter4.html#cb41-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
@@ -2415,6 +2461,7 @@ Figure 5.26: Ar platību svērtā 2023. gada DW klases “koki” sastapšanas v
 <span id="cb41-192"><a href="Chapter4.html#cb41-192" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">75000</span>))</span>
 <span id="cb41-193"><a href="Chapter4.html#cb41-193" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb41-194"><a href="Chapter4.html#cb41-194" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q51c.png&quot;</span>,<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
+</details>
 </div>
 <div id="q5.2-senākas-kailcirtes-bet-vēl-joprojām-izcirtumi" class="section level3 hasAnchor" number="5.6.2">
 <h3><span class="header-section-number">5.6.2</span> Q5.2: senākas kailcirtes, bet vēl joprojām izcirtumi<a href="Chapter4.html#q5.2-senākas-kailcirtes-bet-vēl-joprojām-izcirtumi" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -2429,6 +2476,7 @@ Figure 5.27: Ar platību svērtā 2023. gada DW klašu sastopamība kopš 2013. 
 </div>
 <p><br></p>
 <p>Komandu rindas attēlu sagatavošanas un veiktās analīzes reproducēšanai (tiek izmantoti <a href="Chapter3.html#Chapter3.1.1">Meža Valsts reģistrs</a> dati):</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="Chapter4.html#cb42-1" tabindex="-1"></a><span class="co"># libs</span></span>
 <span id="cb42-2"><a href="Chapter4.html#cb42-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
 <span id="cb42-3"><a href="Chapter4.html#cb42-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
@@ -2558,6 +2606,7 @@ Figure 5.27: Ar platību svērtā 2023. gada DW klašu sastopamība kopš 2013. 
 <span id="cb42-127"><a href="Chapter4.html#cb42-127" tabindex="-1"></a></span>
 <span id="cb42-128"><a href="Chapter4.html#cb42-128" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">200</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb42-129"><a href="Chapter4.html#cb42-129" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q52.png&quot;</span>,<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">200</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
+</details>
 </div>
 </div>
 <div id="q6-zālāju-transformācija-uz-aramzemēm" class="section level2 hasAnchor" number="5.7">
@@ -2585,6 +2634,7 @@ Figure 5.28: Ar platību svērtā 2018. gada DW klašu sastopamība 2018. gadā 
 </div>
 <p><br></p>
 <p>Komandu rindas attēlu sagatavošanas un veiktās analīzes reproducēšanai (tiek izmantoti <a href="Chapter3.html#Chapter3.1.1">Meža Valsts reģistrs</a> dati):</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="Chapter4.html#cb43-1" tabindex="-1"></a><span class="co"># libs</span></span>
 <span id="cb43-2"><a href="Chapter4.html#cb43-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
 <span id="cb43-3"><a href="Chapter4.html#cb43-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
@@ -2723,6 +2773,7 @@ Figure 5.28: Ar platību svērtā 2018. gada DW klašu sastopamība 2018. gadā 
 <span id="cb43-136"><a href="Chapter4.html#cb43-136" tabindex="-1"></a></span>
 <span id="cb43-137"><a href="Chapter4.html#cb43-137" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb43-138"><a href="Chapter4.html#cb43-138" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q6.png&quot;</span>,<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
+</details>
 </div>
 <div id="secinājumi" class="section level2 hasAnchor" number="5.8">
 <h2><span class="header-section-number">5.8</span> Secinājumi<a href="Chapter4.html#secinājumi" class="anchor-section" aria-label="Anchor link to header"></a></h2>
