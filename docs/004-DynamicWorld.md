@@ -2441,7 +2441,7 @@ ggsave(filename="./pic_q52.png",width=300,height=200,units="mm",dpi=600)
 
 ## Q6: Zālāju transformācija uz aramzemēm
 
-Projekta komandai nav pieejami 2022. gada LAD lauku informācija, bet ir 2013.-2020. gadu dati. Izmantojām 2017. un 2018. gadu LAD datus, tos atteicinot pret 2018. gada DW sezonālajiem slāņiem. 
+Projekta komandai pieejama informācija par 2017. un 2018. gadu (tomēr skatīt arī lejupielādes iespējas LAD atvērto datu portālā), kas izmantoti attiecināšanai pret 2018. gada DW sezonālajiem slāņiem. 
 
 Lauku atlasē izmantojām tos laukus, kuros 2017. gadā bija reģistrēti ilglaicīgie zālāji (PIETEIKTAIS_KULTURAS_KODS=="710"), bet 2018. gadā tam pašam numuram reģistrēts kāds no sekojošajiem:
 

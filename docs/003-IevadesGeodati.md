@@ -12,9 +12,59 @@ Izmantotie ģeodatu avoti, to raksturojums un harmonizēšanas procedūru apraks
 
 b
 
-### Lauku atbalsta dienesta lauku informācija {#Chapter3.1.2}
+### Lauku Atbalsta Dienesta lauku informācija {#Chapter3.1.2}
 
-c
+Lauku Atbalsta Dienests uztur [regulāri aktualizētu informāciju atvērto datu portālā](https://data.gov.lv/dati/lv/organization/lad). Tajā ir pieejams arī arhīvs (kopš 2015. gada), izmantojamās datu kopas satur atslēgvārdu "deklarētās platības". Šī projekta ietvaros izmantots WFS pieslēgums datu lejupielādei (2023-11-14).
+
+Pēc lejupielādes nodrošinātas ģeometrijas, tās pārbaudītas un saglabātas *geoparquet* formātā.
+
+
+```r
+# libs
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(arrow)) {install.packages("arrow"); require(arrow)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(gdalUtilities)) {install.packages("gdalUtilities"); require(gdalUtilities)}
+if(!require(httr)) {install.packages("httr"); require(httr)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(ows4R)) {install.packages("ows4R"); require(ows4R)}
+
+# lejupielāde
+wfs_bwk <- "https://karte.lad.gov.lv/arcgis/services/lauki/MapServer/WFSServer"
+url <- parse_url(wfs_bwk)
+url$query <- list(service = "wfs",
+                  #version = "2.0.0", # fakultatīvi
+                  request = "GetCapabilities"
+)
+vaicajums <- build_url(url)
+
+bwk_client <- WFSClient$new(wfs_bwk, 
+                            serviceVersion = "2.0.0")
+bwk_client$getFeatureTypes() %>%
+  map_chr(function(x){x$getTitle()})
+
+dati <- read_sf(vaicajums)
+
+# multipoligoni
+ensure_multipolygons <- function(X) {
+  tmp1 <- tempfile(fileext = ".gpkg")
+  tmp2 <- tempfile(fileext = ".gpkg")
+  st_write(X, tmp1)
+  ogr2ogr(tmp1, tmp2, f = "GPKG", nlt = "MULTIPOLYGON")
+  Y <- st_read(tmp2)
+  st_sf(st_drop_geometry(X), geom = st_geometry(Y))
+}
+dati2 <- ensure_multipolygons(dati)
+
+# pārbaudes
+dati3 = dati2[!st_is_empty(dati2),,drop=FALSE] # OK
+validity=st_is_valid(dati3) 
+table(validity) # OK
+
+# saglabāšana
+sfarrow::st_write_parquet(dati3, "LAD_lauki.parquet")
+```
+
 
 ### LĢIA topogrāfiskā karte {#Chapter3.1.3}
 
@@ -75,16 +125,12 @@ validity=st_is_valid(bridgeL2)
 table(validity) # OK
 sfarrow::st_write_parquet(bridgeL2, "Topo_bridgeL.parquet")
 
-
 # bridge_P
 bridge_P=st_read("./Topo10_v3_12_07_2016.gdb/",layer="bridge_P")
 bridgeP2 = bridge_P[!st_is_empty(bridge_P),,drop=FALSE] # OK
 validity=st_is_valid(bridgeP2) 
 table(validity) # OK
 sfarrow::st_write_parquet(bridgeP2, "Topo_bridgeP.parquet")
-
-
-
 
 # landus A
 landus_A=st_read("./Topo10_v3_12_07_2016.gdb/",layer="landus_A")
@@ -99,7 +145,7 @@ sfarrow::st_write_parquet(landus3, "Topo_landusA.parquet")
 
 Meliorācijas Kadastra Informācijas Sistēmas datubāze 2018. gada jūnijā pēc pieprasījuma no Latvijas Universitātes studiju un pētniecības procesu nodrošināšanai saņemta no Zemkopības ministrijas nekustamo īpašumu daļas. Tās saturs pieejams [publiskai apskatei](https://www.melioracija.lv/?loc=540414;308053;1).
 
-Sākotnēji papildus apstrāde šiem datiem nav veikta. Tie izmantoti [Ievades produkti](#Chapter3.2) gan [Reljefa produkti](#Chapter3.2.1), gan [Ainava](#Chapter3.2.2) sagatavošanai.
+Sākotnēji papildus apstrāde šiem datiem nav veikta. Tie izmantoti [Ievades produkti](#Chapter3.2) sagatavošanai - gan [Reljefa produkti](#Chapter3.2.1), gan [Ainava](#Chapter3.2.2) sagatavošanai.
 
 ### LVM atvērtie dati {#Chapter3.1.5}
 
@@ -131,7 +177,7 @@ Sākotnēji papildus apstrāde šiem datiem nav veikta. Tie izmantoti [Ievades p
 
 Corine Land Cover ir publiski pieejami ģeodati, kas raksturo zemes seguma un lietojuma veidu (LULC) visā aptverot visu Eiropu ilgā laika periodā ar kopumā nemainīgu (salīdzināmu) metodiku (https://land.copernicus.eu/content/corine-land-cover-nomenclature-guidelines/docs/pdf/CLC2018_Nomenclature_illustrated_guide_20190510.pdf), sniedzot rezultātus atsevišķiem gadiem - 1990., 2000., 2006., 2012., 2018. (https://land.copernicus.eu/en/products/corine-land-cover). Lai gan datu kopa ir rupjas izšķirtspēja - kartējamā vienība ir 25 ha laukumi, kas ir vismaz 100 m plati, tā sniedz pietiekošu informāciju vispārīgam lietojumam, piemēram, novērojumu atlasei plašās ainavas klasēs (vairāk nodaļā [Novērojumu atlase](#Chapter6)). Šajā projektā izmantoti 2018. gada dati. 
 
-Lejupielādētā datu kopa transformēta Latvijas koordinātu sistēmā (EPSG:3059), turpmākā darba atvieglošanai un paātrināšanai, failu formāts mainīts uz *geoparquet*. Failu formāta maiņas ietvaros pārbaudītas ģeometrijas (tukšās, validitāte).
+Lejupielādētā datu kopa transformēta Latvijas koordinātu sistēmā (EPSG:3059), turpmākā darba atvieglošanai un paātrināšanai failu formāts mainīts uz *geoparquet*. Failu formāta maiņas ietvaros pārbaudītas ģeometrijas (tukšās, validitāte).
 
 
 ```r
@@ -310,7 +356,7 @@ tcl3=mask(tcl2,paraugs,filename="./TreeCoverLossYear.tif",overwrite=TRUE)
 
 Pēc komandrindu izpildes un rezultātu sagatavošanas Google Drive diskā, ir lejupielādējami četri faili. Tos nepieciešams projektēt atbilstībai references rastram un apvienot. Šajā resursā koki ir kodēti divās grupās: 1=Dense Forest un 2=Non-dense Forest, kuras nepieciešams apvienot un pārējo pārvērst par iztrūkstošajām vērtībām.
 
-Lai gan šī resursa dati raksturo situāciju 2020. nevis 2023. gadā, tie ir izmantoti, jo koku vainagu seguma izzušanu raksturošanai ir pieejami [*The Global Forest Watch*](#Chapter3.1.9) dati, bet vainagu parādīšanās nav tik strauja, lai būtu nozīmīgas izmaiņas trīs gadu laikā (1), šis gads atrodas pa vidu ar novērojumiem aptvertajam laika periodam (2017.-2023. gadi).
+Lai gan šī resursa dati raksturo situāciju 2020. nevis 2023. gadā, tie ir izmantoti, jo koku vainagu seguma izzušanu raksturošanai ir pieejami [*The Global Forest Watch*](#Chapter3.1.9) dati, bet vainagu parādīšanās nav tik strauja, lai būtu nozīmīgas izmaiņas trīs gadu laikā, un šis gads atrodas pa vidu ar novērojumiem aptvertajam laika periodam (2017.-2023. gadi).
 
 
 ```r
