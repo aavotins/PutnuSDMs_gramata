@@ -48,9 +48,9 @@ Lielākoties šis materiāls sastāv no:
 
 * *paskaidrojošā teksta*, kas ir atpazīstams kā teksts;
 
-* *komandu rindām*, kas ir atpazīstamas kā ar pelēku fonu izcelti strukturēta teksta apgabali, piemēram,:
+* *komandu rindām*, kas pēc noklusējuma ir noslēptas, lai atvieglotu teksta lasāmību. Vietas, kurās ir koamndu rindas ir atpazīstamas pēc lapas kreisajā pusē redzama "|> Code", kā tieši zem šīs rindkopas. Uz tā uzraksta uzklikšķinot, atvērsies koda apgabals, kurā uz pelēka fona esošie teksta apgabali ir komandu rindas, piemēram,:
 
-```{r eval=FALSE, code_folding="show"}
+```{r eval=FALSE}
 objekts=funkcija(arguments1,arguments2,
                  ceļš="./ceļš/failu/kokā/objekts.paplašinājums")
 # komentārs
