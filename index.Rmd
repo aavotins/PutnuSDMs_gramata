@@ -50,7 +50,7 @@ Lielākoties šis materiāls sastāv no:
 
 * *komandu rindām*, kas ir atpazīstamas kā ar pelēku fonu izcelti strukturēta teksta apgabali, piemēram,:
 
-```{r eval=FALSE, code_folding=TRUE}
+```{r eval=FALSE, code_folding="show"}
 objekts=funkcija(arguments1,arguments2,
                  ceļš="./ceļš/failu/kokā/objekts.paplašinājums")
 # komentārs
