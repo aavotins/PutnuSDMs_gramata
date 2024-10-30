@@ -167,25 +167,25 @@ grViz("digraph flowchart {
 
 Katrai no šī materiāla nodaļām (tātad, uzdevumiem darba plūsmā) būt vairāku līmeņu apakšnodaļas (apakšuzdevumi). Tos vislabāk apskatīt konkrētajās nodaļās, tomēr vismaz sākotnēji sekojot secībai iepriekšējā attēlā. Nodaļas ar galvenajiem izstrādātājiem:
 
-1. [Sugu saraksts un pamata apraksti](#Chapter1) (A. Avotiņš, A. Auniņš, J. Butkeviča, A. Baumane)
+2. [Sugu saraksts un pamata apraksti](#Chapter1) (A. Avotiņš, A. Auniņš, J. Butkeviča, A. Baumane)
 
-2. [Ar modeļiem aptveramā (analīzes) telpa un standartizācijas faili](#Chapter2) (A. Avotiņš)
+3. [Ar modeļiem aptveramā (analīzes) telpa un standartizācijas faili](#Chapter2) (A. Avotiņš)
 
-3. [Ievades ģeodati](#Chapter3) (A. Avotiņš, I. Vinogradovs, A. Auniņš)
+4. [Ievades ģeodati](#Chapter3) (A. Avotiņš, I. Vinogradovs, A. Auniņš)
 
-4. [*Dynamic World* izpēte](#Chapter4) (A. Avotiņš, B. Rubene)
+5. [*Dynamic World* izpēte](#Chapter4) (A. Avotiņš, B. Rubene)
 
-5. [Ekoģeogrāfiskie mainīgie](#Chapter5) (A. Avotiņš, A. Auniņš)
+6. [Ekoģeogrāfiskie mainīgie](#Chapter5) (A. Avotiņš, A. Auniņš)
 
-6. [Novērojumu atlase](#Chapter6) (A. Avotiņš)
+7. [Novērojumu atlase](#Chapter6) (A. Avotiņš)
 
-7. [Sugu izplatības (dzīvotņu piemērotības) modeļi](#Chapter7) (A. Avotiņš, A. Auniņš)
+8. [Sugu izplatības (dzīvotņu piemērotības) modeļi](#Chapter7) (A. Avotiņš, A. Auniņš)
 
-8. [Modeļu pēcapstrāde](#Chapter8) (A. Avotiņš)
+9. [Modeļu pēcapstrāde](#Chapter8) (A. Avotiņš)
 
-9. [Vietu prioritizēšana aizsardzībai](#Chapter9) (A. Avotiņš, I. Vinogradovs, A. Auniņš)
+10. [Vietu prioritizēšana aizsardzībai](#Chapter9) (A. Avotiņš, I. Vinogradovs, A. Auniņš)
 
-10. [Rezultāti](#Chapter10) (A. Avotiņš)
+11. [Rezultāti](#Chapter10) (A. Avotiņš)
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages
