@@ -726,7 +726,7 @@ caurumains=app(c(reljefs,caurumi2),fun="min",na.rm=TRUE,
   
   -- nav izmantota Meža valsts reģistra informācija par dabiskajām brauktuvēm, jo tās visbiežāk neveido vienlaidus pārrāvumu vainagu klājā. Šī reģistra informācija par ceļiem ir arī pārējos resursos, tā nav dublēta.
 
-Zemāk esošais kods izveido slāni ar ainavas klasi `100`, kuru failā `100_celi.tif` saglabā turpmākam darbam.
+Zemāk esošās komandu rindas izveido slāni ar ainavas klasi `100`, kuru failā `100_celi.tif` saglabā turpmākam darbam.
 
 
 ```r
@@ -842,11 +842,18 @@ rm(rastrs_celi)
 <br>
 
 
-- klase `200` - **ūdeņi**: dažādu avotu ūdensobjekti, **aizpildīta secībā** - dominē pār klasēm ar lielāku vērtību, lai nepazustu relatīvi neliela izmēra objekti un nodrošinātu informāciju par malām.
+- klase `200` - **ūdeņi**: dažādu avotu ūdensobjekti, **aizpildīta secībā** - dominē pār klasēm ar lielāku vērtību, lai nepazustu relatīvi neliela izmēra objekti un nodrošinātu informāciju par malām. Šīs klases izveidošanai apvienoti:
+
+  -- [topogrāfiskās kartes](#Chapter3.1.3) slāņi `hidro_A` un `hidro_L` (buferēts par 5 m);
+  
+  -- [MKIS](#Chapter3.1.4) slānis `Ditches`, to buferējot par 3 m;
+  
+  -- [LVM atvērto datu](#Chapter3.1.5) slāņi `LVM_GRAVJI`, tās buferējot par 5 m.
+  
+  -- nav izmantota Meža valsts reģistra informācija par grāvjiem, jo tai ir arī pārējos resursos, vai tik nelielai, ka nerada vienlaidus pārrāvumu koku vainagu klājā.
 
 
-
-Zemāk esošais kods izveido slāni ar ainavas klasi `200`, kuru failā `200_udens_premask.tif` saglabā turpmākam darbam.
+Zemāk esošās komandu rindas izveido slāni ar ainavas klasi `200`, kuru failā `200_udens_premask.tif` saglabā turpmākam darbam.
 
 
 ```r
@@ -864,6 +871,95 @@ if(!require(readxl)) {install.packages("readxl"); require(readxl)}
 # templates
 template_t=rast("./LV10m_10km.tif")
 template_r=raster(template_t)
+
+
+# topo
+topo_udens_poly=st_read_parquet("./Topo_hidroA.parquet")
+topo_udens_poly=topo_udens_poly %>% 
+  mutate(yes=200) %>% 
+  dplyr::select(yes) %>% 
+  st_transform(crs=3059)
+topo_udens_lines=st_read_parquet("./Topo_hidroL.parquet")
+topo_udens_lines=topo_udens_lines %>% 
+  mutate(yes=200) %>% 
+  st_buffer(dist=5) %>% 
+  dplyr::select(yes) %>% 
+  st_transform(crs=3059)
+topo_udens=rbind(topo_udens_poly,topo_udens_lines)
+r_topo_udens=fasterize(topo_udens,template_r,field="yes")
+raster::writeRaster(r_topo_udens,
+                    "./200_topo.tif",
+                    progress="text")
+# liekā aizvākšana
+rm(topo_udens_lines)
+rm(topo_udens_poly)
+rm(topo_udens)
+rm(r_topo_udens)
+
+# mkis
+st_layers("./MKIS_20180612.gdb/")
+mkis_gravji=st_read("./MKIS_20180612.gdb/",layer="Ditches")
+
+ensure_MULTILINESTRING <- function(X) {
+  tmp1 <- tempfile(fileext = ".gpkg")
+  tmp2 <- tempfile(fileext = ".gpkg")
+  st_write(X, tmp1)
+  ogr2ogr(tmp1, tmp2, f = "GPKG", nlt = "MULTILINESTRING")
+  Y <- st_read(tmp2)
+  st_sf(st_drop_geometry(X), geom = st_geometry(Y))
+}
+mkis_gravji2 <- ensure_MULTILINESTRING(mkis_gravji)
+
+mkis_gravji3 = mkis_gravji2[!st_is_empty(mkis_gravji2),,drop=FALSE] # 2 geom
+validity=st_is_valid(mkis_gravji3) 
+table(validity) # OK
+
+mkis_gravji=mkis_gravji3 %>% 
+  mutate(yes=200) %>% 
+  st_buffer(dist=3) %>% 
+  dplyr::select(yes)
+r_mkis_udens=fasterize(mkis_gravji,template_r,field="yes")
+raster::writeRaster(r_mkis_udens,
+                    "./200_mkis.tif",
+                    progress="text")
+# liekā aizvākšana
+rm(mkis_gravji)
+rm(mkis_gravji2)
+rm(mkis_gravji3)
+rm(r_mkis_udens)
+rm(validity)
+
+# lvm
+lvm_gravji=st_read("./LVM_GRAVJI_Shape.shp")
+lvm_gravji=lvm_gravji %>% 
+  mutate(yes=200) %>% 
+  st_buffer(dist=5) %>% 
+  dplyr::select(yes)
+r_lvm_gravji=fasterize(lvm_gravji,template_r,field="yes")
+raster::writeRaster(r_lvm_gravji,
+                    "./200_lvm.tif",
+                    progress="text",
+                    overwrite=TRUE)
+# liekā aizvākšana
+rm(lvm_gravji)
+rm(r_lvm_gravji)
+
+
+# apvienojums
+a200=rast("./IevadesDati/ainava/200_topo.tif")
+b200=rast("./IevadesDati/ainava/200_mkis.tif")
+c200=rast("./IevadesDati/ainava/200_lvm.tif")
+
+rastri_udens=sprc(a200,b200,c200)
+rastrs_udens=terra::merge(rastri_udens,
+                         filename="./IevadesDati/ainava/200_udens_premask.tif",
+                         overwrite=TRUE)
+# liekā aizvākšana
+rm(a200)
+rm(b200)
+rm(c200)
+rm(rastri_udens)
+rm(rastrs_udens)
 ```
 
 
@@ -871,11 +967,20 @@ template_r=raster(template_t)
 
 
 
-- klase `300` - **lauki**: lauksaimniecības zemes LAD lauku blokos **aizpildīta secībā** - dominē pār klasēm ar lielāku vērtību, tomēr pēc pamata klašu izveidošanas, robu aizpildīšanā papildināta ar informāciju no *Dynamic World*.
+- klase `300` - **lauki**: lauksaimniecības zemes LAD lauku blokos **aizpildīta secībā** - dominē pār klasēm ar lielāku vērtību, tomēr pēc pamata klašu izveidošanas, robu aizpildīšanā papildināta ar informāciju no *Dynamic World*. Šīs klases izveidošanai apvienoti:
+
+  -- [LAD lauku informācijas](#Chapter3.1.3) slānis, kurš, sekojot pieņemtajam lēmumam par grupējumu (nedaudz plašāk [šeit](#chapter4.2.16), klases apskatāmas [šeit](./Papilddati/KulturuKodi_2024.xlsx)), dalīts trīs plašās grupās (pārklāšanās secībā):
+  
+    -- **aramzemes** ar klases kodu `310`;
+    
+    -- **papuves** ar klases kodu `320`;
+    
+    -- **zālāji** ar klases kodu `330`;
+    
+    -- pamata ainavā augļudārzi un ilggadīgie krūmveida stādījumi ievietoti citās ainavas klasēs.
 
 
-
-Zemāk esošais kods izveido slāni ar ainavas klasi `300`, kuru failā `300_lauki_premask.tif` saglabā turpmākam darbam.
+Zemāk esošās komandu rindas izveido slāni ar ainavas klasi `300` ar tās apakšklasēm, kuru failā `300_lauki_premask.tif` saglabā turpmākam darbam.
 
 
 ```r
@@ -893,6 +998,83 @@ if(!require(readxl)) {install.packages("readxl"); require(readxl)}
 # templates
 template_t=rast("./LV10m_10km.tif")
 template_r=raster(template_t)
+
+
+
+# lad
+lad_klasem=read_excel("./KulturuKodi_2024.xlsx")
+lad=st_read_parquet("./LAD_lauki.parquet")
+
+
+## aramzemes
+amazemem=lad_klasem %>% 
+  filter(str_detect(SDM_grupa_sakums,"aramz"))
+aramzemes=lad %>% 
+  filter(PRODUCT_CODE %in% amazemem$kods) %>% 
+  mutate(yes=310) %>% 
+  dplyr::select(yes)
+r_aramzemes_lad=fasterize(aramzemes,template_r,field="yes")
+raster::writeRaster(r_aramzemes_lad,
+                    "./310_aramzemes_lad.tif",
+                    progress="text",
+                    overwrite=TRUE)
+# liekā aizvākšana
+rm(amazemem)
+rm(aramzemes)
+rm(r_aramzemes_lad)
+
+
+## papuves
+papuvem=lad_klasem %>% 
+  filter(str_detect(SDM_grupa_sakums,"papuv"))
+papuves=lad %>% 
+  filter(PRODUCT_CODE %in% papuvem$kods) %>% 
+  mutate(yes=320) %>% 
+  dplyr::select(yes)
+r_papuves_lad=fasterize(papuves,template_r,field="yes")
+raster::writeRaster(r_papuves_lad,
+                    "./320_papuves_lad.tif",
+                    progress="text",
+                    overwrite=TRUE)
+# liekā aizvākšana
+rm(papuvem)
+rm(papuves)
+rm(r_papuves_lad)
+
+## zalaji
+zalajiem=lad_klasem %>% 
+  filter(str_detect(SDM_grupa_sakums,"zālā"))
+zalaji=lad %>% 
+  filter(PRODUCT_CODE %in% zalajiem$kods) %>% 
+  mutate(yes=330) %>% 
+  dplyr::select(yes)
+r_zalaji_lad=fasterize(zalaji,template_r,field="yes")
+raster::writeRaster(r_zalaji_lad,
+                    "./330_zalaji_lad.tif",
+                    progress="text",
+                    overwrite=TRUE)
+# liekā aizvākšana
+rm(zalajiem)
+rm(zalaji)
+rm(r_zalaji_lad)
+
+# apvienojums
+a300=rast("./310_aramzemes_lad.tif")
+b300=rast("./320_papuves_lad.tif")
+c300=rast("./330_zalaji_lad.tif")
+
+rastri_laukiem=sprc(a300,b300,c300)
+rastrs_lauki=terra::merge(rastri_laukiem,
+                               filename="./300_lauki_premask.tif",
+                               overwrite=TRUE)
+# liekā aizvākšana
+rm(lad)
+rm(lad_klasem)
+rm(a300)
+rm(b300)
+rm(c300)
+rm(rastri_laukiem)
+rm(rastrs_lauki)
 ```
 
 
@@ -900,11 +1082,13 @@ template_r=raster(template_t)
 
 
 
-- klase `400` - **mazdārziņi un augļudārzi, vasarnīcas**, **aizpildīta secībā** - dominē pār klasēm ar lielāku vērtību.
+- klase `400` - **mazdārziņi un augļudārzi, vasarnīcas**, **aizpildīta secībā** - dominē pār klasēm ar lielāku vērtību. Šīs klases izveidošanai apvienoti (pārklāšanās secībā):
 
+  -- [topogrāfiskās kartes](#Chapter3.1.3) slānis `landus_A`, kura rezultāts kodēts ar `410`;
+  
+  -- [LAD lauku informācijas](#Chapter3.1.3) slāņa grupa (nedaudz plašāk par grupējumu [šeit](#chapter4.2.16), klases apskatāmas [šeit](./Papilddati/KulturuKodi_2024.xlsx)) "augļudārzi", kura rezultāts kodēts ar `420`.
 
-
-Zemāk esošais kods izveido slāni ar ainavas klasi `400`, kuru failā `400_vasarnicas_premask.tif` saglabā turpmākam darbam.
+Zemāk esošās komandu rindas izveido slāni ar ainavas klasi `400`, kuru failā `400_vasarnicas_premask.tif` saglabā turpmākam darbam.
 
 
 ```r
@@ -922,6 +1106,59 @@ if(!require(readxl)) {install.packages("readxl"); require(readxl)}
 # templates
 template_t=rast("./LV10m_10km.tif")
 template_r=raster(template_t)
+
+
+# topo
+darzini_topo=st_read_parquet("./Topo_landusA.parquet")
+table(darzini_topo$FNAME,useNA="always")
+darzini_topo=darzini_topo %>% 
+  filter(FNAME %in% c("poligons_Augļudārzs","poligons_Sakņudārzs",
+                      "poligons_Ogulājs")) %>% 
+  mutate(yes=410) %>% 
+  dplyr::select(yes)
+r_darzini_topo=fasterize(darzini_topo,template_r,field="yes")
+raster::writeRaster(r_darzini_topo,
+                    "./410_darzini_topo.tif",
+                    progress="text",
+                    overwrite=TRUE)
+# liekā aizvākšana
+rm(darzini_topo)
+rm(r_darzini_topo)
+
+# lad
+lad_klasem=read_excel("./KulturuKodi_2024.xlsx")
+table(lad_klasem$SDM_grupa_sakums,useNA="always")
+augludarziem=lad_klasem %>% 
+  filter(SDM_grupa_sakums=="augļudārzi")
+lad=st_read_parquet("./LAD_lauki.parquet")
+lad=lad %>% 
+  filter(PRODUCT_CODE %in% augludarziem$kods) %>% 
+  mutate(yes=420) %>% 
+  dplyr::select(yes)
+r_darzini_lad=fasterize(lad,template_r,field="yes")
+raster::writeRaster(r_darzini_lad,
+                    "./420_darzini_lad.tif",
+                    progress="text",
+                    overwrite=TRUE)
+# liekā aizvākšana
+rm(lad_klasem)
+rm(augludarziem)
+rm(lad)
+rm(r_darzini_lad)
+
+# apvienojums
+a400=rast("./410_darzini_topo.tif")
+b400=rast("./420_darzini_lad.tif")
+
+rastri_vasarnicam=sprc(a400,b400)
+rastrs_vasarnicas=terra::merge(rastri_vasarnicam,
+                          filename="./400_varnicas_premask.tif",
+                          overwrite=TRUE)
+# liekā aizvākšana
+rm(a400)
+rm(b400)
+rm(rastri_vasarnicam)
+rm(rastrs_vasarnicas)
 ```
 
 
@@ -931,11 +1168,33 @@ template_r=raster(template_t)
 
 - klase `500` - **apbūve**: apbūvētās platības, **aizpildīta beigās**, izmantojot informāciju no *Dynamic World* par vietām, kuras nav nosegtas ar citām klasēm.
 
-- klase `600` - **meži, krūmāji, izcirtumi**:
+- klase `600` - **meži, krūmāji, izcirtumi**: ar kokiem un krūmiem klātās platības un izcirtumi un iznīkušās mežaudzes. Šīs klases izveidošanai apvienoti (pārklāšanās secībā):
+
+  -- [topogrāfiskās kartes](#Chapter3.1.3) slāņi `hidro_A` un `hidro_L` (buferēts par 5 m);
+  
+  -- [topogrāfiskās kartes](#Chapter3.1.3) slāņi `hidro_A` un `hidro_L` (buferēts par 5 m);
+  
+  -- [topogrāfiskās kartes](#Chapter3.1.3) slāņi `hidro_A` un `hidro_L` (buferēts par 5 m);
+  
+  -- [topogrāfiskās kartes](#Chapter3.1.3) slāņi `hidro_A` un `hidro_L` (buferēts par 5 m);
+  
+  -- [topogrāfiskās kartes](#Chapter3.1.3) slāņi `hidro_A` un `hidro_L` (buferēts par 5 m);
+  
+  -- [topogrāfiskās kartes](#Chapter3.1.3) slāņi `hidro_A` un `hidro_L` (buferēts par 5 m);
+  
+  -- [topogrāfiskās kartes](#Chapter3.1.3) slāņi `hidro_A` un `hidro_L` (buferēts par 5 m);
+  
+  -- [MKIS](#Chapter3.1.4) slānis `Ditches`, to buferējot par 3 m;
+  
+  -- [LVM atvērto datu](#Chapter3.1.5) slāņi `LVM_GRAVJI`, tās buferējot par 5 m.
+  
+  -- nav izmantota [Meža valsts reģistra](#Chapter3.1.1) informācija par grāvjiem, jo tai ir arī pārējos resursos, vai tik nelielai, ka nerada vienlaidus pārrāvumu koku vainagu klājā.
 
 
 
-Zemāk esošais kods izveido slāni ar ainavas klasi `600`, kuru failā `600_meziem_premask.tif` saglabā turpmākam darbam.
+
+
+Zemāk esošās komandu rindas izveido slāni ar ainavas klasi `600`, kuru failā `600_meziem_premask.tif` saglabā turpmākam darbam.
 
 
 ```r
@@ -953,6 +1212,194 @@ if(!require(readxl)) {install.packages("readxl"); require(readxl)}
 # templates
 template_t=rast("./LV10m_10km.tif")
 template_r=raster(template_t)
+
+
+# mvr 
+mvr=st_read_parquet("./nogabali_2024janv.parquet")
+
+# izcirtumi
+izcirtumi=mvr %>% 
+  filter(zkat %in% c("12","14")) %>% 
+  mutate(yes=610) %>% 
+  dplyr::select(yes)
+r_izcirtumi_mvr=fasterize(izcirtumi,template_r,field="yes")
+raster::writeRaster(r_izcirtumi_mvr,
+                    "./610_izcirtumi_mvr.tif",
+                    progress="text",
+                    overwrite=TRUE)
+# liekā aizvākšana
+rm(izcirtumi)
+rm(r_izcirtumi_mvr)
+
+# zemās audzes
+# arī zkat 16
+zemas_audzes=mvr %>% 
+  filter((zkat =="10" & h10<5)|zkat=="16") %>% 
+  mutate(yes=620) %>% 
+  dplyr::select(yes)
+r_zemas_mvr=fasterize(zemas_audzes,template_r,field="yes")
+raster::writeRaster(r_zemas_mvr,
+                    "./620_zemas_mvr.tif",
+                    progress="text",
+                    overwrite=TRUE)
+# liekā aizvākšana
+rm(zemas_audzes)
+rm(r_zemas_mvr)
+
+
+# augstās audzes
+augstas_audzes=mvr %>% 
+  filter(zkat =="10" & h10>=5) %>% 
+  mutate(yes=630) %>% 
+  dplyr::select(yes)
+r_augstas_mvr=fasterize(augstas_audzes,template_r,field="yes")
+raster::writeRaster(r_augstas_mvr,
+                    "./630_augstas_mvr.tif",
+                    progress="text",
+                    overwrite=TRUE)
+# liekā aizvākšana
+rm(augstas_audzes)
+rm(r_augstas_mvr)
+rm(mvr)
+
+# tcl - kopš 2020
+tcl=rast("./TreeCoverLossYear.tif")
+tcl2=ifel(tcl<20,NA,610,
+          filename="./610_TCL.tif",
+          overwrite=TRUE)
+# liekā aizvākšana
+rm(tcl)
+rm(tcl2)
+
+# palsar
+palsar=rast("./Palsar_Forests.tif")
+palsar2=ifel(palsar==1,630,NA,
+          filename="./630_Palsar.tif",
+          overwrite=TRUE)
+# liekā aizvākšana
+rm(palsar)
+rm(palsar2)
+
+
+# lad
+lad_klasem=read_excel("./KulturuKodi_2024.xlsx")
+table(lad_klasem$SDM_grupa_sakums,useNA="always")
+lad=st_read_parquet("./LAD_lauki.parquet")
+krumiem=lad_klasem %>% 
+  filter(str_detect(SDM_grupa_sakums,"krūmv"))
+krumi=lad %>% 
+  filter(PRODUCT_CODE %in% krumiem$kods) %>% 
+  mutate(yes=620) %>% 
+  dplyr::select(yes)
+r_krumi_lad=fasterize(krumi,template_r,field="yes")
+raster::writeRaster(r_krumi_lad,
+                    "./620_krumi_lad.tif",
+                    progress="text",
+                    overwrite=TRUE)
+# liekā aizvākšana
+rm(lad_klasem)
+rm(lad)
+rm(krumiem)
+rm(krumi)
+rm(r_krumi_lad)
+
+# topo - pkk
+pkk_topo=st_read_parquet("./Topo_landusA.parquet")
+table(pkk_topo$FNAME,useNA="always")
+pkk_topo=pkk_topo %>% 
+  filter(FNAME %in% c("poligons_Parks","poligons_Meza_kapi","poligons_Kapi")) %>% 
+  mutate(yes=640) %>% 
+  dplyr::select(yes)
+r_pkk_topo=fasterize(pkk_topo,template_r,field="yes")
+raster::writeRaster(r_pkk_topo,
+                    "./640_pkk_topo.tif",
+                    progress="text",
+                    overwrite=TRUE)
+# liekā aizvākšana
+rm(pkk_topo)
+rm(r_pkk_topo)
+
+# topo - krūmi
+krumi_topo=st_read_parquet("./Topo_landusA.parquet")
+table(krumi_topo$FNAME,useNA="always")
+krumi_topo=krumi_topo %>% 
+  filter(FNAME %in% c("poligons_Krūmājs")) %>% 
+  mutate(yes=620) %>% 
+  dplyr::select(yes)
+r_krumi_topo=fasterize(krumi_topo,template_r,field="yes")
+raster::writeRaster(r_krumi_topo,
+                    "./620_krumi_topo.tif",
+                    progress="text",
+                    overwrite=TRUE)
+# liekā aizvākšana
+rm(krumi_topo)
+rm(r_krumi_topo)
+
+# topo - linijkoki
+linijas_topo=st_read_parquet("./Topo_floraL.parquet")
+
+krumu_linijas_topo=linijas_topo %>% 
+  filter(str_detect(FNAME,"Krūmu")) %>% 
+  mutate(yes=620) %>% 
+  st_buffer(dist=10) %>% 
+  dplyr::select(yes)
+r_krumu_linijas_topo=fasterize(krumu_linijas_topo,template_r,field="yes")
+raster::writeRaster(r_krumu_linijas_topo,
+                    "./620_KrumuLinijas_topo.tif",
+                    progress="text",
+                    overwrite=TRUE)
+# liekā aizvākšana
+rm(krumu_linijas_topo)
+rm(r_krumu_linijas_topo)
+
+koku_linijas_topo=linijas_topo %>% 
+  filter(str_detect(FNAME,"Koku")) %>% 
+  mutate(yes=640) %>% 
+  st_buffer(dist=10) %>% 
+  dplyr::select(yes)
+r_koku_linijas_topo=fasterize(koku_linijas_topo,template_r,field="yes")
+raster::writeRaster(r_koku_linijas_topo,
+                    "./640_KokuLinijas_topo.tif",
+                    progress="text",
+                    overwrite=TRUE)
+# liekā aizvākšana
+rm(koku_linijas_topo)
+rm(r_koku_linijas_topo)
+rm(linijas_topo)
+
+# apvienosana
+r_krumi_lad=rast("./620_krumi_lad.tif")
+r_pkk_topo=rast("./640_pkk_topo.tif")
+r_krumi_topo=rast("./620_krumi_topo.tif")
+r_krumu_linijas_topo=rast("./620_KrumuLinijas_topo.tif")
+r_koku_linijas_topo=rast("./640_KokuLinijas_topo.tif")
+r_palsar=rast("./630_palsar.tif")
+r_tcl=rast("./610_TCL.tif")
+r_augstas_mvr=rast("./630_augstas_mvr.tif")
+r_zemas_mvr=rast("./620_zemas_mvr.tif")
+r_izcirtumi_mvr=rast("./610_izcirtumi_mvr.tif")
+
+rastri_meziem=sprc(r_tcl,r_izcirtumi_mvr,
+                   r_zemas_mvr,r_krumu_linijas_topo,r_krumi_topo,r_krumi_lad,
+                   r_augstas_mvr,
+                   r_pkk_topo,r_koku_linijas_topo,
+                   r_palsar)
+rastrs_mezi=terra::merge(rastri_meziem,
+                      filename="./600_meziem_premask.tif",
+                      overwrite=TRUE)
+# liekā aizvākšana
+rm(r_krumi_lad)
+rm(r_pkk_topo)
+rm(r_krumi_topo)
+rm(r_krumu_linijas_topo)
+rm(r_koku_linijas_topo)
+rm(r_palsar)
+rm(r_tcl)
+rm(r_augstas_mvr)
+rm(r_zemas_mvr)
+rm(r_izcirtumi_mvr)
+rm(rastri_meziem)
+rm(rastrs_mezi)
 ```
 
 
@@ -964,7 +1411,7 @@ template_r=raster(template_t)
 
 
 
-Zemāk esošais kods izveido slāni ar ainavas klasi `700`, kuru failā `700_mitraji_premask.tif` saglabā turpmākam darbam.
+Zemāk esošās komandu rindas izveido slāni ar ainavas klasi `700`, kuru failā `700_mitraji_premask.tif` saglabā turpmākam darbam.
 
 
 ```r
@@ -994,7 +1441,7 @@ template_r=raster(template_t)
 
 
 
-Zemāk esošais kods izveido slāni ar ainavas klasi `800`, kuru failā `800_smiltaji_premask.tif` saglabā turpmākam darbam.
+Zemāk esošās komandu rindas izveido slāni ar ainavas klasi `800`, kuru failā `800_smiltaji_premask.tif` saglabā turpmākam darbam.
 
 
 ```r
@@ -1020,6 +1467,27 @@ template_r=raster(template_t)
 
 **Apvienošana un aizpildīšana**.
 
+
+
+Zemāk esošās komandu rindas pareizā secībā apvieno iepriekš izveidotos slāņus ar ainavas klasēm un nodrošina robu aizpildīšanu ar atbilstoši klasificētu *Dynamic World* 2023. gada aprīļa-augusta kompozītu, kuru, pēc maskēšanas tikai analīzes telpai, failā `Ainava_vienk_mask.tif` saglabā turpmākam darbam.
+
+
+```r
+# Libs
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(arrow)) {install.packages("arrow"); require(arrow)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+if(!require(gdalUtilities)){install.packages("gdalUtilities");require(gdalUtilities)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+
+# templates
+template_t=rast("./LV10m_10km.tif")
+template_r=raster(template_t)
+```
 
 
 <br>

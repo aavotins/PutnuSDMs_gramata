@@ -94,7 +94,7 @@ q1.12-zemās-ogas
 q1.13-bezatbalsta-platība
 q1.14-vagu-un-rušināmkultūras
 q1.15-īscirtmeta-atvasāji-un-enerģijas-kultūras
-q1-lad-kultūru-stratificēšanai
+chapter4.2.16
 q2-mežaudzes-augstums-sugu-grupās
 q3-topogrāfiskās-kartes-mitrāji
 q4-karjeri-kūdras-ieguves-vietas-un-ceļi

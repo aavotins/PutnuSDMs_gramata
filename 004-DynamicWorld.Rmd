@@ -1386,7 +1386,7 @@ ggsave(filename="./pic_q115.png",width=300,height=150,units="mm",dpi=600)
 
 
 
-### Q1: LAD kultūru stratificēšanai
+### Q1: LAD kultūru stratificēšanai {#chapter4.2.16}
 
 Ainavas aprakstu veidošanā sugu izplatības modelēšanai ir jācenšas interpretēt to kā sugas uztver vidi un to kombinēt ar pašas vides aprakstiem (datubāzu informāciju), lai izveidotu atbilstošas pazīmes. Attiecībā uz lauksaimniecībā izmantojamām zemēm, mūsu plāns ir veidot sekojošas grupas (smalkākais dalījums, kuru pēc nepieciešamības apvienot):
 
