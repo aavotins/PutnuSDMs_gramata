@@ -68,6 +68,13 @@ Chapter3.1.13
 Chapter3.2
 Chapter3.2.1
 Chapter3.2.2
+Chapter3.2.2.1
+Chapter3.2.2.2
+Chapter3.2.2.3
+Chapter3.2.2.4
+Chapter3.2.2.5
+Chapter3.2.2.6
+Chapter3.2.2.7
 Chapter3.2.3
 Chapter4
 q0-dw-nosegums

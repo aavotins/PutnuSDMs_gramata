@@ -23,7 +23,7 @@
 <meta name="author" content="Andris Avotiņš" />
 
 
-<meta name="date" content="2024-10-30" />
+<meta name="date" content="2024-11-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -523,9 +523,12 @@ div.csl-indent {
 <li><p><code>bride_L</code>, kurā raksturoti 3928 tilti kā linijveida objekti;</p></li>
 <li><p><code>bridge_P</code>, kurā raksturoti 4551 tilti kā punktveida objekti</p></li>
 <li><p><code>hidro_A</code>, kurā raksturoti 264439 ūdensobjektu plankumi;</p></li>
+<li><p><code>hidro_L</code>, kurā raksturots grāvju tīkls un mazās upes;</p></li>
 <li><p><code>landus_A</code>, kurā raksturots zemes segums un lietojums ar 1291781 laukumveida ģeometriju;</p></li>
 <li><p><code>road_A</code>, kurā raksturoti 32094 ceļi, kas atzīmēti ar laukumu;</p></li>
-<li><p><code>swamp_A</code>, kurā raksturoti augstie purvi ar 48105 laukumveida objektu,</p></li>
+<li><p><code>road_L</code>, kurā raksturoti dažāda platuma, tajā skaitā relatīvi šauri ceļi un takas;</p></li>
+<li><p><code>swamp_A</code>, kurā raksturoti augstie purvi ar 48105 laukumveida objektu;</p></li>
+<li><p><code>flora_L</code>, kurā raksturoti līnijveida koku un krūmu objekti,</p></li>
 </ul>
 <p>kuri pārveidoti par <em>geoparquet</em>. Failu formāta maiņas ietvaros pārbaudītas ģeometrijas (tukšās, to validitāte, kas nepieciešamības gadījumā labota).</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
@@ -534,52 +537,82 @@ div.csl-indent {
 <span id="cb8-3"><a href="Chapter3.html#cb8-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(arrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;arrow&quot;</span>); <span class="fu">require</span>(arrow)}</span>
 <span id="cb8-4"><a href="Chapter3.html#cb8-4" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sfarrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;sfarrow&quot;</span>); <span class="fu">require</span>(sfarrow)}</span>
 <span id="cb8-5"><a href="Chapter3.html#cb8-5" tabindex="-1"></a></span>
-<span id="cb8-6"><a href="Chapter3.html#cb8-6" tabindex="-1"></a><span class="co"># hidro A</span></span>
-<span id="cb8-7"><a href="Chapter3.html#cb8-7" tabindex="-1"></a>hidro_A<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Topo10_v3_12_07_2016.gdb/&quot;</span>,<span class="at">layer=</span><span class="st">&quot;hidro_A&quot;</span>)</span>
-<span id="cb8-8"><a href="Chapter3.html#cb8-8" tabindex="-1"></a>hidro2 <span class="ot">=</span> hidro_A[<span class="sc">!</span><span class="fu">st_is_empty</span>(hidro_A),,drop<span class="ot">=</span><span class="cn">FALSE</span>] <span class="co"># OK</span></span>
-<span id="cb8-9"><a href="Chapter3.html#cb8-9" tabindex="-1"></a>validity<span class="ot">=</span><span class="fu">st_is_valid</span>(hidro2) </span>
-<span id="cb8-10"><a href="Chapter3.html#cb8-10" tabindex="-1"></a><span class="fu">table</span>(validity) <span class="co"># 12 invalid geometrijas</span></span>
-<span id="cb8-11"><a href="Chapter3.html#cb8-11" tabindex="-1"></a>hidro3<span class="ot">=</span><span class="fu">st_make_valid</span>(hidro2)</span>
-<span id="cb8-12"><a href="Chapter3.html#cb8-12" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(hidro3, <span class="st">&quot;Topo_hidroA.parquet&quot;</span>)</span>
+<span id="cb8-6"><a href="Chapter3.html#cb8-6" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="Chapter3.html#cb8-7" tabindex="-1"></a><span class="co"># flora_L </span></span>
+<span id="cb8-8"><a href="Chapter3.html#cb8-8" tabindex="-1"></a>flora_L<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Topo10_v3_12_07_2016.gdb/&quot;</span>,<span class="at">layer=</span><span class="st">&quot;flora_L&quot;</span>)</span>
+<span id="cb8-9"><a href="Chapter3.html#cb8-9" tabindex="-1"></a>flora2 <span class="ot">=</span> flora_L[<span class="sc">!</span><span class="fu">st_is_empty</span>(flora_L),,drop<span class="ot">=</span><span class="cn">FALSE</span>] <span class="co"># OK</span></span>
+<span id="cb8-10"><a href="Chapter3.html#cb8-10" tabindex="-1"></a>validity<span class="ot">=</span><span class="fu">st_is_valid</span>(flora2) </span>
+<span id="cb8-11"><a href="Chapter3.html#cb8-11" tabindex="-1"></a><span class="fu">table</span>(validity) <span class="co"># 12 invalid geometrijas</span></span>
+<span id="cb8-12"><a href="Chapter3.html#cb8-12" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(flora2, <span class="st">&quot;./Topo_floraL.parquet&quot;</span>)</span>
 <span id="cb8-13"><a href="Chapter3.html#cb8-13" tabindex="-1"></a></span>
 <span id="cb8-14"><a href="Chapter3.html#cb8-14" tabindex="-1"></a></span>
-<span id="cb8-15"><a href="Chapter3.html#cb8-15" tabindex="-1"></a><span class="co"># road A</span></span>
-<span id="cb8-16"><a href="Chapter3.html#cb8-16" tabindex="-1"></a>road_A<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Topo10_v3_12_07_2016.gdb/&quot;</span>,<span class="at">layer=</span><span class="st">&quot;road_A&quot;</span>)</span>
-<span id="cb8-17"><a href="Chapter3.html#cb8-17" tabindex="-1"></a>road2 <span class="ot">=</span> road_A[<span class="sc">!</span><span class="fu">st_is_empty</span>(road_A),,drop<span class="ot">=</span><span class="cn">FALSE</span>] <span class="co"># OK</span></span>
-<span id="cb8-18"><a href="Chapter3.html#cb8-18" tabindex="-1"></a>validity<span class="ot">=</span><span class="fu">st_is_valid</span>(road2) </span>
-<span id="cb8-19"><a href="Chapter3.html#cb8-19" tabindex="-1"></a><span class="fu">table</span>(validity) <span class="co"># 28 invalid geometrijas</span></span>
-<span id="cb8-20"><a href="Chapter3.html#cb8-20" tabindex="-1"></a>road3<span class="ot">=</span><span class="fu">st_make_valid</span>(road2)</span>
-<span id="cb8-21"><a href="Chapter3.html#cb8-21" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(road3, <span class="st">&quot;Topo_roadA.parquet&quot;</span>)</span>
+<span id="cb8-15"><a href="Chapter3.html#cb8-15" tabindex="-1"></a><span class="co"># hidro A</span></span>
+<span id="cb8-16"><a href="Chapter3.html#cb8-16" tabindex="-1"></a>hidro_A<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Topo10_v3_12_07_2016.gdb/&quot;</span>,<span class="at">layer=</span><span class="st">&quot;hidro_A&quot;</span>)</span>
+<span id="cb8-17"><a href="Chapter3.html#cb8-17" tabindex="-1"></a>hidro2 <span class="ot">=</span> hidro_A[<span class="sc">!</span><span class="fu">st_is_empty</span>(hidro_A),,drop<span class="ot">=</span><span class="cn">FALSE</span>] <span class="co"># OK</span></span>
+<span id="cb8-18"><a href="Chapter3.html#cb8-18" tabindex="-1"></a>validity<span class="ot">=</span><span class="fu">st_is_valid</span>(hidro2) </span>
+<span id="cb8-19"><a href="Chapter3.html#cb8-19" tabindex="-1"></a><span class="fu">table</span>(validity) <span class="co"># 12 invalid geometrijas</span></span>
+<span id="cb8-20"><a href="Chapter3.html#cb8-20" tabindex="-1"></a>hidro3<span class="ot">=</span><span class="fu">st_make_valid</span>(hidro2)</span>
+<span id="cb8-21"><a href="Chapter3.html#cb8-21" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(hidro3, <span class="st">&quot;Topo_hidroA.parquet&quot;</span>)</span>
 <span id="cb8-22"><a href="Chapter3.html#cb8-22" tabindex="-1"></a></span>
-<span id="cb8-23"><a href="Chapter3.html#cb8-23" tabindex="-1"></a><span class="co"># swamp A</span></span>
-<span id="cb8-24"><a href="Chapter3.html#cb8-24" tabindex="-1"></a>swamp_A<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Topo10_v3_12_07_2016.gdb/&quot;</span>,<span class="at">layer=</span><span class="st">&quot;swamp_A&quot;</span>)</span>
-<span id="cb8-25"><a href="Chapter3.html#cb8-25" tabindex="-1"></a>swamp2 <span class="ot">=</span> swamp_A[<span class="sc">!</span><span class="fu">st_is_empty</span>(swamp_A),,drop<span class="ot">=</span><span class="cn">FALSE</span>] <span class="co"># OK</span></span>
-<span id="cb8-26"><a href="Chapter3.html#cb8-26" tabindex="-1"></a>validity<span class="ot">=</span><span class="fu">st_is_valid</span>(swamp2) </span>
-<span id="cb8-27"><a href="Chapter3.html#cb8-27" tabindex="-1"></a><span class="fu">table</span>(validity) <span class="co"># 17 invalid geometrijas</span></span>
-<span id="cb8-28"><a href="Chapter3.html#cb8-28" tabindex="-1"></a>swamp3<span class="ot">=</span><span class="fu">st_make_valid</span>(swamp2)</span>
-<span id="cb8-29"><a href="Chapter3.html#cb8-29" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(swamp3, <span class="st">&quot;Topo_swampA.parquet&quot;</span>)</span>
-<span id="cb8-30"><a href="Chapter3.html#cb8-30" tabindex="-1"></a></span>
-<span id="cb8-31"><a href="Chapter3.html#cb8-31" tabindex="-1"></a><span class="co"># bridge_L</span></span>
-<span id="cb8-32"><a href="Chapter3.html#cb8-32" tabindex="-1"></a>bridge_L<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Topo10_v3_12_07_2016.gdb/&quot;</span>,<span class="at">layer=</span><span class="st">&quot;bridge_L&quot;</span>)</span>
-<span id="cb8-33"><a href="Chapter3.html#cb8-33" tabindex="-1"></a>bridgeL2 <span class="ot">=</span> bridge_L[<span class="sc">!</span><span class="fu">st_is_empty</span>(bridge_L),,drop<span class="ot">=</span><span class="cn">FALSE</span>] <span class="co"># OK</span></span>
-<span id="cb8-34"><a href="Chapter3.html#cb8-34" tabindex="-1"></a>validity<span class="ot">=</span><span class="fu">st_is_valid</span>(bridgeL2) </span>
-<span id="cb8-35"><a href="Chapter3.html#cb8-35" tabindex="-1"></a><span class="fu">table</span>(validity) <span class="co"># OK</span></span>
-<span id="cb8-36"><a href="Chapter3.html#cb8-36" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(bridgeL2, <span class="st">&quot;Topo_bridgeL.parquet&quot;</span>)</span>
-<span id="cb8-37"><a href="Chapter3.html#cb8-37" tabindex="-1"></a></span>
-<span id="cb8-38"><a href="Chapter3.html#cb8-38" tabindex="-1"></a><span class="co"># bridge_P</span></span>
-<span id="cb8-39"><a href="Chapter3.html#cb8-39" tabindex="-1"></a>bridge_P<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Topo10_v3_12_07_2016.gdb/&quot;</span>,<span class="at">layer=</span><span class="st">&quot;bridge_P&quot;</span>)</span>
-<span id="cb8-40"><a href="Chapter3.html#cb8-40" tabindex="-1"></a>bridgeP2 <span class="ot">=</span> bridge_P[<span class="sc">!</span><span class="fu">st_is_empty</span>(bridge_P),,drop<span class="ot">=</span><span class="cn">FALSE</span>] <span class="co"># OK</span></span>
-<span id="cb8-41"><a href="Chapter3.html#cb8-41" tabindex="-1"></a>validity<span class="ot">=</span><span class="fu">st_is_valid</span>(bridgeP2) </span>
-<span id="cb8-42"><a href="Chapter3.html#cb8-42" tabindex="-1"></a><span class="fu">table</span>(validity) <span class="co"># OK</span></span>
-<span id="cb8-43"><a href="Chapter3.html#cb8-43" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(bridgeP2, <span class="st">&quot;Topo_bridgeP.parquet&quot;</span>)</span>
-<span id="cb8-44"><a href="Chapter3.html#cb8-44" tabindex="-1"></a></span>
-<span id="cb8-45"><a href="Chapter3.html#cb8-45" tabindex="-1"></a><span class="co"># landus A</span></span>
-<span id="cb8-46"><a href="Chapter3.html#cb8-46" tabindex="-1"></a>landus_A<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Topo10_v3_12_07_2016.gdb/&quot;</span>,<span class="at">layer=</span><span class="st">&quot;landus_A&quot;</span>)</span>
-<span id="cb8-47"><a href="Chapter3.html#cb8-47" tabindex="-1"></a>landus2 <span class="ot">=</span> landus_A[<span class="sc">!</span><span class="fu">st_is_empty</span>(landus_A),,drop<span class="ot">=</span><span class="cn">FALSE</span>] <span class="co"># OK</span></span>
-<span id="cb8-48"><a href="Chapter3.html#cb8-48" tabindex="-1"></a>validity<span class="ot">=</span><span class="fu">st_is_valid</span>(landus2) </span>
-<span id="cb8-49"><a href="Chapter3.html#cb8-49" tabindex="-1"></a><span class="fu">table</span>(validity) <span class="co"># 5734 invalid geometrijas</span></span>
-<span id="cb8-50"><a href="Chapter3.html#cb8-50" tabindex="-1"></a>landus3<span class="ot">=</span><span class="fu">st_make_valid</span>(landus2)</span>
-<span id="cb8-51"><a href="Chapter3.html#cb8-51" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(landus3, <span class="st">&quot;Topo_landusA.parquet&quot;</span>)</span></code></pre></div>
+<span id="cb8-23"><a href="Chapter3.html#cb8-23" tabindex="-1"></a><span class="co"># hidro L</span></span>
+<span id="cb8-24"><a href="Chapter3.html#cb8-24" tabindex="-1"></a>hidro_L<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Topo10_v3_12_07_2016.gdb/&quot;</span>,<span class="at">layer=</span><span class="st">&quot;hidro_L&quot;</span>)</span>
+<span id="cb8-25"><a href="Chapter3.html#cb8-25" tabindex="-1"></a><span class="fu">table</span>(hidro_L<span class="sc">$</span>FNAME,<span class="at">useNA=</span><span class="st">&quot;always&quot;</span>)</span>
+<span id="cb8-26"><a href="Chapter3.html#cb8-26" tabindex="-1"></a>hidro_Lx<span class="ot">=</span>hidro_L <span class="sc">%&gt;%</span> </span>
+<span id="cb8-27"><a href="Chapter3.html#cb8-27" tabindex="-1"></a>  <span class="fu">filter</span>(FNAME<span class="sc">==</span><span class="st">&quot;Ūdenstece līdz 3m&quot;</span>) <span class="co"># grāvji</span></span>
+<span id="cb8-28"><a href="Chapter3.html#cb8-28" tabindex="-1"></a>hidro_Lx2 <span class="ot">=</span> hidro_Lx[<span class="sc">!</span><span class="fu">st_is_empty</span>(hidro_Lx),,drop<span class="ot">=</span><span class="cn">FALSE</span>] <span class="co"># OK</span></span>
+<span id="cb8-29"><a href="Chapter3.html#cb8-29" tabindex="-1"></a>validity<span class="ot">=</span><span class="fu">st_is_valid</span>(hidro_Lx) </span>
+<span id="cb8-30"><a href="Chapter3.html#cb8-30" tabindex="-1"></a><span class="fu">table</span>(validity) <span class="co"># OK</span></span>
+<span id="cb8-31"><a href="Chapter3.html#cb8-31" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(hidro_Lx, <span class="st">&quot;./Topo_hidroL.parquet&quot;</span>)</span>
+<span id="cb8-32"><a href="Chapter3.html#cb8-32" tabindex="-1"></a></span>
+<span id="cb8-33"><a href="Chapter3.html#cb8-33" tabindex="-1"></a><span class="co"># road A</span></span>
+<span id="cb8-34"><a href="Chapter3.html#cb8-34" tabindex="-1"></a>road_A<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Topo10_v3_12_07_2016.gdb/&quot;</span>,<span class="at">layer=</span><span class="st">&quot;road_A&quot;</span>)</span>
+<span id="cb8-35"><a href="Chapter3.html#cb8-35" tabindex="-1"></a>road2 <span class="ot">=</span> road_A[<span class="sc">!</span><span class="fu">st_is_empty</span>(road_A),,drop<span class="ot">=</span><span class="cn">FALSE</span>] <span class="co"># OK</span></span>
+<span id="cb8-36"><a href="Chapter3.html#cb8-36" tabindex="-1"></a>validity<span class="ot">=</span><span class="fu">st_is_valid</span>(road2) </span>
+<span id="cb8-37"><a href="Chapter3.html#cb8-37" tabindex="-1"></a><span class="fu">table</span>(validity) <span class="co"># 28 invalid geometrijas</span></span>
+<span id="cb8-38"><a href="Chapter3.html#cb8-38" tabindex="-1"></a>road3<span class="ot">=</span><span class="fu">st_make_valid</span>(road2)</span>
+<span id="cb8-39"><a href="Chapter3.html#cb8-39" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(road3, <span class="st">&quot;Topo_roadA.parquet&quot;</span>)</span>
+<span id="cb8-40"><a href="Chapter3.html#cb8-40" tabindex="-1"></a></span>
+<span id="cb8-41"><a href="Chapter3.html#cb8-41" tabindex="-1"></a><span class="co"># road L</span></span>
+<span id="cb8-42"><a href="Chapter3.html#cb8-42" tabindex="-1"></a>road_L<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Topo10_v3_12_07_2016.gdb/&quot;</span>,<span class="at">layer=</span><span class="st">&quot;road_L&quot;</span>)</span>
+<span id="cb8-43"><a href="Chapter3.html#cb8-43" tabindex="-1"></a><span class="fu">table</span>(road_L<span class="sc">$</span>FNAME,<span class="at">useNA=</span><span class="st">&quot;always&quot;</span>)</span>
+<span id="cb8-44"><a href="Chapter3.html#cb8-44" tabindex="-1"></a>road_Lx<span class="ot">=</span>road_L <span class="sc">%&gt;%</span> </span>
+<span id="cb8-45"><a href="Chapter3.html#cb8-45" tabindex="-1"></a>  <span class="fu">filter</span>(FNAME<span class="sc">!=</span><span class="st">&quot;Gājēju celiņš līdz 3m&quot;</span>) <span class="sc">%&gt;%</span> <span class="co"># ne pavisam sīkie</span></span>
+<span id="cb8-46"><a href="Chapter3.html#cb8-46" tabindex="-1"></a>  <span class="fu">filter</span>(FNAME<span class="sc">!=</span><span class="st">&quot;Gājēju celiņš mērogā&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-47"><a href="Chapter3.html#cb8-47" tabindex="-1"></a>  <span class="fu">filter</span>(FNAME<span class="sc">!=</span><span class="st">&quot;Taka&quot;</span>)</span>
+<span id="cb8-48"><a href="Chapter3.html#cb8-48" tabindex="-1"></a>roadL2 <span class="ot">=</span> road_Lx[<span class="sc">!</span><span class="fu">st_is_empty</span>(road_Lx),,drop<span class="ot">=</span><span class="cn">FALSE</span>] <span class="co"># OK</span></span>
+<span id="cb8-49"><a href="Chapter3.html#cb8-49" tabindex="-1"></a>validity<span class="ot">=</span><span class="fu">st_is_valid</span>(roadL2) </span>
+<span id="cb8-50"><a href="Chapter3.html#cb8-50" tabindex="-1"></a><span class="fu">table</span>(validity) <span class="co"># OK</span></span>
+<span id="cb8-51"><a href="Chapter3.html#cb8-51" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(roadL2, <span class="st">&quot;Topo_roadL.parquet&quot;</span>)</span>
+<span id="cb8-52"><a href="Chapter3.html#cb8-52" tabindex="-1"></a></span>
+<span id="cb8-53"><a href="Chapter3.html#cb8-53" tabindex="-1"></a><span class="co"># swamp A</span></span>
+<span id="cb8-54"><a href="Chapter3.html#cb8-54" tabindex="-1"></a>swamp_A<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Topo10_v3_12_07_2016.gdb/&quot;</span>,<span class="at">layer=</span><span class="st">&quot;swamp_A&quot;</span>)</span>
+<span id="cb8-55"><a href="Chapter3.html#cb8-55" tabindex="-1"></a>swamp2 <span class="ot">=</span> swamp_A[<span class="sc">!</span><span class="fu">st_is_empty</span>(swamp_A),,drop<span class="ot">=</span><span class="cn">FALSE</span>] <span class="co"># OK</span></span>
+<span id="cb8-56"><a href="Chapter3.html#cb8-56" tabindex="-1"></a>validity<span class="ot">=</span><span class="fu">st_is_valid</span>(swamp2) </span>
+<span id="cb8-57"><a href="Chapter3.html#cb8-57" tabindex="-1"></a><span class="fu">table</span>(validity) <span class="co"># 17 invalid geometrijas</span></span>
+<span id="cb8-58"><a href="Chapter3.html#cb8-58" tabindex="-1"></a>swamp3<span class="ot">=</span><span class="fu">st_make_valid</span>(swamp2)</span>
+<span id="cb8-59"><a href="Chapter3.html#cb8-59" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(swamp3, <span class="st">&quot;Topo_swampA.parquet&quot;</span>)</span>
+<span id="cb8-60"><a href="Chapter3.html#cb8-60" tabindex="-1"></a></span>
+<span id="cb8-61"><a href="Chapter3.html#cb8-61" tabindex="-1"></a><span class="co"># bridge_L</span></span>
+<span id="cb8-62"><a href="Chapter3.html#cb8-62" tabindex="-1"></a>bridge_L<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Topo10_v3_12_07_2016.gdb/&quot;</span>,<span class="at">layer=</span><span class="st">&quot;bridge_L&quot;</span>)</span>
+<span id="cb8-63"><a href="Chapter3.html#cb8-63" tabindex="-1"></a>bridgeL2 <span class="ot">=</span> bridge_L[<span class="sc">!</span><span class="fu">st_is_empty</span>(bridge_L),,drop<span class="ot">=</span><span class="cn">FALSE</span>] <span class="co"># OK</span></span>
+<span id="cb8-64"><a href="Chapter3.html#cb8-64" tabindex="-1"></a>validity<span class="ot">=</span><span class="fu">st_is_valid</span>(bridgeL2) </span>
+<span id="cb8-65"><a href="Chapter3.html#cb8-65" tabindex="-1"></a><span class="fu">table</span>(validity) <span class="co"># OK</span></span>
+<span id="cb8-66"><a href="Chapter3.html#cb8-66" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(bridgeL2, <span class="st">&quot;Topo_bridgeL.parquet&quot;</span>)</span>
+<span id="cb8-67"><a href="Chapter3.html#cb8-67" tabindex="-1"></a></span>
+<span id="cb8-68"><a href="Chapter3.html#cb8-68" tabindex="-1"></a><span class="co"># bridge_P</span></span>
+<span id="cb8-69"><a href="Chapter3.html#cb8-69" tabindex="-1"></a>bridge_P<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Topo10_v3_12_07_2016.gdb/&quot;</span>,<span class="at">layer=</span><span class="st">&quot;bridge_P&quot;</span>)</span>
+<span id="cb8-70"><a href="Chapter3.html#cb8-70" tabindex="-1"></a>bridgeP2 <span class="ot">=</span> bridge_P[<span class="sc">!</span><span class="fu">st_is_empty</span>(bridge_P),,drop<span class="ot">=</span><span class="cn">FALSE</span>] <span class="co"># OK</span></span>
+<span id="cb8-71"><a href="Chapter3.html#cb8-71" tabindex="-1"></a>validity<span class="ot">=</span><span class="fu">st_is_valid</span>(bridgeP2) </span>
+<span id="cb8-72"><a href="Chapter3.html#cb8-72" tabindex="-1"></a><span class="fu">table</span>(validity) <span class="co"># OK</span></span>
+<span id="cb8-73"><a href="Chapter3.html#cb8-73" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(bridgeP2, <span class="st">&quot;Topo_bridgeP.parquet&quot;</span>)</span>
+<span id="cb8-74"><a href="Chapter3.html#cb8-74" tabindex="-1"></a></span>
+<span id="cb8-75"><a href="Chapter3.html#cb8-75" tabindex="-1"></a><span class="co"># landus A</span></span>
+<span id="cb8-76"><a href="Chapter3.html#cb8-76" tabindex="-1"></a>landus_A<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./Topo10_v3_12_07_2016.gdb/&quot;</span>,<span class="at">layer=</span><span class="st">&quot;landus_A&quot;</span>)</span>
+<span id="cb8-77"><a href="Chapter3.html#cb8-77" tabindex="-1"></a>landus2 <span class="ot">=</span> landus_A[<span class="sc">!</span><span class="fu">st_is_empty</span>(landus_A),,drop<span class="ot">=</span><span class="cn">FALSE</span>] <span class="co"># OK</span></span>
+<span id="cb8-78"><a href="Chapter3.html#cb8-78" tabindex="-1"></a>validity<span class="ot">=</span><span class="fu">st_is_valid</span>(landus2) </span>
+<span id="cb8-79"><a href="Chapter3.html#cb8-79" tabindex="-1"></a><span class="fu">table</span>(validity) <span class="co"># 5734 invalid geometrijas</span></span>
+<span id="cb8-80"><a href="Chapter3.html#cb8-80" tabindex="-1"></a>landus3<span class="ot">=</span><span class="fu">st_make_valid</span>(landus2)</span>
+<span id="cb8-81"><a href="Chapter3.html#cb8-81" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(landus3, <span class="st">&quot;Topo_landusA.parquet&quot;</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="Chapter3.1.4" class="section level3 hasAnchor" number="4.1.4">
@@ -989,16 +1022,340 @@ div.csl-indent {
 </div>
 <div id="Chapter3.2.2" class="section level3 hasAnchor" number="4.2.2">
 <h3><span class="header-section-number">4.2.2</span> Ainava<a href="Chapter3.html#Chapter3.2.2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Šajā vingrinājumā “ainava” ir dažādu zemes seguma un lietojuma veidu klašu pārstāvniecība, kurā svarīga ir šo klašu zīmēšanas secība, jo nereti dažādu avotu telpiskajiem datiem ir savstarpēja robežu neatbilstība, kas liek risināt gan to savstarpējo pārklāšanos (1), gan aizpildīt robus vietām, par kurām nav datubāzu informāicja (2), un izvēle par objektu uzsvēršanu ar kādu apstrādi, piemēram, buferēšanu, jo daļa vides raksturošanai (jo sevišķi, malas efektu) nozīmīgu elementu var būt ar tik mazu laukumu vai tādu novietojumu, ka rasterizāicjas procesā tie pazūd (3). Pamata ainavas slānim nozīme ir arī kalpot kā maskai turpmāko vides aprakstu sagatavošanā. Šeit raksturota pamata (vienkāršas) ainavas izstrāde un sekojošajās apakšnodaļās tās bagātināšana ar klasēm specifiskākiem vides ekoģeogrāfiskajiem mainīgajiem. Vienkāršā ainava saglabāta failā <code>Ainava_vienk_mask.tif</code>, kurā esošās klases un to izveidošanas procedūra raksturota sekojošajā uzskaitījumā:</p>
 <ul>
-<li><p>ceļi</p></li>
-<li><p>ūdeņi</p></li>
-<li><p>koki un izcirtumi (izcirtumi, mežaudzes, palsar, parki-kapi-alejas)</p></li>
-<li><p>mitrāji</p></li>
-<li><p>krūmāji no topo</p></li>
-<li><p>LIZ</p></li>
-<li><p>smiltāji utml</p></li>
-<li><p>robu aizpildījums ar DW, kur klase “trees” pārsaukta par krūmiem</p></li>
+<li><p>klase <code>100</code> - ceļi: dažādu avotu ceļi, <strong>aizpildīta secībā</strong> - dominē pār klasēm ar lielāku vērtību, lai nepazustu relatīvi neliela izmēra objekti un nodrošinātu informāciju par malām. Šīs klases izveidošanai apvienoti:</p>
+<p>– <a href="Chapter3.html#Chapter3.1.3">topogrāfiskās kartes</a> slāņi <code>road_A</code> un <code>road_L</code> (izņemot mazāko platuma grupu, kura visbiežāk neveido vienlaidus pārrāvumu vainagu klājā, <a href="Chapter3.html#Chapter3.1.3">skatīt atlasi</a>), pirms rasterizēšanas tos buferējot par 10 m;</p>
+<p>– <a href="Chapter3.html#Chapter3.1.5">LVM atvērto datu</a> slāņi <code>LVM_MEZA_AUTOCELI</code>, <code>LVM_ATTISTAMIE_AUTOCELI</code>, <code>LVM_APGRIESANAS_LAUKUMI</code>, <code>LVM_IZMAINISANAS_VIETAS</code> un <code>LVM_NOBRAUKTUVES</code>, tās buferējot par 10 m.</p>
+<p>– nav izmantota Meža valsts reģistra informācija par dabiskajām brauktuvēm, jo tās visbiežāk neveido vienlaidus pārrāvumu vainagu klājā. Šī reģistra informācija par ceļiem ir arī pārējos resursos, tā nav dublēta.</p></li>
 </ul>
+<p>Zemāk esošais kods izveido slāni ar ainavas klasi <code>100</code>, kuru failā <code>100_celi.tif</code> saglabā turpmākam darbam.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="Chapter3.html#cb18-1" tabindex="-1"></a><span class="co"># Libs</span></span>
+<span id="cb18-2"><a href="Chapter3.html#cb18-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
+<span id="cb18-3"><a href="Chapter3.html#cb18-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
+<span id="cb18-4"><a href="Chapter3.html#cb18-4" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(arrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;arrow&quot;</span>); <span class="fu">require</span>(arrow)}</span>
+<span id="cb18-5"><a href="Chapter3.html#cb18-5" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sfarrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;sfarrow&quot;</span>); <span class="fu">require</span>(sfarrow)}</span>
+<span id="cb18-6"><a href="Chapter3.html#cb18-6" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb18-7"><a href="Chapter3.html#cb18-7" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(raster)) {<span class="fu">install.packages</span>(<span class="st">&quot;raster&quot;</span>); <span class="fu">require</span>(raster)}</span>
+<span id="cb18-8"><a href="Chapter3.html#cb18-8" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(fasterize)) {<span class="fu">install.packages</span>(<span class="st">&quot;fasterize&quot;</span>); <span class="fu">require</span>(fasterize)}</span>
+<span id="cb18-9"><a href="Chapter3.html#cb18-9" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(gdalUtilities)){<span class="fu">install.packages</span>(<span class="st">&quot;gdalUtilities&quot;</span>);<span class="fu">require</span>(gdalUtilities)}</span>
+<span id="cb18-10"><a href="Chapter3.html#cb18-10" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(readxl)) {<span class="fu">install.packages</span>(<span class="st">&quot;readxl&quot;</span>); <span class="fu">require</span>(readxl)}</span>
+<span id="cb18-11"><a href="Chapter3.html#cb18-11" tabindex="-1"></a></span>
+<span id="cb18-12"><a href="Chapter3.html#cb18-12" tabindex="-1"></a><span class="co"># templates</span></span>
+<span id="cb18-13"><a href="Chapter3.html#cb18-13" tabindex="-1"></a>template_t<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./LV10m_10km.tif&quot;</span>)</span>
+<span id="cb18-14"><a href="Chapter3.html#cb18-14" tabindex="-1"></a>template_r<span class="ot">=</span><span class="fu">raster</span>(template_t)</span>
+<span id="cb18-15"><a href="Chapter3.html#cb18-15" tabindex="-1"></a></span>
+<span id="cb18-16"><a href="Chapter3.html#cb18-16" tabindex="-1"></a></span>
+<span id="cb18-17"><a href="Chapter3.html#cb18-17" tabindex="-1"></a><span class="co">#poly</span></span>
+<span id="cb18-18"><a href="Chapter3.html#cb18-18" tabindex="-1"></a>celi_topo<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Topo_road_A.parquet&quot;</span>)</span>
+<span id="cb18-19"><a href="Chapter3.html#cb18-19" tabindex="-1"></a>celi_topo<span class="ot">=</span>celi_topo <span class="sc">%&gt;%</span> </span>
+<span id="cb18-20"><a href="Chapter3.html#cb18-20" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">100</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-21"><a href="Chapter3.html#cb18-21" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb18-22"><a href="Chapter3.html#cb18-22" tabindex="-1"></a>ctb<span class="ot">=</span><span class="fu">st_buffer</span>(celi_topo,<span class="at">dist=</span><span class="dv">10</span>)</span>
+<span id="cb18-23"><a href="Chapter3.html#cb18-23" tabindex="-1"></a>r_celi_topo<span class="ot">=</span><span class="fu">fasterize</span>(ctb,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb18-24"><a href="Chapter3.html#cb18-24" tabindex="-1"></a></span>
+<span id="cb18-25"><a href="Chapter3.html#cb18-25" tabindex="-1"></a><span class="co"># pts</span></span>
+<span id="cb18-26"><a href="Chapter3.html#cb18-26" tabindex="-1"></a>nobrauktuves<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./LVM_NOBRAUKTUVES_Shape.shp&quot;</span>)</span>
+<span id="cb18-27"><a href="Chapter3.html#cb18-27" tabindex="-1"></a>nobrauktuves<span class="ot">=</span>nobrauktuves <span class="sc">%&gt;%</span> </span>
+<span id="cb18-28"><a href="Chapter3.html#cb18-28" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">100</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-29"><a href="Chapter3.html#cb18-29" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb18-30"><a href="Chapter3.html#cb18-30" tabindex="-1"></a>izmainisanas<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./LVM_IZMAINISANAS_VIETAS_Shape.shp&quot;</span>)</span>
+<span id="cb18-31"><a href="Chapter3.html#cb18-31" tabindex="-1"></a>izmainisanas<span class="ot">=</span>izmainisanas <span class="sc">%&gt;%</span> </span>
+<span id="cb18-32"><a href="Chapter3.html#cb18-32" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">100</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-33"><a href="Chapter3.html#cb18-33" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb18-34"><a href="Chapter3.html#cb18-34" tabindex="-1"></a>apgriesanas<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./LVM_APGRIESANAS_LAUKUMI_Shape.shp&quot;</span>)</span>
+<span id="cb18-35"><a href="Chapter3.html#cb18-35" tabindex="-1"></a>apgriesanas<span class="ot">=</span>apgriesanas <span class="sc">%&gt;%</span> </span>
+<span id="cb18-36"><a href="Chapter3.html#cb18-36" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">100</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-37"><a href="Chapter3.html#cb18-37" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb18-38"><a href="Chapter3.html#cb18-38" tabindex="-1"></a>cp<span class="ot">=</span><span class="fu">rbind</span>(nobrauktuves,izmainisanas,apgriesanas)</span>
+<span id="cb18-39"><a href="Chapter3.html#cb18-39" tabindex="-1"></a>cpb<span class="ot">=</span><span class="fu">st_buffer</span>(cp,<span class="at">dist=</span><span class="dv">10</span>)</span>
+<span id="cb18-40"><a href="Chapter3.html#cb18-40" tabindex="-1"></a>r_celi_pts<span class="ot">=</span><span class="fu">fasterize</span>(cpb,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb18-41"><a href="Chapter3.html#cb18-41" tabindex="-1"></a></span>
+<span id="cb18-42"><a href="Chapter3.html#cb18-42" tabindex="-1"></a></span>
+<span id="cb18-43"><a href="Chapter3.html#cb18-43" tabindex="-1"></a><span class="co"># lines</span></span>
+<span id="cb18-44"><a href="Chapter3.html#cb18-44" tabindex="-1"></a>meza_autoceli<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./LVM_MEZA_AUTOCELI_Shape.shp&quot;</span>)</span>
+<span id="cb18-45"><a href="Chapter3.html#cb18-45" tabindex="-1"></a>meza_autoceli<span class="ot">=</span>meza_autoceli <span class="sc">%&gt;%</span> </span>
+<span id="cb18-46"><a href="Chapter3.html#cb18-46" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">100</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-47"><a href="Chapter3.html#cb18-47" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb18-48"><a href="Chapter3.html#cb18-48" tabindex="-1"></a>attistamie<span class="ot">=</span><span class="fu">st_read</span>(<span class="st">&quot;./LVM_ATTISTAMIE_AUTOCELI_Shape.shp&quot;</span>)</span>
+<span id="cb18-49"><a href="Chapter3.html#cb18-49" tabindex="-1"></a>attistamie<span class="ot">=</span>attistamie <span class="sc">%&gt;%</span> </span>
+<span id="cb18-50"><a href="Chapter3.html#cb18-50" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">100</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-51"><a href="Chapter3.html#cb18-51" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb18-52"><a href="Chapter3.html#cb18-52" tabindex="-1"></a>topo_lines<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Topo_roadL.parquet&quot;</span>)</span>
+<span id="cb18-53"><a href="Chapter3.html#cb18-53" tabindex="-1"></a>topo_lines<span class="ot">=</span>topo_lines <span class="sc">%&gt;%</span> </span>
+<span id="cb18-54"><a href="Chapter3.html#cb18-54" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">100</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-55"><a href="Chapter3.html#cb18-55" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb18-56"><a href="Chapter3.html#cb18-56" tabindex="-1"></a>cl<span class="ot">=</span><span class="fu">bind_rows</span>(meza_autoceli,attistamie,topo_lines)</span>
+<span id="cb18-57"><a href="Chapter3.html#cb18-57" tabindex="-1"></a>cl<span class="ot">=</span>cl <span class="sc">%&gt;%</span> </span>
+<span id="cb18-58"><a href="Chapter3.html#cb18-58" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb18-59"><a href="Chapter3.html#cb18-59" tabindex="-1"></a>clb<span class="ot">=</span><span class="fu">st_buffer</span>(cl,<span class="at">dist=</span><span class="dv">10</span>)</span>
+<span id="cb18-60"><a href="Chapter3.html#cb18-60" tabindex="-1"></a>r_celi_lines<span class="ot">=</span><span class="fu">fasterize</span>(clb,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb18-61"><a href="Chapter3.html#cb18-61" tabindex="-1"></a></span>
+<span id="cb18-62"><a href="Chapter3.html#cb18-62" tabindex="-1"></a><span class="co"># liekā aizvākšana</span></span>
+<span id="cb18-63"><a href="Chapter3.html#cb18-63" tabindex="-1"></a><span class="fu">rm</span>(apgriesanas)</span>
+<span id="cb18-64"><a href="Chapter3.html#cb18-64" tabindex="-1"></a><span class="fu">rm</span>(attistamie)</span>
+<span id="cb18-65"><a href="Chapter3.html#cb18-65" tabindex="-1"></a><span class="fu">rm</span>(celi_topo)</span>
+<span id="cb18-66"><a href="Chapter3.html#cb18-66" tabindex="-1"></a><span class="fu">rm</span>(topo_lines)</span>
+<span id="cb18-67"><a href="Chapter3.html#cb18-67" tabindex="-1"></a><span class="fu">rm</span>(ctb)</span>
+<span id="cb18-68"><a href="Chapter3.html#cb18-68" tabindex="-1"></a><span class="fu">rm</span>(cl)</span>
+<span id="cb18-69"><a href="Chapter3.html#cb18-69" tabindex="-1"></a><span class="fu">rm</span>(clb)</span>
+<span id="cb18-70"><a href="Chapter3.html#cb18-70" tabindex="-1"></a><span class="fu">rm</span>(cp)</span>
+<span id="cb18-71"><a href="Chapter3.html#cb18-71" tabindex="-1"></a><span class="fu">rm</span>(cpb)</span>
+<span id="cb18-72"><a href="Chapter3.html#cb18-72" tabindex="-1"></a><span class="fu">rm</span>(izmainisanas)</span>
+<span id="cb18-73"><a href="Chapter3.html#cb18-73" tabindex="-1"></a><span class="fu">rm</span>(meza_autoceli)</span>
+<span id="cb18-74"><a href="Chapter3.html#cb18-74" tabindex="-1"></a><span class="fu">rm</span>(nobrauktuves)</span>
+<span id="cb18-75"><a href="Chapter3.html#cb18-75" tabindex="-1"></a></span>
+<span id="cb18-76"><a href="Chapter3.html#cb18-76" tabindex="-1"></a><span class="co"># ģeometriju rasterizēšana</span></span>
+<span id="cb18-77"><a href="Chapter3.html#cb18-77" tabindex="-1"></a>t_celi_topo<span class="ot">=</span><span class="fu">rast</span>(r_celi_topo)</span>
+<span id="cb18-78"><a href="Chapter3.html#cb18-78" tabindex="-1"></a><span class="fu">writeRaster</span>(t_celi_topo,<span class="st">&quot;./100a.tif&quot;</span>)</span>
+<span id="cb18-79"><a href="Chapter3.html#cb18-79" tabindex="-1"></a>t_celi_pts<span class="ot">=</span><span class="fu">rast</span>(r_celi_pts)</span>
+<span id="cb18-80"><a href="Chapter3.html#cb18-80" tabindex="-1"></a><span class="fu">writeRaster</span>(t_celi_pts,<span class="st">&quot;./100b.tif&quot;</span>)</span>
+<span id="cb18-81"><a href="Chapter3.html#cb18-81" tabindex="-1"></a>t_celi_lines<span class="ot">=</span><span class="fu">rast</span>(r_celi_lines)</span>
+<span id="cb18-82"><a href="Chapter3.html#cb18-82" tabindex="-1"></a><span class="fu">writeRaster</span>(t_celi_lines,<span class="st">&quot;./100c.tif&quot;</span>)</span>
+<span id="cb18-83"><a href="Chapter3.html#cb18-83" tabindex="-1"></a></span>
+<span id="cb18-84"><a href="Chapter3.html#cb18-84" tabindex="-1"></a><span class="co"># liekā aizvākšana</span></span>
+<span id="cb18-85"><a href="Chapter3.html#cb18-85" tabindex="-1"></a><span class="fu">rm</span>(r_celi_lines)</span>
+<span id="cb18-86"><a href="Chapter3.html#cb18-86" tabindex="-1"></a><span class="fu">rm</span>(r_celi_pts)</span>
+<span id="cb18-87"><a href="Chapter3.html#cb18-87" tabindex="-1"></a><span class="fu">rm</span>(r_celi_topo)</span>
+<span id="cb18-88"><a href="Chapter3.html#cb18-88" tabindex="-1"></a><span class="fu">rm</span>(t_celi_lines)</span>
+<span id="cb18-89"><a href="Chapter3.html#cb18-89" tabindex="-1"></a><span class="fu">rm</span>(t_celi_pts)</span>
+<span id="cb18-90"><a href="Chapter3.html#cb18-90" tabindex="-1"></a><span class="fu">rm</span>(t_celi_topo)</span>
+<span id="cb18-91"><a href="Chapter3.html#cb18-91" tabindex="-1"></a></span>
+<span id="cb18-92"><a href="Chapter3.html#cb18-92" tabindex="-1"></a><span class="co"># apvienošana</span></span>
+<span id="cb18-93"><a href="Chapter3.html#cb18-93" tabindex="-1"></a>a100<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./100a.tif&quot;</span>)</span>
+<span id="cb18-94"><a href="Chapter3.html#cb18-94" tabindex="-1"></a>b100<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./100b.tif&quot;</span>)</span>
+<span id="cb18-95"><a href="Chapter3.html#cb18-95" tabindex="-1"></a>c100<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./100c.tif&quot;</span>)</span>
+<span id="cb18-96"><a href="Chapter3.html#cb18-96" tabindex="-1"></a></span>
+<span id="cb18-97"><a href="Chapter3.html#cb18-97" tabindex="-1"></a>rastri<span class="ot">=</span><span class="fu">sprc</span>(a100,b100,c100)</span>
+<span id="cb18-98"><a href="Chapter3.html#cb18-98" tabindex="-1"></a>rastrs_celi<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">merge</span>(rastri,</span>
+<span id="cb18-99"><a href="Chapter3.html#cb18-99" tabindex="-1"></a>                         <span class="at">filename=</span><span class="st">&quot;./100_celi.tif&quot;</span>,</span>
+<span id="cb18-100"><a href="Chapter3.html#cb18-100" tabindex="-1"></a>                         <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb18-101"><a href="Chapter3.html#cb18-101" tabindex="-1"></a><span class="co"># liekā aizvākšana</span></span>
+<span id="cb18-102"><a href="Chapter3.html#cb18-102" tabindex="-1"></a><span class="fu">rm</span>(a100)</span>
+<span id="cb18-103"><a href="Chapter3.html#cb18-103" tabindex="-1"></a><span class="fu">rm</span>(b100)</span>
+<span id="cb18-104"><a href="Chapter3.html#cb18-104" tabindex="-1"></a><span class="fu">rm</span>(c100)</span>
+<span id="cb18-105"><a href="Chapter3.html#cb18-105" tabindex="-1"></a><span class="fu">rm</span>(rastri)</span>
+<span id="cb18-106"><a href="Chapter3.html#cb18-106" tabindex="-1"></a><span class="fu">rm</span>(rastrs_celi)</span></code></pre></div>
+</details>
+<ul>
+<li>klase <code>200</code> - ūdeņi: dažādu avotu ūdensobjekti, <strong>aizpildīta secībā</strong> - dominē pār klasēm ar lielāku vērtību, lai nepazustu relatīvi neliela izmēra objekti un nodrošinātu informāciju par malām.</li>
+</ul>
+<p>Zemāk esošais kods izveido slāni ar ainavas klasi <code>200</code>, kuru failā <code>200_udens_premask.tif</code> saglabā turpmākam darbam.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="Chapter3.html#cb19-1" tabindex="-1"></a><span class="co"># Libs</span></span>
+<span id="cb19-2"><a href="Chapter3.html#cb19-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
+<span id="cb19-3"><a href="Chapter3.html#cb19-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
+<span id="cb19-4"><a href="Chapter3.html#cb19-4" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(arrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;arrow&quot;</span>); <span class="fu">require</span>(arrow)}</span>
+<span id="cb19-5"><a href="Chapter3.html#cb19-5" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sfarrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;sfarrow&quot;</span>); <span class="fu">require</span>(sfarrow)}</span>
+<span id="cb19-6"><a href="Chapter3.html#cb19-6" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb19-7"><a href="Chapter3.html#cb19-7" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(raster)) {<span class="fu">install.packages</span>(<span class="st">&quot;raster&quot;</span>); <span class="fu">require</span>(raster)}</span>
+<span id="cb19-8"><a href="Chapter3.html#cb19-8" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(fasterize)) {<span class="fu">install.packages</span>(<span class="st">&quot;fasterize&quot;</span>); <span class="fu">require</span>(fasterize)}</span>
+<span id="cb19-9"><a href="Chapter3.html#cb19-9" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(gdalUtilities)){<span class="fu">install.packages</span>(<span class="st">&quot;gdalUtilities&quot;</span>);<span class="fu">require</span>(gdalUtilities)}</span>
+<span id="cb19-10"><a href="Chapter3.html#cb19-10" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(readxl)) {<span class="fu">install.packages</span>(<span class="st">&quot;readxl&quot;</span>); <span class="fu">require</span>(readxl)}</span>
+<span id="cb19-11"><a href="Chapter3.html#cb19-11" tabindex="-1"></a></span>
+<span id="cb19-12"><a href="Chapter3.html#cb19-12" tabindex="-1"></a><span class="co"># templates</span></span>
+<span id="cb19-13"><a href="Chapter3.html#cb19-13" tabindex="-1"></a>template_t<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./LV10m_10km.tif&quot;</span>)</span>
+<span id="cb19-14"><a href="Chapter3.html#cb19-14" tabindex="-1"></a>template_r<span class="ot">=</span><span class="fu">raster</span>(template_t)</span></code></pre></div>
+</details>
+<ul>
+<li>klase <code>300</code> - lauki: lauksaimniecības zemes LAD lauku blokos <strong>aizpildīta secībā</strong> - dominē pār klasēm ar lielāku vērtību, tomēr pēc pamata klašu izveidošanas, robu aizpildīšanā papildināta ar informāciju no <em>Dynamic World</em>.</li>
+</ul>
+<p>Zemāk esošais kods izveido slāni ar ainavas klasi <code>300</code>, kuru failā <code>300_lauki_premask.tif</code> saglabā turpmākam darbam.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="Chapter3.html#cb20-1" tabindex="-1"></a><span class="co"># Libs</span></span>
+<span id="cb20-2"><a href="Chapter3.html#cb20-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
+<span id="cb20-3"><a href="Chapter3.html#cb20-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
+<span id="cb20-4"><a href="Chapter3.html#cb20-4" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(arrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;arrow&quot;</span>); <span class="fu">require</span>(arrow)}</span>
+<span id="cb20-5"><a href="Chapter3.html#cb20-5" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sfarrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;sfarrow&quot;</span>); <span class="fu">require</span>(sfarrow)}</span>
+<span id="cb20-6"><a href="Chapter3.html#cb20-6" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb20-7"><a href="Chapter3.html#cb20-7" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(raster)) {<span class="fu">install.packages</span>(<span class="st">&quot;raster&quot;</span>); <span class="fu">require</span>(raster)}</span>
+<span id="cb20-8"><a href="Chapter3.html#cb20-8" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(fasterize)) {<span class="fu">install.packages</span>(<span class="st">&quot;fasterize&quot;</span>); <span class="fu">require</span>(fasterize)}</span>
+<span id="cb20-9"><a href="Chapter3.html#cb20-9" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(gdalUtilities)){<span class="fu">install.packages</span>(<span class="st">&quot;gdalUtilities&quot;</span>);<span class="fu">require</span>(gdalUtilities)}</span>
+<span id="cb20-10"><a href="Chapter3.html#cb20-10" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(readxl)) {<span class="fu">install.packages</span>(<span class="st">&quot;readxl&quot;</span>); <span class="fu">require</span>(readxl)}</span>
+<span id="cb20-11"><a href="Chapter3.html#cb20-11" tabindex="-1"></a></span>
+<span id="cb20-12"><a href="Chapter3.html#cb20-12" tabindex="-1"></a><span class="co"># templates</span></span>
+<span id="cb20-13"><a href="Chapter3.html#cb20-13" tabindex="-1"></a>template_t<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./LV10m_10km.tif&quot;</span>)</span>
+<span id="cb20-14"><a href="Chapter3.html#cb20-14" tabindex="-1"></a>template_r<span class="ot">=</span><span class="fu">raster</span>(template_t)</span></code></pre></div>
+</details>
+<ul>
+<li>klase <code>400</code> - mazdārziņi un augļudārzi, vasarnīcas, <strong>aizpildīta secībā</strong> - dominē pār klasēm ar lielāku vērtību.</li>
+</ul>
+<p>Zemāk esošais kods izveido slāni ar ainavas klasi <code>400</code>, kuru failā <code>400_vasarnicas_premask.tif</code> saglabā turpmākam darbam.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="Chapter3.html#cb21-1" tabindex="-1"></a><span class="co"># Libs</span></span>
+<span id="cb21-2"><a href="Chapter3.html#cb21-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
+<span id="cb21-3"><a href="Chapter3.html#cb21-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
+<span id="cb21-4"><a href="Chapter3.html#cb21-4" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(arrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;arrow&quot;</span>); <span class="fu">require</span>(arrow)}</span>
+<span id="cb21-5"><a href="Chapter3.html#cb21-5" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sfarrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;sfarrow&quot;</span>); <span class="fu">require</span>(sfarrow)}</span>
+<span id="cb21-6"><a href="Chapter3.html#cb21-6" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb21-7"><a href="Chapter3.html#cb21-7" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(raster)) {<span class="fu">install.packages</span>(<span class="st">&quot;raster&quot;</span>); <span class="fu">require</span>(raster)}</span>
+<span id="cb21-8"><a href="Chapter3.html#cb21-8" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(fasterize)) {<span class="fu">install.packages</span>(<span class="st">&quot;fasterize&quot;</span>); <span class="fu">require</span>(fasterize)}</span>
+<span id="cb21-9"><a href="Chapter3.html#cb21-9" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(gdalUtilities)){<span class="fu">install.packages</span>(<span class="st">&quot;gdalUtilities&quot;</span>);<span class="fu">require</span>(gdalUtilities)}</span>
+<span id="cb21-10"><a href="Chapter3.html#cb21-10" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(readxl)) {<span class="fu">install.packages</span>(<span class="st">&quot;readxl&quot;</span>); <span class="fu">require</span>(readxl)}</span>
+<span id="cb21-11"><a href="Chapter3.html#cb21-11" tabindex="-1"></a></span>
+<span id="cb21-12"><a href="Chapter3.html#cb21-12" tabindex="-1"></a><span class="co"># templates</span></span>
+<span id="cb21-13"><a href="Chapter3.html#cb21-13" tabindex="-1"></a>template_t<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./LV10m_10km.tif&quot;</span>)</span>
+<span id="cb21-14"><a href="Chapter3.html#cb21-14" tabindex="-1"></a>template_r<span class="ot">=</span><span class="fu">raster</span>(template_t)</span></code></pre></div>
+</details>
+<ul>
+<li><p>klase <code>500</code> - apbūve: apbūvētās platības, <strong>aizpildīta beigās</strong>, izmantojot informāciju no <em>Dynamic World</em> par vietām, kuras nav nosegtas ar citām klasēm.</p></li>
+<li><p>klase <code>600</code> - meži, krūmāji, izcirtumi:</p></li>
+</ul>
+<p>Zemāk esošais kods izveido slāni ar ainavas klasi <code>600</code>, kuru failā <code>600_meziem_premask.tif</code> saglabā turpmākam darbam.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="Chapter3.html#cb22-1" tabindex="-1"></a><span class="co"># Libs</span></span>
+<span id="cb22-2"><a href="Chapter3.html#cb22-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
+<span id="cb22-3"><a href="Chapter3.html#cb22-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
+<span id="cb22-4"><a href="Chapter3.html#cb22-4" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(arrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;arrow&quot;</span>); <span class="fu">require</span>(arrow)}</span>
+<span id="cb22-5"><a href="Chapter3.html#cb22-5" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sfarrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;sfarrow&quot;</span>); <span class="fu">require</span>(sfarrow)}</span>
+<span id="cb22-6"><a href="Chapter3.html#cb22-6" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb22-7"><a href="Chapter3.html#cb22-7" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(raster)) {<span class="fu">install.packages</span>(<span class="st">&quot;raster&quot;</span>); <span class="fu">require</span>(raster)}</span>
+<span id="cb22-8"><a href="Chapter3.html#cb22-8" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(fasterize)) {<span class="fu">install.packages</span>(<span class="st">&quot;fasterize&quot;</span>); <span class="fu">require</span>(fasterize)}</span>
+<span id="cb22-9"><a href="Chapter3.html#cb22-9" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(gdalUtilities)){<span class="fu">install.packages</span>(<span class="st">&quot;gdalUtilities&quot;</span>);<span class="fu">require</span>(gdalUtilities)}</span>
+<span id="cb22-10"><a href="Chapter3.html#cb22-10" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(readxl)) {<span class="fu">install.packages</span>(<span class="st">&quot;readxl&quot;</span>); <span class="fu">require</span>(readxl)}</span>
+<span id="cb22-11"><a href="Chapter3.html#cb22-11" tabindex="-1"></a></span>
+<span id="cb22-12"><a href="Chapter3.html#cb22-12" tabindex="-1"></a><span class="co"># templates</span></span>
+<span id="cb22-13"><a href="Chapter3.html#cb22-13" tabindex="-1"></a>template_t<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./LV10m_10km.tif&quot;</span>)</span>
+<span id="cb22-14"><a href="Chapter3.html#cb22-14" tabindex="-1"></a>template_r<span class="ot">=</span><span class="fu">raster</span>(template_t)</span></code></pre></div>
+</details>
+<ul>
+<li>klase <code>700</code> - mitrāji:</li>
+</ul>
+<p>Zemāk esošais kods izveido slāni ar ainavas klasi <code>700</code>, kuru failā <code>700_mitraji_premask.tif</code> saglabā turpmākam darbam.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="Chapter3.html#cb23-1" tabindex="-1"></a><span class="co"># Libs</span></span>
+<span id="cb23-2"><a href="Chapter3.html#cb23-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
+<span id="cb23-3"><a href="Chapter3.html#cb23-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
+<span id="cb23-4"><a href="Chapter3.html#cb23-4" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(arrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;arrow&quot;</span>); <span class="fu">require</span>(arrow)}</span>
+<span id="cb23-5"><a href="Chapter3.html#cb23-5" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sfarrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;sfarrow&quot;</span>); <span class="fu">require</span>(sfarrow)}</span>
+<span id="cb23-6"><a href="Chapter3.html#cb23-6" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb23-7"><a href="Chapter3.html#cb23-7" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(raster)) {<span class="fu">install.packages</span>(<span class="st">&quot;raster&quot;</span>); <span class="fu">require</span>(raster)}</span>
+<span id="cb23-8"><a href="Chapter3.html#cb23-8" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(fasterize)) {<span class="fu">install.packages</span>(<span class="st">&quot;fasterize&quot;</span>); <span class="fu">require</span>(fasterize)}</span>
+<span id="cb23-9"><a href="Chapter3.html#cb23-9" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(gdalUtilities)){<span class="fu">install.packages</span>(<span class="st">&quot;gdalUtilities&quot;</span>);<span class="fu">require</span>(gdalUtilities)}</span>
+<span id="cb23-10"><a href="Chapter3.html#cb23-10" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(readxl)) {<span class="fu">install.packages</span>(<span class="st">&quot;readxl&quot;</span>); <span class="fu">require</span>(readxl)}</span>
+<span id="cb23-11"><a href="Chapter3.html#cb23-11" tabindex="-1"></a></span>
+<span id="cb23-12"><a href="Chapter3.html#cb23-12" tabindex="-1"></a><span class="co"># templates</span></span>
+<span id="cb23-13"><a href="Chapter3.html#cb23-13" tabindex="-1"></a>template_t<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./LV10m_10km.tif&quot;</span>)</span>
+<span id="cb23-14"><a href="Chapter3.html#cb23-14" tabindex="-1"></a>template_r<span class="ot">=</span><span class="fu">raster</span>(template_t)</span></code></pre></div>
+</details>
+<ul>
+<li>klase <code>800</code> - smiltāji un kūdras lauki:</li>
+</ul>
+<p>Zemāk esošais kods izveido slāni ar ainavas klasi <code>800</code>, kuru failā <code>800_smiltaji_premask.tif</code> saglabā turpmākam darbam.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="Chapter3.html#cb24-1" tabindex="-1"></a><span class="co"># Libs</span></span>
+<span id="cb24-2"><a href="Chapter3.html#cb24-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
+<span id="cb24-3"><a href="Chapter3.html#cb24-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
+<span id="cb24-4"><a href="Chapter3.html#cb24-4" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(arrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;arrow&quot;</span>); <span class="fu">require</span>(arrow)}</span>
+<span id="cb24-5"><a href="Chapter3.html#cb24-5" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sfarrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;sfarrow&quot;</span>); <span class="fu">require</span>(sfarrow)}</span>
+<span id="cb24-6"><a href="Chapter3.html#cb24-6" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb24-7"><a href="Chapter3.html#cb24-7" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(raster)) {<span class="fu">install.packages</span>(<span class="st">&quot;raster&quot;</span>); <span class="fu">require</span>(raster)}</span>
+<span id="cb24-8"><a href="Chapter3.html#cb24-8" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(fasterize)) {<span class="fu">install.packages</span>(<span class="st">&quot;fasterize&quot;</span>); <span class="fu">require</span>(fasterize)}</span>
+<span id="cb24-9"><a href="Chapter3.html#cb24-9" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(gdalUtilities)){<span class="fu">install.packages</span>(<span class="st">&quot;gdalUtilities&quot;</span>);<span class="fu">require</span>(gdalUtilities)}</span>
+<span id="cb24-10"><a href="Chapter3.html#cb24-10" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(readxl)) {<span class="fu">install.packages</span>(<span class="st">&quot;readxl&quot;</span>); <span class="fu">require</span>(readxl)}</span>
+<span id="cb24-11"><a href="Chapter3.html#cb24-11" tabindex="-1"></a></span>
+<span id="cb24-12"><a href="Chapter3.html#cb24-12" tabindex="-1"></a><span class="co"># templates</span></span>
+<span id="cb24-13"><a href="Chapter3.html#cb24-13" tabindex="-1"></a>template_t<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./LV10m_10km.tif&quot;</span>)</span>
+<span id="cb24-14"><a href="Chapter3.html#cb24-14" tabindex="-1"></a>template_r<span class="ot">=</span><span class="fu">raster</span>(template_t)</span></code></pre></div>
+</details>
+<div id="Chapter3.2.2.1" class="section level4 hasAnchor" number="4.2.2.1">
+<h4><span class="header-section-number">4.2.2.1</span> Lauku ainava<a href="Chapter3.html#Chapter3.2.2.1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><p>lauku bloku platība</p></li>
+<li><p>zālāji ārpus lauku blokiem, pieskaitot bezatbalsta</p></li>
+<li><p>zālāji visi</p></li>
+<li><p>zālāji LAD ne ppg</p></li>
+<li><p>zālāji ilglaicīgie</p></li>
+<li><p>papuves</p></li>
+<li><p>krūmveida stādījumi</p></li>
+<li><p>augļudārzi LAD</p></li>
+<li><p>aramzemes visas</p></li>
+<li><p>aramzemes: ziemas rapsis un ripsis</p></li>
+<li><p>aramzemes: vasaras rapsis un ripsis + kukurūza + pākšaugi</p></li>
+<li><p>aramzemes: vagu un rušināmkultūras</p></li>
+<li><p>aramzemes: ne- labības, rapši, kukurūzas, pākšaugi, vagu kultūras</p></li>
+<li><p>aramzemes: labība ziemāji</p></li>
+<li><p>aramzemes: labība vasarāji</p></li>
+<li><p>lauku daudzveidībai</p></li>
+</ul>
+</div>
+<div id="Chapter3.2.2.2" class="section level4 hasAnchor" number="4.2.2.2">
+<h4><span class="header-section-number">4.2.2.2</span> Mežu ainava: auglīgums<a href="Chapter3.html#Chapter3.2.2.2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><p>oligotrofi susinātie meši</p></li>
+<li><p>oligotrofi purvaiņu meži</p></li>
+<li><p>oligotrofi sausieņu un slapjaiņu meži</p></li>
+<li><p>mezotrofi sausieņu un slapjaiņu meži</p></li>
+<li><p>eitrofi susinātie meži</p></li>
+<li><p>eitrofi purvaiņu meži</p></li>
+<li><p>eitrofi sausieņu un slapjaiņu meži</p></li>
+</ul>
+</div>
+<div id="Chapter3.2.2.3" class="section level4 hasAnchor" number="4.2.2.3">
+<h4><span class="header-section-number">4.2.2.3</span> Mežu ainava: mežaudžu vecumgrupas<a href="Chapter3.html#Chapter3.2.2.3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><p>izcirtumi un jaunaudzes līdz 5 m</p></li>
+<li><p>jaunaudzes no 5 m un krūmāji</p></li>
+<li><p>vidēja vecuma un briestaudzes</p></li>
+<li><p>pieaugušās un pāraugušās mežaudzes</p></li>
+</ul>
+</div>
+<div id="Chapter3.2.2.4" class="section level4 hasAnchor" number="4.2.2.4">
+<h4><span class="header-section-number">4.2.2.4</span> Mežu ainava: valdošās sugas<a href="Chapter3.html#Chapter3.2.2.4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><p>skujkoku</p></li>
+<li><p>šaurlapju</p></li>
+<li><p>platlapju</p></li>
+<li><p>jauktu koku</p></li>
+</ul>
+</div>
+<div id="Chapter3.2.2.5" class="section level4 hasAnchor" number="4.2.2.5">
+<h4><span class="header-section-number">4.2.2.5</span> Mežu ainava: valdošās sugas vecumgrupās<a href="Chapter3.html#Chapter3.2.2.5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><p>skujkoku jaunaudzes, vidēja vecuma un briestaudzes</p></li>
+<li><p>skujkoku pieaugušās un pāraugušās audzes</p></li>
+<li><p>šaurlapju jaunaudzes, vidēja vecuma un briestaudzes</p></li>
+<li><p>šaurlapju pieaugušās un pāraugušās audzes</p></li>
+<li><p>platlapju jaunaudzes, vidēja vecuma un briestaudzes</p></li>
+<li><p>platlapju pieaugušās un pāraugušās audzes</p></li>
+<li><p>jauktu koku jaunaudzes, vidēja vecuma un briestaudzes</p></li>
+<li><p>jauktu koku pieaugušās un pāraugušās audzes</p></li>
+<li><p>mežu daudzveidībai</p></li>
+</ul>
+</div>
+<div id="Chapter3.2.2.6" class="section level4 hasAnchor" number="4.2.2.6">
+<h4><span class="header-section-number">4.2.2.6</span> Kombinētā ainava<a href="Chapter3.html#Chapter3.2.2.6" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><p>parki, kapi, alejas</p></li>
+<li><p>vasarnīcas un mazdārziņi</p></li>
+<li><p>ūdensobjektu platība</p></li>
+<li><p>niedrāji, meldrāji, grīslāji un pārplūstošā</p></li>
+<li><p>mitrāju platība</p></li>
+<li><p>atklāta augsne un karjeri</p></li>
+<li><p>kokiem klātās platības</p></li>
+<li><p>netaksētās mežaudzes</p></li>
+<li><p>apbūve</p></li>
+<li><p>daudzās klases daudzveidībai</p></li>
+</ul>
+</div>
+<div id="Chapter3.2.2.7" class="section level4 hasAnchor" number="4.2.2.7">
+<h4><span class="header-section-number">4.2.2.7</span> Malu slāņi<a href="Chapter3.html#Chapter3.2.2.7" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><p>apbūves un LIZ mala</p></li>
+<li><p>apbūves un koku mala</p></li>
+<li><p>aramzemju (visu) malas</p></li>
+<li><p>LIZ, izcirtumu un jaunaudžu (&lt;5m) malas ar kokiem &gt;5m</p></li>
+<li><p>koku virs 5m malas</p></li>
+<li><p>niedrāju, meldrāju, grīslāju un pārplūstošās veģetācijas malas ar ūdeni</p></li>
+<li><p>pieaugušu un pāraugušu mežaudžu malas</p></li>
+<li><p>zālāju (visu) malas</p></li>
+<li><p>ūdens un LIZ malas</p></li>
+<li><p>ūdens un zālāju malas</p></li>
+<li><p>ūdensobjektu malas</p></li>
+<li><p>ceļu garums (malas/2)</p></li>
+</ul>
+</div>
 </div>
 <div id="Chapter3.2.3" class="section level3 hasAnchor" number="4.2.3">
 <h3><span class="header-section-number">4.2.3</span> Vides pārmaiņas<a href="Chapter3.html#Chapter3.2.3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1006,305 +1363,305 @@ div.csl-indent {
 <p>Saskaņā ar <a href="Chapter4.html#Chapter4"><em>Dynamic World</em> izpēte</a> rezultātiem, ir vērts izmantot šo resursu vides kopējo pārmaiņu analīzē kopš 2017. gada. Par kopējām pārmaiņām uzskatīta jebkura izmaiņa Dynamic World klasē, to salīdzinot ik 10 m pikselim aprīļa-augusta sezonā starp katriem diviem secīgiem gadiem. Pārmaiņu apjoms raksturots kā platības īpatsvars 100 m šūnā vai putnu ligzdošanas iecirkņu rādiusu grupu buferos ap šīs šūnas centru. Tā kā pārmaiņas analizētas vienos un tajos pašos rastros, izmantojot dažādus laukumveida objektus, kurus nepieciešams apvienot vienā failā, katras ģeometrijas raksturojums iestrādāts lauku nosaukumos.</p>
 <p>Kopumā līdzīga procedūra veikta koku vainagu seguma izzušanas apjoma (īpatsvara no telpas kopumā) raksturošanai. Tomēr šī informācija ir iestrādāta vienā rastra slānī, notikuma gadu norādot kā pikseļa vērtību. Tas ikgadējā samazinājuma apjoma aprēķināšanu apgrūtina, tomēr nepadara par neiespējamu (skatīt komandu rindas zemāk, specifiski - funkciju <code>darbiba</code>). Līdz ar ik gadu zudušā koku vainagu seguma īpatsvara no analīzes telpas platības iegūšanu, tā pievienota analizētajai ģeometrijai kā atsevišķs lauks katram notikuma gadam. Tāpat kā iepriekš - lauku nosaukumi harmonizēti, tajos iestrādājot analīzes telpas raksturojumu, un rezultāti pievienoti 100 m režģa atbilstošajām šūnām.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="Chapter3.html#cb18-1" tabindex="-1"></a><span class="co"># libs</span></span>
-<span id="cb18-2"><a href="Chapter3.html#cb18-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
-<span id="cb18-3"><a href="Chapter3.html#cb18-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
-<span id="cb18-4"><a href="Chapter3.html#cb18-4" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
-<span id="cb18-5"><a href="Chapter3.html#cb18-5" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(arrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;arrow&quot;</span>); <span class="fu">require</span>(arrow)}</span>
-<span id="cb18-6"><a href="Chapter3.html#cb18-6" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sfarrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;sfarrow&quot;</span>); <span class="fu">require</span>(sfarrow)}</span>
-<span id="cb18-7"><a href="Chapter3.html#cb18-7" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(exactextractr)){<span class="fu">install.packages</span>(<span class="st">&quot;exactextractr&quot;</span>);<span class="fu">require</span>(exactextractr)}</span>
-<span id="cb18-8"><a href="Chapter3.html#cb18-8" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(foreach)) {<span class="fu">install.packages</span>(<span class="st">&quot;foreach&quot;</span>); <span class="fu">require</span>(foreach)}</span>
-<span id="cb18-9"><a href="Chapter3.html#cb18-9" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(doParallel)) {<span class="fu">install.packages</span>(<span class="st">&quot;doParallel&quot;</span>); <span class="fu">require</span>(doParallel)}</span>
-<span id="cb18-10"><a href="Chapter3.html#cb18-10" tabindex="-1"></a></span>
-<span id="cb18-11"><a href="Chapter3.html#cb18-11" tabindex="-1"></a></span>
-<span id="cb18-12"><a href="Chapter3.html#cb18-12" tabindex="-1"></a><span class="co"># režģis un buferi</span></span>
-<span id="cb18-13"><a href="Chapter3.html#cb18-13" tabindex="-1"></a>lapas_tikls<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">fails_c=</span><span class="fu">list.files</span>(<span class="st">&quot;./lapas/&quot;</span>))</span>
-<span id="cb18-14"><a href="Chapter3.html#cb18-14" tabindex="-1"></a>lapas_tikls<span class="sc">$</span>cels_grid<span class="ot">=</span><span class="fu">paste0</span>(<span class="st">&quot;./lapas/&quot;</span>,lapas_tikls<span class="sc">$</span>fails_c)</span>
-<span id="cb18-15"><a href="Chapter3.html#cb18-15" tabindex="-1"></a>lapas_tikls<span class="sc">$</span>lapa<span class="ot">=</span><span class="fu">substr</span>(lapas_tikls<span class="sc">$</span>fails,<span class="dv">10</span>,<span class="dv">13</span>)</span>
-<span id="cb18-16"><a href="Chapter3.html#cb18-16" tabindex="-1"></a>lapas_radiusi<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">fails_r=</span><span class="fu">list.files</span>(<span class="st">&quot;./lapas/&quot;</span>))</span>
-<span id="cb18-17"><a href="Chapter3.html#cb18-17" tabindex="-1"></a>lapas_radiusi<span class="sc">$</span>cels_radiuss<span class="ot">=</span><span class="fu">paste0</span>(<span class="st">&quot;./lapas/&quot;</span>,lapas_radiusi<span class="sc">$</span>fails_r)</span>
-<span id="cb18-18"><a href="Chapter3.html#cb18-18" tabindex="-1"></a>lapas_radiusi<span class="ot">=</span><span class="fu">separate</span>(lapas_radiusi,fails_r,</span>
-<span id="cb18-19"><a href="Chapter3.html#cb18-19" tabindex="-1"></a>                       <span class="at">into=</span><span class="fu">c</span>(<span class="st">&quot;sakums&quot;</span>,<span class="st">&quot;veids&quot;</span>,<span class="st">&quot;lapa&quot;</span>,<span class="st">&quot;beigas&quot;</span>),<span class="at">remove =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb18-20"><a href="Chapter3.html#cb18-20" tabindex="-1"></a></span>
-<span id="cb18-21"><a href="Chapter3.html#cb18-21" tabindex="-1"></a>lapas_r500<span class="ot">=</span>lapas_radiusi <span class="sc">%&gt;%</span> </span>
-<span id="cb18-22"><a href="Chapter3.html#cb18-22" tabindex="-1"></a>  <span class="fu">filter</span>(veids<span class="sc">==</span><span class="st">&quot;r500&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-23"><a href="Chapter3.html#cb18-23" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">fails_r500=</span>fails_r,</span>
-<span id="cb18-24"><a href="Chapter3.html#cb18-24" tabindex="-1"></a>         <span class="at">cels_r500=</span>cels_radiuss) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-25"><a href="Chapter3.html#cb18-25" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>sakums,<span class="sc">-</span>beigas,<span class="sc">-</span>fails_r,<span class="sc">-</span>cels_radiuss,<span class="sc">-</span>veids)</span>
-<span id="cb18-26"><a href="Chapter3.html#cb18-26" tabindex="-1"></a></span>
-<span id="cb18-27"><a href="Chapter3.html#cb18-27" tabindex="-1"></a>lapas_r1250<span class="ot">=</span>lapas_radiusi <span class="sc">%&gt;%</span> </span>
-<span id="cb18-28"><a href="Chapter3.html#cb18-28" tabindex="-1"></a>  <span class="fu">filter</span>(veids<span class="sc">==</span><span class="st">&quot;r1250&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-29"><a href="Chapter3.html#cb18-29" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">fails_r1250=</span>fails_r,</span>
-<span id="cb18-30"><a href="Chapter3.html#cb18-30" tabindex="-1"></a>         <span class="at">cels_r1250=</span>cels_radiuss) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-31"><a href="Chapter3.html#cb18-31" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>sakums,<span class="sc">-</span>beigas,<span class="sc">-</span>fails_r,<span class="sc">-</span>cels_radiuss,<span class="sc">-</span>veids)</span>
-<span id="cb18-32"><a href="Chapter3.html#cb18-32" tabindex="-1"></a></span>
-<span id="cb18-33"><a href="Chapter3.html#cb18-33" tabindex="-1"></a>lapas_r3000<span class="ot">=</span>lapas_radiusi <span class="sc">%&gt;%</span> </span>
-<span id="cb18-34"><a href="Chapter3.html#cb18-34" tabindex="-1"></a>  <span class="fu">filter</span>(veids<span class="sc">==</span><span class="st">&quot;r3000&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-35"><a href="Chapter3.html#cb18-35" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">fails_r3000=</span>fails_r,</span>
-<span id="cb18-36"><a href="Chapter3.html#cb18-36" tabindex="-1"></a>         <span class="at">cels_r3000=</span>cels_radiuss) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-37"><a href="Chapter3.html#cb18-37" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>sakums,<span class="sc">-</span>beigas,<span class="sc">-</span>fails_r,<span class="sc">-</span>cels_radiuss,<span class="sc">-</span>veids)</span>
-<span id="cb18-38"><a href="Chapter3.html#cb18-38" tabindex="-1"></a></span>
-<span id="cb18-39"><a href="Chapter3.html#cb18-39" tabindex="-1"></a>lapas<span class="ot">=</span>lapas_tikls <span class="sc">%&gt;%</span> </span>
-<span id="cb18-40"><a href="Chapter3.html#cb18-40" tabindex="-1"></a>  <span class="fu">left_join</span>(lapas_r500) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-41"><a href="Chapter3.html#cb18-41" tabindex="-1"></a>  <span class="fu">left_join</span>(lapas_r1250) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-42"><a href="Chapter3.html#cb18-42" tabindex="-1"></a>  <span class="fu">left_join</span>(lapas_r3000)</span>
-<span id="cb18-43"><a href="Chapter3.html#cb18-43" tabindex="-1"></a></span>
-<span id="cb18-44"><a href="Chapter3.html#cb18-44" tabindex="-1"></a><span class="co"># vides rastri</span></span>
-<span id="cb18-45"><a href="Chapter3.html#cb18-45" tabindex="-1"></a>tcl<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./TreeCoverLossYear.tif&quot;</span>)</span>
-<span id="cb18-46"><a href="Chapter3.html#cb18-46" tabindex="-1"></a>tcl2<span class="ot">=</span><span class="fu">ifel</span>(tcl<span class="sc">&lt;</span><span class="dv">17</span>,<span class="cn">NA</span>,tcl) <span class="co"># Zudumi tikai kopš 2017. gada</span></span>
-<span id="cb18-47"><a href="Chapter3.html#cb18-47" tabindex="-1"></a><span class="fu">writeRaster</span>(tcl2,<span class="st">&quot;./KokuVainagiem.tif&quot;</span>)</span>
-<span id="cb18-48"><a href="Chapter3.html#cb18-48" tabindex="-1"></a></span>
-<span id="cb18-49"><a href="Chapter3.html#cb18-49" tabindex="-1"></a>dw17<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./DW_2017_apraug.tif&quot;</span>) </span>
-<span id="cb18-50"><a href="Chapter3.html#cb18-50" tabindex="-1"></a>dw18<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./DW_2018_apraug.tif&quot;</span>)</span>
-<span id="cb18-51"><a href="Chapter3.html#cb18-51" tabindex="-1"></a>dw19<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./DW_2019_apraug.tif&quot;</span>)</span>
-<span id="cb18-52"><a href="Chapter3.html#cb18-52" tabindex="-1"></a>dw20<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./DW_2020_apraug.tif&quot;</span>)</span>
-<span id="cb18-53"><a href="Chapter3.html#cb18-53" tabindex="-1"></a>dw21<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./DW_2021_apraug.tif&quot;</span>)</span>
-<span id="cb18-54"><a href="Chapter3.html#cb18-54" tabindex="-1"></a>dw22<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./DW_2022_apraug.tif&quot;</span>)</span>
-<span id="cb18-55"><a href="Chapter3.html#cb18-55" tabindex="-1"></a>dw23<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./DW_2023_apraug.tif&quot;</span>)</span>
-<span id="cb18-56"><a href="Chapter3.html#cb18-56" tabindex="-1"></a></span>
-<span id="cb18-57"><a href="Chapter3.html#cb18-57" tabindex="-1"></a>chDWa<span class="ot">=</span><span class="fu">ifel</span>(dw17<span class="sc">==</span>dw18,<span class="dv">0</span>,<span class="dv">1</span>) <span class="co"># Pārmaiņas no 2017. uz 2018. gadu</span></span>
-<span id="cb18-58"><a href="Chapter3.html#cb18-58" tabindex="-1"></a><span class="fu">writeRaster</span>(chDWa,<span class="st">&quot;./chDWa.tif&quot;</span>)</span>
-<span id="cb18-59"><a href="Chapter3.html#cb18-59" tabindex="-1"></a>chDWb<span class="ot">=</span><span class="fu">ifel</span>(dw18<span class="sc">==</span>dw19,<span class="dv">0</span>,<span class="dv">1</span>) <span class="co"># Pārmaiņas no 2018. uz 2019. gadu</span></span>
-<span id="cb18-60"><a href="Chapter3.html#cb18-60" tabindex="-1"></a><span class="fu">writeRaster</span>(chDWb,<span class="st">&quot;./chDWb.tif&quot;</span>)</span>
-<span id="cb18-61"><a href="Chapter3.html#cb18-61" tabindex="-1"></a>chDWc<span class="ot">=</span><span class="fu">ifel</span>(dw19<span class="sc">==</span>dw20,<span class="dv">0</span>,<span class="dv">1</span>) <span class="co"># Pārmaiņas no 2019. uz 2020. gadu</span></span>
-<span id="cb18-62"><a href="Chapter3.html#cb18-62" tabindex="-1"></a><span class="fu">writeRaster</span>(chDWc,<span class="st">&quot;./chDWc.tif&quot;</span>)</span>
-<span id="cb18-63"><a href="Chapter3.html#cb18-63" tabindex="-1"></a>chDWd<span class="ot">=</span><span class="fu">ifel</span>(dw20<span class="sc">==</span>dw21,<span class="dv">0</span>,<span class="dv">1</span>) <span class="co"># Pārmaiņas no 2020. uz 2021. gadu</span></span>
-<span id="cb18-64"><a href="Chapter3.html#cb18-64" tabindex="-1"></a><span class="fu">writeRaster</span>(chDWd,<span class="st">&quot;./chDWd.tif&quot;</span>)</span>
-<span id="cb18-65"><a href="Chapter3.html#cb18-65" tabindex="-1"></a>chDWe<span class="ot">=</span><span class="fu">ifel</span>(dw21<span class="sc">==</span>dw22,<span class="dv">0</span>,<span class="dv">1</span>) <span class="co"># Pārmaiņas no 2021. uz 2022. gadu</span></span>
-<span id="cb18-66"><a href="Chapter3.html#cb18-66" tabindex="-1"></a><span class="fu">writeRaster</span>(chDWe,<span class="st">&quot;./chDWe.tif&quot;</span>)</span>
-<span id="cb18-67"><a href="Chapter3.html#cb18-67" tabindex="-1"></a>chDWf<span class="ot">=</span><span class="fu">ifel</span>(dw22<span class="sc">==</span>dw23,<span class="dv">0</span>,<span class="dv">1</span>) <span class="co"># Pārmaiņas no 2022. uz 2023. gadu</span></span>
-<span id="cb18-68"><a href="Chapter3.html#cb18-68" tabindex="-1"></a><span class="fu">writeRaster</span>(chDWf,<span class="st">&quot;./chDWf.tif&quot;</span>)</span>
-<span id="cb18-69"><a href="Chapter3.html#cb18-69" tabindex="-1"></a><span class="fu">plot</span>(chDWf)</span>
-<span id="cb18-70"><a href="Chapter3.html#cb18-70" tabindex="-1"></a></span>
-<span id="cb18-71"><a href="Chapter3.html#cb18-71" tabindex="-1"></a><span class="co"># pārmaiņu analīze</span></span>
-<span id="cb18-72"><a href="Chapter3.html#cb18-72" tabindex="-1"></a>soli<span class="ot">=</span><span class="fu">levels</span>(<span class="fu">factor</span>(lapas<span class="sc">$</span>lapa))</span>
-<span id="cb18-73"><a href="Chapter3.html#cb18-73" tabindex="-1"></a></span>
-<span id="cb18-74"><a href="Chapter3.html#cb18-74" tabindex="-1"></a>cl <span class="ot">&lt;-</span> <span class="fu">makeCluster</span>(<span class="dv">12</span>) <span class="co"># jānorāda izmantojamo kodolu (fizisko) skaits</span></span>
-<span id="cb18-75"><a href="Chapter3.html#cb18-75" tabindex="-1"></a><span class="fu">registerDoParallel</span>(cl)</span>
-<span id="cb18-76"><a href="Chapter3.html#cb18-76" tabindex="-1"></a></span>
-<span id="cb18-77"><a href="Chapter3.html#cb18-77" tabindex="-1"></a><span class="fu">foreach</span>(<span class="at">i =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(soli)) <span class="sc">%dopar%</span> {</span>
-<span id="cb18-78"><a href="Chapter3.html#cb18-78" tabindex="-1"></a>  <span class="fu">library</span>(terra)</span>
-<span id="cb18-79"><a href="Chapter3.html#cb18-79" tabindex="-1"></a>  <span class="fu">library</span>(sf)</span>
-<span id="cb18-80"><a href="Chapter3.html#cb18-80" tabindex="-1"></a>  <span class="fu">library</span>(tidyverse)</span>
-<span id="cb18-81"><a href="Chapter3.html#cb18-81" tabindex="-1"></a>  <span class="fu">library</span>(arrow)</span>
-<span id="cb18-82"><a href="Chapter3.html#cb18-82" tabindex="-1"></a>  <span class="fu">library</span>(sfarrow)</span>
-<span id="cb18-83"><a href="Chapter3.html#cb18-83" tabindex="-1"></a>  <span class="fu">library</span>(exactextractr)</span>
-<span id="cb18-84"><a href="Chapter3.html#cb18-84" tabindex="-1"></a>  </span>
-<span id="cb18-85"><a href="Chapter3.html#cb18-85" tabindex="-1"></a>  <span class="co"># funkcija platībaīpatsvarā kurā noticis koku vainagu seguma zudums</span></span>
-<span id="cb18-86"><a href="Chapter3.html#cb18-86" tabindex="-1"></a>  <span class="co"># noteikšanai katrā gadā (2017-2023)</span></span>
-<span id="cb18-87"><a href="Chapter3.html#cb18-87" tabindex="-1"></a>  darbiba <span class="ot">&lt;-</span> <span class="cf">function</span>(raster, vector) {</span>
-<span id="cb18-88"><a href="Chapter3.html#cb18-88" tabindex="-1"></a>    <span class="fu">exact_extract</span>(raster, vector, <span class="cf">function</span>(value, coverage_fraction) {</span>
-<span id="cb18-89"><a href="Chapter3.html#cb18-89" tabindex="-1"></a>      <span class="fu">data.frame</span>(<span class="at">value =</span> value,</span>
-<span id="cb18-90"><a href="Chapter3.html#cb18-90" tabindex="-1"></a>                 <span class="at">frac =</span> coverage_fraction<span class="sc">/</span><span class="fu">sum</span>(coverage_fraction,<span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb18-91"><a href="Chapter3.html#cb18-91" tabindex="-1"></a>        <span class="fu">arrange</span>(value) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-92"><a href="Chapter3.html#cb18-92" tabindex="-1"></a>        <span class="fu">group_by</span>(value) <span class="sc">%&gt;%</span></span>
-<span id="cb18-93"><a href="Chapter3.html#cb18-93" tabindex="-1"></a>        <span class="fu">summarize</span>(<span class="at">freq =</span> <span class="fu">sum</span>(frac, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">.groups =</span> <span class="st">&#39;drop&#39;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb18-94"><a href="Chapter3.html#cb18-94" tabindex="-1"></a>        <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> <span class="st">&#39;value&#39;</span>,</span>
-<span id="cb18-95"><a href="Chapter3.html#cb18-95" tabindex="-1"></a>                    <span class="at">names_prefix =</span> <span class="st">&#39;freq_&#39;</span>,</span>
-<span id="cb18-96"><a href="Chapter3.html#cb18-96" tabindex="-1"></a>                    <span class="at">values_from =</span> <span class="st">&#39;freq&#39;</span>)</span>
-<span id="cb18-97"><a href="Chapter3.html#cb18-97" tabindex="-1"></a>    }) <span class="sc">%&gt;%</span></span>
-<span id="cb18-98"><a href="Chapter3.html#cb18-98" tabindex="-1"></a>      <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">starts_with</span>(<span class="st">&#39;freq&#39;</span>), <span class="sc">~</span><span class="fu">replace_na</span>(., <span class="dv">0</span>)))</span>
-<span id="cb18-99"><a href="Chapter3.html#cb18-99" tabindex="-1"></a>  }</span>
-<span id="cb18-100"><a href="Chapter3.html#cb18-100" tabindex="-1"></a>  </span>
-<span id="cb18-101"><a href="Chapter3.html#cb18-101" tabindex="-1"></a>  <span class="co"># darba lapas</span></span>
-<span id="cb18-102"><a href="Chapter3.html#cb18-102" tabindex="-1"></a>  solis<span class="ot">=</span>soli[i]</span>
-<span id="cb18-103"><a href="Chapter3.html#cb18-103" tabindex="-1"></a>  celi<span class="ot">=</span>lapas <span class="sc">%&gt;%</span> <span class="fu">filter</span>(lapa<span class="sc">==</span>solis)</span>
-<span id="cb18-104"><a href="Chapter3.html#cb18-104" tabindex="-1"></a>  </span>
-<span id="cb18-105"><a href="Chapter3.html#cb18-105" tabindex="-1"></a>  <span class="co"># poligonu ielasīšana</span></span>
-<span id="cb18-106"><a href="Chapter3.html#cb18-106" tabindex="-1"></a>  sunas<span class="ot">=</span><span class="fu">st_read_parquet</span>(celi<span class="sc">$</span>cels_grid)</span>
-<span id="cb18-107"><a href="Chapter3.html#cb18-107" tabindex="-1"></a>  sunas<span class="ot">=</span>sunas <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(id,yes,tks50km,X,Y)</span>
-<span id="cb18-108"><a href="Chapter3.html#cb18-108" tabindex="-1"></a>  r500<span class="ot">=</span><span class="fu">st_read_parquet</span>(celi<span class="sc">$</span>cels_r500)</span>
-<span id="cb18-109"><a href="Chapter3.html#cb18-109" tabindex="-1"></a>  r500<span class="ot">=</span>r500 <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(id,yes,tks50km,X,Y)</span>
-<span id="cb18-110"><a href="Chapter3.html#cb18-110" tabindex="-1"></a>  r1250<span class="ot">=</span><span class="fu">st_read_parquet</span>(celi<span class="sc">$</span>cels_r1250)</span>
-<span id="cb18-111"><a href="Chapter3.html#cb18-111" tabindex="-1"></a>  r1250<span class="ot">=</span>r1250 <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(id,yes,tks50km,X,Y)</span>
-<span id="cb18-112"><a href="Chapter3.html#cb18-112" tabindex="-1"></a>  r3000<span class="ot">=</span><span class="fu">st_read_parquet</span>(celi<span class="sc">$</span>cels_r3000)</span>
-<span id="cb18-113"><a href="Chapter3.html#cb18-113" tabindex="-1"></a>  r3000<span class="ot">=</span>r3000 <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(id,yes,tks50km,X,Y)</span>
-<span id="cb18-114"><a href="Chapter3.html#cb18-114" tabindex="-1"></a>  </span>
-<span id="cb18-115"><a href="Chapter3.html#cb18-115" tabindex="-1"></a>  <span class="co"># konkrētās darba lapas robežas</span></span>
-<span id="cb18-116"><a href="Chapter3.html#cb18-116" tabindex="-1"></a>  telpa<span class="ot">=</span><span class="fu">st_as_sfc</span>(<span class="fu">st_bbox</span>(r3000))</span>
-<span id="cb18-117"><a href="Chapter3.html#cb18-117" tabindex="-1"></a>  telpa2<span class="ot">=</span><span class="fu">st_buffer</span>(telpa,<span class="at">dist=</span><span class="dv">1000</span>)</span>
-<span id="cb18-118"><a href="Chapter3.html#cb18-118" tabindex="-1"></a>  </span>
-<span id="cb18-119"><a href="Chapter3.html#cb18-119" tabindex="-1"></a>  <span class="co"># koku vainagu seguma pārmaiņas</span></span>
-<span id="cb18-120"><a href="Chapter3.html#cb18-120" tabindex="-1"></a>  tcl2<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./KokuVainagiem.tif&quot;</span>)</span>
-<span id="cb18-121"><a href="Chapter3.html#cb18-121" tabindex="-1"></a>  tcl_telpa<span class="ot">=</span><span class="fu">crop</span>(tcl2,telpa2)</span>
-<span id="cb18-122"><a href="Chapter3.html#cb18-122" tabindex="-1"></a>  </span>
-<span id="cb18-123"><a href="Chapter3.html#cb18-123" tabindex="-1"></a>  loss_cell<span class="ot">=</span><span class="fu">darbiba</span>(tcl_telpa, sunas)</span>
-<span id="cb18-124"><a href="Chapter3.html#cb18-124" tabindex="-1"></a>  sunas<span class="ot">=</span><span class="fu">cbind</span>(sunas,loss_cell)</span>
-<span id="cb18-125"><a href="Chapter3.html#cb18-125" tabindex="-1"></a>  loss_r500<span class="ot">=</span><span class="fu">darbiba</span>(tcl_telpa, r500)</span>
-<span id="cb18-126"><a href="Chapter3.html#cb18-126" tabindex="-1"></a>  r500<span class="ot">=</span><span class="fu">cbind</span>(r500,loss_r500)</span>
-<span id="cb18-127"><a href="Chapter3.html#cb18-127" tabindex="-1"></a>  loss_r1250<span class="ot">=</span><span class="fu">darbiba</span>(tcl_telpa, r1250)</span>
-<span id="cb18-128"><a href="Chapter3.html#cb18-128" tabindex="-1"></a>  r1250<span class="ot">=</span><span class="fu">cbind</span>(r1250,loss_r1250)</span>
-<span id="cb18-129"><a href="Chapter3.html#cb18-129" tabindex="-1"></a>  loss_r3000<span class="ot">=</span><span class="fu">darbiba</span>(tcl_telpa, r3000)</span>
-<span id="cb18-130"><a href="Chapter3.html#cb18-130" tabindex="-1"></a>  r3000<span class="ot">=</span><span class="fu">cbind</span>(r3000,loss_r3000)</span>
-<span id="cb18-131"><a href="Chapter3.html#cb18-131" tabindex="-1"></a>  </span>
-<span id="cb18-132"><a href="Chapter3.html#cb18-132" tabindex="-1"></a>  <span class="co"># Vides pārmaiņas Dynamic World datos</span></span>
-<span id="cb18-133"><a href="Chapter3.html#cb18-133" tabindex="-1"></a>  chDWa<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./chDWa.tif&quot;</span>)</span>
-<span id="cb18-134"><a href="Chapter3.html#cb18-134" tabindex="-1"></a>  chDWb<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./chDWb.tif&quot;</span>)</span>
-<span id="cb18-135"><a href="Chapter3.html#cb18-135" tabindex="-1"></a>  chDWc<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./chDWc.tif&quot;</span>)</span>
-<span id="cb18-136"><a href="Chapter3.html#cb18-136" tabindex="-1"></a>  chDWd<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./chDWd.tif&quot;</span>)</span>
-<span id="cb18-137"><a href="Chapter3.html#cb18-137" tabindex="-1"></a>  chDWe<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./chDWe.tif&quot;</span>)</span>
-<span id="cb18-138"><a href="Chapter3.html#cb18-138" tabindex="-1"></a>  chDWf<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./chDWf.tif&quot;</span>)</span>
-<span id="cb18-139"><a href="Chapter3.html#cb18-139" tabindex="-1"></a>  </span>
-<span id="cb18-140"><a href="Chapter3.html#cb18-140" tabindex="-1"></a>  <span class="fu">names</span>(chDWa)<span class="ot">=</span><span class="st">&quot;DWchange_1718&quot;</span></span>
-<span id="cb18-141"><a href="Chapter3.html#cb18-141" tabindex="-1"></a>  <span class="fu">names</span>(chDWb)<span class="ot">=</span><span class="st">&quot;DWchange_1819&quot;</span></span>
-<span id="cb18-142"><a href="Chapter3.html#cb18-142" tabindex="-1"></a>  <span class="fu">names</span>(chDWc)<span class="ot">=</span><span class="st">&quot;DWchange_1920&quot;</span></span>
-<span id="cb18-143"><a href="Chapter3.html#cb18-143" tabindex="-1"></a>  <span class="fu">names</span>(chDWd)<span class="ot">=</span><span class="st">&quot;DWchange_2021&quot;</span></span>
-<span id="cb18-144"><a href="Chapter3.html#cb18-144" tabindex="-1"></a>  <span class="fu">names</span>(chDWe)<span class="ot">=</span><span class="st">&quot;DWchange_2122&quot;</span></span>
-<span id="cb18-145"><a href="Chapter3.html#cb18-145" tabindex="-1"></a>  <span class="fu">names</span>(chDWf)<span class="ot">=</span><span class="st">&quot;DWchange_2223&quot;</span></span>
-<span id="cb18-146"><a href="Chapter3.html#cb18-146" tabindex="-1"></a>  </span>
-<span id="cb18-147"><a href="Chapter3.html#cb18-147" tabindex="-1"></a>  mazs_chDWa<span class="ot">=</span><span class="fu">crop</span>(chDWa,telpa2)</span>
-<span id="cb18-148"><a href="Chapter3.html#cb18-148" tabindex="-1"></a>  mazs_chDWb<span class="ot">=</span><span class="fu">crop</span>(chDWb,telpa2)</span>
-<span id="cb18-149"><a href="Chapter3.html#cb18-149" tabindex="-1"></a>  mazs_chDWc<span class="ot">=</span><span class="fu">crop</span>(chDWc,telpa2)</span>
-<span id="cb18-150"><a href="Chapter3.html#cb18-150" tabindex="-1"></a>  mazs_chDWd<span class="ot">=</span><span class="fu">crop</span>(chDWd,telpa2)</span>
-<span id="cb18-151"><a href="Chapter3.html#cb18-151" tabindex="-1"></a>  mazs_chDWe<span class="ot">=</span><span class="fu">crop</span>(chDWe,telpa2)</span>
-<span id="cb18-152"><a href="Chapter3.html#cb18-152" tabindex="-1"></a>  mazs_chDWf<span class="ot">=</span><span class="fu">crop</span>(chDWf,telpa2)</span>
-<span id="cb18-153"><a href="Chapter3.html#cb18-153" tabindex="-1"></a>  </span>
-<span id="cb18-154"><a href="Chapter3.html#cb18-154" tabindex="-1"></a>  mazas_DW<span class="ot">=</span>raster<span class="sc">::</span><span class="fu">stack</span>(<span class="fu">c</span>(mazs_chDWa,mazs_chDWb,mazs_chDWc,</span>
-<span id="cb18-155"><a href="Chapter3.html#cb18-155" tabindex="-1"></a>                           mazs_chDWd,mazs_chDWe,mazs_chDWf))</span>
-<span id="cb18-156"><a href="Chapter3.html#cb18-156" tabindex="-1"></a>  </span>
-<span id="cb18-157"><a href="Chapter3.html#cb18-157" tabindex="-1"></a>  sunam<span class="ot">=</span><span class="fu">exact_extract</span>(mazas_DW,sunas,<span class="st">&quot;mean&quot;</span>)</span>
-<span id="cb18-158"><a href="Chapter3.html#cb18-158" tabindex="-1"></a>  r500am<span class="ot">=</span><span class="fu">exact_extract</span>(mazas_DW,r500,<span class="st">&quot;mean&quot;</span>)</span>
-<span id="cb18-159"><a href="Chapter3.html#cb18-159" tabindex="-1"></a>  r1250am<span class="ot">=</span><span class="fu">exact_extract</span>(mazas_DW,r1250,<span class="st">&quot;mean&quot;</span>)</span>
-<span id="cb18-160"><a href="Chapter3.html#cb18-160" tabindex="-1"></a>  r3000am<span class="ot">=</span><span class="fu">exact_extract</span>(mazas_DW,r3000,<span class="st">&quot;mean&quot;</span>)</span>
-<span id="cb18-161"><a href="Chapter3.html#cb18-161" tabindex="-1"></a>  </span>
-<span id="cb18-162"><a href="Chapter3.html#cb18-162" tabindex="-1"></a>  <span class="co"># iegūto rezultātu apvienošana</span></span>
-<span id="cb18-163"><a href="Chapter3.html#cb18-163" tabindex="-1"></a>  sunas<span class="ot">=</span><span class="fu">cbind</span>(sunas,sunam)</span>
-<span id="cb18-164"><a href="Chapter3.html#cb18-164" tabindex="-1"></a>  r500<span class="ot">=</span><span class="fu">cbind</span>(r500,r500am)</span>
-<span id="cb18-165"><a href="Chapter3.html#cb18-165" tabindex="-1"></a>  r1250<span class="ot">=</span><span class="fu">cbind</span>(r1250,r1250am)</span>
-<span id="cb18-166"><a href="Chapter3.html#cb18-166" tabindex="-1"></a>  r3000<span class="ot">=</span><span class="fu">cbind</span>(r3000,r3000am)</span>
-<span id="cb18-167"><a href="Chapter3.html#cb18-167" tabindex="-1"></a>  </span>
-<span id="cb18-168"><a href="Chapter3.html#cb18-168" tabindex="-1"></a>  <span class="co"># rezultējošo failu saglabāšana</span></span>
-<span id="cb18-169"><a href="Chapter3.html#cb18-169" tabindex="-1"></a>  <span class="fu">st_write_parquet</span>(sunas,celi<span class="sc">$</span>cels_grid)</span>
-<span id="cb18-170"><a href="Chapter3.html#cb18-170" tabindex="-1"></a>  <span class="fu">st_write_parquet</span>(r500,celi<span class="sc">$</span>cels_r500)</span>
-<span id="cb18-171"><a href="Chapter3.html#cb18-171" tabindex="-1"></a>  <span class="fu">st_write_parquet</span>(r1250,celi<span class="sc">$</span>cels_r1250)</span>
-<span id="cb18-172"><a href="Chapter3.html#cb18-172" tabindex="-1"></a>  <span class="fu">st_write_parquet</span>(r3000,celi<span class="sc">$</span>cels_r3000)</span>
-<span id="cb18-173"><a href="Chapter3.html#cb18-173" tabindex="-1"></a>}</span>
-<span id="cb18-174"><a href="Chapter3.html#cb18-174" tabindex="-1"></a><span class="fu">stopCluster</span>(cl)</span>
-<span id="cb18-175"><a href="Chapter3.html#cb18-175" tabindex="-1"></a></span>
-<span id="cb18-176"><a href="Chapter3.html#cb18-176" tabindex="-1"></a><span class="co"># darba lapu apvienošana</span></span>
-<span id="cb18-177"><a href="Chapter3.html#cb18-177" tabindex="-1"></a>pirmas_sunas<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(lapas<span class="sc">$</span>cels_grid[lapas<span class="sc">$</span>lapa<span class="sc">==</span>soli[<span class="dv">1</span>]])</span>
-<span id="cb18-178"><a href="Chapter3.html#cb18-178" tabindex="-1"></a>pirmas_r500<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(lapas<span class="sc">$</span>cels_r500[lapas<span class="sc">$</span>lapa<span class="sc">==</span>soli[<span class="dv">1</span>]])</span>
-<span id="cb18-179"><a href="Chapter3.html#cb18-179" tabindex="-1"></a>pirmas_r1250<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(lapas<span class="sc">$</span>cels_r1250[lapas<span class="sc">$</span>lapa<span class="sc">==</span>soli[<span class="dv">1</span>]])</span>
-<span id="cb18-180"><a href="Chapter3.html#cb18-180" tabindex="-1"></a>pirmas_r3000<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(lapas<span class="sc">$</span>cels_r3000[lapas<span class="sc">$</span>lapa<span class="sc">==</span>soli[<span class="dv">1</span>]])</span>
-<span id="cb18-181"><a href="Chapter3.html#cb18-181" tabindex="-1"></a></span>
-<span id="cb18-182"><a href="Chapter3.html#cb18-182" tabindex="-1"></a>dati_c<span class="ot">=</span>pirmas_sunas</span>
-<span id="cb18-183"><a href="Chapter3.html#cb18-183" tabindex="-1"></a>dati_r500<span class="ot">=</span>pirmas_r500</span>
-<span id="cb18-184"><a href="Chapter3.html#cb18-184" tabindex="-1"></a>dati_r1250<span class="ot">=</span>pirmas_r1250</span>
-<span id="cb18-185"><a href="Chapter3.html#cb18-185" tabindex="-1"></a>dati_r3000<span class="ot">=</span>pirmas_r3000</span>
-<span id="cb18-186"><a href="Chapter3.html#cb18-186" tabindex="-1"></a></span>
-<span id="cb18-187"><a href="Chapter3.html#cb18-187" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">length</span>(soli)){</span>
-<span id="cb18-188"><a href="Chapter3.html#cb18-188" tabindex="-1"></a>  solis<span class="ot">=</span>soli[i]</span>
-<span id="cb18-189"><a href="Chapter3.html#cb18-189" tabindex="-1"></a>  nakosas_sunas<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(lapas<span class="sc">$</span>cels_grid[lapas<span class="sc">$</span>lapa<span class="sc">==</span>solis])</span>
-<span id="cb18-190"><a href="Chapter3.html#cb18-190" tabindex="-1"></a>  nakosas_r500<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(lapas<span class="sc">$</span>cels_r500[lapas<span class="sc">$</span>lapa<span class="sc">==</span>solis])</span>
-<span id="cb18-191"><a href="Chapter3.html#cb18-191" tabindex="-1"></a>  nakosas_r1250<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(lapas<span class="sc">$</span>cels_r1250[lapas<span class="sc">$</span>lapa<span class="sc">==</span>solis])</span>
-<span id="cb18-192"><a href="Chapter3.html#cb18-192" tabindex="-1"></a>  nakosas_r3000<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(lapas<span class="sc">$</span>cels_r3000[lapas<span class="sc">$</span>lapa<span class="sc">==</span>solis])</span>
-<span id="cb18-193"><a href="Chapter3.html#cb18-193" tabindex="-1"></a>  </span>
-<span id="cb18-194"><a href="Chapter3.html#cb18-194" tabindex="-1"></a>  dati_c<span class="ot">=</span><span class="fu">bind_rows</span>(dati_c,nakosas_sunas)</span>
-<span id="cb18-195"><a href="Chapter3.html#cb18-195" tabindex="-1"></a>  dati_r500<span class="ot">=</span><span class="fu">bind_rows</span>(dati_r500,nakosas_sunas)</span>
-<span id="cb18-196"><a href="Chapter3.html#cb18-196" tabindex="-1"></a>  dati_r1250<span class="ot">=</span><span class="fu">bind_rows</span>(dati_r1250,nakosas_sunas)</span>
-<span id="cb18-197"><a href="Chapter3.html#cb18-197" tabindex="-1"></a>  dati_r3000<span class="ot">=</span><span class="fu">bind_rows</span>(dati_r3000,nakosas_sunas)</span>
-<span id="cb18-198"><a href="Chapter3.html#cb18-198" tabindex="-1"></a>}</span>
-<span id="cb18-199"><a href="Chapter3.html#cb18-199" tabindex="-1"></a></span>
-<span id="cb18-200"><a href="Chapter3.html#cb18-200" tabindex="-1"></a><span class="co"># apvienoto lapu saglabāšana</span></span>
-<span id="cb18-201"><a href="Chapter3.html#cb18-201" tabindex="-1"></a><span class="fu">st_write_parquet</span>(dati_c,<span class="st">&quot;./VidesParmainas_suna.parquet&quot;</span>)</span>
-<span id="cb18-202"><a href="Chapter3.html#cb18-202" tabindex="-1"></a><span class="fu">st_write_parquet</span>(dati_r500,<span class="st">&quot;./VidesParmainas_r500.parquet&quot;</span>)</span>
-<span id="cb18-203"><a href="Chapter3.html#cb18-203" tabindex="-1"></a><span class="fu">st_write_parquet</span>(dati_r1250,<span class="st">&quot;./VidesParmainas_r1250.parquet&quot;</span>)</span>
-<span id="cb18-204"><a href="Chapter3.html#cb18-204" tabindex="-1"></a><span class="fu">st_write_parquet</span>(dati_r3000,<span class="st">&quot;./VidesParmainas_r3000.parquet&quot;</span>)</span>
-<span id="cb18-205"><a href="Chapter3.html#cb18-205" tabindex="-1"></a></span>
-<span id="cb18-206"><a href="Chapter3.html#cb18-206" tabindex="-1"></a><span class="co"># lauku nosaukumu harmonizēšana</span></span>
-<span id="cb18-207"><a href="Chapter3.html#cb18-207" tabindex="-1"></a>dati_c2<span class="ot">=</span>dati_c <span class="sc">%&gt;%</span> </span>
-<span id="cb18-208"><a href="Chapter3.html#cb18-208" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">cell_TCLNaN=</span>freq_NaN,</span>
-<span id="cb18-209"><a href="Chapter3.html#cb18-209" tabindex="-1"></a>         <span class="at">cell_TCL17=</span>freq_17,</span>
-<span id="cb18-210"><a href="Chapter3.html#cb18-210" tabindex="-1"></a>         <span class="at">cell_TCL18=</span>freq_18,</span>
-<span id="cb18-211"><a href="Chapter3.html#cb18-211" tabindex="-1"></a>         <span class="at">cell_TCL19=</span>freq_19,</span>
-<span id="cb18-212"><a href="Chapter3.html#cb18-212" tabindex="-1"></a>         <span class="at">cell_TCL20=</span>freq_20,</span>
-<span id="cb18-213"><a href="Chapter3.html#cb18-213" tabindex="-1"></a>         <span class="at">cell_TCL21=</span>freq_21,</span>
-<span id="cb18-214"><a href="Chapter3.html#cb18-214" tabindex="-1"></a>         <span class="at">cell_TCL22=</span>freq_22,</span>
-<span id="cb18-215"><a href="Chapter3.html#cb18-215" tabindex="-1"></a>         <span class="at">cell_TCL23=</span>freq_23,</span>
-<span id="cb18-216"><a href="Chapter3.html#cb18-216" tabindex="-1"></a>         <span class="at">cell_DWchange1718=</span>mean.DWchange_1718,</span>
-<span id="cb18-217"><a href="Chapter3.html#cb18-217" tabindex="-1"></a>         <span class="at">cell_DWchange1819=</span>mean.DWchange_1819,</span>
-<span id="cb18-218"><a href="Chapter3.html#cb18-218" tabindex="-1"></a>         <span class="at">cell_DWchange1920=</span>mean.DWchange_1920,</span>
-<span id="cb18-219"><a href="Chapter3.html#cb18-219" tabindex="-1"></a>         <span class="at">cell_DWchange2021=</span>mean.DWchange_2021,</span>
-<span id="cb18-220"><a href="Chapter3.html#cb18-220" tabindex="-1"></a>         <span class="at">cell_DWchange2122=</span>mean.DWchange_2122,</span>
-<span id="cb18-221"><a href="Chapter3.html#cb18-221" tabindex="-1"></a>         <span class="at">cell_DWchange2223=</span>mean.DWchange_2223) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-222"><a href="Chapter3.html#cb18-222" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(id,yes,tks50km,X,Y,</span>
-<span id="cb18-223"><a href="Chapter3.html#cb18-223" tabindex="-1"></a>                cell_TCLNaN,cell_TCL17,cell_TCL18,cell_TCL19,cell_TCL20,</span>
-<span id="cb18-224"><a href="Chapter3.html#cb18-224" tabindex="-1"></a>                cell_TCL21,cell_TCL22,cell_TCL23,</span>
-<span id="cb18-225"><a href="Chapter3.html#cb18-225" tabindex="-1"></a>                cell_DWchange1718,cell_DWchange1819,cell_DWchange1920,</span>
-<span id="cb18-226"><a href="Chapter3.html#cb18-226" tabindex="-1"></a>                cell_DWchange2021,cell_DWchange2122,cell_DWchange2223)</span>
-<span id="cb18-227"><a href="Chapter3.html#cb18-227" tabindex="-1"></a></span>
-<span id="cb18-228"><a href="Chapter3.html#cb18-228" tabindex="-1"></a>dati_r500a<span class="ot">=</span><span class="fu">data.frame</span>(dati_r500) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-229"><a href="Chapter3.html#cb18-229" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">r500_TCLNaN=</span>freq_NaN,</span>
-<span id="cb18-230"><a href="Chapter3.html#cb18-230" tabindex="-1"></a>         <span class="at">r500_TCL17=</span>freq_17,</span>
-<span id="cb18-231"><a href="Chapter3.html#cb18-231" tabindex="-1"></a>         <span class="at">r500_TCL18=</span>freq_18,</span>
-<span id="cb18-232"><a href="Chapter3.html#cb18-232" tabindex="-1"></a>         <span class="at">r500_TCL19=</span>freq_19,</span>
-<span id="cb18-233"><a href="Chapter3.html#cb18-233" tabindex="-1"></a>         <span class="at">r500_TCL20=</span>freq_20,</span>
-<span id="cb18-234"><a href="Chapter3.html#cb18-234" tabindex="-1"></a>         <span class="at">r500_TCL21=</span>freq_21,</span>
-<span id="cb18-235"><a href="Chapter3.html#cb18-235" tabindex="-1"></a>         <span class="at">r500_TCL22=</span>freq_22,</span>
-<span id="cb18-236"><a href="Chapter3.html#cb18-236" tabindex="-1"></a>         <span class="at">r500_TCL23=</span>freq_23,</span>
-<span id="cb18-237"><a href="Chapter3.html#cb18-237" tabindex="-1"></a>         <span class="at">r500_DWchange1718=</span>mean.DWchange_1718,</span>
-<span id="cb18-238"><a href="Chapter3.html#cb18-238" tabindex="-1"></a>         <span class="at">r500_DWchange1819=</span>mean.DWchange_1819,</span>
-<span id="cb18-239"><a href="Chapter3.html#cb18-239" tabindex="-1"></a>         <span class="at">r500_DWchange1920=</span>mean.DWchange_1920,</span>
-<span id="cb18-240"><a href="Chapter3.html#cb18-240" tabindex="-1"></a>         <span class="at">r500_DWchange2021=</span>mean.DWchange_2021,</span>
-<span id="cb18-241"><a href="Chapter3.html#cb18-241" tabindex="-1"></a>         <span class="at">r500_DWchange2122=</span>mean.DWchange_2122,</span>
-<span id="cb18-242"><a href="Chapter3.html#cb18-242" tabindex="-1"></a>         <span class="at">r500_DWchange2223=</span>mean.DWchange_2223) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-243"><a href="Chapter3.html#cb18-243" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(id,</span>
-<span id="cb18-244"><a href="Chapter3.html#cb18-244" tabindex="-1"></a>                r500_TCLNaN,r500_TCL17,r500_TCL18,r500_TCL19,r500_TCL20,</span>
-<span id="cb18-245"><a href="Chapter3.html#cb18-245" tabindex="-1"></a>                r500_TCL21,r500_TCL22,r500_TCL23,</span>
-<span id="cb18-246"><a href="Chapter3.html#cb18-246" tabindex="-1"></a>                r500_DWchange1718,r500_DWchange1819,r500_DWchange1920,</span>
-<span id="cb18-247"><a href="Chapter3.html#cb18-247" tabindex="-1"></a>                r500_DWchange2021,r500_DWchange2122,r500_DWchange2223)</span>
-<span id="cb18-248"><a href="Chapter3.html#cb18-248" tabindex="-1"></a></span>
-<span id="cb18-249"><a href="Chapter3.html#cb18-249" tabindex="-1"></a>dati_r1250a<span class="ot">=</span><span class="fu">data.frame</span>(dati_r1250) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-250"><a href="Chapter3.html#cb18-250" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">r1250_TCLNaN=</span>freq_NaN,</span>
-<span id="cb18-251"><a href="Chapter3.html#cb18-251" tabindex="-1"></a>         <span class="at">r1250_TCL17=</span>freq_17,</span>
-<span id="cb18-252"><a href="Chapter3.html#cb18-252" tabindex="-1"></a>         <span class="at">r1250_TCL18=</span>freq_18,</span>
-<span id="cb18-253"><a href="Chapter3.html#cb18-253" tabindex="-1"></a>         <span class="at">r1250_TCL19=</span>freq_19,</span>
-<span id="cb18-254"><a href="Chapter3.html#cb18-254" tabindex="-1"></a>         <span class="at">r1250_TCL20=</span>freq_20,</span>
-<span id="cb18-255"><a href="Chapter3.html#cb18-255" tabindex="-1"></a>         <span class="at">r1250_TCL21=</span>freq_21,</span>
-<span id="cb18-256"><a href="Chapter3.html#cb18-256" tabindex="-1"></a>         <span class="at">r1250_TCL22=</span>freq_22,</span>
-<span id="cb18-257"><a href="Chapter3.html#cb18-257" tabindex="-1"></a>         <span class="at">r1250_TCL23=</span>freq_23,</span>
-<span id="cb18-258"><a href="Chapter3.html#cb18-258" tabindex="-1"></a>         <span class="at">r1250_DWchange1718=</span>mean.DWchange_1718,</span>
-<span id="cb18-259"><a href="Chapter3.html#cb18-259" tabindex="-1"></a>         <span class="at">r1250_DWchange1819=</span>mean.DWchange_1819,</span>
-<span id="cb18-260"><a href="Chapter3.html#cb18-260" tabindex="-1"></a>         <span class="at">r1250_DWchange1920=</span>mean.DWchange_1920,</span>
-<span id="cb18-261"><a href="Chapter3.html#cb18-261" tabindex="-1"></a>         <span class="at">r1250_DWchange2021=</span>mean.DWchange_2021,</span>
-<span id="cb18-262"><a href="Chapter3.html#cb18-262" tabindex="-1"></a>         <span class="at">r1250_DWchange2122=</span>mean.DWchange_2122,</span>
-<span id="cb18-263"><a href="Chapter3.html#cb18-263" tabindex="-1"></a>         <span class="at">r1250_DWchange2223=</span>mean.DWchange_2223) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-264"><a href="Chapter3.html#cb18-264" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(id,</span>
-<span id="cb18-265"><a href="Chapter3.html#cb18-265" tabindex="-1"></a>                r1250_TCLNaN,r1250_TCL17,r1250_TCL18,r1250_TCL19,r1250_TCL20,</span>
-<span id="cb18-266"><a href="Chapter3.html#cb18-266" tabindex="-1"></a>                r1250_TCL21,r1250_TCL22,r1250_TCL23,</span>
-<span id="cb18-267"><a href="Chapter3.html#cb18-267" tabindex="-1"></a>                r1250_DWchange1718,r1250_DWchange1819,r1250_DWchange1920,</span>
-<span id="cb18-268"><a href="Chapter3.html#cb18-268" tabindex="-1"></a>                r1250_DWchange2021,r1250_DWchange2122,r1250_DWchange2223)</span>
-<span id="cb18-269"><a href="Chapter3.html#cb18-269" tabindex="-1"></a></span>
-<span id="cb18-270"><a href="Chapter3.html#cb18-270" tabindex="-1"></a></span>
-<span id="cb18-271"><a href="Chapter3.html#cb18-271" tabindex="-1"></a>dati_r3000a<span class="ot">=</span><span class="fu">data.frame</span>(dati_r3000) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-272"><a href="Chapter3.html#cb18-272" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">r3000_TCLNaN=</span>freq_NaN,</span>
-<span id="cb18-273"><a href="Chapter3.html#cb18-273" tabindex="-1"></a>         <span class="at">r3000_TCL17=</span>freq_17,</span>
-<span id="cb18-274"><a href="Chapter3.html#cb18-274" tabindex="-1"></a>         <span class="at">r3000_TCL18=</span>freq_18,</span>
-<span id="cb18-275"><a href="Chapter3.html#cb18-275" tabindex="-1"></a>         <span class="at">r3000_TCL19=</span>freq_19,</span>
-<span id="cb18-276"><a href="Chapter3.html#cb18-276" tabindex="-1"></a>         <span class="at">r3000_TCL20=</span>freq_20,</span>
-<span id="cb18-277"><a href="Chapter3.html#cb18-277" tabindex="-1"></a>         <span class="at">r3000_TCL21=</span>freq_21,</span>
-<span id="cb18-278"><a href="Chapter3.html#cb18-278" tabindex="-1"></a>         <span class="at">r3000_TCL22=</span>freq_22,</span>
-<span id="cb18-279"><a href="Chapter3.html#cb18-279" tabindex="-1"></a>         <span class="at">r3000_TCL23=</span>freq_23,</span>
-<span id="cb18-280"><a href="Chapter3.html#cb18-280" tabindex="-1"></a>         <span class="at">r3000_DWchange1718=</span>mean.DWchange_1718,</span>
-<span id="cb18-281"><a href="Chapter3.html#cb18-281" tabindex="-1"></a>         <span class="at">r3000_DWchange1819=</span>mean.DWchange_1819,</span>
-<span id="cb18-282"><a href="Chapter3.html#cb18-282" tabindex="-1"></a>         <span class="at">r3000_DWchange1920=</span>mean.DWchange_1920,</span>
-<span id="cb18-283"><a href="Chapter3.html#cb18-283" tabindex="-1"></a>         <span class="at">r3000_DWchange2021=</span>mean.DWchange_2021,</span>
-<span id="cb18-284"><a href="Chapter3.html#cb18-284" tabindex="-1"></a>         <span class="at">r3000_DWchange2122=</span>mean.DWchange_2122,</span>
-<span id="cb18-285"><a href="Chapter3.html#cb18-285" tabindex="-1"></a>         <span class="at">r3000_DWchange2223=</span>mean.DWchange_2223) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-286"><a href="Chapter3.html#cb18-286" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(id,</span>
-<span id="cb18-287"><a href="Chapter3.html#cb18-287" tabindex="-1"></a>                r3000_TCLNaN,r3000_TCL17,r3000_TCL18,r3000_TCL19,r3000_TCL20,</span>
-<span id="cb18-288"><a href="Chapter3.html#cb18-288" tabindex="-1"></a>                r3000_TCL21,r3000_TCL22,r3000_TCL23,</span>
-<span id="cb18-289"><a href="Chapter3.html#cb18-289" tabindex="-1"></a>                r3000_DWchange1718,r3000_DWchange1819,r3000_DWchange1920,</span>
-<span id="cb18-290"><a href="Chapter3.html#cb18-290" tabindex="-1"></a>                r3000_DWchange2021,r3000_DWchange2122,r3000_DWchange2223)</span>
-<span id="cb18-291"><a href="Chapter3.html#cb18-291" tabindex="-1"></a></span>
-<span id="cb18-292"><a href="Chapter3.html#cb18-292" tabindex="-1"></a><span class="co"># visu rādiusu pievienošana režģim</span></span>
-<span id="cb18-293"><a href="Chapter3.html#cb18-293" tabindex="-1"></a>vides_parmainas<span class="ot">=</span>dati_c2 <span class="sc">%&gt;%</span> </span>
-<span id="cb18-294"><a href="Chapter3.html#cb18-294" tabindex="-1"></a>  <span class="fu">left_join</span>(dati_r500a,<span class="at">by=</span><span class="fu">c</span>(<span class="st">&quot;id&quot;</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-295"><a href="Chapter3.html#cb18-295" tabindex="-1"></a>  <span class="fu">left_join</span>(dati_r1250a,<span class="at">by=</span><span class="fu">c</span>(<span class="st">&quot;id&quot;</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-296"><a href="Chapter3.html#cb18-296" tabindex="-1"></a>  <span class="fu">left_join</span>(dati_r3000a,<span class="at">by=</span><span class="fu">c</span>(<span class="st">&quot;id&quot;</span>))</span>
-<span id="cb18-297"><a href="Chapter3.html#cb18-297" tabindex="-1"></a></span>
-<span id="cb18-298"><a href="Chapter3.html#cb18-298" tabindex="-1"></a><span class="co"># rezultāta saglabāšana</span></span>
-<span id="cb18-299"><a href="Chapter3.html#cb18-299" tabindex="-1"></a><span class="fu">st_write_parquet</span>(vides_parmainas,<span class="st">&quot;./VidesParmainas_visas.parquet&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="Chapter3.html#cb25-1" tabindex="-1"></a><span class="co"># libs</span></span>
+<span id="cb25-2"><a href="Chapter3.html#cb25-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb25-3"><a href="Chapter3.html#cb25-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
+<span id="cb25-4"><a href="Chapter3.html#cb25-4" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
+<span id="cb25-5"><a href="Chapter3.html#cb25-5" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(arrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;arrow&quot;</span>); <span class="fu">require</span>(arrow)}</span>
+<span id="cb25-6"><a href="Chapter3.html#cb25-6" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sfarrow)) {<span class="fu">install.packages</span>(<span class="st">&quot;sfarrow&quot;</span>); <span class="fu">require</span>(sfarrow)}</span>
+<span id="cb25-7"><a href="Chapter3.html#cb25-7" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(exactextractr)){<span class="fu">install.packages</span>(<span class="st">&quot;exactextractr&quot;</span>);<span class="fu">require</span>(exactextractr)}</span>
+<span id="cb25-8"><a href="Chapter3.html#cb25-8" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(foreach)) {<span class="fu">install.packages</span>(<span class="st">&quot;foreach&quot;</span>); <span class="fu">require</span>(foreach)}</span>
+<span id="cb25-9"><a href="Chapter3.html#cb25-9" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(doParallel)) {<span class="fu">install.packages</span>(<span class="st">&quot;doParallel&quot;</span>); <span class="fu">require</span>(doParallel)}</span>
+<span id="cb25-10"><a href="Chapter3.html#cb25-10" tabindex="-1"></a></span>
+<span id="cb25-11"><a href="Chapter3.html#cb25-11" tabindex="-1"></a></span>
+<span id="cb25-12"><a href="Chapter3.html#cb25-12" tabindex="-1"></a><span class="co"># režģis un buferi</span></span>
+<span id="cb25-13"><a href="Chapter3.html#cb25-13" tabindex="-1"></a>lapas_tikls<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">fails_c=</span><span class="fu">list.files</span>(<span class="st">&quot;./lapas/&quot;</span>))</span>
+<span id="cb25-14"><a href="Chapter3.html#cb25-14" tabindex="-1"></a>lapas_tikls<span class="sc">$</span>cels_grid<span class="ot">=</span><span class="fu">paste0</span>(<span class="st">&quot;./lapas/&quot;</span>,lapas_tikls<span class="sc">$</span>fails_c)</span>
+<span id="cb25-15"><a href="Chapter3.html#cb25-15" tabindex="-1"></a>lapas_tikls<span class="sc">$</span>lapa<span class="ot">=</span><span class="fu">substr</span>(lapas_tikls<span class="sc">$</span>fails,<span class="dv">10</span>,<span class="dv">13</span>)</span>
+<span id="cb25-16"><a href="Chapter3.html#cb25-16" tabindex="-1"></a>lapas_radiusi<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">fails_r=</span><span class="fu">list.files</span>(<span class="st">&quot;./lapas/&quot;</span>))</span>
+<span id="cb25-17"><a href="Chapter3.html#cb25-17" tabindex="-1"></a>lapas_radiusi<span class="sc">$</span>cels_radiuss<span class="ot">=</span><span class="fu">paste0</span>(<span class="st">&quot;./lapas/&quot;</span>,lapas_radiusi<span class="sc">$</span>fails_r)</span>
+<span id="cb25-18"><a href="Chapter3.html#cb25-18" tabindex="-1"></a>lapas_radiusi<span class="ot">=</span><span class="fu">separate</span>(lapas_radiusi,fails_r,</span>
+<span id="cb25-19"><a href="Chapter3.html#cb25-19" tabindex="-1"></a>                       <span class="at">into=</span><span class="fu">c</span>(<span class="st">&quot;sakums&quot;</span>,<span class="st">&quot;veids&quot;</span>,<span class="st">&quot;lapa&quot;</span>,<span class="st">&quot;beigas&quot;</span>),<span class="at">remove =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb25-20"><a href="Chapter3.html#cb25-20" tabindex="-1"></a></span>
+<span id="cb25-21"><a href="Chapter3.html#cb25-21" tabindex="-1"></a>lapas_r500<span class="ot">=</span>lapas_radiusi <span class="sc">%&gt;%</span> </span>
+<span id="cb25-22"><a href="Chapter3.html#cb25-22" tabindex="-1"></a>  <span class="fu">filter</span>(veids<span class="sc">==</span><span class="st">&quot;r500&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-23"><a href="Chapter3.html#cb25-23" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">fails_r500=</span>fails_r,</span>
+<span id="cb25-24"><a href="Chapter3.html#cb25-24" tabindex="-1"></a>         <span class="at">cels_r500=</span>cels_radiuss) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-25"><a href="Chapter3.html#cb25-25" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>sakums,<span class="sc">-</span>beigas,<span class="sc">-</span>fails_r,<span class="sc">-</span>cels_radiuss,<span class="sc">-</span>veids)</span>
+<span id="cb25-26"><a href="Chapter3.html#cb25-26" tabindex="-1"></a></span>
+<span id="cb25-27"><a href="Chapter3.html#cb25-27" tabindex="-1"></a>lapas_r1250<span class="ot">=</span>lapas_radiusi <span class="sc">%&gt;%</span> </span>
+<span id="cb25-28"><a href="Chapter3.html#cb25-28" tabindex="-1"></a>  <span class="fu">filter</span>(veids<span class="sc">==</span><span class="st">&quot;r1250&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-29"><a href="Chapter3.html#cb25-29" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">fails_r1250=</span>fails_r,</span>
+<span id="cb25-30"><a href="Chapter3.html#cb25-30" tabindex="-1"></a>         <span class="at">cels_r1250=</span>cels_radiuss) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-31"><a href="Chapter3.html#cb25-31" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>sakums,<span class="sc">-</span>beigas,<span class="sc">-</span>fails_r,<span class="sc">-</span>cels_radiuss,<span class="sc">-</span>veids)</span>
+<span id="cb25-32"><a href="Chapter3.html#cb25-32" tabindex="-1"></a></span>
+<span id="cb25-33"><a href="Chapter3.html#cb25-33" tabindex="-1"></a>lapas_r3000<span class="ot">=</span>lapas_radiusi <span class="sc">%&gt;%</span> </span>
+<span id="cb25-34"><a href="Chapter3.html#cb25-34" tabindex="-1"></a>  <span class="fu">filter</span>(veids<span class="sc">==</span><span class="st">&quot;r3000&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-35"><a href="Chapter3.html#cb25-35" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">fails_r3000=</span>fails_r,</span>
+<span id="cb25-36"><a href="Chapter3.html#cb25-36" tabindex="-1"></a>         <span class="at">cels_r3000=</span>cels_radiuss) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-37"><a href="Chapter3.html#cb25-37" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>sakums,<span class="sc">-</span>beigas,<span class="sc">-</span>fails_r,<span class="sc">-</span>cels_radiuss,<span class="sc">-</span>veids)</span>
+<span id="cb25-38"><a href="Chapter3.html#cb25-38" tabindex="-1"></a></span>
+<span id="cb25-39"><a href="Chapter3.html#cb25-39" tabindex="-1"></a>lapas<span class="ot">=</span>lapas_tikls <span class="sc">%&gt;%</span> </span>
+<span id="cb25-40"><a href="Chapter3.html#cb25-40" tabindex="-1"></a>  <span class="fu">left_join</span>(lapas_r500) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-41"><a href="Chapter3.html#cb25-41" tabindex="-1"></a>  <span class="fu">left_join</span>(lapas_r1250) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-42"><a href="Chapter3.html#cb25-42" tabindex="-1"></a>  <span class="fu">left_join</span>(lapas_r3000)</span>
+<span id="cb25-43"><a href="Chapter3.html#cb25-43" tabindex="-1"></a></span>
+<span id="cb25-44"><a href="Chapter3.html#cb25-44" tabindex="-1"></a><span class="co"># vides rastri</span></span>
+<span id="cb25-45"><a href="Chapter3.html#cb25-45" tabindex="-1"></a>tcl<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./TreeCoverLossYear.tif&quot;</span>)</span>
+<span id="cb25-46"><a href="Chapter3.html#cb25-46" tabindex="-1"></a>tcl2<span class="ot">=</span><span class="fu">ifel</span>(tcl<span class="sc">&lt;</span><span class="dv">17</span>,<span class="cn">NA</span>,tcl) <span class="co"># Zudumi tikai kopš 2017. gada</span></span>
+<span id="cb25-47"><a href="Chapter3.html#cb25-47" tabindex="-1"></a><span class="fu">writeRaster</span>(tcl2,<span class="st">&quot;./KokuVainagiem.tif&quot;</span>)</span>
+<span id="cb25-48"><a href="Chapter3.html#cb25-48" tabindex="-1"></a></span>
+<span id="cb25-49"><a href="Chapter3.html#cb25-49" tabindex="-1"></a>dw17<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./DW_2017_apraug.tif&quot;</span>) </span>
+<span id="cb25-50"><a href="Chapter3.html#cb25-50" tabindex="-1"></a>dw18<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./DW_2018_apraug.tif&quot;</span>)</span>
+<span id="cb25-51"><a href="Chapter3.html#cb25-51" tabindex="-1"></a>dw19<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./DW_2019_apraug.tif&quot;</span>)</span>
+<span id="cb25-52"><a href="Chapter3.html#cb25-52" tabindex="-1"></a>dw20<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./DW_2020_apraug.tif&quot;</span>)</span>
+<span id="cb25-53"><a href="Chapter3.html#cb25-53" tabindex="-1"></a>dw21<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./DW_2021_apraug.tif&quot;</span>)</span>
+<span id="cb25-54"><a href="Chapter3.html#cb25-54" tabindex="-1"></a>dw22<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./DW_2022_apraug.tif&quot;</span>)</span>
+<span id="cb25-55"><a href="Chapter3.html#cb25-55" tabindex="-1"></a>dw23<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./DW_2023_apraug.tif&quot;</span>)</span>
+<span id="cb25-56"><a href="Chapter3.html#cb25-56" tabindex="-1"></a></span>
+<span id="cb25-57"><a href="Chapter3.html#cb25-57" tabindex="-1"></a>chDWa<span class="ot">=</span><span class="fu">ifel</span>(dw17<span class="sc">==</span>dw18,<span class="dv">0</span>,<span class="dv">1</span>) <span class="co"># Pārmaiņas no 2017. uz 2018. gadu</span></span>
+<span id="cb25-58"><a href="Chapter3.html#cb25-58" tabindex="-1"></a><span class="fu">writeRaster</span>(chDWa,<span class="st">&quot;./chDWa.tif&quot;</span>)</span>
+<span id="cb25-59"><a href="Chapter3.html#cb25-59" tabindex="-1"></a>chDWb<span class="ot">=</span><span class="fu">ifel</span>(dw18<span class="sc">==</span>dw19,<span class="dv">0</span>,<span class="dv">1</span>) <span class="co"># Pārmaiņas no 2018. uz 2019. gadu</span></span>
+<span id="cb25-60"><a href="Chapter3.html#cb25-60" tabindex="-1"></a><span class="fu">writeRaster</span>(chDWb,<span class="st">&quot;./chDWb.tif&quot;</span>)</span>
+<span id="cb25-61"><a href="Chapter3.html#cb25-61" tabindex="-1"></a>chDWc<span class="ot">=</span><span class="fu">ifel</span>(dw19<span class="sc">==</span>dw20,<span class="dv">0</span>,<span class="dv">1</span>) <span class="co"># Pārmaiņas no 2019. uz 2020. gadu</span></span>
+<span id="cb25-62"><a href="Chapter3.html#cb25-62" tabindex="-1"></a><span class="fu">writeRaster</span>(chDWc,<span class="st">&quot;./chDWc.tif&quot;</span>)</span>
+<span id="cb25-63"><a href="Chapter3.html#cb25-63" tabindex="-1"></a>chDWd<span class="ot">=</span><span class="fu">ifel</span>(dw20<span class="sc">==</span>dw21,<span class="dv">0</span>,<span class="dv">1</span>) <span class="co"># Pārmaiņas no 2020. uz 2021. gadu</span></span>
+<span id="cb25-64"><a href="Chapter3.html#cb25-64" tabindex="-1"></a><span class="fu">writeRaster</span>(chDWd,<span class="st">&quot;./chDWd.tif&quot;</span>)</span>
+<span id="cb25-65"><a href="Chapter3.html#cb25-65" tabindex="-1"></a>chDWe<span class="ot">=</span><span class="fu">ifel</span>(dw21<span class="sc">==</span>dw22,<span class="dv">0</span>,<span class="dv">1</span>) <span class="co"># Pārmaiņas no 2021. uz 2022. gadu</span></span>
+<span id="cb25-66"><a href="Chapter3.html#cb25-66" tabindex="-1"></a><span class="fu">writeRaster</span>(chDWe,<span class="st">&quot;./chDWe.tif&quot;</span>)</span>
+<span id="cb25-67"><a href="Chapter3.html#cb25-67" tabindex="-1"></a>chDWf<span class="ot">=</span><span class="fu">ifel</span>(dw22<span class="sc">==</span>dw23,<span class="dv">0</span>,<span class="dv">1</span>) <span class="co"># Pārmaiņas no 2022. uz 2023. gadu</span></span>
+<span id="cb25-68"><a href="Chapter3.html#cb25-68" tabindex="-1"></a><span class="fu">writeRaster</span>(chDWf,<span class="st">&quot;./chDWf.tif&quot;</span>)</span>
+<span id="cb25-69"><a href="Chapter3.html#cb25-69" tabindex="-1"></a><span class="fu">plot</span>(chDWf)</span>
+<span id="cb25-70"><a href="Chapter3.html#cb25-70" tabindex="-1"></a></span>
+<span id="cb25-71"><a href="Chapter3.html#cb25-71" tabindex="-1"></a><span class="co"># pārmaiņu analīze</span></span>
+<span id="cb25-72"><a href="Chapter3.html#cb25-72" tabindex="-1"></a>soli<span class="ot">=</span><span class="fu">levels</span>(<span class="fu">factor</span>(lapas<span class="sc">$</span>lapa))</span>
+<span id="cb25-73"><a href="Chapter3.html#cb25-73" tabindex="-1"></a></span>
+<span id="cb25-74"><a href="Chapter3.html#cb25-74" tabindex="-1"></a>cl <span class="ot">&lt;-</span> <span class="fu">makeCluster</span>(<span class="dv">12</span>) <span class="co"># jānorāda izmantojamo kodolu (fizisko) skaits</span></span>
+<span id="cb25-75"><a href="Chapter3.html#cb25-75" tabindex="-1"></a><span class="fu">registerDoParallel</span>(cl)</span>
+<span id="cb25-76"><a href="Chapter3.html#cb25-76" tabindex="-1"></a></span>
+<span id="cb25-77"><a href="Chapter3.html#cb25-77" tabindex="-1"></a><span class="fu">foreach</span>(<span class="at">i =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(soli)) <span class="sc">%dopar%</span> {</span>
+<span id="cb25-78"><a href="Chapter3.html#cb25-78" tabindex="-1"></a>  <span class="fu">library</span>(terra)</span>
+<span id="cb25-79"><a href="Chapter3.html#cb25-79" tabindex="-1"></a>  <span class="fu">library</span>(sf)</span>
+<span id="cb25-80"><a href="Chapter3.html#cb25-80" tabindex="-1"></a>  <span class="fu">library</span>(tidyverse)</span>
+<span id="cb25-81"><a href="Chapter3.html#cb25-81" tabindex="-1"></a>  <span class="fu">library</span>(arrow)</span>
+<span id="cb25-82"><a href="Chapter3.html#cb25-82" tabindex="-1"></a>  <span class="fu">library</span>(sfarrow)</span>
+<span id="cb25-83"><a href="Chapter3.html#cb25-83" tabindex="-1"></a>  <span class="fu">library</span>(exactextractr)</span>
+<span id="cb25-84"><a href="Chapter3.html#cb25-84" tabindex="-1"></a>  </span>
+<span id="cb25-85"><a href="Chapter3.html#cb25-85" tabindex="-1"></a>  <span class="co"># funkcija platībaīpatsvarā kurā noticis koku vainagu seguma zudums</span></span>
+<span id="cb25-86"><a href="Chapter3.html#cb25-86" tabindex="-1"></a>  <span class="co"># noteikšanai katrā gadā (2017-2023)</span></span>
+<span id="cb25-87"><a href="Chapter3.html#cb25-87" tabindex="-1"></a>  darbiba <span class="ot">&lt;-</span> <span class="cf">function</span>(raster, vector) {</span>
+<span id="cb25-88"><a href="Chapter3.html#cb25-88" tabindex="-1"></a>    <span class="fu">exact_extract</span>(raster, vector, <span class="cf">function</span>(value, coverage_fraction) {</span>
+<span id="cb25-89"><a href="Chapter3.html#cb25-89" tabindex="-1"></a>      <span class="fu">data.frame</span>(<span class="at">value =</span> value,</span>
+<span id="cb25-90"><a href="Chapter3.html#cb25-90" tabindex="-1"></a>                 <span class="at">frac =</span> coverage_fraction<span class="sc">/</span><span class="fu">sum</span>(coverage_fraction,<span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb25-91"><a href="Chapter3.html#cb25-91" tabindex="-1"></a>        <span class="fu">arrange</span>(value) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-92"><a href="Chapter3.html#cb25-92" tabindex="-1"></a>        <span class="fu">group_by</span>(value) <span class="sc">%&gt;%</span></span>
+<span id="cb25-93"><a href="Chapter3.html#cb25-93" tabindex="-1"></a>        <span class="fu">summarize</span>(<span class="at">freq =</span> <span class="fu">sum</span>(frac, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">.groups =</span> <span class="st">&#39;drop&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb25-94"><a href="Chapter3.html#cb25-94" tabindex="-1"></a>        <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> <span class="st">&#39;value&#39;</span>,</span>
+<span id="cb25-95"><a href="Chapter3.html#cb25-95" tabindex="-1"></a>                    <span class="at">names_prefix =</span> <span class="st">&#39;freq_&#39;</span>,</span>
+<span id="cb25-96"><a href="Chapter3.html#cb25-96" tabindex="-1"></a>                    <span class="at">values_from =</span> <span class="st">&#39;freq&#39;</span>)</span>
+<span id="cb25-97"><a href="Chapter3.html#cb25-97" tabindex="-1"></a>    }) <span class="sc">%&gt;%</span></span>
+<span id="cb25-98"><a href="Chapter3.html#cb25-98" tabindex="-1"></a>      <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">starts_with</span>(<span class="st">&#39;freq&#39;</span>), <span class="sc">~</span><span class="fu">replace_na</span>(., <span class="dv">0</span>)))</span>
+<span id="cb25-99"><a href="Chapter3.html#cb25-99" tabindex="-1"></a>  }</span>
+<span id="cb25-100"><a href="Chapter3.html#cb25-100" tabindex="-1"></a>  </span>
+<span id="cb25-101"><a href="Chapter3.html#cb25-101" tabindex="-1"></a>  <span class="co"># darba lapas</span></span>
+<span id="cb25-102"><a href="Chapter3.html#cb25-102" tabindex="-1"></a>  solis<span class="ot">=</span>soli[i]</span>
+<span id="cb25-103"><a href="Chapter3.html#cb25-103" tabindex="-1"></a>  celi<span class="ot">=</span>lapas <span class="sc">%&gt;%</span> <span class="fu">filter</span>(lapa<span class="sc">==</span>solis)</span>
+<span id="cb25-104"><a href="Chapter3.html#cb25-104" tabindex="-1"></a>  </span>
+<span id="cb25-105"><a href="Chapter3.html#cb25-105" tabindex="-1"></a>  <span class="co"># poligonu ielasīšana</span></span>
+<span id="cb25-106"><a href="Chapter3.html#cb25-106" tabindex="-1"></a>  sunas<span class="ot">=</span><span class="fu">st_read_parquet</span>(celi<span class="sc">$</span>cels_grid)</span>
+<span id="cb25-107"><a href="Chapter3.html#cb25-107" tabindex="-1"></a>  sunas<span class="ot">=</span>sunas <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(id,yes,tks50km,X,Y)</span>
+<span id="cb25-108"><a href="Chapter3.html#cb25-108" tabindex="-1"></a>  r500<span class="ot">=</span><span class="fu">st_read_parquet</span>(celi<span class="sc">$</span>cels_r500)</span>
+<span id="cb25-109"><a href="Chapter3.html#cb25-109" tabindex="-1"></a>  r500<span class="ot">=</span>r500 <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(id,yes,tks50km,X,Y)</span>
+<span id="cb25-110"><a href="Chapter3.html#cb25-110" tabindex="-1"></a>  r1250<span class="ot">=</span><span class="fu">st_read_parquet</span>(celi<span class="sc">$</span>cels_r1250)</span>
+<span id="cb25-111"><a href="Chapter3.html#cb25-111" tabindex="-1"></a>  r1250<span class="ot">=</span>r1250 <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(id,yes,tks50km,X,Y)</span>
+<span id="cb25-112"><a href="Chapter3.html#cb25-112" tabindex="-1"></a>  r3000<span class="ot">=</span><span class="fu">st_read_parquet</span>(celi<span class="sc">$</span>cels_r3000)</span>
+<span id="cb25-113"><a href="Chapter3.html#cb25-113" tabindex="-1"></a>  r3000<span class="ot">=</span>r3000 <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(id,yes,tks50km,X,Y)</span>
+<span id="cb25-114"><a href="Chapter3.html#cb25-114" tabindex="-1"></a>  </span>
+<span id="cb25-115"><a href="Chapter3.html#cb25-115" tabindex="-1"></a>  <span class="co"># konkrētās darba lapas robežas</span></span>
+<span id="cb25-116"><a href="Chapter3.html#cb25-116" tabindex="-1"></a>  telpa<span class="ot">=</span><span class="fu">st_as_sfc</span>(<span class="fu">st_bbox</span>(r3000))</span>
+<span id="cb25-117"><a href="Chapter3.html#cb25-117" tabindex="-1"></a>  telpa2<span class="ot">=</span><span class="fu">st_buffer</span>(telpa,<span class="at">dist=</span><span class="dv">1000</span>)</span>
+<span id="cb25-118"><a href="Chapter3.html#cb25-118" tabindex="-1"></a>  </span>
+<span id="cb25-119"><a href="Chapter3.html#cb25-119" tabindex="-1"></a>  <span class="co"># koku vainagu seguma pārmaiņas</span></span>
+<span id="cb25-120"><a href="Chapter3.html#cb25-120" tabindex="-1"></a>  tcl2<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./KokuVainagiem.tif&quot;</span>)</span>
+<span id="cb25-121"><a href="Chapter3.html#cb25-121" tabindex="-1"></a>  tcl_telpa<span class="ot">=</span><span class="fu">crop</span>(tcl2,telpa2)</span>
+<span id="cb25-122"><a href="Chapter3.html#cb25-122" tabindex="-1"></a>  </span>
+<span id="cb25-123"><a href="Chapter3.html#cb25-123" tabindex="-1"></a>  loss_cell<span class="ot">=</span><span class="fu">darbiba</span>(tcl_telpa, sunas)</span>
+<span id="cb25-124"><a href="Chapter3.html#cb25-124" tabindex="-1"></a>  sunas<span class="ot">=</span><span class="fu">cbind</span>(sunas,loss_cell)</span>
+<span id="cb25-125"><a href="Chapter3.html#cb25-125" tabindex="-1"></a>  loss_r500<span class="ot">=</span><span class="fu">darbiba</span>(tcl_telpa, r500)</span>
+<span id="cb25-126"><a href="Chapter3.html#cb25-126" tabindex="-1"></a>  r500<span class="ot">=</span><span class="fu">cbind</span>(r500,loss_r500)</span>
+<span id="cb25-127"><a href="Chapter3.html#cb25-127" tabindex="-1"></a>  loss_r1250<span class="ot">=</span><span class="fu">darbiba</span>(tcl_telpa, r1250)</span>
+<span id="cb25-128"><a href="Chapter3.html#cb25-128" tabindex="-1"></a>  r1250<span class="ot">=</span><span class="fu">cbind</span>(r1250,loss_r1250)</span>
+<span id="cb25-129"><a href="Chapter3.html#cb25-129" tabindex="-1"></a>  loss_r3000<span class="ot">=</span><span class="fu">darbiba</span>(tcl_telpa, r3000)</span>
+<span id="cb25-130"><a href="Chapter3.html#cb25-130" tabindex="-1"></a>  r3000<span class="ot">=</span><span class="fu">cbind</span>(r3000,loss_r3000)</span>
+<span id="cb25-131"><a href="Chapter3.html#cb25-131" tabindex="-1"></a>  </span>
+<span id="cb25-132"><a href="Chapter3.html#cb25-132" tabindex="-1"></a>  <span class="co"># Vides pārmaiņas Dynamic World datos</span></span>
+<span id="cb25-133"><a href="Chapter3.html#cb25-133" tabindex="-1"></a>  chDWa<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./chDWa.tif&quot;</span>)</span>
+<span id="cb25-134"><a href="Chapter3.html#cb25-134" tabindex="-1"></a>  chDWb<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./chDWb.tif&quot;</span>)</span>
+<span id="cb25-135"><a href="Chapter3.html#cb25-135" tabindex="-1"></a>  chDWc<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./chDWc.tif&quot;</span>)</span>
+<span id="cb25-136"><a href="Chapter3.html#cb25-136" tabindex="-1"></a>  chDWd<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./chDWd.tif&quot;</span>)</span>
+<span id="cb25-137"><a href="Chapter3.html#cb25-137" tabindex="-1"></a>  chDWe<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./chDWe.tif&quot;</span>)</span>
+<span id="cb25-138"><a href="Chapter3.html#cb25-138" tabindex="-1"></a>  chDWf<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./chDWf.tif&quot;</span>)</span>
+<span id="cb25-139"><a href="Chapter3.html#cb25-139" tabindex="-1"></a>  </span>
+<span id="cb25-140"><a href="Chapter3.html#cb25-140" tabindex="-1"></a>  <span class="fu">names</span>(chDWa)<span class="ot">=</span><span class="st">&quot;DWchange_1718&quot;</span></span>
+<span id="cb25-141"><a href="Chapter3.html#cb25-141" tabindex="-1"></a>  <span class="fu">names</span>(chDWb)<span class="ot">=</span><span class="st">&quot;DWchange_1819&quot;</span></span>
+<span id="cb25-142"><a href="Chapter3.html#cb25-142" tabindex="-1"></a>  <span class="fu">names</span>(chDWc)<span class="ot">=</span><span class="st">&quot;DWchange_1920&quot;</span></span>
+<span id="cb25-143"><a href="Chapter3.html#cb25-143" tabindex="-1"></a>  <span class="fu">names</span>(chDWd)<span class="ot">=</span><span class="st">&quot;DWchange_2021&quot;</span></span>
+<span id="cb25-144"><a href="Chapter3.html#cb25-144" tabindex="-1"></a>  <span class="fu">names</span>(chDWe)<span class="ot">=</span><span class="st">&quot;DWchange_2122&quot;</span></span>
+<span id="cb25-145"><a href="Chapter3.html#cb25-145" tabindex="-1"></a>  <span class="fu">names</span>(chDWf)<span class="ot">=</span><span class="st">&quot;DWchange_2223&quot;</span></span>
+<span id="cb25-146"><a href="Chapter3.html#cb25-146" tabindex="-1"></a>  </span>
+<span id="cb25-147"><a href="Chapter3.html#cb25-147" tabindex="-1"></a>  mazs_chDWa<span class="ot">=</span><span class="fu">crop</span>(chDWa,telpa2)</span>
+<span id="cb25-148"><a href="Chapter3.html#cb25-148" tabindex="-1"></a>  mazs_chDWb<span class="ot">=</span><span class="fu">crop</span>(chDWb,telpa2)</span>
+<span id="cb25-149"><a href="Chapter3.html#cb25-149" tabindex="-1"></a>  mazs_chDWc<span class="ot">=</span><span class="fu">crop</span>(chDWc,telpa2)</span>
+<span id="cb25-150"><a href="Chapter3.html#cb25-150" tabindex="-1"></a>  mazs_chDWd<span class="ot">=</span><span class="fu">crop</span>(chDWd,telpa2)</span>
+<span id="cb25-151"><a href="Chapter3.html#cb25-151" tabindex="-1"></a>  mazs_chDWe<span class="ot">=</span><span class="fu">crop</span>(chDWe,telpa2)</span>
+<span id="cb25-152"><a href="Chapter3.html#cb25-152" tabindex="-1"></a>  mazs_chDWf<span class="ot">=</span><span class="fu">crop</span>(chDWf,telpa2)</span>
+<span id="cb25-153"><a href="Chapter3.html#cb25-153" tabindex="-1"></a>  </span>
+<span id="cb25-154"><a href="Chapter3.html#cb25-154" tabindex="-1"></a>  mazas_DW<span class="ot">=</span>raster<span class="sc">::</span><span class="fu">stack</span>(<span class="fu">c</span>(mazs_chDWa,mazs_chDWb,mazs_chDWc,</span>
+<span id="cb25-155"><a href="Chapter3.html#cb25-155" tabindex="-1"></a>                           mazs_chDWd,mazs_chDWe,mazs_chDWf))</span>
+<span id="cb25-156"><a href="Chapter3.html#cb25-156" tabindex="-1"></a>  </span>
+<span id="cb25-157"><a href="Chapter3.html#cb25-157" tabindex="-1"></a>  sunam<span class="ot">=</span><span class="fu">exact_extract</span>(mazas_DW,sunas,<span class="st">&quot;mean&quot;</span>)</span>
+<span id="cb25-158"><a href="Chapter3.html#cb25-158" tabindex="-1"></a>  r500am<span class="ot">=</span><span class="fu">exact_extract</span>(mazas_DW,r500,<span class="st">&quot;mean&quot;</span>)</span>
+<span id="cb25-159"><a href="Chapter3.html#cb25-159" tabindex="-1"></a>  r1250am<span class="ot">=</span><span class="fu">exact_extract</span>(mazas_DW,r1250,<span class="st">&quot;mean&quot;</span>)</span>
+<span id="cb25-160"><a href="Chapter3.html#cb25-160" tabindex="-1"></a>  r3000am<span class="ot">=</span><span class="fu">exact_extract</span>(mazas_DW,r3000,<span class="st">&quot;mean&quot;</span>)</span>
+<span id="cb25-161"><a href="Chapter3.html#cb25-161" tabindex="-1"></a>  </span>
+<span id="cb25-162"><a href="Chapter3.html#cb25-162" tabindex="-1"></a>  <span class="co"># iegūto rezultātu apvienošana</span></span>
+<span id="cb25-163"><a href="Chapter3.html#cb25-163" tabindex="-1"></a>  sunas<span class="ot">=</span><span class="fu">cbind</span>(sunas,sunam)</span>
+<span id="cb25-164"><a href="Chapter3.html#cb25-164" tabindex="-1"></a>  r500<span class="ot">=</span><span class="fu">cbind</span>(r500,r500am)</span>
+<span id="cb25-165"><a href="Chapter3.html#cb25-165" tabindex="-1"></a>  r1250<span class="ot">=</span><span class="fu">cbind</span>(r1250,r1250am)</span>
+<span id="cb25-166"><a href="Chapter3.html#cb25-166" tabindex="-1"></a>  r3000<span class="ot">=</span><span class="fu">cbind</span>(r3000,r3000am)</span>
+<span id="cb25-167"><a href="Chapter3.html#cb25-167" tabindex="-1"></a>  </span>
+<span id="cb25-168"><a href="Chapter3.html#cb25-168" tabindex="-1"></a>  <span class="co"># rezultējošo failu saglabāšana</span></span>
+<span id="cb25-169"><a href="Chapter3.html#cb25-169" tabindex="-1"></a>  <span class="fu">st_write_parquet</span>(sunas,celi<span class="sc">$</span>cels_grid)</span>
+<span id="cb25-170"><a href="Chapter3.html#cb25-170" tabindex="-1"></a>  <span class="fu">st_write_parquet</span>(r500,celi<span class="sc">$</span>cels_r500)</span>
+<span id="cb25-171"><a href="Chapter3.html#cb25-171" tabindex="-1"></a>  <span class="fu">st_write_parquet</span>(r1250,celi<span class="sc">$</span>cels_r1250)</span>
+<span id="cb25-172"><a href="Chapter3.html#cb25-172" tabindex="-1"></a>  <span class="fu">st_write_parquet</span>(r3000,celi<span class="sc">$</span>cels_r3000)</span>
+<span id="cb25-173"><a href="Chapter3.html#cb25-173" tabindex="-1"></a>}</span>
+<span id="cb25-174"><a href="Chapter3.html#cb25-174" tabindex="-1"></a><span class="fu">stopCluster</span>(cl)</span>
+<span id="cb25-175"><a href="Chapter3.html#cb25-175" tabindex="-1"></a></span>
+<span id="cb25-176"><a href="Chapter3.html#cb25-176" tabindex="-1"></a><span class="co"># darba lapu apvienošana</span></span>
+<span id="cb25-177"><a href="Chapter3.html#cb25-177" tabindex="-1"></a>pirmas_sunas<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(lapas<span class="sc">$</span>cels_grid[lapas<span class="sc">$</span>lapa<span class="sc">==</span>soli[<span class="dv">1</span>]])</span>
+<span id="cb25-178"><a href="Chapter3.html#cb25-178" tabindex="-1"></a>pirmas_r500<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(lapas<span class="sc">$</span>cels_r500[lapas<span class="sc">$</span>lapa<span class="sc">==</span>soli[<span class="dv">1</span>]])</span>
+<span id="cb25-179"><a href="Chapter3.html#cb25-179" tabindex="-1"></a>pirmas_r1250<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(lapas<span class="sc">$</span>cels_r1250[lapas<span class="sc">$</span>lapa<span class="sc">==</span>soli[<span class="dv">1</span>]])</span>
+<span id="cb25-180"><a href="Chapter3.html#cb25-180" tabindex="-1"></a>pirmas_r3000<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(lapas<span class="sc">$</span>cels_r3000[lapas<span class="sc">$</span>lapa<span class="sc">==</span>soli[<span class="dv">1</span>]])</span>
+<span id="cb25-181"><a href="Chapter3.html#cb25-181" tabindex="-1"></a></span>
+<span id="cb25-182"><a href="Chapter3.html#cb25-182" tabindex="-1"></a>dati_c<span class="ot">=</span>pirmas_sunas</span>
+<span id="cb25-183"><a href="Chapter3.html#cb25-183" tabindex="-1"></a>dati_r500<span class="ot">=</span>pirmas_r500</span>
+<span id="cb25-184"><a href="Chapter3.html#cb25-184" tabindex="-1"></a>dati_r1250<span class="ot">=</span>pirmas_r1250</span>
+<span id="cb25-185"><a href="Chapter3.html#cb25-185" tabindex="-1"></a>dati_r3000<span class="ot">=</span>pirmas_r3000</span>
+<span id="cb25-186"><a href="Chapter3.html#cb25-186" tabindex="-1"></a></span>
+<span id="cb25-187"><a href="Chapter3.html#cb25-187" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">length</span>(soli)){</span>
+<span id="cb25-188"><a href="Chapter3.html#cb25-188" tabindex="-1"></a>  solis<span class="ot">=</span>soli[i]</span>
+<span id="cb25-189"><a href="Chapter3.html#cb25-189" tabindex="-1"></a>  nakosas_sunas<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(lapas<span class="sc">$</span>cels_grid[lapas<span class="sc">$</span>lapa<span class="sc">==</span>solis])</span>
+<span id="cb25-190"><a href="Chapter3.html#cb25-190" tabindex="-1"></a>  nakosas_r500<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(lapas<span class="sc">$</span>cels_r500[lapas<span class="sc">$</span>lapa<span class="sc">==</span>solis])</span>
+<span id="cb25-191"><a href="Chapter3.html#cb25-191" tabindex="-1"></a>  nakosas_r1250<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(lapas<span class="sc">$</span>cels_r1250[lapas<span class="sc">$</span>lapa<span class="sc">==</span>solis])</span>
+<span id="cb25-192"><a href="Chapter3.html#cb25-192" tabindex="-1"></a>  nakosas_r3000<span class="ot">=</span>sfarrow<span class="sc">::</span><span class="fu">st_read_parquet</span>(lapas<span class="sc">$</span>cels_r3000[lapas<span class="sc">$</span>lapa<span class="sc">==</span>solis])</span>
+<span id="cb25-193"><a href="Chapter3.html#cb25-193" tabindex="-1"></a>  </span>
+<span id="cb25-194"><a href="Chapter3.html#cb25-194" tabindex="-1"></a>  dati_c<span class="ot">=</span><span class="fu">bind_rows</span>(dati_c,nakosas_sunas)</span>
+<span id="cb25-195"><a href="Chapter3.html#cb25-195" tabindex="-1"></a>  dati_r500<span class="ot">=</span><span class="fu">bind_rows</span>(dati_r500,nakosas_sunas)</span>
+<span id="cb25-196"><a href="Chapter3.html#cb25-196" tabindex="-1"></a>  dati_r1250<span class="ot">=</span><span class="fu">bind_rows</span>(dati_r1250,nakosas_sunas)</span>
+<span id="cb25-197"><a href="Chapter3.html#cb25-197" tabindex="-1"></a>  dati_r3000<span class="ot">=</span><span class="fu">bind_rows</span>(dati_r3000,nakosas_sunas)</span>
+<span id="cb25-198"><a href="Chapter3.html#cb25-198" tabindex="-1"></a>}</span>
+<span id="cb25-199"><a href="Chapter3.html#cb25-199" tabindex="-1"></a></span>
+<span id="cb25-200"><a href="Chapter3.html#cb25-200" tabindex="-1"></a><span class="co"># apvienoto lapu saglabāšana</span></span>
+<span id="cb25-201"><a href="Chapter3.html#cb25-201" tabindex="-1"></a><span class="fu">st_write_parquet</span>(dati_c,<span class="st">&quot;./VidesParmainas_suna.parquet&quot;</span>)</span>
+<span id="cb25-202"><a href="Chapter3.html#cb25-202" tabindex="-1"></a><span class="fu">st_write_parquet</span>(dati_r500,<span class="st">&quot;./VidesParmainas_r500.parquet&quot;</span>)</span>
+<span id="cb25-203"><a href="Chapter3.html#cb25-203" tabindex="-1"></a><span class="fu">st_write_parquet</span>(dati_r1250,<span class="st">&quot;./VidesParmainas_r1250.parquet&quot;</span>)</span>
+<span id="cb25-204"><a href="Chapter3.html#cb25-204" tabindex="-1"></a><span class="fu">st_write_parquet</span>(dati_r3000,<span class="st">&quot;./VidesParmainas_r3000.parquet&quot;</span>)</span>
+<span id="cb25-205"><a href="Chapter3.html#cb25-205" tabindex="-1"></a></span>
+<span id="cb25-206"><a href="Chapter3.html#cb25-206" tabindex="-1"></a><span class="co"># lauku nosaukumu harmonizēšana</span></span>
+<span id="cb25-207"><a href="Chapter3.html#cb25-207" tabindex="-1"></a>dati_c2<span class="ot">=</span>dati_c <span class="sc">%&gt;%</span> </span>
+<span id="cb25-208"><a href="Chapter3.html#cb25-208" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">cell_TCLNaN=</span>freq_NaN,</span>
+<span id="cb25-209"><a href="Chapter3.html#cb25-209" tabindex="-1"></a>         <span class="at">cell_TCL17=</span>freq_17,</span>
+<span id="cb25-210"><a href="Chapter3.html#cb25-210" tabindex="-1"></a>         <span class="at">cell_TCL18=</span>freq_18,</span>
+<span id="cb25-211"><a href="Chapter3.html#cb25-211" tabindex="-1"></a>         <span class="at">cell_TCL19=</span>freq_19,</span>
+<span id="cb25-212"><a href="Chapter3.html#cb25-212" tabindex="-1"></a>         <span class="at">cell_TCL20=</span>freq_20,</span>
+<span id="cb25-213"><a href="Chapter3.html#cb25-213" tabindex="-1"></a>         <span class="at">cell_TCL21=</span>freq_21,</span>
+<span id="cb25-214"><a href="Chapter3.html#cb25-214" tabindex="-1"></a>         <span class="at">cell_TCL22=</span>freq_22,</span>
+<span id="cb25-215"><a href="Chapter3.html#cb25-215" tabindex="-1"></a>         <span class="at">cell_TCL23=</span>freq_23,</span>
+<span id="cb25-216"><a href="Chapter3.html#cb25-216" tabindex="-1"></a>         <span class="at">cell_DWchange1718=</span>mean.DWchange_1718,</span>
+<span id="cb25-217"><a href="Chapter3.html#cb25-217" tabindex="-1"></a>         <span class="at">cell_DWchange1819=</span>mean.DWchange_1819,</span>
+<span id="cb25-218"><a href="Chapter3.html#cb25-218" tabindex="-1"></a>         <span class="at">cell_DWchange1920=</span>mean.DWchange_1920,</span>
+<span id="cb25-219"><a href="Chapter3.html#cb25-219" tabindex="-1"></a>         <span class="at">cell_DWchange2021=</span>mean.DWchange_2021,</span>
+<span id="cb25-220"><a href="Chapter3.html#cb25-220" tabindex="-1"></a>         <span class="at">cell_DWchange2122=</span>mean.DWchange_2122,</span>
+<span id="cb25-221"><a href="Chapter3.html#cb25-221" tabindex="-1"></a>         <span class="at">cell_DWchange2223=</span>mean.DWchange_2223) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-222"><a href="Chapter3.html#cb25-222" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(id,yes,tks50km,X,Y,</span>
+<span id="cb25-223"><a href="Chapter3.html#cb25-223" tabindex="-1"></a>                cell_TCLNaN,cell_TCL17,cell_TCL18,cell_TCL19,cell_TCL20,</span>
+<span id="cb25-224"><a href="Chapter3.html#cb25-224" tabindex="-1"></a>                cell_TCL21,cell_TCL22,cell_TCL23,</span>
+<span id="cb25-225"><a href="Chapter3.html#cb25-225" tabindex="-1"></a>                cell_DWchange1718,cell_DWchange1819,cell_DWchange1920,</span>
+<span id="cb25-226"><a href="Chapter3.html#cb25-226" tabindex="-1"></a>                cell_DWchange2021,cell_DWchange2122,cell_DWchange2223)</span>
+<span id="cb25-227"><a href="Chapter3.html#cb25-227" tabindex="-1"></a></span>
+<span id="cb25-228"><a href="Chapter3.html#cb25-228" tabindex="-1"></a>dati_r500a<span class="ot">=</span><span class="fu">data.frame</span>(dati_r500) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-229"><a href="Chapter3.html#cb25-229" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">r500_TCLNaN=</span>freq_NaN,</span>
+<span id="cb25-230"><a href="Chapter3.html#cb25-230" tabindex="-1"></a>         <span class="at">r500_TCL17=</span>freq_17,</span>
+<span id="cb25-231"><a href="Chapter3.html#cb25-231" tabindex="-1"></a>         <span class="at">r500_TCL18=</span>freq_18,</span>
+<span id="cb25-232"><a href="Chapter3.html#cb25-232" tabindex="-1"></a>         <span class="at">r500_TCL19=</span>freq_19,</span>
+<span id="cb25-233"><a href="Chapter3.html#cb25-233" tabindex="-1"></a>         <span class="at">r500_TCL20=</span>freq_20,</span>
+<span id="cb25-234"><a href="Chapter3.html#cb25-234" tabindex="-1"></a>         <span class="at">r500_TCL21=</span>freq_21,</span>
+<span id="cb25-235"><a href="Chapter3.html#cb25-235" tabindex="-1"></a>         <span class="at">r500_TCL22=</span>freq_22,</span>
+<span id="cb25-236"><a href="Chapter3.html#cb25-236" tabindex="-1"></a>         <span class="at">r500_TCL23=</span>freq_23,</span>
+<span id="cb25-237"><a href="Chapter3.html#cb25-237" tabindex="-1"></a>         <span class="at">r500_DWchange1718=</span>mean.DWchange_1718,</span>
+<span id="cb25-238"><a href="Chapter3.html#cb25-238" tabindex="-1"></a>         <span class="at">r500_DWchange1819=</span>mean.DWchange_1819,</span>
+<span id="cb25-239"><a href="Chapter3.html#cb25-239" tabindex="-1"></a>         <span class="at">r500_DWchange1920=</span>mean.DWchange_1920,</span>
+<span id="cb25-240"><a href="Chapter3.html#cb25-240" tabindex="-1"></a>         <span class="at">r500_DWchange2021=</span>mean.DWchange_2021,</span>
+<span id="cb25-241"><a href="Chapter3.html#cb25-241" tabindex="-1"></a>         <span class="at">r500_DWchange2122=</span>mean.DWchange_2122,</span>
+<span id="cb25-242"><a href="Chapter3.html#cb25-242" tabindex="-1"></a>         <span class="at">r500_DWchange2223=</span>mean.DWchange_2223) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-243"><a href="Chapter3.html#cb25-243" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(id,</span>
+<span id="cb25-244"><a href="Chapter3.html#cb25-244" tabindex="-1"></a>                r500_TCLNaN,r500_TCL17,r500_TCL18,r500_TCL19,r500_TCL20,</span>
+<span id="cb25-245"><a href="Chapter3.html#cb25-245" tabindex="-1"></a>                r500_TCL21,r500_TCL22,r500_TCL23,</span>
+<span id="cb25-246"><a href="Chapter3.html#cb25-246" tabindex="-1"></a>                r500_DWchange1718,r500_DWchange1819,r500_DWchange1920,</span>
+<span id="cb25-247"><a href="Chapter3.html#cb25-247" tabindex="-1"></a>                r500_DWchange2021,r500_DWchange2122,r500_DWchange2223)</span>
+<span id="cb25-248"><a href="Chapter3.html#cb25-248" tabindex="-1"></a></span>
+<span id="cb25-249"><a href="Chapter3.html#cb25-249" tabindex="-1"></a>dati_r1250a<span class="ot">=</span><span class="fu">data.frame</span>(dati_r1250) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-250"><a href="Chapter3.html#cb25-250" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">r1250_TCLNaN=</span>freq_NaN,</span>
+<span id="cb25-251"><a href="Chapter3.html#cb25-251" tabindex="-1"></a>         <span class="at">r1250_TCL17=</span>freq_17,</span>
+<span id="cb25-252"><a href="Chapter3.html#cb25-252" tabindex="-1"></a>         <span class="at">r1250_TCL18=</span>freq_18,</span>
+<span id="cb25-253"><a href="Chapter3.html#cb25-253" tabindex="-1"></a>         <span class="at">r1250_TCL19=</span>freq_19,</span>
+<span id="cb25-254"><a href="Chapter3.html#cb25-254" tabindex="-1"></a>         <span class="at">r1250_TCL20=</span>freq_20,</span>
+<span id="cb25-255"><a href="Chapter3.html#cb25-255" tabindex="-1"></a>         <span class="at">r1250_TCL21=</span>freq_21,</span>
+<span id="cb25-256"><a href="Chapter3.html#cb25-256" tabindex="-1"></a>         <span class="at">r1250_TCL22=</span>freq_22,</span>
+<span id="cb25-257"><a href="Chapter3.html#cb25-257" tabindex="-1"></a>         <span class="at">r1250_TCL23=</span>freq_23,</span>
+<span id="cb25-258"><a href="Chapter3.html#cb25-258" tabindex="-1"></a>         <span class="at">r1250_DWchange1718=</span>mean.DWchange_1718,</span>
+<span id="cb25-259"><a href="Chapter3.html#cb25-259" tabindex="-1"></a>         <span class="at">r1250_DWchange1819=</span>mean.DWchange_1819,</span>
+<span id="cb25-260"><a href="Chapter3.html#cb25-260" tabindex="-1"></a>         <span class="at">r1250_DWchange1920=</span>mean.DWchange_1920,</span>
+<span id="cb25-261"><a href="Chapter3.html#cb25-261" tabindex="-1"></a>         <span class="at">r1250_DWchange2021=</span>mean.DWchange_2021,</span>
+<span id="cb25-262"><a href="Chapter3.html#cb25-262" tabindex="-1"></a>         <span class="at">r1250_DWchange2122=</span>mean.DWchange_2122,</span>
+<span id="cb25-263"><a href="Chapter3.html#cb25-263" tabindex="-1"></a>         <span class="at">r1250_DWchange2223=</span>mean.DWchange_2223) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-264"><a href="Chapter3.html#cb25-264" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(id,</span>
+<span id="cb25-265"><a href="Chapter3.html#cb25-265" tabindex="-1"></a>                r1250_TCLNaN,r1250_TCL17,r1250_TCL18,r1250_TCL19,r1250_TCL20,</span>
+<span id="cb25-266"><a href="Chapter3.html#cb25-266" tabindex="-1"></a>                r1250_TCL21,r1250_TCL22,r1250_TCL23,</span>
+<span id="cb25-267"><a href="Chapter3.html#cb25-267" tabindex="-1"></a>                r1250_DWchange1718,r1250_DWchange1819,r1250_DWchange1920,</span>
+<span id="cb25-268"><a href="Chapter3.html#cb25-268" tabindex="-1"></a>                r1250_DWchange2021,r1250_DWchange2122,r1250_DWchange2223)</span>
+<span id="cb25-269"><a href="Chapter3.html#cb25-269" tabindex="-1"></a></span>
+<span id="cb25-270"><a href="Chapter3.html#cb25-270" tabindex="-1"></a></span>
+<span id="cb25-271"><a href="Chapter3.html#cb25-271" tabindex="-1"></a>dati_r3000a<span class="ot">=</span><span class="fu">data.frame</span>(dati_r3000) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-272"><a href="Chapter3.html#cb25-272" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">r3000_TCLNaN=</span>freq_NaN,</span>
+<span id="cb25-273"><a href="Chapter3.html#cb25-273" tabindex="-1"></a>         <span class="at">r3000_TCL17=</span>freq_17,</span>
+<span id="cb25-274"><a href="Chapter3.html#cb25-274" tabindex="-1"></a>         <span class="at">r3000_TCL18=</span>freq_18,</span>
+<span id="cb25-275"><a href="Chapter3.html#cb25-275" tabindex="-1"></a>         <span class="at">r3000_TCL19=</span>freq_19,</span>
+<span id="cb25-276"><a href="Chapter3.html#cb25-276" tabindex="-1"></a>         <span class="at">r3000_TCL20=</span>freq_20,</span>
+<span id="cb25-277"><a href="Chapter3.html#cb25-277" tabindex="-1"></a>         <span class="at">r3000_TCL21=</span>freq_21,</span>
+<span id="cb25-278"><a href="Chapter3.html#cb25-278" tabindex="-1"></a>         <span class="at">r3000_TCL22=</span>freq_22,</span>
+<span id="cb25-279"><a href="Chapter3.html#cb25-279" tabindex="-1"></a>         <span class="at">r3000_TCL23=</span>freq_23,</span>
+<span id="cb25-280"><a href="Chapter3.html#cb25-280" tabindex="-1"></a>         <span class="at">r3000_DWchange1718=</span>mean.DWchange_1718,</span>
+<span id="cb25-281"><a href="Chapter3.html#cb25-281" tabindex="-1"></a>         <span class="at">r3000_DWchange1819=</span>mean.DWchange_1819,</span>
+<span id="cb25-282"><a href="Chapter3.html#cb25-282" tabindex="-1"></a>         <span class="at">r3000_DWchange1920=</span>mean.DWchange_1920,</span>
+<span id="cb25-283"><a href="Chapter3.html#cb25-283" tabindex="-1"></a>         <span class="at">r3000_DWchange2021=</span>mean.DWchange_2021,</span>
+<span id="cb25-284"><a href="Chapter3.html#cb25-284" tabindex="-1"></a>         <span class="at">r3000_DWchange2122=</span>mean.DWchange_2122,</span>
+<span id="cb25-285"><a href="Chapter3.html#cb25-285" tabindex="-1"></a>         <span class="at">r3000_DWchange2223=</span>mean.DWchange_2223) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-286"><a href="Chapter3.html#cb25-286" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(id,</span>
+<span id="cb25-287"><a href="Chapter3.html#cb25-287" tabindex="-1"></a>                r3000_TCLNaN,r3000_TCL17,r3000_TCL18,r3000_TCL19,r3000_TCL20,</span>
+<span id="cb25-288"><a href="Chapter3.html#cb25-288" tabindex="-1"></a>                r3000_TCL21,r3000_TCL22,r3000_TCL23,</span>
+<span id="cb25-289"><a href="Chapter3.html#cb25-289" tabindex="-1"></a>                r3000_DWchange1718,r3000_DWchange1819,r3000_DWchange1920,</span>
+<span id="cb25-290"><a href="Chapter3.html#cb25-290" tabindex="-1"></a>                r3000_DWchange2021,r3000_DWchange2122,r3000_DWchange2223)</span>
+<span id="cb25-291"><a href="Chapter3.html#cb25-291" tabindex="-1"></a></span>
+<span id="cb25-292"><a href="Chapter3.html#cb25-292" tabindex="-1"></a><span class="co"># visu rādiusu pievienošana režģim</span></span>
+<span id="cb25-293"><a href="Chapter3.html#cb25-293" tabindex="-1"></a>vides_parmainas<span class="ot">=</span>dati_c2 <span class="sc">%&gt;%</span> </span>
+<span id="cb25-294"><a href="Chapter3.html#cb25-294" tabindex="-1"></a>  <span class="fu">left_join</span>(dati_r500a,<span class="at">by=</span><span class="fu">c</span>(<span class="st">&quot;id&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-295"><a href="Chapter3.html#cb25-295" tabindex="-1"></a>  <span class="fu">left_join</span>(dati_r1250a,<span class="at">by=</span><span class="fu">c</span>(<span class="st">&quot;id&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-296"><a href="Chapter3.html#cb25-296" tabindex="-1"></a>  <span class="fu">left_join</span>(dati_r3000a,<span class="at">by=</span><span class="fu">c</span>(<span class="st">&quot;id&quot;</span>))</span>
+<span id="cb25-297"><a href="Chapter3.html#cb25-297" tabindex="-1"></a></span>
+<span id="cb25-298"><a href="Chapter3.html#cb25-298" tabindex="-1"></a><span class="co"># rezultāta saglabāšana</span></span>
+<span id="cb25-299"><a href="Chapter3.html#cb25-299" tabindex="-1"></a><span class="fu">st_write_parquet</span>(vides_parmainas,<span class="st">&quot;./VidesParmainas_visas.parquet&quot;</span>)</span></code></pre></div>
 </details>
 
 </div>

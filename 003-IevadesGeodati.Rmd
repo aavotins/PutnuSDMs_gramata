@@ -113,11 +113,17 @@ Latvijas Ģeotelpiskās informācijas aģentūras topogrāfiskās kartes M:10000
 
 - `hidro_A`, kurā raksturoti 264439 ūdensobjektu plankumi;
 
+- `hidro_L`, kurā raksturots grāvju tīkls un mazās upes;
+
 - `landus_A`, kurā raksturots zemes segums un lietojums ar 1291781 laukumveida ģeometriju;
 
 - `road_A`, kurā raksturoti 32094 ceļi, kas atzīmēti ar laukumu;
 
-- `swamp_A`, kurā raksturoti augstie purvi ar 48105 laukumveida objektu,
+- `road_L`, kurā raksturoti dažāda platuma, tajā skaitā relatīvi šauri ceļi un takas;
+
+- `swamp_A`, kurā raksturoti augstie purvi ar 48105 laukumveida objektu;
+
+- `flora_L`, kurā raksturoti līnijveida koku un krūmu objekti,
 
 kuri pārveidoti par *geoparquet*. Failu formāta maiņas ietvaros pārbaudītas ģeometrijas (tukšās, to validitāte, kas nepieciešamības gadījumā labota).
 
@@ -127,6 +133,15 @@ if(!require(sf)) {install.packages("sf"); require(sf)}
 if(!require(arrow)) {install.packages("arrow"); require(arrow)}
 if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
 
+
+# flora_L 
+flora_L=st_read("./Topo10_v3_12_07_2016.gdb/",layer="flora_L")
+flora2 = flora_L[!st_is_empty(flora_L),,drop=FALSE] # OK
+validity=st_is_valid(flora2) 
+table(validity) # 12 invalid geometrijas
+sfarrow::st_write_parquet(flora2, "./Topo_floraL.parquet")
+
+
 # hidro A
 hidro_A=st_read("./Topo10_v3_12_07_2016.gdb/",layer="hidro_A")
 hidro2 = hidro_A[!st_is_empty(hidro_A),,drop=FALSE] # OK
@@ -135,6 +150,15 @@ table(validity) # 12 invalid geometrijas
 hidro3=st_make_valid(hidro2)
 sfarrow::st_write_parquet(hidro3, "Topo_hidroA.parquet")
 
+# hidro L
+hidro_L=st_read("./Topo10_v3_12_07_2016.gdb/",layer="hidro_L")
+table(hidro_L$FNAME,useNA="always")
+hidro_Lx=hidro_L %>% 
+  filter(FNAME=="Ūdenstece līdz 3m") # grāvji
+hidro_Lx2 = hidro_Lx[!st_is_empty(hidro_Lx),,drop=FALSE] # OK
+validity=st_is_valid(hidro_Lx) 
+table(validity) # OK
+sfarrow::st_write_parquet(hidro_Lx, "./Topo_hidroL.parquet")
 
 # road A
 road_A=st_read("./Topo10_v3_12_07_2016.gdb/",layer="road_A")
@@ -143,6 +167,18 @@ validity=st_is_valid(road2)
 table(validity) # 28 invalid geometrijas
 road3=st_make_valid(road2)
 sfarrow::st_write_parquet(road3, "Topo_roadA.parquet")
+
+# road L
+road_L=st_read("./Topo10_v3_12_07_2016.gdb/",layer="road_L")
+table(road_L$FNAME,useNA="always")
+road_Lx=road_L %>% 
+  filter(FNAME!="Gājēju celiņš līdz 3m") %>% # ne pavisam sīkie
+  filter(FNAME!="Gājēju celiņš mērogā") %>% 
+  filter(FNAME!="Taka")
+roadL2 = road_Lx[!st_is_empty(road_Lx),,drop=FALSE] # OK
+validity=st_is_valid(roadL2) 
+table(validity) # OK
+sfarrow::st_write_parquet(roadL2, "Topo_roadL.parquet")
 
 # swamp A
 swamp_A=st_read("./Topo10_v3_12_07_2016.gdb/",layer="swamp_A")
@@ -640,21 +676,441 @@ caurumains=app(c(reljefs,caurumi2),fun="min",na.rm=TRUE,
 
 ### Ainava {#Chapter3.2.2}
 
-- ceļi
+Šajā vingrinājumā "ainava" ir dažādu zemes seguma un lietojuma veidu klašu pārstāvniecība, kurā svarīga ir šo klašu zīmēšanas secība, jo nereti dažādu avotu telpiskajiem datiem ir savstarpēja robežu neatbilstība, kas liek risināt gan to savstarpējo pārklāšanos (1), gan aizpildīt robus vietām, par kurām nav datubāzu informāicja (2), un izvēle par objektu uzsvēršanu ar kādu apstrādi, piemēram, buferēšanu, jo daļa vides raksturošanai (jo sevišķi, malas efektu) nozīmīgu elementu var būt ar tik mazu laukumu vai tādu novietojumu, ka rasterizāicjas procesā tie pazūd (3). Pamata ainavas slānim nozīme ir arī kalpot kā maskai turpmāko vides aprakstu sagatavošanā. Šeit raksturota pamata (vienkāršas) ainavas izstrāde un sekojošajās apakšnodaļās tās bagātināšana ar klasēm specifiskākiem vides ekoģeogrāfiskajiem mainīgajiem. Vienkāršā ainava saglabāta failā `Ainava_vienk_mask.tif`, kurā esošās klases un to izveidošanas procedūra raksturota sekojošajā uzskaitījumā:
 
-- ūdeņi
+- klase `100` - ceļi: dažādu avotu ceļi, **aizpildīta secībā** - dominē pār klasēm ar lielāku vērtību, lai nepazustu relatīvi neliela izmēra objekti un nodrošinātu informāciju par malām. Šīs klases izveidošanai apvienoti:
 
-- koki un izcirtumi (izcirtumi, mežaudzes, palsar, parki-kapi-alejas)
+  -- [topogrāfiskās kartes](#Chapter3.1.3) slāņi `road_A` un `road_L` (izņemot mazāko platuma grupu, kura visbiežāk neveido vienlaidus pārrāvumu vainagu klājā, [skatīt atlasi](#Chapter3.1.3)), pirms rasterizēšanas tos buferējot par 10 m;
+  
+  -- [LVM atvērto datu](#Chapter3.1.5) slāņi `LVM_MEZA_AUTOCELI`, `LVM_ATTISTAMIE_AUTOCELI`, `LVM_APGRIESANAS_LAUKUMI`, `LVM_IZMAINISANAS_VIETAS` un `LVM_NOBRAUKTUVES`, tās buferējot par 10 m.
+  
+  -- nav izmantota Meža valsts reģistra informācija par dabiskajām brauktuvēm, jo tās visbiežāk neveido vienlaidus pārrāvumu vainagu klājā. Šī reģistra informācija par ceļiem ir arī pārējos resursos, tā nav dublēta.
 
-- mitrāji
+Zemāk esošais kods izveido slāni ar ainavas klasi `100`, kuru failā `100_celi.tif` saglabā turpmākam darbam.
 
-- krūmāji no topo
+```{r, eval=FALSE}
+# Libs
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(arrow)) {install.packages("arrow"); require(arrow)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+if(!require(gdalUtilities)){install.packages("gdalUtilities");require(gdalUtilities)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
 
-- LIZ
+# templates
+template_t=rast("./LV10m_10km.tif")
+template_r=raster(template_t)
 
-- smiltāji utml
 
-- robu aizpildījums ar DW, kur klase "trees" pārsaukta par krūmiem
+#poly
+celi_topo=st_read_parquet("./Topo_road_A.parquet")
+celi_topo=celi_topo %>% 
+  mutate(yes=100) %>% 
+  dplyr::select(yes)
+ctb=st_buffer(celi_topo,dist=10)
+r_celi_topo=fasterize(ctb,template_r,field="yes")
+
+# pts
+nobrauktuves=st_read("./LVM_NOBRAUKTUVES_Shape.shp")
+nobrauktuves=nobrauktuves %>% 
+  mutate(yes=100) %>% 
+  dplyr::select(yes)
+izmainisanas=st_read("./LVM_IZMAINISANAS_VIETAS_Shape.shp")
+izmainisanas=izmainisanas %>% 
+  mutate(yes=100) %>% 
+  dplyr::select(yes)
+apgriesanas=st_read("./LVM_APGRIESANAS_LAUKUMI_Shape.shp")
+apgriesanas=apgriesanas %>% 
+  mutate(yes=100) %>% 
+  dplyr::select(yes)
+cp=rbind(nobrauktuves,izmainisanas,apgriesanas)
+cpb=st_buffer(cp,dist=10)
+r_celi_pts=fasterize(cpb,template_r,field="yes")
+
+
+# lines
+meza_autoceli=st_read("./LVM_MEZA_AUTOCELI_Shape.shp")
+meza_autoceli=meza_autoceli %>% 
+  mutate(yes=100) %>% 
+  dplyr::select(yes)
+attistamie=st_read("./LVM_ATTISTAMIE_AUTOCELI_Shape.shp")
+attistamie=attistamie %>% 
+  mutate(yes=100) %>% 
+  dplyr::select(yes)
+topo_lines=st_read_parquet("./Topo_roadL.parquet")
+topo_lines=topo_lines %>% 
+  mutate(yes=100) %>% 
+  dplyr::select(yes)
+cl=bind_rows(meza_autoceli,attistamie,topo_lines)
+cl=cl %>% 
+  dplyr::select(yes)
+clb=st_buffer(cl,dist=10)
+r_celi_lines=fasterize(clb,template_r,field="yes")
+
+# liekā aizvākšana
+rm(apgriesanas)
+rm(attistamie)
+rm(celi_topo)
+rm(topo_lines)
+rm(ctb)
+rm(cl)
+rm(clb)
+rm(cp)
+rm(cpb)
+rm(izmainisanas)
+rm(meza_autoceli)
+rm(nobrauktuves)
+
+# ģeometriju rasterizēšana
+t_celi_topo=rast(r_celi_topo)
+writeRaster(t_celi_topo,"./100a.tif")
+t_celi_pts=rast(r_celi_pts)
+writeRaster(t_celi_pts,"./100b.tif")
+t_celi_lines=rast(r_celi_lines)
+writeRaster(t_celi_lines,"./100c.tif")
+
+# liekā aizvākšana
+rm(r_celi_lines)
+rm(r_celi_pts)
+rm(r_celi_topo)
+rm(t_celi_lines)
+rm(t_celi_pts)
+rm(t_celi_topo)
+
+# apvienošana
+a100=rast("./100a.tif")
+b100=rast("./100b.tif")
+c100=rast("./100c.tif")
+
+rastri=sprc(a100,b100,c100)
+rastrs_celi=terra::merge(rastri,
+                         filename="./100_celi.tif",
+                         overwrite=TRUE)
+# liekā aizvākšana
+rm(a100)
+rm(b100)
+rm(c100)
+rm(rastri)
+rm(rastrs_celi)
+```
+
+
+- klase `200` - ūdeņi: dažādu avotu ūdensobjekti, **aizpildīta secībā** - dominē pār klasēm ar lielāku vērtību, lai nepazustu relatīvi neliela izmēra objekti un nodrošinātu informāciju par malām.
+
+
+
+Zemāk esošais kods izveido slāni ar ainavas klasi `200`, kuru failā `200_udens_premask.tif` saglabā turpmākam darbam.
+
+```{r, eval=FALSE}
+# Libs
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(arrow)) {install.packages("arrow"); require(arrow)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+if(!require(gdalUtilities)){install.packages("gdalUtilities");require(gdalUtilities)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+
+# templates
+template_t=rast("./LV10m_10km.tif")
+template_r=raster(template_t)
+
+
+
+```
+
+
+
+- klase `300` - lauki: lauksaimniecības zemes LAD lauku blokos **aizpildīta secībā** - dominē pār klasēm ar lielāku vērtību, tomēr pēc pamata klašu izveidošanas, robu aizpildīšanā papildināta ar informāciju no *Dynamic World*.
+
+
+
+Zemāk esošais kods izveido slāni ar ainavas klasi `300`, kuru failā `300_lauki_premask.tif` saglabā turpmākam darbam.
+
+```{r, eval=FALSE}
+# Libs
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(arrow)) {install.packages("arrow"); require(arrow)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+if(!require(gdalUtilities)){install.packages("gdalUtilities");require(gdalUtilities)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+
+# templates
+template_t=rast("./LV10m_10km.tif")
+template_r=raster(template_t)
+
+
+
+```
+
+
+
+- klase `400` - mazdārziņi un augļudārzi, vasarnīcas, **aizpildīta secībā** - dominē pār klasēm ar lielāku vērtību.
+
+
+
+Zemāk esošais kods izveido slāni ar ainavas klasi `400`, kuru failā `400_vasarnicas_premask.tif` saglabā turpmākam darbam.
+
+```{r, eval=FALSE}
+# Libs
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(arrow)) {install.packages("arrow"); require(arrow)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+if(!require(gdalUtilities)){install.packages("gdalUtilities");require(gdalUtilities)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+
+# templates
+template_t=rast("./LV10m_10km.tif")
+template_r=raster(template_t)
+
+
+
+```
+
+
+
+- klase `500` - apbūve: apbūvētās platības, **aizpildīta beigās**, izmantojot informāciju no *Dynamic World* par vietām, kuras nav nosegtas ar citām klasēm.
+
+- klase `600` - meži, krūmāji, izcirtumi:
+
+
+
+Zemāk esošais kods izveido slāni ar ainavas klasi `600`, kuru failā `600_meziem_premask.tif` saglabā turpmākam darbam.
+
+```{r, eval=FALSE}
+# Libs
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(arrow)) {install.packages("arrow"); require(arrow)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+if(!require(gdalUtilities)){install.packages("gdalUtilities");require(gdalUtilities)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+
+# templates
+template_t=rast("./LV10m_10km.tif")
+template_r=raster(template_t)
+
+
+
+```
+
+
+
+- klase `700` - mitrāji: 
+
+
+
+Zemāk esošais kods izveido slāni ar ainavas klasi `700`, kuru failā `700_mitraji_premask.tif` saglabā turpmākam darbam.
+
+```{r, eval=FALSE}
+# Libs
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(arrow)) {install.packages("arrow"); require(arrow)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+if(!require(gdalUtilities)){install.packages("gdalUtilities");require(gdalUtilities)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+
+# templates
+template_t=rast("./LV10m_10km.tif")
+template_r=raster(template_t)
+
+
+
+```
+
+
+
+- klase `800` - smiltāji un kūdras lauki:
+
+
+
+
+Zemāk esošais kods izveido slāni ar ainavas klasi `800`, kuru failā `800_smiltaji_premask.tif` saglabā turpmākam darbam.
+
+```{r, eval=FALSE}
+# Libs
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(arrow)) {install.packages("arrow"); require(arrow)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(raster)) {install.packages("raster"); require(raster)}
+if(!require(fasterize)) {install.packages("fasterize"); require(fasterize)}
+if(!require(gdalUtilities)){install.packages("gdalUtilities");require(gdalUtilities)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+
+# templates
+template_t=rast("./LV10m_10km.tif")
+template_r=raster(template_t)
+
+
+
+```
+
+
+
+
+
+
+#### Lauku ainava {#Chapter3.2.2.1}
+
+- lauku bloku platība
+
+- zālāji ārpus lauku blokiem, pieskaitot bezatbalsta
+
+- zālāji visi
+
+- zālāji LAD ne ppg
+
+- zālāji ilglaicīgie
+
+- papuves
+
+- krūmveida stādījumi
+
+- augļudārzi LAD
+
+- aramzemes visas
+
+- aramzemes: ziemas rapsis un ripsis
+
+- aramzemes: vasaras rapsis un ripsis + kukurūza + pākšaugi
+
+- aramzemes: vagu un rušināmkultūras
+
+- aramzemes: ne- labības, rapši, kukurūzas, pākšaugi, vagu kultūras
+
+- aramzemes: labība ziemāji
+
+- aramzemes: labība vasarāji
+
+- lauku daudzveidībai
+
+#### Mežu ainava: auglīgums {#Chapter3.2.2.2}
+
+- oligotrofi susinātie meši
+
+- oligotrofi purvaiņu meži
+
+- oligotrofi sausieņu un slapjaiņu meži
+
+- mezotrofi sausieņu un slapjaiņu meži
+
+- eitrofi susinātie meži
+
+- eitrofi purvaiņu meži
+
+- eitrofi sausieņu un slapjaiņu meži
+
+#### Mežu ainava: mežaudžu vecumgrupas {#Chapter3.2.2.3}
+
+- izcirtumi un jaunaudzes līdz 5 m
+
+- jaunaudzes no 5 m un krūmāji
+
+- vidēja vecuma un briestaudzes
+
+- pieaugušās un pāraugušās mežaudzes
+
+
+#### Mežu ainava: valdošās sugas {#Chapter3.2.2.4}
+
+- skujkoku
+
+- šaurlapju
+
+- platlapju
+
+- jauktu koku
+
+#### Mežu ainava: valdošās sugas vecumgrupās {#Chapter3.2.2.5}
+
+- skujkoku jaunaudzes, vidēja vecuma un briestaudzes
+
+- skujkoku pieaugušās un pāraugušās audzes
+
+- šaurlapju jaunaudzes, vidēja vecuma un briestaudzes
+
+- šaurlapju pieaugušās un pāraugušās audzes
+
+- platlapju jaunaudzes, vidēja vecuma un briestaudzes
+
+- platlapju pieaugušās un pāraugušās audzes
+
+- jauktu koku jaunaudzes, vidēja vecuma un briestaudzes
+
+- jauktu koku pieaugušās un pāraugušās audzes
+
+- mežu daudzveidībai
+
+
+#### Kombinētā ainava {#Chapter3.2.2.6}
+
+- parki, kapi, alejas
+
+- vasarnīcas un mazdārziņi
+
+- ūdensobjektu platība
+
+- niedrāji, meldrāji, grīslāji un pārplūstošā
+
+- mitrāju platība
+
+- atklāta augsne un karjeri
+
+- kokiem klātās platības
+
+- netaksētās mežaudzes
+
+- apbūve
+
+- daudzās klases daudzveidībai
+
+#### Malu slāņi {#Chapter3.2.2.7}
+
+- apbūves un LIZ mala
+
+- apbūves un koku mala
+
+- aramzemju (visu) malas
+
+- LIZ, izcirtumu un jaunaudžu (<5m) malas ar kokiem >5m
+
+- koku virs 5m malas
+
+- niedrāju, meldrāju, grīslāju un pārplūstošās veģetācijas malas ar ūdeni
+
+- pieaugušu un pāraugušu mežaudžu malas
+
+- zālāju (visu) malas
+
+- ūdens un LIZ malas
+
+- ūdens un zālāju malas
+
+- ūdensobjektu malas
+
+- ceļu garums (malas/2)
 
 ### Vides pārmaiņas {#Chapter3.2.3}
 
