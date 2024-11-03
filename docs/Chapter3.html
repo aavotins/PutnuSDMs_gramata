@@ -1446,17 +1446,17 @@ div.csl-indent {
 <p><br></p>
 <ul>
 <li><p>klase <code>500</code> - <strong>apbūve</strong>: apbūvētās platības, <strong>aizpildīta beigās</strong>, izmantojot informāciju no <em>Dynamic World</em> par vietām, kuras nav nosegtas ar citām klasēm.</p></li>
-<li><p>klase <code>600</code> - <strong>meži, krūmāji, izcirtumi</strong>: ar kokiem un krūmiem klātās platības un izcirtumi un iznīkušās mežaudzes. Šīs klases izveidošanai apvienoti (pārklāšanās secībā):</p>
-<p>– <a href="Chapter3.html#Chapter3.1.3">topogrāfiskās kartes</a> slāņi <code>hidro_A</code> un <code>hidro_L</code> (buferēts par 5 m);</p>
-<p>– <a href="Chapter3.html#Chapter3.1.3">topogrāfiskās kartes</a> slāņi <code>hidro_A</code> un <code>hidro_L</code> (buferēts par 5 m);</p>
-<p>– <a href="Chapter3.html#Chapter3.1.3">topogrāfiskās kartes</a> slāņi <code>hidro_A</code> un <code>hidro_L</code> (buferēts par 5 m);</p>
-<p>– <a href="Chapter3.html#Chapter3.1.3">topogrāfiskās kartes</a> slāņi <code>hidro_A</code> un <code>hidro_L</code> (buferēts par 5 m);</p>
-<p>– <a href="Chapter3.html#Chapter3.1.3">topogrāfiskās kartes</a> slāņi <code>hidro_A</code> un <code>hidro_L</code> (buferēts par 5 m);</p>
-<p>– <a href="Chapter3.html#Chapter3.1.3">topogrāfiskās kartes</a> slāņi <code>hidro_A</code> un <code>hidro_L</code> (buferēts par 5 m);</p>
-<p>– <a href="Chapter3.html#Chapter3.1.3">topogrāfiskās kartes</a> slāņi <code>hidro_A</code> un <code>hidro_L</code> (buferēts par 5 m);</p>
-<p>– <a href="Chapter3.html#Chapter3.1.4">MKIS</a> slānis <code>Ditches</code>, to buferējot par 3 m;</p>
-<p>– <a href="Chapter3.html#Chapter3.1.5">LVM atvērto datu</a> slāņi <code>LVM_GRAVJI</code>, tās buferējot par 5 m.</p>
-<p>– nav izmantota <a href="Chapter3.html#Chapter3.1.1">Meža valsts reģistra</a> informācija par grāvjiem, jo tai ir arī pārējos resursos, vai tik nelielai, ka nerada vienlaidus pārrāvumu koku vainagu klājā.</p></li>
+<li><p>klase <code>600</code> - <strong>meži, krūmāji, izcirtumi</strong>: ar kokiem un krūmiem klātās platības un izcirtumi un iznīkušās mežaudzes, <strong>aizpildīta secībā</strong> - dominē pār klasēm ar lielāku vērtību. Šīs klases izveidošanai apvienoti (pārklāšanās secībā):</p>
+<p>– <a href="Chapter3.html#Chapter3.1.9"><em>The Global Forest Watch</em></a> slānī reģistrētās koku vainagu seguma izzušanas kopš 2020. gada, kura rezultāts kodēts ar <code>610</code>;</p>
+<p>– <a href="Chapter3.html#Chapter3.1.1">Meža valsts reģistrā</a> atzīmētie izcirtumi un iznīkušās audzes, kura rezultāts kodēts ar <code>610</code>;</p>
+<p>– <a href="Chapter3.html#Chapter3.1.1">Meža valsts reģistrā</a> atzīmētās mežaudzes, kas ir zemākas par 5 m un sēklu ieguves plantācijas, kura rezultāts kodēts ar <code>620</code>;</p>
+<p>– <a href="Chapter3.html#Chapter3.1.3">topogrāfiskās kartes</a> slāņa <code>flora_L</code> ar krūmiem saistītās klases, kas buferētas par 10 m, kura rezultāts kodēts ar <code>620</code>;</p>
+<p>– <a href="Chapter3.html#Chapter3.1.3">topogrāfiskās kartes</a> slāņi <code>landus_A</code> klase “poligons_Krūmājs”, kura rezultāts kodēts ar <code>620</code>;</p>
+<p>– <a href="Chapter3.html#Chapter3.1.3">LAD lauku informācijas</a> slāņa grupa (nedaudz plašāk par grupējumu <a href="Chapter4.html#chapter4.2.16">šeit</a>, klases apskatāmas <a href="./Papilddati/KulturuKodi_2024.xlsx">šeit</a>) “ilggadīgie krūmveida stādījumi”, kura rezultāts kodēts ar <code>620</code>;</p>
+<p>– <a href="Chapter3.html#Chapter3.1.1">Meža valsts reģistrā</a> atzīmētās mežaudzes augstumā no 5 m, rezultāts kodēts ar <code>630</code>;</p>
+<p>– <a href="Chapter3.html#Chapter3.1.3">topogrāfiskās kartes</a> slāņa <code>landus_A</code> klases “poligons_Parks”, “poligons_Meza_kapi”, “poligons_Kapi”, kura rezultāts kodēts ar <code>640</code>;</p>
+<p>– <a href="Chapter3.html#Chapter3.1.3">topogrāfiskās kartes</a> slāņa <code>flora_L</code> ar kokiem saistītās klases, kas buferētas par 10 m, kura rezultāts kodēts ar <code>640</code>;</p>
+<p>– <a href="Chapter3.html#Chapter3.1.10">Palsar Forests</a> slānis, kura rezultāts kodēts ar <code>630</code>.</p></li>
 </ul>
 <p>Zemāk esošās komandu rindas izveido slāni ar ainavas klasi <code>600</code>, kuru failā <code>600_meziem_premask.tif</code> saglabā turpmākam darbam.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
@@ -1597,75 +1597,82 @@ div.csl-indent {
 <span id="cb22-135"><a href="Chapter3.html#cb22-135" tabindex="-1"></a><span class="fu">rm</span>(krumi_topo)</span>
 <span id="cb22-136"><a href="Chapter3.html#cb22-136" tabindex="-1"></a><span class="fu">rm</span>(r_krumi_topo)</span>
 <span id="cb22-137"><a href="Chapter3.html#cb22-137" tabindex="-1"></a></span>
-<span id="cb22-138"><a href="Chapter3.html#cb22-138" tabindex="-1"></a><span class="co"># topo - linijkoki</span></span>
+<span id="cb22-138"><a href="Chapter3.html#cb22-138" tabindex="-1"></a><span class="co"># topo - linijkrumi un linijkoki</span></span>
 <span id="cb22-139"><a href="Chapter3.html#cb22-139" tabindex="-1"></a>linijas_topo<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Topo_floraL.parquet&quot;</span>)</span>
 <span id="cb22-140"><a href="Chapter3.html#cb22-140" tabindex="-1"></a></span>
-<span id="cb22-141"><a href="Chapter3.html#cb22-141" tabindex="-1"></a>krumu_linijas_topo<span class="ot">=</span>linijas_topo <span class="sc">%&gt;%</span> </span>
-<span id="cb22-142"><a href="Chapter3.html#cb22-142" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(FNAME,<span class="st">&quot;Krūmu&quot;</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb22-143"><a href="Chapter3.html#cb22-143" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">620</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb22-144"><a href="Chapter3.html#cb22-144" tabindex="-1"></a>  <span class="fu">st_buffer</span>(<span class="at">dist=</span><span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb22-145"><a href="Chapter3.html#cb22-145" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
-<span id="cb22-146"><a href="Chapter3.html#cb22-146" tabindex="-1"></a>r_krumu_linijas_topo<span class="ot">=</span><span class="fu">fasterize</span>(krumu_linijas_topo,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
-<span id="cb22-147"><a href="Chapter3.html#cb22-147" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_krumu_linijas_topo,</span>
-<span id="cb22-148"><a href="Chapter3.html#cb22-148" tabindex="-1"></a>                    <span class="st">&quot;./620_KrumuLinijas_topo.tif&quot;</span>,</span>
-<span id="cb22-149"><a href="Chapter3.html#cb22-149" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
-<span id="cb22-150"><a href="Chapter3.html#cb22-150" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
-<span id="cb22-151"><a href="Chapter3.html#cb22-151" tabindex="-1"></a><span class="co"># liekā aizvākšana</span></span>
-<span id="cb22-152"><a href="Chapter3.html#cb22-152" tabindex="-1"></a><span class="fu">rm</span>(krumu_linijas_topo)</span>
-<span id="cb22-153"><a href="Chapter3.html#cb22-153" tabindex="-1"></a><span class="fu">rm</span>(r_krumu_linijas_topo)</span>
-<span id="cb22-154"><a href="Chapter3.html#cb22-154" tabindex="-1"></a></span>
-<span id="cb22-155"><a href="Chapter3.html#cb22-155" tabindex="-1"></a>koku_linijas_topo<span class="ot">=</span>linijas_topo <span class="sc">%&gt;%</span> </span>
-<span id="cb22-156"><a href="Chapter3.html#cb22-156" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(FNAME,<span class="st">&quot;Koku&quot;</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb22-157"><a href="Chapter3.html#cb22-157" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">640</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb22-158"><a href="Chapter3.html#cb22-158" tabindex="-1"></a>  <span class="fu">st_buffer</span>(<span class="at">dist=</span><span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb22-159"><a href="Chapter3.html#cb22-159" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
-<span id="cb22-160"><a href="Chapter3.html#cb22-160" tabindex="-1"></a>r_koku_linijas_topo<span class="ot">=</span><span class="fu">fasterize</span>(koku_linijas_topo,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
-<span id="cb22-161"><a href="Chapter3.html#cb22-161" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_koku_linijas_topo,</span>
-<span id="cb22-162"><a href="Chapter3.html#cb22-162" tabindex="-1"></a>                    <span class="st">&quot;./640_KokuLinijas_topo.tif&quot;</span>,</span>
-<span id="cb22-163"><a href="Chapter3.html#cb22-163" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
-<span id="cb22-164"><a href="Chapter3.html#cb22-164" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
-<span id="cb22-165"><a href="Chapter3.html#cb22-165" tabindex="-1"></a><span class="co"># liekā aizvākšana</span></span>
-<span id="cb22-166"><a href="Chapter3.html#cb22-166" tabindex="-1"></a><span class="fu">rm</span>(koku_linijas_topo)</span>
-<span id="cb22-167"><a href="Chapter3.html#cb22-167" tabindex="-1"></a><span class="fu">rm</span>(r_koku_linijas_topo)</span>
-<span id="cb22-168"><a href="Chapter3.html#cb22-168" tabindex="-1"></a><span class="fu">rm</span>(linijas_topo)</span>
-<span id="cb22-169"><a href="Chapter3.html#cb22-169" tabindex="-1"></a></span>
-<span id="cb22-170"><a href="Chapter3.html#cb22-170" tabindex="-1"></a><span class="co"># apvienosana</span></span>
-<span id="cb22-171"><a href="Chapter3.html#cb22-171" tabindex="-1"></a>r_krumi_lad<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./620_krumi_lad.tif&quot;</span>)</span>
-<span id="cb22-172"><a href="Chapter3.html#cb22-172" tabindex="-1"></a>r_pkk_topo<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./640_pkk_topo.tif&quot;</span>)</span>
-<span id="cb22-173"><a href="Chapter3.html#cb22-173" tabindex="-1"></a>r_krumi_topo<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./620_krumi_topo.tif&quot;</span>)</span>
-<span id="cb22-174"><a href="Chapter3.html#cb22-174" tabindex="-1"></a>r_krumu_linijas_topo<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./620_KrumuLinijas_topo.tif&quot;</span>)</span>
-<span id="cb22-175"><a href="Chapter3.html#cb22-175" tabindex="-1"></a>r_koku_linijas_topo<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./640_KokuLinijas_topo.tif&quot;</span>)</span>
-<span id="cb22-176"><a href="Chapter3.html#cb22-176" tabindex="-1"></a>r_palsar<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./630_palsar.tif&quot;</span>)</span>
-<span id="cb22-177"><a href="Chapter3.html#cb22-177" tabindex="-1"></a>r_tcl<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./610_TCL.tif&quot;</span>)</span>
-<span id="cb22-178"><a href="Chapter3.html#cb22-178" tabindex="-1"></a>r_augstas_mvr<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./630_augstas_mvr.tif&quot;</span>)</span>
-<span id="cb22-179"><a href="Chapter3.html#cb22-179" tabindex="-1"></a>r_zemas_mvr<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./620_zemas_mvr.tif&quot;</span>)</span>
-<span id="cb22-180"><a href="Chapter3.html#cb22-180" tabindex="-1"></a>r_izcirtumi_mvr<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./610_izcirtumi_mvr.tif&quot;</span>)</span>
-<span id="cb22-181"><a href="Chapter3.html#cb22-181" tabindex="-1"></a></span>
-<span id="cb22-182"><a href="Chapter3.html#cb22-182" tabindex="-1"></a>rastri_meziem<span class="ot">=</span><span class="fu">sprc</span>(r_tcl,r_izcirtumi_mvr,</span>
-<span id="cb22-183"><a href="Chapter3.html#cb22-183" tabindex="-1"></a>                   r_zemas_mvr,r_krumu_linijas_topo,r_krumi_topo,r_krumi_lad,</span>
-<span id="cb22-184"><a href="Chapter3.html#cb22-184" tabindex="-1"></a>                   r_augstas_mvr,</span>
-<span id="cb22-185"><a href="Chapter3.html#cb22-185" tabindex="-1"></a>                   r_pkk_topo,r_koku_linijas_topo,</span>
-<span id="cb22-186"><a href="Chapter3.html#cb22-186" tabindex="-1"></a>                   r_palsar)</span>
-<span id="cb22-187"><a href="Chapter3.html#cb22-187" tabindex="-1"></a>rastrs_mezi<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">merge</span>(rastri_meziem,</span>
-<span id="cb22-188"><a href="Chapter3.html#cb22-188" tabindex="-1"></a>                      <span class="at">filename=</span><span class="st">&quot;./600_meziem_premask.tif&quot;</span>,</span>
-<span id="cb22-189"><a href="Chapter3.html#cb22-189" tabindex="-1"></a>                      <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
-<span id="cb22-190"><a href="Chapter3.html#cb22-190" tabindex="-1"></a><span class="co"># liekā aizvākšana</span></span>
-<span id="cb22-191"><a href="Chapter3.html#cb22-191" tabindex="-1"></a><span class="fu">rm</span>(r_krumi_lad)</span>
-<span id="cb22-192"><a href="Chapter3.html#cb22-192" tabindex="-1"></a><span class="fu">rm</span>(r_pkk_topo)</span>
-<span id="cb22-193"><a href="Chapter3.html#cb22-193" tabindex="-1"></a><span class="fu">rm</span>(r_krumi_topo)</span>
-<span id="cb22-194"><a href="Chapter3.html#cb22-194" tabindex="-1"></a><span class="fu">rm</span>(r_krumu_linijas_topo)</span>
-<span id="cb22-195"><a href="Chapter3.html#cb22-195" tabindex="-1"></a><span class="fu">rm</span>(r_koku_linijas_topo)</span>
-<span id="cb22-196"><a href="Chapter3.html#cb22-196" tabindex="-1"></a><span class="fu">rm</span>(r_palsar)</span>
-<span id="cb22-197"><a href="Chapter3.html#cb22-197" tabindex="-1"></a><span class="fu">rm</span>(r_tcl)</span>
-<span id="cb22-198"><a href="Chapter3.html#cb22-198" tabindex="-1"></a><span class="fu">rm</span>(r_augstas_mvr)</span>
-<span id="cb22-199"><a href="Chapter3.html#cb22-199" tabindex="-1"></a><span class="fu">rm</span>(r_zemas_mvr)</span>
-<span id="cb22-200"><a href="Chapter3.html#cb22-200" tabindex="-1"></a><span class="fu">rm</span>(r_izcirtumi_mvr)</span>
-<span id="cb22-201"><a href="Chapter3.html#cb22-201" tabindex="-1"></a><span class="fu">rm</span>(rastri_meziem)</span>
-<span id="cb22-202"><a href="Chapter3.html#cb22-202" tabindex="-1"></a><span class="fu">rm</span>(rastrs_mezi)</span></code></pre></div>
+<span id="cb22-141"><a href="Chapter3.html#cb22-141" tabindex="-1"></a><span class="co"># linijkrumi</span></span>
+<span id="cb22-142"><a href="Chapter3.html#cb22-142" tabindex="-1"></a>krumu_linijas_topo<span class="ot">=</span>linijas_topo <span class="sc">%&gt;%</span> </span>
+<span id="cb22-143"><a href="Chapter3.html#cb22-143" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(FNAME,<span class="st">&quot;Krūmu&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-144"><a href="Chapter3.html#cb22-144" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">620</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-145"><a href="Chapter3.html#cb22-145" tabindex="-1"></a>  <span class="fu">st_buffer</span>(<span class="at">dist=</span><span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-146"><a href="Chapter3.html#cb22-146" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb22-147"><a href="Chapter3.html#cb22-147" tabindex="-1"></a>r_krumu_linijas_topo<span class="ot">=</span><span class="fu">fasterize</span>(krumu_linijas_topo,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb22-148"><a href="Chapter3.html#cb22-148" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_krumu_linijas_topo,</span>
+<span id="cb22-149"><a href="Chapter3.html#cb22-149" tabindex="-1"></a>                    <span class="st">&quot;./620_KrumuLinijas_topo.tif&quot;</span>,</span>
+<span id="cb22-150"><a href="Chapter3.html#cb22-150" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
+<span id="cb22-151"><a href="Chapter3.html#cb22-151" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb22-152"><a href="Chapter3.html#cb22-152" tabindex="-1"></a><span class="co"># liekā aizvākšana</span></span>
+<span id="cb22-153"><a href="Chapter3.html#cb22-153" tabindex="-1"></a><span class="fu">rm</span>(krumu_linijas_topo)</span>
+<span id="cb22-154"><a href="Chapter3.html#cb22-154" tabindex="-1"></a><span class="fu">rm</span>(r_krumu_linijas_topo)</span>
+<span id="cb22-155"><a href="Chapter3.html#cb22-155" tabindex="-1"></a></span>
+<span id="cb22-156"><a href="Chapter3.html#cb22-156" tabindex="-1"></a><span class="co"># linijkoki</span></span>
+<span id="cb22-157"><a href="Chapter3.html#cb22-157" tabindex="-1"></a>koku_linijas_topo<span class="ot">=</span>linijas_topo <span class="sc">%&gt;%</span> </span>
+<span id="cb22-158"><a href="Chapter3.html#cb22-158" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(FNAME,<span class="st">&quot;Koku&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-159"><a href="Chapter3.html#cb22-159" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">640</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-160"><a href="Chapter3.html#cb22-160" tabindex="-1"></a>  <span class="fu">st_buffer</span>(<span class="at">dist=</span><span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-161"><a href="Chapter3.html#cb22-161" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb22-162"><a href="Chapter3.html#cb22-162" tabindex="-1"></a>r_koku_linijas_topo<span class="ot">=</span><span class="fu">fasterize</span>(koku_linijas_topo,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb22-163"><a href="Chapter3.html#cb22-163" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_koku_linijas_topo,</span>
+<span id="cb22-164"><a href="Chapter3.html#cb22-164" tabindex="-1"></a>                    <span class="st">&quot;./640_KokuLinijas_topo.tif&quot;</span>,</span>
+<span id="cb22-165"><a href="Chapter3.html#cb22-165" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
+<span id="cb22-166"><a href="Chapter3.html#cb22-166" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb22-167"><a href="Chapter3.html#cb22-167" tabindex="-1"></a><span class="co"># liekā aizvākšana</span></span>
+<span id="cb22-168"><a href="Chapter3.html#cb22-168" tabindex="-1"></a><span class="fu">rm</span>(koku_linijas_topo)</span>
+<span id="cb22-169"><a href="Chapter3.html#cb22-169" tabindex="-1"></a><span class="fu">rm</span>(r_koku_linijas_topo)</span>
+<span id="cb22-170"><a href="Chapter3.html#cb22-170" tabindex="-1"></a><span class="fu">rm</span>(linijas_topo)</span>
+<span id="cb22-171"><a href="Chapter3.html#cb22-171" tabindex="-1"></a></span>
+<span id="cb22-172"><a href="Chapter3.html#cb22-172" tabindex="-1"></a><span class="co"># apvienosana</span></span>
+<span id="cb22-173"><a href="Chapter3.html#cb22-173" tabindex="-1"></a>r_krumi_lad<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./620_krumi_lad.tif&quot;</span>)</span>
+<span id="cb22-174"><a href="Chapter3.html#cb22-174" tabindex="-1"></a>r_pkk_topo<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./640_pkk_topo.tif&quot;</span>)</span>
+<span id="cb22-175"><a href="Chapter3.html#cb22-175" tabindex="-1"></a>r_krumi_topo<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./620_krumi_topo.tif&quot;</span>)</span>
+<span id="cb22-176"><a href="Chapter3.html#cb22-176" tabindex="-1"></a>r_krumu_linijas_topo<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./620_KrumuLinijas_topo.tif&quot;</span>)</span>
+<span id="cb22-177"><a href="Chapter3.html#cb22-177" tabindex="-1"></a>r_koku_linijas_topo<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./640_KokuLinijas_topo.tif&quot;</span>)</span>
+<span id="cb22-178"><a href="Chapter3.html#cb22-178" tabindex="-1"></a>r_palsar<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./630_palsar.tif&quot;</span>)</span>
+<span id="cb22-179"><a href="Chapter3.html#cb22-179" tabindex="-1"></a>r_tcl<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./610_TCL.tif&quot;</span>)</span>
+<span id="cb22-180"><a href="Chapter3.html#cb22-180" tabindex="-1"></a>r_augstas_mvr<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./630_augstas_mvr.tif&quot;</span>)</span>
+<span id="cb22-181"><a href="Chapter3.html#cb22-181" tabindex="-1"></a>r_zemas_mvr<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./620_zemas_mvr.tif&quot;</span>)</span>
+<span id="cb22-182"><a href="Chapter3.html#cb22-182" tabindex="-1"></a>r_izcirtumi_mvr<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./610_izcirtumi_mvr.tif&quot;</span>)</span>
+<span id="cb22-183"><a href="Chapter3.html#cb22-183" tabindex="-1"></a></span>
+<span id="cb22-184"><a href="Chapter3.html#cb22-184" tabindex="-1"></a>rastri_meziem<span class="ot">=</span><span class="fu">sprc</span>(r_tcl,r_izcirtumi_mvr,</span>
+<span id="cb22-185"><a href="Chapter3.html#cb22-185" tabindex="-1"></a>                   r_zemas_mvr,r_krumu_linijas_topo,r_krumi_topo,r_krumi_lad,</span>
+<span id="cb22-186"><a href="Chapter3.html#cb22-186" tabindex="-1"></a>                   r_augstas_mvr,</span>
+<span id="cb22-187"><a href="Chapter3.html#cb22-187" tabindex="-1"></a>                   r_pkk_topo,r_koku_linijas_topo,</span>
+<span id="cb22-188"><a href="Chapter3.html#cb22-188" tabindex="-1"></a>                   r_palsar)</span>
+<span id="cb22-189"><a href="Chapter3.html#cb22-189" tabindex="-1"></a>rastrs_mezi<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">merge</span>(rastri_meziem,</span>
+<span id="cb22-190"><a href="Chapter3.html#cb22-190" tabindex="-1"></a>                      <span class="at">filename=</span><span class="st">&quot;./600_meziem_premask.tif&quot;</span>,</span>
+<span id="cb22-191"><a href="Chapter3.html#cb22-191" tabindex="-1"></a>                      <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb22-192"><a href="Chapter3.html#cb22-192" tabindex="-1"></a><span class="co"># liekā aizvākšana</span></span>
+<span id="cb22-193"><a href="Chapter3.html#cb22-193" tabindex="-1"></a><span class="fu">rm</span>(r_krumi_lad)</span>
+<span id="cb22-194"><a href="Chapter3.html#cb22-194" tabindex="-1"></a><span class="fu">rm</span>(r_pkk_topo)</span>
+<span id="cb22-195"><a href="Chapter3.html#cb22-195" tabindex="-1"></a><span class="fu">rm</span>(r_krumi_topo)</span>
+<span id="cb22-196"><a href="Chapter3.html#cb22-196" tabindex="-1"></a><span class="fu">rm</span>(r_krumu_linijas_topo)</span>
+<span id="cb22-197"><a href="Chapter3.html#cb22-197" tabindex="-1"></a><span class="fu">rm</span>(r_koku_linijas_topo)</span>
+<span id="cb22-198"><a href="Chapter3.html#cb22-198" tabindex="-1"></a><span class="fu">rm</span>(r_palsar)</span>
+<span id="cb22-199"><a href="Chapter3.html#cb22-199" tabindex="-1"></a><span class="fu">rm</span>(r_tcl)</span>
+<span id="cb22-200"><a href="Chapter3.html#cb22-200" tabindex="-1"></a><span class="fu">rm</span>(r_augstas_mvr)</span>
+<span id="cb22-201"><a href="Chapter3.html#cb22-201" tabindex="-1"></a><span class="fu">rm</span>(r_zemas_mvr)</span>
+<span id="cb22-202"><a href="Chapter3.html#cb22-202" tabindex="-1"></a><span class="fu">rm</span>(r_izcirtumi_mvr)</span>
+<span id="cb22-203"><a href="Chapter3.html#cb22-203" tabindex="-1"></a><span class="fu">rm</span>(rastri_meziem)</span>
+<span id="cb22-204"><a href="Chapter3.html#cb22-204" tabindex="-1"></a><span class="fu">rm</span>(rastrs_mezi)</span></code></pre></div>
 </details>
 <p><br></p>
 <ul>
-<li>klase <code>700</code> - <strong>mitrāji</strong>:</li>
+<li><p>klase <code>700</code> - <strong>mitrāji</strong>: apvienojot ar niedrājiem, purviem un bebrainēs saistītos ģeotelpiskos datus, <strong>aizpildīta secībā</strong> - dominē pār klasēm ar lielāku vērtību. Šīs klases izveidošanai apvienoti (pārklāšanās secībā):</p>
+<p>– <a href="Chapter3.html#Chapter3.1.3">topogrāfiskās kartes</a> slāņa <code>landus_A</code> klases “Meldrājs_ūdenī_poligons”, “poligons_Grīslājs”, “poligons_Meldrājs”, “poligons_Nec_purvs_grīslājs”, “poligons_Nec_purvs_meldrājs”, “Sēklis_poligons”, kura rezultāts kodēts ar <code>720</code>;</p>
+<p>– <a href="Chapter3.html#Chapter3.1.3">topogrāfiskās kartes</a> slāņa <code>landus_A</code> klases “poligons_Nec_purvs_sūnājs”, “poligons_Sūnājs”, kuru rezultāts kodēts ar <code>710</code>;</p>
+<p>– <a href="Chapter3.html#Chapter3.1.3">topogrāfiskās kartes</a> slāņa <code>swamp_A</code>, kura rezultāts kodēts ar <code>710</code>;</p>
+<p>– <a href="Chapter3.html#Chapter3.1.1">Meža valsts reģistrā</a> atzīmētās zemes kategorijas “21”, “22”, “23”, kura rezultāts kodēts ar <code>710</code>;</p>
+<p>– <a href="Chapter3.html#Chapter3.1.1">Meža valsts reģistrā</a> atzīmētās zemes kategorijas “41”, “42”, kura rezultāts kodēts ar <code>730</code>.</p></li>
 </ul>
 <p>Zemāk esošās komandu rindas izveido slāni ar ainavas klasi <code>700</code>, kuru failā <code>700_mitraji_premask.tif</code> saglabā turpmākam darbam.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
@@ -1682,11 +1689,107 @@ div.csl-indent {
 <span id="cb23-11"><a href="Chapter3.html#cb23-11" tabindex="-1"></a></span>
 <span id="cb23-12"><a href="Chapter3.html#cb23-12" tabindex="-1"></a><span class="co"># templates</span></span>
 <span id="cb23-13"><a href="Chapter3.html#cb23-13" tabindex="-1"></a>template_t<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./LV10m_10km.tif&quot;</span>)</span>
-<span id="cb23-14"><a href="Chapter3.html#cb23-14" tabindex="-1"></a>template_r<span class="ot">=</span><span class="fu">raster</span>(template_t)</span></code></pre></div>
+<span id="cb23-14"><a href="Chapter3.html#cb23-14" tabindex="-1"></a>template_r<span class="ot">=</span><span class="fu">raster</span>(template_t)</span>
+<span id="cb23-15"><a href="Chapter3.html#cb23-15" tabindex="-1"></a></span>
+<span id="cb23-16"><a href="Chapter3.html#cb23-16" tabindex="-1"></a></span>
+<span id="cb23-17"><a href="Chapter3.html#cb23-17" tabindex="-1"></a><span class="co"># topo</span></span>
+<span id="cb23-18"><a href="Chapter3.html#cb23-18" tabindex="-1"></a>topo<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Topo_landusA.parquet&quot;</span>)</span>
+<span id="cb23-19"><a href="Chapter3.html#cb23-19" tabindex="-1"></a><span class="fu">table</span>(topo<span class="sc">$</span>FNAME,<span class="at">useNA=</span><span class="st">&quot;always&quot;</span>)</span>
+<span id="cb23-20"><a href="Chapter3.html#cb23-20" tabindex="-1"></a></span>
+<span id="cb23-21"><a href="Chapter3.html#cb23-21" tabindex="-1"></a><span class="do">## niedrāji</span></span>
+<span id="cb23-22"><a href="Chapter3.html#cb23-22" tabindex="-1"></a>niedraji_topo<span class="ot">=</span>topo <span class="sc">%&gt;%</span> </span>
+<span id="cb23-23"><a href="Chapter3.html#cb23-23" tabindex="-1"></a>  <span class="fu">filter</span>(FNAME <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Meldrājs_ūdenī_poligons&quot;</span>,<span class="st">&quot;poligons_Grīslājs&quot;</span>,</span>
+<span id="cb23-24"><a href="Chapter3.html#cb23-24" tabindex="-1"></a>                      <span class="st">&quot;poligons_Meldrājs&quot;</span>,<span class="st">&quot;poligons_Nec_purvs_grīslājs&quot;</span>,</span>
+<span id="cb23-25"><a href="Chapter3.html#cb23-25" tabindex="-1"></a>                      <span class="st">&quot;poligons_Nec_purvs_meldrājs&quot;</span>,<span class="st">&quot;Sēklis_poligons&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-26"><a href="Chapter3.html#cb23-26" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">720</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-27"><a href="Chapter3.html#cb23-27" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb23-28"><a href="Chapter3.html#cb23-28" tabindex="-1"></a>r_niedraji_topo<span class="ot">=</span><span class="fu">fasterize</span>(niedraji_topo,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb23-29"><a href="Chapter3.html#cb23-29" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_niedraji_topo,</span>
+<span id="cb23-30"><a href="Chapter3.html#cb23-30" tabindex="-1"></a>                    <span class="st">&quot;./720_niedraji_topo.tif&quot;</span>,</span>
+<span id="cb23-31"><a href="Chapter3.html#cb23-31" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>)</span>
+<span id="cb23-32"><a href="Chapter3.html#cb23-32" tabindex="-1"></a><span class="co"># liekā aizvākšana</span></span>
+<span id="cb23-33"><a href="Chapter3.html#cb23-33" tabindex="-1"></a><span class="fu">rm</span>(niedraji_topo)</span>
+<span id="cb23-34"><a href="Chapter3.html#cb23-34" tabindex="-1"></a><span class="fu">rm</span>(r_niedraji_topo)</span>
+<span id="cb23-35"><a href="Chapter3.html#cb23-35" tabindex="-1"></a></span>
+<span id="cb23-36"><a href="Chapter3.html#cb23-36" tabindex="-1"></a></span>
+<span id="cb23-37"><a href="Chapter3.html#cb23-37" tabindex="-1"></a><span class="do">## purvi</span></span>
+<span id="cb23-38"><a href="Chapter3.html#cb23-38" tabindex="-1"></a>purvi_topo<span class="ot">=</span>topo <span class="sc">%&gt;%</span> </span>
+<span id="cb23-39"><a href="Chapter3.html#cb23-39" tabindex="-1"></a>  <span class="fu">filter</span>(FNAME <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;poligons_Nec_purvs_sūnājs&quot;</span>,<span class="st">&quot;poligons_Sūnājs&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-40"><a href="Chapter3.html#cb23-40" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">710</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-41"><a href="Chapter3.html#cb23-41" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb23-42"><a href="Chapter3.html#cb23-42" tabindex="-1"></a>topo_purvi<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Topo_swampA.parquet&quot;</span>)</span>
+<span id="cb23-43"><a href="Chapter3.html#cb23-43" tabindex="-1"></a>topo_purvi<span class="ot">=</span>topo_purvi <span class="sc">%&gt;%</span> </span>
+<span id="cb23-44"><a href="Chapter3.html#cb23-44" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">710</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-45"><a href="Chapter3.html#cb23-45" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb23-46"><a href="Chapter3.html#cb23-46" tabindex="-1"></a>purvi<span class="ot">=</span><span class="fu">rbind</span>(purvi_topo,topo_purvi)</span>
+<span id="cb23-47"><a href="Chapter3.html#cb23-47" tabindex="-1"></a>r_purvi_topo<span class="ot">=</span><span class="fu">fasterize</span>(purvi,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb23-48"><a href="Chapter3.html#cb23-48" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_purvi_topo,</span>
+<span id="cb23-49"><a href="Chapter3.html#cb23-49" tabindex="-1"></a>                    <span class="st">&quot;./710_purvi_topo.tif&quot;</span>,</span>
+<span id="cb23-50"><a href="Chapter3.html#cb23-50" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
+<span id="cb23-51"><a href="Chapter3.html#cb23-51" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb23-52"><a href="Chapter3.html#cb23-52" tabindex="-1"></a><span class="co"># liekā aizvākšana</span></span>
+<span id="cb23-53"><a href="Chapter3.html#cb23-53" tabindex="-1"></a><span class="fu">rm</span>(purvi_topo)</span>
+<span id="cb23-54"><a href="Chapter3.html#cb23-54" tabindex="-1"></a><span class="fu">rm</span>(topo_purvi)</span>
+<span id="cb23-55"><a href="Chapter3.html#cb23-55" tabindex="-1"></a><span class="fu">rm</span>(purvi)</span>
+<span id="cb23-56"><a href="Chapter3.html#cb23-56" tabindex="-1"></a><span class="fu">rm</span>(r_purvi_topo)</span>
+<span id="cb23-57"><a href="Chapter3.html#cb23-57" tabindex="-1"></a></span>
+<span id="cb23-58"><a href="Chapter3.html#cb23-58" tabindex="-1"></a></span>
+<span id="cb23-59"><a href="Chapter3.html#cb23-59" tabindex="-1"></a><span class="co"># mvr</span></span>
+<span id="cb23-60"><a href="Chapter3.html#cb23-60" tabindex="-1"></a>mvr<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./nogabali_2024janv.parquet&quot;</span>)</span>
+<span id="cb23-61"><a href="Chapter3.html#cb23-61" tabindex="-1"></a></span>
+<span id="cb23-62"><a href="Chapter3.html#cb23-62" tabindex="-1"></a><span class="co"># sūnu, zālu pārejas purvi</span></span>
+<span id="cb23-63"><a href="Chapter3.html#cb23-63" tabindex="-1"></a>mvr_purvi<span class="ot">=</span>mvr <span class="sc">%&gt;%</span> </span>
+<span id="cb23-64"><a href="Chapter3.html#cb23-64" tabindex="-1"></a>  <span class="fu">filter</span>(zkat <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;21&quot;</span>,<span class="st">&quot;22&quot;</span>,<span class="st">&quot;23&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-65"><a href="Chapter3.html#cb23-65" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">710</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-66"><a href="Chapter3.html#cb23-66" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb23-67"><a href="Chapter3.html#cb23-67" tabindex="-1"></a>r_purvi_mvr<span class="ot">=</span><span class="fu">fasterize</span>(mvr_purvi,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb23-68"><a href="Chapter3.html#cb23-68" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_purvi_mvr,</span>
+<span id="cb23-69"><a href="Chapter3.html#cb23-69" tabindex="-1"></a>                    <span class="st">&quot;./710_purvi_mvr.tif&quot;</span>,</span>
+<span id="cb23-70"><a href="Chapter3.html#cb23-70" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
+<span id="cb23-71"><a href="Chapter3.html#cb23-71" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb23-72"><a href="Chapter3.html#cb23-72" tabindex="-1"></a><span class="co"># liekā aizvākšana</span></span>
+<span id="cb23-73"><a href="Chapter3.html#cb23-73" tabindex="-1"></a><span class="fu">rm</span>(mvr_purvi)</span>
+<span id="cb23-74"><a href="Chapter3.html#cb23-74" tabindex="-1"></a><span class="fu">rm</span>(r_purvi_mvr)</span>
+<span id="cb23-75"><a href="Chapter3.html#cb23-75" tabindex="-1"></a></span>
+<span id="cb23-76"><a href="Chapter3.html#cb23-76" tabindex="-1"></a><span class="co"># bebraines un pārplūstoši klajumi</span></span>
+<span id="cb23-77"><a href="Chapter3.html#cb23-77" tabindex="-1"></a>mvr_bebri<span class="ot">=</span>mvr <span class="sc">%&gt;%</span> </span>
+<span id="cb23-78"><a href="Chapter3.html#cb23-78" tabindex="-1"></a>  <span class="fu">filter</span>(zkat <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;41&quot;</span>,<span class="st">&quot;42&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-79"><a href="Chapter3.html#cb23-79" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">730</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-80"><a href="Chapter3.html#cb23-80" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb23-81"><a href="Chapter3.html#cb23-81" tabindex="-1"></a>r_bebri_mvr<span class="ot">=</span><span class="fu">fasterize</span>(mvr_bebri,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb23-82"><a href="Chapter3.html#cb23-82" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_bebri_mvr,</span>
+<span id="cb23-83"><a href="Chapter3.html#cb23-83" tabindex="-1"></a>                    <span class="st">&quot;./730_bebri_mvr.tif&quot;</span>,</span>
+<span id="cb23-84"><a href="Chapter3.html#cb23-84" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
+<span id="cb23-85"><a href="Chapter3.html#cb23-85" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb23-86"><a href="Chapter3.html#cb23-86" tabindex="-1"></a><span class="co"># liekā aizvākšana</span></span>
+<span id="cb23-87"><a href="Chapter3.html#cb23-87" tabindex="-1"></a><span class="fu">rm</span>(mvr_bebri)</span>
+<span id="cb23-88"><a href="Chapter3.html#cb23-88" tabindex="-1"></a><span class="fu">rm</span>(r_bebri_mvr)</span>
+<span id="cb23-89"><a href="Chapter3.html#cb23-89" tabindex="-1"></a><span class="fu">rm</span>(mvr)</span>
+<span id="cb23-90"><a href="Chapter3.html#cb23-90" tabindex="-1"></a></span>
+<span id="cb23-91"><a href="Chapter3.html#cb23-91" tabindex="-1"></a><span class="co"># apvienosana</span></span>
+<span id="cb23-92"><a href="Chapter3.html#cb23-92" tabindex="-1"></a>r_niedraji_topo<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./720_niedraji_topo.tif&quot;</span>)</span>
+<span id="cb23-93"><a href="Chapter3.html#cb23-93" tabindex="-1"></a>r_purvi_topo<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./710_purvi_topo.tif&quot;</span>)</span>
+<span id="cb23-94"><a href="Chapter3.html#cb23-94" tabindex="-1"></a>r_purvi_mvr<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./710_purvi_mvr.tif&quot;</span>)</span>
+<span id="cb23-95"><a href="Chapter3.html#cb23-95" tabindex="-1"></a>r_bebri_mvr<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./730_bebri_mvr.tif&quot;</span>)</span>
+<span id="cb23-96"><a href="Chapter3.html#cb23-96" tabindex="-1"></a></span>
+<span id="cb23-97"><a href="Chapter3.html#cb23-97" tabindex="-1"></a></span>
+<span id="cb23-98"><a href="Chapter3.html#cb23-98" tabindex="-1"></a>rastri_mitrajiem<span class="ot">=</span><span class="fu">sprc</span>(r_niedraji_topo,r_purvi_topo,r_purvi_mvr,r_bebri_mvr)</span>
+<span id="cb23-99"><a href="Chapter3.html#cb23-99" tabindex="-1"></a>rastrs_mitraji<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">merge</span>(rastri_mitrajiem,</span>
+<span id="cb23-100"><a href="Chapter3.html#cb23-100" tabindex="-1"></a>                               <span class="at">filename=</span><span class="st">&quot;./700_mitraji_premask.tif&quot;</span>,</span>
+<span id="cb23-101"><a href="Chapter3.html#cb23-101" tabindex="-1"></a>                               <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb23-102"><a href="Chapter3.html#cb23-102" tabindex="-1"></a><span class="co"># liekā aizvākšana</span></span>
+<span id="cb23-103"><a href="Chapter3.html#cb23-103" tabindex="-1"></a><span class="fu">rm</span>(r_niedraji_topo)</span>
+<span id="cb23-104"><a href="Chapter3.html#cb23-104" tabindex="-1"></a><span class="fu">rm</span>(r_purvi_topo)</span>
+<span id="cb23-105"><a href="Chapter3.html#cb23-105" tabindex="-1"></a><span class="fu">rm</span>(r_purvi_mvr)</span>
+<span id="cb23-106"><a href="Chapter3.html#cb23-106" tabindex="-1"></a><span class="fu">rm</span>(r_bebri_mvr)</span>
+<span id="cb23-107"><a href="Chapter3.html#cb23-107" tabindex="-1"></a><span class="fu">rm</span>(rastri_mitrajiem)</span>
+<span id="cb23-108"><a href="Chapter3.html#cb23-108" tabindex="-1"></a><span class="fu">rm</span>(rastrs_mitraji)</span></code></pre></div>
 </details>
 <p><br></p>
 <ul>
-<li>klase <code>800</code> - <strong>smiltāji un kūdras lauki</strong>:</li>
+<li><p>klase <code>800</code> - <strong>smiltāji un kūdras lauki</strong>: apvienojot ar smiltājiem, virsājiem un kūdras karjeriem saistītos slāņus, <strong>aizpildīta secībā</strong> - tā kā šī ir augstākā klase, tā dominē tikai pār robu aizpildīšanai izmantoto <em>Dynamic World</em>. Šīs klases izveidošanai apvienoti (pārklāšanās secībā):</p>
+<p>– <a href="Chapter3.html#Chapter3.1.3">topogrāfiskās kartes</a> slāņa <code>landus_A</code> klases “poligons_Smiltājs”, “poligons_Kūdra”, kura rezultāts kodēts ar <code>800</code>;</p>
+<p>– <a href="Chapter3.html#Chapter3.1.1">Meža valsts reģistrā</a> atzīmētās zemes kategorijas “33”, “34”, kura rezultāts kodēts ar <code>730</code>.</p></li>
 </ul>
 <p>Zemāk esošās komandu rindas izveido slāni ar ainavas klasi <code>800</code>, kuru failā <code>800_smiltaji_premask.tif</code> saglabā turpmākam darbam.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
@@ -1703,7 +1806,52 @@ div.csl-indent {
 <span id="cb24-11"><a href="Chapter3.html#cb24-11" tabindex="-1"></a></span>
 <span id="cb24-12"><a href="Chapter3.html#cb24-12" tabindex="-1"></a><span class="co"># templates</span></span>
 <span id="cb24-13"><a href="Chapter3.html#cb24-13" tabindex="-1"></a>template_t<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./LV10m_10km.tif&quot;</span>)</span>
-<span id="cb24-14"><a href="Chapter3.html#cb24-14" tabindex="-1"></a>template_r<span class="ot">=</span><span class="fu">raster</span>(template_t)</span></code></pre></div>
+<span id="cb24-14"><a href="Chapter3.html#cb24-14" tabindex="-1"></a>template_r<span class="ot">=</span><span class="fu">raster</span>(template_t)</span>
+<span id="cb24-15"><a href="Chapter3.html#cb24-15" tabindex="-1"></a></span>
+<span id="cb24-16"><a href="Chapter3.html#cb24-16" tabindex="-1"></a>smiltaji_topo<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./Topo_landusA.parquet&quot;</span>)</span>
+<span id="cb24-17"><a href="Chapter3.html#cb24-17" tabindex="-1"></a><span class="fu">table</span>(smiltaji_topo<span class="sc">$</span>FNAME,<span class="at">useNA=</span><span class="st">&quot;always&quot;</span>)</span>
+<span id="cb24-18"><a href="Chapter3.html#cb24-18" tabindex="-1"></a>smiltaji_topo<span class="ot">=</span>smiltaji_topo <span class="sc">%&gt;%</span> </span>
+<span id="cb24-19"><a href="Chapter3.html#cb24-19" tabindex="-1"></a>  <span class="fu">filter</span>(FNAME <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;poligons_Smiltājs&quot;</span>,<span class="st">&quot;poligons_Kūdra&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb24-20"><a href="Chapter3.html#cb24-20" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">800</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb24-21"><a href="Chapter3.html#cb24-21" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb24-22"><a href="Chapter3.html#cb24-22" tabindex="-1"></a>r_smiltaji_topo<span class="ot">=</span><span class="fu">fasterize</span>(smiltaji_topo,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb24-23"><a href="Chapter3.html#cb24-23" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_smiltaji_topo,</span>
+<span id="cb24-24"><a href="Chapter3.html#cb24-24" tabindex="-1"></a>                    <span class="st">&quot;./800_SmiltajiKudra_topo.tif&quot;</span>,</span>
+<span id="cb24-25"><a href="Chapter3.html#cb24-25" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>)</span>
+<span id="cb24-26"><a href="Chapter3.html#cb24-26" tabindex="-1"></a><span class="co"># liekā aizvākšana</span></span>
+<span id="cb24-27"><a href="Chapter3.html#cb24-27" tabindex="-1"></a><span class="fu">rm</span>(smiltaji_topo)</span>
+<span id="cb24-28"><a href="Chapter3.html#cb24-28" tabindex="-1"></a><span class="fu">rm</span>(r_smiltaji_topo)</span>
+<span id="cb24-29"><a href="Chapter3.html#cb24-29" tabindex="-1"></a></span>
+<span id="cb24-30"><a href="Chapter3.html#cb24-30" tabindex="-1"></a><span class="co"># mvr zkat 33 un 34</span></span>
+<span id="cb24-31"><a href="Chapter3.html#cb24-31" tabindex="-1"></a>mvr<span class="ot">=</span><span class="fu">st_read_parquet</span>(<span class="st">&quot;./nogabali_2024janv.parquet&quot;</span>)</span>
+<span id="cb24-32"><a href="Chapter3.html#cb24-32" tabindex="-1"></a></span>
+<span id="cb24-33"><a href="Chapter3.html#cb24-33" tabindex="-1"></a>smiltajiem<span class="ot">=</span>mvr <span class="sc">%&gt;%</span> </span>
+<span id="cb24-34"><a href="Chapter3.html#cb24-34" tabindex="-1"></a>  <span class="fu">filter</span>(zkat <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;33&quot;</span>,<span class="st">&quot;34&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb24-35"><a href="Chapter3.html#cb24-35" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yes=</span><span class="dv">800</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb24-36"><a href="Chapter3.html#cb24-36" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(yes)</span>
+<span id="cb24-37"><a href="Chapter3.html#cb24-37" tabindex="-1"></a>r_smiltaji_mvr<span class="ot">=</span><span class="fu">fasterize</span>(smiltajiem,template_r,<span class="at">field=</span><span class="st">&quot;yes&quot;</span>)</span>
+<span id="cb24-38"><a href="Chapter3.html#cb24-38" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">writeRaster</span>(r_smiltaji_mvr,</span>
+<span id="cb24-39"><a href="Chapter3.html#cb24-39" tabindex="-1"></a>                    <span class="st">&quot;./800_SmiltVirs_mvr.tif&quot;</span>,</span>
+<span id="cb24-40"><a href="Chapter3.html#cb24-40" tabindex="-1"></a>                    <span class="at">progress=</span><span class="st">&quot;text&quot;</span>,</span>
+<span id="cb24-41"><a href="Chapter3.html#cb24-41" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb24-42"><a href="Chapter3.html#cb24-42" tabindex="-1"></a><span class="co"># liekā aizvākšana</span></span>
+<span id="cb24-43"><a href="Chapter3.html#cb24-43" tabindex="-1"></a><span class="fu">rm</span>(mvr)</span>
+<span id="cb24-44"><a href="Chapter3.html#cb24-44" tabindex="-1"></a><span class="fu">rm</span>(smiltajiem)</span>
+<span id="cb24-45"><a href="Chapter3.html#cb24-45" tabindex="-1"></a><span class="fu">rm</span>(r_smiltaji_mvr)</span>
+<span id="cb24-46"><a href="Chapter3.html#cb24-46" tabindex="-1"></a></span>
+<span id="cb24-47"><a href="Chapter3.html#cb24-47" tabindex="-1"></a><span class="co"># apvienosana</span></span>
+<span id="cb24-48"><a href="Chapter3.html#cb24-48" tabindex="-1"></a>r_smiltaji_topo<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./800_SmiltajiKudra_topo.tif&quot;</span>)</span>
+<span id="cb24-49"><a href="Chapter3.html#cb24-49" tabindex="-1"></a>r_smiltaji_mvr<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./800_SmiltVirs_mvr.tif&quot;</span>)</span>
+<span id="cb24-50"><a href="Chapter3.html#cb24-50" tabindex="-1"></a></span>
+<span id="cb24-51"><a href="Chapter3.html#cb24-51" tabindex="-1"></a>rastri_smiltajiem<span class="ot">=</span><span class="fu">sprc</span>(r_smiltaji_topo,r_smiltaji_mvr)</span>
+<span id="cb24-52"><a href="Chapter3.html#cb24-52" tabindex="-1"></a>rastrs_smiltajiem<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">merge</span>(rastri_smiltajiem,</span>
+<span id="cb24-53"><a href="Chapter3.html#cb24-53" tabindex="-1"></a>                               <span class="at">filename=</span><span class="st">&quot;./800_smiltaji_premask.tif&quot;</span>,</span>
+<span id="cb24-54"><a href="Chapter3.html#cb24-54" tabindex="-1"></a>                               <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb24-55"><a href="Chapter3.html#cb24-55" tabindex="-1"></a><span class="co"># liekā aizvākšana</span></span>
+<span id="cb24-56"><a href="Chapter3.html#cb24-56" tabindex="-1"></a><span class="fu">rm</span>(r_smiltaji_topo)</span>
+<span id="cb24-57"><a href="Chapter3.html#cb24-57" tabindex="-1"></a><span class="fu">rm</span>(r_smiltaji_mvr)</span>
+<span id="cb24-58"><a href="Chapter3.html#cb24-58" tabindex="-1"></a><span class="fu">rm</span>(rastri_smiltajiem)</span>
+<span id="cb24-59"><a href="Chapter3.html#cb24-59" tabindex="-1"></a><span class="fu">rm</span>(rastrs_smiltajiem)</span></code></pre></div>
 </details>
 <p><br></p>
 <p><strong>Apvienošana un aizpildīšana</strong>.</p>
@@ -1722,105 +1870,268 @@ div.csl-indent {
 <span id="cb25-11"><a href="Chapter3.html#cb25-11" tabindex="-1"></a></span>
 <span id="cb25-12"><a href="Chapter3.html#cb25-12" tabindex="-1"></a><span class="co"># templates</span></span>
 <span id="cb25-13"><a href="Chapter3.html#cb25-13" tabindex="-1"></a>template_t<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./LV10m_10km.tif&quot;</span>)</span>
-<span id="cb25-14"><a href="Chapter3.html#cb25-14" tabindex="-1"></a>template_r<span class="ot">=</span><span class="fu">raster</span>(template_t)</span></code></pre></div>
+<span id="cb25-14"><a href="Chapter3.html#cb25-14" tabindex="-1"></a>template_r<span class="ot">=</span><span class="fu">raster</span>(template_t)</span>
+<span id="cb25-15"><a href="Chapter3.html#cb25-15" tabindex="-1"></a></span>
+<span id="cb25-16"><a href="Chapter3.html#cb25-16" tabindex="-1"></a></span>
+<span id="cb25-17"><a href="Chapter3.html#cb25-17" tabindex="-1"></a><span class="co"># DW pildījums </span></span>
+<span id="cb25-18"><a href="Chapter3.html#cb25-18" tabindex="-1"></a>dynworld<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./DW_2023_apraug.tif&quot;</span>)</span>
+<span id="cb25-19"><a href="Chapter3.html#cb25-19" tabindex="-1"></a>klases<span class="ot">=</span><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">200</span>,</span>
+<span id="cb25-20"><a href="Chapter3.html#cb25-20" tabindex="-1"></a>              <span class="dv">1</span>,<span class="dv">620</span>,</span>
+<span id="cb25-21"><a href="Chapter3.html#cb25-21" tabindex="-1"></a>              <span class="dv">2</span>,<span class="dv">320</span>,</span>
+<span id="cb25-22"><a href="Chapter3.html#cb25-22" tabindex="-1"></a>              <span class="dv">3</span>,<span class="dv">720</span>,</span>
+<span id="cb25-23"><a href="Chapter3.html#cb25-23" tabindex="-1"></a>              <span class="dv">4</span>,<span class="dv">310</span>,</span>
+<span id="cb25-24"><a href="Chapter3.html#cb25-24" tabindex="-1"></a>              <span class="dv">5</span>,<span class="dv">710</span>,</span>
+<span id="cb25-25"><a href="Chapter3.html#cb25-25" tabindex="-1"></a>              <span class="dv">6</span>,<span class="dv">500</span>,</span>
+<span id="cb25-26"><a href="Chapter3.html#cb25-26" tabindex="-1"></a>              <span class="dv">7</span>,<span class="dv">800</span>,</span>
+<span id="cb25-27"><a href="Chapter3.html#cb25-27" tabindex="-1"></a>              <span class="dv">8</span>,<span class="dv">500</span>),<span class="at">ncol=</span><span class="dv">2</span>,<span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb25-28"><a href="Chapter3.html#cb25-28" tabindex="-1"></a>dw2<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">classify</span>(dynworld,klases)</span>
+<span id="cb25-29"><a href="Chapter3.html#cb25-29" tabindex="-1"></a><span class="fu">writeRaster</span>(dw2,</span>
+<span id="cb25-30"><a href="Chapter3.html#cb25-30" tabindex="-1"></a>            <span class="st">&quot;./DW_reclass.tif&quot;</span>,</span>
+<span id="cb25-31"><a href="Chapter3.html#cb25-31" tabindex="-1"></a>            <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb25-32"><a href="Chapter3.html#cb25-32" tabindex="-1"></a></span>
+<span id="cb25-33"><a href="Chapter3.html#cb25-33" tabindex="-1"></a>celi<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./100_celi.tif&quot;</span>)</span>
+<span id="cb25-34"><a href="Chapter3.html#cb25-34" tabindex="-1"></a>udeni<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./200_udens_premask.tif&quot;</span>)</span>
+<span id="cb25-35"><a href="Chapter3.html#cb25-35" tabindex="-1"></a>lauki<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./300_lauki_premask.tif&quot;</span>)</span>
+<span id="cb25-36"><a href="Chapter3.html#cb25-36" tabindex="-1"></a>vasarnicas<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./400_varnicas_premask.tif&quot;</span>)</span>
+<span id="cb25-37"><a href="Chapter3.html#cb25-37" tabindex="-1"></a>mezi<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./600_meziem_premask.tif&quot;</span>)</span>
+<span id="cb25-38"><a href="Chapter3.html#cb25-38" tabindex="-1"></a>mitraji<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./700_mitraji_premask.tif&quot;</span>)</span>
+<span id="cb25-39"><a href="Chapter3.html#cb25-39" tabindex="-1"></a>smiltaji<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./800_smiltaji_premask.tif&quot;</span>)</span>
+<span id="cb25-40"><a href="Chapter3.html#cb25-40" tabindex="-1"></a>dw2<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./DW_reclass.tif&quot;</span>)</span>
+<span id="cb25-41"><a href="Chapter3.html#cb25-41" tabindex="-1"></a></span>
+<span id="cb25-42"><a href="Chapter3.html#cb25-42" tabindex="-1"></a>rastri_ainavai<span class="ot">=</span><span class="fu">sprc</span>(celi,udeni,lauki,vasarnicas,mezi,mitraji,smiltaji,dw2)</span>
+<span id="cb25-43"><a href="Chapter3.html#cb25-43" tabindex="-1"></a>rastrs_ainava<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">merge</span>(rastri_ainavai,</span>
+<span id="cb25-44"><a href="Chapter3.html#cb25-44" tabindex="-1"></a>                               <span class="at">filename=</span><span class="st">&quot;./Ainava_vienkarsa.tif&quot;</span>,</span>
+<span id="cb25-45"><a href="Chapter3.html#cb25-45" tabindex="-1"></a>                               <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb25-46"><a href="Chapter3.html#cb25-46" tabindex="-1"></a><span class="co"># liekā aizvākšana</span></span>
+<span id="cb25-47"><a href="Chapter3.html#cb25-47" tabindex="-1"></a><span class="fu">rm</span>(celi)</span>
+<span id="cb25-48"><a href="Chapter3.html#cb25-48" tabindex="-1"></a><span class="fu">rm</span>(udeni)</span>
+<span id="cb25-49"><a href="Chapter3.html#cb25-49" tabindex="-1"></a><span class="fu">rm</span>(lauki)</span>
+<span id="cb25-50"><a href="Chapter3.html#cb25-50" tabindex="-1"></a><span class="fu">rm</span>(vasarnicas)</span>
+<span id="cb25-51"><a href="Chapter3.html#cb25-51" tabindex="-1"></a><span class="fu">rm</span>(mezi)</span>
+<span id="cb25-52"><a href="Chapter3.html#cb25-52" tabindex="-1"></a><span class="fu">rm</span>(mitraji)</span>
+<span id="cb25-53"><a href="Chapter3.html#cb25-53" tabindex="-1"></a><span class="fu">rm</span>(smiltaji)</span>
+<span id="cb25-54"><a href="Chapter3.html#cb25-54" tabindex="-1"></a><span class="fu">rm</span>(klases)</span>
+<span id="cb25-55"><a href="Chapter3.html#cb25-55" tabindex="-1"></a><span class="fu">rm</span>(dynworld)</span>
+<span id="cb25-56"><a href="Chapter3.html#cb25-56" tabindex="-1"></a><span class="fu">rm</span>(dw2)</span>
+<span id="cb25-57"><a href="Chapter3.html#cb25-57" tabindex="-1"></a><span class="fu">rm</span>(rastri_ainavai)</span>
+<span id="cb25-58"><a href="Chapter3.html#cb25-58" tabindex="-1"></a><span class="fu">rm</span>(rastrs_ainava)</span>
+<span id="cb25-59"><a href="Chapter3.html#cb25-59" tabindex="-1"></a></span>
+<span id="cb25-60"><a href="Chapter3.html#cb25-60" tabindex="-1"></a><span class="co"># maskēšana</span></span>
+<span id="cb25-61"><a href="Chapter3.html#cb25-61" tabindex="-1"></a>rastrs_ainava<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./Ainava_vienkarsa.tif&quot;</span>)</span>
+<span id="cb25-62"><a href="Chapter3.html#cb25-62" tabindex="-1"></a>masketa_ainava<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">mask</span>(rastrs_ainava,</span>
+<span id="cb25-63"><a href="Chapter3.html#cb25-63" tabindex="-1"></a>                           template_t,</span>
+<span id="cb25-64"><a href="Chapter3.html#cb25-64" tabindex="-1"></a>                           <span class="at">filename=</span><span class="st">&quot;./Ainava_vienk_mask.tif&quot;</span>,</span>
+<span id="cb25-65"><a href="Chapter3.html#cb25-65" tabindex="-1"></a>                           <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb25-66"><a href="Chapter3.html#cb25-66" tabindex="-1"></a><span class="co"># liekā aizvākšana</span></span>
+<span id="cb25-67"><a href="Chapter3.html#cb25-67" tabindex="-1"></a><span class="fu">rm</span>(rastrs_ainava)</span>
+<span id="cb25-68"><a href="Chapter3.html#cb25-68" tabindex="-1"></a><span class="fu">rm</span>(masketa_ainava)</span></code></pre></div>
 </details>
 <p><br></p>
 <div id="Chapter3.2.2.1" class="section level4 hasAnchor" number="4.2.2.1">
 <h4><span class="header-section-number">4.2.2.1</span> Lauku ainava<a href="Chapter3.html#Chapter3.2.2.1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<ul>
-<li><p>lauku bloku platība</p></li>
-<li><p>zālāji ārpus lauku blokiem, pieskaitot bezatbalsta</p></li>
-<li><p>zālāji visi</p></li>
-<li><p>zālāji LAD ne ppg</p></li>
-<li><p>zālāji ilglaicīgie</p></li>
-<li><p>papuves</p></li>
-<li><p>krūmveida stādījumi</p></li>
-<li><p>augļudārzi LAD</p></li>
-<li><p>aramzemes visas</p></li>
-<li><p>aramzemes: ziemas rapsis un ripsis</p></li>
-<li><p>aramzemes: vasaras rapsis un ripsis + kukurūza + pākšaugi</p></li>
-<li><p>aramzemes: vagu un rušināmkultūras</p></li>
-<li><p>aramzemes: ne- labības, rapši, kukurūzas, pākšaugi, vagu kultūras</p></li>
-<li><p>aramzemes: labība ziemāji</p></li>
-<li><p>aramzemes: labība vasarāji</p></li>
-<li><p>lauku daudzveidībai</p></li>
-</ul>
+<p>Šajā apakšnodaļā apkopoti ar lauku ainavu saistītie ievades produkti - 10 m izšķirtspējā sagatavoti rastra slāņi, kas cieši saistīti ar virsnodaļā aprakstīto ainavu un nepieciešami tālākai EGV sagatavošanai. Lai atvieglotu meklēšanu un atsaukšanos, tie iedalīti vēl zamāka līmeņa apakšnodaļās.</p>
+<div id="Chapter3.2.2.1.1" class="section level5 hasAnchor" number="4.2.2.1.1">
+<h5><span class="header-section-number">4.2.2.1.1</span> Lauku bloku platība<a href="Chapter3.html#Chapter3.2.2.1.1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.1.2" class="section level5 hasAnchor" number="4.2.2.1.2">
+<h5><span class="header-section-number">4.2.2.1.2</span> Zālāji ārpus lauku blokiem, pieskaitot bezatbalsta<a href="Chapter3.html#Chapter3.2.2.1.2" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.1.3" class="section level5 hasAnchor" number="4.2.2.1.3">
+<h5><span class="header-section-number">4.2.2.1.3</span> Zālāji visi<a href="Chapter3.html#Chapter3.2.2.1.3" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.1.4" class="section level5 hasAnchor" number="4.2.2.1.4">
+<h5><span class="header-section-number">4.2.2.1.4</span> Zālāji LAD ne ppg<a href="Chapter3.html#Chapter3.2.2.1.4" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.1.5" class="section level5 hasAnchor" number="4.2.2.1.5">
+<h5><span class="header-section-number">4.2.2.1.5</span> Zālāji ilglaicīgie<a href="Chapter3.html#Chapter3.2.2.1.5" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.1.6" class="section level5 hasAnchor" number="4.2.2.1.6">
+<h5><span class="header-section-number">4.2.2.1.6</span> Papuves<a href="Chapter3.html#Chapter3.2.2.1.6" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.1.7" class="section level5 hasAnchor" number="4.2.2.1.7">
+<h5><span class="header-section-number">4.2.2.1.7</span> Krūmveida stādījumi<a href="Chapter3.html#Chapter3.2.2.1.7" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.1.8" class="section level5 hasAnchor" number="4.2.2.1.8">
+<h5><span class="header-section-number">4.2.2.1.8</span> Augļudārzi LAD<a href="Chapter3.html#Chapter3.2.2.1.8" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.1.9" class="section level5 hasAnchor" number="4.2.2.1.9">
+<h5><span class="header-section-number">4.2.2.1.9</span> Aramzemes visas<a href="Chapter3.html#Chapter3.2.2.1.9" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.1.10" class="section level5 hasAnchor" number="4.2.2.1.10">
+<h5><span class="header-section-number">4.2.2.1.10</span> Aramzemes: ziemas rapsis un ripsis<a href="Chapter3.html#Chapter3.2.2.1.10" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.1.11" class="section level5 hasAnchor" number="4.2.2.1.11">
+<h5><span class="header-section-number">4.2.2.1.11</span> Aramzemes: vasaras rapsis un ripsis + kukurūza + pākšaugi<a href="Chapter3.html#Chapter3.2.2.1.11" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.1.12" class="section level5 hasAnchor" number="4.2.2.1.12">
+<h5><span class="header-section-number">4.2.2.1.12</span> Aramzemes: vagu un rušināmkultūras<a href="Chapter3.html#Chapter3.2.2.1.12" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.1.13" class="section level5 hasAnchor" number="4.2.2.1.13">
+<h5><span class="header-section-number">4.2.2.1.13</span> Aramzemes: ne- labības, rapši, kukurūzas, pākšaugi, vagu kultūras<a href="Chapter3.html#Chapter3.2.2.1.13" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.1.14" class="section level5 hasAnchor" number="4.2.2.1.14">
+<h5><span class="header-section-number">4.2.2.1.14</span> Aramzemes: labība ziemāji<a href="Chapter3.html#Chapter3.2.2.1.14" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.1.15" class="section level5 hasAnchor" number="4.2.2.1.15">
+<h5><span class="header-section-number">4.2.2.1.15</span> Aramzemes: labība vasarāji<a href="Chapter3.html#Chapter3.2.2.1.15" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.1.16" class="section level5 hasAnchor" number="4.2.2.1.16">
+<h5><span class="header-section-number">4.2.2.1.16</span> Lauku daudzveidībai<a href="Chapter3.html#Chapter3.2.2.1.16" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p><br></p>
+</div>
 </div>
 <div id="Chapter3.2.2.2" class="section level4 hasAnchor" number="4.2.2.2">
-<h4><span class="header-section-number">4.2.2.2</span> Mežu ainava: auglīgums<a href="Chapter3.html#Chapter3.2.2.2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<ul>
-<li><p>oligotrofi susinātie meši</p></li>
-<li><p>oligotrofi purvaiņu meži</p></li>
-<li><p>oligotrofi sausieņu un slapjaiņu meži</p></li>
-<li><p>mezotrofi sausieņu un slapjaiņu meži</p></li>
-<li><p>eitrofi susinātie meži</p></li>
-<li><p>eitrofi purvaiņu meži</p></li>
-<li><p>eitrofi sausieņu un slapjaiņu meži</p></li>
-</ul>
+<h4><span class="header-section-number">4.2.2.2</span> Mežu ainava<a href="Chapter3.html#Chapter3.2.2.2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Šajā apakšnodaļā apkopoti ar mežu ainavu saistītie ievades produkti - 10 m izšķirtspējā sagatavoti rastra slāņi, kas cieši saistīti ar virsnodaļā aprakstīto ainavu un nepieciešami tālākai EGV sagatavošanai. Lai atvieglotu meklēšanu un atsaukšanos, tie iedalīti vēl zamāka līmeņa apakšnodaļās.</p>
+<div id="Chapter3.2.2.2.1" class="section level5 hasAnchor" number="4.2.2.2.1">
+<h5><span class="header-section-number">4.2.2.2.1</span> Oligotrofi susinātie meši<a href="Chapter3.html#Chapter3.2.2.2.1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.2.2" class="section level5 hasAnchor" number="4.2.2.2.2">
+<h5><span class="header-section-number">4.2.2.2.2</span> Oligotrofi purvaiņu meži<a href="Chapter3.html#Chapter3.2.2.2.2" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.2.3" class="section level5 hasAnchor" number="4.2.2.2.3">
+<h5><span class="header-section-number">4.2.2.2.3</span> Oligotrofi sausieņu un slapjaiņu meži<a href="Chapter3.html#Chapter3.2.2.2.3" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.2.4" class="section level5 hasAnchor" number="4.2.2.2.4">
+<h5><span class="header-section-number">4.2.2.2.4</span> Mezotrofi sausieņu un slapjaiņu meži<a href="Chapter3.html#Chapter3.2.2.2.4" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.2.5" class="section level5 hasAnchor" number="4.2.2.2.5">
+<h5><span class="header-section-number">4.2.2.2.5</span> Eitrofi susinātie meži<a href="Chapter3.html#Chapter3.2.2.2.5" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.2.6" class="section level5 hasAnchor" number="4.2.2.2.6">
+<h5><span class="header-section-number">4.2.2.2.6</span> Eitrofi purvaiņu meži<a href="Chapter3.html#Chapter3.2.2.2.6" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.2.7" class="section level5 hasAnchor" number="4.2.2.2.7">
+<h5><span class="header-section-number">4.2.2.2.7</span> Eitrofi sausieņu un slapjaiņu meži<a href="Chapter3.html#Chapter3.2.2.2.7" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.2.8" class="section level5 hasAnchor" number="4.2.2.2.8">
+<h5><span class="header-section-number">4.2.2.2.8</span> Izcirtumi un jaunaudzes līdz 5 m<a href="Chapter3.html#Chapter3.2.2.2.8" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.2.9" class="section level5 hasAnchor" number="4.2.2.2.9">
+<h5><span class="header-section-number">4.2.2.2.9</span> Jaunaudzes no 5 m un krūmāji<a href="Chapter3.html#Chapter3.2.2.2.9" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.2.10" class="section level5 hasAnchor" number="4.2.2.2.10">
+<h5><span class="header-section-number">4.2.2.2.10</span> Vidēja vecuma un briestaudzes<a href="Chapter3.html#Chapter3.2.2.2.10" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.2.11" class="section level5 hasAnchor" number="4.2.2.2.11">
+<h5><span class="header-section-number">4.2.2.2.11</span> Pieaugušās un pāraugušās mežaudzes<a href="Chapter3.html#Chapter3.2.2.2.11" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.2.12" class="section level5 hasAnchor" number="4.2.2.2.12">
+<h5><span class="header-section-number">4.2.2.2.12</span> Skujkoku<a href="Chapter3.html#Chapter3.2.2.2.12" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.2.13" class="section level5 hasAnchor" number="4.2.2.2.13">
+<h5><span class="header-section-number">4.2.2.2.13</span> Šaurlapju<a href="Chapter3.html#Chapter3.2.2.2.13" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.2.14" class="section level5 hasAnchor" number="4.2.2.2.14">
+<h5><span class="header-section-number">4.2.2.2.14</span> Platlapju<a href="Chapter3.html#Chapter3.2.2.2.14" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.2.15" class="section level5 hasAnchor" number="4.2.2.2.15">
+<h5><span class="header-section-number">4.2.2.2.15</span> Jauktu koku<a href="Chapter3.html#Chapter3.2.2.2.15" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.2.16" class="section level5 hasAnchor" number="4.2.2.2.16">
+<h5><span class="header-section-number">4.2.2.2.16</span> Skujkoku jaunaudzes, vidēja vecuma un briestaudzes<a href="Chapter3.html#Chapter3.2.2.2.16" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.2.17" class="section level5 hasAnchor" number="4.2.2.2.17">
+<h5><span class="header-section-number">4.2.2.2.17</span> Skujkoku pieaugušās un pāraugušās audzes<a href="Chapter3.html#Chapter3.2.2.2.17" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.2.18" class="section level5 hasAnchor" number="4.2.2.2.18">
+<h5><span class="header-section-number">4.2.2.2.18</span> Šaurlapju jaunaudzes, vidēja vecuma un briestaudzes<a href="Chapter3.html#Chapter3.2.2.2.18" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.2.19" class="section level5 hasAnchor" number="4.2.2.2.19">
+<h5><span class="header-section-number">4.2.2.2.19</span> Šaurlapju pieaugušās un pāraugušās audzes<a href="Chapter3.html#Chapter3.2.2.2.19" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.2.20" class="section level5 hasAnchor" number="4.2.2.2.20">
+<h5><span class="header-section-number">4.2.2.2.20</span> Platlapju jaunaudzes, vidēja vecuma un briestaudzes<a href="Chapter3.html#Chapter3.2.2.2.20" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.2.21" class="section level5 hasAnchor" number="4.2.2.2.21">
+<h5><span class="header-section-number">4.2.2.2.21</span> Platlapju pieaugušās un pāraugušās audzes<a href="Chapter3.html#Chapter3.2.2.2.21" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.2.22" class="section level5 hasAnchor" number="4.2.2.2.22">
+<h5><span class="header-section-number">4.2.2.2.22</span> Jauktu koku jaunaudzes, vidēja vecuma un briestaudzes<a href="Chapter3.html#Chapter3.2.2.2.22" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.2.23" class="section level5 hasAnchor" number="4.2.2.2.23">
+<h5><span class="header-section-number">4.2.2.2.23</span> Jauktu koku pieaugušās un pāraugušās audzes<a href="Chapter3.html#Chapter3.2.2.2.23" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.2.24" class="section level5 hasAnchor" number="4.2.2.2.24">
+<h5><span class="header-section-number">4.2.2.2.24</span> Mežu daudzveidībai<a href="Chapter3.html#Chapter3.2.2.2.24" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p><br></p>
+</div>
 </div>
 <div id="Chapter3.2.2.3" class="section level4 hasAnchor" number="4.2.2.3">
-<h4><span class="header-section-number">4.2.2.3</span> Mežu ainava: mežaudžu vecumgrupas<a href="Chapter3.html#Chapter3.2.2.3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<ul>
-<li><p>izcirtumi un jaunaudzes līdz 5 m</p></li>
-<li><p>jaunaudzes no 5 m un krūmāji</p></li>
-<li><p>vidēja vecuma un briestaudzes</p></li>
-<li><p>pieaugušās un pāraugušās mežaudzes</p></li>
-</ul>
+<h4><span class="header-section-number">4.2.2.3</span> Kombinētā ainava<a href="Chapter3.html#Chapter3.2.2.3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Šajā apakšnodaļā apkopoti ar virsnodaļā aprakstīto ainavu saistītie ievades produkti - 10 m izšķirtspējā sagatavoti rastra slāņi, kas nepieciešami tālākai EGV sagatavošanai. Lai atvieglotu meklēšanu un atsaukšanos, tie iedalīti vēl zamāka līmeņa apakšnodaļās.</p>
+<div id="Chapter3.2.2.3.1" class="section level5 hasAnchor" number="4.2.2.3.1">
+<h5><span class="header-section-number">4.2.2.3.1</span> Parki, kapi, alejas<a href="Chapter3.html#Chapter3.2.2.3.1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.3.2" class="section level5 hasAnchor" number="4.2.2.3.2">
+<h5><span class="header-section-number">4.2.2.3.2</span> Vasarnīcas un mazdārziņi<a href="Chapter3.html#Chapter3.2.2.3.2" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.3.3" class="section level5 hasAnchor" number="4.2.2.3.3">
+<h5><span class="header-section-number">4.2.2.3.3</span> Ūdensobjektu platība<a href="Chapter3.html#Chapter3.2.2.3.3" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.3.4" class="section level5 hasAnchor" number="4.2.2.3.4">
+<h5><span class="header-section-number">4.2.2.3.4</span> Niedrāji, meldrāji, grīslāji un pārplūstošā<a href="Chapter3.html#Chapter3.2.2.3.4" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.3.5" class="section level5 hasAnchor" number="4.2.2.3.5">
+<h5><span class="header-section-number">4.2.2.3.5</span> Mitrāju platība<a href="Chapter3.html#Chapter3.2.2.3.5" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.3.6" class="section level5 hasAnchor" number="4.2.2.3.6">
+<h5><span class="header-section-number">4.2.2.3.6</span> Atklāta augsne un karjeri<a href="Chapter3.html#Chapter3.2.2.3.6" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.3.7" class="section level5 hasAnchor" number="4.2.2.3.7">
+<h5><span class="header-section-number">4.2.2.3.7</span> Kokiem klātās platības<a href="Chapter3.html#Chapter3.2.2.3.7" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.3.8" class="section level5 hasAnchor" number="4.2.2.3.8">
+<h5><span class="header-section-number">4.2.2.3.8</span> Netaksētās mežaudzes<a href="Chapter3.html#Chapter3.2.2.3.8" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.3.9" class="section level5 hasAnchor" number="4.2.2.3.9">
+<h5><span class="header-section-number">4.2.2.3.9</span> Apbūve<a href="Chapter3.html#Chapter3.2.2.3.9" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.3.10" class="section level5 hasAnchor" number="4.2.2.3.10">
+<h5><span class="header-section-number">4.2.2.3.10</span> Daudzās klases daudzveidībai<a href="Chapter3.html#Chapter3.2.2.3.10" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p><br></p>
+</div>
 </div>
 <div id="Chapter3.2.2.4" class="section level4 hasAnchor" number="4.2.2.4">
-<h4><span class="header-section-number">4.2.2.4</span> Mežu ainava: valdošās sugas<a href="Chapter3.html#Chapter3.2.2.4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<ul>
-<li><p>skujkoku</p></li>
-<li><p>šaurlapju</p></li>
-<li><p>platlapju</p></li>
-<li><p>jauktu koku</p></li>
-</ul>
+<h4><span class="header-section-number">4.2.2.4</span> Malu slāņi<a href="Chapter3.html#Chapter3.2.2.4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Šajā apakšnodaļā apkopoti ar virsnodaļā aprakstīto ainavu saistītie ievades produkti - 10 m izšķirtspējā sagatavoti rastra slāņi, kas nepieciešami tālākai EGV sagatavošanai. Lai atvieglotu meklēšanu un atsaukšanos, tie iedalīti vēl zamāka līmeņa apakšnodaļās.</p>
+<div id="Chapter3.2.2.4.1" class="section level5 hasAnchor" number="4.2.2.4.1">
+<h5><span class="header-section-number">4.2.2.4.1</span> Apbūves un LIZ mala<a href="Chapter3.html#Chapter3.2.2.4.1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 </div>
-<div id="Chapter3.2.2.5" class="section level4 hasAnchor" number="4.2.2.5">
-<h4><span class="header-section-number">4.2.2.5</span> Mežu ainava: valdošās sugas vecumgrupās<a href="Chapter3.html#Chapter3.2.2.5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<ul>
-<li><p>skujkoku jaunaudzes, vidēja vecuma un briestaudzes</p></li>
-<li><p>skujkoku pieaugušās un pāraugušās audzes</p></li>
-<li><p>šaurlapju jaunaudzes, vidēja vecuma un briestaudzes</p></li>
-<li><p>šaurlapju pieaugušās un pāraugušās audzes</p></li>
-<li><p>platlapju jaunaudzes, vidēja vecuma un briestaudzes</p></li>
-<li><p>platlapju pieaugušās un pāraugušās audzes</p></li>
-<li><p>jauktu koku jaunaudzes, vidēja vecuma un briestaudzes</p></li>
-<li><p>jauktu koku pieaugušās un pāraugušās audzes</p></li>
-<li><p>mežu daudzveidībai</p></li>
-</ul>
+<div id="Chapter3.2.2.4.2" class="section level5 hasAnchor" number="4.2.2.4.2">
+<h5><span class="header-section-number">4.2.2.4.2</span> Apbūves un koku mala<a href="Chapter3.html#Chapter3.2.2.4.2" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 </div>
-<div id="Chapter3.2.2.6" class="section level4 hasAnchor" number="4.2.2.6">
-<h4><span class="header-section-number">4.2.2.6</span> Kombinētā ainava<a href="Chapter3.html#Chapter3.2.2.6" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<ul>
-<li><p>parki, kapi, alejas</p></li>
-<li><p>vasarnīcas un mazdārziņi</p></li>
-<li><p>ūdensobjektu platība</p></li>
-<li><p>niedrāji, meldrāji, grīslāji un pārplūstošā</p></li>
-<li><p>mitrāju platība</p></li>
-<li><p>atklāta augsne un karjeri</p></li>
-<li><p>kokiem klātās platības</p></li>
-<li><p>netaksētās mežaudzes</p></li>
-<li><p>apbūve</p></li>
-<li><p>daudzās klases daudzveidībai</p></li>
-</ul>
+<div id="Chapter3.2.2.4.3" class="section level5 hasAnchor" number="4.2.2.4.3">
+<h5><span class="header-section-number">4.2.2.4.3</span> Aramzemju (visu) malas<a href="Chapter3.html#Chapter3.2.2.4.3" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 </div>
-<div id="Chapter3.2.2.7" class="section level4 hasAnchor" number="4.2.2.7">
-<h4><span class="header-section-number">4.2.2.7</span> Malu slāņi<a href="Chapter3.html#Chapter3.2.2.7" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<ul>
-<li><p>apbūves un LIZ mala</p></li>
-<li><p>apbūves un koku mala</p></li>
-<li><p>aramzemju (visu) malas</p></li>
-<li><p>LIZ, izcirtumu un jaunaudžu (&lt;5m) malas ar kokiem &gt;5m</p></li>
-<li><p>koku virs 5m malas</p></li>
-<li><p>niedrāju, meldrāju, grīslāju un pārplūstošās veģetācijas malas ar ūdeni</p></li>
-<li><p>pieaugušu un pāraugušu mežaudžu malas</p></li>
-<li><p>zālāju (visu) malas</p></li>
-<li><p>ūdens un LIZ malas</p></li>
-<li><p>ūdens un zālāju malas</p></li>
-<li><p>ūdensobjektu malas</p></li>
-<li><p>ceļu garums (malas/2)</p></li>
-</ul>
+<div id="Chapter3.2.2.4.4" class="section level5 hasAnchor" number="4.2.2.4.4">
+<h5><span class="header-section-number">4.2.2.4.4</span> LIZ, izcirtumu un jaunaudžu (&lt;5m) malas ar kokiem &gt;5m<a href="Chapter3.html#Chapter3.2.2.4.4" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.4.5" class="section level5 hasAnchor" number="4.2.2.4.5">
+<h5><span class="header-section-number">4.2.2.4.5</span> Koku virs 5m malas<a href="Chapter3.html#Chapter3.2.2.4.5" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.4.6" class="section level5 hasAnchor" number="4.2.2.4.6">
+<h5><span class="header-section-number">4.2.2.4.6</span> Niedrāju malas ar ūdeni<a href="Chapter3.html#Chapter3.2.2.4.6" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.4.7" class="section level5 hasAnchor" number="4.2.2.4.7">
+<h5><span class="header-section-number">4.2.2.4.7</span> Pieaugušu un pāraugušu mežaudžu malas<a href="Chapter3.html#Chapter3.2.2.4.7" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.4.8" class="section level5 hasAnchor" number="4.2.2.4.8">
+<h5><span class="header-section-number">4.2.2.4.8</span> Zālāju (visu) malas<a href="Chapter3.html#Chapter3.2.2.4.8" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.4.9" class="section level5 hasAnchor" number="4.2.2.4.9">
+<h5><span class="header-section-number">4.2.2.4.9</span> Ūdens un LIZ malas<a href="Chapter3.html#Chapter3.2.2.4.9" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.4.10" class="section level5 hasAnchor" number="4.2.2.4.10">
+<h5><span class="header-section-number">4.2.2.4.10</span> Ūdens un zālāju malas<a href="Chapter3.html#Chapter3.2.2.4.10" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.4.11" class="section level5 hasAnchor" number="4.2.2.4.11">
+<h5><span class="header-section-number">4.2.2.4.11</span> Ūdensobjektu malas<a href="Chapter3.html#Chapter3.2.2.4.11" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="Chapter3.2.2.4.12" class="section level5 hasAnchor" number="4.2.2.4.12">
+<h5><span class="header-section-number">4.2.2.4.12</span> Ceļu garums (malas/2)<a href="Chapter3.html#Chapter3.2.2.4.12" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p><br></p>
+</div>
 </div>
 </div>
 <div id="Chapter3.2.3" class="section level3 hasAnchor" number="4.2.3">

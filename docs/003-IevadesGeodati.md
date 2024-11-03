@@ -1168,31 +1168,27 @@ rm(rastrs_vasarnicas)
 
 - klase `500` - **apbūve**: apbūvētās platības, **aizpildīta beigās**, izmantojot informāciju no *Dynamic World* par vietām, kuras nav nosegtas ar citām klasēm.
 
-- klase `600` - **meži, krūmāji, izcirtumi**: ar kokiem un krūmiem klātās platības un izcirtumi un iznīkušās mežaudzes. Šīs klases izveidošanai apvienoti (pārklāšanās secībā):
+- klase `600` - **meži, krūmāji, izcirtumi**: ar kokiem un krūmiem klātās platības un izcirtumi un iznīkušās mežaudzes, **aizpildīta secībā** - dominē pār klasēm ar lielāku vērtību. Šīs klases izveidošanai apvienoti (pārklāšanās secībā):
 
-  -- [topogrāfiskās kartes](#Chapter3.1.3) slāņi `hidro_A` un `hidro_L` (buferēts par 5 m);
+  -- [*The Global Forest Watch*](#Chapter3.1.9) slānī reģistrētās koku vainagu seguma izzušanas kopš 2020. gada, kura rezultāts kodēts ar `610`;
   
-  -- [topogrāfiskās kartes](#Chapter3.1.3) slāņi `hidro_A` un `hidro_L` (buferēts par 5 m);
+  -- [Meža valsts reģistrā](#Chapter3.1.1) atzīmētie izcirtumi un iznīkušās audzes, kura rezultāts kodēts ar `610`;
   
-  -- [topogrāfiskās kartes](#Chapter3.1.3) slāņi `hidro_A` un `hidro_L` (buferēts par 5 m);
+  -- [Meža valsts reģistrā](#Chapter3.1.1) atzīmētās mežaudzes, kas ir zemākas par 5 m un sēklu ieguves plantācijas, kura rezultāts kodēts ar `620`;
   
-  -- [topogrāfiskās kartes](#Chapter3.1.3) slāņi `hidro_A` un `hidro_L` (buferēts par 5 m);
+  -- [topogrāfiskās kartes](#Chapter3.1.3) slāņa `flora_L` ar krūmiem saistītās klases, kas buferētas par 10 m, kura rezultāts kodēts ar `620`;
   
-  -- [topogrāfiskās kartes](#Chapter3.1.3) slāņi `hidro_A` un `hidro_L` (buferēts par 5 m);
+  -- [topogrāfiskās kartes](#Chapter3.1.3) slāņi `landus_A` klase "poligons_Krūmājs", kura rezultāts kodēts ar `620`;
   
-  -- [topogrāfiskās kartes](#Chapter3.1.3) slāņi `hidro_A` un `hidro_L` (buferēts par 5 m);
+  -- [LAD lauku informācijas](#Chapter3.1.3) slāņa grupa (nedaudz plašāk par grupējumu [šeit](#chapter4.2.16), klases apskatāmas [šeit](./Papilddati/KulturuKodi_2024.xlsx)) "ilggadīgie krūmveida stādījumi", kura rezultāts kodēts ar `620`;
   
-  -- [topogrāfiskās kartes](#Chapter3.1.3) slāņi `hidro_A` un `hidro_L` (buferēts par 5 m);
+  -- [Meža valsts reģistrā](#Chapter3.1.1) atzīmētās mežaudzes augstumā no 5 m, rezultāts kodēts ar `630`;
   
-  -- [MKIS](#Chapter3.1.4) slānis `Ditches`, to buferējot par 3 m;
+  -- [topogrāfiskās kartes](#Chapter3.1.3) slāņa `landus_A` klases "poligons_Parks", "poligons_Meza_kapi", "poligons_Kapi", kura rezultāts kodēts ar `640`;
   
-  -- [LVM atvērto datu](#Chapter3.1.5) slāņi `LVM_GRAVJI`, tās buferējot par 5 m.
+  -- [topogrāfiskās kartes](#Chapter3.1.3) slāņa `flora_L` ar kokiem saistītās klases, kas buferētas par 10 m, kura rezultāts kodēts ar `640`;
   
-  -- nav izmantota [Meža valsts reģistra](#Chapter3.1.1) informācija par grāvjiem, jo tai ir arī pārējos resursos, vai tik nelielai, ka nerada vienlaidus pārrāvumu koku vainagu klājā.
-
-
-
-
+  -- [Palsar Forests](#Chapter3.1.10) slānis, kura rezultāts kodēts ar `630`.
 
 Zemāk esošās komandu rindas izveido slāni ar ainavas klasi `600`, kuru failā `600_meziem_premask.tif` saglabā turpmākam darbam.
 
@@ -1335,9 +1331,10 @@ raster::writeRaster(r_krumi_topo,
 rm(krumi_topo)
 rm(r_krumi_topo)
 
-# topo - linijkoki
+# topo - linijkrumi un linijkoki
 linijas_topo=st_read_parquet("./Topo_floraL.parquet")
 
+# linijkrumi
 krumu_linijas_topo=linijas_topo %>% 
   filter(str_detect(FNAME,"Krūmu")) %>% 
   mutate(yes=620) %>% 
@@ -1352,6 +1349,7 @@ raster::writeRaster(r_krumu_linijas_topo,
 rm(krumu_linijas_topo)
 rm(r_krumu_linijas_topo)
 
+# linijkoki
 koku_linijas_topo=linijas_topo %>% 
   filter(str_detect(FNAME,"Koku")) %>% 
   mutate(yes=640) %>% 
@@ -1407,8 +1405,17 @@ rm(rastrs_mezi)
 
 
 
-- klase `700` - **mitrāji**: 
+- klase `700` - **mitrāji**: apvienojot ar niedrājiem, purviem un bebrainēs saistītos ģeotelpiskos datus, **aizpildīta secībā** - dominē pār klasēm ar lielāku vērtību. Šīs klases izveidošanai apvienoti (pārklāšanās secībā):
 
+  -- [topogrāfiskās kartes](#Chapter3.1.3) slāņa `landus_A` klases "Meldrājs_ūdenī_poligons", "poligons_Grīslājs", "poligons_Meldrājs", "poligons_Nec_purvs_grīslājs", "poligons_Nec_purvs_meldrājs", "Sēklis_poligons", kura rezultāts kodēts ar `720`;
+  
+  -- [topogrāfiskās kartes](#Chapter3.1.3) slāņa `landus_A` klases "poligons_Nec_purvs_sūnājs", "poligons_Sūnājs", kuru rezultāts kodēts ar `710`;
+  
+  -- [topogrāfiskās kartes](#Chapter3.1.3) slāņa `swamp_A`, kura rezultāts kodēts ar `710`;
+
+  -- [Meža valsts reģistrā](#Chapter3.1.1) atzīmētās zemes kategorijas "21", "22", "23", kura rezultāts kodēts ar `710`;
+  
+  -- [Meža valsts reģistrā](#Chapter3.1.1) atzīmētās  zemes kategorijas "41", "42", kura rezultāts kodēts ar `730`.
 
 
 Zemāk esošās komandu rindas izveido slāni ar ainavas klasi `700`, kuru failā `700_mitraji_premask.tif` saglabā turpmākam darbam.
@@ -1429,6 +1436,100 @@ if(!require(readxl)) {install.packages("readxl"); require(readxl)}
 # templates
 template_t=rast("./LV10m_10km.tif")
 template_r=raster(template_t)
+
+
+# topo
+topo=st_read_parquet("./Topo_landusA.parquet")
+table(topo$FNAME,useNA="always")
+
+## niedrāji
+niedraji_topo=topo %>% 
+  filter(FNAME %in% c("Meldrājs_ūdenī_poligons","poligons_Grīslājs",
+                      "poligons_Meldrājs","poligons_Nec_purvs_grīslājs",
+                      "poligons_Nec_purvs_meldrājs","Sēklis_poligons")) %>% 
+  mutate(yes=720) %>% 
+  dplyr::select(yes)
+r_niedraji_topo=fasterize(niedraji_topo,template_r,field="yes")
+raster::writeRaster(r_niedraji_topo,
+                    "./720_niedraji_topo.tif",
+                    progress="text")
+# liekā aizvākšana
+rm(niedraji_topo)
+rm(r_niedraji_topo)
+
+
+## purvi
+purvi_topo=topo %>% 
+  filter(FNAME %in% c("poligons_Nec_purvs_sūnājs","poligons_Sūnājs")) %>% 
+  mutate(yes=710) %>% 
+  dplyr::select(yes)
+topo_purvi=st_read_parquet("./Topo_swampA.parquet")
+topo_purvi=topo_purvi %>% 
+  mutate(yes=710) %>% 
+  dplyr::select(yes)
+purvi=rbind(purvi_topo,topo_purvi)
+r_purvi_topo=fasterize(purvi,template_r,field="yes")
+raster::writeRaster(r_purvi_topo,
+                    "./710_purvi_topo.tif",
+                    progress="text",
+                    overwrite=TRUE)
+# liekā aizvākšana
+rm(purvi_topo)
+rm(topo_purvi)
+rm(purvi)
+rm(r_purvi_topo)
+
+
+# mvr
+mvr=st_read_parquet("./nogabali_2024janv.parquet")
+
+# sūnu, zālu pārejas purvi
+mvr_purvi=mvr %>% 
+  filter(zkat %in% c("21","22","23")) %>% 
+  mutate(yes=710) %>% 
+  dplyr::select(yes)
+r_purvi_mvr=fasterize(mvr_purvi,template_r,field="yes")
+raster::writeRaster(r_purvi_mvr,
+                    "./710_purvi_mvr.tif",
+                    progress="text",
+                    overwrite=TRUE)
+# liekā aizvākšana
+rm(mvr_purvi)
+rm(r_purvi_mvr)
+
+# bebraines un pārplūstoši klajumi
+mvr_bebri=mvr %>% 
+  filter(zkat %in% c("41","42")) %>% 
+  mutate(yes=730) %>% 
+  dplyr::select(yes)
+r_bebri_mvr=fasterize(mvr_bebri,template_r,field="yes")
+raster::writeRaster(r_bebri_mvr,
+                    "./730_bebri_mvr.tif",
+                    progress="text",
+                    overwrite=TRUE)
+# liekā aizvākšana
+rm(mvr_bebri)
+rm(r_bebri_mvr)
+rm(mvr)
+
+# apvienosana
+r_niedraji_topo=rast("./720_niedraji_topo.tif")
+r_purvi_topo=rast("./710_purvi_topo.tif")
+r_purvi_mvr=rast("./710_purvi_mvr.tif")
+r_bebri_mvr=rast("./730_bebri_mvr.tif")
+
+
+rastri_mitrajiem=sprc(r_niedraji_topo,r_purvi_topo,r_purvi_mvr,r_bebri_mvr)
+rastrs_mitraji=terra::merge(rastri_mitrajiem,
+                               filename="./700_mitraji_premask.tif",
+                               overwrite=TRUE)
+# liekā aizvākšana
+rm(r_niedraji_topo)
+rm(r_purvi_topo)
+rm(r_purvi_mvr)
+rm(r_bebri_mvr)
+rm(rastri_mitrajiem)
+rm(rastrs_mitraji)
 ```
 
 
@@ -1436,10 +1537,11 @@ template_r=raster(template_t)
 
 
 
-- klase `800` - **smiltāji un kūdras lauki**:
+- klase `800` - **smiltāji un kūdras lauki**: apvienojot ar smiltājiem, virsājiem un kūdras karjeriem saistītos slāņus, **aizpildīta secībā** - tā kā šī ir augstākā klase, tā dominē tikai pār robu aizpildīšanai izmantoto *Dynamic World*. Šīs klases izveidošanai apvienoti (pārklāšanās secībā):
 
-
-
+  -- [topogrāfiskās kartes](#Chapter3.1.3) slāņa `landus_A` klases "poligons_Smiltājs", "poligons_Kūdra", kura rezultāts kodēts ar `800`;
+  
+  -- [Meža valsts reģistrā](#Chapter3.1.1) atzīmētās  zemes kategorijas "33", "34", kura rezultāts kodēts ar `730`.
 
 Zemāk esošās komandu rindas izveido slāni ar ainavas klasi `800`, kuru failā `800_smiltaji_premask.tif` saglabā turpmākam darbam.
 
@@ -1459,6 +1561,51 @@ if(!require(readxl)) {install.packages("readxl"); require(readxl)}
 # templates
 template_t=rast("./LV10m_10km.tif")
 template_r=raster(template_t)
+
+smiltaji_topo=st_read_parquet("./Topo_landusA.parquet")
+table(smiltaji_topo$FNAME,useNA="always")
+smiltaji_topo=smiltaji_topo %>% 
+  filter(FNAME %in% c("poligons_Smiltājs","poligons_Kūdra")) %>% 
+  mutate(yes=800) %>% 
+  dplyr::select(yes)
+r_smiltaji_topo=fasterize(smiltaji_topo,template_r,field="yes")
+raster::writeRaster(r_smiltaji_topo,
+                    "./800_SmiltajiKudra_topo.tif",
+                    progress="text")
+# liekā aizvākšana
+rm(smiltaji_topo)
+rm(r_smiltaji_topo)
+
+# mvr zkat 33 un 34
+mvr=st_read_parquet("./nogabali_2024janv.parquet")
+
+smiltajiem=mvr %>% 
+  filter(zkat %in% c("33","34")) %>% 
+  mutate(yes=800) %>% 
+  dplyr::select(yes)
+r_smiltaji_mvr=fasterize(smiltajiem,template_r,field="yes")
+raster::writeRaster(r_smiltaji_mvr,
+                    "./800_SmiltVirs_mvr.tif",
+                    progress="text",
+                    overwrite=TRUE)
+# liekā aizvākšana
+rm(mvr)
+rm(smiltajiem)
+rm(r_smiltaji_mvr)
+
+# apvienosana
+r_smiltaji_topo=rast("./800_SmiltajiKudra_topo.tif")
+r_smiltaji_mvr=rast("./800_SmiltVirs_mvr.tif")
+
+rastri_smiltajiem=sprc(r_smiltaji_topo,r_smiltaji_mvr)
+rastrs_smiltajiem=terra::merge(rastri_smiltajiem,
+                               filename="./800_smiltaji_premask.tif",
+                               overwrite=TRUE)
+# liekā aizvākšana
+rm(r_smiltaji_topo)
+rm(r_smiltaji_mvr)
+rm(rastri_smiltajiem)
+rm(rastrs_smiltajiem)
 ```
 
 
@@ -1466,8 +1613,6 @@ template_r=raster(template_t)
 <br>
 
 **Apvienošana un aizpildīšana**.
-
-
 
 Zemāk esošās komandu rindas pareizā secībā apvieno iepriekš izveidotos slāņus ar ainavas klasēm un nodrošina robu aizpildīšanu ar atbilstoši klasificētu *Dynamic World* 2023. gada aprīļa-augusta kompozītu, kuru, pēc maskēšanas tikai analīzes telpai, failā `Ainava_vienk_mask.tif` saglabā turpmākam darbam.
 
@@ -1487,6 +1632,60 @@ if(!require(readxl)) {install.packages("readxl"); require(readxl)}
 # templates
 template_t=rast("./LV10m_10km.tif")
 template_r=raster(template_t)
+
+
+# DW pildījums 
+dynworld=rast("./DW_2023_apraug.tif")
+klases=matrix(c(0,200,
+              1,620,
+              2,320,
+              3,720,
+              4,310,
+              5,710,
+              6,500,
+              7,800,
+              8,500),ncol=2,byrow=TRUE)
+dw2=terra::classify(dynworld,klases)
+writeRaster(dw2,
+            "./DW_reclass.tif",
+            overwrite=TRUE)
+
+celi=rast("./100_celi.tif")
+udeni=rast("./200_udens_premask.tif")
+lauki=rast("./300_lauki_premask.tif")
+vasarnicas=rast("./400_varnicas_premask.tif")
+mezi=rast("./600_meziem_premask.tif")
+mitraji=rast("./700_mitraji_premask.tif")
+smiltaji=rast("./800_smiltaji_premask.tif")
+dw2=rast("./DW_reclass.tif")
+
+rastri_ainavai=sprc(celi,udeni,lauki,vasarnicas,mezi,mitraji,smiltaji,dw2)
+rastrs_ainava=terra::merge(rastri_ainavai,
+                               filename="./Ainava_vienkarsa.tif",
+                               overwrite=TRUE)
+# liekā aizvākšana
+rm(celi)
+rm(udeni)
+rm(lauki)
+rm(vasarnicas)
+rm(mezi)
+rm(mitraji)
+rm(smiltaji)
+rm(klases)
+rm(dynworld)
+rm(dw2)
+rm(rastri_ainavai)
+rm(rastrs_ainava)
+
+# maskēšana
+rastrs_ainava=rast("./Ainava_vienkarsa.tif")
+masketa_ainava=terra::mask(rastrs_ainava,
+                           template_t,
+                           filename="./Ainava_vienk_mask.tif",
+                           overwrite=TRUE)
+# liekā aizvākšana
+rm(rastrs_ainava)
+rm(masketa_ainava)
 ```
 
 
@@ -1498,143 +1697,187 @@ template_r=raster(template_t)
 
 #### Lauku ainava {#Chapter3.2.2.1}
 
-- lauku bloku platība
+Šajā apakšnodaļā apkopoti ar lauku ainavu saistītie ievades produkti - 10 m izšķirtspējā sagatavoti rastra slāņi, kas cieši saistīti ar virsnodaļā aprakstīto ainavu un nepieciešami tālākai EGV sagatavošanai. Lai atvieglotu meklēšanu un atsaukšanos, tie iedalīti vēl zamāka līmeņa apakšnodaļās.
 
-- zālāji ārpus lauku blokiem, pieskaitot bezatbalsta
 
-- zālāji visi
+##### Lauku bloku platība {#Chapter3.2.2.1.1}
 
-- zālāji LAD ne ppg
+##### Zālāji ārpus lauku blokiem, pieskaitot bezatbalsta {#Chapter3.2.2.1.2}
 
-- zālāji ilglaicīgie
+##### Zālāji visi {#Chapter3.2.2.1.3}
 
-- papuves
+##### Zālāji LAD ne ppg {#Chapter3.2.2.1.4}
 
-- krūmveida stādījumi
+##### Zālāji ilglaicīgie {#Chapter3.2.2.1.5}
 
-- augļudārzi LAD
+##### Papuves {#Chapter3.2.2.1.6}
 
-- aramzemes visas
+##### Krūmveida stādījumi {#Chapter3.2.2.1.7}
 
-- aramzemes: ziemas rapsis un ripsis
+##### Augļudārzi LAD {#Chapter3.2.2.1.8}
 
-- aramzemes: vasaras rapsis un ripsis + kukurūza + pākšaugi
+##### Aramzemes visas {#Chapter3.2.2.1.9}
 
-- aramzemes: vagu un rušināmkultūras
+##### Aramzemes: ziemas rapsis un ripsis {#Chapter3.2.2.1.10}
 
-- aramzemes: ne- labības, rapši, kukurūzas, pākšaugi, vagu kultūras
+##### Aramzemes: vasaras rapsis un ripsis + kukurūza + pākšaugi {#Chapter3.2.2.1.11}
 
-- aramzemes: labība ziemāji
+##### Aramzemes: vagu un rušināmkultūras {#Chapter3.2.2.1.12}
 
-- aramzemes: labība vasarāji
+##### Aramzemes: ne- labības, rapši, kukurūzas, pākšaugi, vagu kultūras {#Chapter3.2.2.1.13}
 
-- lauku daudzveidībai
+##### Aramzemes: labība ziemāji {#Chapter3.2.2.1.14}
 
-#### Mežu ainava: auglīgums {#Chapter3.2.2.2}
+##### Aramzemes: labība vasarāji {#Chapter3.2.2.1.15}
 
-- oligotrofi susinātie meši
+##### Lauku daudzveidībai {#Chapter3.2.2.1.16}
 
-- oligotrofi purvaiņu meži
 
-- oligotrofi sausieņu un slapjaiņu meži
+<br>
 
-- mezotrofi sausieņu un slapjaiņu meži
 
-- eitrofi susinātie meži
 
-- eitrofi purvaiņu meži
 
-- eitrofi sausieņu un slapjaiņu meži
 
-#### Mežu ainava: mežaudžu vecumgrupas {#Chapter3.2.2.3}
+#### Mežu ainava {#Chapter3.2.2.2}
 
-- izcirtumi un jaunaudzes līdz 5 m
+Šajā apakšnodaļā apkopoti ar mežu ainavu saistītie ievades produkti - 10 m izšķirtspējā sagatavoti rastra slāņi, kas cieši saistīti ar virsnodaļā aprakstīto ainavu un nepieciešami tālākai EGV sagatavošanai. Lai atvieglotu meklēšanu un atsaukšanos, tie iedalīti vēl zamāka līmeņa apakšnodaļās.
 
-- jaunaudzes no 5 m un krūmāji
+##### Oligotrofi susinātie meši {#Chapter3.2.2.2.1}
 
-- vidēja vecuma un briestaudzes
+##### Oligotrofi purvaiņu meži {#Chapter3.2.2.2.2}
 
-- pieaugušās un pāraugušās mežaudzes
+##### Oligotrofi sausieņu un slapjaiņu meži {#Chapter3.2.2.2.3}
 
+##### Mezotrofi sausieņu un slapjaiņu meži {#Chapter3.2.2.2.4}
 
-#### Mežu ainava: valdošās sugas {#Chapter3.2.2.4}
+##### Eitrofi susinātie meži {#Chapter3.2.2.2.5}
 
-- skujkoku
+##### Eitrofi purvaiņu meži {#Chapter3.2.2.2.6}
 
-- šaurlapju
+##### Eitrofi sausieņu un slapjaiņu meži {#Chapter3.2.2.2.7}
 
-- platlapju
 
-- jauktu koku
 
-#### Mežu ainava: valdošās sugas vecumgrupās {#Chapter3.2.2.5}
 
-- skujkoku jaunaudzes, vidēja vecuma un briestaudzes
 
-- skujkoku pieaugušās un pāraugušās audzes
+##### Izcirtumi un jaunaudzes līdz 5 m {#Chapter3.2.2.2.8}
 
-- šaurlapju jaunaudzes, vidēja vecuma un briestaudzes
+##### Jaunaudzes no 5 m un krūmāji {#Chapter3.2.2.2.9}
 
-- šaurlapju pieaugušās un pāraugušās audzes
+##### Vidēja vecuma un briestaudzes {#Chapter3.2.2.2.10}
 
-- platlapju jaunaudzes, vidēja vecuma un briestaudzes
+##### Pieaugušās un pāraugušās mežaudzes {#Chapter3.2.2.2.11}
 
-- platlapju pieaugušās un pāraugušās audzes
 
-- jauktu koku jaunaudzes, vidēja vecuma un briestaudzes
 
-- jauktu koku pieaugušās un pāraugušās audzes
 
-- mežu daudzveidībai
 
 
-#### Kombinētā ainava {#Chapter3.2.2.6}
+##### Skujkoku {#Chapter3.2.2.2.12}
 
-- parki, kapi, alejas
+##### Šaurlapju {#Chapter3.2.2.2.13}
 
-- vasarnīcas un mazdārziņi
+##### Platlapju {#Chapter3.2.2.2.14}
 
-- ūdensobjektu platība
+##### Jauktu koku {#Chapter3.2.2.2.15}
 
-- niedrāji, meldrāji, grīslāji un pārplūstošā
 
-- mitrāju platība
 
-- atklāta augsne un karjeri
 
-- kokiem klātās platības
 
-- netaksētās mežaudzes
+##### Skujkoku jaunaudzes, vidēja vecuma un briestaudzes {#Chapter3.2.2.2.16}
 
-- apbūve
+##### Skujkoku pieaugušās un pāraugušās audzes {#Chapter3.2.2.2.17}
 
-- daudzās klases daudzveidībai
+##### Šaurlapju jaunaudzes, vidēja vecuma un briestaudzes {#Chapter3.2.2.2.18}
 
-#### Malu slāņi {#Chapter3.2.2.7}
+##### Šaurlapju pieaugušās un pāraugušās audzes {#Chapter3.2.2.2.19}
 
-- apbūves un LIZ mala
+##### Platlapju jaunaudzes, vidēja vecuma un briestaudzes {#Chapter3.2.2.2.20}
 
-- apbūves un koku mala
+##### Platlapju pieaugušās un pāraugušās audzes {#Chapter3.2.2.2.21}
 
-- aramzemju (visu) malas
+##### Jauktu koku jaunaudzes, vidēja vecuma un briestaudzes {#Chapter3.2.2.2.22}
 
-- LIZ, izcirtumu un jaunaudžu (<5m) malas ar kokiem >5m
+##### Jauktu koku pieaugušās un pāraugušās audzes {#Chapter3.2.2.2.23}
 
-- koku virs 5m malas
+##### Mežu daudzveidībai {#Chapter3.2.2.2.24}
 
-- niedrāju, meldrāju, grīslāju un pārplūstošās veģetācijas malas ar ūdeni
 
-- pieaugušu un pāraugušu mežaudžu malas
 
-- zālāju (visu) malas
+<br>
 
-- ūdens un LIZ malas
 
-- ūdens un zālāju malas
 
-- ūdensobjektu malas
 
-- ceļu garums (malas/2)
+
+#### Kombinētā ainava {#Chapter3.2.2.3}
+
+Šajā apakšnodaļā apkopoti ar virsnodaļā aprakstīto ainavu saistītie ievades produkti - 10 m izšķirtspējā sagatavoti rastra slāņi, kas nepieciešami tālākai EGV sagatavošanai. Lai atvieglotu meklēšanu un atsaukšanos, tie iedalīti vēl zamāka līmeņa apakšnodaļās.
+
+
+##### Parki, kapi, alejas {#Chapter3.2.2.3.1}
+
+##### Vasarnīcas un mazdārziņi {#Chapter3.2.2.3.2}
+
+##### Ūdensobjektu platība {#Chapter3.2.2.3.3}
+
+##### Niedrāji, meldrāji, grīslāji un pārplūstošā {#Chapter3.2.2.3.4}
+
+##### Mitrāju platība {#Chapter3.2.2.3.5}
+
+##### Atklāta augsne un karjeri {#Chapter3.2.2.3.6}
+
+##### Kokiem klātās platības {#Chapter3.2.2.3.7}
+
+##### Netaksētās mežaudzes {#Chapter3.2.2.3.8}
+
+##### Apbūve {#Chapter3.2.2.3.9}
+
+##### Daudzās klases daudzveidībai {#Chapter3.2.2.3.10}
+
+
+<br>
+
+
+
+
+
+#### Malu slāņi {#Chapter3.2.2.4}
+
+Šajā apakšnodaļā apkopoti ar virsnodaļā aprakstīto ainavu saistītie ievades produkti - 10 m izšķirtspējā sagatavoti rastra slāņi, kas nepieciešami tālākai EGV sagatavošanai. Lai atvieglotu meklēšanu un atsaukšanos, tie iedalīti vēl zamāka līmeņa apakšnodaļās.
+
+##### Apbūves un LIZ mala  {#Chapter3.2.2.4.1}
+
+##### Apbūves un koku mala {#Chapter3.2.2.4.2}
+
+##### Aramzemju (visu) malas {#Chapter3.2.2.4.3}
+
+##### LIZ, izcirtumu un jaunaudžu (<5m) malas ar kokiem >5m  {#Chapter3.2.2.4.4}
+
+##### Koku virs 5m malas {#Chapter3.2.2.4.5}
+
+##### Niedrāju malas ar ūdeni {#Chapter3.2.2.4.6}
+
+##### Pieaugušu un pāraugušu mežaudžu malas {#Chapter3.2.2.4.7}
+
+##### Zālāju (visu) malas {#Chapter3.2.2.4.8}
+
+##### Ūdens un LIZ malas {#Chapter3.2.2.4.9}
+
+##### Ūdens un zālāju malas {#Chapter3.2.2.4.10}
+
+##### Ūdensobjektu malas {#Chapter3.2.2.4.11}
+
+##### Ceļu garums (malas/2) {#Chapter3.2.2.4.12}
+
+
+<br>
+
+
+
+
 
 ### Vides pārmaiņas {#Chapter3.2.3}
 
