@@ -56,6 +56,9 @@ objekts=funkcija(arguments1,arguments2,
 # komentārs
 ```
 
+<br>
+
+
 Augstāk esošajā piemērā pirmajā rindā ir izveidots objekts ("objekts"), kurš ir funkcijas ("funkcija()") rezultāts. Funkcijai ir trīs argumenti ("arguments1", "arguments2" un "ceļš"), kas ir atdalīti ar komantu (kā visu funkciju argumenti R). Trešais arguments ir ceļš failu kokā (tas atrodas jaunā rindā, bet ir turpinājums iepriekšējās rindas funkcijai, jo iekavas nav noslēgtas), kuram aiz vienādības zīmes (un pēdiņās) ir norādīts šis ceļš (uzmanība vēršama sākumam "./", kurš apzīmē relatīvo ceļu - novietojums failu kokā ir relatīvs projekta atrašanās vietai).
 
 Augstāk esošā piemēra otrā rinda ir komentārs - viss aiz "#" ir komentārs. Jebkam komandu rindā pirms "#" ir jābūt izpildāmai funkcijai vai objektam. Komentārs var saturēt jebko un atrasties vienā rindā ar izpildāmu funkciju (tās beigās).

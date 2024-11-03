@@ -464,6 +464,7 @@ div.csl-indent {
 <span id="cb6-27"><a href="Chapter3.html#cb6-27" tabindex="-1"></a><span class="co"># saglabāšana</span></span>
 <span id="cb6-28"><a href="Chapter3.html#cb6-28" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(nogabali3, <span class="st">&quot;nogabali.parquet&quot;</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="Chapter3.1.2" class="section level3 hasAnchor" number="4.1.2">
 <h3><span class="header-section-number">4.1.2</span> Lauku Atbalsta Dienesta lauku informācija<a href="Chapter3.html#Chapter3.1.2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -514,6 +515,7 @@ div.csl-indent {
 <span id="cb7-42"><a href="Chapter3.html#cb7-42" tabindex="-1"></a><span class="co"># saglabāšana</span></span>
 <span id="cb7-43"><a href="Chapter3.html#cb7-43" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(dati3, <span class="st">&quot;LAD_lauki.parquet&quot;</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="Chapter3.1.3" class="section level3 hasAnchor" number="4.1.3">
 <h3><span class="header-section-number">4.1.3</span> LĢIA topogrāfiskā karte<a href="Chapter3.html#Chapter3.1.3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -614,6 +616,7 @@ div.csl-indent {
 <span id="cb8-80"><a href="Chapter3.html#cb8-80" tabindex="-1"></a>landus3<span class="ot">=</span><span class="fu">st_make_valid</span>(landus2)</span>
 <span id="cb8-81"><a href="Chapter3.html#cb8-81" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(landus3, <span class="st">&quot;Topo_landusA.parquet&quot;</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="Chapter3.1.4" class="section level3 hasAnchor" number="4.1.4">
 <h3><span class="header-section-number">4.1.4</span> Meliorācijas Kadastra Informācijas Sistēmas datubāze<a href="Chapter3.html#Chapter3.1.4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -668,6 +671,7 @@ div.csl-indent {
 <span id="cb9-20"><a href="Chapter3.html#cb9-20" tabindex="-1"></a><span class="co"># saglabāšana</span></span>
 <span id="cb9-21"><a href="Chapter3.html#cb9-21" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(clcLV3, <span class="st">&quot;CLC_LV_2018.parquet&quot;</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="Chapter3.1.7" class="section level3 hasAnchor" number="4.1.7">
 <h3><span class="header-section-number">4.1.7</span> Sentinel-2<a href="Chapter3.html#Chapter3.1.7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -724,6 +728,7 @@ div.csl-indent {
 <span id="cb10-35"><a href="Chapter3.html#cb10-35" tabindex="-1"></a>  maskets<span class="ot">=</span><span class="fu">mask</span>(mozaika,paraugs,<span class="at">filename=</span>beigu_cels,<span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
 <span id="cb10-36"><a href="Chapter3.html#cb10-36" tabindex="-1"></a>}</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="Chapter3.1.8" class="section level3 hasAnchor" number="4.1.8">
 <h3><span class="header-section-number">4.1.8</span> <em>Dynamic World</em><a href="Chapter3.html#Chapter3.1.8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -769,6 +774,7 @@ div.csl-indent {
 <span id="cb11-36"><a href="Chapter3.html#cb11-36" tabindex="-1"></a>  maskets<span class="ot">=</span><span class="fu">mask</span>(mozaika,paraugs,<span class="at">filename=</span>beigu_cels,<span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
 <span id="cb11-37"><a href="Chapter3.html#cb11-37" tabindex="-1"></a>}</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="Chapter3.1.9" class="section level3 hasAnchor" number="4.1.9">
 <h3><span class="header-section-number">4.1.9</span> <em>The Global Forest Watch</em><a href="Chapter3.html#Chapter3.1.9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -791,6 +797,7 @@ div.csl-indent {
 <span id="cb12-14"><a href="Chapter3.html#cb12-14" tabindex="-1"></a>tcl2<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">project</span>(tcl,paraugs)</span>
 <span id="cb12-15"><a href="Chapter3.html#cb12-15" tabindex="-1"></a>tcl3<span class="ot">=</span><span class="fu">mask</span>(tcl2,paraugs,<span class="at">filename=</span><span class="st">&quot;./TreeCoverLossYear.tif&quot;</span>,<span class="at">overwrite=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="Chapter3.1.10" class="section level3 hasAnchor" number="4.1.10">
 <h3><span class="header-section-number">4.1.10</span> Palsar Forests<a href="Chapter3.html#Chapter3.1.10" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -827,6 +834,7 @@ div.csl-indent {
 <span id="cb13-27"><a href="Chapter3.html#cb13-27" tabindex="-1"></a><span class="co"># Maskēšana un saglabāšana</span></span>
 <span id="cb13-28"><a href="Chapter3.html#cb13-28" tabindex="-1"></a>fnf_XX<span class="ot">=</span><span class="fu">mask</span>(fnf_X,paraugs,<span class="at">filename=</span><span class="st">&quot;./Palsar_Forests.tif&quot;</span>,<span class="at">overwrite=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="Chapter3.1.11" class="section level3 hasAnchor" number="4.1.11">
 <h3><span class="header-section-number">4.1.11</span> ERA5 Land<a href="Chapter3.html#Chapter3.1.11" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -881,6 +889,7 @@ div.csl-indent {
 <span id="cb14-38"><a href="Chapter3.html#cb14-38" tabindex="-1"></a>  maskets<span class="ot">=</span><span class="fu">mask</span>(mozaika,paraugs,<span class="at">filename=</span>beigu_cels,<span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
 <span id="cb14-39"><a href="Chapter3.html#cb14-39" tabindex="-1"></a>}</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="Chapter3.1.12" class="section level3 hasAnchor" number="4.1.12">
 <h3><span class="header-section-number">4.1.12</span> Augsnes auglīgums<a href="Chapter3.html#Chapter3.1.12" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -898,6 +907,7 @@ div.csl-indent {
 <span id="cb15-10"><a href="Chapter3.html#cb15-10" tabindex="-1"></a>oc2<span class="ot">=</span><span class="fu">project</span>(oc,template_100m,<span class="at">use_gdal=</span><span class="cn">TRUE</span>,<span class="at">method=</span><span class="st">&quot;bilinear&quot;</span>)</span>
 <span id="cb15-11"><a href="Chapter3.html#cb15-11" tabindex="-1"></a><span class="fu">writeRaster</span>(oc2,<span class="st">&quot;./OrganicCarbon.tif&quot;</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="Chapter3.1.13" class="section level3 hasAnchor" number="4.1.13">
 <h3><span class="header-section-number">4.1.13</span> Digitālie reljefa modeļi<a href="Chapter3.html#Chapter3.1.13" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -970,6 +980,7 @@ div.csl-indent {
 <span id="cb16-62"><a href="Chapter3.html#cb16-62" tabindex="-1"></a>slipumi<span class="ot">=</span><span class="fu">terrain</span>(reljefs, <span class="at">v=</span><span class="st">&quot;slope&quot;</span>, <span class="at">neighbors=</span><span class="dv">8</span>, <span class="at">unit=</span><span class="st">&quot;degrees&quot;</span>, </span>
 <span id="cb16-63"><a href="Chapter3.html#cb16-63" tabindex="-1"></a>                <span class="at">filename=</span><span class="st">&quot;./Slope_10m.tif&quot;</span>, <span class="at">overwrite=</span><span class="cn">TRUE</span>)  </span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 </div>
 <div id="Chapter3.2" class="section level2 hasAnchor" number="4.2">
@@ -1019,12 +1030,13 @@ div.csl-indent {
 <span id="cb17-38"><a href="Chapter3.html#cb17-38" tabindex="-1"></a>               <span class="at">overwrite=</span><span class="cn">TRUE</span>,</span>
 <span id="cb17-39"><a href="Chapter3.html#cb17-39" tabindex="-1"></a>               <span class="at">filename=</span><span class="st">&quot;./caurtDEM_10m.tif&quot;</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="Chapter3.2.2" class="section level3 hasAnchor" number="4.2.2">
 <h3><span class="header-section-number">4.2.2</span> Ainava<a href="Chapter3.html#Chapter3.2.2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Šajā vingrinājumā “ainava” ir dažādu zemes seguma un lietojuma veidu klašu pārstāvniecība, kurā svarīga ir šo klašu zīmēšanas secība, jo nereti dažādu avotu telpiskajiem datiem ir savstarpēja robežu neatbilstība, kas liek risināt gan to savstarpējo pārklāšanos (1), gan aizpildīt robus vietām, par kurām nav datubāzu informāicja (2), un izvēle par objektu uzsvēršanu ar kādu apstrādi, piemēram, buferēšanu, jo daļa vides raksturošanai (jo sevišķi, malas efektu) nozīmīgu elementu var būt ar tik mazu laukumu vai tādu novietojumu, ka rasterizāicjas procesā tie pazūd (3). Pamata ainavas slānim nozīme ir arī kalpot kā maskai turpmāko vides aprakstu sagatavošanā. Šeit raksturota pamata (vienkāršas) ainavas izstrāde un sekojošajās apakšnodaļās tās bagātināšana ar klasēm specifiskākiem vides ekoģeogrāfiskajiem mainīgajiem. Vienkāršā ainava saglabāta failā <code>Ainava_vienk_mask.tif</code>, kurā esošās klases un to izveidošanas procedūra raksturota sekojošajā uzskaitījumā:</p>
 <ul>
-<li><p>klase <code>100</code> - ceļi: dažādu avotu ceļi, <strong>aizpildīta secībā</strong> - dominē pār klasēm ar lielāku vērtību, lai nepazustu relatīvi neliela izmēra objekti un nodrošinātu informāciju par malām. Šīs klases izveidošanai apvienoti:</p>
+<li><p>klase <code>100</code> - <strong>ceļi</strong>: dažādu avotu ceļi, <strong>aizpildīta secībā</strong> - dominē pār klasēm ar lielāku vērtību, lai nepazustu relatīvi neliela izmēra objekti un nodrošinātu informāciju par malām. Šīs klases izveidošanai apvienoti:</p>
 <p>– <a href="Chapter3.html#Chapter3.1.3">topogrāfiskās kartes</a> slāņi <code>road_A</code> un <code>road_L</code> (izņemot mazāko platuma grupu, kura visbiežāk neveido vienlaidus pārrāvumu vainagu klājā, <a href="Chapter3.html#Chapter3.1.3">skatīt atlasi</a>), pirms rasterizēšanas tos buferējot par 10 m;</p>
 <p>– <a href="Chapter3.html#Chapter3.1.5">LVM atvērto datu</a> slāņi <code>LVM_MEZA_AUTOCELI</code>, <code>LVM_ATTISTAMIE_AUTOCELI</code>, <code>LVM_APGRIESANAS_LAUKUMI</code>, <code>LVM_IZMAINISANAS_VIETAS</code> un <code>LVM_NOBRAUKTUVES</code>, tās buferējot par 10 m.</p>
 <p>– nav izmantota Meža valsts reģistra informācija par dabiskajām brauktuvēm, jo tās visbiežāk neveido vienlaidus pārrāvumu vainagu klājā. Šī reģistra informācija par ceļiem ir arī pārējos resursos, tā nav dublēta.</p></li>
@@ -1138,8 +1150,9 @@ div.csl-indent {
 <span id="cb18-105"><a href="Chapter3.html#cb18-105" tabindex="-1"></a><span class="fu">rm</span>(rastri)</span>
 <span id="cb18-106"><a href="Chapter3.html#cb18-106" tabindex="-1"></a><span class="fu">rm</span>(rastrs_celi)</span></code></pre></div>
 </details>
+<p><br></p>
 <ul>
-<li>klase <code>200</code> - ūdeņi: dažādu avotu ūdensobjekti, <strong>aizpildīta secībā</strong> - dominē pār klasēm ar lielāku vērtību, lai nepazustu relatīvi neliela izmēra objekti un nodrošinātu informāciju par malām.</li>
+<li>klase <code>200</code> - <strong>ūdeņi</strong>: dažādu avotu ūdensobjekti, <strong>aizpildīta secībā</strong> - dominē pār klasēm ar lielāku vērtību, lai nepazustu relatīvi neliela izmēra objekti un nodrošinātu informāciju par malām.</li>
 </ul>
 <p>Zemāk esošais kods izveido slāni ar ainavas klasi <code>200</code>, kuru failā <code>200_udens_premask.tif</code> saglabā turpmākam darbam.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
@@ -1158,8 +1171,9 @@ div.csl-indent {
 <span id="cb19-13"><a href="Chapter3.html#cb19-13" tabindex="-1"></a>template_t<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./LV10m_10km.tif&quot;</span>)</span>
 <span id="cb19-14"><a href="Chapter3.html#cb19-14" tabindex="-1"></a>template_r<span class="ot">=</span><span class="fu">raster</span>(template_t)</span></code></pre></div>
 </details>
+<p><br></p>
 <ul>
-<li>klase <code>300</code> - lauki: lauksaimniecības zemes LAD lauku blokos <strong>aizpildīta secībā</strong> - dominē pār klasēm ar lielāku vērtību, tomēr pēc pamata klašu izveidošanas, robu aizpildīšanā papildināta ar informāciju no <em>Dynamic World</em>.</li>
+<li>klase <code>300</code> - <strong>lauki</strong>: lauksaimniecības zemes LAD lauku blokos <strong>aizpildīta secībā</strong> - dominē pār klasēm ar lielāku vērtību, tomēr pēc pamata klašu izveidošanas, robu aizpildīšanā papildināta ar informāciju no <em>Dynamic World</em>.</li>
 </ul>
 <p>Zemāk esošais kods izveido slāni ar ainavas klasi <code>300</code>, kuru failā <code>300_lauki_premask.tif</code> saglabā turpmākam darbam.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
@@ -1178,8 +1192,9 @@ div.csl-indent {
 <span id="cb20-13"><a href="Chapter3.html#cb20-13" tabindex="-1"></a>template_t<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./LV10m_10km.tif&quot;</span>)</span>
 <span id="cb20-14"><a href="Chapter3.html#cb20-14" tabindex="-1"></a>template_r<span class="ot">=</span><span class="fu">raster</span>(template_t)</span></code></pre></div>
 </details>
+<p><br></p>
 <ul>
-<li>klase <code>400</code> - mazdārziņi un augļudārzi, vasarnīcas, <strong>aizpildīta secībā</strong> - dominē pār klasēm ar lielāku vērtību.</li>
+<li>klase <code>400</code> - <strong>mazdārziņi un augļudārzi, vasarnīcas</strong>, <strong>aizpildīta secībā</strong> - dominē pār klasēm ar lielāku vērtību.</li>
 </ul>
 <p>Zemāk esošais kods izveido slāni ar ainavas klasi <code>400</code>, kuru failā <code>400_vasarnicas_premask.tif</code> saglabā turpmākam darbam.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
@@ -1198,9 +1213,10 @@ div.csl-indent {
 <span id="cb21-13"><a href="Chapter3.html#cb21-13" tabindex="-1"></a>template_t<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./LV10m_10km.tif&quot;</span>)</span>
 <span id="cb21-14"><a href="Chapter3.html#cb21-14" tabindex="-1"></a>template_r<span class="ot">=</span><span class="fu">raster</span>(template_t)</span></code></pre></div>
 </details>
+<p><br></p>
 <ul>
-<li><p>klase <code>500</code> - apbūve: apbūvētās platības, <strong>aizpildīta beigās</strong>, izmantojot informāciju no <em>Dynamic World</em> par vietām, kuras nav nosegtas ar citām klasēm.</p></li>
-<li><p>klase <code>600</code> - meži, krūmāji, izcirtumi:</p></li>
+<li><p>klase <code>500</code> - <strong>apbūve</strong>: apbūvētās platības, <strong>aizpildīta beigās</strong>, izmantojot informāciju no <em>Dynamic World</em> par vietām, kuras nav nosegtas ar citām klasēm.</p></li>
+<li><p>klase <code>600</code> - <strong>meži, krūmāji, izcirtumi</strong>:</p></li>
 </ul>
 <p>Zemāk esošais kods izveido slāni ar ainavas klasi <code>600</code>, kuru failā <code>600_meziem_premask.tif</code> saglabā turpmākam darbam.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
@@ -1219,8 +1235,9 @@ div.csl-indent {
 <span id="cb22-13"><a href="Chapter3.html#cb22-13" tabindex="-1"></a>template_t<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./LV10m_10km.tif&quot;</span>)</span>
 <span id="cb22-14"><a href="Chapter3.html#cb22-14" tabindex="-1"></a>template_r<span class="ot">=</span><span class="fu">raster</span>(template_t)</span></code></pre></div>
 </details>
+<p><br></p>
 <ul>
-<li>klase <code>700</code> - mitrāji:</li>
+<li>klase <code>700</code> - <strong>mitrāji</strong>:</li>
 </ul>
 <p>Zemāk esošais kods izveido slāni ar ainavas klasi <code>700</code>, kuru failā <code>700_mitraji_premask.tif</code> saglabā turpmākam darbam.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
@@ -1239,8 +1256,9 @@ div.csl-indent {
 <span id="cb23-13"><a href="Chapter3.html#cb23-13" tabindex="-1"></a>template_t<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./LV10m_10km.tif&quot;</span>)</span>
 <span id="cb23-14"><a href="Chapter3.html#cb23-14" tabindex="-1"></a>template_r<span class="ot">=</span><span class="fu">raster</span>(template_t)</span></code></pre></div>
 </details>
+<p><br></p>
 <ul>
-<li>klase <code>800</code> - smiltāji un kūdras lauki:</li>
+<li>klase <code>800</code> - <strong>smiltāji un kūdras lauki</strong>:</li>
 </ul>
 <p>Zemāk esošais kods izveido slāni ar ainavas klasi <code>800</code>, kuru failā <code>800_smiltaji_premask.tif</code> saglabā turpmākam darbam.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
@@ -1259,6 +1277,9 @@ div.csl-indent {
 <span id="cb24-13"><a href="Chapter3.html#cb24-13" tabindex="-1"></a>template_t<span class="ot">=</span><span class="fu">rast</span>(<span class="st">&quot;./LV10m_10km.tif&quot;</span>)</span>
 <span id="cb24-14"><a href="Chapter3.html#cb24-14" tabindex="-1"></a>template_r<span class="ot">=</span><span class="fu">raster</span>(template_t)</span></code></pre></div>
 </details>
+<p><br></p>
+<p><strong>Apvienošana un aizpildīšana</strong>.</p>
+<p><br></p>
 <div id="Chapter3.2.2.1" class="section level4 hasAnchor" number="4.2.2.1">
 <h4><span class="header-section-number">4.2.2.1</span> Lauku ainava<a href="Chapter3.html#Chapter3.2.2.1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>

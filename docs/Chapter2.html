@@ -459,6 +459,7 @@ div.csl-indent {
 <span id="cb2-21"><a href="Chapter2.html#cb2-21" tabindex="-1"></a>  <span class="fu">summarise</span>()</span>
 <span id="cb2-22"><a href="Chapter2.html#cb2-22" tabindex="-1"></a><span class="fu">st_write</span>(tikls100_apvienots,<span class="st">&quot;./tikls100_apvienots.shp&quot;</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 <div id="Chapter2.2" class="section level3 hasAnchor" number="3.1.1">
 <h3><span class="header-section-number">3.1.1</span> Stratificēšana ģeoprocesēšanas paralelizācijai<a href="Chapter2.html#Chapter2.2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Lai atvieglotu un paātrinātu ģeoprocesēšanu, analīzes telpu ir nepieciešams sadalīt mazākās daļās. Tam izmantots Envirotech izplatītajā GIS_Latvia_10.2 ģeodatubāzē pieejamais 1993. gada topogrāfisko karšu sistēmas M:50000 rāmis.</p>
@@ -485,6 +486,7 @@ div.csl-indent {
 <span id="cb3-20"><a href="Chapter2.html#cb3-20" tabindex="-1"></a><span class="co"># saglabāšana</span></span>
 <span id="cb3-21"><a href="Chapter2.html#cb3-21" tabindex="-1"></a><span class="fu">st_write_parquet</span>(tikls100,<span class="st">&quot;./Templates/TemplateGrids/tikls100_sauzeme.parquet&quot;</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 <p>Dažādu ainavas metriku aprēķināšanai sugu ligzdošanas iecirkņu un tiem atbilstošo ainavu mērogos, sagatavots 100 m režģa centra punktu slānis un, ik TKS karšu lapai atsevišķā failā, atbilstoši buferētu laukumu slāņi.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="Chapter2.html#cb4-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(sf)) {<span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>); <span class="fu">require</span>(sf)}</span>
@@ -526,6 +528,7 @@ div.csl-indent {
 <span id="cb4-37"><a href="Chapter2.html#cb4-37" tabindex="-1"></a>  <span class="fu">st_write_parquet</span>(rcbuff10000,<span class="fu">paste0</span>(<span class="st">&quot;./lapas/pts100_r10000_&quot;</span>,lapa,<span class="st">&quot;.parquet&quot;</span>))</span>
 <span id="cb4-38"><a href="Chapter2.html#cb4-38" tabindex="-1"></a>}</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 </div>
 <div id="Chapter2.3" class="section level2 hasAnchor" number="3.2">

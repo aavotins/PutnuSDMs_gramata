@@ -10,6 +10,15 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 ### (1) COTCOT - paipala *Coturnix coturnix*
 
+
+```{r rezCOTCOT, echo=FALSE, out.width = '100%', fig.cap='Paipalas *Coturnix coturnix* dzīvotņu piemērotība (A), tās analīzē izmantotie klātbūtnes dati (B), sastopamības ekspektācija (C), aizsardzībai prioritārās vietas (D)'}
+#knitr::include_graphics("./Atteli/ch010_COTCOT.png")
+```
+
+
+<br>
+
+
 [Dzīvotņu piemērotība (GeoTIFF)]()
 
 **Modeļa spējas raksturojums** neatkarīgos testa datos:

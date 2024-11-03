@@ -74,6 +74,9 @@ Sugām raksturīgo ekosistēmu dalījums un izdalītās ligzdošanas iecirkņu g
 knitr::include_graphics("./Atteli/ch001_AinavTelpas.png")
 ```
 
+<br>
+
+
 
 
 ## Pamata apraksti novērojumu atlasei

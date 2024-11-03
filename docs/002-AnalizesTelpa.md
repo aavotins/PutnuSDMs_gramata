@@ -43,6 +43,9 @@ st_write(tikls100_apvienots,"./tikls100_apvienots.shp")
 ```
 
 
+<br>
+
+
 ### Stratificēšana ģeoprocesēšanas paralelizācijai  {#Chapter2.2}
 
 Lai atvieglotu un paātrinātu ģeoprocesēšanu, analīzes telpu ir nepieciešams sadalīt mazākās daļās. Tam izmantots Envirotech izplatītajā GIS_Latvia_10.2 ģeodatubāzē pieejamais 1993. gada topogrāfisko karšu sistēmas M:50000 rāmis.
@@ -71,6 +74,9 @@ for(i in 1:length(numuri)){
 # saglabāšana
 st_write_parquet(tikls100,"./Templates/TemplateGrids/tikls100_sauzeme.parquet")
 ```
+
+<br>
+
 
 Dažādu ainavas metriku aprēķināšanai sugu ligzdošanas iecirkņu un tiem atbilstošo ainavu mērogos, sagatavots 100 m režģa centra punktu slānis un, ik TKS karšu lapai atsevišķā failā, atbilstoši buferētu laukumu slāņi.
 
@@ -115,6 +121,9 @@ for(i in seq_along(karsu_lapas)){
   st_write_parquet(rcbuff10000,paste0("./lapas/pts100_r10000_",lapa,".parquet"))
 }
 ```
+
+
+<br>
 
 
 

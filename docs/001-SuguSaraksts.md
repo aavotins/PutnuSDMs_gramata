@@ -1590,6 +1590,9 @@ Sugām raksturīgo ekosistēmu dalījums un izdalītās ligzdošanas iecirkņu g
 <p class="caption">(\#fig:AinavTelpas)Sugu dalījums ekosistēmās un ainavas platībās (sugu kodi ar zvaigznīti, raksturo telemetrijas pētījumu rezultātus; telemetrijas pētījumu un citiem rezultātiem ir atšķirīgi simboli; sugu kodi kā 2.1. tabulā)</p>
 </div>
 
+<br>
+
+
 
 
 ## Pamata apraksti novērojumu atlasei

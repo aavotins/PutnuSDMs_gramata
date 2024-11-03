@@ -132,6 +132,9 @@ for(i in seq_along(unikalie)){
 }
 ```
 
+<br>
+
+
 
 ## Q0: DW nosegums
 
@@ -229,6 +232,9 @@ ggplot()+
         panel.grid.major = element_blank())
 ggsave("./pic_missings.png",height = 3000,width=5000,units="px")
 ```
+
+
+<br>
 
 
 
@@ -377,6 +383,9 @@ sfarrow::st_write_parquet(dati_real,"./Q1_kulturas.parquet")
 ```
 
 
+<br>
+
+
 ### Q1.1: Ziemāji aramzemēs
 
 
@@ -431,6 +440,9 @@ ggplot(q11data,aes(sezona,proporcija,col=klase))+
 ggview(width=300,height=150,units="mm",dpi=600,device="png")
 ggsave(filename="./pic_q11.png",width=300,height=150,units="mm",dpi=600)
 ```
+
+<br>
+
 
 
 ### Q1.2: Ziemas rapsis
@@ -487,6 +499,9 @@ ggsave(filename="./pic_q12.png",width=200,height=100,units="mm",dpi=600)
 ```
 
 
+<br>
+
+
 
 ### Q1.3: Vasarāji aramzemēs
 
@@ -539,6 +554,9 @@ ggplot(q13data,aes(sezona,proporcija,col=klase))+
 ggview(width=300,height=100,units="mm",dpi=600,device="png")
 ggsave(filename="./pic_q13.png",width=300,height=100,units="mm",dpi=600)
 ```
+
+<br>
+
 
 
 ### Q1.4: Vasaras rapsis
@@ -594,6 +612,9 @@ ggsave(filename="./pic_q14.png",width=200,height=100,units="mm",dpi=600)
 ```
 
 
+<br>
+
+
 
 ### Q1.5: Auzas
 
@@ -645,6 +666,9 @@ ggplot(q15data,aes(sezona,proporcija,col=klase))+
 ggview(width=200,height=100,units="mm",dpi=600,device="png")
 ggsave(filename="./pic_q15.png",width=200,height=100,units="mm",dpi=600)
 ```
+
+
+<br>
 
 
 ### Q1.6: Kukurūza
@@ -699,6 +723,9 @@ ggplot(q16data,aes(sezona,proporcija,col=klase))+
 ggview(width=250,height=100,units="mm",dpi=600,device="png")
 ggsave(filename="./pic_q16.png",width=250,height=100,units="mm",dpi=600)
 ```
+
+<br>
+
 
 
 ### Q1.7: Papuves
@@ -788,6 +815,9 @@ ggview(width=300,height=150,units="mm",dpi=600,device="png")
 ggsave(filename="./pic_q17b.png",width=300,height=150,units="mm",dpi=600)
 ```
 
+<br>
+
+
 
 ### Q1.8: Ilggadīgie zālāji
 
@@ -875,6 +905,9 @@ ggsave(filename="./pic_q18b.png",width=300,height=150,units="mm",dpi=600)
 ```
 
 
+<br>
+
+
 ### Q1.9: Kultivētie zālāji
 
 
@@ -934,6 +967,9 @@ ggplot(q19data,aes(sezona,proporcija,col=klase))+
 ggview(width=300,height=100,units="mm",dpi=600,device="png")
 ggsave(filename="./pic_q19.png",width=300,height=100,units="mm",dpi=600)
 ```
+
+
+<br>
 
 
 ### Q1.10: Agļukoki
@@ -996,6 +1032,9 @@ ggplot(q110data,aes(sezona,proporcija,col=klase))+
 ggview(width=300,height=150,units="mm",dpi=600,device="png")
 ggsave(filename="./pic_q110.png",width=300,height=150,units="mm",dpi=600)
 ```
+
+
+<br>
 
 
 
@@ -1064,6 +1103,9 @@ ggplot(q111data,aes(sezona,proporcija,col=klase))+
 ggview(width=300,height=150,units="mm",dpi=600,device="png")
 ggsave(filename="./pic_q111.png",width=300,height=150,units="mm",dpi=600)
 ```
+
+<br>
+
 
 
 ### Q1.12: Zemās ogas
@@ -1137,6 +1179,9 @@ ggplot(q112data,aes(sezona,proporcija,col=klase))+
 ggview(width=250,height=100,units="mm",dpi=600,device="png")
 ggsave(filename="./pic_q112.png",width=250,height=100,units="mm",dpi=600)
 ```
+
+
+<br>
 
 
 
@@ -1213,6 +1258,9 @@ ggsave(filename="./pic_q113.png",width=400,height=100,units="mm",dpi=600)
 ```
 
 
+<br>
+
+
 
 ### Q1.14: Vagu un rušināmkultūras
 
@@ -1278,6 +1326,9 @@ ggplot(q114data,aes(sezona,proporcija,col=klase))+
 ggview(width=300,height=150,units="mm",dpi=600,device="png")
 ggsave(filename="./pic_q114.png",width=300,height=150,units="mm",dpi=600)
 ```
+
+
+<br>
 
 
 
@@ -1346,6 +1397,9 @@ ggplot(q115data,aes(sezona,proporcija,col=klase))+
 ggview(width=300,height=150,units="mm",dpi=600,device="png")
 ggsave(filename="./pic_q115.png",width=300,height=150,units="mm",dpi=600)
 ```
+
+
+<br>
 
 
 
@@ -1451,6 +1505,9 @@ ggview(width=300,height=150,units="mm",dpi=600,device="png")
 ggsave(filename="./pic_q1klasteri.png",
        width=300,height=150,units="mm",dpi=600)
 ```
+
+
+<br>
 
 
 ## Q2: Mežaudzes augstums sugu grupās
@@ -1699,6 +1756,9 @@ ggsave(filename="./pic_q22_trees.png",width=300,height=150,units="mm",dpi=600)
 ```
 
 
+<br>
+
+
 ## Q3: Topogrāfiskās kartes mitrāji
 
 Pieejamie topogrāfiskās kartes laukumi ir no 2016. gada vasaras beigu versijas. Līdz 2023. gadam ir sagaidāms, ka var būt notikušas dažādas hidroloģiskās izmaiņas, piemēram meliorācija un meliorācijas sistēmu atjaunošana, kā arī kūdras ieguves vietu paplašināšanās. Tajā pašā laikā, iespējams, arī kādu teritoriju applūšana meliorācijas sistēmu aizsērēšanas (u.tml.) dēļ. Diemžēl 2016. un 2017. gados ir bijušas mākoņainas vasaras kā dēļ plašās valsts daļās nav pieejama Dynamic World klasifikācija. Tuvākais relatīvi labi nosegtais gads ir 2018., kas, protams, ir pēc topogrāfiskās kartes sagatavošanas, tomēr tuvāk par citiem pieejamajiem.
@@ -1725,6 +1785,9 @@ Zemāk esošajā attēlā \@ref(fig:DWq31) ir raksturoša šo topogrāfiskās ka
 <img src="./Atteli/ch004_q31.png" alt="Topogrāfiskās kartes mitrāju plankumu saistība ar DW klasēm." width="100%" />
 <p class="caption">(\#fig:DWq31)Topogrāfiskās kartes mitrāju plankumu saistība ar DW klasēm.</p>
 </div>
+
+<br>
+
 
 Komandu rindas attēlu sagatavošanas un veiktās analīzes reproducēšanai (tiek izmantoti [LĢIA topogrāfiskā karte](#Chapter3.1.3) dati):
 
@@ -1872,6 +1935,9 @@ ggsave(filename="./pic_q31.png",width=300,height=200,units="mm",dpi=600)
 ```
 
 
+<br>
+
+
 ## Q4: Karjeri, kūdras ieguves vietas un ceļi
 
 Arī šeit izmantojām 2018. gada DW rezultātus. Ceļu gadījumā, protams, ir lielas pārmaiņas, jo sevišķi LVM apsaimniekotajās zemēs, bet šajā izpētes līmeni būs pietiekoši tikai ar topogrāfiskās kartes datiem.
@@ -1892,6 +1958,9 @@ Ceļi ir samērā šauri objekti un DW tiecās tos nepamanīt - sekojošajā att
 <img src="./Atteli/ch004_q41.png" alt="Topogrāfiskās kartes atklātās augsnes un ceļu plankumu saistība ar DW klasēm." width="100%" />
 <p class="caption">(\#fig:DWq41)Topogrāfiskās kartes atklātās augsnes un ceļu plankumu saistība ar DW klasēm.</p>
 </div>
+
+<br>
+
 
 Komandu rindas attēlu sagatavošanas un veiktās analīzes reproducēšanai (tiek izmantoti [LĢIA topogrāfiskā karte](#Chapter3.1.3) dati):
 
@@ -2038,6 +2107,9 @@ ggsave(filename="./pic_q41.png",width=300,height=200,units="mm",dpi=600)
 ```
 
 
+<br>
+
+
 
 ## Q5: Izcirtuma izmērs un forma
 
@@ -2069,12 +2141,18 @@ Meža nogabalos, kuriem zemes kategorija ir izcirtums, biežāk reģistrētā kl
 <p class="caption">(\#fig:DWq51)2023. gada DW klases dažādos 2022. gada izcirtumos.</p>
 </div>
 
+<br>
+
+
 Līdzīgi kā iepriekš, šīs klases uzpūstās vērtības ir saistītas ar blakus esošajiem nogabaliem (uz ko norāda pozitīvā perimetra-laukuma attiecība), saglabāto koku efektiem un paša nogabala izmēru (\@ref(fig:DWq51b) att.).
 
 <div class="figure">
 <img src="./Atteli/ch004_q51b.png" alt="Ar platību svērtā 2023. gada DW klases &quot;koki&quot; sastapšanas varbūtība dažādos 2022. gada izcirtumos, atkarībā no to perimetra-laukuma attiecības." width="100%" />
 <p class="caption">(\#fig:DWq51b)Ar platību svērtā 2023. gada DW klases "koki" sastapšanas varbūtība dažādos 2022. gada izcirtumos, atkarībā no to perimetra-laukuma attiecības.</p>
 </div>
+
+<br>
+
 
 Zemāk esošais attēls (\@ref(fig:DWq51c) att.) demonstrē precīzāku klasifikāciju lielākiem nogabaliem.
 
@@ -2286,6 +2364,9 @@ ggview(width=300,height=150,units="mm",dpi=600,device="png")
 ggsave(filename="./pic_q51c.png",width=300,height=150,units="mm",dpi=600)
 ```
 
+<br>
+
+
 
 ### Q5.2: senākas kailcirtes, bet vēl joprojām izcirtumi
 
@@ -2437,6 +2518,9 @@ ggplot(q52data,aes(sezona,proporcija,col=klase))+
 ggview(width=300,height=200,units="mm",dpi=600,device="png")
 ggsave(filename="./pic_q52.png",width=300,height=200,units="mm",dpi=600)
 ```
+
+<br>
+
 
 
 ## Q6: Zālāju transformācija uz aramzemēm
@@ -2619,6 +2703,9 @@ ggplot(q6data,aes(sezona,proporcija,col=klase))+
 ggview(width=300,height=150,units="mm",dpi=600,device="png")
 ggsave(filename="./pic_q6.png",width=300,height=150,units="mm",dpi=600)
 ```
+
+<br>
+
 
 
 ## Secinājumi

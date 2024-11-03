@@ -47,6 +47,9 @@ sfarrow::st_write_parquet(nogabali3, "nogabali.parquet")
 ```
 
 
+<br>
+
+
 
 ### Lauku Atbalsta Dienesta lauku informācija {#Chapter3.1.2}
 
@@ -100,6 +103,9 @@ table(validity) # OK
 # saglabāšana
 sfarrow::st_write_parquet(dati3, "LAD_lauki.parquet")
 ```
+
+<br>
+
 
 
 ### LĢIA topogrāfiskā karte {#Chapter3.1.3}
@@ -213,6 +219,9 @@ landus3=st_make_valid(landus2)
 sfarrow::st_write_parquet(landus3, "Topo_landusA.parquet")
 ```
 
+<br>
+
+
 ### Meliorācijas Kadastra Informācijas Sistēmas datubāze {#Chapter3.1.4}
 
 Meliorācijas Kadastra Informācijas Sistēmas datubāze 2018. gada jūnijā pēc pieprasījuma no Latvijas Universitātes studiju un pētniecības procesu nodrošināšanai saņemta no Zemkopības ministrijas nekustamo īpašumu daļas. Tās saturs pieejams [publiskai apskatei](https://www.melioracija.lv/?loc=540414;308053;1).
@@ -275,6 +284,9 @@ clcLV3=st_transform(clcLV3,crs=3059)
 # saglabāšana
 sfarrow::st_write_parquet(clcLV3, "CLC_LV_2018.parquet")
 ```
+
+<br>
+
 
 
 ### Sentinel-2 {#Chapter3.1.7}
@@ -345,6 +357,9 @@ for(i in seq_along(unikalie)){
 ```
 
 
+<br>
+
+
 
 ### *Dynamic World* {#Chapter3.1.8}
 
@@ -396,6 +411,9 @@ for(i in seq_along(unikalie)){
 ```
 
 
+<br>
+
+
 
 ### *The Global Forest Watch* {#Chapter3.1.9}
 
@@ -421,6 +439,9 @@ tcl=ifel(treecoverloss<1,NA,treecoverloss)
 tcl2=terra::project(tcl,paraugs)
 tcl3=mask(tcl2,paraugs,filename="./TreeCoverLossYear.tif",overwrite=TRUE)
 ```
+
+<br>
+
 
 ### Palsar Forests {#Chapter3.1.10}
 
@@ -461,6 +482,9 @@ fnf_X=ifel(fnfC<=2&fnfC>=1,1,NA)
 # Maskēšana un saglabāšana
 fnf_XX=mask(fnf_X,paraugs,filename="./Palsar_Forests.tif",overwrite=TRUE)
 ```
+
+<br>
+
 
 
 ### ERA5 Land {#Chapter3.1.11}
@@ -525,6 +549,9 @@ for(i in seq_along(unikalie)){
 ```
 
 
+<br>
+
+
 
 ### Augsnes auglīgums {#Chapter3.1.12}
 
@@ -544,6 +571,9 @@ oc=rast("./IevadesDati/Augsnes/noIvo/LV_OC.tif")
 oc2=project(oc,template_100m,use_gdal=TRUE,method="bilinear")
 writeRaster(oc2,"./OrganicCarbon.tif")
 ```
+
+
+<br>
 
 
 ### Digitālie reljefa modeļi {#Chapter3.1.13}
@@ -624,6 +654,9 @@ slipumi=terrain(reljefs, v="slope", neighbors=8, unit="degrees",
 ```
 
 
+<br>
+
+
 
 ## Ievades produkti {#Chapter3.2}
 
@@ -677,12 +710,15 @@ caurumains=app(c(reljefs,caurumi2),fun="min",na.rm=TRUE,
 ```
 
 
+<br>
+
+
 
 ### Ainava {#Chapter3.2.2}
 
 Šajā vingrinājumā "ainava" ir dažādu zemes seguma un lietojuma veidu klašu pārstāvniecība, kurā svarīga ir šo klašu zīmēšanas secība, jo nereti dažādu avotu telpiskajiem datiem ir savstarpēja robežu neatbilstība, kas liek risināt gan to savstarpējo pārklāšanos (1), gan aizpildīt robus vietām, par kurām nav datubāzu informāicja (2), un izvēle par objektu uzsvēršanu ar kādu apstrādi, piemēram, buferēšanu, jo daļa vides raksturošanai (jo sevišķi, malas efektu) nozīmīgu elementu var būt ar tik mazu laukumu vai tādu novietojumu, ka rasterizāicjas procesā tie pazūd (3). Pamata ainavas slānim nozīme ir arī kalpot kā maskai turpmāko vides aprakstu sagatavošanā. Šeit raksturota pamata (vienkāršas) ainavas izstrāde un sekojošajās apakšnodaļās tās bagātināšana ar klasēm specifiskākiem vides ekoģeogrāfiskajiem mainīgajiem. Vienkāršā ainava saglabāta failā `Ainava_vienk_mask.tif`, kurā esošās klases un to izveidošanas procedūra raksturota sekojošajā uzskaitījumā:
 
-- klase `100` - ceļi: dažādu avotu ceļi, **aizpildīta secībā** - dominē pār klasēm ar lielāku vērtību, lai nepazustu relatīvi neliela izmēra objekti un nodrošinātu informāciju par malām. Šīs klases izveidošanai apvienoti:
+- klase `100` - **ceļi**: dažādu avotu ceļi, **aizpildīta secībā** - dominē pār klasēm ar lielāku vērtību, lai nepazustu relatīvi neliela izmēra objekti un nodrošinātu informāciju par malām. Šīs klases izveidošanai apvienoti:
 
   -- [topogrāfiskās kartes](#Chapter3.1.3) slāņi `road_A` un `road_L` (izņemot mazāko platuma grupu, kura visbiežāk neveido vienlaidus pārrāvumu vainagu klājā, [skatīt atlasi](#Chapter3.1.3)), pirms rasterizēšanas tos buferējot par 10 m;
   
@@ -803,7 +839,10 @@ rm(rastrs_celi)
 ```
 
 
-- klase `200` - ūdeņi: dažādu avotu ūdensobjekti, **aizpildīta secībā** - dominē pār klasēm ar lielāku vērtību, lai nepazustu relatīvi neliela izmēra objekti un nodrošinātu informāciju par malām.
+<br>
+
+
+- klase `200` - **ūdeņi**: dažādu avotu ūdensobjekti, **aizpildīta secībā** - dominē pār klasēm ar lielāku vērtību, lai nepazustu relatīvi neliela izmēra objekti un nodrošinātu informāciju par malām.
 
 
 
@@ -828,8 +867,11 @@ template_r=raster(template_t)
 ```
 
 
+<br>
 
-- klase `300` - lauki: lauksaimniecības zemes LAD lauku blokos **aizpildīta secībā** - dominē pār klasēm ar lielāku vērtību, tomēr pēc pamata klašu izveidošanas, robu aizpildīšanā papildināta ar informāciju no *Dynamic World*.
+
+
+- klase `300` - **lauki**: lauksaimniecības zemes LAD lauku blokos **aizpildīta secībā** - dominē pār klasēm ar lielāku vērtību, tomēr pēc pamata klašu izveidošanas, robu aizpildīšanā papildināta ar informāciju no *Dynamic World*.
 
 
 
@@ -854,8 +896,11 @@ template_r=raster(template_t)
 ```
 
 
+<br>
 
-- klase `400` - mazdārziņi un augļudārzi, vasarnīcas, **aizpildīta secībā** - dominē pār klasēm ar lielāku vērtību.
+
+
+- klase `400` - **mazdārziņi un augļudārzi, vasarnīcas**, **aizpildīta secībā** - dominē pār klasēm ar lielāku vērtību.
 
 
 
@@ -880,10 +925,13 @@ template_r=raster(template_t)
 ```
 
 
+<br>
 
-- klase `500` - apbūve: apbūvētās platības, **aizpildīta beigās**, izmantojot informāciju no *Dynamic World* par vietām, kuras nav nosegtas ar citām klasēm.
 
-- klase `600` - meži, krūmāji, izcirtumi:
+
+- klase `500` - **apbūve**: apbūvētās platības, **aizpildīta beigās**, izmantojot informāciju no *Dynamic World* par vietām, kuras nav nosegtas ar citām klasēm.
+
+- klase `600` - **meži, krūmāji, izcirtumi**:
 
 
 
@@ -908,8 +956,11 @@ template_r=raster(template_t)
 ```
 
 
+<br>
 
-- klase `700` - mitrāji: 
+
+
+- klase `700` - **mitrāji**: 
 
 
 
@@ -934,8 +985,11 @@ template_r=raster(template_t)
 ```
 
 
+<br>
 
-- klase `800` - smiltāji un kūdras lauki:
+
+
+- klase `800` - **smiltāji un kūdras lauki**:
 
 
 
@@ -960,6 +1014,15 @@ template_t=rast("./LV10m_10km.tif")
 template_r=raster(template_t)
 ```
 
+
+
+<br>
+
+**Apvienošana un aizpildīšana**.
+
+
+
+<br>
 
 
 

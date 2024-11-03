@@ -523,6 +523,7 @@ div.csl-indent {
 <span id="cb26-36"><a href="Chapter4.html#cb26-36" tabindex="-1"></a>  maskets<span class="ot">=</span><span class="fu">mask</span>(mozaika,paraugs,<span class="at">filename=</span>beigu_cels,<span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
 <span id="cb26-37"><a href="Chapter4.html#cb26-37" tabindex="-1"></a>}</span></code></pre></div>
 </details>
+<p><br></p>
 <div id="q0-dw-nosegums" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> Q0: DW nosegums<a href="Chapter4.html#q0-dw-nosegums" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Katram gadam (2015-2023) ik iepriekš minētajam sezonas griezumam DW datu pārklājum ir apskatāmi zemāk esošajā attēlā <a href="Chapter4.html#fig:DWq00">5.1</a>. Kā jau sagaidāms, 2015. gadā ir trūcīgs nosegums. Pārskata periodā resurss ir samērā droši izmantojams kopš 2018. gada, kopš 2016. gada pielietojamība ir vērtējama, atkarībā no mērķiem un vērtējama saistībā ar sezonas griezumiem.</p>
@@ -616,6 +617,7 @@ Figure 5.1: DW rezultātu pieejamība dažādos sezonālajos griezumos kopš Sen
 <span id="cb27-79"><a href="Chapter4.html#cb27-79" tabindex="-1"></a>        <span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>())</span>
 <span id="cb27-80"><a href="Chapter4.html#cb27-80" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;./pic_missings.png&quot;</span>,<span class="at">height =</span> <span class="dv">3000</span>,<span class="at">width=</span><span class="dv">5000</span>,<span class="at">units=</span><span class="st">&quot;px&quot;</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="q1-lauksaimniecības-kultūras" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> Q1: Lauksaimniecības kultūras<a href="Chapter4.html#q1-lauksaimniecības-kultūras" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -740,6 +742,7 @@ Figure 5.1: DW rezultātu pieejamība dažādos sezonālajos griezumos kopš Sen
 <span id="cb28-95"><a href="Chapter4.html#cb28-95" tabindex="-1"></a><span class="co"># rezultāta saglabāšana</span></span>
 <span id="cb28-96"><a href="Chapter4.html#cb28-96" tabindex="-1"></a>sfarrow<span class="sc">::</span><span class="fu">st_write_parquet</span>(dati_real,<span class="st">&quot;./Q1_kulturas.parquet&quot;</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 <div id="q1.1-ziemāji-aramzemēs" class="section level3 hasAnchor" number="5.2.1">
 <h3><span class="header-section-number">5.2.1</span> Q1.1: Ziemāji aramzemēs<a href="Chapter4.html#q1.1-ziemāji-aramzemēs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Sekojošajā attēlā <a href="Chapter4.html#fig:DWq11">5.2</a> ir ilustrēta ziemāju aramzemēs (kultūru kodi “121”,“122”,“132”,“112”,“116”,“151”) saistība ar DW klasēm dažādos temporālajos griezumos. Skaitļi attēlu daļās norāda klases “crops” ar lauka platību svērto vidējo īpatsvaru. Redzams, ka zemākā atbilstība ir izmantojot tikai vasaras mēnešus. Ievērojami zemāka par atlikušajām klasēm ir arī tikai pavasara klasifikācija. Atlikušās ir visai līdzīgas, nedaudz pārāki temporālie griezumi šķiet maijā-jūnijā un maijā-jūlijā.</p>
@@ -789,6 +792,7 @@ Figure 5.2: Lauksaimniecības kultūru grupas “ziemāji” saistība ar DW kla
 <span id="cb29-35"><a href="Chapter4.html#cb29-35" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb29-36"><a href="Chapter4.html#cb29-36" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q11.png&quot;</span>,<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="q1.2-ziemas-rapsis" class="section level3 hasAnchor" number="5.2.2">
 <h3><span class="header-section-number">5.2.2</span> Q1.2: Ziemas rapsis<a href="Chapter4.html#q1.2-ziemas-rapsis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -837,6 +841,7 @@ Figure 5.3: Lauksaimniecības kultūru grupas “ziemas rapsis” saistība ar D
 <span id="cb30-33"><a href="Chapter4.html#cb30-33" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">200</span>,<span class="at">height=</span><span class="dv">100</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb30-34"><a href="Chapter4.html#cb30-34" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q12.png&quot;</span>,<span class="at">width=</span><span class="dv">200</span>,<span class="at">height=</span><span class="dv">100</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="q1.3-vasarāji-aramzemēs" class="section level3 hasAnchor" number="5.2.3">
 <h3><span class="header-section-number">5.2.3</span> Q1.3: Vasarāji aramzemēs<a href="Chapter4.html#q1.3-vasarāji-aramzemēs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -885,6 +890,7 @@ Figure 5.4: Lauksaimniecības kultūru grupas “vasarāji aramzemēs” saistī
 <span id="cb31-33"><a href="Chapter4.html#cb31-33" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">100</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb31-34"><a href="Chapter4.html#cb31-34" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q13.png&quot;</span>,<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">100</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="q1.4-vasaras-rapsis" class="section level3 hasAnchor" number="5.2.4">
 <h3><span class="header-section-number">5.2.4</span> Q1.4: Vasaras rapsis<a href="Chapter4.html#q1.4-vasaras-rapsis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -932,6 +938,7 @@ Figure 5.5: Lauksaimniecības kultūru grupas “vasaras rapsis” saistība ar 
 <span id="cb32-32"><a href="Chapter4.html#cb32-32" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">200</span>,<span class="at">height=</span><span class="dv">100</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb32-33"><a href="Chapter4.html#cb32-33" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q14.png&quot;</span>,<span class="at">width=</span><span class="dv">200</span>,<span class="at">height=</span><span class="dv">100</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="q1.5-auzas" class="section level3 hasAnchor" number="5.2.5">
 <h3><span class="header-section-number">5.2.5</span> Q1.5: Auzas<a href="Chapter4.html#q1.5-auzas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -979,6 +986,7 @@ Figure 5.6: Lauksaimniecības kultūru grupas “auzas” saistība ar DW klasē
 <span id="cb33-32"><a href="Chapter4.html#cb33-32" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">200</span>,<span class="at">height=</span><span class="dv">100</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb33-33"><a href="Chapter4.html#cb33-33" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q15.png&quot;</span>,<span class="at">width=</span><span class="dv">200</span>,<span class="at">height=</span><span class="dv">100</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="q1.6-kukurūza" class="section level3 hasAnchor" number="5.2.6">
 <h3><span class="header-section-number">5.2.6</span> Q1.6: Kukurūza<a href="Chapter4.html#q1.6-kukurūza" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1027,6 +1035,7 @@ Figure 5.7: Lauksaimniecības kultūru grupas “kukurūza” saistība ar DW kl
 <span id="cb34-33"><a href="Chapter4.html#cb34-33" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">250</span>,<span class="at">height=</span><span class="dv">100</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb34-34"><a href="Chapter4.html#cb34-34" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q16.png&quot;</span>,<span class="at">width=</span><span class="dv">250</span>,<span class="at">height=</span><span class="dv">100</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="q1.7-papuves" class="section level3 hasAnchor" number="5.2.7">
 <h3><span class="header-section-number">5.2.7</span> Q1.7: Papuves<a href="Chapter4.html#q1.7-papuves" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1109,6 +1118,7 @@ Figure 5.9: Lauksaimniecības kultūru grupas “papuves” perimetra-laukuma at
 <span id="cb35-60"><a href="Chapter4.html#cb35-60" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb35-61"><a href="Chapter4.html#cb35-61" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q17b.png&quot;</span>,<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="q1.8-ilggadīgie-zālāji" class="section level3 hasAnchor" number="5.2.8">
 <h3><span class="header-section-number">5.2.8</span> Q1.8: Ilggadīgie zālāji<a href="Chapter4.html#q1.8-ilggadīgie-zālāji" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1189,6 +1199,7 @@ Figure 5.11: Lauksaimniecības kultūru grupas “ilggadīgi zālāji” perimet
 <span id="cb36-57"><a href="Chapter4.html#cb36-57" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb36-58"><a href="Chapter4.html#cb36-58" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q18b.png&quot;</span>,<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="q1.9-kultivētie-zālāji" class="section level3 hasAnchor" number="5.2.9">
 <h3><span class="header-section-number">5.2.9</span> Q1.9: Kultivētie zālāji<a href="Chapter4.html#q1.9-kultivētie-zālāji" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1243,6 +1254,7 @@ Figure 5.12: Lauksaimniecības kultūru grupas “kultivēti zālāji” saistī
 <span id="cb37-39"><a href="Chapter4.html#cb37-39" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">100</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb37-40"><a href="Chapter4.html#cb37-40" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q19.png&quot;</span>,<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">100</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="q1.10-agļukoki" class="section level3 hasAnchor" number="5.2.10">
 <h3><span class="header-section-number">5.2.10</span> Q1.10: Agļukoki<a href="Chapter4.html#q1.10-agļukoki" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1298,6 +1310,7 @@ Figure 5.13: Lauksaimniecības kultūru grupas “augļukoki” saistība ar DW 
 <span id="cb38-40"><a href="Chapter4.html#cb38-40" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb38-41"><a href="Chapter4.html#cb38-41" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q110.png&quot;</span>,<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="q1.11-ogu-krūmi" class="section level3 hasAnchor" number="5.2.11">
 <h3><span class="header-section-number">5.2.11</span> Q1.11: Ogu-krūmi<a href="Chapter4.html#q1.11-ogu-krūmi" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1360,6 +1373,7 @@ Figure 5.14: Lauksaimniecības kultūru grupas “ogu-krūmi” saistība ar DW 
 <span id="cb39-47"><a href="Chapter4.html#cb39-47" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb39-48"><a href="Chapter4.html#cb39-48" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q111.png&quot;</span>,<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="q1.12-zemās-ogas" class="section level3 hasAnchor" number="5.2.12">
 <h3><span class="header-section-number">5.2.12</span> Q1.12: Zemās ogas<a href="Chapter4.html#q1.12-zemās-ogas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1429,6 +1443,7 @@ Figure 5.15: Lauksaimniecības kultūru grupas “zemās ogas” saistība ar DW
 <span id="cb40-54"><a href="Chapter4.html#cb40-54" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">250</span>,<span class="at">height=</span><span class="dv">100</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb40-55"><a href="Chapter4.html#cb40-55" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q112.png&quot;</span>,<span class="at">width=</span><span class="dv">250</span>,<span class="at">height=</span><span class="dv">100</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="q1.13-bezatbalsta-platība" class="section level3 hasAnchor" number="5.2.13">
 <h3><span class="header-section-number">5.2.13</span> Q1.13: Bezatbalsta platība<a href="Chapter4.html#q1.13-bezatbalsta-platība" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1498,6 +1513,7 @@ Figure 5.16: Lauksaimniecības kultūru grupas “bezatbalsta platības” saist
 <span id="cb41-54"><a href="Chapter4.html#cb41-54" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">400</span>,<span class="at">height=</span><span class="dv">100</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb41-55"><a href="Chapter4.html#cb41-55" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q113.png&quot;</span>,<span class="at">width=</span><span class="dv">400</span>,<span class="at">height=</span><span class="dv">100</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="q1.14-vagu-un-rušināmkultūras" class="section level3 hasAnchor" number="5.2.14">
 <h3><span class="header-section-number">5.2.14</span> Q1.14: Vagu un rušināmkultūras<a href="Chapter4.html#q1.14-vagu-un-rušināmkultūras" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1560,6 +1576,7 @@ Figure 5.17: Lauksaimniecības kultūru grupas “vagu un rušināmkultūras” 
 <span id="cb42-47"><a href="Chapter4.html#cb42-47" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb42-48"><a href="Chapter4.html#cb42-48" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q114.png&quot;</span>,<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="q1.15-īscirtmeta-atvasāji-un-enerģijas-kultūras" class="section level3 hasAnchor" number="5.2.15">
 <h3><span class="header-section-number">5.2.15</span> Q1.15: Īscirtmeta atvasāji un enerģijas kultūras<a href="Chapter4.html#q1.15-īscirtmeta-atvasāji-un-enerģijas-kultūras" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1622,6 +1639,7 @@ Figure 5.18: Lauksaimniecības kultūru grupas “īscirtmeta atvasāji un ener�
 <span id="cb43-47"><a href="Chapter4.html#cb43-47" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb43-48"><a href="Chapter4.html#cb43-48" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q115.png&quot;</span>,<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="q1-lad-kultūru-stratificēšanai" class="section level3 hasAnchor" number="5.2.16">
 <h3><span class="header-section-number">5.2.16</span> Q1: LAD kultūru stratificēšanai<a href="Chapter4.html#q1-lad-kultūru-stratificēšanai" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1706,6 +1724,7 @@ Figure 5.19: PCA rezultāti DW klašu sastopamībai sugu izplatības modelēšan
 <span id="cb44-47"><a href="Chapter4.html#cb44-47" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q1klasteri.png&quot;</span>,</span>
 <span id="cb44-48"><a href="Chapter4.html#cb44-48" tabindex="-1"></a>       <span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 </div>
 <div id="q2-mežaudzes-augstums-sugu-grupās" class="section level2 hasAnchor" number="5.3">
@@ -1938,6 +1957,7 @@ Figure 5.21: Ar platību svērtā DW klases “koki” sastapšanas varbūtība 
 <span id="cb45-196"><a href="Chapter4.html#cb45-196" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb45-197"><a href="Chapter4.html#cb45-197" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q22_trees.png&quot;</span>,<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="q3-topogrāfiskās-kartes-mitrāji" class="section level2 hasAnchor" number="5.4">
 <h2><span class="header-section-number">5.4</span> Q3: Topogrāfiskās kartes mitrāji<a href="Chapter4.html#q3-topogrāfiskās-kartes-mitrāji" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -1959,6 +1979,7 @@ Figure 5.21: Ar platību svērtā DW klases “koki” sastapšanas varbūtība 
 Figure 5.22: Topogrāfiskās kartes mitrāju plankumu saistība ar DW klasēm.
 </p>
 </div>
+<p><br></p>
 <p>Komandu rindas attēlu sagatavošanas un veiktās analīzes reproducēšanai (tiek izmantoti <a href="Chapter3.html#Chapter3.1.3">LĢIA topogrāfiskā karte</a> dati):</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="Chapter4.html#cb46-1" tabindex="-1"></a><span class="co"># libs</span></span>
@@ -2100,6 +2121,7 @@ Figure 5.22: Topogrāfiskās kartes mitrāju plankumu saistība ar DW klasēm.
 <span id="cb46-137"><a href="Chapter4.html#cb46-137" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">200</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb46-138"><a href="Chapter4.html#cb46-138" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q31.png&quot;</span>,<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">200</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="q4-karjeri-kūdras-ieguves-vietas-un-ceļi" class="section level2 hasAnchor" number="5.5">
 <h2><span class="header-section-number">5.5</span> Q4: Karjeri, kūdras ieguves vietas un ceļi<a href="Chapter4.html#q4-karjeri-kūdras-ieguves-vietas-un-ceļi" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -2118,6 +2140,7 @@ Figure 5.22: Topogrāfiskās kartes mitrāju plankumu saistība ar DW klasēm.
 Figure 5.23: Topogrāfiskās kartes atklātās augsnes un ceļu plankumu saistība ar DW klasēm.
 </p>
 </div>
+<p><br></p>
 <p>Komandu rindas attēlu sagatavošanas un veiktās analīzes reproducēšanai (tiek izmantoti <a href="Chapter3.html#Chapter3.1.3">LĢIA topogrāfiskā karte</a> dati):</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="Chapter4.html#cb47-1" tabindex="-1"></a><span class="co"># libs</span></span>
@@ -2258,6 +2281,7 @@ Figure 5.23: Topogrāfiskās kartes atklātās augsnes un ceļu plankumu saistī
 <span id="cb47-136"><a href="Chapter4.html#cb47-136" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">200</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb47-137"><a href="Chapter4.html#cb47-137" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q41.png&quot;</span>,<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">200</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="q5-izcirtuma-izmērs-un-forma" class="section level2 hasAnchor" number="5.6">
 <h2><span class="header-section-number">5.6</span> Q5: Izcirtuma izmērs un forma<a href="Chapter4.html#q5-izcirtuma-izmērs-un-forma" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -2283,6 +2307,7 @@ Figure 5.23: Topogrāfiskās kartes atklātās augsnes un ceļu plankumu saistī
 Figure 5.24: 2023. gada DW klases dažādos 2022. gada izcirtumos.
 </p>
 </div>
+<p><br></p>
 <p>Līdzīgi kā iepriekš, šīs klases uzpūstās vērtības ir saistītas ar blakus esošajiem nogabaliem (uz ko norāda pozitīvā perimetra-laukuma attiecība), saglabāto koku efektiem un paša nogabala izmēru (<a href="Chapter4.html#fig:DWq51b">5.25</a> att.).</p>
 <div class="figure"><span style="display:block;" id="fig:DWq51b"></span>
 <img src="Atteli/ch004_q51b.png" alt="Ar platību svērtā 2023. gada DW klases &quot;koki&quot; sastapšanas varbūtība dažādos 2022. gada izcirtumos, atkarībā no to perimetra-laukuma attiecības." width="100%" />
@@ -2290,6 +2315,7 @@ Figure 5.24: 2023. gada DW klases dažādos 2022. gada izcirtumos.
 Figure 5.25: Ar platību svērtā 2023. gada DW klases “koki” sastapšanas varbūtība dažādos 2022. gada izcirtumos, atkarībā no to perimetra-laukuma attiecības.
 </p>
 </div>
+<p><br></p>
 <p>Zemāk esošais attēls (<a href="Chapter4.html#fig:DWq51c">5.26</a> att.) demonstrē precīzāku klasifikāciju lielākiem nogabaliem.</p>
 <div class="figure"><span style="display:block;" id="fig:DWq51c"></span>
 <img src="Atteli/ch004_q51c.png" alt="Ar platību svērtā 2023. gada DW klases &quot;koki&quot; sastapšanas varbūtība dažādos 2022. gada izcirtumos, atkarībā no to platības." width="100%" />
@@ -2495,6 +2521,7 @@ Figure 5.26: Ar platību svērtā 2023. gada DW klases “koki” sastapšanas v
 <span id="cb48-193"><a href="Chapter4.html#cb48-193" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb48-194"><a href="Chapter4.html#cb48-194" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q51c.png&quot;</span>,<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="q5.2-senākas-kailcirtes-bet-vēl-joprojām-izcirtumi" class="section level3 hasAnchor" number="5.6.2">
 <h3><span class="header-section-number">5.6.2</span> Q5.2: senākas kailcirtes, bet vēl joprojām izcirtumi<a href="Chapter4.html#q5.2-senākas-kailcirtes-bet-vēl-joprojām-izcirtumi" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -2640,6 +2667,7 @@ Figure 5.27: Ar platību svērtā 2023. gada DW klašu sastopamība kopš 2013. 
 <span id="cb49-128"><a href="Chapter4.html#cb49-128" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">200</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb49-129"><a href="Chapter4.html#cb49-129" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q52.png&quot;</span>,<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">200</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 </div>
 <div id="q6-zālāju-transformācija-uz-aramzemēm" class="section level2 hasAnchor" number="5.7">
@@ -2807,6 +2835,7 @@ Figure 5.28: Ar platību svērtā 2018. gada DW klašu sastopamība 2018. gadā 
 <span id="cb50-137"><a href="Chapter4.html#cb50-137" tabindex="-1"></a><span class="fu">ggview</span>(<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>,<span class="at">device=</span><span class="st">&quot;png&quot;</span>)</span>
 <span id="cb50-138"><a href="Chapter4.html#cb50-138" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename=</span><span class="st">&quot;./pic_q6.png&quot;</span>,<span class="at">width=</span><span class="dv">300</span>,<span class="at">height=</span><span class="dv">150</span>,<span class="at">units=</span><span class="st">&quot;mm&quot;</span>,<span class="at">dpi=</span><span class="dv">600</span>)</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="secinājumi" class="section level2 hasAnchor" number="5.8">
 <h2><span class="header-section-number">5.8</span> Secinājumi<a href="Chapter4.html#secinājumi" class="anchor-section" aria-label="Anchor link to header"></a></h2>
