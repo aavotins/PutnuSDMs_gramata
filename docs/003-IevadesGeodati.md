@@ -1638,7 +1638,7 @@ template_r=raster(template_t)
 dynworld=rast("./DW_2023_apraug.tif")
 klases=matrix(c(0,200,
               1,620,
-              2,320,
+              2,330,
               3,720,
               4,310,
               5,710,
