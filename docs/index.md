@@ -81,7 +81,7 @@ atkārto direktoriju koka izveidi lietotāja norādītā vietā un īsi skaidro 
 
 
 ``` r
-# references slāņiem
+# references slāņiem ----
 dir.create("./Templates") # virsmape projekta direktorijā
 dir.create("./Templates/TemplateGrids") # vektordatiem, režģiem
 dir.create("./Templates/TemplateGrids/lapas") # vektordatiem (režģiem) karšu lapās
@@ -89,61 +89,147 @@ dir.create("./Templates/TemplateGridPoints") # vektordatu režģu centriem
 dir.create("./Templates/TemplateGridPoints/lapas") # vektordatu režģu centriem karšu lapās
 dir.create("./Templates/TemplateRasters") # rastra (harmonizēšanas) slāņiem
 
-# ievades datu produkti (10 m)
-dir.create("./Rastri_10m")
+# ievades datu produkti (10 m) ----
+dir.create("./Rastri_10m") ----
 
-# ievades datu produkti (500 m)
+# ievades datu produkti (500 m) ----
 dir.create("./Rastri_500m")
 
-# Ekoģeogrāfiskie mainīgie (ar apakšmapēm)
+# Ekoģeogrāfiskie mainīgie (ar apakšmapēm) ----
 dir.create("./Rastri_100m") 
 dir.create("./Rastri_100m/RAW") # tiešie rezultāti. Ne visi ir harmoniski
 dir.create("./Rastri_100m/Proj") # harmonizēti pārklājumi
 dir.create("./Rastri_100m/Scaled") # centrāti un mērogoti harmonizētie pārklājumi
 
-# VidesParmainas - direktorija vides pārmaiņu aprēķināšanai
+# VidesParmainas  ----
+# - direktorija vides pārmaiņu aprēķināšanai
 dir.create("./VidesParmainas") 
 dir.create("./VidesParmainas/Parmainam") # DynamicWorld ikgadējie slāņi pēc apstrādes, kas raksturota atsevišķā nodaļā
 
 
 
-# Ievades dati - sarežģīta struktūra! Ietver gan datu izvietojumu, gan apstrādi. Haoss.
-## Ainava
+# Ievades dati ----
+# - sarežģīta struktūra! Ietver gan datu izvietojumu, gan apstrādi. Haoss.
+dir.create("./IevadesDati") 
+## Ainava ----
+dir.create("./IevadesDati/ainava") 
+## šajā direktorijā norisinās ievērojama daļa EGV sagatavošanas, tādēļ ir daudz 
+## skriptu un apakšdirektoriju
+### Malas ----
+dir.create("./IevadesDati/ainava/Malas") 
+### malas raksturojošo slāņu sagatavošanai
+### Klases platība ----
+dir.create("./IevadesDati/ainava/ClassArea") 
+### klases platību raksturojošo slāņu sagatavošanai
+### Šenona daudzveidības indeksi ----
+dir.create("./IevadesDati/ainava/Daudzveidibai") 
+### Šenona daudzveidības indeksu aprēķiniem
+
+## Atkritumi ----
+dir.create("./IevadesDati/atkritumi") 
+# šeit ievieto infromāciju par atkritumu poligoniem, glabātuvēm, šķirotavām utml
+
+## Augsnes ----
+dir.create("./IevadesDati/Augsnes") 
+dir.create("./IevadesDati/Augsnes/noIvo") # EU JRC augšņu slāņi 
 
 
-## Atkritumi
+## CLC ----
+dir.create("./IevadesDati/CLC") 
+## CorineLandCover 2018 informācija
 
-## Augsnes
+## distances  ----
+dir.create("./IevadesDati/distances") 
+## Komandu rindas EGV veidošanai
 
-## CLC
+## DynamicWorld ----
+dir.create("./IevadesDati/DynamicWorld") 
+## Šeit ir veikta resursa izpēta, radot visai plašu struktūru
+dir.create("./IevadesDati/DynamicWorld/DynamicWorld_Eksperimentam") 
+### Apakšmapes ----
+dir.create("./IevadesDati/DynamicWorld/DynamicWorld_Eksperimentam/DWE_float")
+### ^ šeit ievieto GEE lejupielādi
+dir.create("./IevadesDati/DynamicWorld/DynamicWorld_Eksperimentam/DWE_mosaic") 
+### ^ šeit ievieto DWE_float apstrādi
+dir.create("./IevadesDati/DynamicWorld/DynamicWorld_Eksperimentam/DWE_missing") 
+### ^ šeit aprēķina informācijas seguma robus
 
-## distances 
 
-## DynamicWorld
+## klimats ----
+dir.create("./IevadesDati/klimats") 
+## ar apakšmapēm
+### RAW ----
+dir.create("./IevadesDati/klimats/RAW")
+### ^ šeit ievieto lejupielādi no GEE
+### mozaikas ----
+dir.create("./IevadesDati/klimats/mozaikas")
+### ^ šeit ievieto apstrādes rezultātu
 
-## EU_JRC - pie augsnes
 
-## klimats
+## koki ----
+dir.create("./IevadesDati/koki") 
+## Zemes novērošanas dati par kokiem un mežiem
+## ar apakšmapēm
+### RAW ----
+dir.create("./IevadesDati/koki/RAW") 
+### ^ šeit ievieto lejupielādi no GEE
 
-## koki
+## LAD ----
+dir.create("./IevadesDati/LAD") 
+## ^ šeit novieto un apstrādā LAD datus
 
-## LAD
+## LV_EEZ ----
+dir.create("./IevadesDati/LV_EEZ") 
+## ^ šeit novieto un slāni ar Latvijas Ekskluzīvās Ekonomiskās zonas ūdeņiem
 
-## LV_EEZ
+## LVM_AtvertieDati ----
+dir.create("./IevadesDati/LVM_AtvertieDati") 
+dir.create("./IevadesDati/LVM_AtvertieDati/lejupielades") 
+## ^ šeit ievietos no atvērto datu portāla lejupielādētos 
+## valsts akciju sabiedŗibas "Latvijas valsts meži" datus
 
-## LVM_AtvertieDati
+## MKIS ----
+dir.create("./IevadesDati/MKIS") 
+## ^ šeit ievietos meliorācijas kadastra informācijas sistēmas datus 
 
-## MKIS
+## MVR ----
+dir.create("./IevadesDati/MVR") 
+## ^ šeit ievietos Valsts Meža dienesta MEža Valsts reģistra datus 
 
-## MVR
+## Noverojumi ----
+dir.create("./IevadesDati/Noverojumi") 
+## ^ šeit ievietos apkopotos putnu novērojumus 
 
-## Noverojumi
+## reljefs ----
+dir.create("./IevadesDati/reljefs") 
+## ar DEM saistītās procedūras un dati. Satur apakšmapes
+### meanDEM_1mOLD ----
+dir.create("./IevadesDati/reljefs/meanDEM_1mOLD") 
+### ^ šeit ievieto ievades DEM 1m
+### Nartiss_visa_Latvija ----
+dir.create("./IevadesDati/reljefs/Nartiss_visa_Latvija") 
+### ^ šeit ievieto 10 m DEM bez robiem. Mēs izmantojām Māra Nartiša izstrādāto
+### meanDEM_10mOLD ----
+dir.create("./IevadesDati/reljefs/meanDEM_10mOLD") 
+### ^ šeit ievieto savienošanas rezultātu
+### Reljefa ainavas līmeņa parametru sagatavošas direktorijas:
+dir.create("./IevadesDati/reljefs/DiS_area_r500") 
+dir.create("./IevadesDati/reljefs/DiS_area_r1250") 
+dir.create("./IevadesDati/reljefs/DiS_area_r3000") 
+dir.create("./IevadesDati/reljefs/DiS_area_r10000") 
 
-## reljefs
 
-## S2indices
+## S2indices ----
+dir.create("./IevadesDati/S2indices") 
+dir.create("./IevadesDati/S2indices/RAW") 
+### ^ lejupielāde no GEE
+dir.create("./IevadesDati/S2indices/mozaikas") 
+### ^ apstrādes rezultāts
 
-## topo
+## topo ----
+dir.create("./IevadesDati/topo") 
+## ^ šeit ievieto Latvijas Ģeotelpiskās Infromācijas Aaģentūras topogrāfiskās 
+## kartes (M:10000) datus 
 ```
 
 
@@ -154,8 +240,8 @@ Vispārīgā darba un informācijas plūsma projektā ir ilustrēta sekojošajā
 <div class="figure">
 
 ```{=html}
-<div class="grViz html-widget html-fill-item" id="htmlwidget-cfc06e629be4d90f3316" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-cfc06e629be4d90f3316">{"x":{"diagram":"digraph flowchart {\n\n  # node type 2: Līmeņi\n  node [fontname = Helvetica, shape = none,style=none,fontface=bold,fontsize=12];{\n    node [label=\"1. solis: Sagatavošanās\"]; step0;\n    node [label=\"2. solis: Ievades informācija\"]; step1;\n    node [label=\"3. solis: Ekoģeogrāfiskie mainīgie\"]; step2;\n    node [label=\"4. solis: Modelēšana\"]; step3;\n    node [label=\"5. solis: Prioritizēšana\"]; step4;\n  }\n  \n  \n  # node type 1: Vidējais\n  node [fontname = Helvetica, shape = rectangle,style=rounded,fontcolor=black]; {\n    node [label=\"Analīzes telpa\"]; vidus1;\n    node [label=\"Ievades \nģeodati\"]; vidus2;\n    node [label=\"Ekoģeogrāfiskie \nmainīgie\"]; vidus3;\n    node [label=\"Sugu izplatības \nmodelēšna\"]; vidus4;\n    node [label=\"Vietu prioritizēšana \naizsardzībai\"]; vidus5;\n  }\n\n  # node type 5: Kreisais \n  node [fontname = Helvetica, shape = rectangle,style=rounded,fontcolor=black,fontsize=12];{\n    node [label=\"*Dynamic World* izpēte\"]; DWexp;\n    }\n\n\n\n  # node type 3: Labais\n  node [fontname = Helvetica, shape = rectangle];{\n    node [label=\"Sugu saraksts \nun apraksti\"]; labais1;\n    node [label=\"Novērojumu atlase\"]; labais2;\n  }\n\n  # node type 4: Pecapstrade\n  node [fontname = Helvetica, shape = rectangle];{\n    node [label=\"Modeļu pēcapstrāde\"]; pec1;\n  }\n\n  \n  # specify which nodes are of the same \"rank\" so that they\"ll be drawn at the same level\n      {rank = same; step0 vidus1 labais1}\n      {rank = same; step1 DWexp vidus2 labais2}\n      {rank = same; step2 vidus3}\n      {rank = same; step3 vidus4 pec1}\n      {rank = same; step4 vidus5}\n  \n  # edge definitions with the node IDs\n  edge[tailclip = true, headclip = true,color=white];\n  step0 -> step1\n  step1 -> step2\n  step2 -> step3\n  step3->step4\n\n  edge[tailclip = true, headclip = true,color=black];\n  vidus1 -> vidus2\n  vidus2 -> vidus3\n  vidus3 -> vidus4\n  vidus4 -> vidus5\n  \n  vidus1 -> labais2\n  vidus1 -> DWexp\n  DWexp -> vidus2\n  DWexp -> labais2\n\n  labais1 -> labais2\n  labais2 -> vidus3\n  \n  labais1 -> vidus3\n  labais1 -> vidus5\n  labais1 -> vidus4\n  labais2 -> vidus4\n  vidus1 -> vidus3\n  \n  vidus4 -> pec1\n  vidus5 -> pec1\n  pec1 -> vidus5\n  }\n\n  ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-ca7b4ec2597a963ca6a7" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-ca7b4ec2597a963ca6a7">{"x":{"diagram":"digraph flowchart {\n\n  # node type 2: Līmeņi\n  node [fontname = Helvetica, shape = none,style=none,fontface=bold,fontsize=12];{\n    node [label=\"1. solis: Sagatavošanās\"]; step0;\n    node [label=\"2. solis: Ievades informācija\"]; step1;\n    node [label=\"3. solis: Ekoģeogrāfiskie mainīgie\"]; step2;\n    node [label=\"4. solis: Modelēšana\"]; step3;\n    node [label=\"5. solis: Prioritizēšana\"]; step4;\n  }\n  \n  \n  # node type 1: Vidējais\n  node [fontname = Helvetica, shape = rectangle,style=rounded,fontcolor=black]; {\n    node [label=\"Analīzes telpa\"]; vidus1;\n    node [label=\"Ievades \nģeodati\"]; vidus2;\n    node [label=\"Ekoģeogrāfiskie \nmainīgie\"]; vidus3;\n    node [label=\"Sugu izplatības \nmodelēšna\"]; vidus4;\n    node [label=\"Vietu prioritizēšana \naizsardzībai\"]; vidus5;\n  }\n\n  # node type 5: Kreisais \n  node [fontname = Helvetica, shape = rectangle,style=rounded,fontcolor=black,fontsize=12];{\n    node [label=\"*Dynamic World* izpēte\"]; DWexp;\n    }\n\n\n\n  # node type 3: Labais\n  node [fontname = Helvetica, shape = rectangle];{\n    node [label=\"Sugu saraksts \nun apraksti\"]; labais1;\n    node [label=\"Novērojumu atlase\"]; labais2;\n  }\n\n  # node type 4: Pecapstrade\n  node [fontname = Helvetica, shape = rectangle];{\n    node [label=\"Modeļu pēcapstrāde\"]; pec1;\n  }\n\n  \n  # specify which nodes are of the same \"rank\" so that they\"ll be drawn at the same level\n      {rank = same; step0 vidus1 labais1}\n      {rank = same; step1 DWexp vidus2 labais2}\n      {rank = same; step2 vidus3}\n      {rank = same; step3 vidus4 pec1}\n      {rank = same; step4 vidus5}\n  \n  # edge definitions with the node IDs\n  edge[tailclip = true, headclip = true,color=white];\n  step0 -> step1\n  step1 -> step2\n  step2 -> step3\n  step3->step4\n\n  edge[tailclip = true, headclip = true,color=black];\n  vidus1 -> vidus2\n  vidus2 -> vidus3\n  vidus3 -> vidus4\n  vidus4 -> vidus5\n  \n  vidus1 -> labais2\n  vidus1 -> DWexp\n  DWexp -> vidus2\n  DWexp -> labais2\n\n  labais1 -> labais2\n  labais2 -> vidus3\n  \n  labais1 -> vidus3\n  labais1 -> vidus5\n  labais1 -> vidus4\n  labais2 -> vidus4\n  vidus1 -> vidus3\n  \n  vidus4 -> pec1\n  vidus5 -> pec1\n  pec1 -> vidus5\n  }\n\n  ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 <p class="caption">(\#fig:General-workflow)Darba plūsma un saistība starp šī dokumenta nodaļām</p>

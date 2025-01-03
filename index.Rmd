@@ -84,7 +84,7 @@ atkārto direktoriju koka izveidi lietotāja norādītā vietā un īsi skaidro 
 
 ```{r, eval=FALSE}
 
-# references slāņiem
+# references slāņiem ----
 dir.create("./Templates") # virsmape projekta direktorijā
 dir.create("./Templates/TemplateGrids") # vektordatiem, režģiem
 dir.create("./Templates/TemplateGrids/lapas") # vektordatiem (režģiem) karšu lapās
@@ -92,62 +92,147 @@ dir.create("./Templates/TemplateGridPoints") # vektordatu režģu centriem
 dir.create("./Templates/TemplateGridPoints/lapas") # vektordatu režģu centriem karšu lapās
 dir.create("./Templates/TemplateRasters") # rastra (harmonizēšanas) slāņiem
 
-# ievades datu produkti (10 m)
-dir.create("./Rastri_10m")
+# ievades datu produkti (10 m) ----
+dir.create("./Rastri_10m") ----
 
-# ievades datu produkti (500 m)
+# ievades datu produkti (500 m) ----
 dir.create("./Rastri_500m")
 
-# Ekoģeogrāfiskie mainīgie (ar apakšmapēm)
+# Ekoģeogrāfiskie mainīgie (ar apakšmapēm) ----
 dir.create("./Rastri_100m") 
 dir.create("./Rastri_100m/RAW") # tiešie rezultāti. Ne visi ir harmoniski
 dir.create("./Rastri_100m/Proj") # harmonizēti pārklājumi
 dir.create("./Rastri_100m/Scaled") # centrāti un mērogoti harmonizētie pārklājumi
 
-# VidesParmainas - direktorija vides pārmaiņu aprēķināšanai
+# VidesParmainas  ----
+# - direktorija vides pārmaiņu aprēķināšanai
 dir.create("./VidesParmainas") 
 dir.create("./VidesParmainas/Parmainam") # DynamicWorld ikgadējie slāņi pēc apstrādes, kas raksturota atsevišķā nodaļā
 
 
 
-# Ievades dati - sarežģīta struktūra! Ietver gan datu izvietojumu, gan apstrādi. Haoss.
-## Ainava
+# Ievades dati ----
+# - sarežģīta struktūra! Ietver gan datu izvietojumu, gan apstrādi. Haoss.
+dir.create("./IevadesDati") 
+## Ainava ----
+dir.create("./IevadesDati/ainava") 
+## šajā direktorijā norisinās ievērojama daļa EGV sagatavošanas, tādēļ ir daudz 
+## skriptu un apakšdirektoriju
+### Malas ----
+dir.create("./IevadesDati/ainava/Malas") 
+### malas raksturojošo slāņu sagatavošanai
+### Klases platība ----
+dir.create("./IevadesDati/ainava/ClassArea") 
+### klases platību raksturojošo slāņu sagatavošanai
+### Šenona daudzveidības indeksi ----
+dir.create("./IevadesDati/ainava/Daudzveidibai") 
+### Šenona daudzveidības indeksu aprēķiniem
+
+## Atkritumi ----
+dir.create("./IevadesDati/atkritumi") 
+# šeit ievieto infromāciju par atkritumu poligoniem, glabātuvēm, šķirotavām utml
+
+## Augsnes ----
+dir.create("./IevadesDati/Augsnes") 
+dir.create("./IevadesDati/Augsnes/noIvo") # EU JRC augšņu slāņi 
 
 
-## Atkritumi
+## CLC ----
+dir.create("./IevadesDati/CLC") 
+## CorineLandCover 2018 informācija
 
-## Augsnes
+## distances  ----
+dir.create("./IevadesDati/distances") 
+## Komandu rindas EGV veidošanai
 
-## CLC
+## DynamicWorld ----
+dir.create("./IevadesDati/DynamicWorld") 
+## Šeit ir veikta resursa izpēta, radot visai plašu struktūru
+dir.create("./IevadesDati/DynamicWorld/DynamicWorld_Eksperimentam") 
+### Apakšmapes ----
+dir.create("./IevadesDati/DynamicWorld/DynamicWorld_Eksperimentam/DWE_float")
+### ^ šeit ievieto GEE lejupielādi
+dir.create("./IevadesDati/DynamicWorld/DynamicWorld_Eksperimentam/DWE_mosaic") 
+### ^ šeit ievieto DWE_float apstrādi
+dir.create("./IevadesDati/DynamicWorld/DynamicWorld_Eksperimentam/DWE_missing") 
+### ^ šeit aprēķina informācijas seguma robus
 
-## distances 
 
-## DynamicWorld
+## klimats ----
+dir.create("./IevadesDati/klimats") 
+## ar apakšmapēm
+### RAW ----
+dir.create("./IevadesDati/klimats/RAW")
+### ^ šeit ievieto lejupielādi no GEE
+### mozaikas ----
+dir.create("./IevadesDati/klimats/mozaikas")
+### ^ šeit ievieto apstrādes rezultātu
 
-## EU_JRC - pie augsnes
 
-## klimats
+## koki ----
+dir.create("./IevadesDati/koki") 
+## Zemes novērošanas dati par kokiem un mežiem
+## ar apakšmapēm
+### RAW ----
+dir.create("./IevadesDati/koki/RAW") 
+### ^ šeit ievieto lejupielādi no GEE
 
-## koki
+## LAD ----
+dir.create("./IevadesDati/LAD") 
+## ^ šeit novieto un apstrādā LAD datus
 
-## LAD
+## LV_EEZ ----
+dir.create("./IevadesDati/LV_EEZ") 
+## ^ šeit novieto un slāni ar Latvijas Ekskluzīvās Ekonomiskās zonas ūdeņiem
 
-## LV_EEZ
+## LVM_AtvertieDati ----
+dir.create("./IevadesDati/LVM_AtvertieDati") 
+dir.create("./IevadesDati/LVM_AtvertieDati/lejupielades") 
+## ^ šeit ievietos no atvērto datu portāla lejupielādētos 
+## valsts akciju sabiedŗibas "Latvijas valsts meži" datus
 
-## LVM_AtvertieDati
+## MKIS ----
+dir.create("./IevadesDati/MKIS") 
+## ^ šeit ievietos meliorācijas kadastra informācijas sistēmas datus 
 
-## MKIS
+## MVR ----
+dir.create("./IevadesDati/MVR") 
+## ^ šeit ievietos Valsts Meža dienesta MEža Valsts reģistra datus 
 
-## MVR
+## Noverojumi ----
+dir.create("./IevadesDati/Noverojumi") 
+## ^ šeit ievietos apkopotos putnu novērojumus 
 
-## Noverojumi
+## reljefs ----
+dir.create("./IevadesDati/reljefs") 
+## ar DEM saistītās procedūras un dati. Satur apakšmapes
+### meanDEM_1mOLD ----
+dir.create("./IevadesDati/reljefs/meanDEM_1mOLD") 
+### ^ šeit ievieto ievades DEM 1m
+### Nartiss_visa_Latvija ----
+dir.create("./IevadesDati/reljefs/Nartiss_visa_Latvija") 
+### ^ šeit ievieto 10 m DEM bez robiem. Mēs izmantojām Māra Nartiša izstrādāto
+### meanDEM_10mOLD ----
+dir.create("./IevadesDati/reljefs/meanDEM_10mOLD") 
+### ^ šeit ievieto savienošanas rezultātu
+### Reljefa ainavas līmeņa parametru sagatavošas direktorijas:
+dir.create("./IevadesDati/reljefs/DiS_area_r500") 
+dir.create("./IevadesDati/reljefs/DiS_area_r1250") 
+dir.create("./IevadesDati/reljefs/DiS_area_r3000") 
+dir.create("./IevadesDati/reljefs/DiS_area_r10000") 
 
-## reljefs
 
-## S2indices
+## S2indices ----
+dir.create("./IevadesDati/S2indices") 
+dir.create("./IevadesDati/S2indices/RAW") 
+### ^ lejupielāde no GEE
+dir.create("./IevadesDati/S2indices/mozaikas") 
+### ^ apstrādes rezultāts
 
-## topo
-
+## topo ----
+dir.create("./IevadesDati/topo") 
+## ^ šeit ievieto Latvijas Ģeotelpiskās Infromācijas Aaģentūras topogrāfiskās 
+## kartes (M:10000) datus 
 ```
 
 

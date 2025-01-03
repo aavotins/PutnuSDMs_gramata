@@ -474,7 +474,7 @@ div.csl-indent {
 tam atbilstošās vietās direktoriju kokā, gan sagatavos pašu koku. Tomēr, ja ir vēlme izvērst savas darbības, sekojošais koda apgabals
 atkārto direktoriju koka izveidi lietotāja norādītā vietā un īsi skaidro tajā ievietojamos datus.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1" tabindex="-1"></a><span class="co"># references slāņiem</span></span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1" tabindex="-1"></a><span class="co"># references slāņiem ----</span></span>
 <span id="cb2-2"><a href="index.html#cb2-2" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./Templates&quot;</span>) <span class="co"># virsmape projekta direktorijā</span></span>
 <span id="cb2-3"><a href="index.html#cb2-3" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./Templates/TemplateGrids&quot;</span>) <span class="co"># vektordatiem, režģiem</span></span>
 <span id="cb2-4"><a href="index.html#cb2-4" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./Templates/TemplateGrids/lapas&quot;</span>) <span class="co"># vektordatiem (režģiem) karšu lapās</span></span>
@@ -482,69 +482,155 @@ atkārto direktoriju koka izveidi lietotāja norādītā vietā un īsi skaidro 
 <span id="cb2-6"><a href="index.html#cb2-6" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./Templates/TemplateGridPoints/lapas&quot;</span>) <span class="co"># vektordatu režģu centriem karšu lapās</span></span>
 <span id="cb2-7"><a href="index.html#cb2-7" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./Templates/TemplateRasters&quot;</span>) <span class="co"># rastra (harmonizēšanas) slāņiem</span></span>
 <span id="cb2-8"><a href="index.html#cb2-8" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="index.html#cb2-9" tabindex="-1"></a><span class="co"># ievades datu produkti (10 m)</span></span>
-<span id="cb2-10"><a href="index.html#cb2-10" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./Rastri_10m&quot;</span>)</span>
+<span id="cb2-9"><a href="index.html#cb2-9" tabindex="-1"></a><span class="co"># ievades datu produkti (10 m) ----</span></span>
+<span id="cb2-10"><a href="index.html#cb2-10" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./Rastri_10m&quot;</span>) <span class="sc">----</span></span>
 <span id="cb2-11"><a href="index.html#cb2-11" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="index.html#cb2-12" tabindex="-1"></a><span class="co"># ievades datu produkti (500 m)</span></span>
+<span id="cb2-12"><a href="index.html#cb2-12" tabindex="-1"></a><span class="co"># ievades datu produkti (500 m) ----</span></span>
 <span id="cb2-13"><a href="index.html#cb2-13" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./Rastri_500m&quot;</span>)</span>
 <span id="cb2-14"><a href="index.html#cb2-14" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="index.html#cb2-15" tabindex="-1"></a><span class="co"># Ekoģeogrāfiskie mainīgie (ar apakšmapēm)</span></span>
+<span id="cb2-15"><a href="index.html#cb2-15" tabindex="-1"></a><span class="co"># Ekoģeogrāfiskie mainīgie (ar apakšmapēm) ----</span></span>
 <span id="cb2-16"><a href="index.html#cb2-16" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./Rastri_100m&quot;</span>) </span>
 <span id="cb2-17"><a href="index.html#cb2-17" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./Rastri_100m/RAW&quot;</span>) <span class="co"># tiešie rezultāti. Ne visi ir harmoniski</span></span>
 <span id="cb2-18"><a href="index.html#cb2-18" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./Rastri_100m/Proj&quot;</span>) <span class="co"># harmonizēti pārklājumi</span></span>
 <span id="cb2-19"><a href="index.html#cb2-19" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./Rastri_100m/Scaled&quot;</span>) <span class="co"># centrāti un mērogoti harmonizētie pārklājumi</span></span>
 <span id="cb2-20"><a href="index.html#cb2-20" tabindex="-1"></a></span>
-<span id="cb2-21"><a href="index.html#cb2-21" tabindex="-1"></a><span class="co"># VidesParmainas - direktorija vides pārmaiņu aprēķināšanai</span></span>
-<span id="cb2-22"><a href="index.html#cb2-22" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./VidesParmainas&quot;</span>) </span>
-<span id="cb2-23"><a href="index.html#cb2-23" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./VidesParmainas/Parmainam&quot;</span>) <span class="co"># DynamicWorld ikgadējie slāņi pēc apstrādes, kas raksturota atsevišķā nodaļā</span></span>
-<span id="cb2-24"><a href="index.html#cb2-24" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="index.html#cb2-21" tabindex="-1"></a><span class="co"># VidesParmainas  ----</span></span>
+<span id="cb2-22"><a href="index.html#cb2-22" tabindex="-1"></a><span class="co"># - direktorija vides pārmaiņu aprēķināšanai</span></span>
+<span id="cb2-23"><a href="index.html#cb2-23" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./VidesParmainas&quot;</span>) </span>
+<span id="cb2-24"><a href="index.html#cb2-24" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./VidesParmainas/Parmainam&quot;</span>) <span class="co"># DynamicWorld ikgadējie slāņi pēc apstrādes, kas raksturota atsevišķā nodaļā</span></span>
 <span id="cb2-25"><a href="index.html#cb2-25" tabindex="-1"></a></span>
 <span id="cb2-26"><a href="index.html#cb2-26" tabindex="-1"></a></span>
-<span id="cb2-27"><a href="index.html#cb2-27" tabindex="-1"></a><span class="co"># Ievades dati - sarežģīta struktūra! Ietver gan datu izvietojumu, gan apstrādi. Haoss.</span></span>
-<span id="cb2-28"><a href="index.html#cb2-28" tabindex="-1"></a><span class="do">## Ainava</span></span>
-<span id="cb2-29"><a href="index.html#cb2-29" tabindex="-1"></a></span>
-<span id="cb2-30"><a href="index.html#cb2-30" tabindex="-1"></a></span>
-<span id="cb2-31"><a href="index.html#cb2-31" tabindex="-1"></a><span class="do">## Atkritumi</span></span>
-<span id="cb2-32"><a href="index.html#cb2-32" tabindex="-1"></a></span>
-<span id="cb2-33"><a href="index.html#cb2-33" tabindex="-1"></a><span class="do">## Augsnes</span></span>
-<span id="cb2-34"><a href="index.html#cb2-34" tabindex="-1"></a></span>
-<span id="cb2-35"><a href="index.html#cb2-35" tabindex="-1"></a><span class="do">## CLC</span></span>
-<span id="cb2-36"><a href="index.html#cb2-36" tabindex="-1"></a></span>
-<span id="cb2-37"><a href="index.html#cb2-37" tabindex="-1"></a><span class="do">## distances </span></span>
-<span id="cb2-38"><a href="index.html#cb2-38" tabindex="-1"></a></span>
-<span id="cb2-39"><a href="index.html#cb2-39" tabindex="-1"></a><span class="do">## DynamicWorld</span></span>
-<span id="cb2-40"><a href="index.html#cb2-40" tabindex="-1"></a></span>
-<span id="cb2-41"><a href="index.html#cb2-41" tabindex="-1"></a><span class="do">## EU_JRC - pie augsnes</span></span>
-<span id="cb2-42"><a href="index.html#cb2-42" tabindex="-1"></a></span>
-<span id="cb2-43"><a href="index.html#cb2-43" tabindex="-1"></a><span class="do">## klimats</span></span>
+<span id="cb2-27"><a href="index.html#cb2-27" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="index.html#cb2-28" tabindex="-1"></a><span class="co"># Ievades dati ----</span></span>
+<span id="cb2-29"><a href="index.html#cb2-29" tabindex="-1"></a><span class="co"># - sarežģīta struktūra! Ietver gan datu izvietojumu, gan apstrādi. Haoss.</span></span>
+<span id="cb2-30"><a href="index.html#cb2-30" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati&quot;</span>) </span>
+<span id="cb2-31"><a href="index.html#cb2-31" tabindex="-1"></a><span class="do">## Ainava ----</span></span>
+<span id="cb2-32"><a href="index.html#cb2-32" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/ainava&quot;</span>) </span>
+<span id="cb2-33"><a href="index.html#cb2-33" tabindex="-1"></a><span class="do">## šajā direktorijā norisinās ievērojama daļa EGV sagatavošanas, tādēļ ir daudz </span></span>
+<span id="cb2-34"><a href="index.html#cb2-34" tabindex="-1"></a><span class="do">## skriptu un apakšdirektoriju</span></span>
+<span id="cb2-35"><a href="index.html#cb2-35" tabindex="-1"></a><span class="do">### Malas ----</span></span>
+<span id="cb2-36"><a href="index.html#cb2-36" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/ainava/Malas&quot;</span>) </span>
+<span id="cb2-37"><a href="index.html#cb2-37" tabindex="-1"></a><span class="do">### malas raksturojošo slāņu sagatavošanai</span></span>
+<span id="cb2-38"><a href="index.html#cb2-38" tabindex="-1"></a><span class="do">### Klases platība ----</span></span>
+<span id="cb2-39"><a href="index.html#cb2-39" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/ainava/ClassArea&quot;</span>) </span>
+<span id="cb2-40"><a href="index.html#cb2-40" tabindex="-1"></a><span class="do">### klases platību raksturojošo slāņu sagatavošanai</span></span>
+<span id="cb2-41"><a href="index.html#cb2-41" tabindex="-1"></a><span class="do">### Šenona daudzveidības indeksi ----</span></span>
+<span id="cb2-42"><a href="index.html#cb2-42" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/ainava/Daudzveidibai&quot;</span>) </span>
+<span id="cb2-43"><a href="index.html#cb2-43" tabindex="-1"></a><span class="do">### Šenona daudzveidības indeksu aprēķiniem</span></span>
 <span id="cb2-44"><a href="index.html#cb2-44" tabindex="-1"></a></span>
-<span id="cb2-45"><a href="index.html#cb2-45" tabindex="-1"></a><span class="do">## koki</span></span>
-<span id="cb2-46"><a href="index.html#cb2-46" tabindex="-1"></a></span>
-<span id="cb2-47"><a href="index.html#cb2-47" tabindex="-1"></a><span class="do">## LAD</span></span>
+<span id="cb2-45"><a href="index.html#cb2-45" tabindex="-1"></a><span class="do">## Atkritumi ----</span></span>
+<span id="cb2-46"><a href="index.html#cb2-46" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/atkritumi&quot;</span>) </span>
+<span id="cb2-47"><a href="index.html#cb2-47" tabindex="-1"></a><span class="co"># šeit ievieto infromāciju par atkritumu poligoniem, glabātuvēm, šķirotavām utml</span></span>
 <span id="cb2-48"><a href="index.html#cb2-48" tabindex="-1"></a></span>
-<span id="cb2-49"><a href="index.html#cb2-49" tabindex="-1"></a><span class="do">## LV_EEZ</span></span>
-<span id="cb2-50"><a href="index.html#cb2-50" tabindex="-1"></a></span>
-<span id="cb2-51"><a href="index.html#cb2-51" tabindex="-1"></a><span class="do">## LVM_AtvertieDati</span></span>
+<span id="cb2-49"><a href="index.html#cb2-49" tabindex="-1"></a><span class="do">## Augsnes ----</span></span>
+<span id="cb2-50"><a href="index.html#cb2-50" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/Augsnes&quot;</span>) </span>
+<span id="cb2-51"><a href="index.html#cb2-51" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/Augsnes/noIvo&quot;</span>) <span class="co"># EU JRC augšņu slāņi </span></span>
 <span id="cb2-52"><a href="index.html#cb2-52" tabindex="-1"></a></span>
-<span id="cb2-53"><a href="index.html#cb2-53" tabindex="-1"></a><span class="do">## MKIS</span></span>
-<span id="cb2-54"><a href="index.html#cb2-54" tabindex="-1"></a></span>
-<span id="cb2-55"><a href="index.html#cb2-55" tabindex="-1"></a><span class="do">## MVR</span></span>
-<span id="cb2-56"><a href="index.html#cb2-56" tabindex="-1"></a></span>
-<span id="cb2-57"><a href="index.html#cb2-57" tabindex="-1"></a><span class="do">## Noverojumi</span></span>
-<span id="cb2-58"><a href="index.html#cb2-58" tabindex="-1"></a></span>
-<span id="cb2-59"><a href="index.html#cb2-59" tabindex="-1"></a><span class="do">## reljefs</span></span>
-<span id="cb2-60"><a href="index.html#cb2-60" tabindex="-1"></a></span>
-<span id="cb2-61"><a href="index.html#cb2-61" tabindex="-1"></a><span class="do">## S2indices</span></span>
-<span id="cb2-62"><a href="index.html#cb2-62" tabindex="-1"></a></span>
-<span id="cb2-63"><a href="index.html#cb2-63" tabindex="-1"></a><span class="do">## topo</span></span></code></pre></div>
+<span id="cb2-53"><a href="index.html#cb2-53" tabindex="-1"></a></span>
+<span id="cb2-54"><a href="index.html#cb2-54" tabindex="-1"></a><span class="do">## CLC ----</span></span>
+<span id="cb2-55"><a href="index.html#cb2-55" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/CLC&quot;</span>) </span>
+<span id="cb2-56"><a href="index.html#cb2-56" tabindex="-1"></a><span class="do">## CorineLandCover 2018 informācija</span></span>
+<span id="cb2-57"><a href="index.html#cb2-57" tabindex="-1"></a></span>
+<span id="cb2-58"><a href="index.html#cb2-58" tabindex="-1"></a><span class="do">## distances  ----</span></span>
+<span id="cb2-59"><a href="index.html#cb2-59" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/distances&quot;</span>) </span>
+<span id="cb2-60"><a href="index.html#cb2-60" tabindex="-1"></a><span class="do">## Komandu rindas EGV veidošanai</span></span>
+<span id="cb2-61"><a href="index.html#cb2-61" tabindex="-1"></a></span>
+<span id="cb2-62"><a href="index.html#cb2-62" tabindex="-1"></a><span class="do">## DynamicWorld ----</span></span>
+<span id="cb2-63"><a href="index.html#cb2-63" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/DynamicWorld&quot;</span>) </span>
+<span id="cb2-64"><a href="index.html#cb2-64" tabindex="-1"></a><span class="do">## Šeit ir veikta resursa izpēta, radot visai plašu struktūru</span></span>
+<span id="cb2-65"><a href="index.html#cb2-65" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/DynamicWorld/DynamicWorld_Eksperimentam&quot;</span>) </span>
+<span id="cb2-66"><a href="index.html#cb2-66" tabindex="-1"></a><span class="do">### Apakšmapes ----</span></span>
+<span id="cb2-67"><a href="index.html#cb2-67" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/DynamicWorld/DynamicWorld_Eksperimentam/DWE_float&quot;</span>)</span>
+<span id="cb2-68"><a href="index.html#cb2-68" tabindex="-1"></a><span class="do">### ^ šeit ievieto GEE lejupielādi</span></span>
+<span id="cb2-69"><a href="index.html#cb2-69" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/DynamicWorld/DynamicWorld_Eksperimentam/DWE_mosaic&quot;</span>) </span>
+<span id="cb2-70"><a href="index.html#cb2-70" tabindex="-1"></a><span class="do">### ^ šeit ievieto DWE_float apstrādi</span></span>
+<span id="cb2-71"><a href="index.html#cb2-71" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/DynamicWorld/DynamicWorld_Eksperimentam/DWE_missing&quot;</span>) </span>
+<span id="cb2-72"><a href="index.html#cb2-72" tabindex="-1"></a><span class="do">### ^ šeit aprēķina informācijas seguma robus</span></span>
+<span id="cb2-73"><a href="index.html#cb2-73" tabindex="-1"></a></span>
+<span id="cb2-74"><a href="index.html#cb2-74" tabindex="-1"></a></span>
+<span id="cb2-75"><a href="index.html#cb2-75" tabindex="-1"></a><span class="do">## klimats ----</span></span>
+<span id="cb2-76"><a href="index.html#cb2-76" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/klimats&quot;</span>) </span>
+<span id="cb2-77"><a href="index.html#cb2-77" tabindex="-1"></a><span class="do">## ar apakšmapēm</span></span>
+<span id="cb2-78"><a href="index.html#cb2-78" tabindex="-1"></a><span class="do">### RAW ----</span></span>
+<span id="cb2-79"><a href="index.html#cb2-79" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/klimats/RAW&quot;</span>)</span>
+<span id="cb2-80"><a href="index.html#cb2-80" tabindex="-1"></a><span class="do">### ^ šeit ievieto lejupielādi no GEE</span></span>
+<span id="cb2-81"><a href="index.html#cb2-81" tabindex="-1"></a><span class="do">### mozaikas ----</span></span>
+<span id="cb2-82"><a href="index.html#cb2-82" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/klimats/mozaikas&quot;</span>)</span>
+<span id="cb2-83"><a href="index.html#cb2-83" tabindex="-1"></a><span class="do">### ^ šeit ievieto apstrādes rezultātu</span></span>
+<span id="cb2-84"><a href="index.html#cb2-84" tabindex="-1"></a></span>
+<span id="cb2-85"><a href="index.html#cb2-85" tabindex="-1"></a></span>
+<span id="cb2-86"><a href="index.html#cb2-86" tabindex="-1"></a><span class="do">## koki ----</span></span>
+<span id="cb2-87"><a href="index.html#cb2-87" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/koki&quot;</span>) </span>
+<span id="cb2-88"><a href="index.html#cb2-88" tabindex="-1"></a><span class="do">## Zemes novērošanas dati par kokiem un mežiem</span></span>
+<span id="cb2-89"><a href="index.html#cb2-89" tabindex="-1"></a><span class="do">## ar apakšmapēm</span></span>
+<span id="cb2-90"><a href="index.html#cb2-90" tabindex="-1"></a><span class="do">### RAW ----</span></span>
+<span id="cb2-91"><a href="index.html#cb2-91" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/koki/RAW&quot;</span>) </span>
+<span id="cb2-92"><a href="index.html#cb2-92" tabindex="-1"></a><span class="do">### ^ šeit ievieto lejupielādi no GEE</span></span>
+<span id="cb2-93"><a href="index.html#cb2-93" tabindex="-1"></a></span>
+<span id="cb2-94"><a href="index.html#cb2-94" tabindex="-1"></a><span class="do">## LAD ----</span></span>
+<span id="cb2-95"><a href="index.html#cb2-95" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/LAD&quot;</span>) </span>
+<span id="cb2-96"><a href="index.html#cb2-96" tabindex="-1"></a><span class="do">## ^ šeit novieto un apstrādā LAD datus</span></span>
+<span id="cb2-97"><a href="index.html#cb2-97" tabindex="-1"></a></span>
+<span id="cb2-98"><a href="index.html#cb2-98" tabindex="-1"></a><span class="do">## LV_EEZ ----</span></span>
+<span id="cb2-99"><a href="index.html#cb2-99" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/LV_EEZ&quot;</span>) </span>
+<span id="cb2-100"><a href="index.html#cb2-100" tabindex="-1"></a><span class="do">## ^ šeit novieto un slāni ar Latvijas Ekskluzīvās Ekonomiskās zonas ūdeņiem</span></span>
+<span id="cb2-101"><a href="index.html#cb2-101" tabindex="-1"></a></span>
+<span id="cb2-102"><a href="index.html#cb2-102" tabindex="-1"></a><span class="do">## LVM_AtvertieDati ----</span></span>
+<span id="cb2-103"><a href="index.html#cb2-103" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/LVM_AtvertieDati&quot;</span>) </span>
+<span id="cb2-104"><a href="index.html#cb2-104" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/LVM_AtvertieDati/lejupielades&quot;</span>) </span>
+<span id="cb2-105"><a href="index.html#cb2-105" tabindex="-1"></a><span class="do">## ^ šeit ievietos no atvērto datu portāla lejupielādētos </span></span>
+<span id="cb2-106"><a href="index.html#cb2-106" tabindex="-1"></a><span class="do">## valsts akciju sabiedŗibas &quot;Latvijas valsts meži&quot; datus</span></span>
+<span id="cb2-107"><a href="index.html#cb2-107" tabindex="-1"></a></span>
+<span id="cb2-108"><a href="index.html#cb2-108" tabindex="-1"></a><span class="do">## MKIS ----</span></span>
+<span id="cb2-109"><a href="index.html#cb2-109" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/MKIS&quot;</span>) </span>
+<span id="cb2-110"><a href="index.html#cb2-110" tabindex="-1"></a><span class="do">## ^ šeit ievietos meliorācijas kadastra informācijas sistēmas datus </span></span>
+<span id="cb2-111"><a href="index.html#cb2-111" tabindex="-1"></a></span>
+<span id="cb2-112"><a href="index.html#cb2-112" tabindex="-1"></a><span class="do">## MVR ----</span></span>
+<span id="cb2-113"><a href="index.html#cb2-113" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/MVR&quot;</span>) </span>
+<span id="cb2-114"><a href="index.html#cb2-114" tabindex="-1"></a><span class="do">## ^ šeit ievietos Valsts Meža dienesta MEža Valsts reģistra datus </span></span>
+<span id="cb2-115"><a href="index.html#cb2-115" tabindex="-1"></a></span>
+<span id="cb2-116"><a href="index.html#cb2-116" tabindex="-1"></a><span class="do">## Noverojumi ----</span></span>
+<span id="cb2-117"><a href="index.html#cb2-117" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/Noverojumi&quot;</span>) </span>
+<span id="cb2-118"><a href="index.html#cb2-118" tabindex="-1"></a><span class="do">## ^ šeit ievietos apkopotos putnu novērojumus </span></span>
+<span id="cb2-119"><a href="index.html#cb2-119" tabindex="-1"></a></span>
+<span id="cb2-120"><a href="index.html#cb2-120" tabindex="-1"></a><span class="do">## reljefs ----</span></span>
+<span id="cb2-121"><a href="index.html#cb2-121" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/reljefs&quot;</span>) </span>
+<span id="cb2-122"><a href="index.html#cb2-122" tabindex="-1"></a><span class="do">## ar DEM saistītās procedūras un dati. Satur apakšmapes</span></span>
+<span id="cb2-123"><a href="index.html#cb2-123" tabindex="-1"></a><span class="do">### meanDEM_1mOLD ----</span></span>
+<span id="cb2-124"><a href="index.html#cb2-124" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/reljefs/meanDEM_1mOLD&quot;</span>) </span>
+<span id="cb2-125"><a href="index.html#cb2-125" tabindex="-1"></a><span class="do">### ^ šeit ievieto ievades DEM 1m</span></span>
+<span id="cb2-126"><a href="index.html#cb2-126" tabindex="-1"></a><span class="do">### Nartiss_visa_Latvija ----</span></span>
+<span id="cb2-127"><a href="index.html#cb2-127" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/reljefs/Nartiss_visa_Latvija&quot;</span>) </span>
+<span id="cb2-128"><a href="index.html#cb2-128" tabindex="-1"></a><span class="do">### ^ šeit ievieto 10 m DEM bez robiem. Mēs izmantojām Māra Nartiša izstrādāto</span></span>
+<span id="cb2-129"><a href="index.html#cb2-129" tabindex="-1"></a><span class="do">### meanDEM_10mOLD ----</span></span>
+<span id="cb2-130"><a href="index.html#cb2-130" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/reljefs/meanDEM_10mOLD&quot;</span>) </span>
+<span id="cb2-131"><a href="index.html#cb2-131" tabindex="-1"></a><span class="do">### ^ šeit ievieto savienošanas rezultātu</span></span>
+<span id="cb2-132"><a href="index.html#cb2-132" tabindex="-1"></a><span class="do">### Reljefa ainavas līmeņa parametru sagatavošas direktorijas:</span></span>
+<span id="cb2-133"><a href="index.html#cb2-133" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/reljefs/DiS_area_r500&quot;</span>) </span>
+<span id="cb2-134"><a href="index.html#cb2-134" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/reljefs/DiS_area_r1250&quot;</span>) </span>
+<span id="cb2-135"><a href="index.html#cb2-135" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/reljefs/DiS_area_r3000&quot;</span>) </span>
+<span id="cb2-136"><a href="index.html#cb2-136" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/reljefs/DiS_area_r10000&quot;</span>) </span>
+<span id="cb2-137"><a href="index.html#cb2-137" tabindex="-1"></a></span>
+<span id="cb2-138"><a href="index.html#cb2-138" tabindex="-1"></a></span>
+<span id="cb2-139"><a href="index.html#cb2-139" tabindex="-1"></a><span class="do">## S2indices ----</span></span>
+<span id="cb2-140"><a href="index.html#cb2-140" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/S2indices&quot;</span>) </span>
+<span id="cb2-141"><a href="index.html#cb2-141" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/S2indices/RAW&quot;</span>) </span>
+<span id="cb2-142"><a href="index.html#cb2-142" tabindex="-1"></a><span class="do">### ^ lejupielāde no GEE</span></span>
+<span id="cb2-143"><a href="index.html#cb2-143" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/S2indices/mozaikas&quot;</span>) </span>
+<span id="cb2-144"><a href="index.html#cb2-144" tabindex="-1"></a><span class="do">### ^ apstrādes rezultāts</span></span>
+<span id="cb2-145"><a href="index.html#cb2-145" tabindex="-1"></a></span>
+<span id="cb2-146"><a href="index.html#cb2-146" tabindex="-1"></a><span class="do">## topo ----</span></span>
+<span id="cb2-147"><a href="index.html#cb2-147" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;./IevadesDati/topo&quot;</span>) </span>
+<span id="cb2-148"><a href="index.html#cb2-148" tabindex="-1"></a><span class="do">## ^ šeit ievieto Latvijas Ģeotelpiskās Infromācijas Aaģentūras topogrāfiskās </span></span>
+<span id="cb2-149"><a href="index.html#cb2-149" tabindex="-1"></a><span class="do">## kartes (M:10000) datus </span></span></code></pre></div>
 </details>
 </div>
 <div id="satura-izklāsts-orientācijai" class="section level2 unnumbered hasAnchor">
 <h2>Satura izklāsts (orientācijai)<a href="index.html#satura-izklāsts-orientācijai" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Vispārīgā darba un informācijas plūsma projektā ir ilustrēta sekojošajā attēlā <a href="index.html#fig:General-workflow">0.1</a>. Tā ir izmantota par pamatu šī materiāla dalījumam nodaļās (nosauktas un īsi raksturotas zemāk), kuru nosaukumi vispārīgi sakrīt ar uzdevumiem (etapiem) darba plūsmas vizualizācijā.</p>
 <div class="figure"><span style="display:block;" id="fig:General-workflow"></span>
-<div class="grViz html-widget html-fill-item" id="htmlwidget-cfc06e629be4d90f3316" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-cfc06e629be4d90f3316">{"x":{"diagram":"digraph flowchart {\n\n  # node type 2: Līmeņi\n  node [fontname = Helvetica, shape = none,style=none,fontface=bold,fontsize=12];{\n    node [label=\"1. solis: Sagatavošanās\"]; step0;\n    node [label=\"2. solis: Ievades informācija\"]; step1;\n    node [label=\"3. solis: Ekoģeogrāfiskie mainīgie\"]; step2;\n    node [label=\"4. solis: Modelēšana\"]; step3;\n    node [label=\"5. solis: Prioritizēšana\"]; step4;\n  }\n  \n  \n  # node type 1: Vidējais\n  node [fontname = Helvetica, shape = rectangle,style=rounded,fontcolor=black]; {\n    node [label=\"Analīzes telpa\"]; vidus1;\n    node [label=\"Ievades \nģeodati\"]; vidus2;\n    node [label=\"Ekoģeogrāfiskie \nmainīgie\"]; vidus3;\n    node [label=\"Sugu izplatības \nmodelēšna\"]; vidus4;\n    node [label=\"Vietu prioritizēšana \naizsardzībai\"]; vidus5;\n  }\n\n  # node type 5: Kreisais \n  node [fontname = Helvetica, shape = rectangle,style=rounded,fontcolor=black,fontsize=12];{\n    node [label=\"*Dynamic World* izpēte\"]; DWexp;\n    }\n\n\n\n  # node type 3: Labais\n  node [fontname = Helvetica, shape = rectangle];{\n    node [label=\"Sugu saraksts \nun apraksti\"]; labais1;\n    node [label=\"Novērojumu atlase\"]; labais2;\n  }\n\n  # node type 4: Pecapstrade\n  node [fontname = Helvetica, shape = rectangle];{\n    node [label=\"Modeļu pēcapstrāde\"]; pec1;\n  }\n\n  \n  # specify which nodes are of the same \"rank\" so that they\"ll be drawn at the same level\n      {rank = same; step0 vidus1 labais1}\n      {rank = same; step1 DWexp vidus2 labais2}\n      {rank = same; step2 vidus3}\n      {rank = same; step3 vidus4 pec1}\n      {rank = same; step4 vidus5}\n  \n  # edge definitions with the node IDs\n  edge[tailclip = true, headclip = true,color=white];\n  step0 -> step1\n  step1 -> step2\n  step2 -> step3\n  step3->step4\n\n  edge[tailclip = true, headclip = true,color=black];\n  vidus1 -> vidus2\n  vidus2 -> vidus3\n  vidus3 -> vidus4\n  vidus4 -> vidus5\n  \n  vidus1 -> labais2\n  vidus1 -> DWexp\n  DWexp -> vidus2\n  DWexp -> labais2\n\n  labais1 -> labais2\n  labais2 -> vidus3\n  \n  labais1 -> vidus3\n  labais1 -> vidus5\n  labais1 -> vidus4\n  labais2 -> vidus4\n  vidus1 -> vidus3\n  \n  vidus4 -> pec1\n  vidus5 -> pec1\n  pec1 -> vidus5\n  }\n\n  ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-ca7b4ec2597a963ca6a7" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-ca7b4ec2597a963ca6a7">{"x":{"diagram":"digraph flowchart {\n\n  # node type 2: Līmeņi\n  node [fontname = Helvetica, shape = none,style=none,fontface=bold,fontsize=12];{\n    node [label=\"1. solis: Sagatavošanās\"]; step0;\n    node [label=\"2. solis: Ievades informācija\"]; step1;\n    node [label=\"3. solis: Ekoģeogrāfiskie mainīgie\"]; step2;\n    node [label=\"4. solis: Modelēšana\"]; step3;\n    node [label=\"5. solis: Prioritizēšana\"]; step4;\n  }\n  \n  \n  # node type 1: Vidējais\n  node [fontname = Helvetica, shape = rectangle,style=rounded,fontcolor=black]; {\n    node [label=\"Analīzes telpa\"]; vidus1;\n    node [label=\"Ievades \nģeodati\"]; vidus2;\n    node [label=\"Ekoģeogrāfiskie \nmainīgie\"]; vidus3;\n    node [label=\"Sugu izplatības \nmodelēšna\"]; vidus4;\n    node [label=\"Vietu prioritizēšana \naizsardzībai\"]; vidus5;\n  }\n\n  # node type 5: Kreisais \n  node [fontname = Helvetica, shape = rectangle,style=rounded,fontcolor=black,fontsize=12];{\n    node [label=\"*Dynamic World* izpēte\"]; DWexp;\n    }\n\n\n\n  # node type 3: Labais\n  node [fontname = Helvetica, shape = rectangle];{\n    node [label=\"Sugu saraksts \nun apraksti\"]; labais1;\n    node [label=\"Novērojumu atlase\"]; labais2;\n  }\n\n  # node type 4: Pecapstrade\n  node [fontname = Helvetica, shape = rectangle];{\n    node [label=\"Modeļu pēcapstrāde\"]; pec1;\n  }\n\n  \n  # specify which nodes are of the same \"rank\" so that they\"ll be drawn at the same level\n      {rank = same; step0 vidus1 labais1}\n      {rank = same; step1 DWexp vidus2 labais2}\n      {rank = same; step2 vidus3}\n      {rank = same; step3 vidus4 pec1}\n      {rank = same; step4 vidus5}\n  \n  # edge definitions with the node IDs\n  edge[tailclip = true, headclip = true,color=white];\n  step0 -> step1\n  step1 -> step2\n  step2 -> step3\n  step3->step4\n\n  edge[tailclip = true, headclip = true,color=black];\n  vidus1 -> vidus2\n  vidus2 -> vidus3\n  vidus3 -> vidus4\n  vidus4 -> vidus5\n  \n  vidus1 -> labais2\n  vidus1 -> DWexp\n  DWexp -> vidus2\n  DWexp -> labais2\n\n  labais1 -> labais2\n  labais2 -> vidus3\n  \n  labais1 -> vidus3\n  labais1 -> vidus5\n  labais1 -> vidus4\n  labais2 -> vidus4\n  vidus1 -> vidus3\n  \n  vidus4 -> pec1\n  vidus5 -> pec1\n  pec1 -> vidus5\n  }\n\n  ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figure 0.1: Darba plūsma un saistība starp šī dokumenta nodaļām
 </p>
