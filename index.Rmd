@@ -14,7 +14,7 @@ link-citations: yes
 github-repo: rstudio/bookdown-demo
 ---
 
-# Par šo materiālu
+# Par šo materiālu {.unnumbered}
 
 Šis materiāls ir izstrādāts Latvijas Vides Aizsardzības Fonda administrācijas finansētā projekta "Esošo aizsargāto teritoriju pārklājuma ģeotelpisko datu slāņa sagatavošana ES Bioloģiskās daudzveidības stratēģijas 2030 ieviešanai" (Nr. 1-08/73/2023) ietvaros. Šī materiāla mērķis ir demonstrēt un skaidrot darba gaitu un pieņemtos lēmumus, lai nodrošinātu tā atkārtojamību un reproducējamību. Projekta mērķis ir ģeotelpisko datu slāņu sagatavošana aizsargājamo teritoriju pārklājuma paplašināšanai.
 
@@ -28,7 +28,7 @@ bookdown::pdf_book # priekš pdf
 ```
 
 
-## Kas nav šis materiāls?
+## Kas nav šis materiāls? {.unnumbered}
 
 Šis materiāls **nav**:
 
@@ -38,9 +38,9 @@ bookdown::pdf_book # priekš pdf
 
 * sugu izplatības (dzīvotņu piemērotības, sastopamības, skaita vai tml.) *modelēšanas rokasgrāmata*. Šis materiāls apraksta darba gaitu un pieņemtos datu analīzes lēmumus, izstrādājot produktu, kas iespējami vienkāršiem un ātriem līdzekļiem vienotā darba plūsmā ļauj iegūt informāciju sugu un biotopu aizsardzības plānošanai. Tātad, eksistē dažādas modelešēnas metodes un to parametrizācijas un vēl vairāk - pieejas, kuras gadījumu no gadījuma var būt piemērotākas sugu izplatības modelēšanai, tomēr šeit uzturēta vienota plūsma un iespējami unificēta pieeja. Tas arī nozīmē, ka šeit iegūtos rezultātus primāri ir paredzēts vērtēt kopumā, nevis individuālu vietu individuālām sugām izšķirtspējā, jo sevišķi, domājot par vietas aizņemtību, tomēr tie siendz nozīmīgu pamatu šādu un līdzīgu varbūtību risināšanai.
 
-* *copy/paste gatavs produkts*. Lai gan komandu rindu lietošana un publiskošana ir ar tendenci būt šiem mērķiem paredzētai, situācijā, kad darbam izmantoti liela apjoma un vismaz daļēji - ierobežotas pieejamības dati, tas gluži vienkārši nav iespējams. Tas, kas iztrūkst (ir jānodrošina katrai šo materiaālu lietojošai personai personīgi) ir precīzi ceļi uz failiem - tos koriģējot, uzdevumi ir atkārtojami un rezultāti - replicējami.
+* *copy/paste gatavs produkts*. Lai gan komandu rindu lietošana un publiskošana ir ar tendenci būt šiem mērķiem paredzētai, situācijā, kad darbam izmantoti liela apjoma un vismaz daļēji - ierobežotas pieejamības dati, tas gluži vienkārši nav iespējams. Tomēr, nodrošinot datu pieejamību un izvietojumu atbilstoši šī projekta failu struktūrai (demonstrēta zemāk), komandu rindas būs atkārtotas un radīs tos pašus rezultātus.
 
-## Kas ir šis materiāls un kā to lietot?
+## Kas ir šis materiāls un kā to lietot? {.unnumbered}
 
 Šis materiāls ir sagatavots, lai sniegtu reproducējamu darba gaitu, aprakstot pieņemtos lēmumus un ieviestos risinājumus putnu sugu izplatības (dzīvotņu piemērotības) modelēšanai biodaudzveidības aizsardzības plānošanai. Mazākā mērā arī rezultātu demonstrēšanai un to pieejamības nodrošināšanai.
 
@@ -76,7 +76,82 @@ Reizēm tekstā atsaukšos uz R pakotnēm, tās likšu figūriekavās, piemēram
 Saprāta robežās, materiālā ir raksturotas visas izmantotās datu kopas un sniegti to metadati, kas attiecas uz reproducējamības nodrošināšanu. Tā kā ne visas datu kopas ir brīvi pieejamas, tās pašas par sevi nav publiskotas, tomēr visos gadījumos ir sniegta informācija par to ieguvi šī projekta izstrādei.
 
 
-## Satura izklāsts (orientācijai)
+## Direktoriju koks {.unnumbered}
+
+Direktoriju koku vislabāk iegūt klonējot projekta [github repozitoriju]() - tas nodrošinās gan komandu rindu failus, gan tos izvietos 
+tam atbilstošās vietās direktoriju kokā, gan sagatavos pašu koku. Tomēr, ja ir vēlme izvērst savas darbības, sekojošais koda apgabals 
+atkārto direktoriju koka izveidi lietotāja norādītā vietā un īsi skaidro tajā ievietojamos datus.
+
+```{r, eval=FALSE}
+
+# references slāņiem
+dir.create("./Templates") # virsmape projekta direktorijā
+dir.create("./Templates/TemplateGrids") # vektordatiem, režģiem
+dir.create("./Templates/TemplateGrids/lapas") # vektordatiem (režģiem) karšu lapās
+dir.create("./Templates/TemplateGridPoints") # vektordatu režģu centriem
+dir.create("./Templates/TemplateGridPoints/lapas") # vektordatu režģu centriem karšu lapās
+dir.create("./Templates/TemplateRasters") # rastra (harmonizēšanas) slāņiem
+
+# ievades datu produkti (10 m)
+dir.create("./Rastri_10m")
+
+# ievades datu produkti (500 m)
+dir.create("./Rastri_500m")
+
+# Ekoģeogrāfiskie mainīgie (ar apakšmapēm)
+dir.create("./Rastri_100m") 
+dir.create("./Rastri_100m/RAW") # tiešie rezultāti. Ne visi ir harmoniski
+dir.create("./Rastri_100m/Proj") # harmonizēti pārklājumi
+dir.create("./Rastri_100m/Scaled") # centrāti un mērogoti harmonizētie pārklājumi
+
+# VidesParmainas - direktorija vides pārmaiņu aprēķināšanai
+dir.create("./VidesParmainas") 
+dir.create("./VidesParmainas/Parmainam") # DynamicWorld ikgadējie slāņi pēc apstrādes, kas raksturota atsevišķā nodaļā
+
+
+
+# Ievades dati - sarežģīta struktūra! Ietver gan datu izvietojumu, gan apstrādi. Haoss.
+## Ainava
+
+
+## Atkritumi
+
+## Augsnes
+
+## CLC
+
+## distances 
+
+## DynamicWorld
+
+## EU_JRC - pie augsnes
+
+## klimats
+
+## koki
+
+## LAD
+
+## LV_EEZ
+
+## LVM_AtvertieDati
+
+## MKIS
+
+## MVR
+
+## Noverojumi
+
+## reljefs
+
+## S2indices
+
+## topo
+
+```
+
+
+## Satura izklāsts (orientācijai) {.unnumbered}
 
 Vispārīgā darba un informācijas plūsma projektā ir ilustrēta sekojošajā attēlā \@ref(fig:General-workflow). Tā ir izmantota par pamatu šī materiāla dalījumam nodaļās (nosauktas un īsi raksturotas zemāk), kuru nosaukumi vispārīgi sakrīt ar uzdevumiem (etapiem) darba plūsmas vizualizācijā. 
 
@@ -170,25 +245,25 @@ grViz("digraph flowchart {
 
 Katrai no šī materiāla nodaļām (tātad, uzdevumiem darba plūsmā) būt vairāku līmeņu apakšnodaļas (apakšuzdevumi). Tos vislabāk apskatīt konkrētajās nodaļās, tomēr vismaz sākotnēji sekojot secībai iepriekšējā attēlā. Nodaļas ar galvenajiem izstrādātājiem:
 
-2. [Sugu saraksts un pamata apraksti](#Chapter1) (A. Avotiņš, A. Auniņš, J. Butkeviča, A. Baumane)
+1. [Sugu saraksts un pamata apraksti](#Chapter1) (A. Avotiņš, A. Auniņš, J. Butkeviča, A. Baumane)
 
-3. [Ar modeļiem aptveramā (analīzes) telpa un standartizācijas faili](#Chapter2) (A. Avotiņš)
+2. [Ar modeļiem aptveramā (analīzes) telpa un standartizācijas faili](#Chapter2) (A. Avotiņš)
 
-4. [Ievades ģeodati](#Chapter3) (A. Avotiņš, I. Vinogradovs, A. Auniņš)
+3. [Ievades ģeodati](#Chapter3) (A. Avotiņš, I. Vinogradovs, A. Auniņš)
 
-5. [*Dynamic World* izpēte](#Chapter4) (A. Avotiņš, B. Rubene)
+4. [*Dynamic World* izpēte](#Chapter4) (A. Avotiņš, B. Rubene)
 
-6. [Ekoģeogrāfiskie mainīgie](#Chapter5) (A. Avotiņš, A. Auniņš)
+5. [Ekoģeogrāfiskie mainīgie](#Chapter5) (A. Avotiņš, A. Auniņš)
 
-7. [Novērojumu atlase](#Chapter6) (A. Avotiņš)
+6. [Novērojumu atlase](#Chapter6) (A. Avotiņš)
 
-8. [Sugu izplatības (dzīvotņu piemērotības) modeļi](#Chapter7) (A. Avotiņš, A. Auniņš)
+7. [Sugu izplatības (dzīvotņu piemērotības) modeļi](#Chapter7) (A. Avotiņš, A. Auniņš)
 
-9. [Modeļu pēcapstrāde](#Chapter8) (A. Avotiņš)
+8. [Modeļu pēcapstrāde](#Chapter8) (A. Avotiņš)
 
-10. [Vietu prioritizēšana aizsardzībai](#Chapter9) (A. Avotiņš, I. Vinogradovs, A. Auniņš)
+9. [Vietu prioritizēšana aizsardzībai](#Chapter9) (A. Avotiņš, I. Vinogradovs, A. Auniņš)
 
-11. [Rezultāti](#Chapter10) (A. Avotiņš)
+10. [Rezultāti](#Chapter10) (A. Avotiņš)
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages

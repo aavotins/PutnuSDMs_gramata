@@ -92,7 +92,7 @@ DW ievades informācija - rastra slānis katrai sezonai katrā gadā - sagtavots
 Pēc komandrindu izpildes un rezultātu sagatavošanas Google Drive diskā, ir redzams, ka katrs visu Latviju aptverošais slānis ir sadalīts vairākās lapās. Tas ir tādēļ, ka, lai nodrošinātu nulles patieso vērtību (klase "water", nevis fons), slāņi kodēti kā *Float*, nevis veselie skaitļi. Visas šīs lapas ir nepieciešams lejuplādēt, sekojošās R komandrindas tās apvieno, nodrošinot koordinātu sistēmas un pikseļu atbilstību references rastram.
 
 
-```r
+``` r
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 
@@ -150,7 +150,7 @@ Katram gadam (2015-2023) ik iepriekš minētajam sezonas griezumam DW datu pārk
 Komandu rindas reproducēšanai:
 
 
-```r
+``` r
 # libs
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
@@ -283,7 +283,7 @@ Izmantojam 2023. gada DW sezonālos slāņus. Lai gan šajā izpētes solī foku
 Komandu rindas DW klašu sastopamības izpētei ir zemāk. To ietvaros izmantota [LAD lauku informācija](#Chapter3.1.2) un šajā nodaļā (augstāk) sagatavotās 2023. gada DW sezonālās mozaīkas.
 
 
-```r
+``` r
 # libs
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
@@ -392,7 +392,7 @@ sfarrow::st_write_parquet(dati_real,"./Q1_kulturas.parquet")
 Sekojošajā attēlā \@ref(fig:DWq11) ir ilustrēta ziemāju aramzemēs (kultūru kodi "121","122","132","112","116","151") saistība ar DW klasēm dažādos temporālajos griezumos. Skaitļi attēlu daļās norāda klases "crops" ar lauka platību svērto vidējo īpatsvaru. Redzams, ka zemākā atbilstība ir izmantojot tikai vasaras mēnešus. Ievērojami zemāka par atlikušajām klasēm ir arī tikai pavasara klasifikācija. Atlikušās ir visai līdzīgas, nedaudz pārāki temporālie griezumi šķiet maijā-jūnijā un maijā-jūlijā.
 
 <div class="figure">
-<img src="./Atteli/ch004_q11.png" alt="Lauksaimniecības kultūru grupas &quot;ziemāji&quot; saistība ar DW klasēm." width="100%" />
+<img src="./Atteli/ch004_q11.png" alt="Lauksaimniecības kultūru grupas "ziemāji" saistība ar DW klasēm." width="100%" />
 <p class="caption">(\#fig:DWq11)Lauksaimniecības kultūru grupas "ziemāji" saistība ar DW klasēm.</p>
 </div>
 
@@ -402,7 +402,7 @@ Sekojošajā attēlā \@ref(fig:DWq11) ir ilustrēta ziemāju aramzemēs (kultū
 Komandu rindas attēla sagatavošanas reproducēšanai:
 
 
-```r
+``` r
 dati=sfarrow::st_read_parquet("./Q1_kulturas.parquet")
 dati=dati %>% 
   mutate(sezona=factor(periods,ordered=TRUE,
@@ -451,7 +451,7 @@ Sekojošajā attēlā \@ref(fig:DWq12) ir ilustrēta ziemas rapša (kultūras ko
 
 
 <div class="figure">
-<img src="./Atteli/ch004_q12.png" alt="Lauksaimniecības kultūru grupas &quot;ziemas rapsis&quot; saistība ar DW klasēm." width="60%" />
+<img src="./Atteli/ch004_q12.png" alt="Lauksaimniecības kultūru grupas "ziemas rapsis" saistība ar DW klasēm." width="60%" />
 <p class="caption">(\#fig:DWq12)Lauksaimniecības kultūru grupas "ziemas rapsis" saistība ar DW klasēm.</p>
 </div>
 
@@ -461,7 +461,7 @@ Sekojošajā attēlā \@ref(fig:DWq12) ir ilustrēta ziemas rapša (kultūras ko
 Komandu rindas attēla sagatavošanas reproducēšanai:
 
 
-```r
+``` r
 dati=sfarrow::st_read_parquet("./Q1_kulturas.parquet")
 dati=dati %>% 
   mutate(sezona=factor(periods,ordered=TRUE,
@@ -509,7 +509,7 @@ Sekojošajā attēlā \@ref(fig:DWq13) ir ilustrēta vasarāju aramzemēs (kult�
 
 
 <div class="figure">
-<img src="./Atteli/ch004_q13.png" alt="Lauksaimniecības kultūru grupas &quot;vasarāji aramzemēs&quot; saistība ar DW klasēm." width="100%" />
+<img src="./Atteli/ch004_q13.png" alt="Lauksaimniecības kultūru grupas "vasarāji aramzemēs" saistība ar DW klasēm." width="100%" />
 <p class="caption">(\#fig:DWq13)Lauksaimniecības kultūru grupas "vasarāji aramzemēs" saistība ar DW klasēm.</p>
 </div>
 
@@ -518,7 +518,7 @@ Sekojošajā attēlā \@ref(fig:DWq13) ir ilustrēta vasarāju aramzemēs (kult�
 Komandu rindas attēla sagatavošanas reproducēšanai:
 
 
-```r
+``` r
 dati=sfarrow::st_read_parquet("./Q1_kulturas.parquet")
 dati=dati %>% 
   mutate(sezona=factor(periods,ordered=TRUE,
@@ -566,7 +566,7 @@ Sekojošajā attēlā \@ref(fig:DWq14) ir ilustrēta vasaras rapša (kultūras k
 
 
 <div class="figure">
-<img src="./Atteli/ch004_q14.png" alt="Lauksaimniecības kultūru grupas &quot;vasaras rapsis&quot; saistība ar DW klasēm." width="60%" />
+<img src="./Atteli/ch004_q14.png" alt="Lauksaimniecības kultūru grupas "vasaras rapsis" saistība ar DW klasēm." width="60%" />
 <p class="caption">(\#fig:DWq14)Lauksaimniecības kultūru grupas "vasaras rapsis" saistība ar DW klasēm.</p>
 </div>
 
@@ -575,7 +575,7 @@ Sekojošajā attēlā \@ref(fig:DWq14) ir ilustrēta vasaras rapša (kultūras k
 Komandu rindas attēla sagatavošanas reproducēšanai:
 
 
-```r
+``` r
 dati=sfarrow::st_read_parquet("./Q1_kulturas.parquet")
 dati=dati %>% 
   mutate(sezona=factor(periods,ordered=TRUE,
@@ -622,7 +622,7 @@ Sekojošajā attēlā \@ref(fig:DWq15) ir ilustrēta auzu (kultūras kods "140")
 
 
 <div class="figure">
-<img src="./Atteli/ch004_q15.png" alt="Lauksaimniecības kultūru grupas &quot;auzas&quot; saistība ar DW klasēm." width="60%" />
+<img src="./Atteli/ch004_q15.png" alt="Lauksaimniecības kultūru grupas "auzas" saistība ar DW klasēm." width="60%" />
 <p class="caption">(\#fig:DWq15)Lauksaimniecības kultūru grupas "auzas" saistība ar DW klasēm.</p>
 </div>
 
@@ -631,7 +631,7 @@ Sekojošajā attēlā \@ref(fig:DWq15) ir ilustrēta auzu (kultūras kods "140")
 Komandu rindas attēla sagatavošanas reproducēšanai:
 
 
-```r
+``` r
 dati=sfarrow::st_read_parquet("./Q1_kulturas.parquet")
 dati=dati %>% 
   mutate(sezona=factor(periods,ordered=TRUE,
@@ -678,7 +678,7 @@ Sekojošajā attēlā \@ref(fig:DWq16) ir ilustrēta kukurūzas (kultūru kodi "
 
 
 <div class="figure">
-<img src="./Atteli/ch004_q16.png" alt="Lauksaimniecības kultūru grupas &quot;kukurūza&quot; saistība ar DW klasēm." width="80%" />
+<img src="./Atteli/ch004_q16.png" alt="Lauksaimniecības kultūru grupas "kukurūza" saistība ar DW klasēm." width="80%" />
 <p class="caption">(\#fig:DWq16)Lauksaimniecības kultūru grupas "kukurūza" saistība ar DW klasēm.</p>
 </div>
 
@@ -687,7 +687,7 @@ Sekojošajā attēlā \@ref(fig:DWq16) ir ilustrēta kukurūzas (kultūru kodi "
 Komandu rindas attēla sagatavošanas reproducēšanai:
 
 
-```r
+``` r
 dati=sfarrow::st_read_parquet("./Q1_kulturas.parquet")
 dati=dati %>% 
   mutate(sezona=factor(periods,ordered=TRUE,
@@ -735,14 +735,14 @@ Sekojošajā attēlā \@ref(fig:DWq17a) ir ilustrēta papuvju (kultūru kodi "61
 
 
 <div class="figure">
-<img src="./Atteli/ch004_q17.png" alt="Lauksaimniecības kultūru grupas &quot;papuves&quot; saistība ar DW klasēm." width="80%" />
+<img src="./Atteli/ch004_q17.png" alt="Lauksaimniecības kultūru grupas "papuves" saistība ar DW klasēm." width="80%" />
 <p class="caption">(\#fig:DWq17a)Lauksaimniecības kultūru grupas "papuves" saistība ar DW klasēm.</p>
 </div>
 
 <br>
 
 <div class="figure">
-<img src="./Atteli/ch004_q17b.png" alt="Lauksaimniecības kultūru grupas &quot;papuves&quot; perimetra-laukuma attiecības saistība ar DW klasēm." width="100%" />
+<img src="./Atteli/ch004_q17b.png" alt="Lauksaimniecības kultūru grupas "papuves" perimetra-laukuma attiecības saistība ar DW klasēm." width="100%" />
 <p class="caption">(\#fig:DWq17b)Lauksaimniecības kultūru grupas "papuves" perimetra-laukuma attiecības saistība ar DW klasēm.</p>
 </div>
 
@@ -751,7 +751,7 @@ Sekojošajā attēlā \@ref(fig:DWq17a) ir ilustrēta papuvju (kultūru kodi "61
 Komandu rindas attēlu sagatavošanas reproducēšanai:
 
 
-```r
+``` r
 dati=sfarrow::st_read_parquet("./Q1_kulturas.parquet")
 dati=dati %>% 
   mutate(sezona=factor(periods,ordered=TRUE,
@@ -827,14 +827,14 @@ Sekojošajā attēlā \@ref(fig:DWq18a) ir ilustrēta ilggadīgo zālāju (kult�
 Viens no iespējamajiem iemesliem ir laukos un to malās esošie koki un krūmi. Lai par to pārliecinātos, veidoju saistību ar perimetra-laukuma attiecību (sekojošajā attēlā). Kā redzams \@ref(fig:DWq18b), tieši koku piesātinājums laukiem ar proporcionāli garāku malu ir iemesls misklasifikācijai. Tomēr arī šādā griezumā ir redzama sezonālā mainība - pavasara mēnešiem ir nozīme. 
 
 <div class="figure">
-<img src="./Atteli/ch004_q18.png" alt="Lauksaimniecības kultūru grupas &quot;ilggadīgi zālāji&quot; saistība ar DW klasēm." width="60%" />
+<img src="./Atteli/ch004_q18.png" alt="Lauksaimniecības kultūru grupas "ilggadīgi zālāji" saistība ar DW klasēm." width="60%" />
 <p class="caption">(\#fig:DWq18a)Lauksaimniecības kultūru grupas "ilggadīgi zālāji" saistība ar DW klasēm.</p>
 </div>
 
 <br>
 
 <div class="figure">
-<img src="./Atteli/ch004_q18b.png" alt="Lauksaimniecības kultūru grupas &quot;ilggadīgi zālāji&quot; perimetra-laukuma attiecības saistība ar DW klasēm." width="100%" />
+<img src="./Atteli/ch004_q18b.png" alt="Lauksaimniecības kultūru grupas "ilggadīgi zālāji" perimetra-laukuma attiecības saistība ar DW klasēm." width="100%" />
 <p class="caption">(\#fig:DWq18b)Lauksaimniecības kultūru grupas "ilggadīgi zālāji" perimetra-laukuma attiecības saistība ar DW klasēm.</p>
 </div>
 
@@ -843,7 +843,7 @@ Viens no iespējamajiem iemesliem ir laukos un to malās esošie koki un krūmi.
 Komandu rindas attēlu sagatavošanas reproducēšanai:
 
 
-```r
+``` r
 dati=sfarrow::st_read_parquet("./Q1_kulturas.parquet")
 dati=dati %>% 
   mutate(sezona=factor(periods,ordered=TRUE,
@@ -916,7 +916,7 @@ Sekojošajā attēlā \@ref(fig:DWq19) ir ilustrēta kultivēto zālāju (kultū
 
 
 <div class="figure">
-<img src="./Atteli/ch004_q19.png" alt="Lauksaimniecības kultūru grupas &quot;kultivēti zālāji&quot; saistība ar DW klasēm." width="100%" />
+<img src="./Atteli/ch004_q19.png" alt="Lauksaimniecības kultūru grupas "kultivēti zālāji" saistība ar DW klasēm." width="100%" />
 <p class="caption">(\#fig:DWq19)Lauksaimniecības kultūru grupas "kultivēti zālāji" saistība ar DW klasēm.</p>
 </div>
 
@@ -925,7 +925,7 @@ Sekojošajā attēlā \@ref(fig:DWq19) ir ilustrēta kultivēto zālāju (kultū
 Komandu rindas attēla sagatavošanas reproducēšanai:
 
 
-```r
+``` r
 dati=sfarrow::st_read_parquet("./Q1_kulturas.parquet")
 dati=dati %>% 
   mutate(sezona=factor(periods,ordered=TRUE,
@@ -980,7 +980,7 @@ Sekojošajā attēlā \@ref(fig:DWq110) ir ilustrēta augļukoku (kultūru kodi 
 
 
 <div class="figure">
-<img src="./Atteli/ch004_q110.png" alt="Lauksaimniecības kultūru grupas &quot;augļukoki&quot; saistība ar DW klasēm." width="100%" />
+<img src="./Atteli/ch004_q110.png" alt="Lauksaimniecības kultūru grupas "augļukoki" saistība ar DW klasēm." width="100%" />
 <p class="caption">(\#fig:DWq110)Lauksaimniecības kultūru grupas "augļukoki" saistība ar DW klasēm.</p>
 </div>
 
@@ -989,7 +989,7 @@ Sekojošajā attēlā \@ref(fig:DWq110) ir ilustrēta augļukoku (kultūru kodi 
 Komandu rindas attēla sagatavošanas reproducēšanai:
 
 
-```r
+``` r
 dati=sfarrow::st_read_parquet("./Q1_kulturas.parquet")
 dati=dati %>% 
   mutate(sezona=factor(periods,ordered=TRUE,
@@ -1044,7 +1044,7 @@ ggsave(filename="./pic_q110.png",width=300,height=150,units="mm",dpi=600)
 Sekojošajā attēlā \@ref(fig:DWq111) ir ilustrēta ogu-krūmu (kultūru kodi "921","922","933","927","928","929") saistība ar Dynamic World klasēm dažādos temporālajos griezumos. Skaitļi attēlu daļās norāda klašu "crops", "grass" un "trees" ar lauka platību svērto vidējo īpatsvaru. Redzams, ka, atkarībā no kultūras, nereti lauki ir klasificēti kā zālāji, vai pat aramzemes, nevis koki vai krūmi. No vienas puses tas ir skaidrojams ar telpu starp kultūras augiem, bet var arī būt saistāms ar pašu augu augstumu (šis vairāk tiks apskatīts pie mežaudzēm). Noteikti ir pamats to izdalīt atsevišķā klasē no aramzemēm un zālājiem, domājot par sugu izplatības modelēšanu.
 
 <div class="figure">
-<img src="./Atteli/ch004_q111.png" alt="Lauksaimniecības kultūru grupas &quot;ogu-krūmi&quot; saistība ar DW klasēm." width="100%" />
+<img src="./Atteli/ch004_q111.png" alt="Lauksaimniecības kultūru grupas "ogu-krūmi" saistība ar DW klasēm." width="100%" />
 <p class="caption">(\#fig:DWq111)Lauksaimniecības kultūru grupas "ogu-krūmi" saistība ar DW klasēm.</p>
 </div>
 
@@ -1053,7 +1053,7 @@ Sekojošajā attēlā \@ref(fig:DWq111) ir ilustrēta ogu-krūmu (kultūru kodi 
 Komandu rindas attēla sagatavošanas reproducēšanai:
 
 
-```r
+``` r
 dati=sfarrow::st_read_parquet("./Q1_kulturas.parquet")
 dati=dati %>% 
   mutate(sezona=factor(periods,ordered=TRUE,
@@ -1113,7 +1113,7 @@ ggsave(filename="./pic_q111.png",width=300,height=150,units="mm",dpi=600)
 Sekojošajā attēlā \@ref(fig:DWq112) ir ilustrēta zema auguma ogu (kultūru kodi "924","934") saistība ar Dynamic World klasēm dažādos temporālajos griezumos. Skaitļi attēlu daļās norāda klašu "crops", "grass", "shrub_and_scrub" un "trees" ar lauka platību svērto vidējo īpatsvaru. Šī klase ir samērā reti sastopama un tās ietvaros ir izteikta heterogenitāte.
 
 <div class="figure">
-<img src="./Atteli/ch004_q112.png" alt="Lauksaimniecības kultūru grupas &quot;zemās ogas&quot; saistība ar DW klasēm." width="100%" />
+<img src="./Atteli/ch004_q112.png" alt="Lauksaimniecības kultūru grupas "zemās ogas" saistība ar DW klasēm." width="100%" />
 <p class="caption">(\#fig:DWq112)Lauksaimniecības kultūru grupas "zemās ogas" saistība ar DW klasēm.</p>
 </div>
 
@@ -1122,7 +1122,7 @@ Sekojošajā attēlā \@ref(fig:DWq112) ir ilustrēta zema auguma ogu (kultūru 
 Komandu rindas attēla sagatavošanas reproducēšanai:
 
 
-```r
+``` r
 dati=sfarrow::st_read_parquet("./Q1_kulturas.parquet")
 dati=dati %>% 
   mutate(sezona=factor(periods,ordered=TRUE,
@@ -1190,7 +1190,7 @@ ggsave(filename="./pic_q112.png",width=250,height=100,units="mm",dpi=600)
 Sekojošajā attēlā \@ref(fig:DWq113) ir ilustrēta lauku blokos iekļauto platību, par kurām netiek izmaksāts atbalsts (kultūru kodi "620","792") saistība ar Dynamic World klasēm dažādos temporālajos griezumos. Skaitļi attēlu daļās norāda klašu "crops", "grass", "shrub_and_scrub" un "trees" ar lauka platību svērto vidējo īpatsvaru. Šī klase ir samērā reti sastopama un tās ietvaros ir izteikta heterogenitāte.
 
 <div class="figure">
-<img src="./Atteli/ch004_q113.png" alt="Lauksaimniecības kultūru grupas &quot;bezatbalsta platības&quot; saistība ar DW klasēm." width="100%" />
+<img src="./Atteli/ch004_q113.png" alt="Lauksaimniecības kultūru grupas "bezatbalsta platības" saistība ar DW klasēm." width="100%" />
 <p class="caption">(\#fig:DWq113)Lauksaimniecības kultūru grupas "bezatbalsta platības" saistība ar DW klasēm.</p>
 </div>
 
@@ -1199,7 +1199,7 @@ Sekojošajā attēlā \@ref(fig:DWq113) ir ilustrēta lauku blokos iekļauto pla
 Komandu rindas attēla sagatavošanas reproducēšanai:
 
 
-```r
+``` r
 dati=sfarrow::st_read_parquet("./Q1_kulturas.parquet")
 dati=dati %>% 
   mutate(sezona=factor(periods,ordered=TRUE,
@@ -1267,7 +1267,7 @@ ggsave(filename="./pic_q113.png",width=400,height=100,units="mm",dpi=600)
 Sekojošajā attēlā \@ref(fig:DWq114) ir ilustrēta rušināmkultūru (kultūru kodi "821","825", "843", "844") saistība ar Dynamic World klasēm dažādos temporālajos griezumos. Skaitļi attēlu daļās norāda klašu "crops", "grass" un "trees" ar lauka platību svērto vidējo īpatsvaru. Šīs klases piemēri samērā stabili klasificējas kā aramzemes.
 
 <div class="figure">
-<img src="./Atteli/ch004_q114.png" alt="Lauksaimniecības kultūru grupas &quot;vagu un rušināmkultūras&quot; saistība ar DW klasēm." width="100%" />
+<img src="./Atteli/ch004_q114.png" alt="Lauksaimniecības kultūru grupas "vagu un rušināmkultūras" saistība ar DW klasēm." width="100%" />
 <p class="caption">(\#fig:DWq114)Lauksaimniecības kultūru grupas "vagu un rušināmkultūras" saistība ar DW klasēm.</p>
 </div>
 
@@ -1276,7 +1276,7 @@ Sekojošajā attēlā \@ref(fig:DWq114) ir ilustrēta rušināmkultūru (kultūr
 Komandu rindas attēla sagatavošanas reproducēšanai:
 
 
-```r
+``` r
 dati=sfarrow::st_read_parquet("./Q1_kulturas.parquet")
 dati=dati %>% 
   mutate(sezona=factor(periods,ordered=TRUE,
@@ -1338,7 +1338,7 @@ ggsave(filename="./pic_q114.png",width=300,height=150,units="mm",dpi=600)
 Sekojošajā attēlā \@ref(fig:DWq115) ir ilustrēta īscirtmeta atvasāju un enerģijas kultūru (kultūru kodi "644", "645", "646", "641", "642") saistība ar Dynamic World klasēm dažādos temporālajos griezumos. Skaitļi attēlu daļās norāda klašu "crops", "grass" un "trees" ar lauka platību svērto vidējo īpatsvaru. Šīs klases piemēri ir visai heterogēni. Miežabrālis ir lakstaugs, tādēļ skaidra ir samērā izteiktā zālāju klases dominance, tomēr neatkarīgi no sezonas, plaša pārstāvniecība ir arī citām klasēm, kas apgrūtina tā stratificēšanu. Līdzīgi ar kokaugiem, tomēr dominē atbilstošā koku klase, kur pārējās, visticamāk, ir saistītas ar kultūras vecumu, kas tīri teorētiski būtu pieņemami no sugu izplatības modelēšanas viedokļa.
 
 <div class="figure">
-<img src="./Atteli/ch004_q115.png" alt="Lauksaimniecības kultūru grupas &quot;īscirtmeta atvasāji un enerģijas kultūras&quot; saistība ar DW klasēm." width="100%" />
+<img src="./Atteli/ch004_q115.png" alt="Lauksaimniecības kultūru grupas "īscirtmeta atvasāji un enerģijas kultūras" saistība ar DW klasēm." width="100%" />
 <p class="caption">(\#fig:DWq115)Lauksaimniecības kultūru grupas "īscirtmeta atvasāji un enerģijas kultūras" saistība ar DW klasēm.</p>
 </div>
 
@@ -1347,7 +1347,7 @@ Sekojošajā attēlā \@ref(fig:DWq115) ir ilustrēta īscirtmeta atvasāju un e
 Komandu rindas attēla sagatavošanas reproducēšanai:
 
 
-```r
+``` r
 dati=sfarrow::st_read_parquet("./Q1_kulturas.parquet")
 dati=dati %>% 
   mutate(sezona=factor(periods,ordered=TRUE,
@@ -1455,7 +1455,7 @@ Grupēšanās izpētei, izmantoju (1) Aprīļa-Augusta kultūras kodu vidējās 
 Komandu rindas attēla sagatavošanas un veiktās analīzes reproducēšanai (papildus fails - [sagatavotais un pēc klāsteranalīzes koriģētais kultūru grupējums](./Papilddati/KulturuKodi_2024.xlsx)):
 
 
-```r
+``` r
 dati=sfarrow::st_read_parquet("./Q1_kulturas.parquet")
 dati=dati %>% 
   mutate(sezona=factor(periods,ordered=TRUE,
@@ -1545,7 +1545,7 @@ Mežaudzes virs 10 m augstuma pārējās sezonās ir gandrīz perfekti klasific�
 <br>
 
 <div class="figure">
-<img src="./Atteli/ch004_q22_trees.png" alt="Ar platību svērtā DW klases &quot;koki&quot; sastapšanas varbūtība dažādās koku sugu grupās, atkarībā no kokaudzes augstuma." width="100%" />
+<img src="./Atteli/ch004_q22_trees.png" alt="Ar platību svērtā DW klases "koki" sastapšanas varbūtība dažādās koku sugu grupās, atkarībā no kokaudzes augstuma." width="100%" />
 <p class="caption">(\#fig:DWq22trees)Ar platību svērtā DW klases "koki" sastapšanas varbūtība dažādās koku sugu grupās, atkarībā no kokaudzes augstuma.</p>
 </div>
 
@@ -1555,7 +1555,7 @@ Komandu rindas attēlu sagatavošanas un veiktās analīzes reproducēšanai (ti
 
 
 
-```r
+``` r
 # libs
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
@@ -1793,7 +1793,7 @@ Komandu rindas attēlu sagatavošanas un veiktās analīzes reproducēšanai (ti
 
 
 
-```r
+``` r
 # libs
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
@@ -1966,7 +1966,7 @@ Komandu rindas attēlu sagatavošanas un veiktās analīzes reproducēšanai (ti
 
 
 
-```r
+``` r
 # libs
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
@@ -2147,7 +2147,7 @@ Meža nogabalos, kuriem zemes kategorija ir izcirtums, biežāk reģistrētā kl
 Līdzīgi kā iepriekš, šīs klases uzpūstās vērtības ir saistītas ar blakus esošajiem nogabaliem (uz ko norāda pozitīvā perimetra-laukuma attiecība), saglabāto koku efektiem un paša nogabala izmēru (\@ref(fig:DWq51b) att.).
 
 <div class="figure">
-<img src="./Atteli/ch004_q51b.png" alt="Ar platību svērtā 2023. gada DW klases &quot;koki&quot; sastapšanas varbūtība dažādos 2022. gada izcirtumos, atkarībā no to perimetra-laukuma attiecības." width="100%" />
+<img src="./Atteli/ch004_q51b.png" alt="Ar platību svērtā 2023. gada DW klases "koki" sastapšanas varbūtība dažādos 2022. gada izcirtumos, atkarībā no to perimetra-laukuma attiecības." width="100%" />
 <p class="caption">(\#fig:DWq51b)Ar platību svērtā 2023. gada DW klases "koki" sastapšanas varbūtība dažādos 2022. gada izcirtumos, atkarībā no to perimetra-laukuma attiecības.</p>
 </div>
 
@@ -2157,7 +2157,7 @@ Līdzīgi kā iepriekš, šīs klases uzpūstās vērtības ir saistītas ar bla
 Zemāk esošais attēls (\@ref(fig:DWq51c) att.) demonstrē precīzāku klasifikāciju lielākiem nogabaliem.
 
 <div class="figure">
-<img src="./Atteli/ch004_q51c.png" alt="Ar platību svērtā 2023. gada DW klases &quot;koki&quot; sastapšanas varbūtība dažādos 2022. gada izcirtumos, atkarībā no to platības." width="100%" />
+<img src="./Atteli/ch004_q51c.png" alt="Ar platību svērtā 2023. gada DW klases "koki" sastapšanas varbūtība dažādos 2022. gada izcirtumos, atkarībā no to platības." width="100%" />
 <p class="caption">(\#fig:DWq51c)Ar platību svērtā 2023. gada DW klases "koki" sastapšanas varbūtība dažādos 2022. gada izcirtumos, atkarībā no to platības.</p>
 </div>
 
@@ -2167,7 +2167,7 @@ Komandu rindas attēlu sagatavošanas un veiktās analīzes reproducēšanai (ti
 
 
 
-```r
+``` r
 # libs
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
@@ -2387,7 +2387,7 @@ Komandu rindas attēlu sagatavošanas un veiktās analīzes reproducēšanai (ti
 
 
 
-```r
+``` r
 # libs
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
@@ -2563,7 +2563,7 @@ Komandu rindas attēlu sagatavošanas un veiktās analīzes reproducēšanai (ti
 
 
 
-```r
+``` r
 # libs
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}

@@ -4,7 +4,7 @@
 
 Saskaņā ar projekta pieteikumu, uzdevums ir izstrādāt vismaz 70 slāņus ar dzīvotņu piemērotības analīzes rezultātiem. Sākotnēji analīzei izvēlēto sugu loks ir 116, lai samazinātu spriedzi ap ik sugas rezultāta uzticamību un pielietojamību mērķim.
 
-## Analizējamo sugu izvēle
+## Analizējamo sugu izvēle {#Chapter1.1}
 
 No 375 Latvijā jebkad konstatētajām putnu sugām [@PutniLV], 335 ir uzskatāmas par (šobrīd vai vismaz vienu desmitgadi kopš 1900. gada) ligzdotājām [@Avotins_etal_2024a:LfS_Conference]. Tomēr tas nebūt nenozīmē, ka visām par ligzdotājām uzskatāmajām putnu sugām ir pieejami dati (un projektam - resursi) modelēšanai. Tādēļ vaikta tālāka sugu atlase.
 
@@ -1565,7 +1565,7 @@ Sākotnējais modelēšanai izvēlēto sugu saraksts (ar nomenklatūru un saīsi
 
 
 
-## Pamata apraksti analīzei
+## Pamata apraksti analīzei {#Chapter1.2}
 
 Analīzes plānošanai - potenciālo vidi raksturojošo ekoģeogrāfisko mainīgo (EGV) sagatavošanai, to sugām specifisko telpisko mērogu identificēšanai un sugu saistīšanai ar vispārīgām ekosistēmas grupām gan EGV sākotnējai izvēlei, gan kompleksas biodaudzveidības aizsardzības telpiskajai plānošanai - sugas iedalītas principiālās tām raksturīgajās ekosistēmās un, balstoties literatūras analīzē, piešķirtas tām raksturīgās izmantotās ainavas telpas.
 
@@ -1595,11 +1595,11 @@ Sugām raksturīgo ekosistēmu dalījums un izdalītās ligzdošanas iecirkņu g
 
 
 
-## Pamata apraksti novērojumu atlasei
+## Pamata apraksti novērojumu atlasei {#Chapter1.3}
 
 Vispārīgi, tomēr strukturēti, apraksti sagatavoti arī modelēšanā izmantojamo novērojumu atlasei. Šie apraksti ietver divas daļas: sugai nepiemērotā vide (Corine Land Cover klase, CLC) un ligzdošanas sezonas robežas. Novērojumu atlases procedūra detalizēti izklāstīta nodaļā [Novērojumu atlase](#Chapter6), sugām specifiskie kritēriji sniegti [šajā tabulā](./Papilddati/SuguApraksti_NoverojumuAtlasei.xlsx), zemāk raksturota to izstrādes gaita.
 
-### Nepiemērota vide 
+### Nepiemērota vide {#Chapter1.3.1}
 
 Tā kā ievērojama daļa modelēšanai potenciāli izmantojamo novērojumu ir sabiedrības zinātnes ceļā iegūti, tiem ir sagaidāmas ievērojamas novietojuma telpā neprecizitātes. No tām nav pasargātas arī profesionāļu ievāktās ziņas, piemēram, mērierīcas kļūdas dēļ. Ņemot vērā datu apjomu (skatīt, piemēram, https://dabasdati.lv/lv/article/dabasdatilv-zinojumu-apkopojums-2024-gada-aprilis-junijs/2024/), nav iespējams apskatīt un izvērtēt novērojuma lokācijas kļūdu katram vienam novērojumam. Tomēr pat idealizējot situācijām, kad tas būtu iespējams, ir nepieciešami skaidri kritēriji nosacījumiem, kad lokācija nav uzskatāma par drošu. Tā kā vide ir heterogēna, loģiski ir novērojumus pārbaudīt attiecībā pret zemes seguma vai zemes lietojuma (LULC) veidiem. Tomēr, lai cik intuitīvi pareizi tas nešķistu, nav jēgas tos vērtēt attiecībā pret piemērotajām LULC klasēm, jo piemērotība ir gradients un bez papildu analīzēm, kuru veikšana ir šī projekta uzdevums, nav iespējams pietiekoši uzticami nodalīt dažādas šī piemērotības gradienta daļas. Tomēr gandrīz jebkurai sugai ir iespējams definēt vidi (LULC klasi), kas nekādā gadījumā nav tieši saistāma ar ligzdošanu, jo sevišķi, ja telpiski šī klase ir tik plaša, lai daudzkārt pārsniegtu vispārīgo labas veiktspējas mērierīces precizitāti (zem 10 m labos apstākļos). Šādu iespēju nodrošina, piemēram, Corine Land Cover dati, kuru minimālā kartēšanas izšķirtspēja ir plankums ar laukumu vismaz 25 ha un ne šaurāks par 100 m (https://land.copernicus.eu/en/products/corine-land-cover). Lai gan šobrīd aktuālākā CLC versija raksturo 2018. gadu, bet modelēšanā aptvertais laika periods ir līdz 2023. gadam (ieskaitot), tomēr tā nav uzskatāma par problēmu, jo *plašas* (no 25 ha) pārmaiņas starp diametrāli atšķirīgām klasēm (no piemērotas vai suboptimās uz noteikti nepierētoru) nav sagaidāmas par biežām, bet vēl vairāk - datu atlasē vides pārmaiņas tik iekļautas kā atsevišķs solis. Tā kā šajā uzdevumā svarīgas ir plašas LULC kategorijas, izmantots CLC pirmā līmeņa dalījums (pirmais cipars no trīsciparu LULC klases koda). Tātad, novērojumi attiecināti pret CLC kategorijām: mākslīgās virsmas (CLC 1; pazīme "Maksligie"), izņemot pilsētu zaļās zonas, kas pievienotas kokiem klātām platībām (CLC 141 -> CLC 3); lauksaimniecības zemes, dabiskie zālāji, virsāji, kāpas un smiltāji (CLC 2, CLC 321, CLC 322, CLC 331; pazīme "Atvertie"); meži un pus-dabiskās platības, kurām pievienotas pilsētu zaļās zonas un izslēgtas klases dabiskie zālāji, virsāji un kāpas un smiltāji (CLC 3 un CLC 141, bet CLC 321 -> CLC 2, CLC 322 -> CLC 2, CLC 331 -> CLC 2; pazīme "Koki"); mitrāji (CLC 4; pazīme "Mitraji"); ūdeņi (CLC 5; pazīme "Udeni").
 
@@ -1610,7 +1610,7 @@ dēļ, nav pamata veikt atzīmi nevienā no pazīmēm.
 
 Ligzdošanas sezonas raksturošanai izmantota detalizētākā pieejamā informācija no Eiropas [@KrampisVol1], [@KrampisVol2], [@KrampisVol3], [@KrampisVol4], [@KrampisVol5], [@KrampisVol6], [@KrampisVol7], [@KrampisVol8], [@KrampisVol9]. Lai gan šī informācija ir uzskatāma par vismaz pusgadsmitu senu un gandrīz nekad ne Latvijā iegūtu, tā tomēr spēj raksturot laiku, kad sugām principā ir sagaidāmi ar ligzdošanu saistāmi novērojumi. Ievērojama daļa aprakstu nāko no Eiropas reģioniem ar okeāniskāku klimatu vai vairāk uz dienvidiem, kas saistībā ar klimata pārmaiņām vairāk asociējas ar situāciju Latvijā šobrīd (salīdznot ar laiku pirms vairāk nekā pusgadsimta), tomēr plaši izplatītām sugām ar lielu informācijas apjomu, šie dati var būt iegūti arī Ziemeļāfrikā kā aiz Ziemeļu polārā loka. Tādēļ priekšroka dota (sekojošajā secībā) datiem no Centrāleiropas (1); platlapju  un jauktu koku mežu reģiona (2); boreālās zonas (3); vai kopumā sugu raksturojošie neatkarīgi no reģiona. Ligzdošanas sezonas sākums noteikts pēc agrākā minētā olu dēšanas sākuma, ligzdošanas sezonas beigas rēķinātas, ņemot vērā tekstā norādīto ligzdošanas laiku (vēlāko ligzdošans uzsākšanu), olu inkubācijas ilgumu, laiku starp izdētām olām, inkubācijas uzsākšanu attiecībā pret dējuma pilnību, perēšanas ilgumu, mazuļu ligzdā pavadīto laiku, laiku līdz lidspējai, atkārtotos dējumus u. tml.
 
-## Pamata apraksti starpsugu svarošanai
+## Pamata apraksti starpsugu svarošanai {#Chapter1.4}
 
 Veicot vietu prioritizēšanu sugu aizsardzībai (nodaļa [Vietu prioritizēšana aizsardzībai](#Chapter9)) ik sugai individuāli, *a priori* nav nepieciešama nekāda informācija papildus dzīvotņu piemērotības slāņiem. Tomēr, plānojot dabas vai biodaudaudzveidības aizsardzību plašākā kontekstā, ņemot vērā dažādos telpas ierobežojumus un telpiskās pārklāšanās un atšķirības starp sugu dzīvotnēm kā arī faktu, ka dāžādām sugām ir atšķirīga nozīme dabas aizsardzībā, ir nepieciešams veidot kompleksāku pieeju. Pieejas pamatā ir atšķirīgu nozīmes svaru piešķiršana ik sugai projicētajiem dzīvotņu piemērotības slāņiem. Šos svaru var iegūt dažādi, tomēr labāk to darīt ir izmantojot iespējami salīdzināmas kvantitātes, kurās apkopota gan sugas bioloģija un ekoloģija, gan dažādi politiskie vai juridiskie un sociālie apsvērumi.
 
@@ -1620,9 +1620,9 @@ Ar politiskajiem un juridiskajiem apsvērumiem var saprast, piemēram, likumdoš
 
 Ir skaidrs, ka mažakas populācijas ir vairāk apdraudētas un tām var būt nepieciešama stingrāka aizsardzība. Tāpat arī ir skaidrs, ka par sugām, kuru populācijas ir proporcionāli vairāk koncentrētas Lativjā, ir augstāka nacionālā atbildība. Kā arī, stingrāka aizsardzība ir nepieciešama saŗukošām populāicjām un sugām ar retāku vairošanos un zemāku mūža reproduktīvo sasniegumu. Šī ir sugu pamata bioloģijas un ekoloģijas informācija, kas ir iegūstama ar literatūras analīzes palīdzību (skaidrota sekojošajās apakšnodaļās) un izmantojama kā dāla no nepieciešamajiem datiem starpsugu svarošanai vietu prioritizēšanai. Sagatavotie apraksti ir apskatāmi [šajā tabulā](./Papilddati/SuguApraksti_SvarosanaiEkologija.xlsx), zemāk skaidrota to izstrādes gaita un izmantotie informācijas avoti.
 
-### Populācijas lielums un pārmaiņas 
+### Populācijas lielums un pārmaiņas {#Chapter1.4.1}
 
-Dati par putnu sugu populāicju lielumiem un to pārmaiņām Eiropas Savienībā un tās dalībvalstīs ir pieejami un regulāri atjaunoti Putnu Direktīvas (Eiropas Parlamenta un Padomes Direktīva 2009/147/EK ( 2009. gada 30. novembris ) par savvaļas putnu aizsardzību) 12. panta ziņojumu ietvaros. Šajā pārskatā izmantoti 2012.-2018. gada pārskata perioda rezultāti (sugu kopsavilkumi par katru dalībvalsti: https://nature-art12.eionet.europa.eu/article12/report?period=3&country= ; sugu kopsavilkumi Eiropā kopumā: https://nature-art12.eionet.europa.eu/article12/summary?period=3&subject=&reported_name=). Apkopojumā ir sekojoši svarošanai izmantojamie lauki:
+Dati par putnu sugu populāciju lielumiem un to pārmaiņām Eiropas Savienībā un tās dalībvalstīs ir pieejami un regulāri atjaunoti Putnu Direktīvas (Eiropas Parlamenta un Padomes Direktīva 2009/147/EK ( 2009. gada 30. novembris ) par savvaļas putnu aizsardzību) 12. panta ziņojumu ietvaros. Šajā pārskatā izmantoti 2012.-2018. gada pārskata perioda rezultāti (sugu kopsavilkumi par katru dalībvalsti: https://nature-art12.eionet.europa.eu/article12/report?period=3&country= ; sugu kopsavilkumi Eiropā kopumā: https://nature-art12.eionet.europa.eu/article12/summary?period=3&subject=&reported_name=). Apkopojumā ir sekojoši svarošanai izmantojamie lauki:
 
 - `Populacija_LV`, kurā raksturots sugas Latvijas populācijas lielums. Sugām, kurām ziņoti intervāli, aprēķināts ģeometriskais vidējais, pārējos gadījumos, izmantots ziņojumā sniegtais putnka vērtējums;
 
@@ -1640,7 +1640,7 @@ Dati par putnu sugu populāicju lielumiem un to pārmaiņām Eiropas Savienībā
 
 - `Parmainas_mult`, kurā ievietots aprēķinātais eksponenciālo populāicja spārmaiņu raksturojums. Aprēķiniem izmantota formula $(\frac{100+\Delta}{100})^\frac{1}{T},$ kur $\Delta$ ir populācijas pārmaiņu apjoms un $T$ ir pārmaiņu ilgums gados.
 
-### Mūža reproduktīvais ieguldījums
+### Mūža reproduktīvais ieguldījums {#Chapter1.4.2}
 
 Pilnvērtīgam mūža reproduktīvā ieguldījuma aprēķinam būtu nepieciešama vismaz informācija  par individiem raksturīgo reproduktīvā mūža ilgumu, izdēto olu skaitu, izšķīlušos un izvesto mazuļu skaitu, varbūtību tiem sasniegt ligzdošanas uzsākšanas vecumu un varbūtību ligzdot ik gadu turpmāk. Diemžēl visa šī informācija nav pieejama par katru no sugām, tādēļ izvēlēta apkopojoša pieeja, kur izmantojot vispārīgo informāicju un monitoringu rezultātus, apkopots minimālais informācijas apjoms ik ligzdošanas iecirkņa (kuru aizsardzības plānošanai šis tiek darīts) atšķirību starp sugām indikāciju raksturošanai. Zemāk skaidrota apkopotā informācija (datu tabulas lauki):
 

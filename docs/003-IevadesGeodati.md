@@ -15,7 +15,7 @@ Meža nogabalus raksturojošos rādītājus un telpiskos datus apkopojošā Vals
 Pēc lejupielādes nodrošinātas ģeometrijas, tās pārbaudītas un saglabātas *geoparquet* formātā.
 
 
-```r
+``` r
 # libs
 if(!require(sf)) {install.packages("sf"); require(sf)}
 if(!require(arrow)) {install.packages("arrow"); require(arrow)}
@@ -58,7 +58,7 @@ Lauku Atbalsta Dienests uztur [regulāri aktualizētu informāciju atvērto datu
 Pēc lejupielādes nodrošinātas ģeometrijas, tās pārbaudītas, dzēšot tukšās un validējot pārējās, un saglabātas *geoparquet* formātā.
 
 
-```r
+``` r
 # libs
 if(!require(sf)) {install.packages("sf"); require(sf)}
 if(!require(arrow)) {install.packages("arrow"); require(arrow)}
@@ -135,7 +135,7 @@ Latvijas Ģeotelpiskās informācijas aģentūras topogrāfiskās kartes M:10000
 kuri pārveidoti par *geoparquet*. Failu formāta maiņas ietvaros pārbaudītas ģeometrijas (tukšās, to validitāte, kas nepieciešamības gadījumā labota).
 
 
-```r
+``` r
 # libs
 if(!require(sf)) {install.packages("sf"); require(sf)}
 if(!require(arrow)) {install.packages("arrow"); require(arrow)}
@@ -261,7 +261,7 @@ Corine Land Cover ir publiski pieejami ģeodati, kas raksturo zemes seguma un li
 Lejupielādētā datu kopa transformēta Latvijas koordinātu sistēmā (EPSG:3059), turpmākā darba atvieglošanai un paātrināšanai failu formāts mainīts uz *geoparquet*. Failu formāta maiņas ietvaros pārbaudītas ģeometrijas (tukšās, validitāte).
 
 
-```r
+``` r
 # libs
 if(!require(sf)) {install.packages("sf"); require(sf)}
 if(!require(arrow)) {install.packages("arrow"); require(arrow)}
@@ -317,7 +317,7 @@ Eiropas Kosmosa Aģentūras (ESA) *Copernicus* programmas *Sentinel-2* misija ir
 Pēc komandrindu izpildes un rezultātu sagatavošanas Google Drive diskā, ir redzams, ka katrs visu Latviju aptverošais slānis ir sadalīts vairākās lapās. Tas ir tādēļ, ka slāņi kodēti kā *Float* un pirms komprecijas GeoTIFF pārsniedz 4 GB izmēru. Visas šīs lapas ir nepieciešams lejuplādēt, sekojošās R komandrindas tās apvieno, nodrošinot koordinātu sistēmas un pikseļu atbilstību references rastram.
 
 
-```r
+``` r
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 
@@ -370,7 +370,7 @@ DW ievades informācija - rastra slānis katrai sezonai katrā gadā - sagtavots
 Pēc komandrindu izpildes un rezultātu sagatavošanas Google Drive diskā, ir redzams, ka katrs visu Latviju aptverošais slānis ir sadalīts vairākās lapās. Tas ir tādēļ, ka, lai nodrošinātu nulles patieso vērtību (klase "water", nevis fons), slāņi kodēti kā *Float*, nevis veselie skaitļi. Visas šīs lapas ir nepieciešams lejuplādēt, sekojošās R komandrindas tās apvieno, nodrošinot koordinātu sistēmas un pikseļu atbilstību references rastram.
 
 
-```r
+``` r
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 
@@ -422,7 +422,7 @@ for(i in seq_along(unikalie)){
 Pēc komandrindu izpildes un rezultātu sagatavošanas Google Drive diskā, darba cietajā diskā ir lejupielādējams viens fails un tas pielāgojams references rastram.
 
 
-```r
+``` r
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 
@@ -452,7 +452,7 @@ Pēc komandrindu izpildes un rezultātu sagatavošanas Google Drive diskā, ir l
 Lai gan šī resursa dati raksturo situāciju 2020. nevis 2023. gadā, tie ir izmantoti, jo koku vainagu seguma izzušanu raksturošanai ir pieejami [*The Global Forest Watch*](#Chapter3.1.9) dati, bet vainagu parādīšanās nav tik strauja, lai būtu nozīmīgas izmaiņas trīs gadu laikā, un šis gads atrodas pa vidu ar novērojumiem aptvertajam laika periodam (2017.-2023. gadi).
 
 
-```r
+``` r
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
 if(!require(terra)) {install.packages("terra"); require(terra)}
 
@@ -506,7 +506,7 @@ ERA5-Land ir sauszemei veikta klimata (laika apstākļu) pazīmju reanalīze sau
 Tā kā klimata datu kodējums ir *Float*, tie tiek sagatavoti kā no četrām lapām (katram slānim) sastāvoši GeoTIFF faili, kurua nepieciešams lejupielādēt darba cietajā diskā. Sekojošās komandu rindas nodrošina šo lapu apvienošanu un projektēšu atbilstībai references rastram.
 
 
-```r
+``` r
 # libs
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -558,7 +558,7 @@ for(i in seq_along(unikalie)){
 Latvijas Universitātē GeoTIFF fails (EPSG:3857, 100 m) ar organiskā oglekļa līmeni augsnes virsējā slāni saņemts 2024. gada februārī no Eiropas vienotā pētījumu centra (*European Joint Research Center*). Šis slānis tālāk projektēts atbilstībai references rastram un izmantots EGV sagatavošanā.
 
 
-```r
+``` r
 if(!require(terra)) {install.packages("terra"); require(terra)}
 
 # reference
@@ -587,7 +587,7 @@ Salīdzinot projektēto DEM ar referenci, ir skaidri izdalāmas vietas, kurās n
 No šī rastra izveidots arī nogāžu slīpuma slānis, kurš projektēts atbilstoši referencei. Slīpums izteikts grādos un rēķināts ar 8-kaimiņu pieeju.
 
 
-```r
+``` r
 # libs
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -667,7 +667,7 @@ Atsevišķos gadījumos ievades datiem veikta relatīvi apjomīga apstrāde (sag
 Lai izstrādātu daļu ar reljefu saistīto EGV, piemēram, topogrāfisko mitruma indeksu (TWI) un beznotekas depresijas, ir nepieciešams risināt ūdens plūsmu vidē. Tā vairāku soļu procedūra, kas ir loģiska un uzticama kalnu apvidos un vidē ar maz ietekmētu hidroloģiju. Tātad, Latvijas apstākļos tas ir izaicinoši. Šos izaicinājumus var risināt dažādi, piemēram, ja būtu pieejama uzticama (precīza) informācija par upju un grāvji precīzām atrašanās vietām, to varētu iestrādāt reljefā. Diemžēl, pietiekoši precīzas informāicjas nav. Tādēļ izaicinājumu risināšanai izmantota informācija par transporta būvēm no [Meliorācijas Kadastra Informācijas Sistēmas datubāze](#Chapter3.1.4) un tiltiem no [LĢIA topogrāfiskā karte](#Chapter3.1.3) - 30 m buferī ap šīm vietām iestrādāta minimālā augstuma virs jūras līmeņa informācija tālāk izmantojamajā DEM.
 
 
-```r
+``` r
 # libs
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -729,7 +729,7 @@ caurumains=app(c(reljefs,caurumi2),fun="min",na.rm=TRUE,
 Zemāk esošās komandu rindas izveido slāni ar ainavas klasi `100`, kuru failā `100_celi.tif` saglabā turpmākam darbam.
 
 
-```r
+``` r
 # Libs
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -856,7 +856,7 @@ rm(rastrs_celi)
 Zemāk esošās komandu rindas izveido slāni ar ainavas klasi `200`, kuru failā `200_udens_premask.tif` saglabā turpmākam darbam.
 
 
-```r
+``` r
 # Libs
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -983,7 +983,7 @@ rm(rastrs_udens)
 Zemāk esošās komandu rindas izveido slāni ar ainavas klasi `300` ar tās apakšklasēm, kuru failā `300_lauki_premask.tif` saglabā turpmākam darbam.
 
 
-```r
+``` r
 # Libs
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -1091,7 +1091,7 @@ rm(rastrs_lauki)
 Zemāk esošās komandu rindas izveido slāni ar ainavas klasi `400`, kuru failā `400_vasarnicas_premask.tif` saglabā turpmākam darbam.
 
 
-```r
+``` r
 # Libs
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -1193,7 +1193,7 @@ rm(rastrs_vasarnicas)
 Zemāk esošās komandu rindas izveido slāni ar ainavas klasi `600`, kuru failā `600_meziem_premask.tif` saglabā turpmākam darbam.
 
 
-```r
+``` r
 # Libs
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -1421,7 +1421,7 @@ rm(rastrs_mezi)
 Zemāk esošās komandu rindas izveido slāni ar ainavas klasi `700`, kuru failā `700_mitraji_premask.tif` saglabā turpmākam darbam.
 
 
-```r
+``` r
 # Libs
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -1546,7 +1546,7 @@ rm(rastrs_mitraji)
 Zemāk esošās komandu rindas izveido slāni ar ainavas klasi `800`, kuru failā `800_smiltaji_premask.tif` saglabā turpmākam darbam.
 
 
-```r
+``` r
 # Libs
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -1617,7 +1617,7 @@ rm(rastrs_smiltajiem)
 Zemāk esošās komandu rindas pareizā secībā apvieno iepriekš izveidotos slāņus ar ainavas klasēm un nodrošina robu aizpildīšanu ar atbilstoši klasificētu *Dynamic World* 2023. gada aprīļa-augusta kompozītu, kuru, pēc maskēšanas tikai analīzes telpai, failā `Ainava_vienk_mask.tif` saglabā turpmākam darbam.
 
 
-```r
+``` r
 # Libs
 if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
 if(!require(sf)) {install.packages("sf"); require(sf)}
@@ -1890,7 +1890,7 @@ Kopumā līdzīga procedūra veikta koku vainagu seguma izzušanas apjoma (īpat
 
 
 
-```r
+``` r
 # libs
 if(!require(terra)) {install.packages("terra"); require(terra)}
 if(!require(sf)) {install.packages("sf"); require(sf)}

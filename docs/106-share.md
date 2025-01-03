@@ -25,7 +25,7 @@ https://pkgs.rstudio.com/bookdown/reference/gitbook.html
 Or use:
 
 
-```r
+``` r
 ?bookdown::gitbook
 ```
 
