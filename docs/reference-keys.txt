@@ -163,7 +163,7 @@ q6-zālāju-transformācija-uz-aramzemēm
 secinājumi
 Chapter5
 Chapter5.1
-ainava_pazimes_telpa-chapter5.2
+Chapter5.2
 Chapter5.2.01
 Chapter5.2.02
 Chapter5.2.03
@@ -208,14 +208,14 @@ Chapter5.2.41
 Chapter5.2.42
 Chapter5.2.43
 Chapter5.2.44
-climate_pazimes_telpa-chapter5.3
+Chapter5.3
 Chapter5.3.01
 Chapter5.3.02
 Chapter5.3.03
 Chapter5.3.04
 Chapter5.3.05
 Chapter5.3.06
-daudzv_pazimes_telpa-chapter5.4
+Chapter5.4
 Chapter5.4.01
 Chapter5.4.02
 Chapter5.4.03
@@ -228,14 +228,14 @@ Chapter5.4.09
 Chapter5.4.10
 Chapter5.4.11
 Chapter5.4.12
-dist_pazimes_telpa-chapter5.5
+Chapter5.5
 Chapter5.5.01
 Chapter5.5.02
 Chapter5.5.03
 Chapter5.5.04
 Chapter5.5.05
 Chapter5.5.06
-eo_pazimes_telpa-chapter5.6
+Chapter5.6
 Chapter5.6.01
 Chapter5.6.02
 Chapter5.6.03
@@ -249,7 +249,7 @@ Chapter5.6.10
 Chapter5.6.11
 Chapter5.6.12
 Chapter5.6.13
-lauku_pazimes_telpa-chapter5.7
+Chapter5.7
 Chapter5.7.01
 Chapter5.7.02
 Chapter5.7.03
@@ -323,7 +323,7 @@ Chapter5.7.70
 Chapter5.7.71
 Chapter5.7.72
 Chapter5.7.73
-malas_pazimes_telpa-chapter5.8
+Chapter5.8
 Chapter5.8.01
 Chapter5.8.02
 Chapter5.8.03
@@ -384,7 +384,7 @@ Chapter5.8.57
 Chapter5.8.58
 Chapter5.8.59
 Chapter5.8.60
-mezi_pazimes_telpa-chapter5.9
+Chapter5.9
 Chapter5.9.001
 Chapter5.9.002
 Chapter5.9.003
@@ -495,7 +495,7 @@ Chapter5.9.107
 Chapter5.9.108
 Chapter5.9.109
 Chapter5.9.110
-reljefs_pazimes_telpa-chapter5.10
+Chapter5.10
 Chapter5.10.01
 Chapter5.10.02
 Chapter5.10.03
@@ -508,7 +508,7 @@ Chapter5.10.09
 Chapter5.10.10
 Chapter5.10.11
 Chapter5.10.12
-soils_pazimes_telpa-chapter5.11
+Chapter5.11
 Chapter5.11.01
 Chapter5.12
 Chapter6
