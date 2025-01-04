@@ -114,6 +114,7 @@ dir.create("./VidesParmainas/Parmainam") # DynamicWorld ikgadējie slāņi pēc 
 # Ievades dati ----
 # - sarežģīta struktūra! Ietver gan datu izvietojumu, gan apstrādi. Haoss.
 dir.create("./IevadesDati") 
+
 ## Ainava ----
 dir.create("./IevadesDati/ainava") 
 ## šajā direktorijā norisinās ievērojama daļa EGV sagatavošanas, tādēļ ir daudz 
@@ -209,12 +210,15 @@ dir.create("./IevadesDati/reljefs")
 ### meanDEM_1mOLD ----
 dir.create("./IevadesDati/reljefs/meanDEM_1mOLD") 
 ### ^ šeit ievieto ievades DEM 1m
-### Nartiss_visa_Latvija ----
-dir.create("./IevadesDati/reljefs/Nartiss_visa_Latvija") 
-### ^ šeit ievieto 10 m DEM bez robiem. Mēs izmantojām Māra Nartiša izstrādāto
 ### meanDEM_10mOLD ----
 dir.create("./IevadesDati/reljefs/meanDEM_10mOLD") 
-### ^ šeit ievieto savienošanas rezultātu
+### ^ šeit ir cits starprezultāts, kas gatavots LU
+### Nartiss_visa_Latvija ----
+dir.create("./IevadesDati/reljefs/Nartiss_visa_Latvija") 
+### ^ šeit ievieto aizpildīšanas 10 m DEM. Mēs izmantojām Māra Nartiša izstrādāto
+### meanDEM_10m ----
+dir.create("./IevadesDati/reljefs/meanDEM_10m") 
+### ^ šeit ievieto sagatavoto 10 m DEM bez robiem
 ### Reljefa ainavas līmeņa parametru sagatavošas direktorijas:
 dir.create("./IevadesDati/reljefs/DiS_area_r500") 
 dir.create("./IevadesDati/reljefs/DiS_area_r1250") 
