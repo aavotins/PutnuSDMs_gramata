@@ -1,41 +1,42 @@
 # Ekoģeogrāfiskie mainīgie  {#Chapter5}
 
-Šajā nodaļā apkopoti ekoģeogrāfisko mainīgo (EGV) apraksti un sniegta piekļuve to lejupielādei. Apkopotā formā ar hipersaitēm lejupielādei tā ir pieejama arī [šajā tabulā (xlsx)](), savukārt [šajā tabulā (xlsx)]() raksturots to izveidošanas pamatojums - sugas, kuru ekoloģiskās nišas raksturošanai tie sākotnēji ir plānoti. Kā redzams, daļa EGV ir veidoti vienkārši plūsmas ērtībai vai domājot arī par citām, ne tikai šī projekta sugām.
+Šajā nodaļā apkopoti ekoģeogrāfisko mainīgo (EGV) apraksti un sniegta piekļuve to lejupielādei. Apkopotā formā ar hipersaitēm lejupielādei tā ir pieejama arī [šajā tabulā (xlsx)](./Papilddati/EGV_aprakstiem_20241227.xlsx), savukārt [šajā tabulā (xlsx)]() raksturots to izveidošanas pamatojums - sugas, kuru ekoloģiskās nišas raksturošanai tie sākotnēji ir plānoti. Kā redzams, daļa EGV ir veidoti vienkārši plūsmas ērtībai vai domājot arī par citām, ne tikai šī projekta sugām.
 
-Lai nedaudz atvieglotu pārskatīšanu, EGV grupēti pēc raksturojumu veida un prezentēti apakšnodaļās. **Pēc** EGV sagatavošanas, veikta to aptvertās telpas vienādošana (projektēšana un maksēšana), jo daļai mainīgo nav *racionāli* iespējams atvert vietas pie pašām valsts robežām, un centrēšana-un-mērogošana (slāņa ik šūnas vērtībai atņemta visa slāņa vidējā aritmērtiskā šūnu vērtība un rezultāts dalīts ar slāņa (izlases) standartnovirzi). Centrēšana-un-mērogošana veikta, lai nodrošinātu pazīmes ietekmes aprēķinu uzticamību, atvieglotu regresiju leņķa koeficientu salīdzināmību un samazinātu multikolinearitāti. Šo darbību ietvaros nodrošināta vienota nosaukumu nomenklatūra, kurā nosaukums sastāv no [veids]\_[pazimes]\_[telpa].tif, kas ir skaidrojama:
+Lai nedaudz atvieglotu pārskatīšanu, EGV grupēti pēc raksturojumu veida un prezentēti apakšnodaļās. **Pēc** EGV sagatavošanas, veikta to aptvertās telpas vienādošana (projektēšana un maksēšana), jo daļai mainīgo nav *racionāli* iespējams atvert vietas pie pašām valsts robežām, un centrēšana-un-mērogošana (slāņa ik šūnas vērtībai atņemta visa slāņa vidējā aritmērtiskā šūnu vērtība un rezultāts dalīts ar slāņa (izlases) standartnovirzi). Centrēšana-un-mērogošana veikta, lai nodrošinātu pazīmes ietekmes aprēķinu uzticamību, atvieglotu regresiju leņķa koeficientu salīdzināmību un samazinātu multikolinearitāti. Šo darbību ietvaros nodrošināta vienota nosaukumu nomenklatūra, kurā nosaukums sastāv no [veids]\_[pazimes-agregacijas]\_[telpa].tif, kas ir skaidrojama:
 
 - [veids] - apzīmējums plašai ievades datu, to apstrādes vai ekoloģiskās nozīmes 
 grupai ar skeojošiem līmeņiem, kas izmantoti tālāk esošajā dalījumā nodaļās:
 
-  -- "Ainava" - dažādas [ievades ģeodatu](#Chapter3) kombinācijas ainavas 
+  -- ["Ainava"](#Chapter5.2) - dažādas [ievades ģeodatu](#Chapter3) kombinācijas ainavas 
   aprakstu sagatavošanai;
   
-  -- "Climate" - laika apstākļus un klimatu raksturojošie EGV no 
+  -- ["Climate"](#Chapter5.3) - laika apstākļus un klimatu raksturojošie EGV no 
   meteoroloģisko/klimatoloģisko datu avotiem (šajā gadījumā [ERA5 Land](#Chapter3.1.11));
   
-  -- "Daudzv" - Šenona daudzveidības indeksi ainavas klasēm;
+  -- ["Daudzv"](#Chapter5.4) - Šenona daudzveidības indeksi ainavas klasēm;
   
-  -- "Dist" - Eiklīda distance līdz interešu objektam;
+  -- ["Dist"](#Chapter5.5) - Eiklīda distance līdz interešu objektam;
   
-  -- "EO" - Zemes novērošanas sistēmu (šajā gadījumā tikai 
+  -- ["EO"](#Chapter5.6) - Zemes novērošanas sistēmu (šajā gadījumā tikai 
   [ESA Sentinel-2](#Chapter3.1.7)) indeksi;
   
-  -- "Lauku" - lauku vidi raksturojošie EGV, kuriem nozīmīgākie ievades dati 
+  -- ["Lauku"](#Chapter5.7) - lauku vidi raksturojošie EGV, kuriem nozīmīgākie ievades dati 
   ir no [Lauku Atbalsta Dienesta lauku informācija](#Chapter3.1.2);
   
-  -- "Malas" - specifisku malu daudzumu raksturojošie EGV;
+  -- ["Malas"](#Chapter5.8) - specifisku malu daudzumu raksturojošie EGV;
   
-  -- "Mezi" - mežus raksturojošie EGV, kuriem nozīmīgākie ievades dati ir no 
+  -- ["Mezi"](#Chapter5.9) - mežus raksturojošie EGV, kuriem nozīmīgākie ievades dati ir no 
   [Valsts meža dienesta Meža valsts reģistrs](#Chapter3.1.1);
   
-  -- "Reljefs" - [Digitālie reljefa modeļi](#Chapter3.1.13) apstrādi rezultējošie EGV;
+  -- ["Reljefs"](#Chapter5.10) - [Digitālie reljefa modeļi](#Chapter3.1.13) apstrādi rezultējošie EGV;
   
-  -- "Soils" - augsni raksturojošie EGV.
+  -- ["Soils"](#Chapter5.11) - augsni raksturojošie EGV.
 
-
-
-- [pazimes] - plaši mainīga rakstuzīmju kombinācija, kas palīdz identificēt 
-konkrētus ievades datus un produktu, ja ir laba izpratne par to sagatavošanu; 
+- [pazimes-agregacijas] - plaši mainīga rakstuzīmju kombinācija, kas palīdz identificēt 
+konkrētus ievades datus un produktus kā arī ar tiem veiktās aprakstošās statistikas 
+darbības agregāciju sagatavošanai, ja ir laba izpratne par to sagatavošanu. Ja 
+izpratne nav laba, tad šī ir nozīmīga daļa no unikālā identifikatora, kas izmantojams 
+apraksta meklēšanai; 
 
 - [telpa] - raksturotā analīzes telpa ar iespējamām vērtībām:
 
@@ -56,9 +57,13 @@ konkrētus ievades datus un produktu, ja ir laba izpratne par to sagatavošanu;
 
 
 
-## Ainava_pazime_merogs {#Chapter5.2}
+## Ainava_pazimes-agregacijas_merogs {#Chapter5.2}
 
 Dažādas [ievades ģeodatu](#Chapter3) kombinācijas ainavas aprakstu sagatavošanai. 
+Kopumā balstās [Kombinētā ainava](#Chapter3.2.2.3) ievades produktos, kuri nav 
+tieši atbilstoši kādai no [Lauku_pazimes-agregacijas_merogs](#Chapter5.7) 
+vai [Mezi_pazimes-agregacijas_merogs](#Chapter5.9) vidēm.
+
 
 
 ### Ainava_Apbuve_cell {#Chapter5.2.01}
@@ -1381,7 +1386,7 @@ rastrs100=raster::raster(template100)
 
 
 
-## Climate_pazime_merogs {#Chapter5.3}
+## Climate_pazimes-agregacijas_merogs {#Chapter5.3}
 
 Laika apstākļus un klimatu raksturojošie EGV no meteoroloģisko/klimatoloģisko datu 
 avotiem (šajā gadījumā [ERA5 Land](#Chapter3.1.11)). Tikai analīzes šūnas līmeņa EGV.
@@ -1567,7 +1572,7 @@ rastrs100=raster::raster(template100)
 
 
 
-## Daudzv_pazime_merogs {#Chapter5.4}
+## Daudzv_pazimes-agregacijas_merogs {#Chapter5.4}
 
 Šenona daudzveidības indeksi ainavas klasēm.
 
@@ -1933,7 +1938,7 @@ rastrs100=raster::raster(template100)
 
 
 
-## Dist_pazime_merogs {#Chapter5.5}
+## Dist_pazimes-agregacijas_merogs {#Chapter5.5}
 
 Eiklīda distance līdz interešu objektam. Pēc savas būtītas, meta-mēroga pazīme, 
 bet raksturota tikai kā vidējais aritmētiskais (10 m ievades datu šūnām) analīzes šūnā.
@@ -2109,7 +2114,7 @@ rastrs100=raster::raster(template100)
 
 
 
-## EO_pazime_merogs {#Chapter5.6}
+## EO_pazimes-agregacijas_merogs {#Chapter5.6}
 
 Zemes novērošanas sistēmu (šajā gadījumā tikai [ESA Sentinel-2](#Chapter3.1.7)) indeksi. 
 Tikai analīzes šūnas līmeņa EGV.
@@ -2495,7 +2500,7 @@ rastrs100=raster::raster(template100)
 
 
 
-## Lauku_pazime_merogs {#Chapter5.7}
+## Lauku_pazimes-agregacijas_merogs {#Chapter5.7}
 
 Lauku vidi raksturojošie EGV, kuriem nozīmīgākie ievades dati ir no [Lauku Atbalsta Dienesta lauku informācija](#Chapter3.1.2).
 
@@ -4694,7 +4699,7 @@ rastrs100=raster::raster(template100)
 
 
 
-## Malas_pazime_merogs {#Chapter5.8}
+## Malas_pazimes-agregacijas_merogs {#Chapter5.8}
 
 Specifisku malu daudzumu raksturojošie EGV. Šajā projektā pieņemts, ka visas 
 malas starp ainavas klasēm, kas izmantotas konkrētā EGV sagatavošanā ir salīdzināmas.
@@ -6505,7 +6510,7 @@ rastrs100=raster::raster(template100)
 
 
 
-## Mezi_pazime_merogs {#Chapter5.9}
+## Mezi_pazimes-agregacijas_merogs {#Chapter5.9}
 
 Mežus raksturojošie EGV, kuriem nozīmīgākie ievades dati ir no [Valsts meža dienesta Meža valsts reģistrs](#Chapter3.1.1).
 
@@ -9813,7 +9818,7 @@ rastrs100=raster::raster(template100)
 
 
 
-## Reljefs_pazime_merogs {#Chapter5.10}
+## Reljefs_pazimes-agregacijas_merogs {#Chapter5.10}
 
 [Digitālie reljefa modeļi](#Chapter3.1.13) apstrādi rezultējošie EGV.
 
@@ -10181,7 +10186,7 @@ rastrs100=raster::raster(template100)
 
 
 
-## Soils_pazime_merogs {#Chapter5.11}
+## Soils_pazimes-agregacijas_merogs {#Chapter5.11}
 
 Šajā projektā ir sagatavots tikai viens augsni tiešā veidā raksturojošs EGV. 
 Tikai analīzes šūnas līmeņa EGV.
@@ -10219,4 +10224,115 @@ rastrs100=raster::raster(template100)
 
 ## Beigu apstrāde {#Chapter5.12}
 
+Lai gan ievades datu apstrādē, ievades produktu sagatavošanā un EGV izstrādē ir 
+izmantoti vienoti harmonizēšanas faili un cik vien *racionāli* tas ir iespējams, 
+veikta robu aizpildīšana, ne visos gadījumos tas ir bijis uzticami iespējams. Daļēji 
+tas ir uzticamu datu un piemērotu aizpildīšanas metožu trūkums vai to pielietošanas 
+resursu izmaksas (nepieciešamais laiks attiecībā pret koriģējamo telpu - tās platību 
+un novietojumu pie robežām). Galvenokārt šie trūkumi attiecas uz 
+[digitālo reljefa modeļu](#Chapter3.1.13) 
+telpisko pārklājumu, tomēr daļēji arī uz [Sentinel-2](#Chapter3.1.7) pikseļu projektējumu. 
+Šie trūkumi informācijā skar mazāk par 2200 šūnām (1 ha), kuras atrodas uz valsts 
+robežas un kurās kopējā informācijas pieejamība ir ārkārtīgi ierobežota.
+
+Šīs beigu apstrādes ietvaros ir veikta arī failu nosaukumu nomenklatūras harmonizēšana. 
+Failu nosaukumi un tajos esošo informācijas iztrūkumi apjomi ir apskatāmi 
+[šajā failā](./Papilddati/EGV_names.xlsx). Zemāk esošās komandu rindas harmonizē slāņus un to nosaukumus.
+
+
+```{r, eval=FALSE}
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(openxlsx)) {install.packages("openxlsx"); require(openxlsx)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+
+
+# Templates ----
+vieni=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+nulles=subst(vieni,1,0)
+
+# Iepazīšanās -----
+failu_celi=list.files("./Rastri_100m/RAW/",full.names = TRUE,pattern=".tif$")
+nosaukumiem=list.files("./Rastri_100m/RAW/",full.names = FALSE,pattern=".tif$")
+
+faili=data.frame(faili=failu_celi,
+                 nosaukumi=nosaukumiem,
+                 pietrukst=NA)
+
+
+for(i in seq_along(faili$faili)){
+  print(i)
+  sakums=Sys.time()
+  fails=rast(faili$faili[i])
+  fails=project(fails,nulles)
+  maskets=mask(fails,nulles)
+  iztrukumi=ifel(is.na(maskets)&!is.na(nulles),1,NA)
+  frekvences=freq(iztrukumi)
+  vertiba=frekvences$count[frekvences$value==1]
+  faili$pietrukst[i]=vertiba
+  beigas=Sys.time()
+  laiks=beigas-sakums
+  print(laiks)
+}
+
+aspektam=rast("./Rastri_100m/RAW/reljefs_Aspect_mean_cell.tif")
+aspekts_maskets=maskets=mask(aspektam,nulles)
+nulles2=ifel(!is.na(aspekts_maskets)&!is.na(nulles),0,NA)
+
+EOLY=rast("./Rastri_100m/RAW//EO_NDVI_LY_med_iqr.tif")
+nulles3=ifel(!is.na(EOLY)&!is.na(nulles2),0,NA)
+freq(nulles)
+freq(nulles2)
+freq(nulles3)
+writeRaster(nulles3,"./Rastri_100m/nulles_LV100m_10km.tif")
+
+faili$pietrukst2=NA
+for(i in seq_along(faili$faili)){
+  print(i)
+  sakums=Sys.time()
+  fails=rast(faili$faili[i])
+  fails=project(fails,nulles3)
+  maskets=mask(fails,nulles3)
+  iztrukumi=ifel(is.na(maskets)&!is.na(nulles3),1,NA)
+  frekvences=freq(iztrukumi)
+  vertiba=frekvences$count[frekvences$value==1]
+  faili$pietrukst2[i]=vertiba
+  beigas=Sys.time()
+  laiks=beigas-sakums
+  print(laiks)
+}
+
+
+write.xlsx(faili,"./Rastri_100m/RAW_names.xlsx")
+# Nosaukumi projektētajiem un mērogotajiem slāņiem piešķirti analogi.
+# Pēc nosaukumu harmonizēšanas, fails pārsaukts par "EGV_names.xlsx" 
+# un izmantots tālāk
+
+# Pārsaukšana ----
+
+
+nosaukumiem=read_excel("./Rastri_100m/EGV_names.xlsx")
+definicija=rast("./Rastri_100m/nulles_LV100m_10km.tif")
+
+for(i in seq_along(nosaukumiem$nosaukumi)){
+  print(i)
+  sakums=Sys.time()
+  fails=rast(nosaukumiem$faili[i])
+  fails=project(fails,definicija)
+  maskets=mask(fails,definicija)
+  names(maskets)=substr(nosaukumiem$proj_NAME[i],1,nchar(nosaukumiem$proj_NAME[i])-4)
+  writeRaster(maskets,
+              filename=paste0("./Rastri_100m/Proj/",nosaukumiem$proj_NAME[i]),
+              overwrite=TRUE)
+  merogots=terra::scale(maskets,center = TRUE,scale = TRUE)
+  writeRaster(merogots,
+              filename=paste0("./Rastri_100m/Scaled/",nosaukumiem$scale_NAME[i]),
+              overwrite=TRUE)
+  beigas=Sys.time()
+  ilgums=beigas-sakums
+  print(ilgums)
+}
+
+
+```
 

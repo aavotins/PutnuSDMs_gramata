@@ -5745,6 +5745,7 @@ pecmaskas_rastrs=mask(aizpildits,template_t,
 <br>
 
 
+
 ##### Mežu (smalkā) daudzveidība {#Chapter3.2.3.2}
 
 
@@ -5812,6 +5813,366 @@ pecmaskas_rastrs=mask(aizpildits,template_t,
 ```
 
 <br>
+
+
+##### Kopējās ainavas Šenona daudzveidības indekss 500 m šūnā {#Chapter3.2.3.4}
+
+Šenona daudzveidība sindeksa aprēķini ir tik resrusu prasīgi, ka tos risināt katrā ainavas 
+mērogā ap katru analīzes šūnu nav racionāli iespējams. Atšķirībā no malu slāņiem, tie 
+nav tieši agregējami. Tādēļ pieņemts risināts lēmums par rastra šūnas izmēru, kurš:
+
+1. veidojas kā analīzes šūnas reizinājums ar veselu skaitli;
+
+2. ir pietiekoši plašs, lai tajā būtu iespējama vides mainība. Tādēļ analīzes šūna 
+pati par sevi (vai reizinājums ar 1) neder - 1 ha teritorijā ir ļoti Zemes seguma 
+un lietojuma veidu maza mainība. Tas nozīmē, ka šai šūnai ir jābūt iespējami lielākai, 
+tomēr pārāk liela analīzes šūna nozīmētu telpiskās autokorelācijas mākslīgu pastiprināšanu;
+
+3. jebkuram ainavas mērogam ir jāveidojas no vairākām ievades līmeņa šūnām. 
+
+Tā kā ekoģeogrāfisko mainīgo sagatavošanā izmantosim telpiski svērto zonālo statistiku 
+(vairāk - [Procesēšanas atvieglošana](#Chapter5.1)) 
+un mazākais ainavas līmenis pēc analīzes šūnas ir r=500 m ap analīzes šūnas centru, pieņemts 
+lēmums ainavas daudzveidības indeksa aprēķinus veikt individuālām šūnām ar malas garumu 500 m, 
+tātad, 25 ha ainavā. Tas nozīmē, ka mazākais izmantoto vienību skaits ir deviņi (ainavas 
+mērogam r=500 m ap analīzes šūnas centru).
+
+Par ievades informāciju kopējās ainavas daudzveidības indeksa aprēķiniem izmantots 
+[Daudzās klases daudzveidībai](#Chapter3.2.2.3.10) rezultāts. Zemāk esošās komandu rindas izveido un saglabā slāni `Daudzv_Kopeja_x500.tif`, kurš tiks 
+izmantots [EGV sagatavošanai](#Chapter5).
+
+```{r, eval=FALSE}
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(landscapemetrics)) {install.packages("landscapemetrics"); require(landscapemetrics)}
+if(!require(foreach)) {install.packages("foreach"); require(foreach)}
+if(!require(doParallel)) {install.packages("doParallel"); require(doParallel)}
+
+
+# mapes ----
+
+# kopeja daudzveidiba
+dir.create("./IevadesDati/ainava/Daudzveidibai/Daudzv_Kopeja_x500")
+
+
+# kvadrati ----
+
+kvadrati=st_read_parquet("./Templates/TemplateGrids/tikls500_sauzeme.parquet")
+
+numuri=levels(factor(kvadrati$tks50km))
+
+
+library(foreach)
+library(doParallel)
+cl <- makeCluster(24) # jānorāda atbilstoši izmantotajai iekārtai
+registerDoParallel(cl)
+
+foreach(i = 1:length(numuri)) %dopar% {
+  library(tidyverse)
+  library(sf)
+  library(arrow)
+  library(sfarrow)
+  library(terra)
+  library(raster)
+  library(exactextractr)
+  library(fasterize)
+  library(landscapemetrics)
+  
+  
+  sakums=Sys.time()
+  print(i)
+  solis=numuri[i]
+  
+  sunas=kvadrati %>% filter(tks50km==solis)
+  
+  telpa=st_as_sfc(st_bbox(sunas))
+  telpa2=st_buffer(telpa,dist=1000)
+  
+  
+  template_500=rast("./Templates/TemplateRasters/LV500m_10km.tif")
+  temp500_mazs=crop(template_500,telpa2)
+  rastrs_500_mazs=raster::raster(temp500_mazs)
+  
+  # kopeja
+  slanis=rast("./Rastri_10m/Ainava_KopejaiDaudzveidibai.tif")
+  slanis_mazs=crop(slanis,telpa2)
+  a=sample_lsm(slanis_mazs,y=sunas,plot_id=sunas$id,what="lsm_l_shdi")
+  a$value[is.na(a$value)]=0
+  sunas$vertibas=a$value
+  slanis=fasterize::fasterize(sunas,rastrs_500_mazs,field="vertibas")
+  slanis=rast(slanis)
+  slanis2=terra::mask(slanis,temp500_mazs,overwrite=TRUE,
+                      filename=paste0("./IevadesDati/ainava/Daudzveidibai/Daudzv_Kopeja_x500/Daudzv_Kopeja_x500_",solis,".tif"))
+  
+ 
+  beigas=Sys.time()
+  ilgums=beigas-sakums
+  print(ilgums)
+}
+stopCluster(cl)
+
+
+## mozaīkas ----
+
+# kopeja daudzveidiba
+slani=list.files("./IevadesDati/ainava/Daudzveidibai/Daudzv_Kopeja_x500/",full.names = TRUE)
+virt_slani=terra::vrt(slani)
+names(virt_slani)="Daudzv_Kopeja_x500"
+writeRaster(virt_slani,"./Rastri_500m/Daudzv_Kopeja_x500.tif",overwrite=TRUE)
+
+
+```
+
+
+<br>
+
+
+
+
+##### Lauku ainavas Šenona daudzveidības indekss 500 m šūnā {#Chapter3.2.3.5}
+
+
+
+Šenona daudzveidība sindeksa aprēķini ir tik resrusu prasīgi, ka tos risināt katrā ainavas 
+mērogā ap katru analīzes šūnu nav racionāli iespējams. Atšķirībā no malu slāņiem, tie 
+nav tieši agregējami. Tādēļ pieņemts risināts lēmums par rastra šūnas izmēru, kurš:
+
+1. veidojas kā analīzes šūnas reizinājums ar veselu skaitli;
+
+2. ir pietiekoši plašs, lai tajā būtu iespējama vides mainība. Tādēļ analīzes šūna 
+pati par sevi (vai reizinājums ar 1) neder - 1 ha teritorijā ir ļoti Zemes seguma 
+un lietojuma veidu maza mainība. Tas nozīmē, ka šai šūnai ir jābūt iespējami lielākai, 
+tomēr pārāk liela analīzes šūna nozīmētu telpiskās autokorelācijas mākslīgu pastiprināšanu;
+
+3. jebkuram ainavas mērogam ir jāveidojas no vairākām ievades līmeņa šūnām. 
+
+Tā kā ekoģeogrāfisko mainīgo sagatavošanā izmantosim telpiski svērto zonālo statistiku 
+(vairāk - [Procesēšanas atvieglošana](#Chapter5.1)) 
+un mazākais ainavas līmenis pēc analīzes šūnas ir r=500 m ap analīzes šūnas centru, pieņemts 
+lēmums ainavas daudzveidības indeksa aprēķinus veikt individuālām šūnām ar malas garumu 500 m, 
+tātad, 25 ha ainavā. Tas nozīmē, ka mazākais izmantoto vienību skaits ir deviņi (ainavas 
+mērogam r=500 m ap analīzes šūnas centru).
+
+Par ievades informāciju kopējās ainavas daudzveidības indeksa aprēķiniem izmantots 
+[Lauku (smalkā) daudzveidība](#Chapter3.2.3.1) rezultāts. Zemāk esošās komandu 
+rindas izveido un saglabā slāni `Daudzv_Lauku_x500.tif`, kurš tiks 
+izmantots [EGV sagatavošanai](#Chapter5).
+
+```{r, eval=FALSE}
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(landscapemetrics)) {install.packages("landscapemetrics"); require(landscapemetrics)}
+if(!require(foreach)) {install.packages("foreach"); require(foreach)}
+if(!require(doParallel)) {install.packages("doParallel"); require(doParallel)}
+
+
+# mapes ----
+
+# lauku daudzveidiba
+dir.create("./IevadesDati/ainava/Daudzveidibai/Daudzv_Lauku_x500")
+
+# kvadrati ----
+
+kvadrati=st_read_parquet("./Templates/TemplateGrids/tikls500_sauzeme.parquet")
+
+numuri=levels(factor(kvadrati$tks50km))
+
+
+library(foreach)
+library(doParallel)
+cl <- makeCluster(24) # jānorāda atbilstoši izmantotajai iekārtai
+registerDoParallel(cl)
+
+foreach(i = 1:length(numuri)) %dopar% {
+  library(tidyverse)
+  library(sf)
+  library(arrow)
+  library(sfarrow)
+  library(terra)
+  library(raster)
+  library(exactextractr)
+  library(fasterize)
+  library(landscapemetrics)
+  
+  
+  sakums=Sys.time()
+  print(i)
+  solis=numuri[i]
+  
+  sunas=kvadrati %>% filter(tks50km==solis)
+  
+  telpa=st_as_sfc(st_bbox(sunas))
+  telpa2=st_buffer(telpa,dist=1000)
+  
+  
+  template_500=rast("./Templates/TemplateRasters/LV500m_10km.tif")
+  temp500_mazs=crop(template_500,telpa2)
+  rastrs_500_mazs=raster::raster(temp500_mazs)
+  
+
+  
+  # lauku daudzveidiba
+  slanis=rast("./Rastri_10m/Ainava_LaukuSmalkaDaudzveidiba.tif")
+  slanis_mazs=crop(slanis,telpa2)
+  a=sample_lsm(slanis_mazs,y=sunas,plot_id=sunas$id,what="lsm_l_shdi")
+  a$value[is.na(a$value)]=0
+  sunas$vertibas=a$value
+  slanis=fasterize::fasterize(sunas,rastrs_500_mazs,field="vertibas")
+  slanis=rast(slanis)
+  slanis2=terra::mask(slanis,temp500_mazs,overwrite=TRUE,
+                      filename=paste0("./IevadesDati/ainava/Daudzveidibai/Daudzv_Lauku_x500/Daudzv_Lauku_x500_",solis,".tif"))
+
+  
+  beigas=Sys.time()
+  ilgums=beigas-sakums
+  print(ilgums)
+}
+stopCluster(cl)
+
+
+## mozaīkas ----
+
+# lauku daudzveidiba
+slani=list.files("./IevadesDati/ainava/Daudzveidibai/Daudzv_Lauku_x500/",full.names = TRUE)
+virt_slani=terra::vrt(slani)
+names(virt_slani)="Daudzv_Lauku_x500"
+writeRaster(virt_slani,"./Rastri_500m/Daudzv_Lauku_x500.tif",overwrite=TRUE)
+
+
+```
+
+
+<br>
+
+
+
+##### Mežu ainavas Šenona daudzveidības indekss 500 m šūnā {#Chapter3.2.3.6}
+
+
+
+Šenona daudzveidība sindeksa aprēķini ir tik resrusu prasīgi, ka tos risināt katrā ainavas 
+mērogā ap katru analīzes šūnu nav racionāli iespējams. Atšķirībā no malu slāņiem, tie 
+nav tieši agregējami. Tādēļ pieņemts risināts lēmums par rastra šūnas izmēru, kurš:
+
+1. veidojas kā analīzes šūnas reizinājums ar veselu skaitli;
+
+2. ir pietiekoši plašs, lai tajā būtu iespējama vides mainība. Tādēļ analīzes šūna 
+pati par sevi (vai reizinājums ar 1) neder - 1 ha teritorijā ir ļoti Zemes seguma 
+un lietojuma veidu maza mainība. Tas nozīmē, ka šai šūnai ir jābūt iespējami lielākai, 
+tomēr pārāk liela analīzes šūna nozīmētu telpiskās autokorelācijas mākslīgu pastiprināšanu;
+
+3. jebkuram ainavas mērogam ir jāveidojas no vairākām ievades līmeņa šūnām. 
+
+Tā kā ekoģeogrāfisko mainīgo sagatavošanā izmantosim telpiski svērto zonālo statistiku 
+(vairāk - [Procesēšanas atvieglošana](#Chapter5.1)) 
+un mazākais ainavas līmenis pēc analīzes šūnas ir r=500 m ap analīzes šūnas centru, pieņemts 
+lēmums ainavas daudzveidības indeksa aprēķinus veikt individuālām šūnām ar malas garumu 500 m, 
+tātad, 25 ha ainavā. Tas nozīmē, ka mazākais izmantoto vienību skaits ir deviņi (ainavas 
+mērogam r=500 m ap analīzes šūnas centru).
+
+Par ievades informāciju kopējās ainavas daudzveidības indeksa aprēķiniem izmantots 
+[Mežu (smalkā) daudzveidība](#Chapter3.2.3.2) rezultāts. Zemāk esošās komandu 
+rindas izveido un saglabā slāni `Daudzv_Mezu_x500.tif`, kurš tiks 
+izmantots [EGV sagatavošanai](#Chapter5).
+
+```{r, eval=FALSE}
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(landscapemetrics)) {install.packages("landscapemetrics"); require(landscapemetrics)}
+if(!require(foreach)) {install.packages("foreach"); require(foreach)}
+if(!require(doParallel)) {install.packages("doParallel"); require(doParallel)}
+
+
+# mapes ----
+
+# mezu daudzveidiba
+dir.create("./IevadesDati/ainava/Daudzveidibai/Daudzv_Mezu_x500")
+
+
+# kvadrati ----
+
+kvadrati=st_read_parquet("./Templates/TemplateGrids/tikls500_sauzeme.parquet")
+
+numuri=levels(factor(kvadrati$tks50km))
+
+
+library(foreach)
+library(doParallel)
+cl <- makeCluster(24) # jānorāda atbilstoši izmantotajai iekārtai
+registerDoParallel(cl)
+
+foreach(i = 1:length(numuri)) %dopar% {
+  library(tidyverse)
+  library(sf)
+  library(arrow)
+  library(sfarrow)
+  library(terra)
+  library(raster)
+  library(exactextractr)
+  library(fasterize)
+  library(landscapemetrics)
+  
+  
+  sakums=Sys.time()
+  print(i)
+  solis=numuri[i]
+  
+  sunas=kvadrati %>% filter(tks50km==solis)
+  
+  telpa=st_as_sfc(st_bbox(sunas))
+  telpa2=st_buffer(telpa,dist=1000)
+  
+  
+  template_500=rast("./Templates/TemplateRasters/LV500m_10km.tif")
+  temp500_mazs=crop(template_500,telpa2)
+  rastrs_500_mazs=raster::raster(temp500_mazs)
+  
+ 
+  # mezu daudzveidiba
+  slanis=rast("./Rastri_10m/Ainava_MezuSmalkaDaudzveidiba.tif")
+  slanis_mazs=crop(slanis,telpa2)
+  a=sample_lsm(slanis_mazs,y=sunas,plot_id=sunas$id,what="lsm_l_shdi")
+  a$value[is.na(a$value)]=0
+  sunas$vertibas=a$value
+  slanis=fasterize::fasterize(sunas,rastrs_500_mazs,field="vertibas")
+  slanis=rast(slanis)
+  slanis2=terra::mask(slanis,temp500_mazs,overwrite=TRUE,
+                      filename=paste0("./IevadesDati/ainava/Daudzveidibai/Daudzv_Mezu_x500/Daudzv_Mezu_x500_",solis,".tif"))
+
+  
+  
+  beigas=Sys.time()
+  ilgums=beigas-sakums
+  print(ilgums)
+}
+stopCluster(cl)
+
+
+## mozaīkas ----
+
+
+# mezu daudzveidiba
+slani=list.files("./IevadesDati/ainava/Daudzveidibai/Daudzv_Mezu_x500/",full.names = TRUE)
+virt_slani=terra::vrt(slani)
+names(virt_slani)="Daudzv_Mezu_x500"
+writeRaster(virt_slani,"./Rastri_500m/Daudzv_Mezu_x500.tif",overwrite=TRUE)
+
+
+```
+
+
+<br>
+
+
 
 
 ### Vides pārmaiņas {#Chapter3.2.4}
