@@ -697,37 +697,6 @@ div.csl-indent {
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
-<li class="chapter" data-level="11" data-path="hello-bookdown.html"><a href="hello-bookdown.html"><i class="fa fa-check"></i><b>11</b> Hello bookdown</a>
-<ul>
-<li class="chapter" data-level="11.1" data-path="hello-bookdown.html"><a href="hello-bookdown.html#a-section"><i class="fa fa-check"></i><b>11.1</b> A section</a>
-<ul>
-<li class="chapter" data-level="" data-path="hello-bookdown.html"><a href="hello-bookdown.html#an-unnumbered-section"><i class="fa fa-check"></i>An unnumbered section</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="cross.html"><a href="cross.html"><i class="fa fa-check"></i><b>12</b> Cross-references</a>
-<ul>
-<li class="chapter" data-level="12.1" data-path="cross.html"><a href="cross.html#chapters-and-sub-chapters"><i class="fa fa-check"></i><b>12.1</b> Chapters and sub-chapters</a></li>
-<li class="chapter" data-level="12.2" data-path="cross.html"><a href="cross.html#captioned-figures-and-tables"><i class="fa fa-check"></i><b>12.2</b> Captioned figures and tables</a></li>
-</ul></li>
-<li class="chapter" data-level="13" data-path="parts.html"><a href="parts.html"><i class="fa fa-check"></i><b>13</b> Parts</a></li>
-<li class="chapter" data-level="14" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html"><i class="fa fa-check"></i><b>14</b> Footnotes and citations</a>
-<ul>
-<li class="chapter" data-level="14.1" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#footnotes"><i class="fa fa-check"></i><b>14.1</b> Footnotes</a></li>
-<li class="chapter" data-level="14.2" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#citations"><i class="fa fa-check"></i><b>14.2</b> Citations</a></li>
-</ul></li>
-<li class="chapter" data-level="15" data-path="blocks.html"><a href="blocks.html"><i class="fa fa-check"></i><b>15</b> Blocks</a>
-<ul>
-<li class="chapter" data-level="15.1" data-path="blocks.html"><a href="blocks.html#equations"><i class="fa fa-check"></i><b>15.1</b> Equations</a></li>
-<li class="chapter" data-level="15.2" data-path="blocks.html"><a href="blocks.html#theorems-and-proofs"><i class="fa fa-check"></i><b>15.2</b> Theorems and proofs</a></li>
-<li class="chapter" data-level="15.3" data-path="blocks.html"><a href="blocks.html#callout-blocks"><i class="fa fa-check"></i><b>15.3</b> Callout blocks</a></li>
-</ul></li>
-<li class="chapter" data-level="16" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>16</b> Sharing your book</a>
-<ul>
-<li class="chapter" data-level="16.1" data-path="sharing-your-book.html"><a href="sharing-your-book.html#publishing"><i class="fa fa-check"></i><b>16.1</b> Publishing</a></li>
-<li class="chapter" data-level="16.2" data-path="sharing-your-book.html"><a href="sharing-your-book.html#pages"><i class="fa fa-check"></i><b>16.2</b> 404 pages</a></li>
-<li class="chapter" data-level="16.3" data-path="sharing-your-book.html"><a href="sharing-your-book.html#metadata-for-sharing"><i class="fa fa-check"></i><b>16.3</b> Metadata for sharing</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="references-1.html"><a href="references-1.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -849,7 +818,7 @@ klases seguma īpatsvaru 500 m, 1250 m un 3000 m rādiusā ap katru no analīzes
 centriem un aprēķinot Pīrsona korelācijas koeficientus visām (n=62750) analīzes šūnām
 <a href="Chapter2.html#Chapter2.1">Vektordatu režģi</a> <code>tks93_50km</code> lapā “3434”. Pīrsona korelācijas koeficienti
 starp zonālās statistikas rezultātiem, izmantojot ar-pikseļa-platību-zonā svērto
-pieeju, aprakstāmajiemr astiem ar 10 m un 100 m izšķirtspēju:</p>
+pieeju, aprakstāmajiem rastriem ar 10 m un 100 m izšķirtspēju:</p>
 <ul>
 <li><p>500 m rādiusam: <span class="math inline">\(\rho=0.9999932\)</span>;</p></li>
 <li><p>1250 m rādiusam: <span class="math inline">\(\rho=0.9999932\)</span>;</p></li>
@@ -882,17 +851,18 @@ pārklāšanās, kas ievērojami apgrūtina/paildzina zonālās statistikas apr�
 rezultējoties gandrīz identiskās vērtībās, nolēmām izmēģināt šo aprēķinu veikšanu
 nevis katrai analīzes šūnai, bet retināt tā, lai aprakstāmo zonu izvietojums būtu
 izsakāms kā zonas rādiusa dalījums ar 10, kura rezultāts veidojas kā analīzes
-šūnu reizinājums ar 10. Tas nozīmē, ka šo pieeju izmanto tikai zonām, kuras
-viedojas rādiusiem 3000 un 10000 m ap analīzes šūnās, tos veicot ik pēc, attiecīgi,
+šūnu reizinājums ar veselu skaitli. Tas nozīmē, ka šo pieeju izmantojam tikai zonām, kuras
+viedojas rādiusiem 3000 un 10000 m ap analīzes šūnu centriem, tos veicot ik pēc, attiecīgi,
 300 un 1000 m un attiecinot uz visām šajās 300 un 1000 m vektordatu šūnās esošajām
 analīzes šūnām (to izvietojums, savstarpējā saistība un attiecināmība ir iestrādāta
 <a href="Chapter2.html#Chapter2">Ar modeļiem aptveramā (analīzes) telpa un standartizācijas faili</a>
 definēšanā). Lielākā teorētiski sagaidāmā kļūda šīs retināšanas rezultātā ir
-mazāka par 4%, kas izriet no zonu pārklāšanās. Tomēr, empīriskā salīdzinājumā tā vidēji
-ir daudz mazāka <a href="Chapter5.html#fig:ZonalStatsPrec">5.2</a>- atkārtojot zonālās statistikas aprēķinus iepriekš aprakstītajai
-pazīmei tajā pašā telpā, rezultējošais Pīrsona korelācijas koeficients ir <span class="math inline">\(r=0.9966965\)</span>
+mazāka par 5%, kas izriet no zonu pārklāšanās. Empīriskā salīdzinājumā tā vidēji
+ir daudz mazāka <a href="Chapter5.html#fig:ZonalStatsPrec">5.2</a> - atkārtojot iepriekš aprakstītos zonālās
+statistikas aprēķinus (lauka bloku platības īpatsvaram <code>tks93_50km</code> lapā “3434”),
+rezultējošais Pīrsona korelācijas koeficients ir <span class="math inline">\(r=0.9966965\)</span>
 jeb &lt;1% dispersijas un regresējot - Pīrsona atlikumu vērtību kļūdu <span class="math inline">\(MSE=0.0000108\)</span>,
-tomēr darbu veicot ievērojami ātrāk - gandrīz 100 reizes plašākajā ainavas mērogā,
+tomēr darbu veicot ievērojami ātrāk - gandrīz 100 reizes ātrāk plašākajā ainavas mērogā,
 kas ir tuvu veicamo aprēķinu skaita 100 reižu samazinājumam.</p>
 <div class="figure"><span style="display:block;" id="fig:ZonalStatsPrec"></span>
 <img src="Atteli/ch005_1fig2.png" alt="Zonālās statistikas (10 000 m zonās) rezultātu salīdzinājums ar un bez aprēķinu telpiskās retināšanas" width="80%" />
@@ -902,9 +872,9 @@ Figure 5.2: Zonālās statistikas (10 000 m zonās) rezultātu salīdzinājums a
 </div>
 <p><br></p>
 <p>Šīs prakses ieviešana ekoģeogrāfisko mainīgo aprēķiniem nepieciešamo laiku
-samazināja daudzus tūkstošus (atsevišķās daļās pat miljonus) reižu. Izmantojot
-apmēram 80% no Latvijas Universitātes Skaitliskās modelēšanas institūta HPC resursiem
-nepārtrauktā secīgu uzdevumu plūsmā, darbs, sākot ar analīzes telpas definēšanu un
+samazināja tūkstošiem (atsevišķās daļās pat miljoniem) reižu. Izmantojot līdz
+apmēram 80% no Latvijas Universitātes Skaitliskās modelēšanas institūta HPC RAM
+resursiem nepārtrauktā secīgu uzdevumu plūsmā, darbs, sākot ar
 <a href="Chapter2.html#Chapter2">standartizācijas failu sagatavošanu</a> un beidzot ar ekoģeogrāfisko
 mainīgo sagatavošanu (šīs nodaļas saturu ieskaitot), ir veicams līdz divu nedēļu
 laikā.</p>
