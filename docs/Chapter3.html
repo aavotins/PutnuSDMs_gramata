@@ -225,7 +225,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="3.2.1" data-path="Chapter3.html"><a href="Chapter3.html#Chapter3.2.1"><i class="fa fa-check"></i><b>3.2.1</b> Reljefa produkti</a></li>
 <li class="chapter" data-level="3.2.2" data-path="Chapter3.html"><a href="Chapter3.html#Chapter3.2.2"><i class="fa fa-check"></i><b>3.2.2</b> Ainava</a></li>
-<li class="chapter" data-level="3.2.3" data-path="Chapter3.html"><a href="Chapter3.html#Chapter3.2.4"><i class="fa fa-check"></i><b>3.2.3</b> Vides pārmaiņas</a></li>
+<li class="chapter" data-level="3.2.3" data-path="Chapter3.html"><a href="Chapter3.html#Chapter3.3"><i class="fa fa-check"></i><b>3.2.3</b> Vides pārmaiņas</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="Chapter4.html"><a href="Chapter4.html"><i class="fa fa-check"></i><b>4</b> <em>Dynamic World</em> izpēte</a>
@@ -1385,7 +1385,14 @@ ieviestie risinājumi.</p>
 <span id="cb18-39"><a href="Chapter3.html#cb18-39" tabindex="-1"></a>               <span class="at">filename=</span><span class="st">&quot;./IevadesDati/reljefs/caurtDEM_10m.tif&quot;</span>)</span></code></pre></div>
 </details>
 <p><br></p>
-<p>Ar šo DEM tālāk veikta ģeoprocesēšana reljefa depresiju atrašanai un topogrāfiskā mitruma indeksa (TWI) noteikšanai. Sākumā aprēķinātas reljefa depresijas, pieņemot, kas visas noteces, par kurām būtu jāzina, ir zināmas. Tad, veidojot TWI ar iestrādātu 10 šūnu caurplūdes iespējamību, uzrādītajām depresijām veidoti alternatīvie slāņi. Pēc šo depresiju aizpildīšanas, izmantota d-infinity pieeja plūsmas virziena noteikšanai un aprēķināts TWI.</p>
+<p>Ar šo DEM tālāk veikta ģeoprocesēšana reljefa depresiju atrašanai un topogrāfiskā mitruma indeksa (TWI) noteikšanai. Sākumā aprēķinātas reljefa depresijas, pieņemot, kas visas noteces, par kurām būtu jāzina, ir zināmas un ņemtas vērā (koriģētas DEM vērtības - iepriekšējais koda apgabals). Tad, sagatavots topogrāfiskā mitruma indekss un atkārtota beznoteces depresiju meklēšana:</p>
+<ol style="list-style-type: decimal">
+<li><p>topogrāfiskā mitruma indeksa aprēķināšanai, pārskatītas reljefa beznoteces depresijas, pieļaujot līdz desmit šūnu pārrāvumiem mazākās pretestības vietās, pārējās aizpildītas;</p></li>
+<li><p>sagatavoti precizēti beznoteces depresiju un to dziļuma slāņi pēc plūsmas pārrāvumu iestrādāšanas;</p></li>
+<li><p>papildus drošībai, pirmā soļa rezultātam atkārtota reljefa depresiju meklēšana un aizpildīšana <span class="citation">(<a href="#ref-WangLiu2006">Wang and Liu, 2006</a>)</span>;</p></li>
+<li><p>trešā soļa rezultāts izmantots specifiskā sateces baseina noteikšanai, izmantojot <em>d-infinity</em> plūsmas dalīšanos;</p></li>
+<li><p>kombinējot specifiskā sateces baseina slāni ar nogāžu slīpumu slāni, aprēķināts topogrāfiskā mitruma indekss. To grafiski izvērtējot ir konstatētas atsevišķas ekstrēmas vērtības, kuras ierobežotas līdz 20.</p></li>
+</ol>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="Chapter3.html#cb19-1" tabindex="-1"></a><span class="co"># libs</span></span>
 <span id="cb19-2"><a href="Chapter3.html#cb19-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
@@ -6096,12 +6103,12 @@ izmantots <a href="Chapter5.html#Chapter5">EGV sagatavošanai</a>.</p>
 </div>
 </div>
 </div>
-<div id="Chapter3.2.4" class="section level3 hasAnchor" number="3.2.3">
-<h3><span class="header-section-number">3.2.3</span> Vides pārmaiņas<a href="Chapter3.html#Chapter3.2.4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="Chapter3.3" class="section level3 hasAnchor" number="3.2.3">
+<h3><span class="header-section-number">3.2.3</span> Vides pārmaiņas<a href="Chapter3.html#Chapter3.3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Vides pārmaiņas nepieciešamas novērojumu filtrēšanai. Daļēji tās būtu iegūstamas no <a href="Chapter3.html#Chapter3.1.1">Meža Valsts reģistrs</a> un <a href="Chapter3.html#Chapter3.1.2">LAD lauku informācija</a> datiem, tomēr projekta darba grupā nav pieejami ik gada raksturojumi (1) un šīs datubāzes neaptver visu valsts teritoriju (2), tādēļ nepieciešams neatkarīgs vērtējums. Tāda izstrādāšanai izmantojām <a href="Chapter4.html#Chapter4"><em>Dynamic World</em> izpēte</a> aprīļa līdz augusta ik gadam no 2017. līdz 2023. rezultātus un <a href="Chapter3.html#Chapter3.1.9"><em>Global Forest Watch</em></a> datus, raksturojot pārmaiņu apjomus analīzes šūnā (nodaļa <a href="Chapter2.html#Chapter2.1">100 m režģis Latvijā</a>) un putnu ligzdošanas iecirkņu rādiusu grupu (<a href="Chapter1.html#fig:AinavTelpas">1.1</a> att.) buferos ap analīzes šūnu centriem.</p>
 <p>Saskaņā ar <a href="Chapter4.html#Chapter4"><em>Dynamic World</em> izpēte</a> rezultātiem, ir vērts izmantot šo resursu vides kopējo pārmaiņu analīzē kopš 2017. gada. Par kopējām pārmaiņām uzskatīta jebkura izmaiņa Dynamic World klasē, to salīdzinot ik 10 m pikselim aprīļa-augusta sezonā starp katriem diviem secīgiem gadiem. Pārmaiņu apjoms raksturots kā platības īpatsvars 100 m šūnā vai putnu ligzdošanas iecirkņu rādiusu grupu buferos ap šīs šūnas centru. Tā kā pārmaiņas analizētas vienos un tajos pašos rastros, izmantojot dažādus laukumveida objektus, kurus nepieciešams apvienot vienā failā, katras ģeometrijas raksturojums iestrādāts lauku nosaukumos.</p>
 <p>Kopumā līdzīga procedūra veikta koku vainagu seguma izzušanas apjoma (īpatsvara no telpas kopumā) raksturošanai. Tomēr šī informācija ir iestrādāta vienā rastra slānī, notikuma gadu norādot kā pikseļa vērtību. Tas ikgadējā samazinājuma apjoma aprēķināšanu apgrūtina, tomēr nepadara par neiespējamu (skatīt komandu rindas zemāk, specifiski - funkciju <code>darbiba</code>). Līdz ar ik gadu zudušā koku vainagu seguma īpatsvara no analīzes telpas platības iegūšanu, tā pievienota analizētajai ģeometrijai kā atsevišķs lauks katram notikuma gadam. Tāpat kā iepriekš - lauku nosaukumi harmonizēti, tajos iestrādājot analīzes telpas raksturojumu, un rezultāti pievienoti 100 m režģa atbilstošajām šūnām.</p>
-<p><strong>Šis uzdevums ir visai smagnējs no skaitļošanas viedokļa. Tā veikšanai ir jāieplāno pietiekošs apjoms datorresursu. Iniciāli tas īstenots, izmantojot 68 GiB RAM un daļā uzdevuma, aprēķinus veicot 12 paralēlos procesos, vairākās diennaktīs.</strong></p>
+<p>Šis uzdevums ir visai smagnējs no skaitļošanas viedokļa. Tā veikšanai ir jāieplāno pietiekošs apjoms datorresursu. Iniciāli tas īstenots, izmantojot 68 GiB RAM un daļā uzdevuma, aprēķinus veicot 12 paralēlos procesos, vairākās diennaktīs. Potenciāli, to ir iespējams izpildīt ātrāk, pārskatot zonālās statistikas lietojumu saistībā ar <a href="Chapter5.html#Chapter5.1">Procesēšanas atvieglošana</a>.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="Chapter3.html#cb96-1" tabindex="-1"></a><span class="co"># libs</span></span>
 <span id="cb96-2"><a href="Chapter3.html#cb96-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
@@ -6424,6 +6431,9 @@ Sabater, J.M., n.d. ERA5-<span>Land</span> hourly data from 1950 to present. <sp
 </div>
 <div id="ref-PALSARForest" class="csl-entry">
 Shimada, M., Itoh, T., Motooka, T., Watanabe, M., Shiraishi, T., Thapa, R., Lucas, R., 2013. New global forest/non-forest maps from <span>ALOS PALSAR</span> data (2007–2010), Remote Sensing of Environment. <a href="https://doi.org/10.1016/j.rse.2014.04.014">https://doi.org/10.1016/j.rse.2014.04.014</a>
+</div>
+<div id="ref-WangLiu2006" class="csl-entry">
+Wang, L., Liu, H., 2006. An efficient method for identifying and filling surface depressions in digital elevation models for hydrologic analysis and modelling, International Journal of Geographical Information Science. <a href="https://doi.org/10.1080/13658810500433453">https://doi.org/10.1080/13658810500433453</a>
 </div>
 </div>
             </section>

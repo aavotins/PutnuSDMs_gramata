@@ -140,7 +140,7 @@ Chapter3.2.3.2
 Chapter3.2.3.4
 Chapter3.2.3.5
 Chapter3.2.3.6
-Chapter3.2.4
+Chapter3.3
 Chapter4
 q0-dw-nosegums
 q1-lauksaimniecības-kultūras

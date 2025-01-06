@@ -745,7 +745,18 @@ caurumains=app(c(reljefs,caurumi2),fun="min",na.rm=TRUE,
 
 <br>
 
-Ar šo DEM tālāk veikta ģeoprocesēšana reljefa depresiju atrašanai un topogrāfiskā mitruma indeksa (TWI) noteikšanai. Sākumā aprēķinātas reljefa depresijas, pieņemot, kas visas noteces, par kurām būtu jāzina, ir zināmas. Tad, veidojot TWI ar iestrādātu 10 šūnu caurplūdes iespējamību, uzrādītajām depresijām veidoti alternatīvie slāņi. Pēc šo depresiju aizpildīšanas, izmantota d-infinity pieeja plūsmas virziena noteikšanai un aprēķināts TWI.
+Ar šo DEM tālāk veikta ģeoprocesēšana reljefa depresiju atrašanai un topogrāfiskā mitruma indeksa (TWI) noteikšanai. Sākumā aprēķinātas reljefa depresijas, pieņemot, kas visas noteces, par kurām būtu jāzina, ir zināmas un ņemtas vērā (koriģētas DEM vērtības - iepriekšējais koda apgabals). Tad, sagatavots topogrāfiskā mitruma indekss un atkārtota beznoteces depresiju meklēšana:
+
+1) topogrāfiskā mitruma indeksa aprēķināšanai, pārskatītas reljefa beznoteces depresijas, pieļaujot līdz desmit šūnu pārrāvumiem mazākās pretestības vietās, pārējās aizpildītas;
+
+2) sagatavoti precizēti beznoteces depresiju un to dziļuma slāņi pēc plūsmas pārrāvumu iestrādāšanas;
+
+3) papildus drošībai, pirmā soļa rezultātam atkārtota reljefa depresiju meklēšana un aizpildīšana [@WangLiu2006];
+
+4) trešā soļa rezultāts izmantots specifiskā sateces baseina noteikšanai, izmantojot *d-infinity* plūsmas dalīšanos;
+
+5) kombinējot specifiskā sateces baseina slāni ar nogāžu slīpumu slāni, aprēķināts topogrāfiskā mitruma indekss. To grafiski izvērtējot ir konstatētas atsevišķas ekstrēmas vērtības, kuras ierobežotas līdz 20.
+
 
 ```{r, eval=FALSE}
 # libs
@@ -6210,7 +6221,7 @@ writeRaster(virt_slani,"./Rastri_500m/Daudzv_Mezu_x500.tif",overwrite=TRUE)
 
 
 
-### Vides pārmaiņas {#Chapter3.2.4}
+### Vides pārmaiņas {#Chapter3.3}
 
 Vides pārmaiņas nepieciešamas novērojumu filtrēšanai. Daļēji tās būtu iegūstamas no [Meža Valsts reģistrs](#Chapter3.1.1) un [LAD lauku informācija](#Chapter3.1.2) datiem, tomēr projekta darba grupā nav pieejami ik gada raksturojumi (1) un šīs datubāzes neaptver visu valsts teritoriju (2), tādēļ nepieciešams neatkarīgs vērtējums. Tāda izstrādāšanai izmantojām [*Dynamic World* izpēte](#Chapter4) aprīļa līdz augusta ik gadam no 2017. līdz 2023. rezultātus un [*Global Forest Watch*](#Chapter3.1.9) datus, raksturojot pārmaiņu apjomus analīzes šūnā (nodaļa [100 m režģis Latvijā](#Chapter2.1)) un putnu ligzdošanas iecirkņu rādiusu grupu (\@ref(fig:AinavTelpas) att.) buferos ap analīzes šūnu centriem.
 
@@ -6219,7 +6230,7 @@ Saskaņā ar [*Dynamic World* izpēte](#Chapter4) rezultātiem, ir vērts izmant
 
 Kopumā līdzīga procedūra veikta koku vainagu seguma izzušanas apjoma (īpatsvara no telpas kopumā) raksturošanai. Tomēr šī informācija ir iestrādāta vienā rastra slānī, notikuma gadu norādot kā pikseļa vērtību. Tas ikgadējā samazinājuma apjoma aprēķināšanu apgrūtina, tomēr nepadara par neiespējamu (skatīt komandu rindas zemāk, specifiski - funkciju `darbiba`). Līdz ar ik gadu zudušā koku vainagu seguma īpatsvara no analīzes telpas platības iegūšanu, tā pievienota analizētajai ģeometrijai kā atsevišķs lauks katram notikuma gadam. Tāpat kā iepriekš - lauku nosaukumi harmonizēti, tajos iestrādājot analīzes telpas raksturojumu, un rezultāti pievienoti 100 m režģa atbilstošajām šūnām.
 
-**Šis uzdevums ir visai smagnējs no skaitļošanas viedokļa. Tā veikšanai ir jāieplāno pietiekošs apjoms datorresursu. Iniciāli tas īstenots, izmantojot 68 GiB RAM un daļā uzdevuma, aprēķinus veicot 12 paralēlos procesos, vairākās diennaktīs.**
+Šis uzdevums ir visai smagnējs no skaitļošanas viedokļa. Tā veikšanai ir jāieplāno pietiekošs apjoms datorresursu. Iniciāli tas īstenots, izmantojot 68 GiB RAM un daļā uzdevuma, aprēķinus veicot 12 paralēlos procesos, vairākās diennaktīs. Potenciāli, to ir iespējams izpildīt ātrāk, pārskatot zonālās statistikas lietojumu saistībā ar [Procesēšanas atvieglošana](#Chapter5.1).
 
 ```{r, eval=FALSE}
 # libs
