@@ -29,6 +29,8 @@ fig:DWq51b
 fig:DWq51c
 fig:DWq52
 fig:DWq6
+fig:LaikaMerogojums
+fig:ZonalStatsPrec
 fig:nice-fig
 tab:nice-tab
 eq:binom

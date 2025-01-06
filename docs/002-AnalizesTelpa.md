@@ -18,7 +18,8 @@ Lai samazinātu faila apjomu un to izmantotu Zemes novērošanas sistēmas datu 
 
 Līdzīga atlase veikta 1km režģim - tikai tie, kas saskarās ar Latvijas administratīvajām robežām.
 
-Dažādu ainavas metriku aprēķināšanai, sagatavoti arī 300 m un 500 m režģi.
+Dažādu ainavas metriku aprēķināšanai, sagatavoti arī 300 m un 500 m režģi. To 
+nepieciešamības pamatojums sniegts [Procesēšanas atvieglošana](#Chapter5.1).
 
 Katram no iepriekš minētajiem režģiem aprēķinātas centroīdas, no kurām sagatavoti 
 slāņi ar ģeometrijām "punkts". Šie punkti saistīti ar Envirotech izplatīto 1993. gada 

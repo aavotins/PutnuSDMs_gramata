@@ -23,7 +23,7 @@
 <meta name="author" content="Andris Avotiņš" />
 
 
-<meta name="date" content="2025-01-05" />
+<meta name="date" content="2025-01-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -779,12 +779,132 @@ apraksta meklēšanai;</p></li>
 <p>– “r500”=telpa 500 m rādiusā ap ik analīzes šūnas centru;</p>
 <p>– “r1250”= telpa 1250 m rādiusā ap ik analīzes šūnas centru;</p>
 <p>– “r3000”=telpa 3000 m rādiusā ap ik 300 m šūnas centru
-(skatīt <a href="Chapter5.html#Chapter5.1">Procesēšanas atvieglošana</a>);</p>
+(skatīt <a href="Chapter5.html#Chapter5.1">Procesēšanas atvieglošana</a>); rezultāts savienots ar telpiski
+saistītajām 100 m (analīzes) šūnām;</p>
 <p>– “r10000”=telpa 10000 m rādiusā ap ik 1000 m šūnas centru
-(skatīt <a href="Chapter5.html#Chapter5.1">Procesēšanas atvieglošana</a>).</p></li>
+(skatīt <a href="Chapter5.html#Chapter5.1">Procesēšanas atvieglošana</a>); rezultāts savienots ar telpiski
+saistītajām 100 m (analīzes) šūnām.</p></li>
 </ul>
+<p>Aprēķinos izmantotās komandu rindas un to nepieciešamības skaidrojums katrai
+pazīmei visos mērogos ir cieši saistīti un gandrīz identiski, tādēļ, lai atvieglotu
+šī dokumenta izmantošanu (arī, lai samazinātu komandu rindu dublēšanos) tās visiem
+mērogiem raksturotas vienu reizi - pie šaurākās ainavu telpas, pārējās vietās
+sniedzot ātras piekļuves ceļu.</p>
 <div id="Chapter5.1" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> Procesēšanas atvieglošana<a href="Chapter5.html#Chapter5.1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Ekoģeogrāfisko mainīgo sagatavošanā nozīmīga un neizbēgama darba daļa iejauc vides
+raksturošanu noslēgtās telpas daļās. Tā kā liela apjoma (valsts līmeņa) vektordatu
+ģeometriju savstarpējo pārklāšanos procesēšana ir ārkārtīgi izaicinoša un dārga
+(laika un skaitļošanas izmaksu dēļ), to risina ar zonālo statistiku palīdzību.</p>
+<p>Zonālās statistikas pamatā ir rastra šūnu vērtību raksturošana ģeogrāfiskās telpas
+noslēgtās daļās - zonās. Raksturošanai visbiežāk izmanto kādus aprakstošās statistikas
+mērus (kā šajā projektā), bet var izmantot arī sarežģītākus aprēķinus. Dažādas
+ģeoprocesēšanas programmatūras izmanto atšķirīgas pieejas zonālās statistikas
+ieviešanai. Visbiežāk aprakstāmā rastra šūnas tiek klasificētas kā pilnībā piederīgas
+vai nepiederīgas zonai, kam atkarībā no izmantotās programmas var būt atšķirīgas
+pieejas, piemēram, zonu rasterizēšana vai aprakstāma rastra pikseļu centru aprēķini
+(<a href="https://isciences.github.io/exactextract/background.html">piemēri</a>).
+Šīm pieejām ir vairāki trūkumi, piemēram,
+(1) rezultāta precizitāte ir cieši saistīta ar aprakstāmā rastra izšķirtspēju un
+tās radītajām robežkļūdām gan rasterizācijā, gan aprakstu aprēķinos; (2) vienā
+rastra šūnā vienlaikus var atrasties tikai viena zona, kas var novest pie vēl lielākām
+zonu aprakstu kļūdām (nepilnīga pārklājuma) vai sevišķi lēniem iteratīviem aprēķiniem
+ik zonai atsevišķi, kas kļūst arvien nospiedošāki līdz ar zonu platības (pašas
+par sevi un savstarpējās pārklāšanās) pieaugumu.</p>
+<p>Kā efektīvākais risinājums abiem izaicinājumiem šobrīd ir zināms C++ programmēšanas
+valodā izstrādātais atvērtā koda <a href="https://isciences.github.io/exactextract/"><code>exactextract</code></a>,
+kam pieejama vadība R ar pakotni {exactextractr}. Programmatūras risinājums izmanto
+sevišķi ātru algoritmu, kurš ieviests vienā no ātrākajām programmēšanas valodām;
+zonu apraksti tiek rēķināti, svarojot ar pikseļa-platību-zonā, tādā veidā kompensējot
+rastra šūnu nesakritību ar zonām; risinājums labi mērogojas, pieļaujot vairāku
+procesora kodolu izmantošanu un nepieprasot visas rastra slāņa platības ielādi
+operatīvajā atmiņā. Tas nozīmē, ka zonālās statistikas aprēķinus ir iespējams veikt
+ar zemākas izšķirtspējas šūnām par ievades produktiem (10 m), piemēram, izmantojot
+analīzes šūnu (100 m) vērtības, kuras var iegūt dažādos veidos.</p>
+<p>Viens no veidiem EGV vērtību aprēķināšanai analīzes šūnā no ievades produktiem,
+protams, ir pati zonālā statistika. Tomēr, lai cik izceļami efektīvs {exactectractr}
+arī nebūtu, ja analīzes šūna precīzi robežojas ar ievades produktu šūnām, kas
+reizinātas ar kādu veselu skaitli (kā tas ir iestrādāts šajā materiālā), to daudzkārt
+<strong>(daudzus tūkstošus reižu)</strong> ātrāk ir iespējams izdarīt, izmantojot kādu no rastra
+apstrādes pieejām, piemēram, <code>aggregate</code> vai <code>resample</code>. Tām galvenā atšķirība ir
+tāda, ka <code>aggregate</code> veic vērtību agregāciju (ar izvēlētu aprakstošās statistikas
+metodi) jauno/izveidoto/zemākās izšķirtspējas šunu centrējot ap uzskaites virzienā pirmo
+augstākās izšķirtspējas šūnu - visbiežāk tā ir apakšējā kreisā, kas nozīmē informācijas
+pārbīdīšanu telpā. Savukārt <code>resample</code>, kas izmantota šajā materiālā, aprakstu
+veic zemākas izšķirtspējas šūnā ietilpstošajām aprakstošā rastra šūnām. Jāatzīmē,
+ka <code>resample</code> ir apmēram 100 reižu lēnāka darbība par <code>aggregate</code>, tomēr visu Latvijas
+teritoriju aptverošam 10 m rastra slānim apstrādi par vidējo aritmētisko vērtību
+100 m šūnā uz moderna procesora veic vien dažās sekundēs. Tas nozīmē mazu resursu
+izmaksu zaudējumu absolūtās vērtībās, turklāt <code>resample</code> vēl joprojām nodrošina daudzus
+tūkstošus reižu laika ietaupījumu salīdzinot ar zonālo statistiku,
+nezaudējot informācijas precizitāti.</p>
+<p>Svarīgi ir noskaidrot, cik daudz informācijas tiek zaudēts tālākos soļos - aprēķinot
+zonālās statistikas zonām, kuras precīzi nesakrīt ar aprakstošo rastru šūnām, ja
+izmanto 100 m izšķirtspēju, nevis oriģinālo - 10 m. Tas testēts ar vienu mainīgo,
+kuram ir plaša variabilitāte vidē - <a href="Chapter3.html#Chapter3.2.2.1.1">Lauku blokiem</a> 10 m
+izšķirstpējā un to agregātu analīzes šūnā <a href="Chapter5.html#Chapter5.7.40">Lauku_Bloki_cell</a>, aprēķinot
+klases seguma īpatsvaru 500 m, 1250 m un 3000 m rādiusā ap katru no analīzes šūnu
+centriem un aprēķinot Pīrsona korelācijas koeficientus visām (n=62750) analīzes šūnām
+<a href="Chapter2.html#Chapter2.1">Vektordatu režģi</a> <code>tks93_50km</code> lapā “3434”. Pīrsona korelācijas koeficienti
+starp zonālās statistikas rezultātiem, izmantojot ar-pikseļa-platību-zonā svērto
+pieeju, aprakstāmajiemr astiem ar 10 m un 100 m izšķirtspēju:</p>
+<ul>
+<li><p>500 m rādiusam: <span class="math inline">\(r=0.9999932\)</span>;</p></li>
+<li><p>1250 m rādiusam: <span class="math inline">\(r=0.9999932\)</span>;</p></li>
+<li><p>3000 m rādiusam: <span class="math inline">\(r=0.9999986\)</span>.</p></li>
+</ul>
+<p>Tas nozīmē <em>gandrīz</em> funkcionālu korelāciju, tomēr ļauj samazināt skaitļošanas
+laiku no dažām līdz vairākiem simtiem reižu (pat tūkstošiem zonām ar 10000 m rādiusu),
+atkarībā no zonas platības un to savstarpējās pārklāšanās (laika mērogojums
+vizualizēts <a href="Chapter5.html#fig:LaikaMerogojums">5.1</a>).</p>
+<div class="figure"><span style="display:block;" id="fig:LaikaMerogojums"></span>
+<img src="Atteli/ch005_1fig1.png" alt="Zonālās statistikas aprēķiniem (ap katru analīzes šūnas centru) nepieciešamais laiks, atkarībā no zonas platības (ar krāsu) un aprakstāmā rastra izšķirtspējas (attēla daļās)" width="80%" />
+<p class="caption">
+Figure 5.1: Zonālās statistikas aprēķiniem (ap katru analīzes šūnas centru) nepieciešamais laiks, atkarībā no zonas platības (ar krāsu) un aprakstāmā rastra izšķirtspējas (attēla daļās)
+</p>
+</div>
+<p><br></p>
+<p>Aprēķiniem nepieciešamā laika dēļ, zonālās statistikas mērogošanai 10 000 m
+rādiusā ap ik analīzes šūnas centru pievienots arī ievades produkta agregāts līdz
+1000 m šūnas izšķirtspējai, tomēr salīdzinājums veikts tikai 1000 zonās. Tā rezultāti:</p>
+<ul>
+<li><p>10 m ~ 100 m: <span class="math inline">\(r=0.9999989\)</span>;</p></li>
+<li><p>100 m ~ 1000 m: <span class="math inline">\(r=0.9852817\)</span>;</p></li>
+<li><p>10 m ~ 1000 m: <span class="math inline">\(r=0.9852621\)</span>;</p></li>
+</ul>
+<p>tātad, jau ievērojamu precizitātes zaudējumu (apmēram 1.5% korelācijā un ~3%
+dispersijas), kas nāk komplektā ar nepieciešamību aprēķiniem sagatavot papildus
+slāni. Tādēļ turpināta procesu optimizēšanas izpēte.</p>
+<p>Tā kā plašiem rādiusiem ap analīzes šūnu ir liela blakus esošo zonu savstarpējā
+pārklāšanās, kas ievērojami apgrūtina/paildzina zonālās statistikas aprēķinus,
+rezultējoties gandrīz identiskās vērtībās, nolēmām izmēģināt šo aprēķinu veikšanu
+nevis katrai analīzes šūnai, bet retināt tā, lai aprakstāmo zonu izvietojums būtu
+izsakāms kā zonas rādiusa dalījums ar 10, kura rezultāts veidojas kā analīzes
+šūnu reizinājums ar 10. Tas nozīmē, ka šo pieeju izmanto tikai zonām, kuras
+viedojas rādiusiem 3000 un 10000 m ap analīzes šūnās, tos veicot ik pēc, attiecīgi,
+300 un 1000 m un attiecinot uz visām šajās 300 un 1000 m vektordatu šūnās esošajām
+analīzes šūnām (to izvietojums, savstarpējā saistība un attiecināmība ir iestrādāta
+<a href="Chapter2.html#Chapter2">Ar modeļiem aptveramā (analīzes) telpa un standartizācijas faili</a>
+definēšanā). Lielākā teorētiski sagaidāmā kļūda šīs retināšanas rezultātā ir
+mazāka par 4%, kas izriet no zonu pārklāšanās. Tomēr, empīriskā salīdzinājumā tā vidēji
+ir daudz mazāka <a href="Chapter5.html#fig:ZonalStatsPrec">5.2</a>- atkārtojot zonālās statistikas aprēķinus iepriekš aprakstītajai
+pazīmei tajā pašā telpā, rezultējošais Pīrsona korelācijas koeficients ir <span class="math inline">\(r=0.9966965\)</span>
+jeb &lt;1% dispersijas un regresējot - Pīrsona atlikumu vērtību kļūdu <span class="math inline">\(MSE=0.0000108\)</span>,
+tomēr darbu veicot ievērojami ātrāk - gandrīz 100 reizes plašākajā ainavas mērogā,
+kas ir tuvu veicamo aprēķinu skaita 100 reižu samazinājumam.</p>
+<div class="figure"><span style="display:block;" id="fig:ZonalStatsPrec"></span>
+<img src="Atteli/ch005_1fig2.png" alt="Zonālās statistikas (10 000 m zonās) rezultātu salīdzinājums ar un bez aprēķinu telpiskās retināšanas" width="80%" />
+<p class="caption">
+Figure 5.2: Zonālās statistikas (10 000 m zonās) rezultātu salīdzinājums ar un bez aprēķinu telpiskās retināšanas
+</p>
+</div>
+<p><br></p>
+<p>Šīs prakses ieviešana ekoģeogrāfisko mainīgo aprēķiniem nepieciešamo laiku
+samazināja vairākus simtus (atsevišķās daļās par miljonus) reižu. Izmantojot
+apmēram 75% no Latvijas Universitātes Skaitliskās modelēšanas institūta HPC resursiem
+nepārtrauktā secīgu uzdevumu plūsmā, darbs, sākot ar analīzes telpas definēšanu un
+<a href="Chapter2.html#Chapter2">standartizācijas failu sagatavošanu</a> un beidzot ar ekoģeogrāfisko
+mainīgo sagatavošanu (šīs nodaļas saturu ieskaitot), ir veicams apmēram nedēļas laikā.</p>
 </div>
 <div id="Chapter5.2" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> Ainava_pazimes-agregacijas_merogs<a href="Chapter5.html#Chapter5.2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -1904,7 +2024,7 @@ avotiem (šajā gadījumā <a href="Chapter3.html#Chapter3.1.11">ERA5 Land</a>).
 <div id="Chapter5.4.01" class="section level3 hasAnchor" number="5.4.1">
 <h3><span class="header-section-number">5.4.1</span> Daudzv_Kopeja_r500<a href="Chapter5.html#Chapter5.4.01" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Faila nosaukums un GeoTIFF pieejamība:</strong> <code>Daudzv_Kopeja_r500.tif</code>, <a href="https://drive.usercontent.google.com/u/0/uc?id=1ByYslldn5E6wPj3KChlDMPAe2aJ7aA4s&amp;export=download">centrēts un mērogots</a></p>
-<p><strong>EGV nosaukums:</strong> Vidējais α-līmeņa (500x500m) Šenona daudzveidības indekss vispārīgajām ainavas klasēm r=500m ap analīzes šūnas centru</p>
+<p><strong>EGV nosaukums:</strong> β-līmeņa (vidējais α-līmeņa 500x500m) Šenona daudzveidības indekss vispārīgajām ainavas klasēm r=500m ap analīzes šūnas centru</p>
 <p><strong>Izveidošanas gaita un atkarības:</strong></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="Chapter5.html#cb172-1" tabindex="-1"></a><span class="co"># libs ----</span></span>
@@ -1926,7 +2046,7 @@ avotiem (šajā gadījumā <a href="Chapter3.html#Chapter3.1.11">ERA5 Land</a>).
 <div id="Chapter5.4.02" class="section level3 hasAnchor" number="5.4.2">
 <h3><span class="header-section-number">5.4.2</span> Daudzv_Kopeja_r1250<a href="Chapter5.html#Chapter5.4.02" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Faila nosaukums un GeoTIFF pieejamība:</strong> <code>Daudzv_Kopeja_r1250.tif</code>, <a href="https://drive.usercontent.google.com/u/0/uc?id=12lMlw-CpnqR7JEgrtqBoju0sNSogQ9Cj&amp;export=download">centrēts un mērogots</a></p>
-<p><strong>EGV nosaukums:</strong> Vidējais α-līmeņa (500x500m) Šenona daudzveidības indekss vispārīgajām ainavas klasēm r=1250m ap analīzes šūnas centru</p>
+<p><strong>EGV nosaukums:</strong> β-līmeņa (vidējais α-līmeņa 500x500m) Šenona daudzveidības indekss vispārīgajām ainavas klasēm r=1250m ap analīzes šūnas centru</p>
 <p><strong>Izveidošanas gaita un atkarības:</strong></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="Chapter5.html#cb173-1" tabindex="-1"></a><span class="co"># libs ----</span></span>
@@ -1948,7 +2068,7 @@ avotiem (šajā gadījumā <a href="Chapter3.html#Chapter3.1.11">ERA5 Land</a>).
 <div id="Chapter5.4.03" class="section level3 hasAnchor" number="5.4.3">
 <h3><span class="header-section-number">5.4.3</span> Daudzv_Kopeja_r3000<a href="Chapter5.html#Chapter5.4.03" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Faila nosaukums un GeoTIFF pieejamība:</strong> <code>Daudzv_Kopeja_r3000.tif</code>, <a href="https://drive.usercontent.google.com/u/0/uc?id=1ncT6-aU0KdGMH5XfAXkBYMzbLpGYiN2y&amp;export=download">centrēts un mērogots</a></p>
-<p><strong>EGV nosaukums:</strong> Vidējais α-līmeņa (500x500m) Šenona daudzveidības indekss vispārīgajām ainavas klasēm r=3000m ap analīzes šūnas centru</p>
+<p><strong>EGV nosaukums:</strong> β-līmeņa (vidējais α-līmeņa 500x500m) Šenona daudzveidības indekss vispārīgajām ainavas klasēm r=3000m ap analīzes šūnas centru</p>
 <p><strong>Izveidošanas gaita un atkarības:</strong></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="Chapter5.html#cb174-1" tabindex="-1"></a><span class="co"># libs ----</span></span>
@@ -1970,7 +2090,7 @@ avotiem (šajā gadījumā <a href="Chapter3.html#Chapter3.1.11">ERA5 Land</a>).
 <div id="Chapter5.4.04" class="section level3 hasAnchor" number="5.4.4">
 <h3><span class="header-section-number">5.4.4</span> Daudzv_Kopeja_r10000<a href="Chapter5.html#Chapter5.4.04" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Faila nosaukums un GeoTIFF pieejamība:</strong> <code>Daudzv_Kopeja_r10000.tif</code>, <a href="https://drive.usercontent.google.com/u/0/uc?id=1rbOLilHETscBfAvY-FMwloGVicS2eeJP&amp;export=download">centrēts un mērogots</a></p>
-<p><strong>EGV nosaukums:</strong> Vidējais α-līmeņa (500x500m) Šenona daudzveidības indekss vispārīgajām ainavas klasēm r=10000m ap analīzes šūnas centru</p>
+<p><strong>EGV nosaukums:</strong> β-līmeņa (vidējais α-līmeņa 500x500m) Šenona daudzveidības indekss vispārīgajām ainavas klasēm r=10000m ap analīzes šūnas centru</p>
 <p><strong>Izveidošanas gaita un atkarības:</strong></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="Chapter5.html#cb175-1" tabindex="-1"></a><span class="co"># libs ----</span></span>
@@ -1992,7 +2112,7 @@ avotiem (šajā gadījumā <a href="Chapter3.html#Chapter3.1.11">ERA5 Land</a>).
 <div id="Chapter5.4.05" class="section level3 hasAnchor" number="5.4.5">
 <h3><span class="header-section-number">5.4.5</span> Daudzv_Lauku_r500<a href="Chapter5.html#Chapter5.4.05" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Faila nosaukums un GeoTIFF pieejamība:</strong> <code>Daudzv_Lauku_r500.tif</code>, <a href="https://drive.usercontent.google.com/u/0/uc?id=1wbtEIgaiOKQTxEbxGeCAy_sxIB8EMH-6&amp;export=download">centrēts un mērogots</a></p>
-<p><strong>EGV nosaukums:</strong> Vidējais α-līmeņa (500x500m) Šenona daudzveidības indekss detalizētajām lauku klasēm r=500m ap analīzes šūnas centru</p>
+<p><strong>EGV nosaukums:</strong> β-līmeņa (vidējais α-līmeņa 500x500m) Šenona daudzveidības indekss detalizētajām lauku klasēm r=500m ap analīzes šūnas centru</p>
 <p><strong>Izveidošanas gaita un atkarības:</strong></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="Chapter5.html#cb176-1" tabindex="-1"></a><span class="co"># libs ----</span></span>
@@ -2014,7 +2134,7 @@ avotiem (šajā gadījumā <a href="Chapter3.html#Chapter3.1.11">ERA5 Land</a>).
 <div id="Chapter5.4.06" class="section level3 hasAnchor" number="5.4.6">
 <h3><span class="header-section-number">5.4.6</span> Daudzv_Lauku_r1250<a href="Chapter5.html#Chapter5.4.06" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Faila nosaukums un GeoTIFF pieejamība:</strong> <code>Daudzv_Lauku_r1250.tif</code>, <a href="https://drive.usercontent.google.com/u/0/uc?id=1gVPMH_7Y8KT8a4qC6mbh710aYI48zx0n&amp;export=download">centrēts un mērogots</a></p>
-<p><strong>EGV nosaukums:</strong> Vidējais α-līmeņa (500x500m) Šenona daudzveidības indekss detalizētajām lauku klasēm r=1250m ap analīzes šūnas centru</p>
+<p><strong>EGV nosaukums:</strong> β-līmeņa (vidējais α-līmeņa 500x500m) Šenona daudzveidības indekss detalizētajām lauku klasēm r=1250m ap analīzes šūnas centru</p>
 <p><strong>Izveidošanas gaita un atkarības:</strong></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="Chapter5.html#cb177-1" tabindex="-1"></a><span class="co"># libs ----</span></span>
@@ -2036,7 +2156,7 @@ avotiem (šajā gadījumā <a href="Chapter3.html#Chapter3.1.11">ERA5 Land</a>).
 <div id="Chapter5.4.07" class="section level3 hasAnchor" number="5.4.7">
 <h3><span class="header-section-number">5.4.7</span> Daudzv_Lauku_r3000<a href="Chapter5.html#Chapter5.4.07" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Faila nosaukums un GeoTIFF pieejamība:</strong> <code>Daudzv_Lauku_r3000.tif</code>, <a href="https://drive.usercontent.google.com/u/0/uc?id=1u168_VCwQxjDNAfDjlV8oCdQyjbnDo7s&amp;export=download">centrēts un mērogots</a></p>
-<p><strong>EGV nosaukums:</strong> Vidējais α-līmeņa (500x500m) Šenona daudzveidības indekss detalizētajām lauku klasēm r=3000m ap analīzes šūnas centru</p>
+<p><strong>EGV nosaukums:</strong> β-līmeņa (vidējais α-līmeņa 500x500m) Šenona daudzveidības indekss detalizētajām lauku klasēm r=3000m ap analīzes šūnas centru</p>
 <p><strong>Izveidošanas gaita un atkarības:</strong></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="Chapter5.html#cb178-1" tabindex="-1"></a><span class="co"># libs ----</span></span>
@@ -2058,7 +2178,7 @@ avotiem (šajā gadījumā <a href="Chapter3.html#Chapter3.1.11">ERA5 Land</a>).
 <div id="Chapter5.4.08" class="section level3 hasAnchor" number="5.4.8">
 <h3><span class="header-section-number">5.4.8</span> Daudzv_Lauku_r10000<a href="Chapter5.html#Chapter5.4.08" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Faila nosaukums un GeoTIFF pieejamība:</strong> <code>Daudzv_Lauku_r10000.tif</code>, <a href="https://drive.usercontent.google.com/u/0/uc?id=1arvZKvMRnmtgqzMyTbAT6UJg3C-5H6vQ&amp;export=download">centrēts un mērogots</a></p>
-<p><strong>EGV nosaukums:</strong> Vidējais α-līmeņa (500x500m) Šenona daudzveidības indekss detalizētajām lauku klasēm r=10000m ap analīzes šūnas centru</p>
+<p><strong>EGV nosaukums:</strong> β-līmeņa (vidējais α-līmeņa 500x500m) Šenona daudzveidības indekss detalizētajām lauku klasēm r=10000m ap analīzes šūnas centru</p>
 <p><strong>Izveidošanas gaita un atkarības:</strong></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="Chapter5.html#cb179-1" tabindex="-1"></a><span class="co"># libs ----</span></span>
@@ -2080,7 +2200,7 @@ avotiem (šajā gadījumā <a href="Chapter3.html#Chapter3.1.11">ERA5 Land</a>).
 <div id="Chapter5.4.09" class="section level3 hasAnchor" number="5.4.9">
 <h3><span class="header-section-number">5.4.9</span> Daudzv_Mezu_r500<a href="Chapter5.html#Chapter5.4.09" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Faila nosaukums un GeoTIFF pieejamība:</strong> <code>Daudzv_Mezu_r500.tif</code>, <a href="https://drive.usercontent.google.com/u/0/uc?id=1g2uTsG2gioiBuQOK3ft4G6GFM-hThZmR&amp;export=download">centrēts un mērogots</a></p>
-<p><strong>EGV nosaukums:</strong> Vidējais α-līmeņa (500x500m) Šenona daudzveidības indekss detalizētajām mežu klasēm r=500m ap analīzes šūnas centru</p>
+<p><strong>EGV nosaukums:</strong> β-līmeņa (vidējais α-līmeņa 500x500m) Šenona daudzveidības indekss detalizētajām mežu klasēm r=500m ap analīzes šūnas centru</p>
 <p><strong>Izveidošanas gaita un atkarības:</strong></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="Chapter5.html#cb180-1" tabindex="-1"></a><span class="co"># libs ----</span></span>
@@ -2102,7 +2222,7 @@ avotiem (šajā gadījumā <a href="Chapter3.html#Chapter3.1.11">ERA5 Land</a>).
 <div id="Chapter5.4.10" class="section level3 hasAnchor" number="5.4.10">
 <h3><span class="header-section-number">5.4.10</span> Daudzv_Mezu_r1250<a href="Chapter5.html#Chapter5.4.10" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Faila nosaukums un GeoTIFF pieejamība:</strong> <code>Daudzv_Mezu_r1250.tif</code>, <a href="https://drive.usercontent.google.com/u/0/uc?id=1Jw_xya6s3eMWyfr3RbSgNFoB6Htord2g&amp;export=download">centrēts un mērogots</a></p>
-<p><strong>EGV nosaukums:</strong> Vidējais α-līmeņa (500x500m) Šenona daudzveidības indekss detalizētajām mežu klasēm r=1250m ap analīzes šūnas centru</p>
+<p><strong>EGV nosaukums:</strong> β-līmeņa (vidējais α-līmeņa 500x500m) Šenona daudzveidības indekss detalizētajām mežu klasēm r=1250m ap analīzes šūnas centru</p>
 <p><strong>Izveidošanas gaita un atkarības:</strong></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="Chapter5.html#cb181-1" tabindex="-1"></a><span class="co"># libs ----</span></span>
@@ -2124,7 +2244,7 @@ avotiem (šajā gadījumā <a href="Chapter3.html#Chapter3.1.11">ERA5 Land</a>).
 <div id="Chapter5.4.11" class="section level3 hasAnchor" number="5.4.11">
 <h3><span class="header-section-number">5.4.11</span> Daudzv_Mezu_r3000<a href="Chapter5.html#Chapter5.4.11" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Faila nosaukums un GeoTIFF pieejamība:</strong> <code>Daudzv_Mezu_r3000.tif</code>, <a href="https://drive.usercontent.google.com/u/0/uc?id=10Q6zmfVKZTTjDY4dz0usbkW6ibaVYfJo&amp;export=download">centrēts un mērogots</a></p>
-<p><strong>EGV nosaukums:</strong> Vidējais α-līmeņa (500x500m) Šenona daudzveidības indekss detalizētajām mežu klasēm r=3000m ap analīzes šūnas centru</p>
+<p><strong>EGV nosaukums:</strong> β-līmeņa (vidējais α-līmeņa 500x500m) Šenona daudzveidības indekss detalizētajām mežu klasēm r=3000m ap analīzes šūnas centru</p>
 <p><strong>Izveidošanas gaita un atkarības:</strong></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="Chapter5.html#cb182-1" tabindex="-1"></a><span class="co"># libs ----</span></span>
@@ -2146,7 +2266,7 @@ avotiem (šajā gadījumā <a href="Chapter3.html#Chapter3.1.11">ERA5 Land</a>).
 <div id="Chapter5.4.12" class="section level3 hasAnchor" number="5.4.12">
 <h3><span class="header-section-number">5.4.12</span> Daudzv_Mezu_r10000<a href="Chapter5.html#Chapter5.4.12" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Faila nosaukums un GeoTIFF pieejamība:</strong> <code>Daudzv_Mezu_r10000.tif</code>, <a href="https://drive.usercontent.google.com/u/0/uc?id=1ZgtdHtUeuUu4xE5WQrn37XcBM0WiC9Il&amp;export=download">centrēts un mērogots</a></p>
-<p><strong>EGV nosaukums:</strong> Vidējais α-līmeņa (500x500m) Šenona daudzveidības indekss detalizētajām mežu klasēm r=10000m ap analīzes šūnas centru</p>
+<p><strong>EGV nosaukums:</strong> β-līmeņa (vidējais α-līmeņa 500x500m) Šenona daudzveidības indekss detalizētajām mežu klasēm r=10000m ap analīzes šūnas centru</p>
 <p><strong>Izveidošanas gaita un atkarības:</strong></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="Chapter5.html#cb183-1" tabindex="-1"></a><span class="co"># libs ----</span></span>

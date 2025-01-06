@@ -2,7 +2,7 @@
 
 Nozīmīgs solis sugu izplatības modelēšanā ir ģeogrāfiskajai telpai piesaistītu (ģeoreferencētu) vidi raksturojošu un ekoloģiski pamatotu mainīgo jeb ekoģeogrāfisko mainīgo (EGV) sagatavošana. Visbiežāk eksistējošie ģeodati (ģeoreferencēti vides raksturojumi) paši par sevi nespēj raksturot sugu ekoloģiskās vajadzības, gandrīz nekad to noformējums precīzi neatbilst analīzes uzstādījumiem. Tādēļ ģeodatu ir nepieciešams dažādi pārveidot, strukturēt un kombinēt.
 
-Šajā nodaļā ir raksturoti izmantotie ģeodati un to pirmās apstrādes soļi (harmonizēšana EGV sagatavošanai) raksturota apakšnodaļā [Ievades jēldati](#Chapter3.1), augstāka līmeņa šo datu apstrāde, kas vēl joprojām uzskatāma par soli pirms EGV sagatavošanas, raksturota apakšnodaļā [Ievades produkti](#Chapter3.2)
+Šajā nodaļā ir raksturoti izmantotie ģeodati un to pirmās apstrādes soļi (harmonizēšana EGV sagatavošanai) raksturota apakšnodaļā [Ievades jēldati](#Chapter3.1), un augstāka līmeņa šo datu apstrāde, kas vēl joprojām uzskatāma par soli pirms EGV sagatavošanas, raksturota apakšnodaļā [Ievades produkti](#Chapter3.2).
 
 ## Ievades jēldati {#Chapter3.1}
 
@@ -664,9 +664,24 @@ virzieni=terrain(reljefs, v="aspect", neighbors=8, unit="degrees",
 
 Atsevišķos gadījumos ievades datiem veikta relatīvi apjomīga apstrāde (sagatavojot ievades produktus), kas nepieciešama turpmākajam darbam - ekoģeogrāfisko mainīgu sagatavošanai un novērojumu filtrēšanai. Šie produkti un to izstrādes gaita raksturota atbilstošajās apakšnodaļās.
 
+Ievades produkti veidoti kā rastri atbilstoši [standartizācijas failiem](#Chapter2). 
+Visvairāk [rastra (ievades līmeņa) produktu](#Chapter2.3) radīts 10 m izšķirstpējā, 
+bet daļa arī saistīta ar citām izšķirtspējām vai jau agregācijām [vektordatos](#Chapter2.1). 
+Visi references rastri ir savā starpā saistīti pēc pikseļu izvietojuma.
+
+Ievades jēldatu rasterizēšana veikta, lai risinātu topoloģiskos, topogrāfiskos un 
+savstarpējā novietojuma izaicinājumus, kas raksturīgi atšķirīgos un dažādos mērogos 
+izstrādātiem un uzturētiem vektordatiem. Rasterizēšana ļauj ne tikai telpiski harmonizēt 
+šos datus, tā arī atvieglo to apstrādi, gan attiecībā uz ainavas objektu sasvstarpējo 
+novietojumu, gan apstrādei nepieciešamajiem resursiem (instrukciju sarežģītība, to 
+procesēšanas kopējais laiks un procesor-stundu izmaksas). Sekojošajās apakšnodaļās 
+raksturoti izaicinājumi, to risināšanai pieņemtie lēmumi un ar komandu rindām 
+ieviestie risinājumi.
+
+
 ### Reljefa produkti {#Chapter3.2.1}
 
-Lai izstrādātu daļu ar reljefu saistīto EGV, piemēram, topogrāfisko mitruma indeksu (TWI) un beznotekas depresijas, ir nepieciešams risināt ūdens plūsmu vidē. Tā vairāku soļu procedūra, kas ir loģiska un uzticama kalnu apvidos un vidē ar maz ietekmētu hidroloģiju. Tātad, Latvijas apstākļos tas ir izaicinoši. Šos izaicinājumus var risināt dažādi, piemēram, ja būtu pieejama uzticama (precīza) informācija par upju un grāvji precīzām atrašanās vietām, to varētu iestrādāt reljefā. Diemžēl, pietiekoši precīzas informāicjas nav. Tādēļ izaicinājumu risināšanai izmantota informācija par transporta būvēm no [Meliorācijas Kadastra Informācijas Sistēmas datubāze](#Chapter3.1.4) un tiltiem no [LĢIA topogrāfiskā karte](#Chapter3.1.3) - 30 m buferī ap šīm vietām iestrādāta minimālā augstuma virs jūras līmeņa informācija tālāk izmantojamajā DEM.
+Lai izstrādātu daļu ar reljefu saistīto EGV, piemēram, topogrāfisko mitruma indeksu (TWI) un beznoteces depresijas, ir nepieciešams risināt ūdens plūsmu vidē. Tā ir vairāku soļu procedūra, kas ir loģiska un uzticama kalnu apvidos un vidē ar maz ietekmētu hidroloģiju. Tātad, Latvijas apstākļos tas ir izaicinoši. Šos izaicinājumus var risināt dažādi, piemēram, ja būtu pieejama uzticama (precīza) informācija par upju un grāvju precīzām atrašanās vietām, to varētu iestrādāt reljefā. Diemžēl, pietiekoši precīzas informācijas nav. Tādēļ izaicinājumu risināšanai izmantota informācija par transporta būvēm no [Meliorācijas Kadastra Informācijas Sistēmas datubāze](#Chapter3.1.4) un tiltiem no [LĢIA topogrāfiskā karte](#Chapter3.1.3) - 30 m buferī ap šīm vietām iestrādāta minimālā augstuma virs jūras līmeņa informācija tālāk izmantojamajā DEM.
 
 ```{r, eval=FALSE}
 # libs
@@ -714,7 +729,7 @@ caurumains=app(c(reljefs,caurumi2),fun="min",na.rm=TRUE,
 
 <br>
 
-Ar šo DEM tālāk veikta ģeoprocesēšana reljefa depresiju atrašanai un topogrāfiskā mitruma indeksa (TWI) noteikšanai. Sākumā aprēķinātas reljefa depresijas, pieņemot, kas visas noteces, par kurām būtu jāzina, ir zināmas. Tad, veidojot TWI ar iestrādātu 10 šūnu caurplūdes iespējamību, uzrādītajām depresijām veidoti alternatīvie slāņi. Pēc šo depresiju aizpildīšanas, izmantota d-infinity pieeja plūsmas virziena noteikšanai un aprēķināts TWI
+Ar šo DEM tālāk veikta ģeoprocesēšana reljefa depresiju atrašanai un topogrāfiskā mitruma indeksa (TWI) noteikšanai. Sākumā aprēķinātas reljefa depresijas, pieņemot, kas visas noteces, par kurām būtu jāzina, ir zināmas. Tad, veidojot TWI ar iestrādātu 10 šūnu caurplūdes iespējamību, uzrādītajām depresijām veidoti alternatīvie slāņi. Pēc šo depresiju aizpildīšanas, izmantota d-infinity pieeja plūsmas virziena noteikšanai un aprēķināts TWI.
 
 ```{r, eval=FALSE}
 # libs
@@ -796,7 +811,9 @@ writeRaster(twi2x,filename="./IevadesDati/reljefs/TWI_lim20_caurtDEM.tif")
 
 ```
 
-Tā kā sākotnējos ievades DEM ir bijusi veikta ūdeņu aizpildīšana, ūdensobjektos ir redzams izteikts reljefs, no kura ir nepieciešams atbrīvoties. To daru ar vidējās vērtības ievietošanu šajos daudzstūros. 
+<br>
+
+Tā kā sākotnējos ievades DEM ir bijusi veikta ūdeņu aizpildīšana ar interpolācijas pieejām, ūdensobjektos ir redzams izteikts reljefs, no kura ir nepieciešams atbrīvoties. Tas darīts ar vidējās vērtības ievietošanu šajos daudzstūros. 
 
 
 
@@ -867,6 +884,8 @@ caurumains_TWI2=terra::mask(caurumains_TWI,template,
                            filename="./Rastri_10m/TWI_udeni2_10m.tif")
 
 ```
+
+<br>
 
 
 ### Ainava {#Chapter3.2.2}
@@ -5817,9 +5836,9 @@ pecmaskas_rastrs=mask(aizpildits,template_t,
 
 ##### Kopējās ainavas Šenona daudzveidības indekss 500 m šūnā {#Chapter3.2.3.4}
 
-Šenona daudzveidība sindeksa aprēķini ir tik resrusu prasīgi, ka tos risināt katrā ainavas 
+Šenona daudzveidības indeksa aprēķini ir tik resrusu prasīgi, ka tos risināt katrā ainavas 
 mērogā ap katru analīzes šūnu nav racionāli iespējams. Atšķirībā no malu slāņiem, tie 
-nav tieši agregējami. Tādēļ pieņemts risināts lēmums par rastra šūnas izmēru, kurš:
+nav tieši agregējami. Tādēļ pieņemts lēmums par rastra šūnas izmēru, kurš:
 
 1. veidojas kā analīzes šūnas reizinājums ar veselu skaitli;
 
@@ -5936,9 +5955,9 @@ writeRaster(virt_slani,"./Rastri_500m/Daudzv_Kopeja_x500.tif",overwrite=TRUE)
 
 
 
-Šenona daudzveidība sindeksa aprēķini ir tik resrusu prasīgi, ka tos risināt katrā ainavas 
+Šenona daudzveidības indeksa aprēķini ir tik resrusu prasīgi, ka tos risināt katrā ainavas 
 mērogā ap katru analīzes šūnu nav racionāli iespējams. Atšķirībā no malu slāņiem, tie 
-nav tieši agregējami. Tādēļ pieņemts risināts lēmums par rastra šūnas izmēru, kurš:
+nav tieši agregējami. Tādēļ pieņemts lēmums par rastra šūnas izmēru, kurš:
 
 1. veidojas kā analīzes šūnas reizinājums ar veselu skaitli;
 
@@ -6056,9 +6075,9 @@ writeRaster(virt_slani,"./Rastri_500m/Daudzv_Lauku_x500.tif",overwrite=TRUE)
 
 
 
-Šenona daudzveidība sindeksa aprēķini ir tik resrusu prasīgi, ka tos risināt katrā ainavas 
+Šenona daudzveidības indeksa aprēķini ir tik resrusu prasīgi, ka tos risināt katrā ainavas 
 mērogā ap katru analīzes šūnu nav racionāli iespējams. Atšķirībā no malu slāņiem, tie 
-nav tieši agregējami. Tādēļ pieņemts risināts lēmums par rastra šūnas izmēru, kurš:
+nav tieši agregējami. Tādēļ pieņemts lēmums par rastra šūnas izmēru, kurš:
 
 1. veidojas kā analīzes šūnas reizinājums ar veselu skaitli;
 
