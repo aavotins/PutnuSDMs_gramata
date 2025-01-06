@@ -218,6 +218,8 @@ div.csl-indent {
 <li class="chapter" data-level="3.1.11" data-path="Chapter3.html"><a href="Chapter3.html#Chapter3.1.11"><i class="fa fa-check"></i><b>3.1.11</b> ERA5 Land</a></li>
 <li class="chapter" data-level="3.1.12" data-path="Chapter3.html"><a href="Chapter3.html#Chapter3.1.12"><i class="fa fa-check"></i><b>3.1.12</b> Augsnes auglīgums</a></li>
 <li class="chapter" data-level="3.1.13" data-path="Chapter3.html"><a href="Chapter3.html#Chapter3.1.13"><i class="fa fa-check"></i><b>3.1.13</b> Digitālie reljefa modeļi</a></li>
+<li class="chapter" data-level="3.1.14" data-path="Chapter3.html"><a href="Chapter3.html#Chapter3.1.14"><i class="fa fa-check"></i><b>3.1.14</b> Atkritumu poligoni, glabātavas un šķirošanas laukumi</a></li>
+<li class="chapter" data-level="3.1.15" data-path="Chapter3.html"><a href="Chapter3.html#Chapter3.1.15"><i class="fa fa-check"></i><b>3.1.15</b> Latvijas Ekskluzīvās Ekonomiskās Zonas ūdeņi</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="Chapter3.html"><a href="Chapter3.html#Chapter3.2"><i class="fa fa-check"></i><b>3.2</b> Ievades produkti</a>
 <ul>
@@ -825,7 +827,7 @@ analīzes šūnu (100 m) vērtības, kuras var iegūt dažādos veidos.</p>
 protams, ir pati zonālā statistika. Tomēr, lai cik izceļami efektīvs {exactectractr}
 arī nebūtu, ja analīzes šūna precīzi robežojas ar ievades produktu šūnām, kas
 reizinātas ar kādu veselu skaitli (kā tas ir iestrādāts šajā materiālā), to daudzkārt
-<strong>(daudzus tūkstošus reižu)</strong> ātrāk ir iespējams izdarīt, izmantojot kādu no rastra
+(tūkstošiem reižu) ātrāk ir iespējams izdarīt, izmantojot kādu no rastra
 apstrādes pieejām, piemēram, <code>aggregate</code> vai <code>resample</code>. Tām galvenā atšķirība ir
 tāda, ka <code>aggregate</code> veic vērtību agregāciju (ar izvēlētu aprakstošās statistikas
 metodi) jauno/izveidoto/zemākās izšķirtspējas šunu centrējot ap uzskaites virzienā pirmo
@@ -849,9 +851,9 @@ centriem un aprēķinot Pīrsona korelācijas koeficientus visām (n=62750) anal
 starp zonālās statistikas rezultātiem, izmantojot ar-pikseļa-platību-zonā svērto
 pieeju, aprakstāmajiemr astiem ar 10 m un 100 m izšķirtspēju:</p>
 <ul>
-<li><p>500 m rādiusam: <span class="math inline">\(r=0.9999932\)</span>;</p></li>
-<li><p>1250 m rādiusam: <span class="math inline">\(r=0.9999932\)</span>;</p></li>
-<li><p>3000 m rādiusam: <span class="math inline">\(r=0.9999986\)</span>.</p></li>
+<li><p>500 m rādiusam: <span class="math inline">\(\rho=0.9999932\)</span>;</p></li>
+<li><p>1250 m rādiusam: <span class="math inline">\(\rho=0.9999932\)</span>;</p></li>
+<li><p>3000 m rādiusam: <span class="math inline">\(\rho=0.9999986\)</span>.</p></li>
 </ul>
 <p>Tas nozīmē <em>gandrīz</em> funkcionālu korelāciju, tomēr ļauj samazināt skaitļošanas
 laiku no dažām līdz vairākiem simtiem reižu (pat tūkstošiem zonām ar 10000 m rādiusu),
@@ -868,9 +870,9 @@ Figure 5.1: Zonālās statistikas aprēķiniem (ap katru analīzes šūnas centr
 rādiusā ap ik analīzes šūnas centru pievienots arī ievades produkta agregāts līdz
 1000 m šūnas izšķirtspējai, tomēr salīdzinājums veikts tikai 1000 zonās. Tā rezultāti:</p>
 <ul>
-<li><p>10 m ~ 100 m: <span class="math inline">\(r=0.9999989\)</span>;</p></li>
-<li><p>100 m ~ 1000 m: <span class="math inline">\(r=0.9852817\)</span>;</p></li>
-<li><p>10 m ~ 1000 m: <span class="math inline">\(r=0.9852621\)</span>;</p></li>
+<li><p>10 m ~ 100 m: <span class="math inline">\(\rho=0.9999989\)</span>;</p></li>
+<li><p>100 m ~ 1000 m: <span class="math inline">\(\rho=0.9852817\)</span>;</p></li>
+<li><p>10 m ~ 1000 m: <span class="math inline">\(\rho=0.9852621\)</span>;</p></li>
 </ul>
 <p>tātad, jau ievērojamu precizitātes zaudējumu (apmēram 1.5% korelācijā un ~3%
 dispersijas), kas nāk komplektā ar nepieciešamību aprēķiniem sagatavot papildus
@@ -900,11 +902,12 @@ Figure 5.2: Zonālās statistikas (10 000 m zonās) rezultātu salīdzinājums a
 </div>
 <p><br></p>
 <p>Šīs prakses ieviešana ekoģeogrāfisko mainīgo aprēķiniem nepieciešamo laiku
-samazināja vairākus simtus (atsevišķās daļās par miljonus) reižu. Izmantojot
-apmēram 75% no Latvijas Universitātes Skaitliskās modelēšanas institūta HPC resursiem
+samazināja daudzus tūkstošus (atsevišķās daļās pat miljonus) reižu. Izmantojot
+apmēram 80% no Latvijas Universitātes Skaitliskās modelēšanas institūta HPC resursiem
 nepārtrauktā secīgu uzdevumu plūsmā, darbs, sākot ar analīzes telpas definēšanu un
 <a href="Chapter2.html#Chapter2">standartizācijas failu sagatavošanu</a> un beidzot ar ekoģeogrāfisko
-mainīgo sagatavošanu (šīs nodaļas saturu ieskaitot), ir veicams apmēram nedēļas laikā.</p>
+mainīgo sagatavošanu (šīs nodaļas saturu ieskaitot), ir veicams līdz divu nedēļu
+laikā.</p>
 </div>
 <div id="Chapter5.2" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> Ainava_pazimes-agregacijas_merogs<a href="Chapter5.html#Chapter5.2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
