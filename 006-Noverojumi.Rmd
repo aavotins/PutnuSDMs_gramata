@@ -28,9 +28,7 @@ Plēšputnu monitoringa ziņas
 
 LPU 2023. gada dati
 
-Vanagu projekta rezultāti
 
-Piekrastes putnu monitorings(!)
 
 
 ## Nomenklatūra {#Chapter6.2}
