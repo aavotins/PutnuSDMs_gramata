@@ -836,15 +836,15 @@ Figure 5.1: Zonālās statistikas aprēķiniem (ap katru analīzes šūnas centr
 </div>
 <p><br></p>
 <p>Aprēķiniem nepieciešamā laika dēļ, zonālās statistikas mērogošanai 10 000 m
-rādiusā ap ik analīzes šūnas centru pievienots arī ievades produkta agregāts līdz
-1000 m šūnas izšķirtspējai, tomēr salīdzinājums veikts tikai 1000 zonās. Tā rezultāti:</p>
+rādiusā ap ik analīzes šūnas centru pievienojot arī ievades produkta agregātu līdz
+1000 m šūnas izšķirtspējai, salīdzinājums veikts tikai 1000 zonās. Tā rezultāti:</p>
 <ul>
 <li><p>10 m ~ 100 m: <span class="math inline">\(\rho=0.9999989\)</span>;</p></li>
 <li><p>100 m ~ 1000 m: <span class="math inline">\(\rho=0.9852817\)</span>;</p></li>
 <li><p>10 m ~ 1000 m: <span class="math inline">\(\rho=0.9852621\)</span>;</p></li>
 </ul>
 <p>tātad, jau ievērojamu precizitātes zaudējumu (apmēram 1.5% korelācijā un ~3%
-dispersijas), kas nāk komplektā ar nepieciešamību aprēķiniem sagatavot papildus
+dispersijā), kas nāk komplektā ar nepieciešamību aprēķiniem sagatavot papildus
 slāni. Tādēļ turpināta procesu optimizēšanas izpēte.</p>
 <p>Tā kā plašiem rādiusiem ap analīzes šūnu ir liela blakus esošo zonu savstarpējā
 pārklāšanās, kas ievērojami apgrūtina/paildzina zonālās statistikas aprēķinus,
@@ -861,9 +861,11 @@ mazāka par 5%, kas izriet no zonu pārklāšanās. Empīriskā salīdzinājumā
 ir daudz mazāka <a href="Chapter5.html#fig:ZonalStatsPrec">5.2</a> - atkārtojot iepriekš aprakstītos zonālās
 statistikas aprēķinus (lauka bloku platības īpatsvaram <code>tks93_50km</code> lapā “3434”),
 rezultējošais Pīrsona korelācijas koeficients ir <span class="math inline">\(r=0.9966965\)</span>
-jeb &lt;1% dispersijas un regresējot - Pīrsona atlikumu vērtību kļūdu <span class="math inline">\(MSE=0.0000108\)</span>,
-tomēr darbu veicot ievērojami ātrāk - gandrīz 100 reizes ātrāk plašākajā ainavas mērogā,
-kas ir tuvu veicamo aprēķinu skaita 100 reižu samazinājumam.</p>
+jeb &lt;1% dispersijas un regresējot - Pīrsona atlikumu vērtību kļūdu <span class="math inline">\(MSE=0.0000108\)</span>
+ar brīvo locekli tuvu nullei <span class="math inline">\((\beta_0 \approx 0)\)</span>, tomēr darbu veicot ievērojami ātrāk - gandrīz 100
+reizes ātrāk plašākajā ainavas mērogā, kas ir tuvu veicamo aprēķinu skaita 100
+reižu samazinājumam. Tatād mērogojas tuvu linearitātei pat neskatoties uz nepieciešamo
+aprēķinu režģu savienošanu.</p>
 <div class="figure"><span style="display:block;" id="fig:ZonalStatsPrec"></span>
 <img src="Atteli/ch005_1fig2.png" alt="Zonālās statistikas (10 000 m zonās) rezultātu salīdzinājums ar un bez aprēķinu telpiskās retināšanas" width="80%" />
 <p class="caption">
@@ -872,7 +874,8 @@ Figure 5.2: Zonālās statistikas (10 000 m zonās) rezultātu salīdzinājums a
 </div>
 <p><br></p>
 <p>Šīs prakses ieviešana ekoģeogrāfisko mainīgo aprēķiniem nepieciešamo laiku
-samazināja tūkstošiem (atsevišķās daļās pat miljoniem) reižu. Izmantojot līdz
+samazināja kopumā simtiem līdz tūkstošiem (un atsevišķās daļās pat miljoniem) reižu,
+atkarībā no izmantotā procesora veida. Izmantojot līdz
 apmēram 80% no Latvijas Universitātes Skaitliskās modelēšanas institūta HPC RAM
 resursiem nepārtrauktā secīgu uzdevumu plūsmā, darbs, sākot ar
 <a href="Chapter2.html#Chapter2">standartizācijas failu sagatavošanu</a> un beidzot ar ekoģeogrāfisko
