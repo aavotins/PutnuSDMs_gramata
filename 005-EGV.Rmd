@@ -1717,7 +1717,7 @@ rastrs100=raster::raster(template100)
 
 **Faila nosaukums un GeoTIFF pieejamība:** `Daudzv_Kopeja_r500.tif`, [centrēts un mērogots](https://drive.usercontent.google.com/u/0/uc?id=1ByYslldn5E6wPj3KChlDMPAe2aJ7aA4s&export=download)
 
-**EGV nosaukums:** β-līmeņa (vidējais α-līmeņa 500x500m) Šenona daudzveidības indekss vispārīgajām ainavas klasēm r=500m ap analīzes šūnas centru
+**EGV nosaukums:** Vidējais α-līmeņa (500x500 m šūnās) Šenona daudzveidības indekss vispārīgajām ainavas klasēm r=500m ap analīzes šūnas centru
 
 **Izveidošanas gaita un atkarības:**
 
@@ -1747,7 +1747,7 @@ rastrs100=raster::raster(template100)
 
 **Faila nosaukums un GeoTIFF pieejamība:** `Daudzv_Kopeja_r1250.tif`, [centrēts un mērogots](https://drive.usercontent.google.com/u/0/uc?id=12lMlw-CpnqR7JEgrtqBoju0sNSogQ9Cj&export=download)
 
-**EGV nosaukums:** β-līmeņa (vidējais α-līmeņa 500x500m) Šenona daudzveidības indekss vispārīgajām ainavas klasēm r=1250m ap analīzes šūnas centru
+**EGV nosaukums:** Vidējais α-līmeņa (500x500 m šūnās) Šenona daudzveidības indekss vispārīgajām ainavas klasēm r=1250m ap analīzes šūnas centru
 
 **Izveidošanas gaita un atkarības:**
 
@@ -1777,7 +1777,7 @@ rastrs100=raster::raster(template100)
 
 **Faila nosaukums un GeoTIFF pieejamība:** `Daudzv_Kopeja_r3000.tif`, [centrēts un mērogots](https://drive.usercontent.google.com/u/0/uc?id=1ncT6-aU0KdGMH5XfAXkBYMzbLpGYiN2y&export=download)
 
-**EGV nosaukums:** β-līmeņa (vidējais α-līmeņa 500x500m) Šenona daudzveidības indekss vispārīgajām ainavas klasēm r=3000m ap analīzes šūnas centru
+**EGV nosaukums:** Vidējais α-līmeņa (500x500 m šūnās) Šenona daudzveidības indekss vispārīgajām ainavas klasēm r=3000m ap analīzes šūnas centru
 
 **Izveidošanas gaita un atkarības:**
 
@@ -1807,7 +1807,7 @@ rastrs100=raster::raster(template100)
 
 **Faila nosaukums un GeoTIFF pieejamība:** `Daudzv_Kopeja_r10000.tif`, [centrēts un mērogots](https://drive.usercontent.google.com/u/0/uc?id=1rbOLilHETscBfAvY-FMwloGVicS2eeJP&export=download)
 
-**EGV nosaukums:** β-līmeņa (vidējais α-līmeņa 500x500m) Šenona daudzveidības indekss vispārīgajām ainavas klasēm r=10000m ap analīzes šūnas centru
+**EGV nosaukums:** Vidējais α-līmeņa (500x500 m šūnās) Šenona daudzveidības indekss vispārīgajām ainavas klasēm r=10000m ap analīzes šūnas centru
 
 **Izveidošanas gaita un atkarības:**
 
@@ -1837,7 +1837,7 @@ rastrs100=raster::raster(template100)
 
 **Faila nosaukums un GeoTIFF pieejamība:** `Daudzv_Lauku_r500.tif`, [centrēts un mērogots](https://drive.usercontent.google.com/u/0/uc?id=1wbtEIgaiOKQTxEbxGeCAy_sxIB8EMH-6&export=download)
 
-**EGV nosaukums:** β-līmeņa (vidējais α-līmeņa 500x500m) Šenona daudzveidības indekss detalizētajām lauku klasēm r=500m ap analīzes šūnas centru
+**EGV nosaukums:** Vidējais α-līmeņa (500x500 m šūnās) Šenona daudzveidības indekss detalizētajām lauku klasēm r=500m ap analīzes šūnas centru
 
 **Izveidošanas gaita un atkarības:**
 
@@ -1867,7 +1867,7 @@ rastrs100=raster::raster(template100)
 
 **Faila nosaukums un GeoTIFF pieejamība:** `Daudzv_Lauku_r1250.tif`, [centrēts un mērogots](https://drive.usercontent.google.com/u/0/uc?id=1gVPMH_7Y8KT8a4qC6mbh710aYI48zx0n&export=download)
 
-**EGV nosaukums:** β-līmeņa (vidējais α-līmeņa 500x500m) Šenona daudzveidības indekss detalizētajām lauku klasēm r=1250m ap analīzes šūnas centru
+**EGV nosaukums:** Vidējais α-līmeņa (500x500 m šūnās) Šenona daudzveidības indekss detalizētajām lauku klasēm r=1250m ap analīzes šūnas centru
 
 **Izveidošanas gaita un atkarības:**
 
@@ -1897,7 +1897,7 @@ rastrs100=raster::raster(template100)
 
 **Faila nosaukums un GeoTIFF pieejamība:** `Daudzv_Lauku_r3000.tif`, [centrēts un mērogots](https://drive.usercontent.google.com/u/0/uc?id=1u168_VCwQxjDNAfDjlV8oCdQyjbnDo7s&export=download)
 
-**EGV nosaukums:** β-līmeņa (vidējais α-līmeņa 500x500m) Šenona daudzveidības indekss detalizētajām lauku klasēm r=3000m ap analīzes šūnas centru
+**EGV nosaukums:** Vidējais α-līmeņa (500x500 m šūnās) Šenona daudzveidības indekss detalizētajām lauku klasēm r=3000m ap analīzes šūnas centru
 
 **Izveidošanas gaita un atkarības:**
 
@@ -1927,7 +1927,7 @@ rastrs100=raster::raster(template100)
 
 **Faila nosaukums un GeoTIFF pieejamība:** `Daudzv_Lauku_r10000.tif`, [centrēts un mērogots](https://drive.usercontent.google.com/u/0/uc?id=1arvZKvMRnmtgqzMyTbAT6UJg3C-5H6vQ&export=download)
 
-**EGV nosaukums:** β-līmeņa (vidējais α-līmeņa 500x500m) Šenona daudzveidības indekss detalizētajām lauku klasēm r=10000m ap analīzes šūnas centru
+**EGV nosaukums:** Vidējais α-līmeņa (500x500 m šūnās) Šenona daudzveidības indekss detalizētajām lauku klasēm r=10000m ap analīzes šūnas centru
 
 **Izveidošanas gaita un atkarības:**
 
@@ -1957,7 +1957,7 @@ rastrs100=raster::raster(template100)
 
 **Faila nosaukums un GeoTIFF pieejamība:** `Daudzv_Mezu_r500.tif`, [centrēts un mērogots](https://drive.usercontent.google.com/u/0/uc?id=1g2uTsG2gioiBuQOK3ft4G6GFM-hThZmR&export=download)
 
-**EGV nosaukums:** β-līmeņa (vidējais α-līmeņa 500x500m)  Šenona daudzveidības indekss detalizētajām mežu klasēm r=500m ap analīzes šūnas centru
+**EGV nosaukums:** Vidējais α-līmeņa (500x500 m šūnās) Šenona daudzveidības indekss detalizētajām mežu klasēm r=500m ap analīzes šūnas centru
 
 **Izveidošanas gaita un atkarības:**
 
@@ -1987,7 +1987,7 @@ rastrs100=raster::raster(template100)
 
 **Faila nosaukums un GeoTIFF pieejamība:** `Daudzv_Mezu_r1250.tif`, [centrēts un mērogots](https://drive.usercontent.google.com/u/0/uc?id=1Jw_xya6s3eMWyfr3RbSgNFoB6Htord2g&export=download)
 
-**EGV nosaukums:** β-līmeņa (vidējais α-līmeņa 500x500m) Šenona daudzveidības indekss detalizētajām mežu klasēm r=1250m ap analīzes šūnas centru
+**EGV nosaukums:** Vidējais α-līmeņa (500x500 m šūnās) Šenona daudzveidības indekss detalizētajām mežu klasēm r=1250m ap analīzes šūnas centru
 
 **Izveidošanas gaita un atkarības:**
 
@@ -2017,7 +2017,7 @@ rastrs100=raster::raster(template100)
 
 **Faila nosaukums un GeoTIFF pieejamība:** `Daudzv_Mezu_r3000.tif`, [centrēts un mērogots](https://drive.usercontent.google.com/u/0/uc?id=10Q6zmfVKZTTjDY4dz0usbkW6ibaVYfJo&export=download)
 
-**EGV nosaukums:** β-līmeņa (vidējais α-līmeņa 500x500m) Šenona daudzveidības indekss detalizētajām mežu klasēm r=3000m ap analīzes šūnas centru
+**EGV nosaukums:** Vidējais α-līmeņa (500x500 m šūnās) Šenona daudzveidības indekss detalizētajām mežu klasēm r=3000m ap analīzes šūnas centru
 
 **Izveidošanas gaita un atkarības:**
 
@@ -2047,7 +2047,7 @@ rastrs100=raster::raster(template100)
 
 **Faila nosaukums un GeoTIFF pieejamība:** `Daudzv_Mezu_r10000.tif`, [centrēts un mērogots](https://drive.usercontent.google.com/u/0/uc?id=1ZgtdHtUeuUu4xE5WQrn37XcBM0WiC9Il&export=download)
 
-**EGV nosaukums:** β-līmeņa (vidējais α-līmeņa 500x500m) Šenona daudzveidības indekss detalizētajām mežu klasēm r=10000m ap analīzes šūnas centru
+**EGV nosaukums:** Vidējais α-līmeņa (500x500 m šūnās) Šenona daudzveidības indekss detalizētajām mežu klasēm r=10000m ap analīzes šūnas centru
 
 **Izveidošanas gaita un atkarības:**
 
