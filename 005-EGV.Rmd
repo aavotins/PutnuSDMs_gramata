@@ -232,8 +232,8 @@ laikā.
 ## Ainava_pazimes-agregacijas_merogs {#Chapter5.2}
 
 Dažādas [ievades ģeodatu](#Chapter3) kombinācijas ainavas aprakstu sagatavošanai. 
-Kopumā balstās [Kombinētā ainava](#Chapter3.2.2.3) ievades produktos, kuri nav 
-tieši atbilstoši kādai no [Lauku_pazimes-agregacijas_merogs](#Chapter5.7) 
+Kopumā balstās [Kombinētā ainava](#Chapter3.2.2.3), tātad, sakņojas [Ainava](#Chapter3.2.2) 
+ievades produktos, kuri nav tieši atbilstoši kādai no [Lauku_pazimes-agregacijas_merogs](#Chapter5.7) 
 vai [Mezi_pazimes-agregacijas_merogs](#Chapter5.9) vidēm.
 
 
