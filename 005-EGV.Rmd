@@ -72,10 +72,10 @@ raksturošanu noslēgtās telpas daļās. Tā kā liela apjoma (valsts līmeņa)
 Zonālās statistikas pamatā ir rastra šūnu vērtību raksturošana ģeogrāfiskās telpas 
 noslēgtās daļās - zonās. Raksturošanai visbiežāk izmanto kādus aprakstošās statistikas 
 mērus (kā šajā projektā), bet var izmantot arī sarežģītākus aprēķinus. Dažādas 
-ģeoprocesēšanas programmatūras izmanto atšķirīgas pieejas zonālās statistikas 
+ģeoprocesēšanas programmas izmanto atšķirīgas pieejas zonālās statistikas 
 ieviešanai. Visbiežāk aprakstāmā rastra šūnas tiek klasificētas kā pilnībā piederīgas 
 vai nepiederīgas zonai, kam atkarībā no izmantotās programmas var būt atšķirīgas 
-pieejas, piemēram, zonu rasterizēšana vai aprakstāma rastra pikseļu centru aprēķini 
+pieejas, piemēram, zonu rasterizēšana vai aprakstāmā rastra pikseļu centru novietojuma aprēķini 
 ([piemēri](https://isciences.github.io/exactextract/background.html)). 
 Šīm pieejām ir vairāki trūkumi, piemēram, 
 (1) rezultāta precizitāte ir cieši saistīta ar aprakstāmā rastra izšķirtspēju un 
@@ -85,16 +85,15 @@ zonu aprakstu kļūdām (nepilnīga pārklājuma) vai sevišķi lēniem iteratī
 ik zonai atsevišķi, kas kļūst arvien nospiedošāki līdz ar zonu platības (pašas 
 par sevi un savstarpējās pārklāšanās) pieaugumu.
 
-Kā efektīvākais risinājums abiem izaicinājumiem šobrīd ir zināms C++ programmēšanas 
-valodā izstrādātais atvērtā koda [`exactextract`](https://isciences.github.io/exactextract/), 
+Kā efektīvākais risinājums abiem izaicinājumiem šobrīd (šī materiāla autoriem) ir 
+zināms C++ programmēšanas valodā izstrādātais atvērtā koda [`exactextract`](https://isciences.github.io/exactextract/), 
 kam pieejama vadība R ar pakotni {exactextractr}. Programmatūras risinājums izmanto 
 sevišķi ātru algoritmu, kurš ieviests vienā no ātrākajām programmēšanas valodām; 
 zonu apraksti tiek rēķināti, svarojot ar pikseļa-platību-zonā, tādā veidā kompensējot 
 rastra šūnu nesakritību ar zonām; risinājums labi mērogojas, pieļaujot vairāku 
 procesora kodolu izmantošanu un nepieprasot visas rastra slāņa platības ielādi 
-operatīvajā atmiņā. Tas nozīmē, ka zonālās statistikas aprēķinus ir iespējams veikt 
-ar zemākas izšķirtspējas šūnām par ievades produktiem (10 m), piemēram, izmantojot 
-analīzes šūnu (100 m) vērtības, kuras var iegūt dažādos veidos.
+operatīvajā atmiņā. Tas nozīmē, ka zonālās statistikas aprēķinus ir iespējams veikt, izmantojot vairākus procesora kodolus vienlaikus, kā arī ar zemākas izšķirtspējas šūnām par ievades 
+produktiem (10 m), piemēram, izmantojot analīzes šūnu (100 m) vērtības, kuras var iegūt dažādos veidos.
 
 Viens no veidiem EGV vērtību aprēķināšanai analīzes šūnā no ievades produktiem, 
 protams, ir pati zonālā statistika. Tomēr, lai cik izceļami efektīvs {exactectractr} 
@@ -118,12 +117,12 @@ Svarīgi ir noskaidrot, cik daudz informācijas tiek zaudēts tālākos soļos -
 zonālās statistikas zonām, kuras precīzi nesakrīt ar aprakstošo rastru šūnām, ja 
 izmanto 100 m izšķirtspēju, nevis oriģinālo - 10 m. Tas testēts ar vienu mainīgo, 
 kuram ir plaša variabilitāte vidē - [Lauku blokiem](#Chapter3.2.2.1.1) 10 m 
-izšķirstpējā un to agregātu analīzes šūnā [Lauku_Bloki_cell](#Chapter5.7.40), aprēķinot 
+izšķirstpējā un to agregātu (ar `resample` pieeju) analīzes šūnā [Lauku_Bloki_cell](#Chapter5.7.40), aprēķinot 
 klases seguma īpatsvaru 500 m, 1250 m un 3000 m rādiusā ap katru no analīzes šūnu 
 centriem un aprēķinot Pīrsona korelācijas koeficientus visām (n=62750) analīzes šūnām 
-[Vektordatu režģi](#Chapter2.1) `tks93_50km` lapā "3434". Pīrsona korelācijas koeficienti
-starp zonālās statistikas rezultātiem, izmantojot ar-pikseļa-platību-zonā svērto 
-pieeju, aprakstāmajiem rastriem ar 10 m un 100 m izšķirtspēju:
+[Vektordatu režģi](#Chapter2.1) `tks93_50km` lapā "3434". Pīrsona korelācijas koeficienti 
+zonālās statistikas rezultātiem, izmantojot ar-pikseļa-platību-zonā svērto 
+pieeju, starp aprakstāmajiem rastriem ar 10 m un 100 m izšķirtspēju:
 
 - 500 m rādiusam: $\rho=0.9999932$;
 
@@ -143,17 +142,17 @@ knitr::include_graphics("./Atteli/ch005_1fig1.png")
 <br>
 
 
-Aprēķiniem nepieciešamā laika dēļ, zonālās statistikas mērogošanai 10 000 m 
-rādiusā ap ik analīzes šūnas centru pievienojot arī ievades produkta agregātu līdz 
-1000 m šūnas izšķirtspējai, salīdzinājums veikts tikai 1000 zonās. Tā rezultāti:
+Zonālās statistikas mērogošanai 10 000 m rādiusā ap ik analīzes šūnas centru 
+pievienots arī ievades produkta agregāts līdz 1000 m šūnas izšķirtspējai. Aprēķiniem
+nepieciešamā laikā dēļ, salīdzinājums veikts tikai 1000 zonās. Tā rezultāti:
 
 - 10 m ~ 100 m: $\rho=0.9999989$;
 
 - 100 m ~ 1000 m: $\rho=0.9852817$;
 
-- 10 m ~ 1000 m: $\rho=0.9852621$;
+- 10 m ~ 1000 m: $\rho=0.9852621$.
 
-tātad, jau ievērojamu precizitātes zaudējumu (apmēram 1.5% korelācijā un ~3% 
+Tātad, jau ievērojams precizitātes zaudējums (apmēram 1.5% korelācijā un ~3% 
 dispersijā), kas nāk komplektā ar nepieciešamību aprēķiniem sagatavot papildus 
 slāni. Tādēļ turpināta procesu optimizēšanas izpēte.
 
@@ -184,11 +183,45 @@ knitr::include_graphics("./Atteli/ch005_1fig2.png")
 
 <br>
 
+Vērtējot tīri pēc laika ietaupījuma, varētu šķist, ka šos aprēķinus ir efektīvi veikt 
+uzreiz visas valsts līmenī. Tomēr tā nav - pieaugot vienā uzdevumā aprstrādājamo 
+aprēķinu zonu skaitam sākt veidoties operatīvās atmiņas ierobežojumi, kas atsaucas 
+aprēķiniem nepieciešamajā laikā, veidojot eksponenciālu sakarību (tā ir redzama 
+\@ref(fig:LaikaMerogojums) att. plašākajām zonām). Tā dēļ un lai nodrošinātu iespēju 
+procesu paralēlai veikšanai, izmantots dalījums `tks93_50km` karšu lapās 
+([Vektordatu režģi](#Chapter2.1)), kas nozīmē, ka arī iegūtie rezultāti ir dalīti 
+šajās lapās. Tipiski, zonālā statistiska atgriež tabulu (vektoru vai citu objektu klasi, 
+atkarībā no programmatūras), kuru nepieciešams savienot ar ģeoreferencētu vektordatu 
+slāni, no kura sagatavot rastru. Apstrādes beigās rastrā ir jāapvieno visas lapas 
+vienā slānī, aptverot visu interešu teritoriju. Šo posmu var risināt dažādi. Mēs 
+par efektīvāko (procesēšanas laika, operatīvās atmiņas un aizņemtās diska vietas ziņā) 
+esam atraduši plūsmu, kurā ik `tks93_50km` lapas apstrāde rezultējas ar rastra, kurš 
+satur tikai apstrādātās lapas vērtības, bet ir projektēts visai interešu telpai, 
+saglabāšanu diskā. Pēc šo lapu saglabāšanas tās ir jāapvieno.
+
+Vairāku rastra lapu apvienošanu vienā rastra slānī apzīmē ar rastra mozaīkas veidošanu. 
+Vairumā programmatūras, kura veic šādas darbības, pat ir funkcija, kuras nosaukums 
+satur `mosaic`. Visbiežāk šīs funkcijas ļauj apvienot vairākas lapas, kurām ir 
+savstarpēja pārklāšanās, deklarējot aprēķinus piešķiramajām vērtībām pārklāšanās 
+vietās (rezultējošā rastra šūnās). Tas nozīmē, ka procesoram ir sniedzama virkne 
+instrukciju, kuru izpildei ir nepieciešams laiks. Ja apvienojamo rastru lapas ir 
+sagatavotas tā, ka neveidojas pārklāšanās vai pārklāšanās vietās ir jābūt identiskām 
+vērtībām - kā tas ir šajā projektā, tad papildus aprēķini nav nepieciešami un lapas 
+ir savienojamas, piemēram, to izmantošanas secībā. Šādām darbībām piemērotas ir `merge` 
+funkcijas (atkal jau - plaši izmantots apzīmējums dažādā programmatūrā), kuras instrukciju 
+dēļ ir ātrākas par `mosaic` - laika mērogojums ir no desmitiem līdz tūkstošiem reižu, 
+atkarībā no apstrādājamajiem rastriem, to joslu kodējumiem, vērtību apjoma un mainības. 
+Tomēr šī projekta ietvaros sagtavotajiem starprezultātiem tas vēl joprojām aizņem 
+vairākas minūtes (vai pat stundas) ik sagatavojamam EGV. Šo `merge` uzdevumu var 
+paātrināt līdz dažām sekundēm izpildes laika, izmantojot [virtuālā rastra](https://gdal.org/en/stable/drivers/raster/vrt.html) iespējas un īpašības - 
+no diskā saglabātām strukturētām rastra lapām operatīvajā atmiņā izveidojot virtuālo katalogu, 
+kura aptverto rezultātu (nevis instrukcijas par lapām, bet informāciju par šūnu 
+vērtībām) saglabā vienā slānī kā GeoTIFF failu, kurš satur ekoģeogrāfiskā mainīgā informāciju.
+
 Šīs prakses ieviešana ekoģeogrāfisko mainīgo aprēķiniem nepieciešamo laiku 
-samazināja kopumā simtiem līdz tūkstošiem (un atsevišķās daļās pat miljoniem) reižu, 
-atkarībā no izmantotā procesora veida. Izmantojot līdz
+samazināja kopumā tūkstošiem (un atsevišķās daļās pat miljoniem) reižu. Izmantojot līdz
 apmēram 80% no Latvijas Universitātes Skaitliskās modelēšanas institūta HPC RAM 
-resursiem nepārtrauktā secīgu uzdevumu plūsmā, darbs, sākot ar 
+resursu nepārtrauktā secīgu uzdevumu plūsmā, darbs, sākot ar 
 [standartizācijas failu sagatavošanu](#Chapter2) un beidzot ar ekoģeogrāfisko 
 mainīgo sagatavošanu (šīs nodaļas saturu ieskaitot), ir veicams līdz divu nedēļu 
 laikā.
