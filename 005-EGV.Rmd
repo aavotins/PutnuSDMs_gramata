@@ -2256,7 +2256,38 @@ rastrs100=raster::raster(template100)
 
 <br>
 
-### Dist_ZalajiIlggadigie-vid_cell {#Chapter5.5.06}
+
+
+### Dist_Udeni-vid_cell {#Chapter5.5.06}
+
+**Faila nosaukums un GeoTIFF pieejamība:** `Dist_Udeni-vid_cell.tif`, [centrēts un mērogots](https://drive.usercontent.google.com/u/0/uc?id=1KLXrCLuLXGBgmMVbbviP5xdi6MGZl8Yi&export=download)
+
+**EGV nosaukums:** Attālums līdz ūdensobjektiem (jebkādiem), vidējais analīzes šūnā
+
+**Izveidošanas gaita un atkarības:**
+
+
+```{r, eval=FALSE}
+# libs ----
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(sf)) {install.packages("sf"); require(sf)}
+if(!require(arrow)) {install.packages("arrow"); require(arrow)}
+if(!require(sfarrow)) {install.packages("sfarrow"); require(sfarrow)}
+if(!require(mgcv)) {install.packages("mgcv"); require(mgcv)}
+
+
+# rastra templates ----
+paraugs=rast("./Templates/TemplateRasters/LV10m_10km.tif")
+template100=rast("./Templates/TemplateRasters/LV100m_10km.tif")
+rastrs100=raster::raster(template100)
+
+```
+
+<br>
+
+
+### Dist_ZalajiIlggadigie-vid_cell {#Chapter5.5.07}
 
 **Faila nosaukums un GeoTIFF pieejamība:** `Dist_ZalajiIlggadigie-vid_cell.tif`, [centrēts un mērogots](https://drive.usercontent.google.com/u/0/uc?id=1mbP66EjurcGVnDchxSYsKKiLUqMgvrzd&export=download)
 
