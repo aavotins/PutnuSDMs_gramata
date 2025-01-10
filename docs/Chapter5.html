@@ -874,9 +874,10 @@ Figure 5.2: Zonālās statistikas (10 000 m zonās) rezultātu salīdzinājums a
 <p><br></p>
 <p>Vērtējot tīri pēc laika ietaupījuma, varētu šķist, ka šos aprēķinus ir efektīvi veikt
 uzreiz visas valsts līmenī. Tomēr tā nav - pieaugot vienā uzdevumā aprstrādājamo
-aprēķinu zonu skaitam sākt veidoties operatīvās atmiņas ierobežojumi, kas atsaucas
-aprēķiniem nepieciešamajā laikā, veidojot eksponenciālu sakarību (tā ir redzama
-<a href="Chapter5.html#fig:LaikaMerogojums">5.1</a> att. plašākajām zonām). Tā dēļ un lai nodrošinātu iespēju
+aprēķinu zonu skaitam sāk veidoties operatīvās atmiņas ierobežojumi, kas {exactextractr}
+augstās optimizācijas dēļ nenobrūk, bet atsaucas
+aprēķiniem nepieciešamajā laikā, veidojot eksponenciālu sakarību (tās veidošanās ir redzama
+<a href="Chapter5.html#fig:LaikaMerogojums">5.1</a> att.). Tā dēļ un lai nodrošinātu iespēju
 procesu paralēlai veikšanai, izmantots dalījums <code>tks93_50km</code> karšu lapās
 (<a href="Chapter2.html#Chapter2.1">Vektordatu režģi</a>), kas nozīmē, ka arī iegūtie rezultāti ir dalīti
 šajās lapās. Tipiski, zonālā statistiska atgriež tabulu (vektoru vai citu objektu klasi,
@@ -888,27 +889,28 @@ esam atraduši plūsmu, kurā ik <code>tks93_50km</code> lapas apstrāde rezult�
 satur tikai apstrādātās lapas vērtības, bet ir projektēts visai interešu telpai,
 saglabāšanu diskā. Pēc šo lapu saglabāšanas tās ir jāapvieno.</p>
 <p>Vairāku rastra lapu apvienošanu vienā rastra slānī apzīmē ar rastra mozaīkas veidošanu.
-Vairumā programmatūras, kura veic šādas darbības, pat ir funkcija, kuras nosaukums
+Vairumā programmatūras, kura veic šādas darbības, pat ir atrodama kāda funkcija, kuras nosaukums
 satur <code>mosaic</code>. Visbiežāk šīs funkcijas ļauj apvienot vairākas lapas, kurām ir
-savstarpēja pārklāšanās, deklarējot aprēķinus piešķiramajām vērtībām pārklāšanās
+savstarpēja pārklāšanās (bet arī bez tās), veicot aprēķinus piešķiramajām vērtībām pārklāšanās
 vietās (rezultējošā rastra šūnās). Tas nozīmē, ka procesoram ir sniedzama virkne
-instrukciju, kuru izpildei ir nepieciešams laiks. Ja apvienojamo rastru lapas ir
+instrukciju, kuru izpildei neizbēgami ir nepieciešams laiks. Ja apvienojamo rastru lapas ir
 sagatavotas tā, ka neveidojas pārklāšanās vai pārklāšanās vietās ir jābūt identiskām
 vērtībām - kā tas ir šajā projektā, tad papildus aprēķini nav nepieciešami un lapas
 ir savienojamas, piemēram, to izmantošanas secībā. Šādām darbībām piemērotas ir <code>merge</code>
-funkcijas (atkal jau - plaši izmantots apzīmējums dažādā programmatūrā), kuras instrukciju
-dēļ ir ātrākas par <code>mosaic</code> - laika mērogojums ir no desmitiem līdz tūkstošiem reižu,
-atkarībā no apstrādājamajiem rastriem, to joslu kodējumiem, vērtību apjoma un mainības.
+funkcijas (atkal jau - dažādās programmās plaši izmantots apzīmējums šim mērķim), kuras instrukciju
+dēļ ir ātrākas par <code>mosaic</code> - laika mērogojums (šī projekta slāņiem) ir no desmitiem līdz tūkstošiem reižu,
+atkarībā no apstrādājamiem rastriem, to joslu kodējumiem, vērtību apjoma un mainības.
 Tomēr šī projekta ietvaros sagtavotajiem starprezultātiem tas vēl joprojām aizņem
 vairākas minūtes (vai pat stundas) ik sagatavojamam EGV. Šo <code>merge</code> uzdevumu var
-paātrināt līdz dažām sekundēm izpildes laika, izmantojot <a href="https://gdal.org/en/stable/drivers/raster/vrt.html">virtuālā rastra</a> iespējas un īpašības -
-no diskā saglabātām strukturētām rastra lapām operatīvajā atmiņā izveidojot virtuālo katalogu,
-kura aptverto rezultātu (nevis instrukcijas par lapām, bet informāciju par šūnu
+paātrināt līdz sekundēs mērāmam izpildes laikam, izmantojot <a href="https://gdal.org/en/stable/drivers/raster/vrt.html">virtuālā rastra</a> iespējas un īpašības -
+no diskā saglabātām strukturētām rastra lapām, operatīvajā atmiņā izveidojot virtuālo katalogu,
+kura aptverto rezultātu (tiesa, nevis instrukcijas par lapām, bet informāciju par šūnu
 vērtībām) saglabā vienā slānī kā GeoTIFF failu, kurš satur ekoģeogrāfiskā mainīgā informāciju.</p>
 <p>Šīs prakses ieviešana ekoģeogrāfisko mainīgo aprēķiniem nepieciešamo laiku
-samazināja kopumā tūkstošiem (un atsevišķās daļās pat miljoniem) reižu. Izmantojot līdz
+samazināja kopumā tūkstošiem (un atsevišķās daļās pat miljoniem) reižu no sākotnējiem
+izmēģinājumiem un pasaulē plaši lietotajiem risinājumiem. Izmantojot līdz
 apmēram 80% no Latvijas Universitātes Skaitliskās modelēšanas institūta HPC RAM
-resursu nepārtrauktā secīgu uzdevumu plūsmā, darbs, sākot ar
+(un X% CPU) resursu nepārtrauktā secīgu uzdevumu plūsmā, darbs, sākot ar
 <a href="Chapter2.html#Chapter2">standartizācijas failu sagatavošanu</a> un beidzot ar ekoģeogrāfisko
 mainīgo sagatavošanu (šīs nodaļas saturu ieskaitot), ir veicams līdz divu nedēļu
 laikā.</p>
