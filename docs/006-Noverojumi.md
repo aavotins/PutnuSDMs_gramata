@@ -143,7 +143,7 @@ Ar šiem novērojumiem ir turpināma atlase modelēšanai, kas ir veicama vairā
 
 5. solis: novērojums veikts ar ligzdošanu saistāmā gada daļā;
 
-6. solis: saistīšana ar vides pārmaiņām **Global Forest Watch** un **DynamicWorld**;
+6. solis: saistīšana ar [vides pārmaiņām](#Chapter3.3);
 
 7. solis: papildkritērijs - attālums no apdzīvotajām vietām;
 
