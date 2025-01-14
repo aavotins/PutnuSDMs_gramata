@@ -6,13 +6,11 @@ All chapters start with a first-level heading followed by your chapter title, li
 
 VIF analīze un individuāla pārskatīšana vai netrūkst kaut kas sevišķi nozīmīgs
 
-## Vidi kopumā raksturojoši fona punkti
+### Multikolinearitāte
 
-Atbilstoši procedūrai. Vismaz 10K
 
-## Vienkāršots modelis EGV noslēguma atlasei
+### Variable Importance
 
-LQ un premutation importance
 
 ## Modeļa parametrizācija
 
@@ -24,11 +22,19 @@ Krosvalidācija
 
 ## Labākās parametrizācijas izvēle
 
-AICc (un AUCtest?)
+TSS neatkarīgos testa datos
+
+## Nulles modelis
+
+salīdzinājums ar nulles modeli
+
 
 ## Labākā modeļa rezultāti
 
-Dažādu failu ģenerēšana un modeļa spājas apraksti
+Dažādu failu ģenerēšana un modeļa spējas apraksti
+
+Marginālās atbildes funkciju attēli
+
 
 ## Rezultāta uzticamības izvērtējums
 

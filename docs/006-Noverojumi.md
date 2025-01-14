@@ -158,14 +158,12 @@ Vārdnīcas katrai datu kopai
 
 Kopš 2017. gada
 
-Ne ilgāku periodu par 1 mēnesi
+Ne ilgāku periodu par 10 dienām
 
 
 ## Solis 3: Dublieri {#Chapter6.3}
 
-Ik datubāzē (arī - ja identifikatoram ir mainījie sugas nosaukums)
-
-Starp datubāzēm
+Ik datubāzē un starp tām
 
 ## Solis 4: Novietojums {#Chapter6.4}
 
@@ -177,9 +175,11 @@ Ligzdošanas sezona, izņemot pierādītajām ligzdošanām
 
 ## Solis 6: Vides pārmaiņas {#Chapter6.6}
 
-Analīzes šūnā nevienā periodā kopš novērojuma ne vairāk par 5% (10%?)
+Analīzes šūnā nevienā periodā kopš novērojuma ne vairāk par 10%
 
-Ligzdošanas iecirknī ne vairāk par 10% (20%?)
+Ligzdošanas iecirknī ne vairāk par 10%
+
+Netiek vērtēts no 2023. gada
 
 ## Solis 7: Papildkritēriji {#Chapter6.7}
 
@@ -192,6 +192,7 @@ Ligzdošanas ticamības pakāpju pierēķināšana, lai izvēlētos uzticamākos
 
 ## Novērojumu atlases procesa vizualizācija {#Chapter6.9}
 
+Stabiņu diagramma + karte
 
 
 ## Rezultāti {#Chapter6.10}

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>7 Sugu izplatības (dzīvotņu piemērotības) modeļi | Putnu sugu izplatības modelēšana biodaudzveidības aizsardzībai: materiāli reproducēšanai</title>
   <meta name="description" content="Putnu sugu izplatības modelēšana biodaudzveidības aizsardzībai: materiāli reproducējamības nodrošināšanai." />
-  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
   <meta property="og:title" content="7 Sugu izplatības (dzīvotņu piemērotības) modeļi | Putnu sugu izplatības modelēšana biodaudzveidības aizsardzībai: materiāli reproducēšanai" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Andris Avotiņš" />
 
 
-<meta name="date" content="2025-01-13" />
+<meta name="date" content="2025-01-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -649,13 +649,16 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="7" data-path="Chapter7.html"><a href="Chapter7.html"><i class="fa fa-check"></i><b>7</b> Sugu izplatības (dzīvotņu piemērotības) modeļi</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="Chapter7.html"><a href="Chapter7.html#sākotnēji-izvēlēto-pazīmju-neatkarība-un-egv-atlases-otrā-kārta-vif"><i class="fa fa-check"></i><b>7.1</b> Sākotnēji izvēlēto pazīmju neatkarība un EGV atlases otrā kārta (VIF)</a></li>
-<li class="chapter" data-level="7.2" data-path="Chapter7.html"><a href="Chapter7.html#vidi-kopumā-raksturojoši-fona-punkti"><i class="fa fa-check"></i><b>7.2</b> Vidi kopumā raksturojoši fona punkti</a></li>
-<li class="chapter" data-level="7.3" data-path="Chapter7.html"><a href="Chapter7.html#vienkāršots-modelis-egv-noslēguma-atlasei"><i class="fa fa-check"></i><b>7.3</b> Vienkāršots modelis EGV noslēguma atlasei</a></li>
-<li class="chapter" data-level="7.4" data-path="Chapter7.html"><a href="Chapter7.html#modeļa-parametrizācija"><i class="fa fa-check"></i><b>7.4</b> Modeļa parametrizācija</a></li>
-<li class="chapter" data-level="7.5" data-path="Chapter7.html"><a href="Chapter7.html#labākās-parametrizācijas-izvēle"><i class="fa fa-check"></i><b>7.5</b> Labākās parametrizācijas izvēle</a></li>
-<li class="chapter" data-level="7.6" data-path="Chapter7.html"><a href="Chapter7.html#labākā-modeļa-rezultāti"><i class="fa fa-check"></i><b>7.6</b> Labākā modeļa rezultāti</a></li>
-<li class="chapter" data-level="7.7" data-path="Chapter7.html"><a href="Chapter7.html#rezultāta-uzticamības-izvērtējums"><i class="fa fa-check"></i><b>7.7</b> Rezultāta uzticamības izvērtējums</a></li>
+<li class="chapter" data-level="7.1" data-path="Chapter7.html"><a href="Chapter7.html#sākotnēji-izvēlēto-pazīmju-neatkarība-un-egv-atlases-otrā-kārta-vif"><i class="fa fa-check"></i><b>7.1</b> Sākotnēji izvēlēto pazīmju neatkarība un EGV atlases otrā kārta (VIF)</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="Chapter7.html"><a href="Chapter7.html#multikolinearitāte"><i class="fa fa-check"></i><b>7.1.1</b> Multikolinearitāte</a></li>
+<li class="chapter" data-level="7.1.2" data-path="Chapter7.html"><a href="Chapter7.html#variable-importance"><i class="fa fa-check"></i><b>7.1.2</b> Variable Importance</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="Chapter7.html"><a href="Chapter7.html#modeļa-parametrizācija"><i class="fa fa-check"></i><b>7.2</b> Modeļa parametrizācija</a></li>
+<li class="chapter" data-level="7.3" data-path="Chapter7.html"><a href="Chapter7.html#labākās-parametrizācijas-izvēle"><i class="fa fa-check"></i><b>7.3</b> Labākās parametrizācijas izvēle</a></li>
+<li class="chapter" data-level="7.4" data-path="Chapter7.html"><a href="Chapter7.html#nulles-modelis"><i class="fa fa-check"></i><b>7.4</b> Nulles modelis</a></li>
+<li class="chapter" data-level="7.5" data-path="Chapter7.html"><a href="Chapter7.html#labākā-modeļa-rezultāti"><i class="fa fa-check"></i><b>7.5</b> Labākā modeļa rezultāti</a></li>
+<li class="chapter" data-level="7.6" data-path="Chapter7.html"><a href="Chapter7.html#rezultāta-uzticamības-izvērtējums"><i class="fa fa-check"></i><b>7.6</b> Rezultāta uzticamības izvērtējums</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="Chapter8.html"><a href="Chapter8.html"><i class="fa fa-check"></i><b>8</b> SDM pēcapstrāde</a>
 <ul>
@@ -720,31 +723,34 @@ div.csl-indent {
 <div id="sākotnēji-izvēlēto-pazīmju-neatkarība-un-egv-atlases-otrā-kārta-vif" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">7.1</span> Sākotnēji izvēlēto pazīmju neatkarība un EGV atlases otrā kārta (VIF)<a href="Chapter7.html#sākotnēji-izvēlēto-pazīmju-neatkarība-un-egv-atlases-otrā-kārta-vif" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>VIF analīze un individuāla pārskatīšana vai netrūkst kaut kas sevišķi nozīmīgs</p>
+<div id="multikolinearitāte" class="section level3 hasAnchor" number="7.1.1">
+<h3><span class="header-section-number">7.1.1</span> Multikolinearitāte<a href="Chapter7.html#multikolinearitāte" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="vidi-kopumā-raksturojoši-fona-punkti" class="section level2 hasAnchor" number="7.2">
-<h2><span class="header-section-number">7.2</span> Vidi kopumā raksturojoši fona punkti<a href="Chapter7.html#vidi-kopumā-raksturojoši-fona-punkti" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Atbilstoši procedūrai. Vismaz 10K</p>
+<div id="variable-importance" class="section level3 hasAnchor" number="7.1.2">
+<h3><span class="header-section-number">7.1.2</span> Variable Importance<a href="Chapter7.html#variable-importance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="vienkāršots-modelis-egv-noslēguma-atlasei" class="section level2 hasAnchor" number="7.3">
-<h2><span class="header-section-number">7.3</span> Vienkāršots modelis EGV noslēguma atlasei<a href="Chapter7.html#vienkāršots-modelis-egv-noslēguma-atlasei" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>LQ un premutation importance</p>
 </div>
-<div id="modeļa-parametrizācija" class="section level2 hasAnchor" number="7.4">
-<h2><span class="header-section-number">7.4</span> Modeļa parametrizācija<a href="Chapter7.html#modeļa-parametrizācija" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="modeļa-parametrizācija" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Modeļa parametrizācija<a href="Chapter7.html#modeļa-parametrizācija" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Feature types and algorithms</p>
 <p>Regularization multipliers</p>
 <p>Krosvalidācija</p>
 </div>
-<div id="labākās-parametrizācijas-izvēle" class="section level2 hasAnchor" number="7.5">
-<h2><span class="header-section-number">7.5</span> Labākās parametrizācijas izvēle<a href="Chapter7.html#labākās-parametrizācijas-izvēle" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>AICc (un AUCtest?)</p>
+<div id="labākās-parametrizācijas-izvēle" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Labākās parametrizācijas izvēle<a href="Chapter7.html#labākās-parametrizācijas-izvēle" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>TSS neatkarīgos testa datos</p>
 </div>
-<div id="labākā-modeļa-rezultāti" class="section level2 hasAnchor" number="7.6">
-<h2><span class="header-section-number">7.6</span> Labākā modeļa rezultāti<a href="Chapter7.html#labākā-modeļa-rezultāti" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Dažādu failu ģenerēšana un modeļa spājas apraksti</p>
+<div id="nulles-modelis" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> Nulles modelis<a href="Chapter7.html#nulles-modelis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>salīdzinājums ar nulles modeli</p>
 </div>
-<div id="rezultāta-uzticamības-izvērtējums" class="section level2 hasAnchor" number="7.7">
-<h2><span class="header-section-number">7.7</span> Rezultāta uzticamības izvērtējums<a href="Chapter7.html#rezultāta-uzticamības-izvērtējums" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="labākā-modeļa-rezultāti" class="section level2 hasAnchor" number="7.5">
+<h2><span class="header-section-number">7.5</span> Labākā modeļa rezultāti<a href="Chapter7.html#labākā-modeļa-rezultāti" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Dažādu failu ģenerēšana un modeļa spējas apraksti</p>
+<p>Marginālās atbildes funkciju attēli</p>
+</div>
+<div id="rezultāta-uzticamības-izvērtējums" class="section level2 hasAnchor" number="7.6">
+<h2><span class="header-section-number">7.6</span> Rezultāta uzticamības izvērtējums<a href="Chapter7.html#rezultāta-uzticamības-izvērtējums" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Vizuāls novēr’tejums vai nav pilnīgas muļķības, kuru dēļ nepieciešams atkārtot modelēšanu ar kaut kādām korekcijām</p>
 
 </div>

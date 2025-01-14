@@ -528,10 +528,11 @@ Chapter6.9
 Chapter6.10
 Chapter7
 sākotnēji-izvēlēto-pazīmju-neatkarība-un-egv-atlases-otrā-kārta-vif
-vidi-kopumā-raksturojoši-fona-punkti
-vienkāršots-modelis-egv-noslēguma-atlasei
+multikolinearitāte
+variable-importance
 modeļa-parametrizācija
 labākās-parametrizācijas-izvēle
+nulles-modelis
 labākā-modeļa-rezultāti
 rezultāta-uzticamības-izvērtējums
 Chapter8

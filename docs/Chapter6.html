@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>6 Novērojumu atlase | Putnu sugu izplatības modelēšana biodaudzveidības aizsardzībai: materiāli reproducēšanai</title>
   <meta name="description" content="Putnu sugu izplatības modelēšana biodaudzveidības aizsardzībai: materiāli reproducējamības nodrošināšanai." />
-  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
   <meta property="og:title" content="6 Novērojumu atlase | Putnu sugu izplatības modelēšana biodaudzveidības aizsardzībai: materiāli reproducēšanai" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Andris Avotiņš" />
 
 
-<meta name="date" content="2025-01-13" />
+<meta name="date" content="2025-01-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -649,13 +649,16 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="7" data-path="Chapter7.html"><a href="Chapter7.html"><i class="fa fa-check"></i><b>7</b> Sugu izplatības (dzīvotņu piemērotības) modeļi</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="Chapter7.html"><a href="Chapter7.html#sākotnēji-izvēlēto-pazīmju-neatkarība-un-egv-atlases-otrā-kārta-vif"><i class="fa fa-check"></i><b>7.1</b> Sākotnēji izvēlēto pazīmju neatkarība un EGV atlases otrā kārta (VIF)</a></li>
-<li class="chapter" data-level="7.2" data-path="Chapter7.html"><a href="Chapter7.html#vidi-kopumā-raksturojoši-fona-punkti"><i class="fa fa-check"></i><b>7.2</b> Vidi kopumā raksturojoši fona punkti</a></li>
-<li class="chapter" data-level="7.3" data-path="Chapter7.html"><a href="Chapter7.html#vienkāršots-modelis-egv-noslēguma-atlasei"><i class="fa fa-check"></i><b>7.3</b> Vienkāršots modelis EGV noslēguma atlasei</a></li>
-<li class="chapter" data-level="7.4" data-path="Chapter7.html"><a href="Chapter7.html#modeļa-parametrizācija"><i class="fa fa-check"></i><b>7.4</b> Modeļa parametrizācija</a></li>
-<li class="chapter" data-level="7.5" data-path="Chapter7.html"><a href="Chapter7.html#labākās-parametrizācijas-izvēle"><i class="fa fa-check"></i><b>7.5</b> Labākās parametrizācijas izvēle</a></li>
-<li class="chapter" data-level="7.6" data-path="Chapter7.html"><a href="Chapter7.html#labākā-modeļa-rezultāti"><i class="fa fa-check"></i><b>7.6</b> Labākā modeļa rezultāti</a></li>
-<li class="chapter" data-level="7.7" data-path="Chapter7.html"><a href="Chapter7.html#rezultāta-uzticamības-izvērtējums"><i class="fa fa-check"></i><b>7.7</b> Rezultāta uzticamības izvērtējums</a></li>
+<li class="chapter" data-level="7.1" data-path="Chapter7.html"><a href="Chapter7.html#sākotnēji-izvēlēto-pazīmju-neatkarība-un-egv-atlases-otrā-kārta-vif"><i class="fa fa-check"></i><b>7.1</b> Sākotnēji izvēlēto pazīmju neatkarība un EGV atlases otrā kārta (VIF)</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="Chapter7.html"><a href="Chapter7.html#multikolinearitāte"><i class="fa fa-check"></i><b>7.1.1</b> Multikolinearitāte</a></li>
+<li class="chapter" data-level="7.1.2" data-path="Chapter7.html"><a href="Chapter7.html#variable-importance"><i class="fa fa-check"></i><b>7.1.2</b> Variable Importance</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="Chapter7.html"><a href="Chapter7.html#modeļa-parametrizācija"><i class="fa fa-check"></i><b>7.2</b> Modeļa parametrizācija</a></li>
+<li class="chapter" data-level="7.3" data-path="Chapter7.html"><a href="Chapter7.html#labākās-parametrizācijas-izvēle"><i class="fa fa-check"></i><b>7.3</b> Labākās parametrizācijas izvēle</a></li>
+<li class="chapter" data-level="7.4" data-path="Chapter7.html"><a href="Chapter7.html#nulles-modelis"><i class="fa fa-check"></i><b>7.4</b> Nulles modelis</a></li>
+<li class="chapter" data-level="7.5" data-path="Chapter7.html"><a href="Chapter7.html#labākā-modeļa-rezultāti"><i class="fa fa-check"></i><b>7.5</b> Labākā modeļa rezultāti</a></li>
+<li class="chapter" data-level="7.6" data-path="Chapter7.html"><a href="Chapter7.html#rezultāta-uzticamības-izvērtējums"><i class="fa fa-check"></i><b>7.6</b> Rezultāta uzticamības izvērtējums</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="Chapter8.html"><a href="Chapter8.html"><i class="fa fa-check"></i><b>8</b> SDM pēcapstrāde</a>
 <ul>
@@ -837,12 +840,11 @@ ligzdas vai norāda neprecīzas koordinātes.</p>
 <div id="Chapter6.2" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> Solis 2: Datums un laiks<a href="Chapter6.html#Chapter6.2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Kopš 2017. gada</p>
-<p>Ne ilgāku periodu par 1 mēnesi</p>
+<p>Ne ilgāku periodu par 10 dienām</p>
 </div>
 <div id="Chapter6.3" class="section level2 hasAnchor" number="6.3">
 <h2><span class="header-section-number">6.3</span> Solis 3: Dublieri<a href="Chapter6.html#Chapter6.3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Ik datubāzē (arī - ja identifikatoram ir mainījie sugas nosaukums)</p>
-<p>Starp datubāzēm</p>
+<p>Ik datubāzē un starp tām</p>
 </div>
 <div id="Chapter6.4" class="section level2 hasAnchor" number="6.4">
 <h2><span class="header-section-number">6.4</span> Solis 4: Novietojums<a href="Chapter6.html#Chapter6.4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -854,8 +856,9 @@ ligzdas vai norāda neprecīzas koordinātes.</p>
 </div>
 <div id="Chapter6.6" class="section level2 hasAnchor" number="6.6">
 <h2><span class="header-section-number">6.6</span> Solis 6: Vides pārmaiņas<a href="Chapter6.html#Chapter6.6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Analīzes šūnā nevienā periodā kopš novērojuma ne vairāk par 5% (10%?)</p>
-<p>Ligzdošanas iecirknī ne vairāk par 10% (20%?)</p>
+<p>Analīzes šūnā nevienā periodā kopš novērojuma ne vairāk par 10%</p>
+<p>Ligzdošanas iecirknī ne vairāk par 10%</p>
+<p>Netiek vērtēts no 2023. gada</p>
 </div>
 <div id="Chapter6.7" class="section level2 hasAnchor" number="6.7">
 <h2><span class="header-section-number">6.7</span> Solis 7: Papildkritēriji<a href="Chapter6.html#Chapter6.7" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -867,6 +870,7 @@ ligzdas vai norāda neprecīzas koordinātes.</p>
 </div>
 <div id="Chapter6.9" class="section level2 hasAnchor" number="6.9">
 <h2><span class="header-section-number">6.9</span> Novērojumu atlases procesa vizualizācija<a href="Chapter6.html#Chapter6.9" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Stabiņu diagramma + karte</p>
 </div>
 <div id="Chapter6.10" class="section level2 hasAnchor" number="6.10">
 <h2><span class="header-section-number">6.10</span> Rezultāti<a href="Chapter6.html#Chapter6.10" class="anchor-section" aria-label="Anchor link to header"></a></h2>
