@@ -131,7 +131,11 @@ ar šiem tīkliem.
 ligzdas vai norāda neprecīzas koordinātes.
 
 
-Ar šiem novērojumiem ir turpināma atlase modelēšanai, kas ir veicama vairākos soļos:
+Ar šiem novērojumiem ir turpināma atlase modelēšanai.
+
+## Novērojumu atlase {#Chapter6.1}
+
+Novērojumu atlase sugu izplatības modelēšanai veikta vairākos soļos:
 
 1. solis: tikai analizējamās sugas;
 
@@ -149,31 +153,31 @@ Ar šiem novērojumiem ir turpināma atlase modelēšanai, kas ir veicama vairā
 
 8. solis: augstākās ligzdošanas ticamības pakāpes, kurām novērojumu skaits un izvietojums pieļauj modelēšanu
 
-## Solis 1: Analizējamās sugas {#Chapter6.1}
+### Solis 1: Analizējamās sugas {#Chapter6.1.1}
 
 Vārdnīcas katrai datu kopai
 
 
-## Solis 2: Datums un laiks {#Chapter6.2}
+### Solis 2: Datums un laiks {#Chapter6.1.2}
 
 Kopš 2017. gada
 
 Ne ilgāku periodu par 10 dienām
 
 
-## Solis 3: Dublieri {#Chapter6.3}
+### Solis 3: Dublieri {#Chapter6.1.3}
 
 Ik datubāzē un starp tām
 
-## Solis 4: Novietojums {#Chapter6.4}
+### Solis 4: Novietojums {#Chapter6.1.4}
 
 Saskaņā ar CLC, izslēdzot droši nepiemēroto vidi
 
-## Solis 5: Sezonalitāte {#Chapter6.5}
+### Solis 5: Sezonalitāte {#Chapter6.1.5}
 
 Ligzdošanas sezona, izņemot pierādītajām ligzdošanām
 
-## Solis 6: Vides pārmaiņas {#Chapter6.6}
+### Solis 6: Vides pārmaiņas {#Chapter6.1.6}
 
 Analīzes šūnā nevienā periodā kopš novērojuma ne vairāk par 10%
 
@@ -181,21 +185,23 @@ Ligzdošanas iecirknī ne vairāk par 10%
 
 Netiek vērtēts no 2023. gada
 
-## Solis 7: Papildkritēriji {#Chapter6.7}
+### Solis 7: Papildkritēriji {#Chapter6.1.7}
 
 Vismaz ACCGEN - attālums no apdzīvotām vietām
 
 
-## Solis 8: Augstākās ligzdošanas ticamības pakāpes, kurām novērojumu skaits un izvietojums pieļauj modelēšanu {#Chapter6.8}
+### Solis 8: Augstākās ligzdošanas ticamības pakāpes, kurām novērojumu skaits un izvietojums pieļauj modelēšanu {#Chapter6.1.8}
 
 Ligzdošanas ticamības pakāpju pierēķināšana, lai izvēlētos uzticamākos, bet pietiekoša apjoma datus bez acīmredzamām telpiskajām problēmām
 
-## Novērojumu atlases procesa vizualizācija {#Chapter6.9}
+### Papildsolis: neatkarīgi testa dati {#Chapter6.1.9}
 
-Stabiņu diagramma + karte
+Šie ir rets izņēmums, bet tie ir eksistējoši
 
-
-## Rezultāti {#Chapter6.10}
+## Novērojumu atlases procesa rezultāti {#Chapter6.2}
 
 Lēmumu pieņemšana par turpmāko modelēšanu un tai izmantojamajiem datiem
+
+Stabiņu diagrammas un kartes sagatavošana ik sugai
+
 
