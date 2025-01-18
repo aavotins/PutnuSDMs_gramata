@@ -10439,8 +10439,10 @@ telpisko pārklājumu, tomēr daļēji arī uz [Sentinel-2](#Chapter3.1.7) pikse
 robežas un kurās kopējā informācijas pieejamība ir ārkārtīgi ierobežota.
 
 Šīs beigu apstrādes ietvaros ir veikta arī failu nosaukumu nomenklatūras harmonizēšana. 
-Failu nosaukumi un tajos esošo informācijas iztrūkumi apjomi ir apskatāmi 
-[šajā failā](./Papilddati/EGV_names.xlsx). Zemāk esošās komandu rindas harmonizē slāņus un to nosaukumus.
+Failu nosaukumi, tajos esošie informācijas iztrūkumi, kas iestrādāti harmonizācijā 
+un centrēšanas un mērogošanas parametri ir 
+apskatāmi [šajā failā](./Papilddati/EGV_names_scaling.xlsx). Zemāk esošās komandu rindas 
+harmonizē slāņus un to nosaukumus.
 
 
 ```{r, eval=FALSE}
@@ -10527,7 +10529,12 @@ for(i in seq_along(nosaukumiem$nosaukumi)){
   writeRaster(maskets,
               filename=paste0("./Rastri_100m/Proj/",nosaukumiem$proj_NAME[i]),
               overwrite=TRUE)
-  merogots=terra::scale(maskets,center = TRUE,scale = TRUE)
+  videjais=global(maskets,fun="mean",na.rm=TRUE)
+  centrets=maskets-videjais[,1]
+  standartnovirze=terra::global(centrets,fun="rms",na.rm=TRUE)
+  merogots=centrets/standartnovirze[,1]
+  nosaukumiem$var_videjais[i]=videjais
+  nosaukumiem$var_standartnovirze[i]=standartnovirze
   writeRaster(merogots,
               filename=paste0("./Rastri_100m/Scaled/",nosaukumiem$scale_NAME[i]),
               overwrite=TRUE)
@@ -10535,7 +10542,7 @@ for(i in seq_along(nosaukumiem$nosaukumi)){
   ilgums=beigas-sakums
   print(ilgums)
 }
-
+write.xlsx(nosaukumiem,"./Rastri_100m/EGV_names_scaling.xlsx")
 
 ```
 

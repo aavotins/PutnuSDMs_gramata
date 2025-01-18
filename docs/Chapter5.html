@@ -23,7 +23,7 @@
 <meta name="author" content="Andris Avotiņš" />
 
 
-<meta name="date" content="2025-01-17" />
+<meta name="date" content="2025-01-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -8414,8 +8414,10 @@ telpisko pārklājumu, tomēr daļēji arī uz <a href="Chapter3.html#Chapter3.1
 Šie trūkumi informācijā skar mazāk par 2200 šūnām (1 ha), kuras atrodas uz valsts
 robežas un kurās kopējā informācijas pieejamība ir ārkārtīgi ierobežota.</p>
 <p>Šīs beigu apstrādes ietvaros ir veikta arī failu nosaukumu nomenklatūras harmonizēšana.
-Failu nosaukumi un tajos esošo informācijas iztrūkumi apjomi ir apskatāmi
-<a href="./Papilddati/EGV_names.xlsx">šajā failā</a>. Zemāk esošās komandu rindas harmonizē slāņus un to nosaukumus.</p>
+Failu nosaukumi, tajos esošie informācijas iztrūkumi, kas iestrādāti harmonizācijā
+un centrēšanas un mērogošanas parametri ir
+apskatāmi <a href="./Papilddati/EGV_names_scaling.xlsx">šajā failā</a>. Zemāk esošās komandu rindas
+harmonizē slāņus un to nosaukumus.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb460"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb460-1"><a href="Chapter5.html#cb460-1" tabindex="-1"></a><span class="co"># libs ----</span></span>
 <span id="cb460-2"><a href="Chapter5.html#cb460-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
@@ -8500,14 +8502,20 @@ Failu nosaukumi un tajos esošo informācijas iztrūkumi apjomi ir apskatāmi
 <span id="cb460-81"><a href="Chapter5.html#cb460-81" tabindex="-1"></a>  <span class="fu">writeRaster</span>(maskets,</span>
 <span id="cb460-82"><a href="Chapter5.html#cb460-82" tabindex="-1"></a>              <span class="at">filename=</span><span class="fu">paste0</span>(<span class="st">&quot;./Rastri_100m/Proj/&quot;</span>,nosaukumiem<span class="sc">$</span>proj_NAME[i]),</span>
 <span id="cb460-83"><a href="Chapter5.html#cb460-83" tabindex="-1"></a>              <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
-<span id="cb460-84"><a href="Chapter5.html#cb460-84" tabindex="-1"></a>  merogots<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">scale</span>(maskets,<span class="at">center =</span> <span class="cn">TRUE</span>,<span class="at">scale =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb460-85"><a href="Chapter5.html#cb460-85" tabindex="-1"></a>  <span class="fu">writeRaster</span>(merogots,</span>
-<span id="cb460-86"><a href="Chapter5.html#cb460-86" tabindex="-1"></a>              <span class="at">filename=</span><span class="fu">paste0</span>(<span class="st">&quot;./Rastri_100m/Scaled/&quot;</span>,nosaukumiem<span class="sc">$</span>scale_NAME[i]),</span>
-<span id="cb460-87"><a href="Chapter5.html#cb460-87" tabindex="-1"></a>              <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
-<span id="cb460-88"><a href="Chapter5.html#cb460-88" tabindex="-1"></a>  beigas<span class="ot">=</span><span class="fu">Sys.time</span>()</span>
-<span id="cb460-89"><a href="Chapter5.html#cb460-89" tabindex="-1"></a>  ilgums<span class="ot">=</span>beigas<span class="sc">-</span>sakums</span>
-<span id="cb460-90"><a href="Chapter5.html#cb460-90" tabindex="-1"></a>  <span class="fu">print</span>(ilgums)</span>
-<span id="cb460-91"><a href="Chapter5.html#cb460-91" tabindex="-1"></a>}</span></code></pre></div>
+<span id="cb460-84"><a href="Chapter5.html#cb460-84" tabindex="-1"></a>  videjais<span class="ot">=</span><span class="fu">global</span>(maskets,<span class="at">fun=</span><span class="st">&quot;mean&quot;</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb460-85"><a href="Chapter5.html#cb460-85" tabindex="-1"></a>  centrets<span class="ot">=</span>maskets<span class="sc">-</span>videjais[,<span class="dv">1</span>]</span>
+<span id="cb460-86"><a href="Chapter5.html#cb460-86" tabindex="-1"></a>  standartnovirze<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">global</span>(centrets,<span class="at">fun=</span><span class="st">&quot;rms&quot;</span>,<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb460-87"><a href="Chapter5.html#cb460-87" tabindex="-1"></a>  merogots<span class="ot">=</span>centrets<span class="sc">/</span>standartnovirze[,<span class="dv">1</span>]</span>
+<span id="cb460-88"><a href="Chapter5.html#cb460-88" tabindex="-1"></a>  nosaukumiem<span class="sc">$</span>var_videjais[i]<span class="ot">=</span>videjais</span>
+<span id="cb460-89"><a href="Chapter5.html#cb460-89" tabindex="-1"></a>  nosaukumiem<span class="sc">$</span>var_standartnovirze[i]<span class="ot">=</span>standartnovirze</span>
+<span id="cb460-90"><a href="Chapter5.html#cb460-90" tabindex="-1"></a>  <span class="fu">writeRaster</span>(merogots,</span>
+<span id="cb460-91"><a href="Chapter5.html#cb460-91" tabindex="-1"></a>              <span class="at">filename=</span><span class="fu">paste0</span>(<span class="st">&quot;./Rastri_100m/Scaled/&quot;</span>,nosaukumiem<span class="sc">$</span>scale_NAME[i]),</span>
+<span id="cb460-92"><a href="Chapter5.html#cb460-92" tabindex="-1"></a>              <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb460-93"><a href="Chapter5.html#cb460-93" tabindex="-1"></a>  beigas<span class="ot">=</span><span class="fu">Sys.time</span>()</span>
+<span id="cb460-94"><a href="Chapter5.html#cb460-94" tabindex="-1"></a>  ilgums<span class="ot">=</span>beigas<span class="sc">-</span>sakums</span>
+<span id="cb460-95"><a href="Chapter5.html#cb460-95" tabindex="-1"></a>  <span class="fu">print</span>(ilgums)</span>
+<span id="cb460-96"><a href="Chapter5.html#cb460-96" tabindex="-1"></a>}</span>
+<span id="cb460-97"><a href="Chapter5.html#cb460-97" tabindex="-1"></a><span class="fu">write.xlsx</span>(nosaukumiem,<span class="st">&quot;./Rastri_100m/EGV_names_scaling.xlsx&quot;</span>)</span></code></pre></div>
 </details>
 
 </div>
