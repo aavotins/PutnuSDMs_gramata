@@ -8,11 +8,11 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
-### (1) COTCOT - paipala *Coturnix coturnix*
+### COTCOT - paipala *Coturnix coturnix* {#Chapter10.1.001}
 
 
-```{r rezCOTCOT, echo=FALSE, out.width = '100%', fig.cap='Paipalas *Coturnix coturnix* dzīvotņu piemērotība (A), tās analīzē izmantotie klātbūtnes dati (B), sastopamības ekspektācija (C), aizsardzībai prioritārās vietas (D)'}
-#knitr::include_graphics("./Atteli/ch010_COTCOT.png")
+```{r NovAtlaseCOTCOT, echo=FALSE, out.width = '100%', fig.cap='Novērojumu atlases gaita un modelēšanā izmantotie paipalas *Coturnix coturnix* novērojumi un fona punkti: A - novērojumu saglabāšanās atlases gaitā; B - visu pieejamo novērojumu (solis 1) izvietojums; C - ar vismaz iespējamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); D - ar vismaz ticamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); E - ar pierādītu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); F - modelēšanā izmantojamā apmācību kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai); G - modelēšanā izmantojamā neatkarīgās testēšanas kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai)'}
+knitr::include_graphics("./Atteli/IzvelesAtteli/ObsSelection_COTCOT.png")
 ```
 
 
@@ -44,122 +44,523 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 [Aizsardzībai prioritārās vietas (GeoTIFF)]()
 
 
-### (2) PERPER - laukirbe *Perdix perdix*
+### PERPER - laukirbe *Perdix perdix* {#Chapter10.1.002}
 
-(3) BONBON - mežirbe *Bonasa bonasia*
-(5) TETURO - mednis *Tetrao urogallus*
-(6) LYRTET - rubenis *Lyrurus tetrix*
-(9) CYGCYG - ziemeļu gulbis *Cygnus cygnus*
-(15) ANSANS - meža zoss *Anser anser*
-(32) TADTAD - Sāmsalas dižpīle *Tadorna tadorna*
-(35) AYTFER - brūnkaklis *Aythya ferina*
-(37) AYTFUL - cekulpīle *Aythya fuligula*
-(39) SPAQUE - prīkšķe *Spatula querquedula*
-(40) SPACLY - platknābis *Spatula clypeata*
-(41) MARSTR - pelēkā pīle *Mareca strepera*
-(42) MARPEN - baltvēderis *Mareca penelope*
-(46) TACRUF - mazais dūkuris *Tachybaptus ruficollis*
-(47) PODGRI - pelēkvaigu dūkuris *Podiceps grisegena*
-(48) PODCRI - cekuldūkuris *Podiceps cristatus*
-(54) STRTUR - parastā ūbele *Streptopelia turtur*
-(58) CAPEUR - vakarlēpis *Caprimulgus europaeus*
-(61) RALAQU - dumbrcālis *Rallus aquaticus*
-(62) CRECRE - grieze *Crex crex*
-(63) PORPOR - ormanītis *Porzana porzana*
-(64) ZAPPAR - mazais ormanītis *Zapornia parva*
-(67) FULATR - laucis *Fulica atra*
-(68) GRUGRU - dzērve *Grus grus*
-(78) CICNIG - melnais stārķis *Ciconia nigra*
-(79) CICCIC - baltais stārķis *Ciconia ciconia*
-(82) BOTSTE - lielais dumpis *Botaurus stellaris*
-(83) IXOMIN - mazais dumpis *Ixobrychus minutus*
-(95) HAEOST - jūrasžagata *Haematopus ostralegus*
-(99) PLUAPR - dzeltenais tārtiņš *Pluvialis apricaria*
-(102) CHAHIA - smilšu tārtiņš *Charadrius hiaticula*
-(103) CHADUB - upes tārtiņš *Charadrius dubius*
-(106) VANVAN - ķīvīte *Vanellus vanellus*
-(107) NUMPHA - lietuvainis *Numenius phaeopus*
-(108) NUMARQ - kuitala *Numenius arquata*
-(110) LIMLIM - melnā puskuitala *Limosa limosa*
-(124) GALMED - ķikuts *Gallinago media*
-(125) GALGAL - mērkaziņa *Gallinago gallinago*
-(133) TRINEB - lielā tilbīte *Tringa nebularia*
-(134) TRITOT - pļavu tilbīte *Tringa totanus*
-(135) TRIGLA - purva tilbīte *Tringa glareola*
-(174) GLAPAS - apodziņš *Glaucidium passerinum*
-(176) AEGFUN - bikšainais apogs *Aegolius funereus*
-(178) ASIOTU - ausainā pūce *Asio otus*
-(180) STRALU - meža pūce *Strix aluco*
-(181) STRURA - urālpūce *Strix uralensis*
-(184) BUBBUB - ūpis *Bubo bubo*
-(185) PANHAL - zivjērglis *Pandion haliaetus*
-(187) PERAPI - ķīķis *Pernis apivorus*
-(191) CLAPOM - mazais ērglis *Clanga pomarina*
-(197) CIRAER - niedru lija *Circus aeruginosus*
-(201) ACCNIS - zvirbuļvanags *Accipiter nisus*
-(202) ACCGEN - vistu vanags *Accipiter gentilis*
-(203) HALALB - jūras ērglis *Haliaeetus albicilla*
-(204) MILMIL - sarkanā klija *Milvus milvus*
-(205) MILMIG - melnā klija *Milvus migrans*
-(207) BUTBUT - peļu klijāns *Buteo buteo*
-(208) UPUEPO - pupuķis *Upupa epops*
-(210) CORGAR - zaļā vārna *Coracias garrulus*
-(212) JYNTOR - tītiņš *Jynx torquilla*
-(213) PICCAN - pelēkā dzilna *Picus canus*
-(215) DRYMAR - melnā dzilna *Dryocopus martius*
-(216) PICTRI - trīspirkstu dzenis *Picoides tridactylus*
-(217) LEIMED - vidējais dzenis *Leiopicus medius*
-(218) DRYMIN - mazais dzenis *Dryobates minor*
-(219) DENLEU - baltmugurdzenis *Dendrocopos leucotos*
-(220) DENMAJ - dižraibais dzenis *Dendrocopos major*
-(221) FALTIN - lauku piekūns *Falco tinnunculus*
-(223) FALCOL - purva piekūns *Falco columbarius*
-(228) ORIORI - vālodze *Oriolus oriolus*
-(229) LANCOL - brūnā čakste *Lanius collurio*
-(233) LANEXC - lielā čakste *Lanius excubitor*
-(237) NUCCAR - riekstrozis *Nucifraga caryocatactes*
-(242) PERATE - meža zīlīte *Periparus ater*
-(243) LOPCRI - cekulzīlīte *Lophophanes cristatus*
-(244) POEPAL - purva zīlīte *Poecile palustris*
-(245) POEMON - pelēkā zīlīte *Poecile montanus*
-(252) LULARB - sila cīrulis *Lullula arborea*
-(253) ALAARV - lauku cīrulis *Alauda arvensis*
-(256) IDUCAL - klusais ķauķis *Iduna caligata*
-(261) ACRRIS - purva ķauķis *Acrocephalus palustris*
-(264) ACRARU - niedru strazds *Acrocephalus arundinaceus*
-(268) LOCFLU - upes ķauķis *Locustella fluviatilis*
-(269) LOCNAE - kārklu ķauķis *Locustella naevia*
-(272) HIRRUS - bezdelīga *Hirundo rustica*
-(274) PHYSIB - svirlītis *Phylloscopus sibilatrix*
-(284) AEGCAU - garastīte *Aegithalos caudatus*
-(288) CURNIS - svītrainais ķauķis *Curruca nisoria*
-(290) CURCOM - brūnspārnu ķauķis *Curruca communis*
-(292) CERFAM - mizložņa *Certhia familiaris*
-(293) SITEUR - dzilnītis *Sitta europaea*
-(296) STUVUL - mājas strazds *Sturnus vulgaris*
-(299) TURVIS - sila strazds *Turdus viscivorus*
-(301) TURILI - plukšķis *Turdus iliacus*
-(308) CYASVE - zilrīklīte *Cyanecula svecica*
-(309) LUSLUS - lakstīgala *Luscinia luscinia*
-(313) FICPAR - mazais mušķērājs *Ficedula parva*
-(314) FICHYP - melnais mušķērājs *Ficedula hypoleuca*
-(318) SAXRUB - lukstu čakstīte *Saxicola rubetra*
-(324) REGREG - zeltgalvītis *Regulus regulus*
-(325) REGIGN - sārtgalvītis *Regulus ignicapilla*
-(330) PASMON - lauku zvirbulis *Passer montanus*
-(333) ANTPRA - pļavu čipste *Anthus pratensis*
-(337) ANTCAM - stepes čipste *Anthus campestris*
-(338) MOTFLA - dzeltenā cielava *Motacilla flava*
-(340) MOTCIT - citroncielava *Motacilla citreola*
-(344) COCCOC - dižknābis *Coccothraustes coccothraustes*
-(345) CARERY - mazais svilpis *Carpodacus erythrinus*
-(347) PYRPYR - svilpis *Pyrrhula pyrrhula*
-(348) CHLCHL - zaļžubīte *Chloris chloris*
-(350) LINCAN - kaņepītis *Linaria cannabina*
-(353) LOXCUR - egļu krustknābis *Loxia curvirostra*
-(355) CARCAR - dadzītis *Carduelis carduelis*
-(362) EMBHOR - dārza stērste *Emberiza hortulana*
-(363) EMBCIT - dzeltenā stērste *Emberiza citrinella*
+
+```{r NovAtlasePERPER, echo=FALSE, out.width = '100%', fig.cap='Novērojumu atlases gaita un modelēšanā izmantotie laukirbes *Perdix perdix* novērojumi un fona punkti: A - novērojumu saglabāšanās atlases gaitā; B - visu pieejamo novērojumu (solis 1) izvietojums; C - ar vismaz iespējamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); D - ar vismaz ticamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); E - ar pierādītu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); F - modelēšanā izmantojamā apmācību kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai); G - modelēšanā izmantojamā neatkarīgās testēšanas kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai)'}
+knitr::include_graphics("./Atteli/IzvelesAtteli/ObsSelection_PERPER.png")
+```
+
+
+<br>
+
+
+
+### BONBON - mežirbe *Bonasa bonasia* {#Chapter10.1.003}
+
+
+
+```{r NovAtlaseBONBON, echo=FALSE, out.width = '100%', fig.cap='Novērojumu atlases gaita un modelēšanā izmantotie mežirbes *Bonasa bonasia* novērojumi un fona punkti: A - novērojumu saglabāšanās atlases gaitā; B - visu pieejamo novērojumu (solis 1) izvietojums; C - ar vismaz iespējamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); D - ar vismaz ticamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); E - ar pierādītu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); F - modelēšanā izmantojamā apmācību kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai); G - modelēšanā izmantojamā neatkarīgās testēšanas kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai)'}
+knitr::include_graphics("./Atteli/IzvelesAtteli/ObsSelection_BONBON.png")
+```
+
+
+<br>
+
+
+
+### TETURO - mednis *Tetrao urogallus* {#Chapter10.1.004}
+
+
+
+```{r NovAtlaseTETURO, echo=FALSE, out.width = '100%', fig.cap='Novērojumu atlases gaita un modelēšanā izmantotie medņa *Tetrao urogallus* novērojumi un fona punkti: A - novērojumu saglabāšanās atlases gaitā; B - visu pieejamo novērojumu (solis 1) izvietojums; C - ar vismaz iespējamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); D - ar vismaz ticamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); E - ar pierādītu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); F - modelēšanā izmantojamā apmācību kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai); G - modelēšanā izmantojamā neatkarīgās testēšanas kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai)'}
+knitr::include_graphics("./Atteli/IzvelesAtteli/ObsSelection_TETURO.png")
+```
+
+
+<br>
+
+
+
+
+### LYRTET - rubenis *Lyrurus tetrix* {#Chapter10.1.005}
+
+
+
+```{r NovAtlaseLYRTET, echo=FALSE, out.width = '100%', fig.cap='Novērojumu atlases gaita un modelēšanā izmantotie rubeņa *Lyrurus tetrix* novērojumi un fona punkti: A - novērojumu saglabāšanās atlases gaitā; B - visu pieejamo novērojumu (solis 1) izvietojums; C - ar vismaz iespējamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); D - ar vismaz ticamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); E - ar pierādītu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); F - modelēšanā izmantojamā apmācību kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai); G - modelēšanā izmantojamā neatkarīgās testēšanas kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai)'}
+knitr::include_graphics("./Atteli/IzvelesAtteli/ObsSelection_LYRTET.png")
+```
+
+
+<br>
+
+
+
+
+### CYGCYG - ziemeļu gulbis *Cygnus cygnus* {#Chapter10.1.006}
+
+
+
+```{r NovAtlaseCYGCYG, echo=FALSE, out.width = '100%', fig.cap='Novērojumu atlases gaita un modelēšanā izmantotie ziemeļu gulbja *Cygnus cygnus* novērojumi un fona punkti: A - novērojumu saglabāšanās atlases gaitā; B - visu pieejamo novērojumu (solis 1) izvietojums; C - ar vismaz iespējamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); D - ar vismaz ticamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); E - ar pierādītu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); F - modelēšanā izmantojamā apmācību kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai); G - modelēšanā izmantojamā neatkarīgās testēšanas kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai)'}
+knitr::include_graphics("./Atteli/IzvelesAtteli/ObsSelection_CYGCYG.png")
+```
+
+
+<br>
+
+
+
+
+### ANSANS - meža zoss *Anser anser* {#Chapter10.1.007}
+
+
+
+### TADTAD - Sāmsalas dižpīle *Tadorna tadorna* {#Chapter10.1.008}
+
+
+
+### AYTFER - brūnkaklis *Aythya ferina* {#Chapter10.1.009}
+
+
+
+### AYTFUL - cekulpīle *Aythya fuligula* {#Chapter10.1.010}
+
+
+
+
+### SPAQUE - prīkšķe *Spatula querquedula* {#Chapter10.1.011}
+
+
+
+### SPACLY - platknābis *Spatula clypeata* {#Chapter10.1.012}
+
+
+
+### MARSTR - pelēkā pīle *Mareca strepera* {#Chapter10.1.013}
+
+
+
+### MARPEN - baltvēderis *Mareca penelope* {#Chapter10.1.014}
+
+
+
+### TACRUF - mazais dūkuris *Tachybaptus ruficollis* {#Chapter10.1.015}
+
+
+
+### PODGRI - pelēkvaigu dūkuris *Podiceps grisegena* {#Chapter10.1.016}
+
+
+
+### PODCRI - cekuldūkuris *Podiceps cristatus* {#Chapter10.1.017}
+
+
+
+### STRTUR - parastā ūbele *Streptopelia turtur* {#Chapter10.1.018}
+
+
+
+### CAPEUR - vakarlēpis *Caprimulgus europaeus* {#Chapter10.1.019}
+
+
+
+### RALAQU - dumbrcālis *Rallus aquaticus* {#Chapter10.1.020}
+
+
+
+
+### CRECRE - grieze *Crex crex* {#Chapter10.1.021}
+
+
+
+### PORPOR - ormanītis *Porzana porzana* {#Chapter10.1.022}
+
+
+
+### ZAPPAR - mazais ormanītis *Zapornia parva* {#Chapter10.1.023}
+
+
+
+### FULATR - laucis *Fulica atra* {#Chapter10.1.024}
+
+
+
+### GRUGRU - dzērve *Grus grus* {#Chapter10.1.025}
+
+
+
+### CICNIG - melnais stārķis *Ciconia nigra* {#Chapter10.1.026}
+
+
+
+### CICCIC - baltais stārķis *Ciconia ciconia* {#Chapter10.1.027}
+
+
+
+### BOTSTE - lielais dumpis *Botaurus stellaris* {#Chapter10.1.028}
+
+
+
+### IXOMIN - mazais dumpis *Ixobrychus minutus* {#Chapter10.1.029}
+
+
+
+### HAEOST - jūrasžagata *Haematopus ostralegus* {#Chapter10.1.030}
+
+
+
+### PLUAPR - dzeltenais tārtiņš *Pluvialis apricaria* {#Chapter10.1.031}
+
+
+
+
+### CHAHIA - smilšu tārtiņš *Charadrius hiaticula* {#Chapter10.1.032}
+
+
+
+### CHADUB - upes tārtiņš *Charadrius dubius* {#Chapter10.1.033}
+
+
+
+### VANVAN - ķīvīte *Vanellus vanellus* {#Chapter10.1.034}
+
+
+
+### NUMPHA - lietuvainis *Numenius phaeopus* {#Chapter10.1.035}
+
+
+
+### NUMARQ - kuitala *Numenius arquata* {#Chapter10.1.036}
+
+
+
+
+### LIMLIM - melnā puskuitala *Limosa limosa* {#Chapter10.1.037}
+
+
+
+### GALMED - ķikuts *Gallinago media* {#Chapter10.1.038}
+
+
+
+### GALGAL - mērkaziņa *Gallinago gallinago* {#Chapter10.1.039}
+
+
+
+### TRINEB - lielā tilbīte *Tringa nebularia* {#Chapter10.1.040}
+
+
+
+### TRITOT - pļavu tilbīte *Tringa totanus* {#Chapter10.1.041}
+
+
+
+
+### TRIGLA - purva tilbīte *Tringa glareola* {#Chapter10.1.042}
+
+
+
+### GLAPAS - apodziņš *Glaucidium passerinum* {#Chapter10.1.043}
+
+
+
+### AEGFUN - bikšainais apogs *Aegolius funereus* {#Chapter10.1.044}
+
+
+
+### ASIOTU - ausainā pūce *Asio otus* {#Chapter10.1.045}
+
+
+
+
+### STRALU - meža pūce *Strix aluco* {#Chapter10.1.046}
+
+
+
+### STRURA - urālpūce *Strix uralensis* {#Chapter10.1.047}
+
+
+
+### BUBBUB - ūpis *Bubo bubo* {#Chapter10.1.048}
+
+
+
+### PANHAL - zivjērglis *Pandion haliaetus* {#Chapter10.1.049}
+
+
+
+### PERAPI - ķīķis *Pernis apivorus* {#Chapter10.1.050}
+
+
+
+### CLAPOM - mazais ērglis *Clanga pomarina* {#Chapter10.1.051}
+
+
+
+### CIRAER - niedru lija *Circus aeruginosus* {#Chapter10.1.052}
+
+
+
+### ACCNIS - zvirbuļvanags *Accipiter nisus* {#Chapter10.1.053}
+
+
+
+### ACCGEN - vistu vanags *Accipiter gentilis* {#Chapter10.1.054}
+
+
+
+### HALALB - jūras ērglis *Haliaeetus albicilla* {#Chapter10.1.055}
+
+
+
+### MILMIL - sarkanā klija *Milvus milvus* {#Chapter10.1.056}
+
+
+
+### MILMIG - melnā klija *Milvus migrans* {#Chapter10.1.057}
+
+
+
+### BUTBUT - peļu klijāns *Buteo buteo* {#Chapter10.1.058}
+
+
+
+### UPUEPO - pupuķis *Upupa epops* {#Chapter10.1.059}
+
+
+
+### CORGAR - zaļā vārna *Coracias garrulus* {#Chapter10.1.060}
+
+
+
+### JYNTOR - tītiņš *Jynx torquilla* {#Chapter10.1.061}
+
+
+
+### PICCAN - pelēkā dzilna *Picus canus* {#Chapter10.1.062}
+
+
+
+### DRYMAR - melnā dzilna *Dryocopus martius* {#Chapter10.1.063}
+
+
+
+### PICTRI - trīspirkstu dzenis *Picoides tridactylus* {#Chapter10.1.064}
+
+
+
+### LEIMED - vidējais dzenis *Leiopicus medius* {#Chapter10.1.065}
+
+
+
+### DRYMIN - mazais dzenis *Dryobates minor* {#Chapter10.1.066}
+
+
+
+### DENLEU - baltmugurdzenis *Dendrocopos leucotos* {#Chapter10.1.067}
+
+
+
+
+### DENMAJ - dižraibais dzenis *Dendrocopos major* {#Chapter10.1.068}
+
+
+
+### FALTIN - lauku piekūns *Falco tinnunculus* {#Chapter10.1.069}
+
+
+
+### FALCOL - purva piekūns *Falco columbarius* {#Chapter10.1.070}
+
+
+
+### ORIORI - vālodze *Oriolus oriolus* {#Chapter10.1.071}
+
+
+
+### LANCOL - brūnā čakste *Lanius collurio* {#Chapter10.1.072}
+
+
+
+### LANEXC - lielā čakste *Lanius excubitor* {#Chapter10.1.073}
+
+
+
+### NUCCAR - riekstrozis *Nucifraga caryocatactes* {#Chapter10.1.074}
+
+
+
+
+### PERATE - meža zīlīte *Periparus ater* {#Chapter10.1.075}
+
+
+
+### LOPCRI - cekulzīlīte *Lophophanes cristatus* {#Chapter10.1.076}
+
+
+
+### POEPAL - purva zīlīte *Poecile palustris* {#Chapter10.1.077}
+
+
+
+### POEMON - pelēkā zīlīte *Poecile montanus* {#Chapter10.1.078}
+
+
+
+### LULARB - sila cīrulis *Lullula arborea* {#Chapter10.1.079}
+
+
+
+### ALAARV - lauku cīrulis *Alauda arvensis* {#Chapter10.1.080}
+
+
+
+### IDUCAL - klusais ķauķis *Iduna caligata* {#Chapter10.1.081}
+
+
+
+### ACRRIS - purva ķauķis *Acrocephalus palustris* {#Chapter10.1.082}
+
+
+
+### ACRARU - niedru strazds *Acrocephalus arundinaceus* {#Chapter10.1.083}
+
+
+
+### LOCFLU - upes ķauķis *Locustella fluviatilis* {#Chapter10.1.084}
+
+
+
+### LOCNAE - kārklu ķauķis *Locustella naevia* {#Chapter10.1.085}
+
+
+
+### HIRRUS - bezdelīga *Hirundo rustica* {#Chapter10.1.086}
+
+
+
+### PHYSIB - svirlītis *Phylloscopus sibilatrix* {#Chapter10.1.087}
+
+
+
+### AEGCAU - garastīte *Aegithalos caudatus* {#Chapter10.1.088}
+
+
+
+### CURNIS - svītrainais ķauķis *Curruca nisoria* {#Chapter10.1.089}
+
+
+
+### CURCOM - brūnspārnu ķauķis *Curruca communis* {#Chapter10.1.090}
+
+
+
+### CERFAM - mizložņa *Certhia familiaris* {#Chapter10.1.091}
+
+
+
+### SITEUR - dzilnītis *Sitta europaea* {#Chapter10.1.092}
+
+
+
+### STUVUL - mājas strazds *Sturnus vulgaris* {#Chapter10.1.093}
+
+
+
+### TURVIS - sila strazds *Turdus viscivorus* {#Chapter10.1.094}
+
+
+
+### TURILI - plukšķis *Turdus iliacus* {#Chapter10.1.095}
+
+
+
+### CYASVE - zilrīklīte *Cyanecula svecica* {#Chapter10.1.096}
+
+
+
+
+### LUSLUS - lakstīgala *Luscinia luscinia* {#Chapter10.1.097}
+
+
+
+### FICPAR - mazais mušķērājs *Ficedula parva* {#Chapter10.1.098}
+
+
+
+### FICHYP - melnais mušķērājs *Ficedula hypoleuca* {#Chapter10.1.099}
+
+
+
+### SAXRUB - lukstu čakstīte *Saxicola rubetra* {#Chapter10.1.100}
+
+
+
+
+### REGREG - zeltgalvītis *Regulus regulus* {#Chapter10.1.101}
+
+
+
+### REGIGN - sārtgalvītis *Regulus ignicapilla* {#Chapter10.1.102}
+
+
+
+### PASMON - lauku zvirbulis *Passer montanus* {#Chapter10.1.103}
+
+
+
+### ANTPRA - pļavu čipste *Anthus pratensis* {#Chapter10.1.104}
+
+
+
+### ANTCAM - stepes čipste *Anthus campestris* {#Chapter10.1.105}
+
+
+
+### MOTFLA - dzeltenā cielava *Motacilla flava* {#Chapter10.1.106}
+
+
+
+### MOTCIT - citroncielava *Motacilla citreola* {#Chapter10.1.107}
+
+
+
+### COCCOC - dižknābis *Coccothraustes coccothraustes* {#Chapter10.1.108}
+
+
+
+### CARERY - mazais svilpis *Carpodacus erythrinus* {#Chapter10.1.109}
+
+
+
+### PYRPYR - svilpis *Pyrrhula pyrrhula* {#Chapter10.1.110}
+
+
+
+### CHLCHL - zaļžubīte *Chloris chloris* {#Chapter10.1.111}
+
+
+
+### LINCAN - kaņepītis *Linaria cannabina* {#Chapter10.1.112}
+
+
+
+### LOXCUR - egļu krustknābis *Loxia curvirostra* {#Chapter10.1.113}
+
+
+
+### CARCAR - dadzītis *Carduelis carduelis* {#Chapter10.1.114}
+
+
+
+### EMBHOR - dārza stērste *Emberiza hortulana* {#Chapter10.1.115}
+
+
+
+### EMBCIT - dzeltenā stērste *Emberiza citrinella* {#Chapter10.1.116}
+
+
+
 
 ## Kopējie valsts līmeņa rezultāti {#Chapter10.2}
 

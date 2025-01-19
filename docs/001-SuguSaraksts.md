@@ -1597,7 +1597,7 @@ Sugām raksturīgo ekosistēmu dalījums un izdalītās ligzdošanas iecirkņu g
 
 ## Pamata apraksti novērojumu atlasei {#Chapter1.3}
 
-Vispārīgi, tomēr strukturēti, apraksti sagatavoti arī modelēšanā izmantojamo novērojumu atlasei. Šie apraksti ietver divas daļas: sugai nepiemērotā vide (Corine Land Cover klase, CLC) un ligzdošanas sezonas robežas. Novērojumu atlases procedūra detalizēti izklāstīta nodaļā [Novērojumu atlase](#Chapter6), sugām specifiskie kritēriji sniegti [šajā tabulā](./Papilddati/SuguApraksti_NoverojumuAtlasei.xlsx), zemāk raksturota to izstrādes gaita.
+Vispārīgi, tomēr strukturēti, apraksti sagatavoti arī modelēšanā izmantojamo novērojumu atlasei. Šie apraksti ietver divas daļas: sugai nepiemērotā vide (Corine Land Cover klase, CLC) un ligzdošanas sezonas robežas. Novērojumu atlases procedūra detalizēti izklāstīta nodaļā [Novērojumu atlase](#Chapter6), sugām specifiskie kritēriji sniegti [šajā tabulā](./Papilddati/NoverojumuAtlasei.xlsx), zemāk raksturota to izstrādes gaita.
 
 ### Nepiemērota vide {#Chapter1.3.1}
 
