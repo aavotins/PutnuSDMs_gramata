@@ -822,7 +822,15 @@ arrow::write_parquet(dati2,"./IevadesDati/Noverojumi/apkopoti/putnu_dati2_solis7
 
 Ligzdošanas ticamības pakāpju pierēķināšana, lai izvēlētos uzticamākos, bet pietiekoša apjoma datus bez acīmredzamām telpiskajām problēmām
 
-Lai pieņemtu ik sugai vērtētu, tomēr kopīgai pieejai atbilstošu lēmumu kopu, sagatavota novērojumu skaita tabula un attēli, kuros vizualizēta novērojumu pieejamība dažādās ligzdošanas ticamības kategorījās un to izvietojums.
+Lai pieņemtu ik sugai vērtētu, tomēr kopīgai pieejai atbilstošu lēmumu kopu, sagatavota novērojumu skaita tabula un attēli, kuros vizualizēta novērojumu pieejamība dažādās ligzdošanas ticamības kategorījās un to izvietojums. Kopīgā pieeja:
+
+- plēsīgajiem putniem, ja vien iespējams izmantot tikai ticamas vai pierādītas ligzdošanas ziņas;
+
+- dzilnveidīgjaiem izmantot ticamas un pierādītas ligzdošanas ziņas;
+
+- dziedātājputniem, kuriem 1 km kvadrātu skaits sākot ar iespējamas ligzdošanas ziņām tuvojas vai pārsniedz 3 000 novērojumus un no ticamas ligzdosānas ir pieejama informācija par daudziem simtiem vai ap tūkstoti 1 km kvadrātu, izmantot C un D kategoriju ziņas, pārējos gadījumos - B, C un D;
+
+- pārējām sugām izmantot lielāko novērojumu kopu, kurā nav acīmredzami telpiskie izaicinājumi.
 
 Sie attēli apskatīti, tabula papildināta ar piezīmēm un sagatavoti papildināti attēli, kuros iestrādāta informācija arī par modelēšanā izmantojamiem apmācību un testa datiem un vidi kopumā raksturojošajām fona vietām. Aizpildītā versija ir [šajā tabulā](./Papilddati/NoverojumuIzvele.xlsx), savukārt katrai sugai sagatavotie attēli (to pilnās versijas) ir [rezultātu nodaļā](#Chapter10).
 
