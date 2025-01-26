@@ -1,10 +1,84 @@
 # Rezultāti {#Chapter10}
 
-Šajā nodaļā apkopoti iegūtie sugu izplatības un aizsardzībās, kā arī sugu sabiedrību (ekosistēmu) aizsardzības prioritizēšanas rezultāti, sniedzot piekļuvi tiem, kuri nav ierobežotas pieejamas savas izšķirtspējas dēļ.
+Šajā nodaļā apkopoti iegūtie sugu izplatības modelēšanas un to prioritizācijas aizsardzībai rezultāti. Tā ir strukturēta divās daļās - [individuālu sugu rezultāti](#Chapter10.1) un sugu sabiedrībā, nozīmīgo dzīvotņu  aizsardzības prioritizēšanas rezultāti, kas izmantojami kā ekosistēmas aizsardzībi ([apkopotie valsts līmeņa rezultāti](#Chapter10.2)). Matriāliem, kuri savas informatīvās, telpiskās un temporālās izšķirtspējas dēļ nav uzskatāmi par sugu aizsardzību apdraudošiem, sniegta piekļuve lejupielādei.
 
 ## Individuālu sugu rezultāti {#Chapter10.1}
 
-Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā tabulā (xlsx)]().
+Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā (šobrīd neaktīvajā) tabulā (xlsx)]().
+
+Sekojošajās nodaļās informācija par katru sugu ir apkopota pēc vienotas pieejas:
+
+- sākumā ir sniegta informācija par pieejamajiem klātbūtnes novērojumiem, to izvietojumu un samazinānijumu [atlases gaitā](). Šajā attēla ir arī iestrāda vizualizācija modelēšanai (modeļu apmācībai, iekļaujot telpisko bloku krosvalidāciju, un neatkarīgai testēšanai izmantotās datu kopas);
+
+- sugām, kurām, datu apjoma dēļ, pieņemts lēmums modelēšanu neveikt, tas ir skaidri norādīts tekstā. Pārējām sugām turpinās piedāvātā informācija. 
+
+Modelētajām sugām piedāvāta papildus informācija:
+
+- labākā modeļa izvēle (kreisajā - A daļā), sekojot nodaļā [Sugu izplatības (dzīvotņu piemērotības) modeļi](#Chapter7) aprakstītajai pieejai un (labajā - B daļā) šī modeļa salīdzinājums ar labākā modeļa EGV , klātbūtnes un iztrūkumu veidotajā informācijas telpā radītiem nejaušajiem (nulles) modeļiem (n=100). Attēlos irkļauti sekojoši raksturojumi:
+
+  - Neatkarīgā testa TSS *attēla A daļā*, kas raksturo 
+  
+  - Apmācību un validācijas TSS starpība *attēla A daļā*, kas raksturo
+  
+  - Validācijas TSS *attēla A daļā*, kas raksturo
+  
+  - Apmācību TSS *attēla A daļā*, kas raksturo
+  
+  - Neatkarīgā testa AUC *attēla A daļā*, kas raksturo
+  
+  - AUC (validācijas) *attēla B daļā*, kas raksturo
+  
+  - Continuous Boyce Index (validācijas) *attēla B daļā*, kas raksturo
+  
+  - 10% training omission rate *attēla B daļā*, kas raksturo
+  
+  - Minimum training omission rate *attēla B daļā*, kas raksturo
+
+- tabula ar raksturojumu atsvišķiem biežāk lietotajiem projicētās dzīvotņu piemērotības izvērtējumiem dalījumam piemērotajās un nepiemērotajās:
+
+  - rindas raksturo sekojošus sliekšņa līmeņus:
+  
+    -- Minimum training presence - 
+  
+    -- Equal training sensitivity and specificity - 
+  
+    -- Maximum training sensitivity plus specificity - 
+  
+    -- Equal test sensitivity and specificity - 
+  
+    -- Maximum test sensitivity plus specificity - 
+  
+  - katram no tiem sniegts sekojošs izvērtējums:
+  
+    -- Cloglog value - 
+    
+    -- Fractional predicted area - 
+    
+    -- Training omission rate - 
+    
+    -- Test omission rate - 
+    
+    -- P-values - 
+
+- projicētā (cloglog) dzīvotņu piemērotības karte diapozonam no 0 (nepiemērotāka) līdz 1 (piemērotāka) ar centrālā dalījuma vietu atbilstoši iepriekšējās tabulas "Equal training sensitivity and specificity" sliekšņa līmenim;
+
+- pēc projekcijas sniegts īss komentārs par modeļa kvalitāti, kas dalīta sekojošās klasēs:
+
+  - 
+
+- noslēguma daļā ir sagatavota iespēja lejupielādēt sekojošus datu objektus:
+
+  - Projicētā (cloglog) dzīvotņu piemērotība kā GEOTIFF slānis;
+  
+  - Par labāko atzītais modelis (krosvalidāciju objekts kā *.RDS fails);
+  
+  - Par labāko atzītais modelis (kombinēts krosvalidāciju objekts kā *.RDS fails);
+  
+  - Par labāko atzītais modelis (tikai ietekmīgās pazīmes kombinētajā krosvalidāciju objektā, lai atvieglotu turpmāku izplatības projicēšanu kā *.RDS fails);
+  
+  - Tabula ar ekoģeogrāfisko mainīgo izvēles gaitu, to VIF (savstarpējās prognozētspējas raksturojuma) vērtībām un ietekmes modelī (permutāciju procedūrā) raksturojums (kā *.xlsx fails);
+  
+- Pēc failu pieejamības, piedāvāts attēls ar marginālajām atbildes funkcijām krosvalidāciju modelī, pārējās pazīmes turot to vidējo vērtību līmenī, veicot ik citas pazīmes raksturojumu.
 
 
 
@@ -16,33 +90,107 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 <p class="caption">(\#fig:NovAtlaseCOTCOT)Novērojumu atlases gaita un modelēšanā izmantojamie paipalas *Coturnix coturnix* novērojumi un fona punkti: A - novērojumu saglabāšanās atlases gaitā; B - visu pieejamo novērojumu (solis 1) izvietojums; C - ar vismaz iespējamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); D - ar vismaz ticamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); E - ar pierādītu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); F - modelēšanā izmantojamā apmācību kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai); G - modelēšanā izmantojamā neatkarīgās testēšanas kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai)</p>
 </div>
 
+<br>
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_COTCOT.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsCOTCOT)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniCOTCOT)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0761345 </td>
+   <td style="text-align:right;"> 0.3183201 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> COTCOT </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4208457 </td>
+   <td style="text-align:right;"> 0.1206045 </td>
+   <td style="text-align:right;"> 0.12 </td>
+   <td style="text-align:right;"> 0.0005318 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> COTCOT </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3487651 </td>
+   <td style="text-align:right;"> 0.1466906 </td>
+   <td style="text-align:right;"> 0.06 </td>
+   <td style="text-align:right;"> 0.0002659 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> COTCOT </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3744407 </td>
+   <td style="text-align:right;"> 0.1365654 </td>
+   <td style="text-align:right;"> 0.12 </td>
+   <td style="text-align:right;"> 0.0003989 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> COTCOT </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3237619 </td>
+   <td style="text-align:right;"> 0.1554192 </td>
+   <td style="text-align:right;"> 0.06 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> COTCOT </td>
+  </tr>
+</tbody>
+</table></div>
+
 
 <br>
 
 
-[Dzīvotņu piemērotība (GeoTIFF)]()
 
-**Modeļa spējas raksturojums** neatkarīgos testa datos:
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_COTCOT.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojCOTCOT)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
 
-- pAUC: ;
+<br>
 
-- TSS: pie dzīvotņu piemērotības , ar:
 
-  - sensitivitāte: 
-  
-  - specifiskums: 
-  
-  - *recall:* 
-  
-  - *precission:* 
 
-[EGV atbildes līknes (png)]()
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
-[Modelis (RDS)]()
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
-[Ekspektācija sugas klātbūtnei (GeoTIFF)]()
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
 
-[Aizsardzībai prioritārās vietas (GeoTIFF)]()
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
 
 
 ### PERPER - laukirbe *Perdix perdix* {#Chapter10.1.002}
@@ -52,6 +200,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 <img src="./Atteli/IzvelesAtteli/ObsSelection_PERPER.png" alt="Novērojumu atlases gaita un modelēšanā izmantojamie laukirbes *Perdix perdix* novērojumi un fona punkti: A - novērojumu saglabāšanās atlases gaitā; B - visu pieejamo novērojumu (solis 1) izvietojums; C - ar vismaz iespējamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); D - ar vismaz ticamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); E - ar pierādītu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); F - modelēšanā izmantojamā apmācību kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai); G - modelēšanā izmantojamā neatkarīgās testēšanas kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai)" width="100%" />
 <p class="caption">(\#fig:NovAtlasePERPER)Novērojumu atlases gaita un modelēšanā izmantojamie laukirbes *Perdix perdix* novērojumi un fona punkti: A - novērojumu saglabāšanās atlases gaitā; B - visu pieejamo novērojumu (solis 1) izvietojums; C - ar vismaz iespējamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); D - ar vismaz ticamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); E - ar pierādītu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); F - modelēšanā izmantojamā apmācību kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai); G - modelēšanā izmantojamā neatkarīgās testēšanas kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai)</p>
 </div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_PERPER.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsPERPER)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniPERPER)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0044795 </td>
+   <td style="text-align:right;"> 0.5087581 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0001318 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PERPER </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.1858196 </td>
+   <td style="text-align:right;"> 0.1287808 </td>
+   <td style="text-align:right;"> 0.1305970 </td>
+   <td style="text-align:right;"> 0.0019768 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PERPER </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1523842 </td>
+   <td style="text-align:right;"> 0.1490107 </td>
+   <td style="text-align:right;"> 0.0820896 </td>
+   <td style="text-align:right;"> 0.0011861 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PERPER </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.1608136 </td>
+   <td style="text-align:right;"> 0.1431884 </td>
+   <td style="text-align:right;"> 0.1044776 </td>
+   <td style="text-align:right;"> 0.0015814 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PERPER </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1322200 </td>
+   <td style="text-align:right;"> 0.1650466 </td>
+   <td style="text-align:right;"> 0.0671642 </td>
+   <td style="text-align:right;"> 0.0009225 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PERPER </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_PERPER.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojPERPER)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes - projicēšanai; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
 
 
 <br>
@@ -72,6 +320,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_BONBON.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsBONBON)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniBONBON)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0317780 </td>
+   <td style="text-align:right;"> 0.6665223 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> BONBON </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4668006 </td>
+   <td style="text-align:right;"> 0.2119594 </td>
+   <td style="text-align:right;"> 0.2116603 </td>
+   <td style="text-align:right;"> 0.0088678 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> BONBON </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3739409 </td>
+   <td style="text-align:right;"> 0.2741617 </td>
+   <td style="text-align:right;"> 0.1242079 </td>
+   <td style="text-align:right;"> 0.0050122 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> BONBON </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4376456 </td>
+   <td style="text-align:right;"> 0.2310579 </td>
+   <td style="text-align:right;"> 0.1812421 </td>
+   <td style="text-align:right;"> 0.0078396 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> BONBON </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3898327 </td>
+   <td style="text-align:right;"> 0.2623755 </td>
+   <td style="text-align:right;"> 0.1432193 </td>
+   <td style="text-align:right;"> 0.0050122 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> BONBON </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_BONBON.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojBONBON)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+
+<br>
+
+
 ### TETURO - mednis *Tetrao urogallus* {#Chapter10.1.004}
 
 
@@ -83,6 +431,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_TETURO.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsTETURO)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniTETURO)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0194665 </td>
+   <td style="text-align:right;"> 0.3768215 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0005234 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TETURO </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2252829 </td>
+   <td style="text-align:right;"> 0.1230558 </td>
+   <td style="text-align:right;"> 0.1230366 </td>
+   <td style="text-align:right;"> 0.0044485 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TETURO </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1585802 </td>
+   <td style="text-align:right;"> 0.1560277 </td>
+   <td style="text-align:right;"> 0.0785340 </td>
+   <td style="text-align:right;"> 0.0026168 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TETURO </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.1525412 </td>
+   <td style="text-align:right;"> 0.1592660 </td>
+   <td style="text-align:right;"> 0.0759162 </td>
+   <td style="text-align:right;"> 0.0026168 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TETURO </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1285482 </td>
+   <td style="text-align:right;"> 0.1759482 </td>
+   <td style="text-align:right;"> 0.0680628 </td>
+   <td style="text-align:right;"> 0.0018317 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TETURO </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_TETURO.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojTETURO)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -101,6 +549,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_LYRTET.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsLYRTET)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniLYRTET)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0403762 </td>
+   <td style="text-align:right;"> 0.7002465 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0002633 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LYRTET </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3341712 </td>
+   <td style="text-align:right;"> 0.1456114 </td>
+   <td style="text-align:right;"> 0.1459075 </td>
+   <td style="text-align:right;"> 0.0026333 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LYRTET </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3987272 </td>
+   <td style="text-align:right;"> 0.1156312 </td>
+   <td style="text-align:right;"> 0.1601423 </td>
+   <td style="text-align:right;"> 0.0026333 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LYRTET </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2624681 </td>
+   <td style="text-align:right;"> 0.1909270 </td>
+   <td style="text-align:right;"> 0.1103203 </td>
+   <td style="text-align:right;"> 0.0021066 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LYRTET </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4092372 </td>
+   <td style="text-align:right;"> 0.1111933 </td>
+   <td style="text-align:right;"> 0.1672598 </td>
+   <td style="text-align:right;"> 0.0026333 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LYRTET </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_LYRTET.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojLYRTET)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 
 ### CYGCYG - ziemeļu gulbis *Cygnus cygnus* {#Chapter10.1.006}
 
@@ -113,6 +661,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_CYGCYG.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsCYGCYG)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniCYGCYG)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0177310 </td>
+   <td style="text-align:right;"> 0.6128378 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CYGCYG </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.0996767 </td>
+   <td style="text-align:right;"> 0.1188261 </td>
+   <td style="text-align:right;"> 0.1165049 </td>
+   <td style="text-align:right;"> 0.0010569 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CYGCYG </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.0961859 </td>
+   <td style="text-align:right;"> 0.1235772 </td>
+   <td style="text-align:right;"> 0.1067961 </td>
+   <td style="text-align:right;"> 0.0010569 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CYGCYG </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.0936124 </td>
+   <td style="text-align:right;"> 0.1268930 </td>
+   <td style="text-align:right;"> 0.1067961 </td>
+   <td style="text-align:right;"> 0.0010569 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CYGCYG </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1318117 </td>
+   <td style="text-align:right;"> 0.0864595 </td>
+   <td style="text-align:right;"> 0.1504854 </td>
+   <td style="text-align:right;"> 0.0011891 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CYGCYG </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_CYGCYG.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojCYGCYG)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -131,6 +779,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_ANSANS.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsANSANS)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniANSANS)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0114829 </td>
+   <td style="text-align:right;"> 0.1580311 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0001328 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ANSANS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.0646166 </td>
+   <td style="text-align:right;"> 0.0450379 </td>
+   <td style="text-align:right;"> 0.0416667 </td>
+   <td style="text-align:right;"> 0.0001328 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ANSANS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.0363634 </td>
+   <td style="text-align:right;"> 0.0701475 </td>
+   <td style="text-align:right;"> 0.0138889 </td>
+   <td style="text-align:right;"> 0.0001328 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ANSANS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.0779740 </td>
+   <td style="text-align:right;"> 0.0383619 </td>
+   <td style="text-align:right;"> 0.0555556 </td>
+   <td style="text-align:right;"> 0.0001328 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ANSANS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.0779740 </td>
+   <td style="text-align:right;"> 0.0383619 </td>
+   <td style="text-align:right;"> 0.0555556 </td>
+   <td style="text-align:right;"> 0.0001328 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ANSANS </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_ANSANS.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojANSANS)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### TADTAD - Sāmsalas dižpīle *Tadorna tadorna* {#Chapter10.1.008}
 
 
@@ -142,6 +890,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_TADTAD.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsTADTAD)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniTADTAD)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0000059 </td>
+   <td style="text-align:right;"> 0.5115873 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TADTAD </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.0306102 </td>
+   <td style="text-align:right;"> 0.0307501 </td>
+   <td style="text-align:right;"> 0.0307692 </td>
+   <td style="text-align:right;"> 0.0001328 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TADTAD </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1964418 </td>
+   <td style="text-align:right;"> 0.0111139 </td>
+   <td style="text-align:right;"> 0.0307692 </td>
+   <td style="text-align:right;"> 0.0002656 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TADTAD </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.0234568 </td>
+   <td style="text-align:right;"> 0.0348368 </td>
+   <td style="text-align:right;"> 0.0307692 </td>
+   <td style="text-align:right;"> 0.0001328 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TADTAD </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1489954 </td>
+   <td style="text-align:right;"> 0.0132071 </td>
+   <td style="text-align:right;"> 0.0307692 </td>
+   <td style="text-align:right;"> 0.0001328 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TADTAD </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_TADTAD.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojTADTAD)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -159,6 +1007,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_AYTFER.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsAYTFER)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniAYTFER)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.1095929 </td>
+   <td style="text-align:right;"> 0.0219171 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0001331 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> AYTFER </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.1103891 </td>
+   <td style="text-align:right;"> 0.0218672 </td>
+   <td style="text-align:right;"> 0.0333333 </td>
+   <td style="text-align:right;"> 0.0001331 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> AYTFER </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1095929 </td>
+   <td style="text-align:right;"> 0.0219171 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0001331 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> AYTFER </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.0410611 </td>
+   <td style="text-align:right;"> 0.0280579 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> AYTFER </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.0410611 </td>
+   <td style="text-align:right;"> 0.0280579 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> AYTFER </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_AYTFER.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojAYTFER)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### AYTFUL - cekulpīle *Aythya fuligula* {#Chapter10.1.010}
 
 
@@ -168,6 +1116,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 <p class="caption">(\#fig:NovAtlaseAYTFUL)Novērojumu atlases gaita un modelēšanā izmantotie cekulpīles *Aythya fuligula* novērojumi un fona punkti: A - novērojumu saglabāšanās atlases gaitā; B - visu pieejamo novērojumu (solis 1) izvietojums; C - ar vismaz iespējamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); D - ar vismaz ticamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); E - ar pierādītu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); F - modelēšanā izmantojamā apmācību kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai); G - modelēšanā izmantojamā neatkarīgās testēšanas kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai)</p>
 </div>
 
+
+<br>
+
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_AYTFUL.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsAYTFUL)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniAYTFUL)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0399784 </td>
+   <td style="text-align:right;"> 0.0306494 </td>
+   <td style="text-align:right;"> 0.000000 </td>
+   <td style="text-align:right;"> 0.0001331 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> AYTFUL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.0412121 </td>
+   <td style="text-align:right;"> 0.0303000 </td>
+   <td style="text-align:right;"> 0.030303 </td>
+   <td style="text-align:right;"> 0.0001331 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> AYTFUL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.0399784 </td>
+   <td style="text-align:right;"> 0.0306494 </td>
+   <td style="text-align:right;"> 0.000000 </td>
+   <td style="text-align:right;"> 0.0001331 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> AYTFUL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.0304975 </td>
+   <td style="text-align:right;"> 0.0332951 </td>
+   <td style="text-align:right;"> 0.000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> AYTFUL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.0304975 </td>
+   <td style="text-align:right;"> 0.0332951 </td>
+   <td style="text-align:right;"> 0.000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> AYTFUL </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_AYTFUL.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojAYTFUL)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
 
 <br>
 
@@ -188,6 +1236,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_SPAQUE.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsSPAQUE)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniSPAQUE)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.1835825 </td>
+   <td style="text-align:right;"> 0.1435063 </td>
+   <td style="text-align:right;"> 0.000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> SPAQUE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.6479682 </td>
+   <td style="text-align:right;"> 0.0370500 </td>
+   <td style="text-align:right;"> 0.037037 </td>
+   <td style="text-align:right;"> 0.0003995 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> SPAQUE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.7210880 </td>
+   <td style="text-align:right;"> 0.0309582 </td>
+   <td style="text-align:right;"> 0.037037 </td>
+   <td style="text-align:right;"> 0.0003995 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> SPAQUE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4052703 </td>
+   <td style="text-align:right;"> 0.0663604 </td>
+   <td style="text-align:right;"> 0.037037 </td>
+   <td style="text-align:right;"> 0.0001332 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> SPAQUE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4045521 </td>
+   <td style="text-align:right;"> 0.0665102 </td>
+   <td style="text-align:right;"> 0.037037 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> SPAQUE </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_SPAQUE.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojSPAQUE)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 
 ### SPACLY - platknābis *Spatula clypeata* {#Chapter10.1.012}
 
@@ -198,6 +1346,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 <p class="caption">(\#fig:NovAtlaseSPACLY)Novērojumu atlases gaita un modelēšanā izmantojamie platknābja *Spatula clypeata* novērojumi un fona punkti: A - novērojumu saglabāšanās atlases gaitā; B - visu pieejamo novērojumu (solis 1) izvietojums; C - ar vismaz iespējamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); D - ar vismaz ticamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); E - ar pierādītu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); F - modelēšanā izmantojamā apmācību kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai); G - modelēšanā izmantojamā neatkarīgās testēšanas kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai)</p>
 </div>
 
+
+<br>
+
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_SPACLY.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsSPACLY)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniSPACLY)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.2885996 </td>
+   <td style="text-align:right;"> 0.0698452 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> SPACLY </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4018557 </td>
+   <td style="text-align:right;"> 0.0475786 </td>
+   <td style="text-align:right;"> 0.0333333 </td>
+   <td style="text-align:right;"> 0.0001332 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> SPACLY </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2885996 </td>
+   <td style="text-align:right;"> 0.0698452 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> SPACLY </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3661598 </td>
+   <td style="text-align:right;"> 0.0523714 </td>
+   <td style="text-align:right;"> 0.0333333 </td>
+   <td style="text-align:right;"> 0.0001332 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> SPACLY </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3660819 </td>
+   <td style="text-align:right;"> 0.0524214 </td>
+   <td style="text-align:right;"> 0.0333333 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> SPACLY </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_SPACLY.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojSPACLY)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
 
 <br>
 
@@ -218,6 +1466,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_MARSTR.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsMARSTR)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniMARSTR)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.1179216 </td>
+   <td style="text-align:right;"> 0.0092754 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0.0009312 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> MARSTR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.1179216 </td>
+   <td style="text-align:right;"> 0.0092754 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0.0009312 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> MARSTR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1179216 </td>
+   <td style="text-align:right;"> 0.0092754 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0.0009312 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> MARSTR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.0007697 </td>
+   <td style="text-align:right;"> 0.0761981 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0.0001330 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> MARSTR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.0005439 </td>
+   <td style="text-align:right;"> 0.0879170 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> MARSTR </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_MARSTR.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojMARSTR)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 
 ### MARPEN - baltvēderis *Mareca penelope* {#Chapter10.1.014}
 
@@ -230,6 +1578,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_MARPEN.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsMARPEN)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniMARPEN)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.5256300 </td>
+   <td style="text-align:right;"> 0.0117900 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0.0003997 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> MARPEN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.5256300 </td>
+   <td style="text-align:right;"> 0.0117900 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0.0003997 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> MARPEN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.5256300 </td>
+   <td style="text-align:right;"> 0.0117900 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0.0003997 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> MARPEN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.0810023 </td>
+   <td style="text-align:right;"> 0.0561023 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> MARPEN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.0810023 </td>
+   <td style="text-align:right;"> 0.0561023 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> MARPEN </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_MARPEN.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojMARPEN)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -247,6 +1695,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_TACRUF.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsTACRUF)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniTACRUF)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0490090 </td>
+   <td style="text-align:right;"> 0.3386872 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.000133 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TACRUF </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.1952491 </td>
+   <td style="text-align:right;"> 0.0761173 </td>
+   <td style="text-align:right;"> 0.0833333 </td>
+   <td style="text-align:right;"> 0.000266 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TACRUF </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1948423 </td>
+   <td style="text-align:right;"> 0.0761672 </td>
+   <td style="text-align:right;"> 0.0625000 </td>
+   <td style="text-align:right;"> 0.000266 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TACRUF </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.1905257 </td>
+   <td style="text-align:right;"> 0.0782622 </td>
+   <td style="text-align:right;"> 0.0625000 </td>
+   <td style="text-align:right;"> 0.000133 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TACRUF </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1905257 </td>
+   <td style="text-align:right;"> 0.0782622 </td>
+   <td style="text-align:right;"> 0.0625000 </td>
+   <td style="text-align:right;"> 0.000133 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TACRUF </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_TACRUF.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojTACRUF)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### PODGRI - pelēkvaigu dūkuris *Podiceps grisegena* {#Chapter10.1.016}
 
 
@@ -256,6 +1804,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 <p class="caption">(\#fig:NovAtlasePODGRI)Novērojumu atlases gaita un modelēšanā izmantojamie pelēkvaigu dūkura *Podiceps grisegena* novērojumi un fona punkti: A - novērojumu saglabāšanās atlases gaitā; B - visu pieejamo novērojumu (solis 1) izvietojums; C - ar vismaz iespējamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); D - ar vismaz ticamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); E - ar pierādītu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); F - modelēšanā izmantojamā apmācību kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai); G - modelēšanā izmantojamā neatkarīgās testēšanas kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai)</p>
 </div>
 
+
+<br>
+
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_PODGRI.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsPODGRI)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniPODGRI)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.2881740 </td>
+   <td style="text-align:right;"> 0.0046398 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0.0006652 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PODGRI </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2881740 </td>
+   <td style="text-align:right;"> 0.0046398 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0.0006652 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PODGRI </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2881740 </td>
+   <td style="text-align:right;"> 0.0046398 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0.0006652 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PODGRI </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.0061842 </td>
+   <td style="text-align:right;"> 0.0215027 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PODGRI </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.0061842 </td>
+   <td style="text-align:right;"> 0.0215027 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PODGRI </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_PODGRI.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojPODGRI)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
 
 <br>
 
@@ -276,6 +1924,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_PODCRI.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsPODCRI)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniPODCRI)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0725176 </td>
+   <td style="text-align:right;"> 0.0294292 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0005275 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PODCRI </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2729136 </td>
+   <td style="text-align:right;"> 0.0206252 </td>
+   <td style="text-align:right;"> 0.0183486 </td>
+   <td style="text-align:right;"> 0.0015825 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PODCRI </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2032831 </td>
+   <td style="text-align:right;"> 0.0232466 </td>
+   <td style="text-align:right;"> 0.0045872 </td>
+   <td style="text-align:right;"> 0.0011869 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PODCRI </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.0447607 </td>
+   <td style="text-align:right;"> 0.0314571 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0002637 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PODCRI </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.0432582 </td>
+   <td style="text-align:right;"> 0.0316550 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PODCRI </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_PODCRI.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojPODCRI)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 
 ### STRTUR - parastā ūbele *Streptopelia turtur* {#Chapter10.1.018}
 
@@ -288,6 +2036,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_STRTUR.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsSTRTUR)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniSTRTUR)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0262569 </td>
+   <td style="text-align:right;"> 0.7888358 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0003945 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> STRTUR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3775259 </td>
+   <td style="text-align:right;"> 0.1694832 </td>
+   <td style="text-align:right;"> 0.1683502 </td>
+   <td style="text-align:right;"> 0.0043398 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> STRTUR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3859237 </td>
+   <td style="text-align:right;"> 0.1647041 </td>
+   <td style="text-align:right;"> 0.1717172 </td>
+   <td style="text-align:right;"> 0.0043398 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> STRTUR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3071500 </td>
+   <td style="text-align:right;"> 0.2145145 </td>
+   <td style="text-align:right;"> 0.1279461 </td>
+   <td style="text-align:right;"> 0.0028932 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> STRTUR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2971520 </td>
+   <td style="text-align:right;"> 0.2208208 </td>
+   <td style="text-align:right;"> 0.1279461 </td>
+   <td style="text-align:right;"> 0.0026302 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> STRTUR </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_STRTUR.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojSTRTUR)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
 
 
 ### CAPEUR - vakarlēpis *Caprimulgus europaeus* {#Chapter10.1.019}
@@ -305,6 +2153,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_CAPEUR.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsCAPEUR)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniCAPEUR)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0112099 </td>
+   <td style="text-align:right;"> 0.9456206 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0001265 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CAPEUR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3806361 </td>
+   <td style="text-align:right;"> 0.1992007 </td>
+   <td style="text-align:right;"> 0.1992188 </td>
+   <td style="text-align:right;"> 0.0096166 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CAPEUR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3442964 </td>
+   <td style="text-align:right;"> 0.2210381 </td>
+   <td style="text-align:right;"> 0.1738281 </td>
+   <td style="text-align:right;"> 0.0084778 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CAPEUR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3647833 </td>
+   <td style="text-align:right;"> 0.2086683 </td>
+   <td style="text-align:right;"> 0.1923828 </td>
+   <td style="text-align:right;"> 0.0092370 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CAPEUR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3535119 </td>
+   <td style="text-align:right;"> 0.2158999 </td>
+   <td style="text-align:right;"> 0.1816406 </td>
+   <td style="text-align:right;"> 0.0084778 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CAPEUR </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_CAPEUR.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojCAPEUR)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### RALAQU - dumbrcālis *Rallus aquaticus* {#Chapter10.1.020}
 
 
@@ -316,6 +2264,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_RALAQU.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsRALAQU)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniRALAQU)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0013303 </td>
+   <td style="text-align:right;"> 0.7712639 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.00000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> RALAQU </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.1163639 </td>
+   <td style="text-align:right;"> 0.0703001 </td>
+   <td style="text-align:right;"> 0.0697674 </td>
+   <td style="text-align:right;"> 0.00053 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> RALAQU </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1136966 </td>
+   <td style="text-align:right;"> 0.0717905 </td>
+   <td style="text-align:right;"> 0.0465116 </td>
+   <td style="text-align:right;"> 0.00053 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> RALAQU </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.0896164 </td>
+   <td style="text-align:right;"> 0.0902226 </td>
+   <td style="text-align:right;"> 0.0465116 </td>
+   <td style="text-align:right;"> 0.00053 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> RALAQU </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1407943 </td>
+   <td style="text-align:right;"> 0.0588235 </td>
+   <td style="text-align:right;"> 0.1007752 </td>
+   <td style="text-align:right;"> 0.00053 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> RALAQU </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_RALAQU.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojRALAQU)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -334,6 +2382,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_CRECRE.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsCRECRE)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniCRECRE)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0047805 </td>
+   <td style="text-align:right;"> 0.9971894 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0001248 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CRECRE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4644873 </td>
+   <td style="text-align:right;"> 0.2336519 </td>
+   <td style="text-align:right;"> 0.2333826 </td>
+   <td style="text-align:right;"> 0.0170930 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CRECRE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4104192 </td>
+   <td style="text-align:right;"> 0.2747330 </td>
+   <td style="text-align:right;"> 0.1838996 </td>
+   <td style="text-align:right;"> 0.0142233 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CRECRE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4270068 </td>
+   <td style="text-align:right;"> 0.2623665 </td>
+   <td style="text-align:right;"> 0.2038405 </td>
+   <td style="text-align:right;"> 0.0148472 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CRECRE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3536816 </td>
+   <td style="text-align:right;"> 0.3247611 </td>
+   <td style="text-align:right;"> 0.1425406 </td>
+   <td style="text-align:right;"> 0.0097318 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CRECRE </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_CRECRE.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojCRECRE)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### PORPOR - ormanītis *Porzana porzana* {#Chapter10.1.022}
 
 
@@ -345,6 +2493,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_PORPOR.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsPORPOR)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniPORPOR)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0603700 </td>
+   <td style="text-align:right;"> 0.4377520 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0007965 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PORPOR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2496912 </td>
+   <td style="text-align:right;"> 0.1482901 </td>
+   <td style="text-align:right;"> 0.1444444 </td>
+   <td style="text-align:right;"> 0.0018585 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PORPOR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2465833 </td>
+   <td style="text-align:right;"> 0.1502315 </td>
+   <td style="text-align:right;"> 0.1333333 </td>
+   <td style="text-align:right;"> 0.0018585 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PORPOR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.1203890 </td>
+   <td style="text-align:right;"> 0.2836378 </td>
+   <td style="text-align:right;"> 0.0777778 </td>
+   <td style="text-align:right;"> 0.0011947 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PORPOR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1684570 </td>
+   <td style="text-align:right;"> 0.2164866 </td>
+   <td style="text-align:right;"> 0.1000000 </td>
+   <td style="text-align:right;"> 0.0011947 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PORPOR </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_PORPOR.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojPORPOR)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -362,6 +2610,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_ZAPPAR.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsZAPPAR)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniZAPPAR)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0787360 </td>
+   <td style="text-align:right;"> 0.3394729 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0002663 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ZAPPAR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.5538747 </td>
+   <td style="text-align:right;"> 0.0622442 </td>
+   <td style="text-align:right;"> 0.0571429 </td>
+   <td style="text-align:right;"> 0.0003995 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ZAPPAR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.5538747 </td>
+   <td style="text-align:right;"> 0.0622442 </td>
+   <td style="text-align:right;"> 0.0571429 </td>
+   <td style="text-align:right;"> 0.0003995 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ZAPPAR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.1002424 </td>
+   <td style="text-align:right;"> 0.2911550 </td>
+   <td style="text-align:right;"> 0.0285714 </td>
+   <td style="text-align:right;"> 0.0003995 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ZAPPAR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.8531426 </td>
+   <td style="text-align:right;"> 0.0235100 </td>
+   <td style="text-align:right;"> 0.2571429 </td>
+   <td style="text-align:right;"> 0.0003995 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ZAPPAR </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_ZAPPAR.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojZAPPAR)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### FULATR - laucis *Fulica atra* {#Chapter10.1.024}
 
 
@@ -373,6 +2721,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_FULATR.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsFULATR)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniFULATR)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0056641 </td>
+   <td style="text-align:right;"> 0.4390685 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> FULATR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.1273132 </td>
+   <td style="text-align:right;"> 0.0634998 </td>
+   <td style="text-align:right;"> 0.0634921 </td>
+   <td style="text-align:right;"> 0.0020831 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> FULATR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.0938799 </td>
+   <td style="text-align:right;"> 0.0737244 </td>
+   <td style="text-align:right;"> 0.0362812 </td>
+   <td style="text-align:right;"> 0.0013019 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> FULATR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.0946078 </td>
+   <td style="text-align:right;"> 0.0732841 </td>
+   <td style="text-align:right;"> 0.0385488 </td>
+   <td style="text-align:right;"> 0.0013019 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> FULATR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.0721408 </td>
+   <td style="text-align:right;"> 0.0844381 </td>
+   <td style="text-align:right;"> 0.0317460 </td>
+   <td style="text-align:right;"> 0.0007811 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> FULATR </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_FULATR.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojFULATR)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -390,6 +2838,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_GRUGRU.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsGRUGRU)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniGRUGRU)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0306192 </td>
+   <td style="text-align:right;"> 0.9614240 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> GRUGRU </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4540730 </td>
+   <td style="text-align:right;"> 0.2696958 </td>
+   <td style="text-align:right;"> 0.2695035 </td>
+   <td style="text-align:right;"> 0.0166859 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> GRUGRU </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4187338 </td>
+   <td style="text-align:right;"> 0.3058248 </td>
+   <td style="text-align:right;"> 0.2234043 </td>
+   <td style="text-align:right;"> 0.0148890 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> GRUGRU </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3876300 </td>
+   <td style="text-align:right;"> 0.3420497 </td>
+   <td style="text-align:right;"> 0.1938534 </td>
+   <td style="text-align:right;"> 0.0121936 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> GRUGRU </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3711265 </td>
+   <td style="text-align:right;"> 0.3640246 </td>
+   <td style="text-align:right;"> 0.1761229 </td>
+   <td style="text-align:right;"> 0.0109100 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> GRUGRU </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_GRUGRU.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojGRUGRU)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 
 ### CICNIG - melnais stārķis *Ciconia nigra* {#Chapter10.1.026}
 
@@ -400,6 +2948,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 <p class="caption">(\#fig:NovAtlaseCICNIG)Novērojumu atlases gaita un modelēšanā izmantojamie melnā stārķa *Ciconia nigra* novērojumi un fona punkti: A - novērojumu saglabāšanās atlases gaitā; B - visu pieejamo novērojumu (solis 1) izvietojums; C - ar vismaz iespējamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); D - ar vismaz ticamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); E - ar pierādītu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); F - modelēšanā izmantojamā apmācību kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai); G - modelēšanā izmantojamā neatkarīgās testēšanas kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai)</p>
 </div>
 
+
+<br>
+
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_CICNIG.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsCICNIG)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniCICNIG)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0084213 </td>
+   <td style="text-align:right;"> 0.3262475 </td>
+   <td style="text-align:right;"> 0.000 </td>
+   <td style="text-align:right;"> 0.0002662 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CICNIG </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.1460774 </td>
+   <td style="text-align:right;"> 0.0622255 </td>
+   <td style="text-align:right;"> 0.050 </td>
+   <td style="text-align:right;"> 0.0003993 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CICNIG </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1460774 </td>
+   <td style="text-align:right;"> 0.0622255 </td>
+   <td style="text-align:right;"> 0.050 </td>
+   <td style="text-align:right;"> 0.0003993 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CICNIG </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.0221578 </td>
+   <td style="text-align:right;"> 0.2095309 </td>
+   <td style="text-align:right;"> 0.025 </td>
+   <td style="text-align:right;"> 0.0003993 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CICNIG </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2124904 </td>
+   <td style="text-align:right;"> 0.0461577 </td>
+   <td style="text-align:right;"> 0.075 </td>
+   <td style="text-align:right;"> 0.0003993 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CICNIG </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_CICNIG.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojCICNIG)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
 
 <br>
 
@@ -421,6 +3069,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_CICCIC.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsCICCIC)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniCICCIC)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0034527 </td>
+   <td style="text-align:right;"> 0.8027594 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0001226 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CICCIC </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3652380 </td>
+   <td style="text-align:right;"> 0.1629996 </td>
+   <td style="text-align:right;"> 0.1632877 </td>
+   <td style="text-align:right;"> 0.0136130 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CICCIC </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2673641 </td>
+   <td style="text-align:right;"> 0.2085167 </td>
+   <td style="text-align:right;"> 0.1068493 </td>
+   <td style="text-align:right;"> 0.0094432 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CICCIC </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2934118 </td>
+   <td style="text-align:right;"> 0.1942611 </td>
+   <td style="text-align:right;"> 0.1243836 </td>
+   <td style="text-align:right;"> 0.0106696 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CICCIC </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2757125 </td>
+   <td style="text-align:right;"> 0.2039329 </td>
+   <td style="text-align:right;"> 0.1134247 </td>
+   <td style="text-align:right;"> 0.0094432 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CICCIC </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_CICCIC.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojCICCIC)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### BOTSTE - lielais dumpis *Botaurus stellaris* {#Chapter10.1.028}
 
 
@@ -430,6 +3178,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 <p class="caption">(\#fig:NovAtlaseBOTSTE)Novērojumu atlases gaita un modelēšanā izmantojamie lielā dumpja *Botaurus stellaris* novērojumi un fona punkti: A - novērojumu saglabāšanās atlases gaitā; B - visu pieejamo novērojumu (solis 1) izvietojums; C - ar vismaz iespējamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); D - ar vismaz ticamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); E - ar pierādītu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); F - modelēšanā izmantojamā apmācību kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai); G - modelēšanā izmantojamā neatkarīgās testēšanas kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai)</p>
 </div>
 
+
+<br>
+
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_BOTSTE.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsBOTSTE)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniBOTSTE)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0768154 </td>
+   <td style="text-align:right;"> 0.0283453 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0010551 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> BOTSTE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2278378 </td>
+   <td style="text-align:right;"> 0.0201336 </td>
+   <td style="text-align:right;"> 0.0186047 </td>
+   <td style="text-align:right;"> 0.0029016 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> BOTSTE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1601347 </td>
+   <td style="text-align:right;"> 0.0224586 </td>
+   <td style="text-align:right;"> 0.0046512 </td>
+   <td style="text-align:right;"> 0.0026378 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> BOTSTE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.0215078 </td>
+   <td style="text-align:right;"> 0.0413060 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0002638 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> BOTSTE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.0201472 </td>
+   <td style="text-align:right;"> 0.0421469 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0001319 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> BOTSTE </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_BOTSTE.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojBOTSTE)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
 
 <br>
 
@@ -450,6 +3298,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_IXOMIN.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsIXOMIN)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniIXOMIN)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.5541535 </td>
+   <td style="text-align:right;"> 0.0801399 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> IXOMIN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.6043790 </td>
+   <td style="text-align:right;"> 0.0666500 </td>
+   <td style="text-align:right;"> 0.0666667 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> IXOMIN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.5541535 </td>
+   <td style="text-align:right;"> 0.0801399 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> IXOMIN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.6240410 </td>
+   <td style="text-align:right;"> 0.0625531 </td>
+   <td style="text-align:right;"> 0.0666667 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> IXOMIN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.6240410 </td>
+   <td style="text-align:right;"> 0.0625531 </td>
+   <td style="text-align:right;"> 0.0666667 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> IXOMIN </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_IXOMIN.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojIXOMIN)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 
 ### HAEOST - jūrasžagata *Haematopus ostralegus* {#Chapter10.1.030}
 
@@ -462,6 +3410,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_HAEOST.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsHAEOST)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniHAEOST)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0941500 </td>
+   <td style="text-align:right;"> 0.0299870 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0005321 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> HAEOST </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.1449789 </td>
+   <td style="text-align:right;"> 0.0238000 </td>
+   <td style="text-align:right;"> 0.0238095 </td>
+   <td style="text-align:right;"> 0.0006652 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> HAEOST </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.0941500 </td>
+   <td style="text-align:right;"> 0.0299870 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0005321 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> HAEOST </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.0214606 </td>
+   <td style="text-align:right;"> 0.0665103 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0001330 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> HAEOST </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.0398191 </td>
+   <td style="text-align:right;"> 0.0468516 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0001330 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> HAEOST </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_HAEOST.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojHAEOST)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -479,6 +3527,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_PLUAPR.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsPLUAPR)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniPLUAPR)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0323966 </td>
+   <td style="text-align:right;"> 0.0117735 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PLUAPR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.0328734 </td>
+   <td style="text-align:right;"> 0.0117236 </td>
+   <td style="text-align:right;"> 0.0222222 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PLUAPR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.0323966 </td>
+   <td style="text-align:right;"> 0.0117735 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PLUAPR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.0762430 </td>
+   <td style="text-align:right;"> 0.0089798 </td>
+   <td style="text-align:right;"> 0.0444444 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PLUAPR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.0762430 </td>
+   <td style="text-align:right;"> 0.0089798 </td>
+   <td style="text-align:right;"> 0.0444444 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PLUAPR </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_PLUAPR.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojPLUAPR)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 
 ### CHAHIA - smilšu tārtiņš *Charadrius hiaticula* {#Chapter10.1.032}
 
@@ -490,6 +3638,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_CHAHIA.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsCHAHIA)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniCHAHIA)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0430774 </td>
+   <td style="text-align:right;"> 0.0071813 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CHAHIA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.0430774 </td>
+   <td style="text-align:right;"> 0.0071813 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CHAHIA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.0430774 </td>
+   <td style="text-align:right;"> 0.0071813 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CHAHIA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2381384 </td>
+   <td style="text-align:right;"> 0.0034411 </td>
+   <td style="text-align:right;"> 0.0961538 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CHAHIA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2381384 </td>
+   <td style="text-align:right;"> 0.0034411 </td>
+   <td style="text-align:right;"> 0.0961538 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CHAHIA </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_CHAHIA.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojCHAHIA)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -506,6 +3754,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_CHADUB.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsCHADUB)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniCHADUB)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0010861 </td>
+   <td style="text-align:right;"> 0.9450327 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CHADUB </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.1856509 </td>
+   <td style="text-align:right;"> 0.1314566 </td>
+   <td style="text-align:right;"> 0.1314554 </td>
+   <td style="text-align:right;"> 0.0019784 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CHADUB </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1619056 </td>
+   <td style="text-align:right;"> 0.1538195 </td>
+   <td style="text-align:right;"> 0.0938967 </td>
+   <td style="text-align:right;"> 0.0017146 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CHADUB </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.1542022 </td>
+   <td style="text-align:right;"> 0.1611419 </td>
+   <td style="text-align:right;"> 0.0892019 </td>
+   <td style="text-align:right;"> 0.0017146 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CHADUB </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1353576 </td>
+   <td style="text-align:right;"> 0.1820701 </td>
+   <td style="text-align:right;"> 0.0751174 </td>
+   <td style="text-align:right;"> 0.0007913 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CHADUB </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_CHADUB.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojCHADUB)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### VANVAN - ķīvīte *Vanellus vanellus* {#Chapter10.1.034}
 
 
@@ -517,6 +3865,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_VANVAN.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsVANVAN)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniVANVAN)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0103694 </td>
+   <td style="text-align:right;"> 0.5456370 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0002553 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> VANVAN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3876800 </td>
+   <td style="text-align:right;"> 0.1893338 </td>
+   <td style="text-align:right;"> 0.1898598 </td>
+   <td style="text-align:right;"> 0.0099579 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> VANVAN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2798582 </td>
+   <td style="text-align:right;"> 0.2524133 </td>
+   <td style="text-align:right;"> 0.0981661 </td>
+   <td style="text-align:right;"> 0.0054896 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> VANVAN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3393033 </td>
+   <td style="text-align:right;"> 0.2166683 </td>
+   <td style="text-align:right;"> 0.1456311 </td>
+   <td style="text-align:right;"> 0.0079152 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> VANVAN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2269472 </td>
+   <td style="text-align:right;"> 0.2884928 </td>
+   <td style="text-align:right;"> 0.0711974 </td>
+   <td style="text-align:right;"> 0.0028086 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> VANVAN </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_VANVAN.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojVANVAN)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -551,6 +3999,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_NUMARQ.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsNUMARQ)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniNUMARQ)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.4115293 </td>
+   <td style="text-align:right;"> 0.3996009 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.000133 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> NUMARQ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.7174242 </td>
+   <td style="text-align:right;"> 0.2093290 </td>
+   <td style="text-align:right;"> 0.2000000 </td>
+   <td style="text-align:right;"> 0.000266 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> NUMARQ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.6911306 </td>
+   <td style="text-align:right;"> 0.2473934 </td>
+   <td style="text-align:right;"> 0.0888889 </td>
+   <td style="text-align:right;"> 0.000133 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> NUMARQ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.7305719 </td>
+   <td style="text-align:right;"> 0.1819406 </td>
+   <td style="text-align:right;"> 0.2444444 </td>
+   <td style="text-align:right;"> 0.000399 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> NUMARQ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.7137015 </td>
+   <td style="text-align:right;"> 0.2154153 </td>
+   <td style="text-align:right;"> 0.1777778 </td>
+   <td style="text-align:right;"> 0.000133 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> NUMARQ </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_NUMARQ.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojNUMARQ)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -608,6 +4156,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_GALGAL.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsGALGAL)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniGALGAL)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0191342 </td>
+   <td style="text-align:right;"> 0.9539901 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> GALGAL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4703152 </td>
+   <td style="text-align:right;"> 0.2630775 </td>
+   <td style="text-align:right;"> 0.2633788 </td>
+   <td style="text-align:right;"> 0.0136358 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> GALGAL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3967886 </td>
+   <td style="text-align:right;"> 0.3389653 </td>
+   <td style="text-align:right;"> 0.1678909 </td>
+   <td style="text-align:right;"> 0.0090480 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> GALGAL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4467168 </td>
+   <td style="text-align:right;"> 0.2864166 </td>
+   <td style="text-align:right;"> 0.2350472 </td>
+   <td style="text-align:right;"> 0.0117242 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> GALGAL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4275154 </td>
+   <td style="text-align:right;"> 0.3057942 </td>
+   <td style="text-align:right;"> 0.2109129 </td>
+   <td style="text-align:right;"> 0.0096852 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> GALGAL </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_GALGAL.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojGALGAL)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### TRINEB - lielā tilbīte *Tringa nebularia* {#Chapter10.1.040}
 
 
@@ -641,6 +4289,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_TRITOT.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsTRITOT)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniTRITOT)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.1435399 </td>
+   <td style="text-align:right;"> 0.3106355 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0001330 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TRITOT </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4759110 </td>
+   <td style="text-align:right;"> 0.0974758 </td>
+   <td style="text-align:right;"> 0.0869565 </td>
+   <td style="text-align:right;"> 0.0007981 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TRITOT </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4759110 </td>
+   <td style="text-align:right;"> 0.0974758 </td>
+   <td style="text-align:right;"> 0.0869565 </td>
+   <td style="text-align:right;"> 0.0007981 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TRITOT </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2432658 </td>
+   <td style="text-align:right;"> 0.2062257 </td>
+   <td style="text-align:right;"> 0.0217391 </td>
+   <td style="text-align:right;"> 0.0003990 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TRITOT </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2317081 </td>
+   <td style="text-align:right;"> 0.2147561 </td>
+   <td style="text-align:right;"> 0.0217391 </td>
+   <td style="text-align:right;"> 0.0001330 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TRITOT </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_TRITOT.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojTRITOT)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 
 
 ### TRIGLA - purva tilbīte *Tringa glareola* {#Chapter10.1.042}
@@ -654,6 +4402,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_TRIGLA.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsTRIGLA)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniTRIGLA)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0356567 </td>
+   <td style="text-align:right;"> 0.0304088 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0005319 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TRIGLA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.0587718 </td>
+   <td style="text-align:right;"> 0.0223330 </td>
+   <td style="text-align:right;"> 0.0166667 </td>
+   <td style="text-align:right;"> 0.0009309 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TRIGLA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.0356567 </td>
+   <td style="text-align:right;"> 0.0304088 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0005319 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TRIGLA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.0069080 </td>
+   <td style="text-align:right;"> 0.0712861 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0001330 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TRIGLA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.0069080 </td>
+   <td style="text-align:right;"> 0.0712861 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0001330 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TRIGLA </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_TRIGLA.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojTRIGLA)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -672,6 +4520,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_GLAPAS.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsGLAPAS)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniGLAPAS)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0093200 </td>
+   <td style="text-align:right;"> 0.6333170 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0002608 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> GLAPAS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3702813 </td>
+   <td style="text-align:right;"> 0.1862035 </td>
+   <td style="text-align:right;"> 0.1863636 </td>
+   <td style="text-align:right;"> 0.0053455 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> GLAPAS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2349547 </td>
+   <td style="text-align:right;"> 0.2697162 </td>
+   <td style="text-align:right;"> 0.0750000 </td>
+   <td style="text-align:right;"> 0.0024772 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> GLAPAS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3473045 </td>
+   <td style="text-align:right;"> 0.1977984 </td>
+   <td style="text-align:right;"> 0.1750000 </td>
+   <td style="text-align:right;"> 0.0040417 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> GLAPAS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2875470 </td>
+   <td style="text-align:right;"> 0.2337084 </td>
+   <td style="text-align:right;"> 0.1250000 </td>
+   <td style="text-align:right;"> 0.0026076 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> GLAPAS </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_GLAPAS.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojGLAPAS)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 
 ### AEGFUN - bikšainais apogs *Aegolius funereus* {#Chapter10.1.044}
 
@@ -682,6 +4630,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 <p class="caption">(\#fig:NovAtlaseAEGFUN)Novērojumu atlases gaita un modelēšanā izmantojamie bikšainā apoga *Aegolius funereus* novērojumi un fona punkti: A - novērojumu saglabāšanās atlases gaitā; B - visu pieejamo novērojumu (solis 1) izvietojums; C - ar vismaz iespējamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); D - ar vismaz ticamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); E - ar pierādītu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); F - modelēšanā izmantojamā apmācību kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai); G - modelēšanā izmantojamā neatkarīgās testēšanas kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai)</p>
 </div>
 
+
+<br>
+
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_AEGFUN.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsAEGFUN)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniAEGFUN)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0577697 </td>
+   <td style="text-align:right;"> 0.1158167 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0005304 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> AEGFUN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.1258757 </td>
+   <td style="text-align:right;"> 0.0696888 </td>
+   <td style="text-align:right;"> 0.0677966 </td>
+   <td style="text-align:right;"> 0.0009281 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> AEGFUN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.0577697 </td>
+   <td style="text-align:right;"> 0.1158167 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0005304 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> AEGFUN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.0659266 </td>
+   <td style="text-align:right;"> 0.1072671 </td>
+   <td style="text-align:right;"> 0.0169492 </td>
+   <td style="text-align:right;"> 0.0005304 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> AEGFUN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.0496603 </td>
+   <td style="text-align:right;"> 0.1269013 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0002652 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> AEGFUN </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_AEGFUN.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojAEGFUN)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
 
 <br>
 
@@ -702,6 +4750,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_ASIOTU.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsASIOTU)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniASIOTU)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0027168 </td>
+   <td style="text-align:right;"> 0.9807378 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ASIOTU </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4092425 </td>
+   <td style="text-align:right;"> 0.2194107 </td>
+   <td style="text-align:right;"> 0.2193878 </td>
+   <td style="text-align:right;"> 0.0018496 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ASIOTU </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4067552 </td>
+   <td style="text-align:right;"> 0.2212924 </td>
+   <td style="text-align:right;"> 0.2142857 </td>
+   <td style="text-align:right;"> 0.0018496 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ASIOTU </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4133848 </td>
+   <td style="text-align:right;"> 0.2165883 </td>
+   <td style="text-align:right;"> 0.2295918 </td>
+   <td style="text-align:right;"> 0.0019818 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ASIOTU </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4133324 </td>
+   <td style="text-align:right;"> 0.2166378 </td>
+   <td style="text-align:right;"> 0.2244898 </td>
+   <td style="text-align:right;"> 0.0018496 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ASIOTU </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_ASIOTU.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojASIOTU)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 
 
 ### STRALU - meža pūce *Strix aluco* {#Chapter10.1.046}
@@ -715,6 +4863,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_STRALU.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsSTRALU)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniSTRALU)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0324331 </td>
+   <td style="text-align:right;"> 0.8235774 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0006393 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> STRALU </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4701241 </td>
+   <td style="text-align:right;"> 0.2484406 </td>
+   <td style="text-align:right;"> 0.2479339 </td>
+   <td style="text-align:right;"> 0.0107403 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> STRALU </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3804215 </td>
+   <td style="text-align:right;"> 0.3311103 </td>
+   <td style="text-align:right;"> 0.1404959 </td>
+   <td style="text-align:right;"> 0.0065209 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> STRALU </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4527378 </td>
+   <td style="text-align:right;"> 0.2635544 </td>
+   <td style="text-align:right;"> 0.2266824 </td>
+   <td style="text-align:right;"> 0.0097174 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> STRALU </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4211828 </td>
+   <td style="text-align:right;"> 0.2897994 </td>
+   <td style="text-align:right;"> 0.1877214 </td>
+   <td style="text-align:right;"> 0.0079274 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> STRALU </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_STRALU.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojSTRALU)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -733,6 +4981,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_STRURA.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsSTRURA)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniSTRURA)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0209011 </td>
+   <td style="text-align:right;"> 0.5333658 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0002594 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> STRURA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3501375 </td>
+   <td style="text-align:right;"> 0.1375000 </td>
+   <td style="text-align:right;"> 0.1375000 </td>
+   <td style="text-align:right;"> 0.0038911 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> STRURA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2624175 </td>
+   <td style="text-align:right;"> 0.1712549 </td>
+   <td style="text-align:right;"> 0.0910714 </td>
+   <td style="text-align:right;"> 0.0019455 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> STRURA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3359681 </td>
+   <td style="text-align:right;"> 0.1420233 </td>
+   <td style="text-align:right;"> 0.1303571 </td>
+   <td style="text-align:right;"> 0.0032425 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> STRURA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2652242 </td>
+   <td style="text-align:right;"> 0.1702821 </td>
+   <td style="text-align:right;"> 0.0982143 </td>
+   <td style="text-align:right;"> 0.0019455 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> STRURA </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_STRURA.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojSTRURA)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 
 ### BUBBUB - ūpis *Bubo bubo* {#Chapter10.1.048}
 
@@ -745,6 +5093,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_BUBBUB.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsBUBBUB)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniBUBBUB)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0110502 </td>
+   <td style="text-align:right;"> 0.1479355 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> BUBBUB </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.0506608 </td>
+   <td style="text-align:right;"> 0.0689500 </td>
+   <td style="text-align:right;"> 0.0689655 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> BUBBUB </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1130990 </td>
+   <td style="text-align:right;"> 0.0389435 </td>
+   <td style="text-align:right;"> 0.0689655 </td>
+   <td style="text-align:right;"> 0.0002663 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> BUBBUB </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.0704057 </td>
+   <td style="text-align:right;"> 0.0554196 </td>
+   <td style="text-align:right;"> 0.0689655 </td>
+   <td style="text-align:right;"> 0.0001332 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> BUBBUB </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.0703607 </td>
+   <td style="text-align:right;"> 0.0554696 </td>
+   <td style="text-align:right;"> 0.0689655 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> BUBBUB </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_BUBBUB.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojBUBBUB)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -762,6 +5210,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 <br>
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_PANHAL.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsPANHAL)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniPANHAL)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0930246 </td>
+   <td style="text-align:right;"> 0.1689418 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0010633 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PANHAL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2747872 </td>
+   <td style="text-align:right;"> 0.0694500 </td>
+   <td style="text-align:right;"> 0.0694444 </td>
+   <td style="text-align:right;"> 0.0021265 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PANHAL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2874936 </td>
+   <td style="text-align:right;"> 0.0670088 </td>
+   <td style="text-align:right;"> 0.0694444 </td>
+   <td style="text-align:right;"> 0.0021265 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PANHAL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.0665652 </td>
+   <td style="text-align:right;"> 0.2041650 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0006645 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PANHAL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.0657412 </td>
+   <td style="text-align:right;"> 0.2055600 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0003987 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PANHAL </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_PANHAL.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojPANHAL)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 
 ### PERAPI - ķīķis *Pernis apivorus* {#Chapter10.1.050}
 
@@ -774,6 +5322,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_PERAPI.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsPERAPI)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniPERAPI)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0640793 </td>
+   <td style="text-align:right;"> 0.9835935 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PERAPI </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.5724827 </td>
+   <td style="text-align:right;"> 0.3240529 </td>
+   <td style="text-align:right;"> 0.3217391 </td>
+   <td style="text-align:right;"> 0.0025202 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PERAPI </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.6476807 </td>
+   <td style="text-align:right;"> 0.2302376 </td>
+   <td style="text-align:right;"> 0.3826087 </td>
+   <td style="text-align:right;"> 0.0026529 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PERAPI </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.5409945 </td>
+   <td style="text-align:right;"> 0.3665606 </td>
+   <td style="text-align:right;"> 0.2782609 </td>
+   <td style="text-align:right;"> 0.0018570 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PERAPI </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4836071 </td>
+   <td style="text-align:right;"> 0.4438699 </td>
+   <td style="text-align:right;"> 0.2521739 </td>
+   <td style="text-align:right;"> 0.0006632 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PERAPI </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_PERAPI.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojPERAPI)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -791,6 +5439,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_CLAPOM.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsCLAPOM)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniCLAPOM)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0104916 </td>
+   <td style="text-align:right;"> 0.4722480 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0005214 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CLAPOM </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2273339 </td>
+   <td style="text-align:right;"> 0.1063217 </td>
+   <td style="text-align:right;"> 0.1065574 </td>
+   <td style="text-align:right;"> 0.0044323 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CLAPOM </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1596267 </td>
+   <td style="text-align:right;"> 0.1356114 </td>
+   <td style="text-align:right;"> 0.0614754 </td>
+   <td style="text-align:right;"> 0.0032590 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CLAPOM </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.1358343 </td>
+   <td style="text-align:right;"> 0.1490359 </td>
+   <td style="text-align:right;"> 0.0532787 </td>
+   <td style="text-align:right;"> 0.0028679 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CLAPOM </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1482394 </td>
+   <td style="text-align:right;"> 0.1408836 </td>
+   <td style="text-align:right;"> 0.0614754 </td>
+   <td style="text-align:right;"> 0.0028679 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CLAPOM </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_CLAPOM.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojCLAPOM)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### CIRAER - niedru lija *Circus aeruginosus* {#Chapter10.1.052}
 
 
@@ -802,6 +5550,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_CIRAER.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsCIRAER)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniCIRAER)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0316536 </td>
+   <td style="text-align:right;"> 0.9250779 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0001320 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CIRAER </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2425187 </td>
+   <td style="text-align:right;"> 0.1661639 </td>
+   <td style="text-align:right;"> 0.1674208 </td>
+   <td style="text-align:right;"> 0.0019799 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CIRAER </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2612889 </td>
+   <td style="text-align:right;"> 0.1493497 </td>
+   <td style="text-align:right;"> 0.1674208 </td>
+   <td style="text-align:right;"> 0.0021119 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CIRAER </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2214221 </td>
+   <td style="text-align:right;"> 0.1910390 </td>
+   <td style="text-align:right;"> 0.1538462 </td>
+   <td style="text-align:right;"> 0.0018479 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CIRAER </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3446224 </td>
+   <td style="text-align:right;"> 0.0990554 </td>
+   <td style="text-align:right;"> 0.2443439 </td>
+   <td style="text-align:right;"> 0.0022439 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CIRAER </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_CIRAER.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojCIRAER)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -819,6 +5667,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_ACCNIS.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsACCNIS)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniACCNIS)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.1150094 </td>
+   <td style="text-align:right;"> 0.6620539 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0001328 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ACCNIS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.5279710 </td>
+   <td style="text-align:right;"> 0.1911494 </td>
+   <td style="text-align:right;"> 0.1910112 </td>
+   <td style="text-align:right;"> 0.0018590 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ACCNIS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4703515 </td>
+   <td style="text-align:right;"> 0.2352033 </td>
+   <td style="text-align:right;"> 0.0898876 </td>
+   <td style="text-align:right;"> 0.0014606 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ACCNIS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4360436 </td>
+   <td style="text-align:right;"> 0.2655184 </td>
+   <td style="text-align:right;"> 0.0898876 </td>
+   <td style="text-align:right;"> 0.0010623 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ACCNIS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4073814 </td>
+   <td style="text-align:right;"> 0.2914530 </td>
+   <td style="text-align:right;"> 0.0674157 </td>
+   <td style="text-align:right;"> 0.0007967 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ACCNIS </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_ACCNIS.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojACCNIS)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### ACCGEN - vistu vanags *Accipiter gentilis* {#Chapter10.1.054}
 
 
@@ -830,6 +5778,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_ACCGEN.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsACCGEN)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniACCGEN)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0289197 </td>
+   <td style="text-align:right;"> 0.5600654 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0002642 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ACCGEN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2670525 </td>
+   <td style="text-align:right;"> 0.1166617 </td>
+   <td style="text-align:right;"> 0.1166667 </td>
+   <td style="text-align:right;"> 0.0033025 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ACCGEN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2632815 </td>
+   <td style="text-align:right;"> 0.1183963 </td>
+   <td style="text-align:right;"> 0.1000000 </td>
+   <td style="text-align:right;"> 0.0033025 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ACCGEN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.1229852 </td>
+   <td style="text-align:right;"> 0.2116662 </td>
+   <td style="text-align:right;"> 0.0444444 </td>
+   <td style="text-align:right;"> 0.0018494 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ACCGEN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1507421 </td>
+   <td style="text-align:right;"> 0.1838141 </td>
+   <td style="text-align:right;"> 0.0611111 </td>
+   <td style="text-align:right;"> 0.0019815 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ACCGEN </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_ACCGEN.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojACCGEN)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -848,6 +5896,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_HALALB.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsHALALB)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniHALALB)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0233736 </td>
+   <td style="text-align:right;"> 0.3779081 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0001326 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> HALALB </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2153422 </td>
+   <td style="text-align:right;"> 0.0928117 </td>
+   <td style="text-align:right;"> 0.0948276 </td>
+   <td style="text-align:right;"> 0.0021217 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> HALALB </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2150941 </td>
+   <td style="text-align:right;"> 0.0928614 </td>
+   <td style="text-align:right;"> 0.0862069 </td>
+   <td style="text-align:right;"> 0.0021217 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> HALALB </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.1200385 </td>
+   <td style="text-align:right;"> 0.1539073 </td>
+   <td style="text-align:right;"> 0.0603448 </td>
+   <td style="text-align:right;"> 0.0007957 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> HALALB </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1164878 </td>
+   <td style="text-align:right;"> 0.1569895 </td>
+   <td style="text-align:right;"> 0.0603448 </td>
+   <td style="text-align:right;"> 0.0005304 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> HALALB </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_HALALB.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojHALALB)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### MILMIL - sarkanā klija *Milvus milvus* {#Chapter10.1.056}
 
 
@@ -860,6 +6008,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_MILMIL.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsMILMIL)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniMILMIL)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0159831 </td>
+   <td style="text-align:right;"> 0.2852167 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0002655 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> MILMIL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.1662240 </td>
+   <td style="text-align:right;"> 0.0703588 </td>
+   <td style="text-align:right;"> 0.0721649 </td>
+   <td style="text-align:right;"> 0.0011947 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> MILMIL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1409367 </td>
+   <td style="text-align:right;"> 0.0796636 </td>
+   <td style="text-align:right;"> 0.0412371 </td>
+   <td style="text-align:right;"> 0.0010620 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> MILMIL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.0752240 </td>
+   <td style="text-align:right;"> 0.1204657 </td>
+   <td style="text-align:right;"> 0.0309278 </td>
+   <td style="text-align:right;"> 0.0005310 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> MILMIL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.0713103 </td>
+   <td style="text-align:right;"> 0.1239986 </td>
+   <td style="text-align:right;"> 0.0309278 </td>
+   <td style="text-align:right;"> 0.0002655 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> MILMIL </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_MILMIL.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojMILMIL)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -878,6 +6126,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_MILMIG.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsMILMIG)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniMILMIG)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0220883 </td>
+   <td style="text-align:right;"> 0.4435757 </td>
+   <td style="text-align:right;"> 0.0000 </td>
+   <td style="text-align:right;"> 0.0003986 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> MILMIG </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.1874402 </td>
+   <td style="text-align:right;"> 0.1250000 </td>
+   <td style="text-align:right;"> 0.1250 </td>
+   <td style="text-align:right;"> 0.0013286 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> MILMIG </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3103222 </td>
+   <td style="text-align:right;"> 0.0777390 </td>
+   <td style="text-align:right;"> 0.1375 </td>
+   <td style="text-align:right;"> 0.0021257 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> MILMIG </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.1158873 </td>
+   <td style="text-align:right;"> 0.1865040 </td>
+   <td style="text-align:right;"> 0.0500 </td>
+   <td style="text-align:right;"> 0.0006643 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> MILMIG </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1097220 </td>
+   <td style="text-align:right;"> 0.1941235 </td>
+   <td style="text-align:right;"> 0.0500 </td>
+   <td style="text-align:right;"> 0.0003986 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> MILMIG </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_MILMIG.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojMILMIG)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### BUTBUT - peļu klijāns *Buteo buteo* {#Chapter10.1.058}
 
 
@@ -889,6 +6237,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_BUTBUT.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsBUTBUT)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniBUTBUT)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0533842 </td>
+   <td style="text-align:right;"> 0.7650655 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0001307 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> BUTBUT </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4708385 </td>
+   <td style="text-align:right;"> 0.2364997 </td>
+   <td style="text-align:right;"> 0.2364865 </td>
+   <td style="text-align:right;"> 0.0037889 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> BUTBUT </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4212981 </td>
+   <td style="text-align:right;"> 0.2796419 </td>
+   <td style="text-align:right;"> 0.1779279 </td>
+   <td style="text-align:right;"> 0.0035276 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> BUTBUT </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4887770 </td>
+   <td style="text-align:right;"> 0.2226570 </td>
+   <td style="text-align:right;"> 0.2477477 </td>
+   <td style="text-align:right;"> 0.0041808 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> BUTBUT </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4728392 </td>
+   <td style="text-align:right;"> 0.2348855 </td>
+   <td style="text-align:right;"> 0.2364865 </td>
+   <td style="text-align:right;"> 0.0037889 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> BUTBUT </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_BUTBUT.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojBUTBUT)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -906,6 +6354,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_UPUEPO.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsUPUEPO)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniUPUEPO)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0063628 </td>
+   <td style="text-align:right;"> 0.8317872 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> UPUEPO </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.1617183 </td>
+   <td style="text-align:right;"> 0.1200118 </td>
+   <td style="text-align:right;"> 0.1200000 </td>
+   <td style="text-align:right;"> 0.0034054 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> UPUEPO </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1325694 </td>
+   <td style="text-align:right;"> 0.1466156 </td>
+   <td style="text-align:right;"> 0.0853333 </td>
+   <td style="text-align:right;"> 0.0030124 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> UPUEPO </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.1215976 </td>
+   <td style="text-align:right;"> 0.1587886 </td>
+   <td style="text-align:right;"> 0.0826667 </td>
+   <td style="text-align:right;"> 0.0026195 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> UPUEPO </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1192289 </td>
+   <td style="text-align:right;"> 0.1613410 </td>
+   <td style="text-align:right;"> 0.0826667 </td>
+   <td style="text-align:right;"> 0.0023576 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> UPUEPO </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_UPUEPO.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojUPUEPO)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### CORGAR - zaļā vārna *Coracias garrulus* {#Chapter10.1.060}
 
 
@@ -917,6 +6465,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_CORGAR.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsCORGAR)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniCORGAR)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.3143353 </td>
+   <td style="text-align:right;"> 0.0018473 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0.0005325 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CORGAR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3143353 </td>
+   <td style="text-align:right;"> 0.0018473 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0.0005325 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CORGAR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3143353 </td>
+   <td style="text-align:right;"> 0.0018473 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0.0005325 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CORGAR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.0598291 </td>
+   <td style="text-align:right;"> 0.0034450 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CORGAR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.0598291 </td>
+   <td style="text-align:right;"> 0.0034450 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CORGAR </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_CORGAR.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojCORGAR)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -934,6 +6582,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_JYNTOR.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsJYNTOR)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniJYNTOR)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0300582 </td>
+   <td style="text-align:right;"> 0.9467361 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0002600 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> JYNTOR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3725017 </td>
+   <td style="text-align:right;"> 0.2401498 </td>
+   <td style="text-align:right;"> 0.2401434 </td>
+   <td style="text-align:right;"> 0.0055895 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> JYNTOR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3446600 </td>
+   <td style="text-align:right;"> 0.2646172 </td>
+   <td style="text-align:right;"> 0.2043011 </td>
+   <td style="text-align:right;"> 0.0049396 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> JYNTOR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3690386 </td>
+   <td style="text-align:right;"> 0.2430197 </td>
+   <td style="text-align:right;"> 0.2383513 </td>
+   <td style="text-align:right;"> 0.0054595 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> JYNTOR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3415197 </td>
+   <td style="text-align:right;"> 0.2677790 </td>
+   <td style="text-align:right;"> 0.2043011 </td>
+   <td style="text-align:right;"> 0.0046796 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> JYNTOR </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_JYNTOR.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojJYNTOR)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### PICCAN - pelēkā dzilna *Picus canus* {#Chapter10.1.062}
 
 
@@ -948,6 +6696,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_PICCAN.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsPICCAN)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniPICCAN)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0870909 </td>
+   <td style="text-align:right;"> 0.6813351 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0001325 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PICCAN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4552391 </td>
+   <td style="text-align:right;"> 0.1902752 </td>
+   <td style="text-align:right;"> 0.1940299 </td>
+   <td style="text-align:right;"> 0.0018555 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PICCAN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4479004 </td>
+   <td style="text-align:right;"> 0.1969802 </td>
+   <td style="text-align:right;"> 0.1716418 </td>
+   <td style="text-align:right;"> 0.0018555 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PICCAN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3626765 </td>
+   <td style="text-align:right;"> 0.2782855 </td>
+   <td style="text-align:right;"> 0.1044776 </td>
+   <td style="text-align:right;"> 0.0017230 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PICCAN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4901097 </td>
+   <td style="text-align:right;"> 0.1650939 </td>
+   <td style="text-align:right;"> 0.2164179 </td>
+   <td style="text-align:right;"> 0.0018555 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PICCAN </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_PICCAN.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojPICCAN)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### DRYMAR - melnā dzilna *Dryocopus martius* {#Chapter10.1.063}
 
 
@@ -959,6 +6807,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_DRYMAR.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsDRYMAR)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniDRYMAR)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0269726 </td>
+   <td style="text-align:right;"> 0.7641945 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0001311 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> DRYMAR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.5028317 </td>
+   <td style="text-align:right;"> 0.2555501 </td>
+   <td style="text-align:right;"> 0.2555556 </td>
+   <td style="text-align:right;"> 0.0039334 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> DRYMAR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4035688 </td>
+   <td style="text-align:right;"> 0.3473969 </td>
+   <td style="text-align:right;"> 0.1388889 </td>
+   <td style="text-align:right;"> 0.0031467 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> DRYMAR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.5137531 </td>
+   <td style="text-align:right;"> 0.2456287 </td>
+   <td style="text-align:right;"> 0.2611111 </td>
+   <td style="text-align:right;"> 0.0040645 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> DRYMAR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.5392806 </td>
+   <td style="text-align:right;"> 0.2237721 </td>
+   <td style="text-align:right;"> 0.2861111 </td>
+   <td style="text-align:right;"> 0.0040645 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> DRYMAR </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_DRYMAR.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojDRYMAR)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -977,6 +6925,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_PICTRI.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsPICTRI)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniPICTRI)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0232301 </td>
+   <td style="text-align:right;"> 0.5425458 </td>
+   <td style="text-align:right;"> 0.00000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PICTRI </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.1908027 </td>
+   <td style="text-align:right;"> 0.1562500 </td>
+   <td style="text-align:right;"> 0.15625 </td>
+   <td style="text-align:right;"> 0.0002655 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PICTRI </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1284610 </td>
+   <td style="text-align:right;"> 0.2242237 </td>
+   <td style="text-align:right;"> 0.06250 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PICTRI </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2821502 </td>
+   <td style="text-align:right;"> 0.1016620 </td>
+   <td style="text-align:right;"> 0.21875 </td>
+   <td style="text-align:right;"> 0.0003982 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PICTRI </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2814836 </td>
+   <td style="text-align:right;"> 0.1019108 </td>
+   <td style="text-align:right;"> 0.21875 </td>
+   <td style="text-align:right;"> 0.0002655 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PICTRI </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_PICTRI.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojPICTRI)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 
 ### LEIMED - vidējais dzenis *Leiopicus medius* {#Chapter10.1.065}
 
@@ -989,6 +7037,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_LEIMED.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsLEIMED)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniLEIMED)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0050805 </td>
+   <td style="text-align:right;"> 0.8780500 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LEIMED </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2666355 </td>
+   <td style="text-align:right;"> 0.1504648 </td>
+   <td style="text-align:right;"> 0.1504559 </td>
+   <td style="text-align:right;"> 0.0049146 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LEIMED </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2663562 </td>
+   <td style="text-align:right;"> 0.1506100 </td>
+   <td style="text-align:right;"> 0.1489362 </td>
+   <td style="text-align:right;"> 0.0049146 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LEIMED </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2447883 </td>
+   <td style="text-align:right;"> 0.1634392 </td>
+   <td style="text-align:right;"> 0.1398176 </td>
+   <td style="text-align:right;"> 0.0042680 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LEIMED </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2447883 </td>
+   <td style="text-align:right;"> 0.1634392 </td>
+   <td style="text-align:right;"> 0.1398176 </td>
+   <td style="text-align:right;"> 0.0042680 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LEIMED </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_LEIMED.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojLEIMED)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -1007,6 +7155,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_DRYMIN.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsDRYMIN)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniDRYMIN)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0839183 </td>
+   <td style="text-align:right;"> 0.6090570 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0001328 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> DRYMIN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4356895 </td>
+   <td style="text-align:right;"> 0.1579000 </td>
+   <td style="text-align:right;"> 0.1578947 </td>
+   <td style="text-align:right;"> 0.0013278 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> DRYMIN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4448728 </td>
+   <td style="text-align:right;"> 0.1523264 </td>
+   <td style="text-align:right;"> 0.1578947 </td>
+   <td style="text-align:right;"> 0.0014606 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> DRYMIN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3452528 </td>
+   <td style="text-align:right;"> 0.2219955 </td>
+   <td style="text-align:right;"> 0.1263158 </td>
+   <td style="text-align:right;"> 0.0009295 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> DRYMIN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3318235 </td>
+   <td style="text-align:right;"> 0.2332421 </td>
+   <td style="text-align:right;"> 0.1052632 </td>
+   <td style="text-align:right;"> 0.0005311 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> DRYMIN </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_DRYMIN.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojDRYMIN)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### DENLEU - baltmugurdzenis *Dendrocopos leucotos* {#Chapter10.1.067}
 
 
@@ -1016,6 +7264,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 <p class="caption">(\#fig:NovAtlaseDENLEU)Novērojumu atlases gaita un modelēšanā izmantojamie baltmugurdzeņa *Dendrocopos leucotos* novērojumi un fona punkti: A - novērojumu saglabāšanās atlases gaitā; B - visu pieejamo novērojumu (solis 1) izvietojums; C - ar vismaz iespējamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); D - ar vismaz ticamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); E - ar pierādītu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); F - modelēšanā izmantojamā apmācību kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai); G - modelēšanā izmantojamā neatkarīgās testēšanas kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai)</p>
 </div>
 
+
+<br>
+
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_DENLEU.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsDENLEU)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniDENLEU)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0347474 </td>
+   <td style="text-align:right;"> 0.6940838 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0001323 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> DENLEU </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3101320 </td>
+   <td style="text-align:right;"> 0.1767417 </td>
+   <td style="text-align:right;"> 0.1758242 </td>
+   <td style="text-align:right;"> 0.0019849 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> DENLEU </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3088151 </td>
+   <td style="text-align:right;"> 0.1778317 </td>
+   <td style="text-align:right;"> 0.1703297 </td>
+   <td style="text-align:right;"> 0.0019849 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> DENLEU </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2772078 </td>
+   <td style="text-align:right;"> 0.2033000 </td>
+   <td style="text-align:right;"> 0.1703297 </td>
+   <td style="text-align:right;"> 0.0014556 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> DENLEU </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2581977 </td>
+   <td style="text-align:right;"> 0.2215340 </td>
+   <td style="text-align:right;"> 0.1483516 </td>
+   <td style="text-align:right;"> 0.0011909 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> DENLEU </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_DENLEU.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojDENLEU)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
 
 <br>
 
@@ -1037,6 +7385,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_DENMAJ.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsDENMAJ)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniDENMAJ)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0013063 </td>
+   <td style="text-align:right;"> 0.9824047 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> DENMAJ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4592525 </td>
+   <td style="text-align:right;"> 0.2552266 </td>
+   <td style="text-align:right;"> 0.2550218 </td>
+   <td style="text-align:right;"> 0.0146724 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> DENMAJ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3530964 </td>
+   <td style="text-align:right;"> 0.3532305 </td>
+   <td style="text-align:right;"> 0.1318777 </td>
+   <td style="text-align:right;"> 0.0078421 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> DENMAJ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4382362 </td>
+   <td style="text-align:right;"> 0.2737679 </td>
+   <td style="text-align:right;"> 0.2279476 </td>
+   <td style="text-align:right;"> 0.0123956 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> DENMAJ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3881048 </td>
+   <td style="text-align:right;"> 0.3188913 </td>
+   <td style="text-align:right;"> 0.1746725 </td>
+   <td style="text-align:right;"> 0.0092335 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> DENMAJ </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_DENMAJ.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojDENMAJ)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### FALTIN - lauku piekūns *Falco tinnunculus* {#Chapter10.1.069}
 
 
@@ -1048,6 +7496,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_FALTIN.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsFALTIN)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniFALTIN)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0152096 </td>
+   <td style="text-align:right;"> 0.5473214 </td>
+   <td style="text-align:right;"> 0.00000 </td>
+   <td style="text-align:right;"> 0.0005292 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> FALTIN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.1976141 </td>
+   <td style="text-align:right;"> 0.1450397 </td>
+   <td style="text-align:right;"> 0.14375 </td>
+   <td style="text-align:right;"> 0.0025139 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> FALTIN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1479819 </td>
+   <td style="text-align:right;"> 0.1789187 </td>
+   <td style="text-align:right;"> 0.08750 </td>
+   <td style="text-align:right;"> 0.0019847 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> FALTIN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.1157455 </td>
+   <td style="text-align:right;"> 0.2117560 </td>
+   <td style="text-align:right;"> 0.08125 </td>
+   <td style="text-align:right;"> 0.0015877 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> FALTIN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1053122 </td>
+   <td style="text-align:right;"> 0.2261905 </td>
+   <td style="text-align:right;"> 0.07500 </td>
+   <td style="text-align:right;"> 0.0011908 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> FALTIN </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_FALTIN.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojFALTIN)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -1084,6 +7632,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_ORIORI.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsORIORI)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniORIORI)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0139660 </td>
+   <td style="text-align:right;"> 0.9596741 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ORIORI </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4768564 </td>
+   <td style="text-align:right;"> 0.2670441 </td>
+   <td style="text-align:right;"> 0.2670520 </td>
+   <td style="text-align:right;"> 0.0228557 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ORIORI </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4542005 </td>
+   <td style="text-align:right;"> 0.2871150 </td>
+   <td style="text-align:right;"> 0.2387283 </td>
+   <td style="text-align:right;"> 0.0215041 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ORIORI </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4417394 </td>
+   <td style="text-align:right;"> 0.2997744 </td>
+   <td style="text-align:right;"> 0.2306358 </td>
+   <td style="text-align:right;"> 0.0206439 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ORIORI </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4944919 </td>
+   <td style="text-align:right;"> 0.2515767 </td>
+   <td style="text-align:right;"> 0.2878613 </td>
+   <td style="text-align:right;"> 0.0235930 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ORIORI </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_ORIORI.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojORIORI)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### LANCOL - brūnā čakste *Lanius collurio* {#Chapter10.1.072}
 
 
@@ -1092,6 +7740,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 <p class="caption">(\#fig:NovAtlaseLANCOL)Novērojumu atlases gaita un modelēšanā izmantojamie brūnās čakstes *Lanius collurio* novērojumi un fona punkti: A - novērojumu saglabāšanās atlases gaitā; B - visu pieejamo novērojumu (solis 1) izvietojums; C - ar vismaz iespējamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); D - ar vismaz ticamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); E - ar pierādītu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); F - modelēšanā izmantojamā apmācību kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai); G - modelēšanā izmantojamā neatkarīgās testēšanas kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai)</p>
 </div>
 
+
+<br>
+
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_LANCOL.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsLANCOL)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniLANCOL)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0138732 </td>
+   <td style="text-align:right;"> 0.9508158 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LANCOL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4340123 </td>
+   <td style="text-align:right;"> 0.2413858 </td>
+   <td style="text-align:right;"> 0.2412060 </td>
+   <td style="text-align:right;"> 0.0170234 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LANCOL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3971690 </td>
+   <td style="text-align:right;"> 0.2684557 </td>
+   <td style="text-align:right;"> 0.2074659 </td>
+   <td style="text-align:right;"> 0.0148955 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LANCOL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3961134 </td>
+   <td style="text-align:right;"> 0.2695311 </td>
+   <td style="text-align:right;"> 0.2074659 </td>
+   <td style="text-align:right;"> 0.0148955 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LANCOL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3871665 </td>
+   <td style="text-align:right;"> 0.2777596 </td>
+   <td style="text-align:right;"> 0.2017229 </td>
+   <td style="text-align:right;"> 0.0137689 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LANCOL </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_LANCOL.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojLANCOL)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
 
 <br>
 
@@ -1112,6 +7860,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_LANEXC.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsLANEXC)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniLANEXC)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0698624 </td>
+   <td style="text-align:right;"> 0.6867093 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0003970 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LANEXC </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4041920 </td>
+   <td style="text-align:right;"> 0.1583569 </td>
+   <td style="text-align:right;"> 0.1592357 </td>
+   <td style="text-align:right;"> 0.0030439 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LANEXC </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4041653 </td>
+   <td style="text-align:right;"> 0.1584065 </td>
+   <td style="text-align:right;"> 0.1528662 </td>
+   <td style="text-align:right;"> 0.0030439 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LANEXC </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2673128 </td>
+   <td style="text-align:right;"> 0.2642754 </td>
+   <td style="text-align:right;"> 0.0828025 </td>
+   <td style="text-align:right;"> 0.0019852 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LANEXC </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3447583 </td>
+   <td style="text-align:right;"> 0.1969043 </td>
+   <td style="text-align:right;"> 0.1273885 </td>
+   <td style="text-align:right;"> 0.0021175 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LANEXC </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_LANEXC.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojLANEXC)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### NUCCAR - riekstrozis *Nucifraga caryocatactes* {#Chapter10.1.074}
 
 
@@ -1123,6 +7971,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_NUCCAR.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsNUCCAR)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniNUCCAR)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0472366 </td>
+   <td style="text-align:right;"> 0.5922511 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> NUCCAR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3963221 </td>
+   <td style="text-align:right;"> 0.2020598 </td>
+   <td style="text-align:right;"> 0.2020460 </td>
+   <td style="text-align:right;"> 0.0032727 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> NUCCAR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2954782 </td>
+   <td style="text-align:right;"> 0.2727317 </td>
+   <td style="text-align:right;"> 0.1048593 </td>
+   <td style="text-align:right;"> 0.0015709 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> NUCCAR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4101929 </td>
+   <td style="text-align:right;"> 0.1937224 </td>
+   <td style="text-align:right;"> 0.2122762 </td>
+   <td style="text-align:right;"> 0.0034036 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> NUCCAR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3052229 </td>
+   <td style="text-align:right;"> 0.2653752 </td>
+   <td style="text-align:right;"> 0.1202046 </td>
+   <td style="text-align:right;"> 0.0015709 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> NUCCAR </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_NUCCAR.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojNUCCAR)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -1141,6 +8089,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_PERATE.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsPERATE)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniPERATE)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0337048 </td>
+   <td style="text-align:right;"> 0.5899083 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0006224 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PERATE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4400670 </td>
+   <td style="text-align:right;"> 0.2077922 </td>
+   <td style="text-align:right;"> 0.2077748 </td>
+   <td style="text-align:right;"> 0.0139408 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PERATE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3644216 </td>
+   <td style="text-align:right;"> 0.2530373 </td>
+   <td style="text-align:right;"> 0.1380697 </td>
+   <td style="text-align:right;"> 0.0098332 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PERATE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4115503 </td>
+   <td style="text-align:right;"> 0.2253410 </td>
+   <td style="text-align:right;"> 0.1796247 </td>
+   <td style="text-align:right;"> 0.0118247 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PERATE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3041601 </td>
+   <td style="text-align:right;"> 0.2947447 </td>
+   <td style="text-align:right;"> 0.1038874 </td>
+   <td style="text-align:right;"> 0.0063480 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PERATE </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_PERATE.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojPERATE)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 
 ### LOPCRI - cekulzīlīte *Lophophanes cristatus* {#Chapter10.1.076}
 
@@ -1153,6 +8201,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_LOPCRI.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsLOPCRI)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniLOPCRI)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0077467 </td>
+   <td style="text-align:right;"> 0.7511023 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LOPCRI </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4573092 </td>
+   <td style="text-align:right;"> 0.2161033 </td>
+   <td style="text-align:right;"> 0.2163380 </td>
+   <td style="text-align:right;"> 0.0187753 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LOPCRI </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3377451 </td>
+   <td style="text-align:right;"> 0.2827026 </td>
+   <td style="text-align:right;"> 0.1205634 </td>
+   <td style="text-align:right;"> 0.0107989 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LOPCRI </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4138531 </td>
+   <td style="text-align:right;"> 0.2391604 </td>
+   <td style="text-align:right;"> 0.1808451 </td>
+   <td style="text-align:right;"> 0.0148484 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LOPCRI </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3156644 </td>
+   <td style="text-align:right;"> 0.2963439 </td>
+   <td style="text-align:right;"> 0.1138028 </td>
+   <td style="text-align:right;"> 0.0088354 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LOPCRI </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_LOPCRI.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojLOPCRI)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -1170,6 +8318,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_POEPAL.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsPOEPAL)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniPOEPAL)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0199488 </td>
+   <td style="text-align:right;"> 0.7805207 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> POEPAL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4088454 </td>
+   <td style="text-align:right;"> 0.2244455 </td>
+   <td style="text-align:right;"> 0.2244624 </td>
+   <td style="text-align:right;"> 0.0083784 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> POEPAL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3798046 </td>
+   <td style="text-align:right;"> 0.2520251 </td>
+   <td style="text-align:right;"> 0.1881720 </td>
+   <td style="text-align:right;"> 0.0072184 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> POEPAL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3856921 </td>
+   <td style="text-align:right;"> 0.2465284 </td>
+   <td style="text-align:right;"> 0.1962366 </td>
+   <td style="text-align:right;"> 0.0074762 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> POEPAL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3317280 </td>
+   <td style="text-align:right;"> 0.3004339 </td>
+   <td style="text-align:right;"> 0.1465054 </td>
+   <td style="text-align:right;"> 0.0051560 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> POEPAL </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_POEPAL.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojPOEPAL)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### POEMON - pelēkā zīlīte *Poecile montanus* {#Chapter10.1.078}
 
 
@@ -1181,6 +8429,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_POEMON.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsPOEMON)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniPOEMON)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0237883 </td>
+   <td style="text-align:right;"> 0.7473363 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> POEMON </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.5018770 </td>
+   <td style="text-align:right;"> 0.2568411 </td>
+   <td style="text-align:right;"> 0.2566845 </td>
+   <td style="text-align:right;"> 0.0127916 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> POEMON </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3726291 </td>
+   <td style="text-align:right;"> 0.3807088 </td>
+   <td style="text-align:right;"> 0.1176471 </td>
+   <td style="text-align:right;"> 0.0063958 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> POEMON </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.5079199 </td>
+   <td style="text-align:right;"> 0.2512556 </td>
+   <td style="text-align:right;"> 0.2643239 </td>
+   <td style="text-align:right;"> 0.0131678 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> POEMON </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4626559 </td>
+   <td style="text-align:right;"> 0.2944849 </td>
+   <td style="text-align:right;"> 0.2116119 </td>
+   <td style="text-align:right;"> 0.0096564 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> POEMON </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_POEMON.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojPOEMON)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -1198,6 +8546,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_LULARB.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsLULARB)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniLULARB)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0495886 </td>
+   <td style="text-align:right;"> 0.9490826 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0002445 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LULARB </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4565776 </td>
+   <td style="text-align:right;"> 0.2705046 </td>
+   <td style="text-align:right;"> 0.2702104 </td>
+   <td style="text-align:right;"> 0.0223744 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LULARB </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4228652 </td>
+   <td style="text-align:right;"> 0.3043578 </td>
+   <td style="text-align:right;"> 0.2342193 </td>
+   <td style="text-align:right;"> 0.0194400 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LULARB </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4385714 </td>
+   <td style="text-align:right;"> 0.2876606 </td>
+   <td style="text-align:right;"> 0.2552602 </td>
+   <td style="text-align:right;"> 0.0206627 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LULARB </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4506177 </td>
+   <td style="text-align:right;"> 0.2759633 </td>
+   <td style="text-align:right;"> 0.2657807 </td>
+   <td style="text-align:right;"> 0.0212740 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LULARB </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_LULARB.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojLULARB)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### ALAARV - lauku cīrulis *Alauda arvensis* {#Chapter10.1.080}
 
 
@@ -1209,6 +8657,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_ALAARV.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsALAARV)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniALAARV)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0001325 </td>
+   <td style="text-align:right;"> 0.8558855 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ALAARV </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4747247 </td>
+   <td style="text-align:right;"> 0.1848341 </td>
+   <td style="text-align:right;"> 0.1852941 </td>
+   <td style="text-align:right;"> 0.0064616 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ALAARV </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3277938 </td>
+   <td style="text-align:right;"> 0.2502660 </td>
+   <td style="text-align:right;"> 0.0720588 </td>
+   <td style="text-align:right;"> 0.0040062 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ALAARV </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4125434 </td>
+   <td style="text-align:right;"> 0.2124480 </td>
+   <td style="text-align:right;"> 0.1382353 </td>
+   <td style="text-align:right;"> 0.0052985 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ALAARV </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1931375 </td>
+   <td style="text-align:right;"> 0.3003192 </td>
+   <td style="text-align:right;"> 0.0367647 </td>
+   <td style="text-align:right;"> 0.0016800 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ALAARV </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_ALAARV.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojALAARV)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -1226,6 +8774,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_IDUCAL.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsIDUCAL)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniIDUCAL)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.5637721 </td>
+   <td style="text-align:right;"> 0.1527625 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> IDUCAL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.6958279 </td>
+   <td style="text-align:right;"> 0.0909681 </td>
+   <td style="text-align:right;"> 0.1111111 </td>
+   <td style="text-align:right;"> 0.0002664 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> IDUCAL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.6958181 </td>
+   <td style="text-align:right;"> 0.0910181 </td>
+   <td style="text-align:right;"> 0.0555556 </td>
+   <td style="text-align:right;"> 0.0002664 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> IDUCAL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.6518297 </td>
+   <td style="text-align:right;"> 0.1133979 </td>
+   <td style="text-align:right;"> 0.0555556 </td>
+   <td style="text-align:right;"> 0.0001332 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> IDUCAL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.6516350 </td>
+   <td style="text-align:right;"> 0.1134979 </td>
+   <td style="text-align:right;"> 0.0555556 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> IDUCAL </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_IDUCAL.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojIDUCAL)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### ACRRIS - purva ķauķis *Acrocephalus palustris* {#Chapter10.1.082}
 
 
@@ -1237,6 +8885,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_ACRRIS.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsACRRIS)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniACRRIS)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0144053 </td>
+   <td style="text-align:right;"> 0.9593199 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0001265 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ACRRIS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4403031 </td>
+   <td style="text-align:right;"> 0.2379238 </td>
+   <td style="text-align:right;"> 0.2379249 </td>
+   <td style="text-align:right;"> 0.0099937 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ACRRIS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4093564 </td>
+   <td style="text-align:right;"> 0.2588558 </td>
+   <td style="text-align:right;"> 0.2075134 </td>
+   <td style="text-align:right;"> 0.0089817 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ACRRIS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4552802 </td>
+   <td style="text-align:right;"> 0.2274579 </td>
+   <td style="text-align:right;"> 0.2468694 </td>
+   <td style="text-align:right;"> 0.0101202 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ACRRIS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4552602 </td>
+   <td style="text-align:right;"> 0.2275052 </td>
+   <td style="text-align:right;"> 0.2468694 </td>
+   <td style="text-align:right;"> 0.0099937 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ACRRIS </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_ACRRIS.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojACRRIS)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -1254,6 +9002,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_ACRARU.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsACRARU)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniACRARU)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0049626 </td>
+   <td style="text-align:right;"> 0.6138783 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ACRARU </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.1415310 </td>
+   <td style="text-align:right;"> 0.0690497 </td>
+   <td style="text-align:right;"> 0.0690377 </td>
+   <td style="text-align:right;"> 0.0026025 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ACRARU </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1123554 </td>
+   <td style="text-align:right;"> 0.0784745 </td>
+   <td style="text-align:right;"> 0.0543933 </td>
+   <td style="text-align:right;"> 0.0018217 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ACRARU </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.0927884 </td>
+   <td style="text-align:right;"> 0.0884852 </td>
+   <td style="text-align:right;"> 0.0502092 </td>
+   <td style="text-align:right;"> 0.0016916 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ACRARU </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1052077 </td>
+   <td style="text-align:right;"> 0.0814044 </td>
+   <td style="text-align:right;"> 0.0523013 </td>
+   <td style="text-align:right;"> 0.0016916 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ACRARU </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_ACRARU.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojACRARU)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### LOCFLU - upes ķauķis *Locustella fluviatilis* {#Chapter10.1.084}
 
 
@@ -1265,6 +9113,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_LOCFLU.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsLOCFLU)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniLOCFLU)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0146528 </td>
+   <td style="text-align:right;"> 0.8485703 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0005195 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LOCFLU </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4011063 </td>
+   <td style="text-align:right;"> 0.1794398 </td>
+   <td style="text-align:right;"> 0.1787611 </td>
+   <td style="text-align:right;"> 0.0075325 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LOCFLU </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3860338 </td>
+   <td style="text-align:right;"> 0.1887279 </td>
+   <td style="text-align:right;"> 0.1592920 </td>
+   <td style="text-align:right;"> 0.0071429 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LOCFLU </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3212259 </td>
+   <td style="text-align:right;"> 0.2330286 </td>
+   <td style="text-align:right;"> 0.1292035 </td>
+   <td style="text-align:right;"> 0.0058442 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LOCFLU </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2935124 </td>
+   <td style="text-align:right;"> 0.2561758 </td>
+   <td style="text-align:right;"> 0.1168142 </td>
+   <td style="text-align:right;"> 0.0046753 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LOCFLU </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_LOCFLU.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojLOCFLU)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -1282,6 +9230,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_LOCNAE.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsLOCNAE)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniLOCNAE)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0025672 </td>
+   <td style="text-align:right;"> 0.8696013 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0001304 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LOCNAE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2962411 </td>
+   <td style="text-align:right;"> 0.1619735 </td>
+   <td style="text-align:right;"> 0.1629328 </td>
+   <td style="text-align:right;"> 0.0065198 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LOCNAE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2660833 </td>
+   <td style="text-align:right;"> 0.1795422 </td>
+   <td style="text-align:right;"> 0.1384929 </td>
+   <td style="text-align:right;"> 0.0058678 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LOCNAE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2138230 </td>
+   <td style="text-align:right;"> 0.2168269 </td>
+   <td style="text-align:right;"> 0.1221996 </td>
+   <td style="text-align:right;"> 0.0045638 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LOCNAE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1932095 </td>
+   <td style="text-align:right;"> 0.2340052 </td>
+   <td style="text-align:right;"> 0.1018330 </td>
+   <td style="text-align:right;"> 0.0037815 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LOCNAE </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_LOCNAE.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojLOCNAE)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### HIRRUS - bezdelīga *Hirundo rustica* {#Chapter10.1.086}
 
 
@@ -1293,6 +9341,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_HIRRUS.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsHIRRUS)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniHIRRUS)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0113005 </td>
+   <td style="text-align:right;"> 0.7571848 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> HIRRUS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2901339 </td>
+   <td style="text-align:right;"> 0.1471140 </td>
+   <td style="text-align:right;"> 0.1470968 </td>
+   <td style="text-align:right;"> 0.0054103 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> HIRRUS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2239787 </td>
+   <td style="text-align:right;"> 0.1856737 </td>
+   <td style="text-align:right;"> 0.0941935 </td>
+   <td style="text-align:right;"> 0.0033492 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> HIRRUS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2584312 </td>
+   <td style="text-align:right;"> 0.1637221 </td>
+   <td style="text-align:right;"> 0.1238710 </td>
+   <td style="text-align:right;"> 0.0047662 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> HIRRUS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2285932 </td>
+   <td style="text-align:right;"> 0.1826891 </td>
+   <td style="text-align:right;"> 0.1045161 </td>
+   <td style="text-align:right;"> 0.0033492 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> HIRRUS </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_HIRRUS.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojHIRRUS)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -1311,6 +9459,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_PHYSIB.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsPHYSIB)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniPHYSIB)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0655375 </td>
+   <td style="text-align:right;"> 0.6278128 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0002608 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PHYSIB </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4646117 </td>
+   <td style="text-align:right;"> 0.1938790 </td>
+   <td style="text-align:right;"> 0.1938776 </td>
+   <td style="text-align:right;"> 0.0059990 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PHYSIB </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4668127 </td>
+   <td style="text-align:right;"> 0.1927076 </td>
+   <td style="text-align:right;"> 0.1938776 </td>
+   <td style="text-align:right;"> 0.0059990 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PHYSIB </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4078063 </td>
+   <td style="text-align:right;"> 0.2290721 </td>
+   <td style="text-align:right;"> 0.1755102 </td>
+   <td style="text-align:right;"> 0.0045644 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PHYSIB </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3349617 </td>
+   <td style="text-align:right;"> 0.2817396 </td>
+   <td style="text-align:right;"> 0.1224490 </td>
+   <td style="text-align:right;"> 0.0031299 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PHYSIB </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_PHYSIB.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojPHYSIB)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### AEGCAU - garastīte *Aegithalos caudatus* {#Chapter10.1.088}
 
 
@@ -1322,6 +9570,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_AEGCAU.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsAEGCAU)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniAEGCAU)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0304353 </td>
+   <td style="text-align:right;"> 0.7511260 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0001294 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> AEGCAU </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4594043 </td>
+   <td style="text-align:right;"> 0.2545886 </td>
+   <td style="text-align:right;"> 0.2546012 </td>
+   <td style="text-align:right;"> 0.0078913 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> AEGCAU </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3827284 </td>
+   <td style="text-align:right;"> 0.3258753 </td>
+   <td style="text-align:right;"> 0.1610429 </td>
+   <td style="text-align:right;"> 0.0051746 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> AEGCAU </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4455505 </td>
+   <td style="text-align:right;"> 0.2658240 </td>
+   <td style="text-align:right;"> 0.2377301 </td>
+   <td style="text-align:right;"> 0.0071151 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> AEGCAU </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4212082 </td>
+   <td style="text-align:right;"> 0.2876653 </td>
+   <td style="text-align:right;"> 0.2070552 </td>
+   <td style="text-align:right;"> 0.0059508 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> AEGCAU </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_AEGCAU.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojAEGCAU)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -1338,6 +9686,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 <br>
 
 
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_CURNIS.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsCURNIS)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniCURNIS)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0216217 </td>
+   <td style="text-align:right;"> 0.7461209 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0002654 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CURNIS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2917432 </td>
+   <td style="text-align:right;"> 0.1540183 </td>
+   <td style="text-align:right;"> 0.1574074 </td>
+   <td style="text-align:right;"> 0.0015926 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CURNIS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3356518 </td>
+   <td style="text-align:right;"> 0.1320370 </td>
+   <td style="text-align:right;"> 0.1574074 </td>
+   <td style="text-align:right;"> 0.0015926 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CURNIS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.1489304 </td>
+   <td style="text-align:right;"> 0.2927690 </td>
+   <td style="text-align:right;"> 0.0648148 </td>
+   <td style="text-align:right;"> 0.0013271 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CURNIS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4742608 </td>
+   <td style="text-align:right;"> 0.0821564 </td>
+   <td style="text-align:right;"> 0.2685185 </td>
+   <td style="text-align:right;"> 0.0017253 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CURNIS </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_CURNIS.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojCURNIS)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
 ### CURCOM - brūnspārnu ķauķis *Curruca communis* {#Chapter10.1.090}
 
 
@@ -1349,6 +9797,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_CURCOM.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsCURCOM)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniCURCOM)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0176521 </td>
+   <td style="text-align:right;"> 0.9907145 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CURCOM </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4732487 </td>
+   <td style="text-align:right;"> 0.2778564 </td>
+   <td style="text-align:right;"> 0.2778626 </td>
+   <td style="text-align:right;"> 0.0333294 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CURCOM </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4468963 </td>
+   <td style="text-align:right;"> 0.3002741 </td>
+   <td style="text-align:right;"> 0.2519084 </td>
+   <td style="text-align:right;"> 0.0303641 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CURCOM </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4341467 </td>
+   <td style="text-align:right;"> 0.3123010 </td>
+   <td style="text-align:right;"> 0.2423664 </td>
+   <td style="text-align:right;"> 0.0287036 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CURCOM </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4177655 </td>
+   <td style="text-align:right;"> 0.3288380 </td>
+   <td style="text-align:right;"> 0.2263359 </td>
+   <td style="text-align:right;"> 0.0260942 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CURCOM </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_CURCOM.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojCURCOM)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -1366,6 +9914,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_CERFAM.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsCERFAM)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniCERFAM)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0020278 </td>
+   <td style="text-align:right;"> 0.8271537 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CERFAM </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4501436 </td>
+   <td style="text-align:right;"> 0.2282789 </td>
+   <td style="text-align:right;"> 0.2282158 </td>
+   <td style="text-align:right;"> 0.0207407 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CERFAM </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3506378 </td>
+   <td style="text-align:right;"> 0.2976849 </td>
+   <td style="text-align:right;"> 0.1381150 </td>
+   <td style="text-align:right;"> 0.0132099 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CERFAM </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3941863 </td>
+   <td style="text-align:right;"> 0.2668788 </td>
+   <td style="text-align:right;"> 0.1760522 </td>
+   <td style="text-align:right;"> 0.0159259 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CERFAM </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2981321 </td>
+   <td style="text-align:right;"> 0.3388213 </td>
+   <td style="text-align:right;"> 0.1072910 </td>
+   <td style="text-align:right;"> 0.0086420 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CERFAM </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_CERFAM.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojCERFAM)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### SITEUR - dzilnītis *Sitta europaea* {#Chapter10.1.092}
 
 
@@ -1377,6 +10025,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_SITEUR.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsSITEUR)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniSITEUR)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0165695 </td>
+   <td style="text-align:right;"> 0.7098837 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0002574 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> SITEUR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3463355 </td>
+   <td style="text-align:right;"> 0.1872897 </td>
+   <td style="text-align:right;"> 0.1867995 </td>
+   <td style="text-align:right;"> 0.0109381 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> SITEUR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2793767 </td>
+   <td style="text-align:right;"> 0.2399769 </td>
+   <td style="text-align:right;"> 0.1245330 </td>
+   <td style="text-align:right;"> 0.0079784 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> SITEUR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2758945 </td>
+   <td style="text-align:right;"> 0.2431978 </td>
+   <td style="text-align:right;"> 0.1232877 </td>
+   <td style="text-align:right;"> 0.0077210 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> SITEUR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2758945 </td>
+   <td style="text-align:right;"> 0.2431978 </td>
+   <td style="text-align:right;"> 0.1232877 </td>
+   <td style="text-align:right;"> 0.0077210 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> SITEUR </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_SITEUR.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojSITEUR)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -1394,6 +10142,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_STUVUL.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsSTUVUL)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniSTUVUL)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0139699 </td>
+   <td style="text-align:right;"> 0.9197672 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> STUVUL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3612804 </td>
+   <td style="text-align:right;"> 0.1965726 </td>
+   <td style="text-align:right;"> 0.1968289 </td>
+   <td style="text-align:right;"> 0.0176678 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> STUVUL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3548359 </td>
+   <td style="text-align:right;"> 0.2005132 </td>
+   <td style="text-align:right;"> 0.1891744 </td>
+   <td style="text-align:right;"> 0.0169368 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> STUVUL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3195377 </td>
+   <td style="text-align:right;"> 0.2235612 </td>
+   <td style="text-align:right;"> 0.1705850 </td>
+   <td style="text-align:right;"> 0.0144998 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> STUVUL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3236402 </td>
+   <td style="text-align:right;"> 0.2205370 </td>
+   <td style="text-align:right;"> 0.1738655 </td>
+   <td style="text-align:right;"> 0.0144998 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> STUVUL </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_STUVUL.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojSTUVUL)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### TURVIS - sila strazds *Turdus viscivorus* {#Chapter10.1.094}
 
 
@@ -1408,6 +10256,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_TURVIS.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsTURVIS)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniTURVIS)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0136732 </td>
+   <td style="text-align:right;"> 0.7515023 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0001237 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TURVIS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4673536 </td>
+   <td style="text-align:right;"> 0.2234446 </td>
+   <td style="text-align:right;"> 0.2234432 </td>
+   <td style="text-align:right;"> 0.0173139 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TURVIS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3300550 </td>
+   <td style="text-align:right;"> 0.3009614 </td>
+   <td style="text-align:right;"> 0.1257631 </td>
+   <td style="text-align:right;"> 0.0098936 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TURVIS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4270332 </td>
+   <td style="text-align:right;"> 0.2466950 </td>
+   <td style="text-align:right;"> 0.1910867 </td>
+   <td style="text-align:right;"> 0.0137274 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TURVIS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4030676 </td>
+   <td style="text-align:right;"> 0.2594527 </td>
+   <td style="text-align:right;"> 0.1746032 </td>
+   <td style="text-align:right;"> 0.0124907 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TURVIS </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_TURVIS.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojTURVIS)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### TURILI - plukšķis *Turdus iliacus* {#Chapter10.1.095}
 
 
@@ -1419,6 +10367,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_TURILI.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsTURILI)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniTURILI)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0417061 </td>
+   <td style="text-align:right;"> 0.7265836 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0005256 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TURILI </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3054225 </td>
+   <td style="text-align:right;"> 0.2160752 </td>
+   <td style="text-align:right;"> 0.2145110 </td>
+   <td style="text-align:right;"> 0.0040731 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TURILI </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2725849 </td>
+   <td style="text-align:right;"> 0.2509721 </td>
+   <td style="text-align:right;"> 0.1640379 </td>
+   <td style="text-align:right;"> 0.0034161 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TURILI </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2843184 </td>
+   <td style="text-align:right;"> 0.2379288 </td>
+   <td style="text-align:right;"> 0.1829653 </td>
+   <td style="text-align:right;"> 0.0034161 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TURILI </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4388440 </td>
+   <td style="text-align:right;"> 0.1223114 </td>
+   <td style="text-align:right;"> 0.3438486 </td>
+   <td style="text-align:right;"> 0.0047300 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> TURILI </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_TURILI.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojTURILI)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -1453,6 +10501,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_LUSLUS.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsLUSLUS)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniLUSLUS)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0294887 </td>
+   <td style="text-align:right;"> 0.8735066 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0002430 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LUSLUS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4201512 </td>
+   <td style="text-align:right;"> 0.2424989 </td>
+   <td style="text-align:right;"> 0.2425026 </td>
+   <td style="text-align:right;"> 0.0221088 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LUSLUS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3995064 </td>
+   <td style="text-align:right;"> 0.2593251 </td>
+   <td style="text-align:right;"> 0.2176836 </td>
+   <td style="text-align:right;"> 0.0204082 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LUSLUS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3880353 </td>
+   <td style="text-align:right;"> 0.2695394 </td>
+   <td style="text-align:right;"> 0.2109617 </td>
+   <td style="text-align:right;"> 0.0198008 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LUSLUS </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3384296 </td>
+   <td style="text-align:right;"> 0.3145007 </td>
+   <td style="text-align:right;"> 0.1778697 </td>
+   <td style="text-align:right;"> 0.0140914 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LUSLUS </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_LUSLUS.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojLUSLUS)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### FICPAR - mazais mušķērājs *Ficedula parva* {#Chapter10.1.098}
 
 
@@ -1464,6 +10612,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_FICPAR.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsFICPAR)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniFICPAR)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0122250 </td>
+   <td style="text-align:right;"> 0.8104611 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0001229 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> FICPAR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4466948 </td>
+   <td style="text-align:right;"> 0.2084373 </td>
+   <td style="text-align:right;"> 0.2081311 </td>
+   <td style="text-align:right;"> 0.0156039 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> FICPAR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3485425 </td>
+   <td style="text-align:right;"> 0.2747436 </td>
+   <td style="text-align:right;"> 0.1225728 </td>
+   <td style="text-align:right;"> 0.0089692 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> FICPAR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4237241 </td>
+   <td style="text-align:right;"> 0.2216061 </td>
+   <td style="text-align:right;"> 0.1911408 </td>
+   <td style="text-align:right;"> 0.0141295 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> FICPAR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3622506 </td>
+   <td style="text-align:right;"> 0.2641623 </td>
+   <td style="text-align:right;"> 0.1383495 </td>
+   <td style="text-align:right;"> 0.0093378 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> FICPAR </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_FICPAR.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojFICPAR)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -1481,6 +10729,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_FICHYP.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsFICHYP)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniFICHYP)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0186785 </td>
+   <td style="text-align:right;"> 0.8174665 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0001306 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> FICHYP </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3617557 </td>
+   <td style="text-align:right;"> 0.1961196 </td>
+   <td style="text-align:right;"> 0.1961207 </td>
+   <td style="text-align:right;"> 0.0057449 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> FICHYP </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3025782 </td>
+   <td style="text-align:right;"> 0.2442576 </td>
+   <td style="text-align:right;"> 0.1293103 </td>
+   <td style="text-align:right;"> 0.0045698 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> FICHYP </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3125157 </td>
+   <td style="text-align:right;"> 0.2356075 </td>
+   <td style="text-align:right;"> 0.1465517 </td>
+   <td style="text-align:right;"> 0.0045698 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> FICHYP </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3295532 </td>
+   <td style="text-align:right;"> 0.2213860 </td>
+   <td style="text-align:right;"> 0.1702586 </td>
+   <td style="text-align:right;"> 0.0045698 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> FICHYP </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_FICHYP.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojFICHYP)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### SAXRUB - lukstu čakstīte *Saxicola rubetra* {#Chapter10.1.100}
 
 
@@ -1490,6 +10838,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 <p class="caption">(\#fig:NovAtlaseSAXRUB)Novērojumu atlases gaita un modelēšanā izmantojamie lukstu čakstītes *Saxicola rubetra* novērojumi un fona punkti: A - novērojumu saglabāšanās atlases gaitā; B - visu pieejamo novērojumu (solis 1) izvietojums; C - ar vismaz iespējamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); D - ar vismaz ticamu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); E - ar pierādītu ligzdošanu skaitītie novēorjumi, kas izturējuši līdz septītā soļa beigām (punkti ir unikālie 1 km kvadrāti, krusti ir unikālie 100 m kvadrāti); F - modelēšanā izmantojamā apmācību kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai); G - modelēšanā izmantojamā neatkarīgās testēšanas kopa (punkti ir sugas klātbūtnes, krusti ir fona raksturošanai)</p>
 </div>
 
+
+<br>
+
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_SAXRUB.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsSAXRUB)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniSAXRUB)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0034503 </td>
+   <td style="text-align:right;"> 0.9925960 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> SAXRUB </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4447038 </td>
+   <td style="text-align:right;"> 0.2249422 </td>
+   <td style="text-align:right;"> 0.2250465 </td>
+   <td style="text-align:right;"> 0.0161051 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> SAXRUB </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3567844 </td>
+   <td style="text-align:right;"> 0.2892180 </td>
+   <td style="text-align:right;"> 0.1494110 </td>
+   <td style="text-align:right;"> 0.0094153 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> SAXRUB </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4200798 </td>
+   <td style="text-align:right;"> 0.2429894 </td>
+   <td style="text-align:right;"> 0.2058277 </td>
+   <td style="text-align:right;"> 0.0143707 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> SAXRUB </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3490692 </td>
+   <td style="text-align:right;"> 0.2963443 </td>
+   <td style="text-align:right;"> 0.1444513 </td>
+   <td style="text-align:right;"> 0.0086720 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> SAXRUB </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_SAXRUB.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojSAXRUB)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
 
 <br>
 
@@ -1509,6 +10957,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_REGREG.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsREGREG)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniREGREG)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0053686 </td>
+   <td style="text-align:right;"> 0.8837199 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> REGREG </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4855805 </td>
+   <td style="text-align:right;"> 0.2426978 </td>
+   <td style="text-align:right;"> 0.2426882 </td>
+   <td style="text-align:right;"> 0.0174332 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> REGREG </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3859272 </td>
+   <td style="text-align:right;"> 0.3326853 </td>
+   <td style="text-align:right;"> 0.1381456 </td>
+   <td style="text-align:right;"> 0.0091494 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> REGREG </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4660593 </td>
+   <td style="text-align:right;"> 0.2585289 </td>
+   <td style="text-align:right;"> 0.2240199 </td>
+   <td style="text-align:right;"> 0.0157023 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> REGREG </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4448854 </td>
+   <td style="text-align:right;"> 0.2766282 </td>
+   <td style="text-align:right;"> 0.2034848 </td>
+   <td style="text-align:right;"> 0.0126113 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> REGREG </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_REGREG.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojREGREG)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### REGIGN - sārtgalvītis *Regulus ignicapilla* {#Chapter10.1.102}
 
 
@@ -1521,6 +11069,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 <br>
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_REGIGN.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsREGIGN)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniREGIGN)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0112468 </td>
+   <td style="text-align:right;"> 0.5990097 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0001297 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> REGIGN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3203405 </td>
+   <td style="text-align:right;"> 0.1421428 </td>
+   <td style="text-align:right;"> 0.1414309 </td>
+   <td style="text-align:right;"> 0.0037604 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> REGIGN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2493156 </td>
+   <td style="text-align:right;"> 0.1747172 </td>
+   <td style="text-align:right;"> 0.1014975 </td>
+   <td style="text-align:right;"> 0.0022044 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> REGIGN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3070321 </td>
+   <td style="text-align:right;"> 0.1477256 </td>
+   <td style="text-align:right;"> 0.1381032 </td>
+   <td style="text-align:right;"> 0.0035010 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> REGIGN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2516892 </td>
+   <td style="text-align:right;"> 0.1733579 </td>
+   <td style="text-align:right;"> 0.1064892 </td>
+   <td style="text-align:right;"> 0.0022044 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> REGIGN </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_REGIGN.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojREGIGN)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### PASMON - lauku zvirbulis *Passer montanus* {#Chapter10.1.103}
 
 
@@ -1531,6 +11179,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_PASMON.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsPASMON)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniPASMON)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0032636 </td>
+   <td style="text-align:right;"> 0.6102383 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PASMON </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2684414 </td>
+   <td style="text-align:right;"> 0.1326256 </td>
+   <td style="text-align:right;"> 0.1326105 </td>
+   <td style="text-align:right;"> 0.0073186 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PASMON </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2155766 </td>
+   <td style="text-align:right;"> 0.1518754 </td>
+   <td style="text-align:right;"> 0.0950792 </td>
+   <td style="text-align:right;"> 0.0064353 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PASMON </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2040965 </td>
+   <td style="text-align:right;"> 0.1563576 </td>
+   <td style="text-align:right;"> 0.0934112 </td>
+   <td style="text-align:right;"> 0.0061830 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PASMON </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1556863 </td>
+   <td style="text-align:right;"> 0.1811748 </td>
+   <td style="text-align:right;"> 0.0717264 </td>
+   <td style="text-align:right;"> 0.0041640 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PASMON </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_PASMON.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojPASMON)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 ### ANTPRA - pļavu čipste *Anthus pratensis* {#Chapter10.1.104}
@@ -1547,6 +11295,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_ANTPRA.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsANTPRA)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniANTPRA)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0085986 </td>
+   <td style="text-align:right;"> 0.7703614 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ANTPRA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3956810 </td>
+   <td style="text-align:right;"> 0.1828280 </td>
+   <td style="text-align:right;"> 0.1834416 </td>
+   <td style="text-align:right;"> 0.0064817 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ANTPRA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3432972 </td>
+   <td style="text-align:right;"> 0.2156682 </td>
+   <td style="text-align:right;"> 0.1298701 </td>
+   <td style="text-align:right;"> 0.0051854 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ANTPRA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3515500 </td>
+   <td style="text-align:right;"> 0.2104293 </td>
+   <td style="text-align:right;"> 0.1412338 </td>
+   <td style="text-align:right;"> 0.0054446 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ANTPRA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2809545 </td>
+   <td style="text-align:right;"> 0.2591802 </td>
+   <td style="text-align:right;"> 0.0957792 </td>
+   <td style="text-align:right;"> 0.0032409 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ANTPRA </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_ANTPRA.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojANTPRA)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### ANTCAM - stepes čipste *Anthus campestris* {#Chapter10.1.105}
 
 
@@ -1557,6 +11405,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_ANTCAM.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsANTCAM)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniANTCAM)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.1789404 </td>
+   <td style="text-align:right;"> 0.0023966 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ANTCAM </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.1789404 </td>
+   <td style="text-align:right;"> 0.0023966 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ANTCAM </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1789404 </td>
+   <td style="text-align:right;"> 0.0023966 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ANTCAM </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2782107 </td>
+   <td style="text-align:right;"> 0.0019972 </td>
+   <td style="text-align:right;"> 0.0714286 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ANTCAM </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2782107 </td>
+   <td style="text-align:right;"> 0.0019972 </td>
+   <td style="text-align:right;"> 0.0714286 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> ANTCAM </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_ANTCAM.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojANTCAM)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 ### MOTFLA - dzeltenā cielava *Motacilla flava* {#Chapter10.1.106}
@@ -1570,6 +11518,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_MOTFLA.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsMOTFLA)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniMOTFLA)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0073020 </td>
+   <td style="text-align:right;"> 0.5004901 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0001308 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> MOTFLA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2822294 </td>
+   <td style="text-align:right;"> 0.1098422 </td>
+   <td style="text-align:right;"> 0.1089109 </td>
+   <td style="text-align:right;"> 0.0035308 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> MOTFLA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2569209 </td>
+   <td style="text-align:right;"> 0.1190570 </td>
+   <td style="text-align:right;"> 0.0891089 </td>
+   <td style="text-align:right;"> 0.0027462 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> MOTFLA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2343689 </td>
+   <td style="text-align:right;"> 0.1290560 </td>
+   <td style="text-align:right;"> 0.0816832 </td>
+   <td style="text-align:right;"> 0.0020923 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> MOTFLA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2115362 </td>
+   <td style="text-align:right;"> 0.1404764 </td>
+   <td style="text-align:right;"> 0.0693069 </td>
+   <td style="text-align:right;"> 0.0017000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> MOTFLA </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_MOTFLA.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojMOTFLA)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -1587,6 +11635,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_MOTCIT.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsMOTCIT)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniMOTCIT)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.4347749 </td>
+   <td style="text-align:right;"> 0.0670930 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> MOTCIT </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4868400 </td>
+   <td style="text-align:right;"> 0.0588000 </td>
+   <td style="text-align:right;"> 0.0588235 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> MOTCIT </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4347749 </td>
+   <td style="text-align:right;"> 0.0670930 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> MOTCIT </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.8920322 </td>
+   <td style="text-align:right;"> 0.0049958 </td>
+   <td style="text-align:right;"> 0.2352941 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> MOTCIT </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.8920322 </td>
+   <td style="text-align:right;"> 0.0049958 </td>
+   <td style="text-align:right;"> 0.2352941 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> MOTCIT </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_MOTCIT.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojMOTCIT)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### COCCOC - dižknābis *Coccothraustes coccothraustes* {#Chapter10.1.108}
 
 
@@ -1598,6 +11746,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_COCCOC.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsCOCCOC)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniCOCCOC)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0144964 </td>
+   <td style="text-align:right;"> 0.9252797 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> COCCOC </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3449411 </td>
+   <td style="text-align:right;"> 0.2113013 </td>
+   <td style="text-align:right;"> 0.2112676 </td>
+   <td style="text-align:right;"> 0.0111182 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> COCCOC </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3915400 </td>
+   <td style="text-align:right;"> 0.1819964 </td>
+   <td style="text-align:right;"> 0.2340195 </td>
+   <td style="text-align:right;"> 0.0129073 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> COCCOC </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2953338 </td>
+   <td style="text-align:right;"> 0.2487810 </td>
+   <td style="text-align:right;"> 0.1787649 </td>
+   <td style="text-align:right;"> 0.0094569 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> COCCOC </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2769500 </td>
+   <td style="text-align:right;"> 0.2642700 </td>
+   <td style="text-align:right;"> 0.1581798 </td>
+   <td style="text-align:right;"> 0.0077955 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> COCCOC </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_COCCOC.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojCOCCOC)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 ### CARERY - mazais svilpis *Carpodacus erythrinus* {#Chapter10.1.109}
@@ -1613,6 +11861,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 <br>
 
 
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_CARERY.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsCARERY)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniCARERY)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0382714 </td>
+   <td style="text-align:right;"> 0.9226905 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0006220 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CARERY </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4530586 </td>
+   <td style="text-align:right;"> 0.2579775 </td>
+   <td style="text-align:right;"> 0.2579787 </td>
+   <td style="text-align:right;"> 0.0186614 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CARERY </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4148126 </td>
+   <td style="text-align:right;"> 0.2950507 </td>
+   <td style="text-align:right;"> 0.2114362 </td>
+   <td style="text-align:right;"> 0.0169196 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CARERY </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4230742 </td>
+   <td style="text-align:right;"> 0.2866778 </td>
+   <td style="text-align:right;"> 0.2240691 </td>
+   <td style="text-align:right;"> 0.0171684 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CARERY </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4512797 </td>
+   <td style="text-align:right;"> 0.2594660 </td>
+   <td style="text-align:right;"> 0.2526596 </td>
+   <td style="text-align:right;"> 0.0182881 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CARERY </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_CARERY.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojCARERY)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
 ### PYRPYR - svilpis *Pyrrhula pyrrhula* {#Chapter10.1.110}
 
 
@@ -1624,6 +11972,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_PYRPYR.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsPYRPYR)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniPYRPYR)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0092439 </td>
+   <td style="text-align:right;"> 0.9500399 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PYRPYR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4726391 </td>
+   <td style="text-align:right;"> 0.2504112 </td>
+   <td style="text-align:right;"> 0.2500000 </td>
+   <td style="text-align:right;"> 0.0173258 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PYRPYR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.4031784 </td>
+   <td style="text-align:right;"> 0.3138130 </td>
+   <td style="text-align:right;"> 0.1781250 </td>
+   <td style="text-align:right;"> 0.0126805 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PYRPYR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4409288 </td>
+   <td style="text-align:right;"> 0.2772007 </td>
+   <td style="text-align:right;"> 0.2179688 </td>
+   <td style="text-align:right;"> 0.0151915 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PYRPYR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3616812 </td>
+   <td style="text-align:right;"> 0.3537623 </td>
+   <td style="text-align:right;"> 0.1476562 </td>
+   <td style="text-align:right;"> 0.0090395 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> PYRPYR </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_PYRPYR.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojPYRPYR)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -1641,6 +12089,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_CHLCHL.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsCHLCHL)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniCHLCHL)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0116369 </td>
+   <td style="text-align:right;"> 0.9534389 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CHLCHL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2674713 </td>
+   <td style="text-align:right;"> 0.1796266 </td>
+   <td style="text-align:right;"> 0.1796200 </td>
+   <td style="text-align:right;"> 0.0125142 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CHLCHL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2578308 </td>
+   <td style="text-align:right;"> 0.1861498 </td>
+   <td style="text-align:right;"> 0.1675302 </td>
+   <td style="text-align:right;"> 0.0122614 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CHLCHL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2172459 </td>
+   <td style="text-align:right;"> 0.2182463 </td>
+   <td style="text-align:right;"> 0.1416235 </td>
+   <td style="text-align:right;"> 0.0094805 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CHLCHL </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2128831 </td>
+   <td style="text-align:right;"> 0.2225006 </td>
+   <td style="text-align:right;"> 0.1398964 </td>
+   <td style="text-align:right;"> 0.0089748 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CHLCHL </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_CHLCHL.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojCHLCHL)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### LINCAN - kaņepītis *Linaria cannabina* {#Chapter10.1.112}
 
 
@@ -1652,6 +12200,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_LINCAN.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsLINCAN)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniLINCAN)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0058033 </td>
+   <td style="text-align:right;"> 0.8205894 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0001286 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LINCAN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2692667 </td>
+   <td style="text-align:right;"> 0.1415639 </td>
+   <td style="text-align:right;"> 0.1415584 </td>
+   <td style="text-align:right;"> 0.0050167 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LINCAN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2178973 </td>
+   <td style="text-align:right;"> 0.1670840 </td>
+   <td style="text-align:right;"> 0.0974026 </td>
+   <td style="text-align:right;"> 0.0041163 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LINCAN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2350136 </td>
+   <td style="text-align:right;"> 0.1578390 </td>
+   <td style="text-align:right;"> 0.1168831 </td>
+   <td style="text-align:right;"> 0.0046308 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LINCAN </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2341096 </td>
+   <td style="text-align:right;"> 0.1582723 </td>
+   <td style="text-align:right;"> 0.1116883 </td>
+   <td style="text-align:right;"> 0.0041163 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LINCAN </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_LINCAN.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojLINCAN)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -1669,6 +12317,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_LOXCUR.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsLOXCUR)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniLOXCUR)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0558936 </td>
+   <td style="text-align:right;"> 0.5755287 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0001301 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LOXCUR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3988564 </td>
+   <td style="text-align:right;"> 0.1893090 </td>
+   <td style="text-align:right;"> 0.1892925 </td>
+   <td style="text-align:right;"> 0.0049453 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LOXCUR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3375925 </td>
+   <td style="text-align:right;"> 0.2230777 </td>
+   <td style="text-align:right;"> 0.1453155 </td>
+   <td style="text-align:right;"> 0.0041645 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LOXCUR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3658552 </td>
+   <td style="text-align:right;"> 0.2059253 </td>
+   <td style="text-align:right;"> 0.1644359 </td>
+   <td style="text-align:right;"> 0.0046851 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LOXCUR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2886619 </td>
+   <td style="text-align:right;"> 0.2540688 </td>
+   <td style="text-align:right;"> 0.1281071 </td>
+   <td style="text-align:right;"> 0.0020822 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> LOXCUR </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_LOXCUR.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojLOXCUR)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### CARCAR - dadzītis *Carduelis carduelis* {#Chapter10.1.114}
 
 
@@ -1680,6 +12428,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_CARCAR.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsCARCAR)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniCARCAR)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0147343 </td>
+   <td style="text-align:right;"> 0.8368837 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0002508 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CARCAR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3263041 </td>
+   <td style="text-align:right;"> 0.1815628 </td>
+   <td style="text-align:right;"> 0.1816176 </td>
+   <td style="text-align:right;"> 0.0136677 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CARCAR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3039336 </td>
+   <td style="text-align:right;"> 0.1927993 </td>
+   <td style="text-align:right;"> 0.1669118 </td>
+   <td style="text-align:right;"> 0.0129154 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CARCAR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2569263 </td>
+   <td style="text-align:right;"> 0.2234187 </td>
+   <td style="text-align:right;"> 0.1419118 </td>
+   <td style="text-align:right;"> 0.0104075 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CARCAR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.2100058 </td>
+   <td style="text-align:right;"> 0.2641509 </td>
+   <td style="text-align:right;"> 0.1080882 </td>
+   <td style="text-align:right;"> 0.0068966 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> CARCAR </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_CARCAR.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojCARCAR)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
@@ -1697,6 +12545,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_EMBHOR.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsEMBHOR)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniEMBHOR)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.1297383 </td>
+   <td style="text-align:right;"> 0.0876317 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> EMBHOR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.2218460 </td>
+   <td style="text-align:right;"> 0.0589704 </td>
+   <td style="text-align:right;"> 0.0740741 </td>
+   <td style="text-align:right;"> 0.0002664 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> EMBHOR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1297383 </td>
+   <td style="text-align:right;"> 0.0876317 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> EMBHOR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.1672245 </td>
+   <td style="text-align:right;"> 0.0739002 </td>
+   <td style="text-align:right;"> 0.0370370 </td>
+   <td style="text-align:right;"> 0.0001332 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> EMBHOR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.1672143 </td>
+   <td style="text-align:right;"> 0.0739002 </td>
+   <td style="text-align:right;"> 0.0370370 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> EMBHOR </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_EMBHOR.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojEMBHOR)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
+
+
+
 ### EMBCIT - dzeltenā stērste *Emberiza citrinella* {#Chapter10.1.116}
 
 
@@ -1709,6 +12657,106 @@ Apkopotā formā ik sugas rezultāti ar hiperstaitēm lejupielādei ir [šajā t
 
 
 <br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_IzvelesAttels/IzvelesAttels_EMBCIT.png" alt="Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā." width="100%" />
+<p class="caption">(\#fig:ModelaRaksturojumsEMBCIT)Labākā modeļa izvēle un uzvērtējums: A - labākā modeļa (ar treknu melnu punktu) salīdzinājums ar citiem pielāgotajiem modeļiem (pelēkie punkti un to sastopamības blīvuma funkcijas); B - labākā modeļa izvērtējums, to salīdzinot ar nejauši ģenerētiem nulles modeļiem (n=100) tajā pašā EGV, klātbūtnez un fona punktu veidotajā informācijas telpā.</p>
+</div>
+
+<br>
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:SlieksniEMBCIT)Biežāk lietotie projicētās dzīvotņu piemērotības sliekšņa līmeņi un to izvērtējums</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Threshold </th>
+   <th style="text-align:right;"> Cloglog value </th>
+   <th style="text-align:right;"> Fractional predicted area </th>
+   <th style="text-align:right;"> Training omission rate </th>
+   <th style="text-align:right;"> Test omission rate </th>
+   <th style="text-align:right;"> P-values </th>
+   <th style="text-align:left;"> suga </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Minimum training presence </td>
+   <td style="text-align:right;"> 0.0192709 </td>
+   <td style="text-align:right;"> 0.8911112 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> EMBCIT </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal training sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.4102796 </td>
+   <td style="text-align:right;"> 0.2096704 </td>
+   <td style="text-align:right;"> 0.2096506 </td>
+   <td style="text-align:right;"> 0.0084372 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> EMBCIT </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum training sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3557435 </td>
+   <td style="text-align:right;"> 0.2517112 </td>
+   <td style="text-align:right;"> 0.1564060 </td>
+   <td style="text-align:right;"> 0.0071391 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> EMBCIT </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equal test sensitivity and specificity </td>
+   <td style="text-align:right;"> 0.3448847 </td>
+   <td style="text-align:right;"> 0.2602068 </td>
+   <td style="text-align:right;"> 0.1514143 </td>
+   <td style="text-align:right;"> 0.0067497 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> EMBCIT </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maximum test sensitivity plus specificity </td>
+   <td style="text-align:right;"> 0.3945478 </td>
+   <td style="text-align:right;"> 0.2210787 </td>
+   <td style="text-align:right;"> 0.1913478 </td>
+   <td style="text-align:right;"> 0.0072690 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> EMBCIT </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+<br>
+
+
+
+<div class="figure">
+<img src="./Atteli/Beigam_KarteNebal/BeiguKarteiNebal_EMBCIT.png" alt="Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam)." width="100%" />
+<p class="caption">(\#fig:HSprojEMBCIT)Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krāsu skala reprezentē cloglog vērtību no 0 līdz 1, kur starp galapunktiem esošā atzīme ir vienādas sensitivātes un specifiskuma treniņdatos slieksnis iepriekšējā tabulā (izvēlēts vizualizēšanas mērķiem un skaidrošanas ērtumam).</p>
+</div>
+
+<br>
+
+
+
+[**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
+
+[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
+
+[**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
+
+**Attēls EGV marginālajām atbildēm**
+
+<br>
+
 
 
 
