@@ -848,109 +848,232 @@ div.csl-indent {
 <ol start="3" style="list-style-type: decimal">
 <li>labākā modeļa izvēle (kreisajā - A daļā) un (labajā - B daļā) šī modeļa salīdzinājums ar labākā modeļa EGV, klātbūtnes un fona veidotajā informācijas telpā radītiem nejaušajiem (nulles) modeļiem (n=100), sekojot nodaļā <a href="Chapter7.html#Chapter7">Sugu izplatības (dzīvotņu piemērotības) modeļi</a> aprakstītajai pieejai. Attēlos iekļauti sekojoši raksturojumi:</li>
 </ol>
-<ul>
-<li><p>“Neatkarīgā testa TSS” (<em>attēla A daļā</em>), kas raksturo</p></li>
-<li><p>“Apmācību un validācijas TSS starpība” (<em>attēla A daļā</em>), kas raksturo</p></li>
-<li><p>“Validācijas TSS” (<em>attēla A daļā</em>), kas raksturo</p></li>
-<li><p>“Apmācību TSS” (<em>attēla A daļā</em>), kas raksturo</p></li>
-<li><p>“Neatkarīgā testa AUC” (<em>attēla A daļā</em>), kas raksturo</p></li>
-<li><p>“AUC (validācijas)” (<em>attēla B daļā</em>), kas raksturo</p></li>
-<li><p>“Continuous Boyce Index (validācijas)” (<em>attēla B daļā</em>), kas raksturo</p></li>
-<li><p>“10% training omission rate” (<em>attēla B daļā</em>), kas raksturo</p></li>
-<li><p>“Minimum training omission rate” (<em>attēla B daļā</em>), kas raksturo</p></li>
-</ul>
+<ol style="list-style-type: lower-alpha">
+<li>“Neatkarīgā testa TSS” (<em>attēla A daļā</em>), kas raksturo <em>True skill statistic</em> (TSS)
+jeb patiesās spējas statistiku neatkarīgos testa datos. Neatkarīgi testa dati
+ir jau novērojumu atlases beigās - <a href="Chapter6.html#Chapter6.1.9">papildsolis: neatkarīgie testa dati</a> -
+atsevišķi nodalīta sugas klātbūtnes un fona punktu kopa, kas nav izmantota
+modeļa pielāgošanā. Tas nozīmē, ka tie reprezentē modeļa spēju jaunās
+situācijās, piemēram, modeli turpmāk pielietojot dabā. Patiesās spējas statistiku
+aprēķina <span class="math inline">\(\text{TSS} = \text{sesitivitāte} + \text{specifiskums} - 1\)</span>, kur
+sensitivitāte ir pareizi (piemērotās dzīvotnēs esošas) klasificēto klātbūtņu
+īpatsvars no visām klātbūtnēm un specifiskums ir pareizi par nepiemērotiem
+klasificētie iztrūkumi (fona punkti) no visiem. No biežāk izmantotajiem un
+aprēķinos mazāk resursietilpīgajiem modeļa izvērtējumiem, TSS uzrāda augstāko
+stabilitāti un uzticamību neatkarīgi no prevalences <span class="citation">(<a href="#ref-TSSieviesanaSDM">Allouche et al., 2006</a>)</span>. Modeļa
+parametrizācija, kurai ir augstākā TSS vērtība neatkarīgos testa datos ir uzskatāma
+par labāk sugai piemērotās dzīvotnes atpazīstošajām modeļa turpmākā lietošanā,
+tādēļ to izmantojām par galveno labākā modeļa izvēles kritēriju. Modeļa apmācibas,
+validācijas un neatkarīgā testa kopās raksturīgas TSS vērtību atšķirības (ar
+samazināšanās tendenci uzskaitījumā, jo neredzētus datus ir grūtāk klasificēt),
+tomēr ir izplatīti pieņēmumi (“īkšķa likumi”):</li>
+</ol>
+<pre><code>-- TSS &lt; 0.2 raksturīgs vājiem (*poor*) modeļiem;
+
+-- 0.2 $\le$ TSS &lt; 0.4 - viduvējiem (*fair*) modeļiem;
+
+-- 0.4 $\le$ TSS &lt; 0.6 - mēreni labiem (*moredately good*) modeļiem;
+
+-- 0.6 $\le$ TSS &lt; 0.8 - labiem (*good*) modeļiem;
+
+-- TSS $\ge$ 0.8 - lieliskiem (*excellent*) modeļiem;</code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><p>“Apmācību un validācijas TSS starpība” (<em>attēla A daļā</em>), kas raksturo TSS
+starpību (vidējo aritmētisko) modeļa pielāgošanai izmantoto datu kopai, kura pielietota
+modeļa iekšējai validēšanai no apmācību daļas. Modeļa apmācībā izmantota pieeja ar
+četriem telpiskajiem blokiem - validēšana veikta vienai (telpiski nodalītu) ceturtdaļai
+klātbūtnes un fona punktiem modelī, kurš apmācīts ar atlikušajām trīs ceturtdaļām datu.
+Krosvalidācija atkārtota četras reizes, lai katra ceturtdaļa būtu trīs reizes
+piedalījusies apmācībā un vienu reizi būtu kalpojusi validācijā.
+Jo mazāka ir starpība starp validēšanas un apmācību TSS vērtībām, jo telpiski
+noteiktāks un stabilāks ir modelis. Gadījumos, kad labākā modeļa izvēle atgrieza
+vairākus konkurentus (1.a.), izvēlējām modeli ar zemāko vērtību šajā rādītājā;</p></li>
+<li><p>“Validācijas TSS” (<em>attēla A daļā</em>), kas raksturo TSS vērtību telpiski nodalītā
+ceturtdaļā modeļa pielāgošanas kopas datu. Aprēķināta vidējā aritmētiskā vērtība
+četrām telpiski nodalītu bloku krosvalidācijām. Jo augstāka šī vērtība, jo labāka
+ir modeļa spēja prognozēt vides piemērotību telpiski nodalītās vietās. Ja
+pēc 2.a. soļa bija vairāk kā viens konkurējošs modelis, izvēlējāmies to, kuram
+šī vērtība bija augstākā. Ja saglabājās vēl citi konkurējoši modeļi, izvēlējāmies
+vienkāršāko algoritmu (<em>feature class algorithm</em>), kas nodrošināja tikai vienu
+labāko modeli;</p></li>
+<li><p>“Apmācību TSS” (<em>attēla A daļā</em>), kas raksturo TSS vidējo aritmētisko vērtību
+modeļa apmācībai izmantotajās trīs ceturtdaļās modeļa pielāgošanai pieejamo datu.
+Iekļauts visualizācijai tikai informatīvos nolūkos;</p></li>
+<li><p>“Neatkarīgā testa AUC” (<em>attēla A daļā</em>), kas raksturo laukumu zem uztvērēja
+operēšanu raksturojošās līknes (angļu - <em>Arue Under the receiver operating Curve</em>),
+kur uztvērējs ir modelis un telpas laukumu veido sensitivitāte (uz y-ass)
+un 1 - specifiskums (uz x-ass). Vērtība 0.5 apzīmē klasifikācijas (piemērotās vai
+nepiemērotās dzīvotnēs) spējas līdzināšanos nejaušībai (ideālās monētas mešanai),
+lielākas vērtības liecina par uzlabojošos modeļa spēju un vērtība 1 liecina par
+perfektu klasifikāciju. Vērtības mazākas par 0.5 liecina par negatīvu prognozi.
+AUC tiecas priekšroku dot modeļiem, kuri ir pārpielāgoti (<em>overfitted</em>), tā
+vērtības sniegtas informatīvos nolūkos. Par pieņemiem bieži uzskata modeļus, kuru
+AUC <span class="math inline">\(\ge\)</span> 0.7 un par labiem, ja AUC <span class="math inline">\(\ge\)</span> 0.8;</p></li>
+<li><p>“AUC (validācijas)” (<em>attēla B daļā</em>), kas raksturo atkārtoti pielāgotā modeļa
+AUC vērtību validācijas datos - tā parēķināta pēc noklusējuma un vizualizēta
+informatīvos nolūkos un, lai piedāvātu ieskatu modļu prognožu spēju stabilitātē;</p></li>
+<li><p>“Continuous Boyce Index (validācijas)” (<em>attēla B daļā</em>), kas raksturo modeļa
+prognozētās dzīvotņu piemērotības (nepārtraukti variējoša [0, 1]) korelācijas
+koeficientu ar sugas klātbūtnes vietu skaitu dzīvotņu piemērotības diapozona daļās.
+Kā korelācijas koeficentam, vērtības variē no -1 līdz +1, kur 0 nozīmē korelācijas
+trūkumu jeb trūkumu modeļa spējai prognozēt piemērotas dzīvotnes sugas klātbūtnes
+vietās un ir salīdzināma ar nejaušu prognozi (beznosacījumu vidē). Pieaugošas
+pozitīvas vērtības nozīmē pieaugošu modeļa prognozes spēju sugas klātbūtnes
+vietām, tādēļ, jo augstākas ir šī rādītāja vērtības, jo augstāka ir modeļa
+prognozes spēja. Šis rādītājs ir aprēķināts un raksturots:</p></li>
+</ol>
+<pre><code>-- pats par sevi kā labākā modeļa atkārtota piemērošanas vidējais aritmētiskais 
+telpisko bloku kosvalidācijas procedūras testa (validēšanas) klātbūtnēm. 
+Interpretācijai - tas nozīmē, ka trenko melno atzīmi šajā attēlā vēlamies iespējami 
+lielāku; ;
+
+-- sporādiski izplatītām sugām ar nelielu dzīves telpu jeb atkarīgām no 
+vides apstākļiem šauros ainavas mērogos, prognozes var izskatīties nejaušas 
+(kā sāls un piparu mainījums), tādēļ tās ir vērts salīdzināt ar modelim specifisko 
+ekoģeogrāfisko mainīgo veidoto vides gradientu informācijas telpu. Tas ir nozīmīgi 
+arī visām pārējām sugām, lai raksturotu modeļa kvalitāti. Šis salīdzinājums veikts 
+ar 100 nejauši ģenerētām pseido-klātbūtnes vietām labākā modeļa ekoģeogrāfisko 
+mainīgo veidotajā vides gradientu informācijas telpā. Nejaušo (nulles) modeļu 
+vērtību salīdzinājums ar empīrisko (labākā modeļa) ļauj skaidrot cik nejaušas 
+ir modeļa apmācībā izmantotās klātbūtnes vietas tieši konkrēto vides gradientu 
+telpā. Par labu ir uzskatāms modelis, kura empīriskā vērtība (treknais melnais 
+punkts) ir ne tikai pozitīvu vērtību, bet tas atrodas arī nulles modeļu sadalījuma 
+augšdaļā vai virs tā;</code></pre>
+<ol start="8" style="list-style-type: lower-alpha">
+<li><p>“10% training omission rate” (<em>attēla B daļā</em>), kas raksturo kādu īpatsvaru
+no modeļa apmācībā izslēgtiem 10% klātbūtnes punktu (veidojot pseido-neatkarīgās
+testēšanas kopu) modelis nespēj prognozēt kā sugai piemērotās vietās esošus. Šajā
+modeļa pārbaudē projekcijas vēl nav informētas par optimālo dalījumu piemērotās
+un nepiemērotās vietās, tādēļ faktiskās vērtības nav svarīgas - svarīgi, lai empīriskā
+vērtība (labākā modeļa prognoze; trknais punkts attēlā) ir iespējami zemāka un
+ir zemāka par nulles modeļiem, tomēr modeļiem ar maz klātbūtnēm, svarīgi, lai
+empīriskā vērtība nav augstāk par nulles sadalījuma centrālo daļu, jo tas ierosina
+modeļa pārpielāgošanu (<em>overfitting</em>), kas nozīmē dzīvotņu piemērotības projicēšanas
+vispārināšanās spējas trūkumu;</p></li>
+<li><p>“Minimum training omission rate” (<em>attēla B daļā</em>), pēc būtības ir līdzīgs
+iepriekš aprakstītajam “10% training omission rate” un arī interpretējams ir
+līdzīgi - saistībā ar nulles modeļiem. Tomēr šis mērs raksturo minimālo no apmācību
+kopas izslēdzamo klātbūtnes vietu skaitu, kas spēj sasniegt augstu prognozes spēju.
+Ja klasifikācijas sliekšņa līmenis ir korekts (šajā brīdī modelis par to nav informēts
+un pieņem 0.5), vērtības no <span class="math inline">\(\le\)</span> 5 līdz 10 % ir uzskatāmas par labām un stabilām,
+kas indicē modeli, kas spēj labi vispārināties jaunā vidē, sevišķi tuvu nullei
+esošas vērtības liecina, ka modelis ir pārāk vienkāršs, lai notvertu vides (un par
+to svarīgāk - sugas ekoloģiskās nišas) sarežģītību, savukārt vērtības kas ievērojami
+pārsniedz 10% līmeni liecina par modeļa pārpielāgošanu - pielipšanu konkrētām
+situācijām un nespēju vispārināt dzīvotņu piemērotības projekciju jaunā vidē. Tā
+kā šī izvērtējuma brīdī modelis nav informēts par optimālo sliekšņa līmeni
+dalījumam piemērotajās un nepiemērotajās dzīvotnēs, kas ir sevišķi nozīmīgi
+zemas prevalences situācijās - kā šī, ir svarīgi empīrisko vērtību
+(labākā modeļa rezultātu; treknais melnais punkts attēlā) salīdzināt ar tā paša modeļa
+ekoģeogrāfisko mainīgo raksturotajā vides informācijas telpā nejauši ģenerētiem (nulles)
+modeļiem - par nulles modeļiem augstāka empīriskā vērtība liecina par datiem pārlieku
+pielipušu modeli (<em>overfitted</em>), kas nespēs vispārināt dzīvotņu piemērotības projekciju;</p></li>
+</ol>
 <ol start="4" style="list-style-type: decimal">
 <li>tabula ar raksturojumu atsvišķiem biežāk lietotajiem projicētās dzīvotņu piemērotības izvērtējumiem, kas raksturo modeli, veicot dalījumu piemērotajās un nepiemērotajās vietās:</li>
 </ol>
-<ul>
-<li><p>rindas raksturo sekojošus sliekšņa līmeņus (projicētās dzīvotņu piemērotības vērtība, kas nošķir piemērotās no nepiemērotajām vietām):</p>
-<p>– “Minimum training presence”, kas sekojošajos tabulas laukos raksturo modeļa
-spēju, projicētās dzīvotņu piemērotības dalījumam sugai piemērotajās un
-nepiemērotajās dzīvotnēs pieņemot zemāko (projicētās dzīvotņu piemērotības)
-vērtību modeļa apmācībai izmantotajās sugas klātbūtnes vietās. Šī pieeja tiecās
-nepalaist garām nevienu sugai potenciāli piemēroto vietu, tomēr starp tām
-iekļauj nezināmu (provizoriski - lielu) apjomu nepiemēroto;</p>
-<p>– “Equal training sensitivity and specificity”, kas sekojošajos tabulas laukos
-raksturo modeļa spēju, projicētās dzīvotņu piemērotības dalījumam sugai piemērotajās un
-nepiemērotajās dzīvotnēs pieņemot (projicētās dzīvotņu piemērotības)
-vērtību, kurā sensitivitāte (spēja klātbūtnes vietas klasificēt kā piemērotas)
-ir vienāda ar specifiskumu (spēja fona punktos izdalīt nepiemērotās vietas tādā
-apjomā, lai par piemērotiem netiktu uzskatīts lielāks apjoms nekā 1-sensitivitāte).
-Šajā nodaļā ir izvēlēta šī metode tās stabilitātes saistībā ar sugas prevalenci,
-kopumā augsto spēju korektai klasifikācijai retai sastopamībai jeb zemai prevalencei<br />
-(visos gadījumos ir 20 000 fona punktu, bet klātbūtnes vietas
-nepārsniedz 3300, tātad, mazāk par 16.5%), konkurētspēju ar jaunākām bet
-analītiski izaicinošākām metodēm <span class="citation">(<a href="#ref-ValverdeLobo2007">Jiménez-Valverde and Lobo, 2007</a>)</span>; <span class="citation">(<a href="#ref-NewThreshold2024">Yu et al., 2024</a>)</span>.
-Turklāt tas nodrošina ērtu interpretāciju - ja
-sensitivitāte un specifiskums ir vienādi, zinot nekorekti par nepiemērotām
-klasificētās klātbūtnes vietas, var aprēķināt nekorekti par piemērotām uzskatīto
-vietu apjomu - tas ir apmēram tāds pats. Līdzīgas īpašības, protams, būtu sliekšņa
-līmeni izvēlot pēc testa kopas, tomēr modeļa apmācību kopa ir vairāk informēta par
-sugas klātbūtnes vietām;</p>
-<p>– “Maximum training sensitivity plus specificity”, kas sekojošajos tabulas laukos
-raksturo modeļa spēju, projicētās dzīvotņu piemērotības dalījumam sugai piemērotajās un
-nepiemērotajās dzīvotnēs pieņemot (projicētās dzīvotņu piemērotības)
-vērtību, kurā sensitivitātes un specifiskuma summa ir visaugstākā. Nereti šī
-pieeja ir uzticama, tomēr tās stabilitāte ir saistīta ar rpevalenci - labāk strādā
-biežāk sastopamām sugām <span class="citation">(<a href="#ref-NewThreshold2024">Yu et al., 2024</a>)</span> un ir saistīta ar risku retākajām sugām
-prognozēt visu vidi kā nepiemērotu <span class="citation">(<a href="#ref-CommunityThresholds2018">Scherrer et al., 2018</a>)</span>;</p>
-<p>– “Equal test sensitivity and specificity”, kas visā savā būtība ir tāda pati
-kā “Equal training sensitivity and specificity”, tomēr sliekšņa līmeni vērtē
-neatkarīgos (modeļa apmācībā nevienā brīdī neiesaistītos) testa datos, kuru ir mazāk;</p>
-<p>– “Maximum test sensitivity plus specificity”, kas visā savā būtība ir tāda pati
-kā “Maximum training sensitivity plus specificity”, tomēr sliekšņa līmeni vērtē
-neatkarīgos (modeļa apmācībā nevienā brīdī neiesaistītos) testa datos, kuru ir mazāk;</p></li>
-<li><p>katram no tiem sniegts sekojošs izvērtējums:</p>
-<p>– “Cloglog value”, kas raksturo projicētās dzīvotņu piemērotības sliekšņa
-līmeni dalījumam sugai piemērotajās (sākot ar vērtību šajā laukā) un
-nepiemērotajās (ar zemāku vērtību par šajā laukā norādīto) atbilstoši dalījuma
-veidam (rindās - iepriekšējais uzskaitījums šajā punktā);</p>
-<p>– “Fractional predicted area”, kas raksturo telpas (Latvijas iekšzemes
-teritorija) īpatsvaru, kurā projicētā dzīvotņu piemērotība ir lielāka par
-sliekšņa līmeni dalījumam sugai piemērotajās un nepiemērotajās (laukā “Cloglog
-value” norādītā vērtība);</p>
-<p>– “Training omission rate”, kas raksturo modeļa apmācībā izmantoto klātbūtnes vietu
-īpatsvaru, kuras atrodas vietās ar zemāku projicēto dzīvotņu piemērotību par
-laukā “Cloglog value” norādīto vērtību;</p>
-<p>– “Test omission rate”, kas raksturo testa klātbūtnes vietu īpatsvaru, kuras
-atrodas vietās ar zemāku projicēto dzīvotņu piemērotību par laukā “Cloglog value” norādīto;</p>
-<p>– “P-values”, kas raksturo izvēlētā sliekšņa līmeņa (šī punkta iepriekšējais
-uzskaitījums) varbūtību nekorekti noraidīt nulles hipotēzi (pirmā tipa statistiskās
-kļūdas varbūtību), kura viena virziena eksaktajā binomiālajā testā pieņem, ka
-vietas virs sliekšņa līmeņa nav biežāk sastopamas klātbūtnes punktos nekā telpā
-nejauši izvēlētas tik daudz vietas, cik atbilst konkrētajam sliekšņa līmenim
-(lauks “Fractional predicted area”);</p></li>
-</ul>
+<ol style="list-style-type: lower-alpha">
+<li>rindas raksturo sekojošus sliekšņa līmeņus (projicētās dzīvotņu piemērotības vērtība, kas nošķir piemērotās no nepiemērotajām vietām):</li>
+</ol>
+<pre><code>-- &quot;Minimum training presence&quot;, kas sekojošajos tabulas laukos raksturo modeļa 
+spēju, projicētās dzīvotņu piemērotības dalījumam sugai piemērotajās un 
+nepiemērotajās dzīvotnēs pieņemot zemāko (projicētās dzīvotņu piemērotības) 
+vērtību modeļa apmācībai izmantotajās sugas klātbūtnes vietās. Šī pieeja tiecās 
+nepalaist garām nevienu sugai potenciāli piemēroto vietu, tomēr starp tām 
+iekļauj nezināmu (provizoriski - lielu) apjomu nepiemēroto;
+
+-- &quot;Equal training sensitivity and specificity&quot;, kas sekojošajos tabulas laukos 
+raksturo modeļa spēju, projicētās dzīvotņu piemērotības dalījumam sugai piemērotajās un 
+nepiemērotajās dzīvotnēs pieņemot (projicētās dzīvotņu piemērotības) 
+vērtību, kurā sensitivitāte (spēja klātbūtnes vietas klasificēt kā piemērotas) 
+ir vienāda ar specifiskumu (spēja fona punktos izdalīt nepiemērotās vietas tādā 
+apjomā, lai par piemērotiem netiktu uzskatīts lielāks apjoms nekā 1-sensitivitāte). 
+Šajā nodaļā ir izvēlēta šī metode tās stabilitātes saistībā ar sugas prevalenci, 
+kopumā augsto spēju korektai klasifikācijai retai sastopamībai jeb zemai prevalencei  
+(visos gadījumos ir 20 000 fona punktu, bet klātbūtnes vietas 
+nepārsniedz 3300, tātad, mazāk par 16.5%), konkurētspēju ar jaunākām bet 
+analītiski izaicinošākām metodēm [@ValverdeLobo2007l @NewThreshold2024]. 
+Turklāt tas nodrošina ērtu interpretāciju - ja 
+sensitivitāte un specifiskums ir vienādi, zinot nekorekti par nepiemērotām 
+klasificētās klātbūtnes vietas, var aprēķināt nekorekti par piemērotām uzskatīto 
+vietu apjomu - tas ir apmēram tāds pats. Līdzīgas īpašības, protams, būtu sliekšņa 
+līmeni izvēlot pēc testa kopas, tomēr modeļa apmācību kopa ir vairāk informēta par 
+sugas klātbūtnes vietām;
+
+-- &quot;Maximum training sensitivity plus specificity&quot;, kas sekojošajos tabulas laukos 
+raksturo modeļa spēju, projicētās dzīvotņu piemērotības dalījumam sugai piemērotajās un 
+nepiemērotajās dzīvotnēs pieņemot (projicētās dzīvotņu piemērotības) 
+vērtību, kurā sensitivitātes un specifiskuma summa ir visaugstākā. Nereti šī 
+pieeja ir uzticama, tomēr tās stabilitāte ir saistīta ar prevalenci - labāk strādā 
+biežāk sastopamām sugām [@NewThreshold2024] un ir saistīta ar risku retākajām sugām 
+prognozēt visu vidi kā nepiemērotu [@CommunityThresholds2018];
+
+-- &quot;Equal test sensitivity and specificity&quot;, kas visā savā būtība ir tāda pati 
+kā &quot;Equal training sensitivity and specificity&quot;, tomēr sliekšņa līmeni vērtē 
+neatkarīgos (modeļa apmācībā nevienā brīdī neiesaistītos) testa datos, kuru ir mazāk;
+
+-- &quot;Maximum test sensitivity plus specificity&quot;, kas visā savā būtība ir tāda pati 
+kā &quot;Maximum training sensitivity plus specificity&quot;, tomēr sliekšņa līmeni vērtē 
+neatkarīgos (modeļa apmācībā nevienā brīdī neiesaistītos) testa datos, kuru ir mazāk;</code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>katram no tiem sniegts sekojošs izvērtējums:</li>
+</ol>
+<pre><code>-- &quot;Cloglog value&quot;, kas raksturo projicētās dzīvotņu piemērotības sliekšņa 
+līmeni dalījumam sugai piemērotajās (sākot ar vērtību šajā laukā) un 
+nepiemērotajās (ar zemāku vērtību par šajā laukā norādīto) atbilstoši dalījuma 
+veidam (rindās - iepriekšējais uzskaitījums šajā punktā);
+
+-- &quot;Fractional predicted area&quot;, kas raksturo telpas (Latvijas iekšzemes 
+teritorija) īpatsvaru, kurā projicētā dzīvotņu piemērotība ir lielāka par 
+sliekšņa līmeni dalījumam sugai piemērotajās un nepiemērotajās (laukā &quot;Cloglog 
+value&quot; norādītā vērtība);
+
+-- &quot;Training omission rate&quot;, kas raksturo modeļa apmācībā izmantoto klātbūtnes vietu 
+īpatsvaru, kuras atrodas vietās ar zemāku projicēto dzīvotņu piemērotību par 
+laukā &quot;Cloglog value&quot; norādīto vērtību;
+
+-- &quot;Test omission rate&quot;, kas raksturo testa klātbūtnes vietu īpatsvaru, kuras 
+atrodas vietās ar zemāku projicēto dzīvotņu piemērotību par laukā &quot;Cloglog value&quot; norādīto;
+
+-- &quot;P-values&quot;, kas raksturo izvēlētā sliekšņa līmeņa (šī punkta iepriekšējais 
+uzskaitījums) varbūtību nekorekti noraidīt nulles hipotēzi (pirmā tipa statistiskās 
+kļūdas varbūtību), kura viena virziena eksaktajā binomiālajā testā pieņem, ka 
+vietas virs sliekšņa līmeņa nav biežāk sastopamas klātbūtnes punktos nekā telpā 
+nejauši izvēlētas tik daudz vietas, cik atbilst konkrētajam sliekšņa līmenim 
+(lauks &quot;Fractional predicted area&quot;);</code></pre>
 <ol start="5" style="list-style-type: decimal">
-<li><p>projicētā (cloglog) dzīvotņu piemērotības karte diapozonam no 0 (nepiemērotāka) līdz 1 (piemērotāka) ar centrālā dalījuma vietu atbilstoši iepriekšējās tabulas “Equal training sensitivity and specificity” sliekšņa līmenim. Šis rādītājs izvēlēts tādēļ, (1) ka tas ir labāk informēts par sugas sastapšanas vietām nekā neatkarīgā testa kopa, kas ir sevišķi aktuāli sugām ar nelielu novērojumu skaitu, un (2) tā vienkāršās interpretējamības dēļ - ja sensitivitāte un specifiskums ir pēc vērtībām salīdzināmi mēri, zinot vienu, var tieši aplēst otru;</p></li>
+<li><p>projicētā (cloglog) dzīvotņu piemērotības karte diapozonam no 0 (nepiemērotāka) līdz 1 (piemērotāka) ar centrālā dalījuma vietu atbilstoši iepriekšējās tabulas “Equal training sensitivity and specificity” sliekšņa līmenim. Šis rādītājs izvēlēts tādēļ, (1) ka tas ir labāk informēts par sugas sastapšanas vietām nekā neatkarīgā testa kopa, kas ir sevišķi aktuāli sugām ar nelielu novērojumu skaitu, (2) tā uzticamības un stabilitātes, kā arī (3) vienkāršās interpretējamības dēļ - ja sensitivitāte un specifiskums ir pēc vērtībām salīdzināmi mēri, zinot vienu, var tieši aplēst otru;</p></li>
 <li><p>pēc projekcijas sniegts īss komentārs par modeļa kvalitāti un tā rezultātu turpmāko lietojumu;</p></li>
 <li><p>modeļiem, kuru rezultātu ir vērts tālāk lietot, piedāvāta iespēja lejupielādēt sekojošus datu objektus:</p></li>
 </ol>
-<ul>
+<ol style="list-style-type: lower-alpha">
 <li><p>projicētā (cloglog) dzīvotņu piemērotība kā GeoTIFF slānis;</p></li>
+<li><p>tabula ar sliekšņa līmeņiem projicētās dzīvotņu piemērotības dalījumam
+piemērotās un nepiemērotās (kā .xlsx fails);</p></li>
 <li><p>par labāko atzītais modelis (krosvalidāciju objekts kā *.RDS fails);</p></li>
 <li><p>par labāko atzītais modelis (kombinēts krosvalidāciju objekts kā *.RDS fails);</p></li>
 <li><p>par labāko atzītais modelis (tikai ietekmīgās pazīmes kombinētajā krosvalidāciju objektā, lai atvieglotu turpmāku izplatības projicēšanu kā *.RDS fails);</p></li>
 <li><p>tabula ar ekoģeogrāfisko mainīgo izvēles gaitu, to VIF (savstarpējās prognozētspējas raksturojuma) vērtībām un ietekmes modelī (permutāciju procedūrā) raksturojums (kā *.xlsx fails);</p></li>
-</ul>
+</ol>
 <ol start="8" style="list-style-type: decimal">
 <li><p>modeļiem, kuri sasniedz pietiekošu prognozes spēju, ievietots attēls ar marginālajām atbildes funkcijām krosvalidāciju modelī. Marginālā atbilde raksturo interesējošās pazīmes ietekmi uz dzīvotņu piemērotību, pārējām pazīmēm esot to vidējo vērtību līmenī.</p></li>
 <li><p>no projicētās dzīvotņu piemērotības aprēķinātā preference:</p></li>
 </ol>
-<ul>
-<li><p>ekosistēmu grupām (apbūve (t.sk. ceļi), ūdeņi, mitrāji (bez ūdeņiem), lauksaimniecībā izmantojamās zemes, meži);</p></li>
+<ol style="list-style-type: lower-alpha">
+<li><p>ekosistēmu grupām (apbūve (t.sk. ceļi), ūdeņi, mitrāji (bez ūdeņiem),
+lauksaimniecībā izmantojamās zemes, meži);</p></li>
 <li><p>ES aizsargājamo biotopu grupām ();</p></li>
-<li><p><strong>Natura 2000</strong> tīklam;</p></li>
+<li><p><em>Natura 2000</em> tīklam;</p></li>
 <li><p>īpaši aizsargājamās dabas teritorijas funkcionālajai zonai;</p></li>
-</ul>
+</ol>
 <ol start="10" style="list-style-type: decimal">
 <li><p>sniegts komentārs par nepieciešamību sugas individuālai aizsardzībai ar telpiski izdalāmām platībām;</p></li>
 <li><p>sugām, kurām ierosināta individuālās aizsardzības plānošana, vietu prioritizēšanas aizsardzībai rezultāti:</p></li>
 </ol>
-<ul>
+<ol style="list-style-type: lower-alpha">
 <li><p>attēls ar vietu nozīmes sugas aizsardzībā rangiem, izzušanas riska un aizsargātās populācijas daļas līknēm, aizsardzībai prioritārajām vietām - tām, kurās nozīmes rangi ir kopš izzušanas un aizsargātās populācijas daļas pa labi;</p></li>
 <li><p>vietu nozīmes sugas aizsardzībā GeoTIFF slānis lejupielādei;</p></li>
-</ul>
+</ol>
 <div id="Chapter10.1.001" class="section level3 hasAnchor" number="10.1.1">
 <h3><span class="header-section-number">10.1.1</span> COTCOT - paipala <em>Coturnix coturnix</em><a href="Chapter10.html#Chapter10.1.001" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="figure"><span style="display:block;" id="fig:NovAtlaseCOTCOT"></span>
@@ -20977,14 +21100,8 @@ Figure 10.336: Labākā modeļa projekcija suga sdzīvotņu piemērotībai. Krā
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
-<div id="ref-ValverdeLobo2007" class="csl-entry">
-Jiménez-Valverde, A., Lobo, J.M., 2007. Threshold criteria for conversion of probability of species presence to either–or presence–absence, Acta Oecologica. <a href="https://doi.org/10.1016/j.actao.2007.02.001">https://doi.org/10.1016/j.actao.2007.02.001</a>
-</div>
-<div id="ref-CommunityThresholds2018" class="csl-entry">
-Scherrer, D., D’Amen, M., Fernandes, R.F., Mateo, R.G., Guisan, A., 2018. How to best threshold and validate stacked speciesassemblages? Community optimisation might hold the answer, Methods in Ecology and Evolution. <a href="https://doi.org/10.1111/2041-210X.13041">https://doi.org/10.1111/2041-210X.13041</a>
-</div>
-<div id="ref-NewThreshold2024" class="csl-entry">
-Yu, B., Dai, W.W., Li, S., Wu, Z., Wang, J., 2024. A new threshold selection method for species distributionmodels with presence-only data: Extracting the mutation pointof the p/e curve by threshold regression, Ecology and evolution. <a href="https://doi.org/10.1002/ece3.11208">https://doi.org/10.1002/ece3.11208</a>
+<div id="ref-TSSieviesanaSDM" class="csl-entry">
+Allouche, O., Tsoar, A., Kadmon, R., 2006. Assessing the accuracy of species distribution models: Prevalence, kappa and the true skill statistic (TSS), Journal of Applied Ecology. <a href="https://doi.org/10.1111/j.1365-2664.2006.01214.x">https://doi.org/10.1111/j.1365-2664.2006.01214.x</a>
 </div>
 </div>
             </section>
