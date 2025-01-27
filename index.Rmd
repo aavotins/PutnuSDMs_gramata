@@ -16,7 +16,7 @@ github-repo: rstudio/bookdown-demo
 
 # Par šo materiālu {.unnumbered}
 
-Šis materiāls ir izstrādāts trīs sugu izplatības modelēšanā dziļi sakņotu Latvijas Universitātē īstenotu projektu rezultātu atvēršanai - darba gaitas un pieņemtos lēmumu demonstrēšanai un skaidrošanai, lai nodrošinātu to atkārtojamību un reproducējamību. Šie projekti ir:
+Šis materiāls ir izstrādāts trīs, sugu izplatības modelēšanā dziļi sakņotu, Latvijas Universitātē īstenotu projektu rezultātu atvēršanai un par to svarīgāk - darba gaitas un pieņemto lēmumu demonstrēšanai un skaidrošanai, lai nodrošinātu to atkārtojamību un reproducējamību. Šie projekti ir:
 
 - Latvijas Vides Aizsardzības Fonda administrācijas finansētais projekts "Esošo 
 aizsargāto teritoriju pārklājuma ģeotelpisko datu slāņa sagatavošana ES Bioloģiskās 
@@ -28,7 +28,7 @@ telpiskā modeļa izveide" (AS “Latvijas valsts meži” dokumenta Nr. 5-5.5.1
 
 - Valsts pētījumu programmas "Bioloģiskās daudzveidības prioritāro rīcību programmā noteikto pētījumu izstrāde" projekts “Augstas izšķirtspējas bioloģiskās daudzveidības kvantificēšana dabas saglabāšanai un apsaimniekošanai: HiQBioDiv” (VPP-VARAM-DABA-2024/1-0002).
 
-Materiāls ir izstrādāts R, izmantojot {bookdown}. Saturā raksturotā datu apstrāde un analīze galvenokārt ir veikta R un viens no nozīmīgiem iemesliem šī materiāla tapšanai ir informācijas par darba atkārtošanu, izmantojot pārbaudītas komandu rindas, nodošana. Kā vēlamais blakusprodukts - veicināt zinātniskās prakses un praktiskās zinātnes atvērtību un reproducējamību.
+Materiāls ir izstrādāts R, izmantojot {bookdown}. Saturā raksturotā datu apstrāde un analīze galvenokārt ir veikta R un viens no nozīmīgiem iemesliem šī materiāla tapšanai ir darba reproducēšanai nepieciešamās informācijas nodošana, izmantojot pārbaudītas komandu rindas. Kā vēlamais blakusprodukts - veicināt zinātniskās prakses un praktiskās zinātnes atvērtību un reproducējamību.
 
 
 ```{r, eval=FALSE, echo=FALSE}
