@@ -130,7 +130,7 @@ Modelētajām sugām:
   ir zemāka par nulles modeļiem, tomēr modeļiem ar maz klātbūtnēm, svarīgi, lai 
   empīriskā vērtība nav augstāk par nulles sadalījuma centrālo daļu, jo tas ierosina 
   modeļa pārpielāgošanu (*overfitting*), kas nozīmē dzīvotņu piemērotības projicēšanas 
-  vispārināšanās spējas trūkumu. *Šis izvērtējums, jo sevišķi salīdzinājumā ar nulles modeļiem ir nozīmīgs jebkuram sugu izplatības modelis, jo sevišķi, ja tā izveidē ir izmantota semi-automatizēta (kā šajā gadījumā), automatizēta vai nejauša (specifiski nekoncentrējoties uz sugas ekoloģiju) ekoģeogrāfisko mainīgo izvēle*; 
+  vispārināšanās spējas trūkumu; 
   
   i. "Minimum training omission rate" (*attēla B daļā*), pēc būtības ir līdzīgs 
   iepriekš aprakstītajam "10% training omission rate" un arī interpretējams ir 
@@ -150,7 +150,7 @@ Modelētajām sugām:
   ekoģeogrāfisko mainīgo raksturotajā vides informācijas telpā nejauši ģenerētiem (nulles) 
   modeļiem - par nulles modeļiem augstāka empīriskā vērtība liecina par datiem pārlieku 
   pielipušu modeli (*overfitted*), kas nespēs vispārināt dzīvotņu piemērotības 
-  projekciju. *Šis izvērtējums, jo sevišķi salīdzinājumā ar nulles modeļiem ir nozīmīgs jebkuram sugu izplatības modelis, jo sevišķi, ja tā izveidē ir izmantota semi-automatizēta (kā šajā gadījumā), automatizēta vai nejauša (specifiski nekoncentrējoties uz sugas ekoloģiju) ekoģeogrāfisko mainīgo izvēle*;
+  projekciju;
 
 4. tabula ar raksturojumu atsvišķiem biežāk lietotajiem projicētās dzīvotņu piemērotības izvērtējumiem, kas raksturo modeli, veicot dalījumu piemērotajās un nepiemērotajās vietās:
 
