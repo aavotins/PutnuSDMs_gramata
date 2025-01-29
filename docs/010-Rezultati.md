@@ -21,7 +21,7 @@ modeļiem (n=100), sekojot
 nodaļā [Sugu izplatības (dzīvotņu piemērotības) modeļi](#Chapter7) aprakstītajai 
 pieejai. Attēlos iekļauti sekojoši raksturojumi:
 
-  3.1. "Neatkarīgā testa TSS" (*attēla A daļā*), kas raksturo *True skill statistic* (TSS) 
+  a. "Neatkarīgā testa TSS" (*attēla A daļā*), kas raksturo *True skill statistic* (TSS) 
   jeb patiesās spējas statistiku neatkarīgos testa datos. Neatkarīgi testa dati 
   ir jau novērojumu atlases beigās - [papildsolis: neatkarīgie testa dati](#Chapter6.1.9) - 
   atsevišķi nodalīta sugas klātbūtnes un fona punktu kopa, kas nav izmantota 
@@ -51,7 +51,7 @@ pieejai. Attēlos iekļauti sekojoši raksturojumi:
     
   - TSS $\ge$ 0.8 - izcili prognozējošiem (*excellent*) modeļiem;
   
-  3.2. "Apmācību un validācijas TSS starpība" (*attēla A daļā*), kas raksturo TSS 
+  b. "Apmācību un validācijas TSS starpība" (*attēla A daļā*), kas raksturo TSS 
   starpību (vidējo aritmētisko) modeļa pielāgošanai izmantoto datu kopai, kura pielietota 
   modeļa iekšējai validēšanai no apmācību daļas. Modeļa apmācībā izmantota pieeja ar 
   četriem telpiskajiem blokiem - validēšana veikta vienai (telpiski nodalītu) ceturtdaļai 
@@ -63,7 +63,7 @@ pieejai. Attēlos iekļauti sekojoši raksturojumi:
   vairākus konkurentus (1.a.), izvēlējos modeli ar zemāko vērtību šajā rādītājā;
   
   
-  3.3. "Validācijas TSS" (*attēla A daļā*), kas raksturo TSS vērtību telpiski nodalītā 
+  c. "Validācijas TSS" (*attēla A daļā*), kas raksturo TSS vērtību telpiski nodalītā 
   ceturtdaļā modeļa pielāgošanas kopas datu. Aprēķināta vidējā aritmētiskā vērtība 
   četrām telpiski nodalītu bloku krosvalidācijām. Jo augstāka šī vērtība, jo labāka 
   ir modeļa spēja prognozēt vides piemērotību telpiski nodalītās vietās. Ja 
@@ -72,11 +72,11 @@ pieejai. Attēlos iekļauti sekojoši raksturojumi:
   vienkāršāko algoritmu (*feature class algorithm*). Šis solis visos gadījumos 
   nodrošināja tikai *vienu labāko* modeli;
   
-  3.4. "Apmācību TSS" (*attēla A daļā*), kas raksturo TSS vidējo aritmētisko vērtību 
+  d. "Apmācību TSS" (*attēla A daļā*), kas raksturo TSS vidējo aritmētisko vērtību 
   modeļa apmācībai izmantotajās trīs ceturtdaļās modeļa pielāgošanai pieejamo datu. 
   Iekļauts visualizācijai tikai informatīvos nolūkos;
   
-  3.5. "Neatkarīgā testa AUC" (*attēla A daļā*), kas raksturo laukumu zem uztvērēja 
+  e. "Neatkarīgā testa AUC" (*attēla A daļā*), kas raksturo laukumu zem uztvērēja 
   operēšanu raksturojošās līknes (angļu - *Arue Under the receiver operating Curve*), 
   kur uztvērējs ir modelis un telpas laukumu veido sensitivitāte (uz y-ass) 
   un 1 - specifiskums (uz x-ass). Vērtība 0.5 apzīmē klasifikācijas (piemērotās vai 
@@ -87,7 +87,7 @@ pieejai. Attēlos iekļauti sekojoši raksturojumi:
   vērtības sniegtas informatīvos nolūkos. Par pieņemiem bieži uzskata modeļus, kuru 
   AUC $\ge$ 0.7 un par labiem, ja AUC $\ge$ 0.8;
   
-  3.6. "ROC līkne" (*attēla B daļā*), kas raksturo modeļa spēju atšķirt sugai piemērotās 
+  f. "ROC līkne" (*attēla B daļā*), kas raksturo modeļa spēju atšķirt sugai piemērotās 
   dzīvotnes no nepiemērotajām modeļa apmācībā izmantotajos (*Train*, ar zilu) un 
   neatkarīgās testēšanas kopas (*train*, ar sarkanu) datos (aptvere ar AUC vērtību 
   sniegta apzīmējumos), informācijas telpu raksturojot ar sensitivitāti (*True Positive Rate*; 
@@ -122,7 +122,7 @@ pieejai. Attēlos iekļauti sekojoši raksturojumi:
   un jāpārskata izvēloties sliekšņa līmeņus projicētās dzīvotņu piemērotības dalījumam 
   piemērotajās un nepiemērotajās;
   
-  3.7. "AUC (validācijas)" (*attēla C daļā*), kas raksturo atkārtoti pielāgotā modeļa 
+  g. "AUC (validācijas)" (*attēla C daļā*), kas raksturo atkārtoti pielāgotā modeļa 
   AUC vērtību validācijas datos - tā parēķināta pēc noklusējuma un vizualizēta 
   informatīvos nolūkos un, lai piedāvātu ieskatu modeļa dzīvotņu piemērotības 
   projekcijas stabilitātē un salīdzināšanai ar nejauši ģenerētiem sadalījumiem
@@ -131,7 +131,7 @@ pieejai. Attēlos iekļauti sekojoši raksturojumi:
   dot priekšroku pārāk pielāgotiem modeļiem (*overfitted*), vienotā informācijas 
   telpā (kā nulles modeļu gadījumā) tas ir noderīgs savstarpējai salīdzināšanai;
   
-  3.8. "Continuous Boyce Index (validācijas)" (*attēla C daļā*), kas raksturo modeļa 
+  h. "Continuous Boyce Index (validācijas)" (*attēla C daļā*), kas raksturo modeļa 
   prognozētās dzīvotņu piemērotības (nepārtraukti variējoša [0, 1]) korelācijas 
   koeficientu ar sugas klātbūtnes vietu skaitu dzīvotņu piemērotības diapozona daļās, 
   tas ir no sliekšņa dalījumam piemērotajās un nepiemērotajās vietās līmeņa neatkarīgs 
@@ -161,7 +161,7 @@ pieejai. Attēlos iekļauti sekojoši raksturojumi:
   punkts) ir ne tikai pozitīva, bet tā arī atrodas nulles modeļu sadalījuma 
   augšdaļā vai virs tā;
   
-  3.9. "10% training omission rate" (*attēla C daļā*), kas raksturo kādu īpatsvaru 
+  i. "10% training omission rate" (*attēla C daļā*), kas raksturo kādu īpatsvaru 
   no modeļa apmācībā izslēgtiem 10% klātbūtnes punktu (veidojot pseido-neatkarīgās 
   testēšanas kopu) modelis nespēj prognozēt kā sugai piemērotās vietās esošus. Šajā 
   modeļa pārbaudē projekcijas vēl nav informētas par optimālo dalījumu piemērotās 
@@ -172,7 +172,7 @@ pieejai. Attēlos iekļauti sekojoši raksturojumi:
   modeļa pārpielāgošanu (*overfitting*), kas nozīmē dzīvotņu piemērotības projicēšanas 
   vispārināšanās spējas trūkumu; 
   
-  3.10. "Minimum training omission rate" (*attēla C daļā*), pēc būtības ir līdzīgs 
+  j. "Minimum training omission rate" (*attēla C daļā*), pēc būtības ir līdzīgs 
   iepriekš aprakstītajam "10% training omission rate" un arī interpretējams ir 
   līdzīgi - saistībā ar nulles modeļiem. Tomēr šis mērs raksturo minimālo no apmācību 
   kopas izslēdzamo klātbūtnes vietu skaitu, kas spēj sasniegt augstu prognozes spēju.
@@ -194,7 +194,7 @@ pieejai. Attēlos iekļauti sekojoši raksturojumi:
 
 4. tabula ar raksturojumu atsvišķiem biežāk lietotajiem projicētās dzīvotņu piemērotības izvērtējumiem, kas raksturo modeli, veicot dalījumu piemērotajās un nepiemērotajās vietās:
 
-  4.1. rindas raksturo sekojošus sliekšņa līmeņus (projicētās dzīvotņu piemērotības vērtība, kas nošķir piemērotās no nepiemērotajām vietām):
+  a. rindas raksturo sekojošus sliekšņa līmeņus (projicētās dzīvotņu piemērotības vērtība, kas nošķir piemērotās no nepiemērotajām vietām):
   
   - "Minimum training presence", kas sekojošajos tabulas laukos raksturo modeļa 
   spēju, projicētās dzīvotņu piemērotības dalījumam sugai piemērotajās un 
@@ -237,7 +237,7 @@ pieejai. Attēlos iekļauti sekojoši raksturojumi:
   kā "Maximum training sensitivity plus specificity", tomēr sliekšņa līmeni vērtē 
   neatkarīgos (modeļa apmācībā nevienā brīdī neiesaistītos) testa datos, kuru ir mazāk;
   
-  4.2. katram no tiem sniegts sekojošs izvērtējums:
+  b. katram no tiem sniegts sekojošs izvērtējums:
   
   - "Cloglog value", kas raksturo projicētās dzīvotņu piemērotības sliekšņa 
   līmeni dalījumam sugai piemērotajās (sākot ar vērtību šajā laukā) un 
@@ -269,19 +269,19 @@ pieejai. Attēlos iekļauti sekojoši raksturojumi:
 
 7. modeļiem, kuru rezultātu ir vērts tālāk lietot, piedāvāta iespēja lejupielādēt sekojošus datu objektus:
 
-  7.1. projicētā (cloglog) dzīvotņu piemērotība kā GeoTIFF slānis;
+  a. projicētā (cloglog) dzīvotņu piemērotība kā GeoTIFF slānis;
   
-  7.2. tabula ar sliekšņa līmeņiem projicētās dzīvotņu piemērotības dalījumam 
+  b. tabula ar sliekšņa līmeņiem projicētās dzīvotņu piemērotības dalījumam 
   piemērotās un nepiemērotās (kā .xlsx fails);
   
-  7.3. par labāko atzītais modelis (krosvalidāciju objekts kā *.RDS fails);
+  c. par labāko atzītais modelis (krosvalidāciju objekts kā *.RDS fails);
   
-  7.4. par labāko atzītais modelis (kombinēts krosvalidāciju objekts kā *.RDS fails);
+  d. par labāko atzītais modelis (kombinēts krosvalidāciju objekts kā *.RDS fails);
   
-  7.5. par labāko atzītais modelis (tikai ietekmīgās pazīmes kombinētajā krosvalidāciju 
+  e. par labāko atzītais modelis (tikai ietekmīgās pazīmes kombinētajā krosvalidāciju 
   objektā, lai atvieglotu turpmāku izplatības projicēšanu kā *.RDS fails);
   
-  7.6. tabula ar ekoģeogrāfisko mainīgo izvēles gaitu, to VIF (savstarpējās 
+  f. tabula ar ekoģeogrāfisko mainīgo izvēles gaitu, to VIF (savstarpējās 
   prognozētspējas raksturojuma) vērtībām un ietekmes modelī (permutāciju procedūrā) 
   raksturojums (kā *.xlsx fails);
   
@@ -289,22 +289,22 @@ pieejai. Attēlos iekļauti sekojoši raksturojumi:
 
 9. no projicētās dzīvotņu piemērotības aprēķinātā preference: 
 
-  9.1. ekosistēmu grupām (apbūve (t.sk. ceļi), ūdeņi, mitrāji (bez ūdeņiem), 
+  a. ekosistēmu grupām (apbūve (t.sk. ceļi), ūdeņi, mitrāji (bez ūdeņiem), 
   lauksaimniecībā izmantojamās zemes, meži);
   
-  9.2. ES aizsargājamo biotopu grupām ();
+  b. ES aizsargājamo biotopu grupām ();
   
-  9.3. *Natura 2000* tīklam;
+  c. *Natura 2000* tīklam;
   
-  9.4. īpaši aizsargājamās dabas teritorijas funkcionālajai zonai;
+  d. īpaši aizsargājamās dabas teritorijas funkcionālajai zonai;
   
 10. sniegts komentārs par nepieciešamību sugas individuālai aizsardzībai ar telpiski izdalāmām platībām;
 
 11. sugām, kurām ierosināta individuālās aizsardzības plānošana, vietu prioritizēšanas aizsardzībai rezultāti:
 
-  11.1. attēls ar vietu nozīmes sugas aizsardzībā rangiem, izzušanas riska un aizsargātās populācijas daļas līknēm, aizsardzībai prioritārajām vietām - tām, kurās nozīmes rangi ir kopš izzušanas un aizsargātās populācijas daļas pa labi;
+  a. attēls ar vietu nozīmes sugas aizsardzībā rangiem, izzušanas riska un aizsargātās populācijas daļas līknēm, aizsardzībai prioritārajām vietām - tām, kurās nozīmes rangi ir kopš izzušanas un aizsargātās populācijas daļas pa labi;
   
-  11.2. vietu nozīmes (rangu: [0, 1]) sugas aizsardzībā GeoTIFF slānis lejupielādei;
+  b. vietu nozīmes (rangu: [0, 1]) sugas aizsardzībā GeoTIFF slānis lejupielādei;
 
 
 ### COTCOT - paipala *Coturnix coturnix* {#Chapter10.1.001}
