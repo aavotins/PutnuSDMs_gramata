@@ -409,11 +409,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -421,12 +427,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_COTCOT.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesCOTCOT)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_COTCOT.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesCOTCOT)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_COTCOT.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpCOTCOT)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 <br>
 
@@ -531,11 +542,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes - projicēšanai; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -544,13 +561,18 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_PERPER.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesPERPER)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_PERPER.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesPERPER)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_PERPER.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpPERPER)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 <br>
 
@@ -656,11 +678,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -669,11 +697,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_BONBON.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesBONBON)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_BONBON.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesBONBON)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_BONBON.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpBONBON)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 
@@ -780,11 +814,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -793,11 +833,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_TETURO.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesTETURO)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_TETURO.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesTETURO)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_TETURO.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpTETURO)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 
@@ -906,11 +952,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -919,11 +971,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_LYRTET.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesLYRTET)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_LYRTET.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesLYRTET)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_LYRTET.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpLYRTET)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 
@@ -1032,11 +1090,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -1045,11 +1109,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_CYGCYG.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesCYGCYG)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_CYGCYG.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesCYGCYG)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_CYGCYG.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpCYGCYG)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 
@@ -1158,11 +1228,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -1171,11 +1247,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_ANSANS.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesANSANS)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_ANSANS.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesANSANS)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_ANSANS.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpANSANS)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 
@@ -1283,11 +1365,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -1296,11 +1384,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_TADTAD.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesTADTAD)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_TADTAD.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesTADTAD)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_TADTAD.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpTADTAD)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 
@@ -1408,11 +1502,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -1421,11 +1521,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_AYTFER.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesAYTFER)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_AYTFER.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesAYTFER)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_AYTFER.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpAYTFER)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 
@@ -1534,11 +1640,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -1547,11 +1659,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_AYTFUL.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesAYTFUL)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_AYTFUL.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesAYTFUL)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_AYTFUL.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpAYTFUL)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 
@@ -1659,11 +1777,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -1672,11 +1796,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_SPAQUE.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesSPAQUE)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_SPAQUE.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesSPAQUE)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_SPAQUE.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpSPAQUE)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 
@@ -1786,11 +1916,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -1799,11 +1935,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_SPACLY.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesSPACLY)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_SPACLY.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesSPACLY)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_SPACLY.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpSPACLY)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 
@@ -1911,11 +2053,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -1924,12 +2072,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_MARSTR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesMARSTR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_MARSTR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesMARSTR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_MARSTR.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpMARSTR)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -2037,11 +2190,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -2050,12 +2209,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_MARPEN.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesMARPEN)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_MARPEN.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesMARPEN)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_MARPEN.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpMARPEN)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -2162,11 +2326,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -2175,12 +2345,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_TACRUF.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesTACRUF)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_TACRUF.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesTACRUF)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_TACRUF.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpTACRUF)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -2288,11 +2463,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -2301,12 +2482,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_PODGRI.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesPODGRI)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_PODGRI.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesPODGRI)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_PODGRI.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpPODGRI)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -2413,11 +2599,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -2426,12 +2618,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_PODCRI.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesPODCRI)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_PODCRI.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesPODCRI)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_PODCRI.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpPODCRI)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -2538,11 +2735,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -2551,12 +2754,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_STRTUR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesSTRTUR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_STRTUR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesSTRTUR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_STRTUR.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpSTRTUR)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -2664,11 +2872,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -2677,12 +2891,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_CAPEUR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesCAPEUR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_CAPEUR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesCAPEUR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_CAPEUR.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpCAPEUR)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -2789,11 +3008,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -2802,12 +3027,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_RALAQU.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesRALAQU)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_RALAQU.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesRALAQU)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_RALAQU.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpRALAQU)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -2915,11 +3145,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -2928,12 +3164,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_CRECRE.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesCRECRE)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_CRECRE.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesCRECRE)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_CRECRE.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpCRECRE)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -3040,11 +3281,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -3053,12 +3300,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_PORPOR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesPORPOR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_PORPOR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesPORPOR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_PORPOR.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpPORPOR)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -3165,11 +3417,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -3178,12 +3436,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_ZAPPAR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesZAPPAR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_ZAPPAR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesZAPPAR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_ZAPPAR.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpZAPPAR)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -3290,11 +3553,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -3303,12 +3572,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_FULATR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesFULATR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_FULATR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesFULATR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_FULATR.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpFULATR)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -3415,11 +3689,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -3428,12 +3708,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_GRUGRU.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesGRUGRU)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_GRUGRU.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesGRUGRU)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_GRUGRU.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpGRUGRU)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -3542,11 +3827,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -3555,12 +3846,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_CICNIG.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesCICNIG)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_CICNIG.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesCICNIG)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_CICNIG.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpCICNIG)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -3668,11 +3964,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -3681,12 +3983,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_CICCIC.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesCICCIC)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_CICCIC.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesCICCIC)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_CICCIC.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpCICCIC)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -3794,11 +4101,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -3807,12 +4120,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_BOTSTE.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesBOTSTE)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_BOTSTE.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesBOTSTE)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_BOTSTE.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpBOTSTE)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -3919,11 +4237,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -3932,12 +4256,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_IXOMIN.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesIXOMIN)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_IXOMIN.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesIXOMIN)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_IXOMIN.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpIXOMIN)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -4045,11 +4374,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -4058,12 +4393,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_HAEOST.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesHAEOST)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_HAEOST.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesHAEOST)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_HAEOST.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpHAEOST)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -4170,11 +4510,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -4183,12 +4529,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_PLUAPR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesPLUAPR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_PLUAPR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesPLUAPR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_PLUAPR.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpPLUAPR)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -4295,11 +4646,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -4308,12 +4665,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_CHAHIA.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesCHAHIA)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_CHAHIA.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesCHAHIA)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_CHAHIA.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpCHAHIA)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -4419,11 +4781,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -4432,12 +4800,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_CHADUB.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesCHADUB)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_CHADUB.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesCHADUB)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_CHADUB.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpCHADUB)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -4544,11 +4917,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -4557,12 +4936,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_VANVAN.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesVANVAN)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_VANVAN.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesVANVAN)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_VANVAN.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpVANVAN)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -4689,11 +5073,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -4702,12 +5092,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_NUMARQ.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesNUMARQ)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_NUMARQ.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesNUMARQ)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_NUMARQ.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpNUMARQ)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -4854,11 +5249,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -4867,12 +5268,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_GALGAL.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesGALGAL)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_GALGAL.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesGALGAL)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_GALGAL.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpGALGAL)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -4998,11 +5404,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -5011,12 +5423,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_TRITOT.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesTRITOT)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_TRITOT.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesTRITOT)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_TRITOT.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpTRITOT)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -5125,11 +5542,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -5138,12 +5561,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_TRIGLA.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesTRIGLA)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_TRIGLA.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesTRIGLA)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_TRIGLA.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpTRIGLA)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -5251,11 +5679,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -5264,12 +5698,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_GLAPAS.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesGLAPAS)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_GLAPAS.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesGLAPAS)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_GLAPAS.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpGLAPAS)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -5378,11 +5817,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -5391,11 +5836,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_AEGFUN.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesAEGFUN)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_AEGFUN.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesAEGFUN)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_AEGFUN.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpAEGFUN)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -5502,11 +5953,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -5515,11 +5972,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_ASIOTU.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesASIOTU)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_ASIOTU.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesASIOTU)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_ASIOTU.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpASIOTU)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -5628,11 +6091,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -5641,11 +6110,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_STRALU.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesSTRALU)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_STRALU.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesSTRALU)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_STRALU.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpSTRALU)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -5753,11 +6228,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -5766,11 +6247,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_STRURA.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesSTRURA)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_STRURA.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesSTRURA)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_STRURA.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpSTRURA)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -5878,11 +6365,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -5891,11 +6384,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_BUBBUB.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesBUBBUB)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_BUBBUB.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesBUBBUB)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_BUBBUB.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpBUBBUB)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -6002,11 +6501,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -6015,11 +6520,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_PANHAL.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesPANHAL)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_PANHAL.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesPANHAL)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_PANHAL.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpPANHAL)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -6127,11 +6638,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -6140,11 +6657,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_PERAPI.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesPERAPI)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_PERAPI.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesPERAPI)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_PERAPI.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpPARAPI)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -6251,11 +6774,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -6264,11 +6793,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_CLAPOM.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesCLAPOM)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_CLAPOM.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesCLAPOM)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_CLAPOM.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpCLAPOM)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -6375,11 +6910,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -6388,11 +6929,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_CIRAER.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesCIRAER)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_CIRAER.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesCIRAER)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_CIRAER.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpCIRAER)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -6499,11 +7046,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -6512,11 +7065,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_ACCNIS.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesACCNIS)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_ACCNIS.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesACCNIS)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_ACCNIS.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpACCNIS)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -6623,11 +7182,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -6636,11 +7201,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_ACCGEN.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesACCGEN)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_ACCGEN.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesACCGEN)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_ACCGEN.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpACCGEN)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -6748,11 +7319,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -6761,11 +7338,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_HALALB.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesHALALB)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_HALALB.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesHALALB)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_HALALB.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpHALALB)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -6873,11 +7456,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -6886,11 +7475,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_MILMIL.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesMILMIL)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_MILMIL.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesMILMIL)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_MILMIL.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpMILMIL)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -6998,11 +7593,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -7011,11 +7612,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_MILMIG.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesMILMIG)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_MILMIG.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesMILMIG)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_MILMIG.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpMILMIG)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -7122,11 +7729,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -7135,11 +7748,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_BUTBUT.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesBUTBUT)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_BUTBUT.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesBUTBUT)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_BUTBUT.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpBUTBUT)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -7246,11 +7865,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -7259,11 +7884,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_UPUEPO.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesUPUEPO)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_UPUEPO.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesUPUEPO)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_UPUEPO.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpUPUEPO)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -7370,11 +8001,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -7383,11 +8020,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_CORGAR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesCORGAR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_CORGAR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesCORGAR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_CORGAR.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpCORGAR)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -7494,11 +8137,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -7507,11 +8156,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_JYNTOR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesJYNTOR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_JYNTOR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesJYNTOR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_JYNTOR.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpJYNTOR)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -7618,11 +8273,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -7631,11 +8292,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_PICCAN.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesPICCAN)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_PICCAN.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesPICCAN)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_PICCAN.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpPICCAN)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -7742,11 +8409,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -7755,11 +8428,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_DRYMAR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesDRYMAR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_DRYMAR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesDRYMAR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_DRYMAR.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpDRYMAR)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -7867,11 +8546,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -7880,11 +8565,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_PICTRI.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesPICTRI)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_PICTRI.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesPICTRI)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_PICTRI.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpPICTRI)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -7992,11 +8683,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -8005,11 +8702,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_LEIMED.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesLEIMED)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_LEIMED.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesLEIMED)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_LEIMED.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpLEIMED)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -8117,11 +8820,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -8130,11 +8839,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_DRYMIN.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesDRYMIN)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_DRYMIN.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesDRYMIN)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_DRYMIN.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpDRYMIN)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -8242,11 +8957,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -8255,11 +8976,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_DENLEU.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesDENLEU)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_DENLEU.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesDENLEU)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_DENLEU.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpDENLEU)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -8367,11 +9094,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -8380,11 +9113,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_DENMAJ.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesDENMAJ)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_DENMAJ.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesDENMAJ)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_DENMAJ.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpDENMAJ)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -8491,11 +9230,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -8504,11 +9249,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_FALTIN.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesFALTIN)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_FALTIN.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesFALTIN)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_FALTIN.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpFALTIN)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -8634,11 +9385,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -8647,11 +9404,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_ORIORI.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesORIORI)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_ORIORI.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesORIORI)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_ORIORI.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpORIORI)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -8758,11 +9521,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -8771,11 +9540,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_LANCOL.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesLANCOL)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_LANCOL.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesLANCOL)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_LANCOL.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpLANCOL)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -8882,11 +9657,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -8895,11 +9676,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_LANEXC.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesLANEXC)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_LANEXC.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesLANEXC)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_LANEXC.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpLANEXC)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -9006,11 +9793,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -9019,11 +9812,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_NUCCAR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesNUCCAR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_NUCCAR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesNUCCAR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_NUCCAR.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpNUCCAR)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -9131,11 +9930,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -9144,11 +9949,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_PERATE.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesPERATE)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_PERATE.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesPERATE)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
+
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_PERATE.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpPERATE)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -9256,11 +10067,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -9268,12 +10085,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_LOPCRI.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesLOPCRI)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_LOPCRI.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesLOPCRI)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_LOPCRI.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpLOPCRI)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -9380,11 +10202,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -9392,12 +10220,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_POEPAL.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesPOEPAL)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_POEPAL.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesPOEPAL)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_POEPAL.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpPOEPAL)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -9504,11 +10337,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -9516,12 +10355,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_POEMON.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesPOEMON)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_POEMON.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesPOEMON)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_POEMON.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpPOEMON)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -9628,11 +10472,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -9640,12 +10490,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_LULARB.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesLULARB)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_LULARB.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesLULARB)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_LULARB.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpLULARB)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -9752,11 +10607,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -9764,12 +10625,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_ALAARV.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesALAARV)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_ALAARV.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesALAARV)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_ALAARV.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpALAARV)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -9876,11 +10742,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -9888,12 +10760,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_IDUCAL.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesIDUCAL)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_IDUCAL.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesIDUCAL)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_IDUCAL.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpIDUCAL)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -9997,14 +10874,19 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 <br>
 
 
-
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -10012,12 +10894,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_ACRRIS.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesACRRIS)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_ACRRIS.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesACRRIS)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_ACRRIS.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpACRRIS)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -10124,11 +11011,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -10136,12 +11029,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_ACRARU.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesACRARU)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_ACRARU.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesACRARU)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_ACRARU.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpACRARU)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -10248,11 +11146,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -10260,12 +11164,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_LOCFLU.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesLOCFLU)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_LOCFLU.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesLOCFLU)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_LOCFLU.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpLOCFLU)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -10372,11 +11281,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -10384,12 +11299,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_LOCNAE.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesLOCNAE)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_LOCNAE.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesLOCNAE)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_LOCNAE.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpLOCNAE)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -10496,11 +11416,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -10508,12 +11434,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_HIRRUS.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesHIRRUS)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_HIRRUS.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesHIRRUS)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_HIRRUS.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpHIRRUS)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -10621,11 +11552,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -10633,12 +11570,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_PHYSIB.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesPHYSIB)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_PHYSIB.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesPHYSIB)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_PHYSIB.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpPHYSIB)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -10745,11 +11687,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -10757,12 +11705,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_AEGCAU.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesAEGCAU)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_AEGCAU.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesAEGCAU)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_AEGCAU.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpAEGCAU)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -10869,11 +11822,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -10881,12 +11840,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_CURNIS.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesCURNIS)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_CURNIS.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesCURNIS)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_CURNIS.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpCURNIS)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -10992,11 +11956,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -11004,12 +11974,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_CURCOM.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesCURCOM)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_CURCOM.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesCURCOM)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_CURCOM.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpCURCOM)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -11116,11 +12091,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -11128,12 +12109,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_CERFAM.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesCERFAM)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_CERFAM.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesCERFAM)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_CERFAM.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpCERFAM)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -11240,11 +12226,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -11252,12 +12244,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_SITEUR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesSITEUR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_SITEUR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesSITEUR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_SITEUR.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpSITEUR)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -11364,11 +12361,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -11376,12 +12379,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_STUVUL.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesSTUVUL)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_STUVUL.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesSTUVUL)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_STUVUL.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpSTUVUL)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -11488,11 +12496,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -11500,12 +12514,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_TURVIS.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesTURVIS)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_TURVIS.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesTURVIS)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_TURVIS.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpTURVIS)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -11612,11 +12631,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -11624,12 +12649,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_TURILI.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesTURILI)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_TURILI.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesTURILI)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_TURILI.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpTURILI)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -11753,11 +12783,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
 
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
+
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -11765,12 +12801,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_LUSLUS.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesLUSLUS)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_LUSLUS.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesLUSLUS)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_LUSLUS.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpLUSLUS)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -11873,15 +12914,19 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
-
-
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -11889,12 +12934,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_FICPAR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesFICPAR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_FICPAR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesFICPAR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_FICPAR.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpFICPAR)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -11997,15 +13047,19 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
-
-
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -12013,12 +13067,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_FICHYP.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesFICHYP)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_FICHYP.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesFICHYP)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_FICHYP.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpFICHYP)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -12122,15 +13181,19 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
-
-
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -12138,12 +13201,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_SAXRUB.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesSAXRUB)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_SAXRUB.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesSAXRUB)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_SAXRUB.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpSAXRUB)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -12245,15 +13313,19 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
-
-
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -12261,12 +13333,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_REGREG.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesREGREG)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_REGREG.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesREGREG)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_REGREG.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpREGREG)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -12367,15 +13444,19 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
-
-
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -12383,12 +13464,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_REGIGN.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesREGIGN)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_REGIGN.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesREGIGN)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_REGIGN.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpREGIGN)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -12490,15 +13576,19 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
-
-
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -12506,12 +13596,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_PASMON.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesPASMON)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_PASMON.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesPASMON)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_PASMON.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpPASMON)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -12613,15 +13708,19 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
-
-
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -12629,12 +13728,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_ANTPRA.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesANTPRA)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_ANTPRA.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesANTPRA)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_ANTPRA.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpANTPRA)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -12736,15 +13840,19 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
-
-
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -12752,12 +13860,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_ANTCAM.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesANTCAM)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_ANTCAM.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesANTCAM)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_ANTCAM.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpANTCAM)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -12859,15 +13972,19 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
-
-
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -12875,12 +13992,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_MOTFLA.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesMOTFLA)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_MOTFLA.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesMOTFLA)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_MOTFLA.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpMOTFLA)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -12983,15 +14105,19 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
-
-
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -12999,12 +14125,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_MOTCIT.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesMOTCIT)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_MOTCIT.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesMOTCIT)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_MOTCIT.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpMOTCIT)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -13107,15 +14238,19 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
-
-
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -13123,12 +14258,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_COCCOC.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesCOCCOC)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_COCCOC.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesCOCCOC)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_COCCOC.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpCOCCOC)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -13230,15 +14370,19 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
-
-
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -13246,12 +14390,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_CARERY.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesCARERY)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_CARERY.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesCARERY)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_CARERY.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpCARERY)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -13353,15 +14502,19 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
-
-
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -13369,12 +14522,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_PYRPYR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesPYRPYR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_PYRPYR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesPYRPYR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_PYRPYR.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpPYRPYR)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -13477,15 +14635,19 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
-
-
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -13493,12 +14655,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_CHLCHL.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesCHLCHL)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_CHLCHL.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesCHLCHL)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_CHLCHL.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpCHLCHL)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -13601,15 +14768,19 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
-
-
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -13617,12 +14788,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_LINCAN.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesLINCAN)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_LINCAN.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesLINCAN)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_LINCAN.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpLINCAN)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -13725,15 +14901,19 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
-
-
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -13741,12 +14921,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_LOXCUR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesLOXCUR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_LOXCUR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesLOXCUR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_LOXCUR.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpLOXCUR)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -13849,15 +15034,19 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
-
-
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -13865,12 +15054,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_CARCAR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesCARCAR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_CARCAR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesCARCAR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_CARCAR.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpCARCAR)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -13973,15 +15167,19 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
-
-
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -13989,12 +15187,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_EMBHOR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesEMBHOR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_EMBHOR.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesEMBHOR)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_EMBHOR.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpEMBHOR)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
@@ -14098,15 +15301,19 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
-
-
 [**Vēl nē:** Dzīvotņu piemērotība (GeoTIFF)]()
+
+[**Vēl nē:** Biežāk izmantoto sliekšņa līmeņu dzīvotņu piemērotības dalījumam piemērotajās un nepiemērotajās tabula (*.xlsx)]()
+
+[**Vēl nē:** Pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF)]()
+
+[**Vēl nē:** Binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)]()
+
+[**Vēl nē:** Labāka modeļa izvēles tabula (*.xlsx)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (krosvalidācijas; *.RDS)]()
 
 [**Vēl nē:** Par labāko atzītais modelis (kombinēts; *.RDS)]()
-
-[**Vēl nē:** Par labāko atzītais modelis (tikai ietekmīgās pazīmes; *.RDS)]()
 
 [**Vēl nē:** Ekoģeogrāfisko mainīgo izvēles gaita, to VIF (savstarpējās prognozētspējas raksturojums) un ietekmes modelī (permutāciju procedūrā) raksturojums (*.xlsx)]()
 
@@ -14114,12 +15321,17 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <div class="figure">
-<img src="./Atteli/MarginalResponses/MargResp_EMBCIT.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē." width="100%" />
-<p class="caption">(\#fig:MarginalResponsesEMBCIT)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs attēla esošajā hipersaitē.</p>
+<img src="./Atteli/MarginalResponses/MargResp_EMBCIT.png" alt="Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā." width="100%" />
+<p class="caption">(\#fig:MarginalResponsesEMBCIT)Par labāko atzītajā modelī iekļauto pazīmju marginālās atbilžu funkcijas (cloglog tranformētā informācijas telpā, uz y-ass), atkarībā no centrētas (aritmētiskajam vidējam) un mērogotas (standartnovirzei) EGV vērtības (uz x-ass). Līknes raksturo katras labākajā modelī iekļautās pazīmes ietekmi uz dzīvotņu piemērotību tādos vides apstākļos, kur visām pārējām pazīmēm ir pieņemta to vidējā aritmētiskā vērtība (marginalizēta vidējiem aritmētiskajiem informācijas telpā). Melnā līnija raksturo centrālo tendenci (aritmētisko vidējo) un pelēkā josla - nenoteiktību telpisko bloku krosvalidācijās. Puscaurspīdīgie melnie punkti katras attēla daļas augšpusē raksturo modeļa apmācībā pieejamās vērtības sugas klātbūtnes punktos, apakšdaļā - vidē kopumā. Pazīmju ietekmes novērtējums un savstarpējās neatkarības raksturojums (VIF) pieejams kā lejupielādes fails virs šī attēla esošajā hipersaitē, to vērtības labākajā modelī ir vizualizētas sekojošajā attēlā.</p>
 </div>
 
 <br>
 
+
+<div class="figure">
+<img src="./Atteli/Pic_VarImp/PicVarImp_EMBCIT.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
+<p class="caption">(\#fig:VarImpEMBCIT)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
+</div>
 
 
 <br>
