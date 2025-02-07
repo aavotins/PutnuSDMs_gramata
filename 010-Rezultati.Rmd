@@ -193,12 +193,7 @@ pieejai. Attēlos iekļauti sekojoši raksturojumi:
   projekciju;
 
 
-4. visām sugām, kurām izstrādāti dzīvotņu piemērotības/izplatības modeļi, sniegts 
-īss to kvalitātes raksturojums - konspektīvs secinājums šī uzskaitījuma trešajā 
-un piektajā punktā dotajai informācijai. Atsevišķos gadījumos sniedzot komentāru arī 
-saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
-
-5. tabula ar raksturojumu atsvišķiem biežāk lietotajiem projicētās dzīvotņu piemērotības izvērtējumiem, kas raksturo modeli, veicot dalījumu piemērotajās un nepiemērotajās vietās:
+4. tabula ar raksturojumu atsvišķiem biežāk lietotajiem projicētās dzīvotņu piemērotības izvērtējumiem, kas raksturo modeli, veicot dalījumu piemērotajās un nepiemērotajās vietās:
 
   a. rindas raksturo sekojošus sliekšņa līmeņus (projicētās dzīvotņu piemērotības vērtība, kas nošķir piemērotās no nepiemērotajām vietām):
   
@@ -269,44 +264,45 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
   nejauši izvēlētas tik daudz vietas, cik atbilst konkrētajam sliekšņa līmenim 
   (lauks "Fractional predicted area");
 
-6. projicētā (cloglog) dzīvotņu piemērotības karte diapozonam no 0 (nepiemērotāka) līdz 1 (piemērotāka) ar centrālā dalījuma vietu atbilstoši iepriekšējās tabulas "Equal training sensitivity and specificity" sliekšņa līmenim. Šis rādītājs izvēlēts tādēļ, (1) ka tas ir labāk informēts par sugas sastapšanas vietām nekā neatkarīgā testa kopa, kas ir sevišķi aktuāli sugām ar nelielu novērojumu skaitu, (2) tā uzticamības un stabilitātes, kā arī (3) vienkāršās interpretējamības dēļ - ja sensitivitāte un specifiskums ir pēc vērtībām salīdzināmi mēri, zinot vienu, var tieši aplēst otru;
+5. projicētā (cloglog) dzīvotņu piemērotības karte diapozonam no 0 (nepiemērotāka) līdz 1 (piemērotāka) ar centrālā dalījuma vietu atbilstoši iepriekšējās tabulas "Equal training sensitivity and specificity" sliekšņa līmenim. Šis rādītājs izvēlēts tādēļ, (1) ka tas ir labāk informēts par sugas sastapšanas vietām nekā neatkarīgā testa kopa, kas ir sevišķi aktuāli sugām ar nelielu novērojumu skaitu, (2) tā uzticamības un stabilitātes, kā arī (3) vienkāršās interpretējamības dēļ - ja sensitivitāte un specifiskums ir pēc vērtībām salīdzināmi mēri, zinot vienu, var tieši aplēst otru;
 
-7. pēc projekcijas sniegts īss komentārs par modeļa kvalitāti un tā rezultātu turpmāko lietojumu;
 
-8. modeļiem, kuru rezultātu ir vērts tālāk lietot, piedāvāta iespēja lejupielādēt sekojošus datu objektus:
+6. visām sugām, kurām izstrādāti modeļi, piedāvāta iespēja lejupielādēt sekojošus datu objektus:
 
-  a. projicētā (cloglog) dzīvotņu piemērotība kā GeoTIFF slānis;
+  a. par labāko atzītā modeļa projicētā (cloglog) dzīvotņu piemērotība kā GeoTIFF slānis;
   
-  b. tabula ar sliekšņa līmeņiem projicētās dzīvotņu piemērotības dalījumam 
+  b. tabula ar sliekšņa līmeņiem iepriekšējā punkta projicētās dzīvotņu piemērotības dalījumam 
   piemērotās un nepiemērotās (kā .xlsx fails);
+  
+  c. pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF);
+  
+  d. binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)
+  
+  e. labāka modeļa izvēles tabula (*.xlsx)
   
   c. par labāko atzītais modelis (krosvalidāciju objekts kā *.RDS fails);
   
   d. par labāko atzītais modelis (kombinēts krosvalidāciju objekts kā *.RDS fails);
   
-  e. par labāko atzītais modelis (tikai ietekmīgās pazīmes kombinētajā krosvalidāciju 
-  objektā, lai atvieglotu turpmāku izplatības projicēšanu kā *.RDS fails);
-  
-  f. tabula ar ekoģeogrāfisko mainīgo izvēles gaitu, to VIF (savstarpējās 
+  e. tabula ar ekoģeogrāfisko mainīgo izvēles gaitu, to VIF (savstarpējās 
   prognozētspējas raksturojuma) vērtībām un ietekmes modelī (permutāciju procedūrā) 
   raksturojums (kā *.xlsx fails);
   
-9. modeļiem, kuri sasniedz pietiekošu prognozes spēju, ievietots attēls ar marginālajām atbildes funkcijām krosvalidāciju modelī. Marginālā atbilde raksturo interesējošās pazīmes ietekmi uz dzīvotņu piemērotību, pārējām pazīmēm esot to vidējo vērtību līmenī.
+7. attēls ar marginālajām atbildes funkcijām krosvalidāciju modelī. Marginālā atbilde raksturo interesējošās pazīmes ietekmi uz dzīvotņu piemērotību, pārējām pazīmēm esot to vidējo vērtību līmenī;
 
-10. no projicētās dzīvotņu piemērotības aprēķinātā preference: 
+8. no piemēroto dzīvotņu (binarizēta dzīvotņu piemērotības projekcija) izvietojuma aprēķinātā preference: 
 
-  a. ekosistēmu grupām (apbūve (t.sk. ceļi), ūdeņi, mitrāji (bez ūdeņiem), 
-  lauksaimniecībā izmantojamās zemes, meži);
+  a. zemes seguma/lietojuma veidos;
   
-  b. ES aizsargājamo biotopu grupām ();
+  b. *Natura 2000* tīklam;
   
-  c. *Natura 2000* tīklam;
+  c. Eiropas Savienībā aizsargājamo biotopu grupām;
   
-  d. īpaši aizsargājamās dabas teritorijas funkcionālajai zonai;
+  d. īpaši aizsargājamo dabas teritoriju funkcionālajām zonām;
   
-11. sniegts komentārs par nepieciešamību sugas individuālai aizsardzībai ar telpiski izdalāmām platībām;
+9. sniegts komentārs par nepieciešamību sugas individuālai aizsardzībai ar telpiski izdalāmām platībām;
 
-12. sugām, kurām ierosināta individuālās aizsardzības plānošana, vietu prioritizēšanas aizsardzībai rezultāti:
+10. sugām, kurām ierosināta individuālās aizsardzības plānošana, vietu prioritizēšanas aizsardzībai rezultāti:
 
   a. attēls ar vietu nozīmes sugas aizsardzībā rangiem, izzušanas riska un aizsargātās populācijas daļas līknēm, aizsardzībai prioritārajām vietām - tām, kurās nozīmes rangi ir kopš izzušanas un aizsargātās populācijas daļas līkņu krustpunkta uz labo pusi;
   
@@ -384,6 +380,13 @@ knitr::include_graphics("./Atteli/MarginalResponses/MargResp_COTCOT.png")
 ```{r VarImpCOTCOT, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).'}
 knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_COTCOT.png")
 ```
+
+<br>
+
+```{r PrefsCOTCOT, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_COTCOT.png")
+```
+
 
 <br>
 
@@ -465,6 +468,13 @@ knitr::include_graphics("./Atteli/MarginalResponses/MargResp_PERPER.png")
 ```{r VarImpPERPER, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).'}
 knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_PERPER.png")
 ```
+
+<br>
+
+```{r PrefsPERPER, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_PERPER.png")
+```
+
 
 <br>
 
@@ -552,6 +562,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_BONBON.png")
 
 <br>
 
+```{r PrefsBONBON, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_BONBON.png")
+```
+
+
+<br>
+
+
+
 
 ### TETURO - mednis *Tetrao urogallus* {#Chapter10.1.004}
 
@@ -632,6 +651,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_TETURO.png")
 
 
 <br>
+
+```{r PrefsTETURO, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_TETURO.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -717,6 +745,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_LYRTET.png")
 
 <br>
 
+```{r PrefsLYRTET, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_LYRTET.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -800,6 +837,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_CYGCYG.png")
 
 
 <br>
+
+```{r PrefsCYGCYG, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_CYGCYG.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -885,6 +931,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_ANSANS.png")
 
 <br>
 
+```{r PrefsANSANS, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_ANSANS.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -968,6 +1023,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_TADTAD.png")
 
 <br>
 
+```{r PrefsTADTAD, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_TADTAD.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -1050,6 +1114,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_AYTFER.png")
 
 
 <br>
+
+```{r PrefsAYTFER, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_AYTFER.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -1135,6 +1208,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_AYTFUL.png")
 
 <br>
 
+```{r PrefsAYTFUL, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_AYTFUL.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -1217,6 +1299,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_SPAQUE.png")
 
 
 <br>
+
+```{r PrefsSPAQUE, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_SPAQUE.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -1303,6 +1394,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_SPACLY.png")
 
 <br>
 
+```{r PrefsSPACLY, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_SPACLY.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -1384,6 +1484,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_MARSTR.png")
 
 
 <br>
+
+```{r PrefsMARSTR, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_MARSTR.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -1468,6 +1577,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_MARPEN.png")
 
 <br>
 
+```{r PrefsMARPEN, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_MARPEN.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -1549,6 +1667,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_TACRUF.png")
 
 
 <br>
+
+```{r PrefsTACRUF, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_TACRUF.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -1633,6 +1760,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_PODGRI.png")
 
 <br>
 
+```{r PrefsPODGRI, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_PODGRI.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -1715,6 +1851,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_PODCRI.png")
 
 <br>
 
+```{r PrefsPODCRI, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_PODCRI.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -1796,6 +1941,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_STRTUR.png")
 
 
 <br>
+
+```{r PrefsSTRTUR, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_STRTUR.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -1880,6 +2034,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_CAPEUR.png")
 
 <br>
 
+```{r PrefsCAPEUR, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_CAPEUR.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -1961,6 +2124,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_RALAQU.png")
 
 
 <br>
+
+```{r PrefsRALAQU, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_RALAQU.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -2045,6 +2217,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_CRECRE.png")
 
 <br>
 
+```{r PrefsCRECRE, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_CRECRE.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -2126,6 +2307,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_PORPOR.png")
 
 
 <br>
+
+```{r PrefsPORPOR, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_PORPOR.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -2209,6 +2399,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_ZAPPAR.png")
 
 <br>
 
+```{r PrefsZAPPAR, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_ZAPPAR.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -2291,6 +2490,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_FULATR.png")
 
 <br>
 
+```{r PrefsFULATR, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_FULATR.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -2372,6 +2580,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_GRUGRU.png")
 
 
 <br>
+
+```{r PrefsGRUGRU, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_GRUGRU.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -2457,6 +2674,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_CICNIG.png")
 
 <br>
 
+```{r PrefsCICNIG, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_CICNIG.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -2539,6 +2765,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_CICCIC.png")
 
 
 <br>
+
+```{r PrefsCICCIC, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_CICCIC.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -2623,6 +2858,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_BOTSTE.png")
 
 <br>
 
+```{r PrefsBOTSTE, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_BOTSTE.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -2704,6 +2948,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_IXOMIN.png")
 
 
 <br>
+
+```{r PrefsIXOMIN, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_IXOMIN.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -2788,6 +3041,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_HAEOST.png")
 
 <br>
 
+```{r PrefsHAEOST, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_HAEOST.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -2869,6 +3131,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_PLUAPR.png")
 
 
 <br>
+
+```{r PrefsPLUAPR, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_PLUAPR.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -2952,6 +3223,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_CHAHIA.png")
 
 <br>
 
+```{r PrefsCHAHIA, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_CHAHIA.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -3032,6 +3312,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_CHADUB.png")
 
 
 <br>
+
+```{r PrefsCHADUB, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_CHADUB.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -3114,6 +3403,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_VANVAN.png")
 
 
 <br>
+
+```{r PrefsVANVAN, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_VANVAN.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -3215,6 +3513,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_NUMARQ.png")
 
 
 <br>
+
+```{r PrefsNUMARQ, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_NUMARQ.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -3336,6 +3643,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_GALGAL.png")
 
 <br>
 
+```{r PrefsGALGAL, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_GALGAL.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -3436,6 +3752,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_TRITOT.png")
 
 <br>
 
+```{r PrefsTRITOT, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_TRITOT.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -3520,6 +3845,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_TRIGLA.png")
 
 <br>
 
+```{r PrefsTRIGLA, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_TRIGLA.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -3602,6 +3936,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_GLAPAS.png")
 
 
 <br>
+
+```{r PrefsGLAPAS, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_GLAPAS.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -3687,6 +4030,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_AEGFUN.png")
 
 <br>
 
+```{r PrefsAEGFUN, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_AEGFUN.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -3768,6 +4120,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_ASIOTU.png")
 
 
 <br>
+
+```{r PrefsASIOTU, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_ASIOTU.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -3853,6 +4214,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_STRALU.png")
 
 <br>
 
+```{r PrefsSTRALU, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_STRALU.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -3935,6 +4305,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_STRURA.png")
 
 
 <br>
+
+```{r PrefsSTRURA, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_STRURA.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -4019,6 +4398,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_BUBBUB.png")
 
 <br>
 
+```{r PrefsBUBBUB, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_BUBBUB.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -4100,6 +4488,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_PANHAL.png")
 
 
 <br>
+
+```{r PrefsPANHAL, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_PANHAL.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -4184,6 +4581,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_PERAPI.png")
 
 <br>
 
+```{r PrefsPARAPI, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_PERAPI.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -4265,6 +4671,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_CLAPOM.png")
 
 
 <br>
+
+```{r PrefsCLAPOM, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_CLAPOM.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -4348,6 +4763,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_CIRAER.png")
 
 <br>
 
+```{r PrefsCIRAER, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_CIRAER.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -4430,6 +4854,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_ACCNIS.png")
 
 <br>
 
+```{r PrefsACCNIS, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_ACCNIS.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -4511,6 +4944,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_ACCGEN.png")
 
 
 <br>
+
+```{r PrefsACCGEN, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_ACCGEN.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -4595,6 +5037,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_HALALB.png")
 
 <br>
 
+```{r PrefsHALALB, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_HALALB.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -4677,6 +5128,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_MILMIL.png")
 
 
 <br>
+
+```{r PrefsMILMIL, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_MILMIL.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -4761,6 +5221,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_MILMIG.png")
 
 <br>
 
+```{r PrefsMILMIG, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_MILMIG.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -4842,6 +5311,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_BUTBUT.png")
 
 
 <br>
+
+```{r PrefsBUTBUT, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_BUTBUT.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -4925,6 +5403,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_UPUEPO.png")
 
 <br>
 
+```{r PrefsUPUEPO, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_UPUEPO.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -5006,6 +5493,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_CORGAR.png")
 
 
 <br>
+
+```{r PrefsCORGAR, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_CORGAR.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -5089,6 +5585,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_JYNTOR.png")
 
 <br>
 
+```{r PrefsJYNTOR, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_JYNTOR.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -5171,6 +5676,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_PICCAN.png")
 
 <br>
 
+```{r PrefsPICCAN, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_PICCAN.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -5252,6 +5766,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_DRYMAR.png")
 
 
 <br>
+
+```{r PrefsDRYMAR, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_DRYMAR.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -5336,6 +5859,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_PICTRI.png")
 
 <br>
 
+```{r PrefsPICTRI, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_PICTRI.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -5418,6 +5950,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_LEIMED.png")
 
 
 <br>
+
+```{r PrefsLEIMED, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_LEIMED.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -5502,6 +6043,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_DRYMIN.png")
 
 <br>
 
+```{r PrefsDRYMIN, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_DRYMIN.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -5584,6 +6134,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_DENLEU.png")
 
 
 <br>
+
+```{r PrefsDENLEU, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_DENLEU.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -5668,6 +6227,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_DENMAJ.png")
 
 <br>
 
+```{r PrefsDENMAJ, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_DENMAJ.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -5749,6 +6317,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_FALTIN.png")
 
 
 <br>
+
+```{r PrefsFALTIN, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_FALTIN.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -5850,6 +6427,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_ORIORI.png")
 
 <br>
 
+```{r PrefsORIORI, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_ORIORI.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -5931,6 +6517,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_LANCOL.png")
 
 
 <br>
+
+```{r PrefsLANCOL, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_LANCOL.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -6014,6 +6609,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_LANEXC.png")
 
 <br>
 
+```{r PrefsLANEXC, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_LANEXC.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -6095,6 +6699,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_NUCCAR.png")
 
 
 <br>
+
+```{r PrefsNUCCAR, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_NUCCAR.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -6179,6 +6792,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_PERATE.png")
 
 <br>
 
+```{r PrefsPERATE, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_PERATE.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -6261,6 +6883,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_LOPCRI.png")
 
 <br>
 
+```{r PrefsLOPCRI, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_LOPCRI.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -6341,6 +6972,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_POEPAL.png")
 
 
 <br>
+
+```{r PrefsPOEPAL, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_POEPAL.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -6423,6 +7063,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_POEMON.png")
 
 <br>
 
+```{r PrefsPOEMON, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_POEMON.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -6503,6 +7152,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_LULARB.png")
 
 
 <br>
+
+```{r PrefsLULARB, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_LULARB.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -6585,6 +7243,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_ALAARV.png")
 
 <br>
 
+```{r PrefsALAARV, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_ALAARV.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -6666,6 +7333,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_IDUCAL.png")
 
 <br>
 
+```{r PrefsIDUCAL, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_IDUCAL.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -6745,6 +7421,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_ACRRIS.png")
 
 
 <br>
+
+```{r PrefsACRRIS, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_ACRRIS.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -6827,6 +7512,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_ACRARU.png")
 
 <br>
 
+```{r PrefsACRARU, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_ACRARU.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -6907,6 +7601,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_LOCFLU.png")
 
 
 <br>
+
+```{r PrefsLOCFLU, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_LOCFLU.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -6989,6 +7692,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_LOCNAE.png")
 
 <br>
 
+```{r PrefsLOCNAE, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_LOCNAE.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -7069,6 +7781,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_HIRRUS.png")
 
 
 <br>
+
+```{r PrefsHIRRUS, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_HIRRUS.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -7152,6 +7873,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_PHYSIB.png")
 
 <br>
 
+```{r PrefsPHYSIB, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_PHYSIB.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -7232,6 +7962,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_AEGCAU.png")
 
 
 <br>
+
+```{r PrefsAEGCAU, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_AEGCAU.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -7314,6 +8053,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_CURNIS.png")
 
 <br>
 
+```{r PrefsCURNIS, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_CURNIS.png")
+```
+
+
+<br>
+
+
+
 
 
 ### CURCOM - brūnspārnu ķauķis *Curruca communis* {#Chapter10.1.090}
@@ -7393,6 +8141,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_CURCOM.png")
 
 
 <br>
+
+```{r PrefsCURCOM, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_CURCOM.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -7475,6 +8232,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_CERFAM.png")
 
 <br>
 
+```{r PrefsCERFAM, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_CERFAM.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -7555,6 +8321,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_SITEUR.png")
 
 
 <br>
+
+```{r PrefsSITEUR, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_SITEUR.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -7637,6 +8412,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_STUVUL.png")
 
 <br>
 
+```{r PrefsSTUVUL, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_STUVUL.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -7718,6 +8502,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_TURVIS.png")
 
 <br>
 
+```{r PrefsTURVIS, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_TURVIS.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -7798,6 +8591,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_TURILI.png")
 
 
 <br>
+
+```{r PrefsTURILI, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_TURILI.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -7896,6 +8698,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_LUSLUS.png")
 
 <br>
 
+```{r PrefsLUSLUS, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_LUSLUS.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -7975,6 +8786,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_FICPAR.png")
 
 <br>
 
+```{r PrefsFICPAR, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_FICPAR.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -8053,6 +8873,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_FICHYP.png")
 
 
 <br>
+
+```{r PrefsFICHYP, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_FICHYP.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -8134,6 +8963,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_SAXRUB.png")
 
 <br>
 
+```{r PrefsSAXRUB, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_SAXRUB.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -8212,6 +9050,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_REGREG.png")
 
 <br>
 
+```{r PrefsREGREG, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_REGREG.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -8288,6 +9135,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_REGIGN.png")
 
 
 <br>
+
+```{r PrefsREGIGN, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_REGIGN.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -8367,6 +9223,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_PASMON.png")
 
 <br>
 
+```{r PrefsPASMON, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_PASMON.png")
+```
+
+
+<br>
+
+
+
 
 
 ### ANTPRA - pļavu čipste *Anthus pratensis* {#Chapter10.1.104}
@@ -8444,6 +9309,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_ANTPRA.png")
 
 
 <br>
+
+```{r PrefsANTPRA, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_ANTPRA.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -8523,6 +9397,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_ANTCAM.png")
 
 <br>
 
+```{r PrefsANTCAM, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_ANTCAM.png")
+```
+
+
+<br>
+
+
+
 
 
 ### MOTFLA - dzeltenā cielava *Motacilla flava* {#Chapter10.1.106}
@@ -8600,6 +9483,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_MOTFLA.png")
 
 
 <br>
+
+```{r PrefsMOTFLA, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_MOTFLA.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -8680,6 +9572,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_MOTCIT.png")
 
 <br>
 
+```{r PrefsMOTCIT, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_MOTCIT.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -8759,6 +9660,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_COCCOC.png")
 
 <br>
 
+```{r PrefsCOCCOC, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_COCCOC.png")
+```
+
+
+<br>
+
+
+
 
 
 ### CARERY - mazais svilpis *Carpodacus erythrinus* {#Chapter10.1.109}
@@ -8837,6 +9747,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_CARERY.png")
 
 <br>
 
+```{r PrefsCARERY, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_CARERY.png")
+```
+
+
+<br>
+
+
+
 
 
 ### PYRPYR - svilpis *Pyrrhula pyrrhula* {#Chapter10.1.110}
@@ -8914,6 +9833,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_PYRPYR.png")
 
 
 <br>
+
+```{r PrefsPYRPYR, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_PYRPYR.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -8994,6 +9922,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_CHLCHL.png")
 
 <br>
 
+```{r PrefsCHLCHL, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_CHLCHL.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -9072,6 +10009,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_LINCAN.png")
 
 
 <br>
+
+```{r PrefsLINCAN, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_LINCAN.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -9152,6 +10098,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_LOXCUR.png")
 
 <br>
 
+```{r PrefsLOXCUR, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_LOXCUR.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -9230,6 +10185,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_CARCAR.png")
 
 
 <br>
+
+```{r PrefsCARCAR, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_CARCAR.png")
+```
+
+
+<br>
+
+
 
 
 
@@ -9310,6 +10274,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_EMBHOR.png")
 
 <br>
 
+```{r PrefsEMBHOR, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_EMBHOR.png")
+```
+
+
+<br>
+
+
+
 
 
 
@@ -9389,6 +10362,15 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_EMBCIT.png")
 
 
 <br>
+
+```{r PrefsEMBCIT, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
+knitr::include_graphics("./Atteli/PicsPrefs/PicPref_EMBCIT.png")
+```
+
+
+<br>
+
+
 
 
 

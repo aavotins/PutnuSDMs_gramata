@@ -193,12 +193,7 @@ pieejai. Attēlos iekļauti sekojoši raksturojumi:
   projekciju;
 
 
-4. visām sugām, kurām izstrādāti dzīvotņu piemērotības/izplatības modeļi, sniegts 
-īss to kvalitātes raksturojums - konspektīvs secinājums šī uzskaitījuma trešajā 
-un piektajā punktā dotajai informācijai. Atsevišķos gadījumos sniedzot komentāru arī 
-saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
-
-5. tabula ar raksturojumu atsvišķiem biežāk lietotajiem projicētās dzīvotņu piemērotības izvērtējumiem, kas raksturo modeli, veicot dalījumu piemērotajās un nepiemērotajās vietās:
+4. tabula ar raksturojumu atsvišķiem biežāk lietotajiem projicētās dzīvotņu piemērotības izvērtējumiem, kas raksturo modeli, veicot dalījumu piemērotajās un nepiemērotajās vietās:
 
   a. rindas raksturo sekojošus sliekšņa līmeņus (projicētās dzīvotņu piemērotības vērtība, kas nošķir piemērotās no nepiemērotajām vietām):
   
@@ -269,44 +264,45 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
   nejauši izvēlētas tik daudz vietas, cik atbilst konkrētajam sliekšņa līmenim 
   (lauks "Fractional predicted area");
 
-6. projicētā (cloglog) dzīvotņu piemērotības karte diapozonam no 0 (nepiemērotāka) līdz 1 (piemērotāka) ar centrālā dalījuma vietu atbilstoši iepriekšējās tabulas "Equal training sensitivity and specificity" sliekšņa līmenim. Šis rādītājs izvēlēts tādēļ, (1) ka tas ir labāk informēts par sugas sastapšanas vietām nekā neatkarīgā testa kopa, kas ir sevišķi aktuāli sugām ar nelielu novērojumu skaitu, (2) tā uzticamības un stabilitātes, kā arī (3) vienkāršās interpretējamības dēļ - ja sensitivitāte un specifiskums ir pēc vērtībām salīdzināmi mēri, zinot vienu, var tieši aplēst otru;
+5. projicētā (cloglog) dzīvotņu piemērotības karte diapozonam no 0 (nepiemērotāka) līdz 1 (piemērotāka) ar centrālā dalījuma vietu atbilstoši iepriekšējās tabulas "Equal training sensitivity and specificity" sliekšņa līmenim. Šis rādītājs izvēlēts tādēļ, (1) ka tas ir labāk informēts par sugas sastapšanas vietām nekā neatkarīgā testa kopa, kas ir sevišķi aktuāli sugām ar nelielu novērojumu skaitu, (2) tā uzticamības un stabilitātes, kā arī (3) vienkāršās interpretējamības dēļ - ja sensitivitāte un specifiskums ir pēc vērtībām salīdzināmi mēri, zinot vienu, var tieši aplēst otru;
 
-7. pēc projekcijas sniegts īss komentārs par modeļa kvalitāti un tā rezultātu turpmāko lietojumu;
 
-8. modeļiem, kuru rezultātu ir vērts tālāk lietot, piedāvāta iespēja lejupielādēt sekojošus datu objektus:
+6. visām sugām, kurām izstrādāti modeļi, piedāvāta iespēja lejupielādēt sekojošus datu objektus:
 
-  a. projicētā (cloglog) dzīvotņu piemērotība kā GeoTIFF slānis;
+  a. par labāko atzītā modeļa projicētā (cloglog) dzīvotņu piemērotība kā GeoTIFF slānis;
   
-  b. tabula ar sliekšņa līmeņiem projicētās dzīvotņu piemērotības dalījumam 
+  b. tabula ar sliekšņa līmeņiem iepriekšējā punkta projicētās dzīvotņu piemērotības dalījumam 
   piemērotās un nepiemērotās (kā .xlsx fails);
+  
+  c. pārcentrēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis pārvietots uz 0.5; GeoTIFF);
+  
+  d. binarizēta dzīvotņu piemērotība ("Equal training sensitivity and specificity" sliekšņa līmenis; GeoTIFF)
+  
+  e. labāka modeļa izvēles tabula (*.xlsx)
   
   c. par labāko atzītais modelis (krosvalidāciju objekts kā *.RDS fails);
   
   d. par labāko atzītais modelis (kombinēts krosvalidāciju objekts kā *.RDS fails);
   
-  e. par labāko atzītais modelis (tikai ietekmīgās pazīmes kombinētajā krosvalidāciju 
-  objektā, lai atvieglotu turpmāku izplatības projicēšanu kā *.RDS fails);
-  
-  f. tabula ar ekoģeogrāfisko mainīgo izvēles gaitu, to VIF (savstarpējās 
+  e. tabula ar ekoģeogrāfisko mainīgo izvēles gaitu, to VIF (savstarpējās 
   prognozētspējas raksturojuma) vērtībām un ietekmes modelī (permutāciju procedūrā) 
   raksturojums (kā *.xlsx fails);
   
-9. modeļiem, kuri sasniedz pietiekošu prognozes spēju, ievietots attēls ar marginālajām atbildes funkcijām krosvalidāciju modelī. Marginālā atbilde raksturo interesējošās pazīmes ietekmi uz dzīvotņu piemērotību, pārējām pazīmēm esot to vidējo vērtību līmenī.
+7. attēls ar marginālajām atbildes funkcijām krosvalidāciju modelī. Marginālā atbilde raksturo interesējošās pazīmes ietekmi uz dzīvotņu piemērotību, pārējām pazīmēm esot to vidējo vērtību līmenī;
 
-10. no projicētās dzīvotņu piemērotības aprēķinātā preference: 
+8. no piemēroto dzīvotņu (binarizēta dzīvotņu piemērotības projekcija) izvietojuma aprēķinātā preference: 
 
-  a. ekosistēmu grupām (apbūve (t.sk. ceļi), ūdeņi, mitrāji (bez ūdeņiem), 
-  lauksaimniecībā izmantojamās zemes, meži);
+  a. zemes seguma/lietojuma veidos;
   
-  b. ES aizsargājamo biotopu grupām ();
+  b. *Natura 2000* tīklam;
   
-  c. *Natura 2000* tīklam;
+  c. Eiropas Savienībā aizsargājamo biotopu grupām;
   
-  d. īpaši aizsargājamās dabas teritorijas funkcionālajai zonai;
+  d. īpaši aizsargājamo dabas teritoriju funkcionālajām zonām;
   
-11. sniegts komentārs par nepieciešamību sugas individuālai aizsardzībai ar telpiski izdalāmām platībām;
+9. sniegts komentārs par nepieciešamību sugas individuālai aizsardzībai ar telpiski izdalāmām platībām;
 
-12. sugām, kurām ierosināta individuālās aizsardzības plānošana, vietu prioritizēšanas aizsardzībai rezultāti:
+10. sugām, kurām ierosināta individuālās aizsardzības plānošana, vietu prioritizēšanas aizsardzībai rezultāti:
 
   a. attēls ar vietu nozīmes sugas aizsardzībā rangiem, izzušanas riska un aizsargātās populācijas daļas līknēm, aizsardzībai prioritārajām vietām - tām, kurās nozīmes rangi ir kopš izzušanas un aizsargātās populācijas daļas līkņu krustpunkta uz labo pusi;
   
@@ -438,6 +434,14 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 <img src="./Atteli/Pic_VarImp/PicVarImp_COTCOT.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
 <p class="caption">(\#fig:VarImpCOTCOT)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
 </div>
+
+<br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_COTCOT.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsCOTCOT)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
 
 <br>
 
@@ -573,6 +577,14 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 <img src="./Atteli/Pic_VarImp/PicVarImp_PERPER.png" alt="Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai)." width="100%" />
 <p class="caption">(\#fig:VarImpPERPER)Par labāko atzītajā modelī iekļauto EGV (rindās uz y-ass) ietekme (vidējais ar standartnovirzi 99 permutācijās; uz x-ass), skaitļi labajā malā ir VIF vērtības (EGV savstarpējās neatkarības raksturošanai).</p>
 </div>
+
+<br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_PERPER.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsPERPER)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
 
 <br>
 
@@ -714,6 +726,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_BONBON.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsBONBON)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 ### TETURO - mednis *Tetrao urogallus* {#Chapter10.1.004}
 
@@ -848,6 +870,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_TETURO.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsTETURO)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -987,6 +1019,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_LYRTET.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsLYRTET)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -1124,6 +1166,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_CYGCYG.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsCYGCYG)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -1263,6 +1315,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_ANSANS.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsANSANS)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -1400,6 +1462,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_TADTAD.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsTADTAD)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -1536,6 +1608,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_AYTFER.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsAYTFER)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -1675,6 +1757,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_AYTFUL.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsAYTFUL)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -1811,6 +1903,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_SPAQUE.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsSPAQUE)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -1951,6 +2053,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_SPACLY.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsSPACLY)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -2086,6 +2198,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_MARSTR.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsMARSTR)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -2224,6 +2346,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_MARPEN.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsMARPEN)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -2359,6 +2491,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_TACRUF.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsTACRUF)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -2497,6 +2639,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_PODGRI.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsPODGRI)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -2633,6 +2785,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_PODCRI.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsPODCRI)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -2768,6 +2930,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_STRTUR.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsSTRTUR)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -2906,6 +3078,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_CAPEUR.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsCAPEUR)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -3041,6 +3223,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_RALAQU.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsRALAQU)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -3179,6 +3371,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_CRECRE.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsCRECRE)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -3314,6 +3516,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_PORPOR.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsPORPOR)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -3451,6 +3663,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_ZAPPAR.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsZAPPAR)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -3587,6 +3809,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_FULATR.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsFULATR)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -3722,6 +3954,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_GRUGRU.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsGRUGRU)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -3861,6 +4103,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_CICNIG.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsCICNIG)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -3997,6 +4249,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_CICCIC.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsCICCIC)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -4135,6 +4397,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_BOTSTE.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsBOTSTE)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -4270,6 +4542,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_IXOMIN.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsIXOMIN)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -4408,6 +4690,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_HAEOST.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsHAEOST)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -4543,6 +4835,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_PLUAPR.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsPLUAPR)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -4680,6 +4982,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_CHAHIA.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsCHAHIA)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -4814,6 +5126,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_CHADUB.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsCHADUB)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -4950,6 +5272,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_VANVAN.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsVANVAN)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -5106,6 +5438,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_NUMARQ.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsNUMARQ)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -5283,6 +5625,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_GALGAL.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsGALGAL)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -5438,6 +5790,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_TRITOT.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsTRITOT)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -5576,6 +5938,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_TRIGLA.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsTRIGLA)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -5712,6 +6084,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_GLAPAS.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsGLAPAS)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -5851,6 +6233,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_AEGFUN.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsAEGFUN)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -5986,6 +6378,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_ASIOTU.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsASIOTU)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -6125,6 +6527,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_STRALU.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsSTRALU)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -6261,6 +6673,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_STRURA.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsSTRURA)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -6399,6 +6821,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_BUBBUB.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsBUBBUB)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -6534,6 +6966,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_PANHAL.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsPANHAL)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -6672,6 +7114,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_PERAPI.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsPARAPI)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -6807,6 +7259,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_CLAPOM.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsCLAPOM)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -6944,6 +7406,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_CIRAER.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsCIRAER)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -7080,6 +7552,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_ACCNIS.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsACCNIS)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -7215,6 +7697,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_ACCGEN.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsACCGEN)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -7353,6 +7845,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_HALALB.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsHALALB)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -7489,6 +7991,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_MILMIL.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsMILMIL)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -7627,6 +8139,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_MILMIG.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsMILMIG)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -7762,6 +8284,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_BUTBUT.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsBUTBUT)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -7899,6 +8431,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_UPUEPO.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsUPUEPO)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -8034,6 +8576,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_CORGAR.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsCORGAR)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -8171,6 +8723,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_JYNTOR.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsJYNTOR)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -8307,6 +8869,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_PICCAN.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsPICCAN)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -8442,6 +9014,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_DRYMAR.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsDRYMAR)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -8580,6 +9162,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_PICTRI.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsPICTRI)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -8716,6 +9308,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_LEIMED.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsLEIMED)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -8854,6 +9456,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_DRYMIN.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsDRYMIN)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -8990,6 +9602,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_DENLEU.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsDENLEU)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -9128,6 +9750,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_DENMAJ.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsDENMAJ)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -9263,6 +9895,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_FALTIN.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsFALTIN)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -9419,6 +10061,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_ORIORI.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsORIORI)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -9554,6 +10206,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_LANCOL.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsLANCOL)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -9691,6 +10353,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_LANEXC.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsLANEXC)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -9826,6 +10498,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_NUCCAR.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsNUCCAR)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -9964,6 +10646,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_PERATE.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsPERATE)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -10100,6 +10792,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_LOPCRI.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsLOPCRI)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -10234,6 +10936,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_POEPAL.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsPOEPAL)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -10370,6 +11082,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_POEMON.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsPOEMON)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -10504,6 +11226,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_LULARB.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsLULARB)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -10640,6 +11372,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_ALAARV.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsALAARV)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -10775,6 +11517,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_IDUCAL.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsIDUCAL)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -10908,6 +11660,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_ACRRIS.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsACRRIS)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -11044,6 +11806,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_ACRARU.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsACRARU)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -11178,6 +11950,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_LOCFLU.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsLOCFLU)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -11314,6 +12096,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_LOCNAE.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsLOCNAE)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -11448,6 +12240,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_HIRRUS.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsHIRRUS)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -11585,6 +12387,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_PHYSIB.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsPHYSIB)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -11719,6 +12531,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_AEGCAU.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsAEGCAU)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -11855,6 +12677,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_CURNIS.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsCURNIS)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 ### CURCOM - brūnspārnu ķauķis *Curruca communis* {#Chapter10.1.090}
@@ -11988,6 +12820,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_CURCOM.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsCURCOM)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -12124,6 +12966,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_CERFAM.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsCERFAM)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -12258,6 +13110,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_SITEUR.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsSITEUR)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -12394,6 +13256,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_STUVUL.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsSTUVUL)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -12529,6 +13401,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_TURVIS.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsTURVIS)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -12663,6 +13545,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_TURILI.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsTURILI)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -12816,6 +13708,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_LUSLUS.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsLUSLUS)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -12949,6 +13851,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_FICPAR.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsFICPAR)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -13081,6 +13993,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_FICHYP.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsFICHYP)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -13216,6 +14138,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_SAXRUB.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsSAXRUB)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -13348,6 +14280,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_REGREG.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsREGREG)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -13478,6 +14420,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_REGIGN.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsREGIGN)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -13611,6 +14563,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_PASMON.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsPASMON)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 ### ANTPRA - pļavu čipste *Anthus pratensis* {#Chapter10.1.104}
@@ -13742,6 +14704,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_ANTPRA.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsANTPRA)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -13875,6 +14847,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_ANTCAM.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsANTCAM)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 ### MOTFLA - dzeltenā cielava *Motacilla flava* {#Chapter10.1.106}
@@ -14006,6 +14988,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_MOTFLA.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsMOTFLA)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -14140,6 +15132,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_MOTCIT.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsMOTCIT)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -14273,6 +15275,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_COCCOC.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsCOCCOC)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 ### CARERY - mazais svilpis *Carpodacus erythrinus* {#Chapter10.1.109}
@@ -14405,6 +15417,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_CARERY.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsCARERY)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 ### PYRPYR - svilpis *Pyrrhula pyrrhula* {#Chapter10.1.110}
@@ -14536,6 +15558,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_PYRPYR.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsPYRPYR)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -14670,6 +15702,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_CHLCHL.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsCHLCHL)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -14802,6 +15844,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_LINCAN.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsLINCAN)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -14936,6 +15988,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_LOXCUR.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsLOXCUR)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -15068,6 +16130,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_CARCAR.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsCARCAR)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
@@ -15202,6 +16274,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 <br>
 
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_EMBHOR.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsEMBHOR)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
+
 
 
 
@@ -15335,6 +16417,16 @@ saistībā ar sesto punktu (dzīvotņu piemērotības projekciju);
 
 
 <br>
+
+<div class="figure">
+<img src="./Atteli/PicsPrefs/PicPref_EMBCIT.png" alt="Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās." width="100%" />
+<p class="caption">(\#fig:PrefsEMBCIT)Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.</p>
+</div>
+
+
+<br>
+
+
 
 
 
