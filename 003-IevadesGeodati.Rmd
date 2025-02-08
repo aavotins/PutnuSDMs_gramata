@@ -676,6 +676,16 @@ Abas datu kopas apvienotas vienā failā un [pievienotas](./Papilddati/Atkritumi
 Latvijas Ekskluzīvās Ekonomiskās Zonas ūdeņu teritorija iegūta no [HELCOM karšu un datu servisa](https://maps.helcom.fi/website/mapservice/?datasetID=ae58c373-674c-45d1-be0f-1ff69a59f9ba). Pēc lejupielādes šis līniju fails analogi savienots ar tajā pašā resursā iegūtu krasta līnijas failu.
 
 
+### Dabas aizsardzības pārvaldes atvērtie dati {#Chapter3.1.16}
+
+Informācija no [Dabas aizsardzības pārvaldes atvērto datu portāla]() (lejupielāde 2025-02-06; atjaunošana datēta ar 2024-12-27):
+
+- [Aizsargājamās dzīvotnes - biotopi](https://data.gov.lv/dati/lv/dataset/aizsargajamas-dzivotnes-biotopi);
+
+- [Īpaši aizsargājamās dabas teritorijas](https://data.gov.lv/dati/lv/dataset/ipasi-aizsargajamas-dabas-teritorijas);
+
+- [Mikroliegumi](https://data.gov.lv/dati/lv/dataset/mikroliegumi).
+
 ## Ievades produkti {#Chapter3.2}
 
 Atsevišķos gadījumos ievades datiem veikta relatīvi apjomīga apstrāde (sagatavojot ievades produktus), kas nepieciešama turpmākajam darbam - ekoģeogrāfisko mainīgu sagatavošanai un novērojumu filtrēšanai. Šie produkti un to izstrādes gaita raksturota atbilstošajās apakšnodaļās.

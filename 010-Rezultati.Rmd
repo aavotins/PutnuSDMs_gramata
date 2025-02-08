@@ -292,13 +292,43 @@ pieejai. Attēlos iekļauti sekojoši raksturojumi:
 
 8. no piemēroto dzīvotņu (binarizēta dzīvotņu piemērotības projekcija) izvietojuma aprēķinātā preference: 
 
-  a. zemes seguma/lietojuma veidos;
+  a. zemes seguma/lietojuma veidos no [Ainava](#Chapter3.2.2) slāņa, kurā:
   
-  b. *Natura 2000* tīklam;
+  - "Ūdeņi" ir klases ar kodiem [200, 300);
   
-  c. Eiropas Savienībā aizsargājamo biotopu grupām;
+  - "Lauki" ir klases ar kodiem [300, 400);
   
-  d. īpaši aizsargājamo dabas teritoriju funkcionālajām zonām;
+  - "Mazdārziņi" ir klases ar kodiem [400, 500);
+  
+  - "Apbūve" ir klases ar kodiem [500, 600);
+  
+  - "Ceļi" ir klases ar kodiem [0, 200);
+  
+  - "Koki, krūmi, izcirtumi" ir klases ar kodiem [600, 700);
+  
+  - "Mitrāji" ir klases ar kodiem [700, 800);
+  
+  - "Smiltāji, virsāji un kūdras lauki" ir klases ar kodiem [800, 899);
+  
+  b. *Natura 2000* tīklam, par pamatu izmantojot [Dabas aizsardzības pārvaldes atvērtie dati](#Chapter3.1.16);
+  
+  c. Eiropas Savienībā aizsargājamo biotopu grupām, dalījumam izmantojot biotopa koda pirmo ciparu un nosaukumu piešķirot pēc [@ESbiotopurokasgramata]. Dati iegūti no [Dabas aizsardzības pārvaldes atvērtie dati](#Chapter3.1.16);
+  
+  d. īpaši aizsargājamo dabas teritoriju funkcionālajām zonām. Dati iegūti no [Dabas aizsardzības pārvaldes atvērtie dati](#Chapter3.1.16). Informācija gan par teritorijām, gan funkcionālajām zonām apvienota grupās, kuras vismaz mežos demonstrā saimnieciskās darbības ierobežojumu apjomu vispārīgajos noteikumos. Grupu sagatavošanas procedūrā ik 10 m šūnai piešķirta augstākā (zemāk sarakstā esošā) aizsardzības pazīme, ja vienā šūnā iespējamas dažādas kategorijas:
+  
+  - "Nav aizsargāts" ietver visu Latvijas sauszemes teritoiju ārpus īpaši aizsargājamām dabas teritorijām un mikroliegumiem ar to buferzonām;
+  
+  - "Neitrālā zona" apvieno funkcionālo zonu slāņa lauka `NAME` klases "NZ", "KvZ", "cita" un īpaši aizsargājamo dabas teritoriju lauka `CATEGORY` klases "BR", "Dpie:cits", "DPie:DS", "DPie:ĢĢ", "DPie:DA", "NP", ja tām nav norādīta augstāka aizsardzības pazīme;
+  
+  - "Ainavu aizsardzības zona" apvieno funkcionālo zonu slāņa lauka `NAME` klasi "AAZ" un īpaši aizsargājamo dabas teritoriju lauka `CATEGORY` klases "AAA", "AJT", ja tām nav norādīta augstāka aizsardzības pazīme;
+  
+  - "Dabas parka zona un ML buferzona" apvieno funkcionālo zonu slāņa lauka `NAME` klases "DPZ" un "SLZ" un īpaši aizsargājamo dabas teritoriju lauka `CATEGORY` klasi "DP", ja tai nav norādīta augstāka aizsardzības pazīme, un tām pievieno mikroliegumu buferoznas;
+  
+  - "Dabas lieguma zona" apvieno funkcionālo zonu slāņa lauka `NAME` klasi "DLZ" un īpaši aizsargājamo dabas teritoriju lauka `CATEGORY` klasi "DL", ja tai nav norādīta augstāka aizsardzības pazīme;
+  
+  - "Mikroliegums" raksturo mikroliegumus;
+  
+  - "Regulējamā un stingrā režīma zonas" apvieno funkcionālo zonu slāņa lauka `NAME` klases "RRZ" un "SRZ" un īpaši aizsargājamo dabas teritoriju lauka `CATEGORY` klasi "DR";
   
 9. sniegts komentārs par nepieciešamību sugas individuālai aizsardzībai ar telpiski izdalāmām platībām;
 

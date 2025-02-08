@@ -23,7 +23,7 @@
 <meta name="author" content="Andris Avotiņš" />
 
 
-<meta name="date" content="2025-02-07" />
+<meta name="date" content="2025-02-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -220,6 +220,7 @@ div.csl-indent {
 <li class="chapter" data-level="3.1.13" data-path="Chapter3.html"><a href="Chapter3.html#Chapter3.1.13"><i class="fa fa-check"></i><b>3.1.13</b> Digitālie reljefa modeļi</a></li>
 <li class="chapter" data-level="3.1.14" data-path="Chapter3.html"><a href="Chapter3.html#Chapter3.1.14"><i class="fa fa-check"></i><b>3.1.14</b> Atkritumu poligoni, glabātavas un šķirošanas laukumi</a></li>
 <li class="chapter" data-level="3.1.15" data-path="Chapter3.html"><a href="Chapter3.html#Chapter3.1.15"><i class="fa fa-check"></i><b>3.1.15</b> Latvijas Ekskluzīvās Ekonomiskās Zonas ūdeņi</a></li>
+<li class="chapter" data-level="3.1.16" data-path="Chapter3.html"><a href="Chapter3.html#Chapter3.1.16"><i class="fa fa-check"></i><b>3.1.16</b> Dabas aizsardzības pārvaldes atvērtie dati</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="Chapter3.html"><a href="Chapter3.html#Chapter3.2"><i class="fa fa-check"></i><b>3.2</b> Ievades produkti</a>
 <ul>
@@ -1108,11 +1109,32 @@ raksturojums (kā *.xlsx fails);</p></li>
 <li><p>no piemēroto dzīvotņu (binarizēta dzīvotņu piemērotības projekcija) izvietojuma aprēķinātā preference:</p></li>
 </ol>
 <ol style="list-style-type: lower-alpha">
-<li><p>zemes seguma/lietojuma veidos;</p></li>
-<li><p><em>Natura 2000</em> tīklam;</p></li>
-<li><p>Eiropas Savienībā aizsargājamo biotopu grupām;</p></li>
-<li><p>īpaši aizsargājamo dabas teritoriju funkcionālajām zonām;</p></li>
+<li>zemes seguma/lietojuma veidos no <a href="Chapter3.html#Chapter3.2.2">Ainava</a> slāņa, kurā:</li>
 </ol>
+<ul>
+<li><p>“Ūdeņi” ir klases ar kodiem [200, 300);</p></li>
+<li><p>“Lauki” ir klases ar kodiem [300, 400);</p></li>
+<li><p>“Mazdārziņi” ir klases ar kodiem [400, 500);</p></li>
+<li><p>“Apbūve” ir klases ar kodiem [500, 600);</p></li>
+<li><p>“Ceļi” ir klases ar kodiem [0, 200);</p></li>
+<li><p>“Koki, krūmi, izcirtumi” ir klases ar kodiem [600, 700);</p></li>
+<li><p>“Mitrāji” ir klases ar kodiem [700, 800);</p></li>
+<li><p>“Smiltāji, virsāji un kūdras lauki” ir klases ar kodiem [800, 899);</p></li>
+</ul>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><p><em>Natura 2000</em> tīklam, par pamatu izmantojot <a href="Chapter3.html#Chapter3.1.16">Dabas aizsardzības pārvaldes atvērtie dati</a>;</p></li>
+<li><p>Eiropas Savienībā aizsargājamo biotopu grupām, dalījumam izmantojot biotopa koda pirmo ciparu un nosaukumu piešķirot pēc <span class="citation">(<a href="#ref-ESbiotopurokasgramata">Auniņš, 2013</a>)</span>. Dati iegūti no <a href="Chapter3.html#Chapter3.1.16">Dabas aizsardzības pārvaldes atvērtie dati</a>;</p></li>
+<li><p>īpaši aizsargājamo dabas teritoriju funkcionālajām zonām. Dati iegūti no <a href="Chapter3.html#Chapter3.1.16">Dabas aizsardzības pārvaldes atvērtie dati</a>. Informācija gan par teritorijām, gan funkcionālajām zonām apvienota grupās, kuras vismaz mežos demonstrā saimnieciskās darbības ierobežojumu apjomu vispārīgajos noteikumos. Grupu sagatavošanas procedūrā ik 10 m šūnai piešķirta augstākā (zemāk sarakstā esošā) aizsardzības pazīme, ja vienā šūnā iespējamas dažādas kategorijas:</p></li>
+</ol>
+<ul>
+<li><p>“Nav aizsargāts” ietver visu Latvijas sauszemes teritoiju ārpus īpaši aizsargājamām dabas teritorijām un mikroliegumiem ar to buferzonām;</p></li>
+<li><p>“Neitrālā zona” apvieno funkcionālo zonu slāņa lauka <code>NAME</code> klases “NZ”, “KvZ”, “cita” un īpaši aizsargājamo dabas teritoriju lauka <code>CATEGORY</code> klases “BR”, “Dpie:cits”, “DPie:DS”, “DPie:ĢĢ”, “DPie:DA”, “NP”, ja tām nav norādīta augstāka aizsardzības pazīme;</p></li>
+<li><p>“Ainavu aizsardzības zona” apvieno funkcionālo zonu slāņa lauka <code>NAME</code> klasi “AAZ” un īpaši aizsargājamo dabas teritoriju lauka <code>CATEGORY</code> klases “AAA”, “AJT”, ja tām nav norādīta augstāka aizsardzības pazīme;</p></li>
+<li><p>“Dabas parka zona un ML buferzona” apvieno funkcionālo zonu slāņa lauka <code>NAME</code> klases “DPZ” un “SLZ” un īpaši aizsargājamo dabas teritoriju lauka <code>CATEGORY</code> klasi “DP”, ja tai nav norādīta augstāka aizsardzības pazīme, un tām pievieno mikroliegumu buferoznas;</p></li>
+<li><p>“Dabas lieguma zona” apvieno funkcionālo zonu slāņa lauka <code>NAME</code> klasi “DLZ” un īpaši aizsargājamo dabas teritoriju lauka <code>CATEGORY</code> klasi “DL”, ja tai nav norādīta augstāka aizsardzības pazīme;</p></li>
+<li><p>“Mikroliegums” raksturo mikroliegumus;</p></li>
+<li><p>“Regulējamā un stingrā režīma zonas” apvieno funkcionālo zonu slāņa lauka <code>NAME</code> klases “RRZ” un “SRZ” un īpaši aizsargājamo dabas teritoriju lauka <code>CATEGORY</code> klasi “DR”;</p></li>
+</ul>
 <ol start="9" style="list-style-type: decimal">
 <li><p>sniegts komentārs par nepieciešamību sugas individuālai aizsardzībai ar telpiski izdalāmām platībām;</p></li>
 <li><p>sugām, kurām ierosināta individuālās aizsardzības plānošana, vietu prioritizēšanas aizsardzībai rezultāti:</p></li>
@@ -23679,6 +23701,9 @@ Figure 10.666: Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietoj
 <div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-TSSieviesanaSDM" class="csl-entry">
 Allouche, O., Tsoar, A., Kadmon, R., 2006. Assessing the accuracy of species distribution models: Prevalence, kappa and the true skill statistic (TSS), Journal of Applied Ecology. <a href="https://doi.org/10.1111/j.1365-2664.2006.01214.x">https://doi.org/10.1111/j.1365-2664.2006.01214.x</a>
+</div>
+<div id="ref-ESbiotopurokasgramata" class="csl-entry">
+Auniņš, A. (red.), 2013. Eiropas savienības aizsargājamie biotopi latvijā. Noteikšanas rokasgrāmata. 2. Precizēts izdevums. Latvijas Dabas fonds, Vides aizsardzības un reģionālās attīstības ministrija, Rīga, Latvija.
 </div>
 <div id="ref-ValverdeLobo2007" class="csl-entry">
 Jiménez-Valverde, A., Lobo, J.M., 2007. Threshold criteria for conversion of probability of species presence to either–or presence–absence, Acta Oecologica. <a href="https://doi.org/10.1016/j.actao.2007.02.001">https://doi.org/10.1016/j.actao.2007.02.001</a>
