@@ -142,7 +142,7 @@ novērojumu atlasi līdz vienam punktam 1 km tīklā.
 
 Ar sagatavoto harmonizēto datu kopu turpināju novērojumu atlasi modelēšanai.
 
-## Novērojumu atlase {#Chapter6.1}
+## Novērojumu atlases gaita {#Chapter6.1}
 
 Novērojumu atlase sugu izplatības modelēšanai veikta vairākos soļos:
 

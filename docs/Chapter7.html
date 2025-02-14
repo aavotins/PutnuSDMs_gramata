@@ -23,7 +23,7 @@
 <meta name="author" content="Andris Avotiņš" />
 
 
-<meta name="date" content="2025-02-08" />
+<meta name="date" content="2025-02-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -637,7 +637,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="6" data-path="Chapter6.html"><a href="Chapter6.html"><i class="fa fa-check"></i><b>6</b> Novērojumu atlase</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="Chapter6.html"><a href="Chapter6.html#Chapter6.1"><i class="fa fa-check"></i><b>6.1</b> Novērojumu atlase</a>
+<li class="chapter" data-level="6.1" data-path="Chapter6.html"><a href="Chapter6.html#Chapter6.1"><i class="fa fa-check"></i><b>6.1</b> Novērojumu atlases gaita</a>
 <ul>
 <li class="chapter" data-level="6.1.1" data-path="Chapter6.html"><a href="Chapter6.html#Chapter6.1.1"><i class="fa fa-check"></i><b>6.1.1</b> Solis 1: Analizējamās sugas</a></li>
 <li class="chapter" data-level="6.1.2" data-path="Chapter6.html"><a href="Chapter6.html#Chapter6.1.2"><i class="fa fa-check"></i><b>6.1.2</b> Solis 2: Datums un laiks</a></li>
@@ -656,12 +656,11 @@ div.csl-indent {
 <li class="chapter" data-level="7.1" data-path="Chapter7.html"><a href="Chapter7.html#Chapter7.1"><i class="fa fa-check"></i><b>7.1</b> Sākotnēji izvēlēto pazīmju neatkarība un EGV atlases otrā kārta (VIF)</a>
 <ul>
 <li class="chapter" data-level="7.1.1" data-path="Chapter7.html"><a href="Chapter7.html#Chapter7.1.1"><i class="fa fa-check"></i><b>7.1.1</b> Multikolinearitāte</a></li>
-<li class="chapter" data-level="7.1.2" data-path="Chapter7.html"><a href="Chapter7.html#Chapter7.1.2"><i class="fa fa-check"></i><b>7.1.2</b> EGV nozīme kompleksā modelī</a></li>
+<li class="chapter" data-level="7.1.2" data-path="Chapter7.html"><a href="Chapter7.html#Chapter7.1.2"><i class="fa fa-check"></i><b>7.1.2</b> EGV indikatīvā nozīme kompleksā modelī</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="Chapter7.html"><a href="Chapter7.html#Chapter7.2"><i class="fa fa-check"></i><b>7.2</b> Modeļa parametrizācija</a></li>
+<li class="chapter" data-level="7.2" data-path="Chapter7.html"><a href="Chapter7.html#Chapter7.2"><i class="fa fa-check"></i><b>7.2</b> Modeļa parametrizācija, izvēle un izvērtēšanas apraksti</a></li>
 <li class="chapter" data-level="7.3" data-path="Chapter7.html"><a href="Chapter7.html#Chapter7.3"><i class="fa fa-check"></i><b>7.3</b> Nulles modelis</a></li>
 <li class="chapter" data-level="7.4" data-path="Chapter7.html"><a href="Chapter7.html#Chapter7.4"><i class="fa fa-check"></i><b>7.4</b> Labākā modeļa rezultāti</a></li>
-<li class="chapter" data-level="7.5" data-path="Chapter7.html"><a href="Chapter7.html#Chapter7.5"><i class="fa fa-check"></i><b>7.5</b> Rezultāta uzticamības izvērtējums</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="Chapter8.html"><a href="Chapter8.html"><i class="fa fa-check"></i><b>8</b> SDM pēcapstrāde</a>
 <ul>
@@ -836,7 +835,49 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="Chapter7" class="section level1 hasAnchor" number="7">
 <h1><span class="header-section-number">7</span> Sugu izplatības (dzīvotņu piemērotības) modeļi<a href="Chapter7.html#Chapter7" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>All chapters start with a first-level heading followed by your chapter title, like the line above. There should be only one first-level heading (<code>#</code>) per .Rmd file.</p>
+<p>Šajā nodaļā aprakstīta sugu izplatības modelēšanas pieeja no sugai specifiskās
+modeļos iekļaujamās vides aprakstiem (EGV), caur modeļu parametrizāciju un labākās
+izvēli, līdz modeļu rezultātu izvērtēšanai nepieciešamās informācijas sagatavošanai.</p>
+<p>Iegūtie ik-sugas izplatības modeļi apkopoti, vizualizēti un konspektīvi aprakstīti nodaļas <a href="Chapter10.html#Chapter10">Rezultāti</a>
+pirmajā apakšnodaļā <a href="Chapter10.html#Chapter10.1">Individuālu sugu rezultāti</a>. Izplatības modelēšanai
+izmantotās klātbūtnes vietas, to apkopošanas un filtrēšanas procedūras raksturotas
+nodaļā <a href="Chapter6.html#Chapter6">Novērojumu atlase</a>, specifiskās - par uzticamām klātbūtnes
+vietām uzskatāmo atlases soļi ir tās apakšnodaļā <a href="Chapter6.html#Chapter6.1">Novērojumu atlases gaita</a>,
+savukārt to dalījums modeļa apmācības un neatkarīgās testēšanas kopā un katras no
+tām papildināšana ar vidi-kopumā aprakstošām nejaušās izlozes vietās ir
+apakšnodaļā <a href="Chapter6.html#Chapter6.2">Modelēšanas datu saglabāšana un procesa vizualizēšana</a>.</p>
+<p>Ekoģeogrāfiskie mainīgie, kuru sagatavošanas procedūras un tajos iekļauto vides
+raksturojumu apraksti ir nodaļā <a href="Chapter5.html#Chapter5">Ekoģeogrāfiskie mainīgie</a>, ir gatavoti
+mērķtiecīgai sugu izplatības modelēšanai - pirms pašas EGV sagatavošanas ir sastādīts
+no modelēšanai sākotnēji plānoto sugu (nodaļa <a href="Chapter1.html#Chapter1">Sugu saraksts un pamata apraksti</a>)
+nepieciešamībām izrietošs plāns. Tas ir apskatāms <a href="./Papilddati/EGV_putniem.xlsx">šajā failā</a>,
+kurā ir redzams, ka daļa EGV ir veidoti vienkārši plūsmas ērtībai vai domājot arī
+par citām, ne tikai putnu sugām. Diemžēl pirms EGV ir sagatavoti, nav zināms vai
+tie visi būs faktiski izmantojami sugu izplatības modelēšanai, tādēļ pirms tās
+uzsākšanas pārbaudīta ik sugas modeļos iekļaujamo EGV vērtību savstarpējā neatkarība
+aprēķinot dispersijas ietekmētības faktoru (<em>variance inflation factor</em>; VIF),
+turpmākam darbam izvēlot tikai pietiekoši neatkarīgos, kuriem veikta indikatīva
+testēšana to iekļaušanai sugu izpla’tibu prognozējošajos modeļos. Vairāk - šīs
+nodaļas <a href="Chapter7.html#Chapter7.1">Sākotnēji izvēlēto pazīmju neatkarība un EGV atlases otrā kārta (VIF)</a> apakšnodaļā.</p>
+<p>Pēc EGV izvēles, veikta sugu izplatības modeļu parametrizācija maximuma entropijas
+analīzes ietvarā. Analīzes gaita, parametrizācijas pieejas un pieņemtie lēmumi ar
+ieviešanas procedūru (komandu rindām) ir raksturoti šīs nodaļas <a href="Chapter7.html#Chapter7.2">Modeļa parametrizācija, izvēle un izvērtēšanas apraksti</a>
+apakšnodaļā. Šīs procedūras ietvaros, izvēlēts modelis, kurš vislabāk spēj raksturot
+interesējošās sugas izplatību, izšķirot tai piemēroto un nepiemēroto dzīvotņu
+projekcijas ģeogrāfiskajā telpā (nosedzot visu Latvijas iekšzemes teritoriju 100 m
+izšķirtspējā).</p>
+<p>Part labāko atzītajam modelim sagatavoti dažādi klasifikācijas spējas raksturojumi,
+raksturojot sagaidāmo kļūdu apjomu gan modeļa apmācībai izmantotajos (un iekšējās
+validācijas), gan neatkarīgās testēšanas datos. Sniegti ieteikumi izmantojamajiem
+dzīvotņu piemērotības klasifikācijas sliekšņiem ar izmešanas un pieskaitīšanas
+kļūdām kā arī kopējo klasifikācijas statistisko nozīmīgumu. Papildus tam, raksturotas
+projicētās dzīvotņu piemērotības gradienta īpašības un individuālu novērojumu ietekme
+modelī, kas turklāt vērtētas kontekstā ar nulles modeļiem informācijas telpas nozīmīguma
+novērtēšanai. Nedaudz plašāk šie mēri un to interpretācija aprakstīti rezultātu
+nodaļā (<a href="Chapter10.html#Chapter10.1">Individuālu sugu rezultāti</a>), to izvēles pamatojums un izmantotās
+analītiskās pieejas (ar komandu rindām) raksturotas šīs nodaļas <a href="Chapter7.html#Chapter7.3">Nulles modelis</a>.</p>
+<p>Šīs nodaļas noslēgumā (<a href="Chapter7.html#Chapter7.4">Labākā modeļa rezultāti</a>) sniegtas komandu
+rindas rezultātu nodaļā izmantoto attēlu sagatavošanai.</p>
 <div id="Chapter7.1" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">7.1</span> Sākotnēji izvēlēto pazīmju neatkarība un EGV atlases otrā kārta (VIF)<a href="Chapter7.html#Chapter7.1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>VIF analīze un individuāla pārskatīšana vai netrūkst kaut kas sevišķi nozīmīgs</p>
@@ -845,12 +886,12 @@ div.csl-indent {
 <p>VIF$le$10</p>
 </div>
 <div id="Chapter7.1.2" class="section level3 hasAnchor" number="7.1.2">
-<h3><span class="header-section-number">7.1.2</span> EGV nozīme kompleksā modelī<a href="Chapter7.html#Chapter7.1.2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">7.1.2</span> EGV indikatīvā nozīme kompleksā modelī<a href="Chapter7.html#Chapter7.1.2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Vismaz 1% vidējā permutāciju nozīme sarežģītākajā modelī</p>
 </div>
 </div>
 <div id="Chapter7.2" class="section level2 hasAnchor" number="7.2">
-<h2><span class="header-section-number">7.2</span> Modeļa parametrizācija<a href="Chapter7.html#Chapter7.2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">7.2</span> Modeļa parametrizācija, izvēle un izvērtēšanas apraksti<a href="Chapter7.html#Chapter7.2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Feature types and algorithms</p>
 <p>Regularization multipliers</p>
 <p>Krosvalidācija</p>
@@ -864,10 +905,6 @@ div.csl-indent {
 <h2><span class="header-section-number">7.4</span> Labākā modeļa rezultāti<a href="Chapter7.html#Chapter7.4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Dažādu failu ģenerēšana un modeļa spējas apraksti</p>
 <p>Marginālās atbildes funkciju attēli</p>
-</div>
-<div id="Chapter7.5" class="section level2 hasAnchor" number="7.5">
-<h2><span class="header-section-number">7.5</span> Rezultāta uzticamības izvērtējums<a href="Chapter7.html#Chapter7.5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Vizuāls novērtējums vai nav pilnīgas muļķības, kuru dēļ nepieciešams atkārtot modelēšanu ar kaut kādām korekcijām</p>
 
 </div>
 </div>

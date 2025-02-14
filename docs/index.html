@@ -23,7 +23,7 @@
 <meta name="author" content="Andris Avotiņš" />
 
 
-<meta name="date" content="2025-02-08" />
+<meta name="date" content="2025-02-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -637,7 +637,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="6" data-path="Chapter6.html"><a href="Chapter6.html"><i class="fa fa-check"></i><b>6</b> Novērojumu atlase</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="Chapter6.html"><a href="Chapter6.html#Chapter6.1"><i class="fa fa-check"></i><b>6.1</b> Novērojumu atlase</a>
+<li class="chapter" data-level="6.1" data-path="Chapter6.html"><a href="Chapter6.html#Chapter6.1"><i class="fa fa-check"></i><b>6.1</b> Novērojumu atlases gaita</a>
 <ul>
 <li class="chapter" data-level="6.1.1" data-path="Chapter6.html"><a href="Chapter6.html#Chapter6.1.1"><i class="fa fa-check"></i><b>6.1.1</b> Solis 1: Analizējamās sugas</a></li>
 <li class="chapter" data-level="6.1.2" data-path="Chapter6.html"><a href="Chapter6.html#Chapter6.1.2"><i class="fa fa-check"></i><b>6.1.2</b> Solis 2: Datums un laiks</a></li>
@@ -656,12 +656,11 @@ div.csl-indent {
 <li class="chapter" data-level="7.1" data-path="Chapter7.html"><a href="Chapter7.html#Chapter7.1"><i class="fa fa-check"></i><b>7.1</b> Sākotnēji izvēlēto pazīmju neatkarība un EGV atlases otrā kārta (VIF)</a>
 <ul>
 <li class="chapter" data-level="7.1.1" data-path="Chapter7.html"><a href="Chapter7.html#Chapter7.1.1"><i class="fa fa-check"></i><b>7.1.1</b> Multikolinearitāte</a></li>
-<li class="chapter" data-level="7.1.2" data-path="Chapter7.html"><a href="Chapter7.html#Chapter7.1.2"><i class="fa fa-check"></i><b>7.1.2</b> EGV nozīme kompleksā modelī</a></li>
+<li class="chapter" data-level="7.1.2" data-path="Chapter7.html"><a href="Chapter7.html#Chapter7.1.2"><i class="fa fa-check"></i><b>7.1.2</b> EGV indikatīvā nozīme kompleksā modelī</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="Chapter7.html"><a href="Chapter7.html#Chapter7.2"><i class="fa fa-check"></i><b>7.2</b> Modeļa parametrizācija</a></li>
+<li class="chapter" data-level="7.2" data-path="Chapter7.html"><a href="Chapter7.html#Chapter7.2"><i class="fa fa-check"></i><b>7.2</b> Modeļa parametrizācija, izvēle un izvērtēšanas apraksti</a></li>
 <li class="chapter" data-level="7.3" data-path="Chapter7.html"><a href="Chapter7.html#Chapter7.3"><i class="fa fa-check"></i><b>7.3</b> Nulles modelis</a></li>
 <li class="chapter" data-level="7.4" data-path="Chapter7.html"><a href="Chapter7.html#Chapter7.4"><i class="fa fa-check"></i><b>7.4</b> Labākā modeļa rezultāti</a></li>
-<li class="chapter" data-level="7.5" data-path="Chapter7.html"><a href="Chapter7.html#Chapter7.5"><i class="fa fa-check"></i><b>7.5</b> Rezultāta uzticamības izvērtējums</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="Chapter8.html"><a href="Chapter8.html"><i class="fa fa-check"></i><b>8</b> SDM pēcapstrāde</a>
 <ul>
@@ -837,7 +836,7 @@ div.csl-indent {
 <div id="header">
 <h1 class="title">Putnu sugu izplatības modelēšana biodaudzveidības aizsardzībai: materiāli reproducēšanai</h1>
 <p class="author"><em>Andris Avotiņš</em></p>
-<p class="date"><em>2025-02-08</em></p>
+<p class="date"><em>2025-02-14</em></p>
 </div>
 <div id="par-šo-materiālu" class="section level1 unnumbered hasAnchor">
 <h1>Par šo materiālu<a href="index.html#par-šo-materiālu" class="anchor-section" aria-label="Anchor link to header"></a></h1>
@@ -1052,8 +1051,8 @@ atkārto direktoriju koka izveidi lietotāja norādītā vietā un īsi skaidro 
 <h2>Satura izklāsts (orientācijai)<a href="index.html#satura-izklāsts-orientācijai" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Vispārīgā darba un informācijas plūsma projektā ir ilustrēta sekojošajā attēlā <a href="index.html#fig:General-workflow">0.1</a>. Tā ir izmantota par pamatu šī materiāla dalījumam nodaļās (nosauktas zemāk), kuru nosaukumi vispārīgi sakrīt ar uzdevumiem (etapiem) darba plūsmas vizualizācijā.</p>
 <div class="figure"><span style="display:block;" id="fig:General-workflow"></span>
-<div class="grViz html-widget html-fill-item" id="htmlwidget-cc4c792a616d082bff33" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-cc4c792a616d082bff33">{"x":{"diagram":"digraph flowchart {\n\n  # node type 2: Līmeņi\n  node [fontname = Helvetica, shape = none,style=none,fontface=bold,fontsize=12];{\n    node [label=\"1. solis: Sagatavošanās\"]; step0;\n    node [label=\"2. solis: Ievades informācija\"]; step1;\n    node [label=\"3. solis: Ekoģeogrāfiskie mainīgie\"]; step2;\n    node [label=\"4. solis: Modelēšana\"]; step3;\n    node [label=\"5. solis: Prioritizēšana\"]; step4;\n  }\n  \n  \n  # node type 1: Vidējais\n  node [fontname = Helvetica, shape = rectangle,style=rounded,fontcolor=black]; {\n    node [label=\"Analīzes telpa\"]; vidus1;\n    node [label=\"Ievades \nģeodati\"]; vidus2;\n    node [label=\"Ekoģeogrāfiskie \nmainīgie\"]; vidus3;\n    node [label=\"Sugu izplatības \nmodelēšna\"]; vidus4;\n    node [label=\"Vietu prioritizēšana \naizsardzībai\"]; vidus5;\n  }\n\n  # node type 5: Kreisais \n  node [fontname = Helvetica, shape = rectangle,style=rounded,fontcolor=black,fontsize=12];{\n    node [label=\"*Dynamic World* izpēte\"]; DWexp;\n    }\n\n\n\n  # node type 3: Labais\n  node [fontname = Helvetica, shape = rectangle];{\n    node [label=\"Sugu saraksts \nun apraksti\"]; labais1;\n    node [label=\"Novērojumu atlase\"]; labais2;\n  }\n\n  # node type 4: Pecapstrade\n  node [fontname = Helvetica, shape = rectangle];{\n    node [label=\"Modeļu pēcapstrāde\"]; pec1;\n  }\n\n  \n  # specify which nodes are of the same \"rank\" so that they\"ll be drawn at the same level\n      {rank = same; step0 vidus1 labais1}\n      {rank = same; step1 DWexp vidus2 labais2}\n      {rank = same; step2 vidus3}\n      {rank = same; step3 vidus4 pec1}\n      {rank = same; step4 vidus5}\n  \n  # edge definitions with the node IDs\n  edge[tailclip = true, headclip = true,color=white];\n  step0 -> step1\n  step1 -> step2\n  step2 -> step3\n  step3->step4\n\n  edge[tailclip = true, headclip = true,color=black];\n  vidus1 -> vidus2\n  vidus2 -> vidus3\n  vidus3 -> vidus4\n  vidus4 -> vidus5\n  \n  vidus1 -> labais2\n  vidus1 -> DWexp\n  DWexp -> vidus2\n  DWexp -> labais2\n\n  labais1 -> labais2\n  labais2 -> vidus3\n  \n  labais1 -> vidus3\n  labais1 -> vidus5\n  labais1 -> vidus4\n  labais2 -> vidus4\n  vidus1 -> vidus3\n  \n  vidus4 -> pec1\n  vidus5 -> pec1\n  pec1 -> vidus5\n  }\n\n  ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-1b0fce81514383bf93fc" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-1b0fce81514383bf93fc">{"x":{"diagram":"digraph flowchart {\n\n  # node type 2: Līmeņi\n  node [fontname = Helvetica, shape = none,style=none,fontface=bold,fontsize=12];{\n    node [label=\"1. solis: Sagatavošanās\"]; step0;\n    node [label=\"2. solis: Ievades informācija\"]; step1;\n    node [label=\"3. solis: Ekoģeogrāfiskie mainīgie\"]; step2;\n    node [label=\"4. solis: Modelēšana\"]; step3;\n    node [label=\"5. solis: Prioritizēšana\"]; step4;\n  }\n  \n  \n  # node type 1: Vidējais\n  node [fontname = Helvetica, shape = rectangle,style=rounded,fontcolor=black]; {\n    node [label=\"Analīzes telpa\"]; vidus1;\n    node [label=\"Ievades \nģeodati\"]; vidus2;\n    node [label=\"Ekoģeogrāfiskie \nmainīgie\"]; vidus3;\n    node [label=\"Sugu izplatības \nmodelēšna\"]; vidus4;\n    node [label=\"Vietu prioritizēšana \naizsardzībai\"]; vidus5;\n  }\n\n  # node type 5: Kreisais \n  node [fontname = Helvetica, shape = rectangle,style=rounded,fontcolor=black,fontsize=12];{\n    node [label=\"*Dynamic World* izpēte\"]; DWexp;\n    }\n\n\n\n  # node type 3: Labais\n  node [fontname = Helvetica, shape = rectangle];{\n    node [label=\"Sugu saraksts \nun apraksti\"]; labais1;\n    node [label=\"Novērojumu atlase\"]; labais2;\n  }\n\n  # node type 4: Pecapstrade\n  node [fontname = Helvetica, shape = rectangle];{\n    node [label=\"Modeļu pēcapstrāde\"]; pec1;\n  }\n\n  \n  # specify which nodes are of the same \"rank\" so that they\"ll be drawn at the same level\n      {rank = same; step0 vidus1 labais1}\n      {rank = same; step1 DWexp vidus2 labais2}\n      {rank = same; step2 vidus3}\n      {rank = same; step3 vidus4 pec1}\n      {rank = same; step4 vidus5}\n  \n  # edge definitions with the node IDs\n  edge[tailclip = true, headclip = true,color=white];\n  step0 -> step1\n  step1 -> step2\n  step2 -> step3\n  step3->step4\n\n  edge[tailclip = true, headclip = true,color=black];\n  vidus1 -> vidus2\n  vidus2 -> vidus3\n  vidus3 -> vidus4\n  vidus4 -> vidus5\n  \n  vidus1 -> labais2\n  vidus1 -> DWexp\n  DWexp -> vidus2\n  DWexp -> labais2\n\n  labais1 -> labais2\n  labais2 -> vidus3\n  \n  labais1 -> vidus3\n  labais1 -> vidus5\n  labais1 -> vidus4\n  labais2 -> vidus4\n  vidus1 -> vidus3\n  \n  vidus4 -> pec1\n  vidus5 -> pec1\n  pec1 -> vidus5\n  }\n\n  ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figure 0.1: Darba plūsma un saistība starp šī dokumenta nodaļām
 </p>
