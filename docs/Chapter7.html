@@ -860,9 +860,10 @@ turpmākam darbam izvēlot tikai pietiekoši neatkarīgos, kuriem veikta indikat
 testēšana to iekļaušanai sugu izpla’tibu prognozējošajos modeļos. Vairāk - šīs
 nodaļas <a href="Chapter7.html#Chapter7.1">Sākotnēji izvēlēto pazīmju neatkarība un EGV atlases otrā kārta (VIF)</a> apakšnodaļā.</p>
 <p>Pēc EGV izvēles, veikta sugu izplatības modeļu parametrizācija maximuma entropijas
-analīzes ietvarā. Analīzes gaita, parametrizācijas pieejas un pieņemtie lēmumi ar
-ieviešanas procedūru (komandu rindām) ir raksturoti šīs nodaļas <a href="Chapter7.html#Chapter7.2">Modeļa parametrizācija, izvēle un izvērtēšanas apraksti</a>
-apakšnodaļā. Šīs procedūras ietvaros, izvēlēts modelis, kurš vislabāk spēj raksturot
+analīzes ietvarā <span class="citation">(<a href="#ref-PhillipsDudikSchapire2004">Phillips et al., 2004</a>)</span>. Analīzes gaita, parametrizācijas
+pieejas un pieņemtie lēmumi ar ieviešanas procedūru (komandu rindām) ir raksturoti
+šīs nodaļas <a href="Chapter7.html#Chapter7.2">Modeļa parametrizācija, izvēle un izvērtēšanas apraksti</a> apakšnodaļā.
+Šīs procedūras ietvaros, izvēlēts modelis, kurš vislabāk spēj raksturot
 interesējošās sugas izplatību, izšķirot tai piemēroto un nepiemēroto dzīvotņu
 projekcijas ģeogrāfiskajā telpā (nosedzot visu Latvijas iekšzemes teritoriju 100 m
 izšķirtspējā).</p>
@@ -880,10 +881,103 @@ analītiskās pieejas (ar komandu rindām) raksturotas šīs nodaļas <a href="C
 rindas rezultātu nodaļā izmantoto attēlu sagatavošanai.</p>
 <div id="Chapter7.1" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">7.1</span> Sākotnēji izvēlēto pazīmju neatkarība un EGV atlases otrā kārta (VIF)<a href="Chapter7.html#Chapter7.1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>VIF analīze un individuāla pārskatīšana vai netrūkst kaut kas sevišķi nozīmīgs</p>
+<p>Jebkurā prognostiskā statistiskajā modelī, kuram ir nepieciešama gan ekstrapolācijas,
+gan skaidrošanas spēja, regresoriem ir jābūt savstarpēji neatkarīgiem <span class="citation">(<a href="#ref-McElreathBook">McElreath, 2020</a>)</span>,
+<span class="citation">(<a href="#ref-ZuurGAMS">Zuur et al., 2009</a>)</span>. Turklāt, modelī nav pamata atrasties pazīmēm, kuras nepiedalās sugas
+izplatības prognozēšanā vai sniedz niecīgu pienesumu - jo vairāk EGV, jo skaitļošanā
+izaicinošāks un resursu ietilpīgāks ir jebkurš izstrādājamais modelis.</p>
+<p>Pazīmju neatkarības izvērtējums sniegts nodaļā <a href="Chapter7.html#Chapter7.1.1">Multikolinearitāte</a>,
+savukārt modelī iekļaujamo pazīmju izvēle - <a href="Chapter7.html#Chapter7.1.2">EGV indikatīvā nozīme kompleksā modelī</a>.</p>
 <div id="Chapter7.1.1" class="section level3 hasAnchor" number="7.1.1">
 <h3><span class="header-section-number">7.1.1</span> Multikolinearitāte<a href="Chapter7.html#Chapter7.1.1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>VIF$le$10</p>
+<p>Lai gan nereti statistiskajos modeļos par neatkarīgām tiek pieņemtas pazīmes, kuru
+dispresijas efektīvi neprognozē jebkāda kopa ar citām pazīmēm, to raksturojot ar
+<span class="math inline">\(\text{VIF} \le 4\)</span> <span class="citation">(<a href="#ref-ZuurGAMS">Zuur et al., 2009</a>)</span>, vides ekoģeogrāfiskajiem mainīgajiem, to telpiskā
+novietojuma īpašību dēļ, tik zemas vērtības ievērojami ierobežo pieejamo pazīmju
+loku <span class="citation">(<a href="#ref-Wikleetal2019">Wikle et al., 2019</a>)</span>. Maksimuma entropijas analīze tiek uzskatīta par relatīvi
+robustu pret EGV savstarpējām korelācijām <span class="citation">(<a href="#ref-PhillipsDudikSchapire2004">Phillips et al., 2004</a>)</span>,
+<span class="citation">(<a href="#ref-PhillipsAndersonSchapire2004">Phillips et al., 2006</a>)</span>, tomēr, lai novērstu spēcīgi ietekmētus
+modeļa parametru vērtējumus <span class="citation">(<a href="#ref-Montgomeryetal2012">Montgomery et al., 2012</a>)</span>, izvēlējos tikai tos sākotnēji
+ieplānotos EGV, kuru <span class="math inline">\(\text{VIF} \le 10\)</span>, sekojot <span class="citation">(<a href="#ref-Avotinsetal2022">Avotins et al., 2022</a>)</span>, <span class="citation">(<a href="#ref-PucuPlans">Avotiņš, 2019a</a>)</span>
+un <span class="citation">(<a href="#ref-DzenuPlans">Bergmanis et al., 2021</a>)</span> piemēriem.</p>
+<p>Šī izvēle veikta R pakotnē {usdm} <span class="citation">(<a href="#ref-usdm_pakotne">Naimi et al., 2014</a>)</span>, izmantojot sekojošajā koda
+apgabalā pieejamās komandu rindas. Darba gaitā no kopējās EGV izvēles tabulas,
+sagatavota katrai sugai individuāla, tajā pierakstot turpmākam darbam izvēlēto
+EGV aprēķinātās VIF vērtības. To aprēķināšanai izmantota soli-pa-solim EGV izslēgšanas
+pieeja sākot ar EGV ar lielāko VIF vērtību un turpināta līdz visām atlikušajām pazīmēm
+nejauši izlozētos 20 000 punktos aprēķināta <span class="math inline">\(\text{VIF} \le 10\)</span>.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb472"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb472-1"><a href="Chapter7.html#cb472-1" tabindex="-1"></a><span class="co"># libs</span></span>
+<span id="cb472-2"><a href="Chapter7.html#cb472-2" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(usdm)) {<span class="fu">install.packages</span>(<span class="st">&quot;usdm&quot;</span>); <span class="fu">require</span>(usdm)}</span>
+<span id="cb472-3"><a href="Chapter7.html#cb472-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>); <span class="fu">require</span>(tidyverse)}</span>
+<span id="cb472-4"><a href="Chapter7.html#cb472-4" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(terra)) {<span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>); <span class="fu">require</span>(terra)}</span>
+<span id="cb472-5"><a href="Chapter7.html#cb472-5" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(readxl)) {<span class="fu">install.packages</span>(<span class="st">&quot;readxl&quot;</span>); <span class="fu">require</span>(readxl)}</span>
+<span id="cb472-6"><a href="Chapter7.html#cb472-6" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(openxlsx)) {<span class="fu">install.packages</span>(<span class="st">&quot;openxlsx&quot;</span>); <span class="fu">require</span>(openxlsx)}</span>
+<span id="cb472-7"><a href="Chapter7.html#cb472-7" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(doParallel)) {<span class="fu">install.packages</span>(<span class="st">&quot;doParallel&quot;</span>); <span class="fu">require</span>(doParallel)}</span>
+<span id="cb472-8"><a href="Chapter7.html#cb472-8" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(foreach)) {<span class="fu">install.packages</span>(<span class="st">&quot;foreach&quot;</span>); <span class="fu">require</span>(foreach)}</span>
+<span id="cb472-9"><a href="Chapter7.html#cb472-9" tabindex="-1"></a></span>
+<span id="cb472-10"><a href="Chapter7.html#cb472-10" tabindex="-1"></a></span>
+<span id="cb472-11"><a href="Chapter7.html#cb472-11" tabindex="-1"></a><span class="co"># EGVs ----</span></span>
+<span id="cb472-12"><a href="Chapter7.html#cb472-12" tabindex="-1"></a>faili<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">fails=</span><span class="fu">list.files</span>(<span class="at">path=</span><span class="st">&quot;./Rastri_100m/Scaled/&quot;</span>,</span>
+<span id="cb472-13"><a href="Chapter7.html#cb472-13" tabindex="-1"></a>                                  <span class="at">pattern=</span><span class="st">&quot;.tif$&quot;</span>),</span>
+<span id="cb472-14"><a href="Chapter7.html#cb472-14" tabindex="-1"></a>                 <span class="at">cels=</span><span class="fu">list.files</span>(<span class="at">path=</span><span class="st">&quot;./Rastri_100m/Scaled/&quot;</span>,</span>
+<span id="cb472-15"><a href="Chapter7.html#cb472-15" tabindex="-1"></a>                                 <span class="at">pattern=</span><span class="st">&quot;.tif$&quot;</span>,<span class="at">full.names =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb472-16"><a href="Chapter7.html#cb472-16" tabindex="-1"></a></span>
+<span id="cb472-17"><a href="Chapter7.html#cb472-17" tabindex="-1"></a><span class="co"># sugam paredzetie ----</span></span>
+<span id="cb472-18"><a href="Chapter7.html#cb472-18" tabindex="-1"></a>sakumam<span class="ot">=</span><span class="fu">read_excel</span>(<span class="st">&quot;./Rastri_100m/EGV_putniem.xlsx&quot;</span>)</span>
+<span id="cb472-19"><a href="Chapter7.html#cb472-19" tabindex="-1"></a></span>
+<span id="cb472-20"><a href="Chapter7.html#cb472-20" tabindex="-1"></a></span>
+<span id="cb472-21"><a href="Chapter7.html#cb472-21" tabindex="-1"></a>sakumam_long<span class="ot">=</span>sakumam <span class="sc">%&gt;%</span> </span>
+<span id="cb472-22"><a href="Chapter7.html#cb472-22" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> COTCOT<span class="sc">:</span>EMBCIT,<span class="at">names_to=</span><span class="st">&quot;suga_kods&quot;</span>,<span class="at">values_to=</span><span class="st">&quot;sakuma_izvele&quot;</span>)</span>
+<span id="cb472-23"><a href="Chapter7.html#cb472-23" tabindex="-1"></a></span>
+<span id="cb472-24"><a href="Chapter7.html#cb472-24" tabindex="-1"></a><span class="co"># Izvēle ----</span></span>
+<span id="cb472-25"><a href="Chapter7.html#cb472-25" tabindex="-1"></a>sugas<span class="ot">=</span><span class="fu">levels</span>(<span class="fu">factor</span>(sakumam_long<span class="sc">$</span>suga_kods))</span>
+<span id="cb472-26"><a href="Chapter7.html#cb472-26" tabindex="-1"></a>cl <span class="ot">&lt;-</span> <span class="fu">makeCluster</span>(<span class="dv">8</span>)</span>
+<span id="cb472-27"><a href="Chapter7.html#cb472-27" tabindex="-1"></a><span class="fu">registerDoParallel</span>(cl)</span>
+<span id="cb472-28"><a href="Chapter7.html#cb472-28" tabindex="-1"></a></span>
+<span id="cb472-29"><a href="Chapter7.html#cb472-29" tabindex="-1"></a><span class="fu">foreach</span>(<span class="at">i =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(sugas)) <span class="sc">%dopar%</span> {</span>
+<span id="cb472-30"><a href="Chapter7.html#cb472-30" tabindex="-1"></a>  <span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(tidyverse))</span>
+<span id="cb472-31"><a href="Chapter7.html#cb472-31" tabindex="-1"></a>  <span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(terra))</span>
+<span id="cb472-32"><a href="Chapter7.html#cb472-32" tabindex="-1"></a>  <span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(arrow))</span>
+<span id="cb472-33"><a href="Chapter7.html#cb472-33" tabindex="-1"></a>  <span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(usdm))</span>
+<span id="cb472-34"><a href="Chapter7.html#cb472-34" tabindex="-1"></a>  <span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(maps))</span>
+<span id="cb472-35"><a href="Chapter7.html#cb472-35" tabindex="-1"></a>  <span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(rasterVis))</span>
+<span id="cb472-36"><a href="Chapter7.html#cb472-36" tabindex="-1"></a>  <span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(readxl))</span>
+<span id="cb472-37"><a href="Chapter7.html#cb472-37" tabindex="-1"></a>  <span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(SDMtune))</span>
+<span id="cb472-38"><a href="Chapter7.html#cb472-38" tabindex="-1"></a>  <span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(ENMeval))</span>
+<span id="cb472-39"><a href="Chapter7.html#cb472-39" tabindex="-1"></a>  <span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(zeallot))</span>
+<span id="cb472-40"><a href="Chapter7.html#cb472-40" tabindex="-1"></a>  <span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(openxlsx))</span>
+<span id="cb472-41"><a href="Chapter7.html#cb472-41" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
+<span id="cb472-42"><a href="Chapter7.html#cb472-42" tabindex="-1"></a>  sakums<span class="ot">=</span><span class="fu">Sys.time</span>()</span>
+<span id="cb472-43"><a href="Chapter7.html#cb472-43" tabindex="-1"></a>  suga<span class="ot">=</span>sugas[i]</span>
+<span id="cb472-44"><a href="Chapter7.html#cb472-44" tabindex="-1"></a>  <span class="fu">print</span>(suga)</span>
+<span id="cb472-45"><a href="Chapter7.html#cb472-45" tabindex="-1"></a>  sakumsaraksts_sugai<span class="ot">=</span>sakumam_long <span class="sc">%&gt;%</span> </span>
+<span id="cb472-46"><a href="Chapter7.html#cb472-46" tabindex="-1"></a>    <span class="fu">filter</span>(suga_kods<span class="sc">==</span>suga)</span>
+<span id="cb472-47"><a href="Chapter7.html#cb472-47" tabindex="-1"></a>  isssakums_sugai<span class="ot">=</span>sakumsaraksts_sugai <span class="sc">%&gt;%</span> </span>
+<span id="cb472-48"><a href="Chapter7.html#cb472-48" tabindex="-1"></a>    <span class="fu">filter</span>(sakuma_izvele<span class="sc">==</span><span class="dv">1</span>)</span>
+<span id="cb472-49"><a href="Chapter7.html#cb472-49" tabindex="-1"></a>  faili_sugai<span class="ot">=</span>faili <span class="sc">%&gt;%</span> </span>
+<span id="cb472-50"><a href="Chapter7.html#cb472-50" tabindex="-1"></a>    <span class="fu">filter</span>(fails <span class="sc">%in%</span> isssakums_sugai<span class="sc">$</span>scale_NAME)</span>
+<span id="cb472-51"><a href="Chapter7.html#cb472-51" tabindex="-1"></a>  rastri_sugai<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">rast</span>(faili_sugai<span class="sc">$</span>cels)</span>
+<span id="cb472-52"><a href="Chapter7.html#cb472-52" tabindex="-1"></a>  </span>
+<span id="cb472-53"><a href="Chapter7.html#cb472-53" tabindex="-1"></a>  VifStep_sugai<span class="ot">=</span>usdm<span class="sc">::</span><span class="fu">vifstep</span>(rastri_sugai,<span class="at">th=</span><span class="dv">10</span>,<span class="at">size=</span><span class="dv">20000</span>)</span>
+<span id="cb472-54"><a href="Chapter7.html#cb472-54" tabindex="-1"></a>  izslegt<span class="ot">=</span>VifStep_sugai<span class="sc">@</span>excluded</span>
+<span id="cb472-55"><a href="Chapter7.html#cb472-55" tabindex="-1"></a>  saglabat<span class="ot">=</span>VifStep_sugai<span class="sc">@</span>results</span>
+<span id="cb472-56"><a href="Chapter7.html#cb472-56" tabindex="-1"></a>  </span>
+<span id="cb472-57"><a href="Chapter7.html#cb472-57" tabindex="-1"></a>  saglabat2<span class="ot">=</span>saglabat <span class="sc">%&gt;%</span> </span>
+<span id="cb472-58"><a href="Chapter7.html#cb472-58" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">faila_nosaukums=</span><span class="fu">paste0</span>(Variables,<span class="st">&quot;.tif&quot;</span>),</span>
+<span id="cb472-59"><a href="Chapter7.html#cb472-59" tabindex="-1"></a>           <span class="at">sakumVIF=</span>VIF) <span class="sc">%&gt;%</span> </span>
+<span id="cb472-60"><a href="Chapter7.html#cb472-60" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(faila_nosaukums,sakumVIF)</span>
+<span id="cb472-61"><a href="Chapter7.html#cb472-61" tabindex="-1"></a>  sakums2<span class="ot">=</span>sakumsaraksts_sugai <span class="sc">%&gt;%</span> </span>
+<span id="cb472-62"><a href="Chapter7.html#cb472-62" tabindex="-1"></a>    <span class="fu">left_join</span>(saglabat2,<span class="at">by=</span><span class="fu">c</span>(<span class="st">&quot;scale_NAME&quot;</span><span class="ot">=</span><span class="st">&quot;faila_nosaukums&quot;</span>))</span>
+<span id="cb472-63"><a href="Chapter7.html#cb472-63" tabindex="-1"></a>  </span>
+<span id="cb472-64"><a href="Chapter7.html#cb472-64" tabindex="-1"></a>  EGVtabulai<span class="ot">=</span><span class="fu">paste0</span>(<span class="st">&quot;./SuguModeli/EGVselection/EGV_&quot;</span>,suga,<span class="st">&quot;.xlsx&quot;</span>)</span>
+<span id="cb472-65"><a href="Chapter7.html#cb472-65" tabindex="-1"></a>  <span class="fu">write.xlsx</span>(sakums2,EGVtabulai)</span>
+<span id="cb472-66"><a href="Chapter7.html#cb472-66" tabindex="-1"></a>  beigas<span class="ot">=</span><span class="fu">Sys.time</span>()</span>
+<span id="cb472-67"><a href="Chapter7.html#cb472-67" tabindex="-1"></a>  ilgums<span class="ot">=</span>beigas<span class="sc">-</span>sakums</span>
+<span id="cb472-68"><a href="Chapter7.html#cb472-68" tabindex="-1"></a>  <span class="fu">print</span>(ilgums)</span>
+<span id="cb472-69"><a href="Chapter7.html#cb472-69" tabindex="-1"></a>}</span>
+<span id="cb472-70"><a href="Chapter7.html#cb472-70" tabindex="-1"></a><span class="fu">stopCluster</span>(cl)</span></code></pre></div>
+</details>
 </div>
 <div id="Chapter7.1.2" class="section level3 hasAnchor" number="7.1.2">
 <h3><span class="header-section-number">7.1.2</span> EGV indikatīvā nozīme kompleksā modelī<a href="Chapter7.html#Chapter7.1.2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -906,6 +1000,39 @@ rindas rezultātu nodaļā izmantoto attēlu sagatavošanai.</p>
 <p>Dažādu failu ģenerēšana un modeļa spējas apraksti</p>
 <p>Marginālās atbildes funkciju attēli</p>
 
+</div>
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-Avotinsetal2022" class="csl-entry">
+Avotins, A., Kerus, V., Aunins, A., 2022. National scale habitat suitability analysis to evaluate and improve conservation areas for a mature forest specialist species, Global Ecology and Conservation. <a href="https://doi.org/10.1016/j.gecco.2022.e02218">https://doi.org/10.1016/j.gecco.2022.e02218</a>
+</div>
+<div id="ref-PucuPlans" class="csl-entry">
+Avotiņš, A., 2019a. Apodziņa <span>Glaucidium</span> passerinum, bikšainā apoga <span>Aegolius</span> funereus, meža pūces <span>Strix</span> aluco, urālpūces <span>Strix</span> uralensis, ausainās pūces <span>Asio</span> otus un ūpja <span>Bubo</span> bubo aizsardzības plāns. Latvijas Ornitoloģijas biedrība, Rīga, Latvija.
+</div>
+<div id="ref-DzenuPlans" class="csl-entry">
+Bergmanis, M., Priednieks, J., Avotiņš, A., Priedniece, I., 2021. Mazā dzeņa <span>Dryobates</span> minor, vidējā dzeņa <span>Leiopicus</span> medius, baltmugurdzeņa <span>Dendrocopos</span> leucotos, dižraibā dzeņa <span>Dendrocopos</span> major, trīspirkstu dzeņa <span>Picoides</span> tridactylus, melnās dzilnas <span>Dryocopus</span> martius un pelēkās dzilnas <span>Picus</span> canus aizsardzības plāns. Latvijas Ornitoloģijas biedrība, Rīga, Latvija.
+</div>
+<div id="ref-McElreathBook" class="csl-entry">
+McElreath, R., 2020. Statistical <span>Rethinking</span>. A <span>Bayesian</span> course with examples in <span>R</span> and <span>Stan</span>. Second edition. CRC Press, Boca Raton, FL.
+</div>
+<div id="ref-Montgomeryetal2012" class="csl-entry">
+Montgomery, D.C., Peck, E.A., Vining, G.G., 2012. Introduction to <span>Linear</span> <span>Regression</span> <span>Analysis</span>. Fifth edition. Wiley, New Jersey.
+</div>
+<div id="ref-usdm_pakotne" class="csl-entry">
+Naimi, B., Hamm, N. a.s., Groen, T.A., Skidmore, A.K., Toxopeus, A.G., 2014. Where is positional uncertainty a problem for species distribution modelling. Ecography 37, 191–203. <a href="https://doi.org/10.1111/j.1600-0587.2013.00205.x">https://doi.org/10.1111/j.1600-0587.2013.00205.x</a>
+</div>
+<div id="ref-PhillipsAndersonSchapire2004" class="csl-entry">
+Phillips, S.J., Anderson, R.P., Schapire, R.E., 2006. Maximum entropy modeling of species geographic distributions, Ecological Modelling.
+</div>
+<div id="ref-PhillipsDudikSchapire2004" class="csl-entry">
+Phillips, S.J., Dudik, M., Schapire, R.E., 2004. A <span>Maximum</span> <span>Entropy</span> <span>Approach</span> to <span>Species</span> <span>Distribution</span> <span>Modeling</span>, Proceedings of the Twenty-First International Conference on Machine Learning.
+</div>
+<div id="ref-Wikleetal2019" class="csl-entry">
+Wikle, C.K., Zammit-Mangion, A., Cressie, N., 2019. Spatio-<span>Temporal</span> <span>Statistics</span> with <span>R</span>. Chapman &amp; Hall/CRC, Boca Raton, FL.
+</div>
+<div id="ref-ZuurGAMS" class="csl-entry">
+Zuur, A.F., Ieno, E.N., Walker, N.J., Saveliev, A.A., Smith, G.M., 2009. Mixed <span>Effects</span> <span>Models</span> and <span>Extensions</span> in <span>Ecology</span> with <span>R</span>. Springer, New York.
 </div>
 </div>
             </section>
