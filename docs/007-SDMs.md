@@ -25,7 +25,7 @@ uzsākšanas pārbaudīta ik sugas modeļos iekļaujamo EGV vērtību savstarpē
 aprēķinot dispersijas ietekmētības faktoru (*variance inflation factor*; VIF), 
 turpmākam darbam izvēlot tikai pietiekoši neatkarīgos, kuriem veikta indikatīva 
 testēšana to iekļaušanai sugu izpla'tibu prognozējošajos modeļos. Vairāk - šīs 
-nodaļas [Sākotnēji izvēlēto pazīmju neatkarība un EGV atlases otrā kārta (VIF)](#Chapter7.1) apakšnodaļā.
+nodaļas [Sākotnēji izvēlēto pazīmju neatkarība un EGV atlases otrā kārta](#Chapter7.1) apakšnodaļā.
 
 Pēc EGV izvēles, veikta sugu izplatības modeļu parametrizācija maximuma entropijas 
 analīzes ietvarā [@PhillipsDudikSchapire2004]. Analīzes gaita, parametrizācijas 
@@ -50,7 +50,7 @@ analītiskās pieejas (ar komandu rindām) raksturotas šīs nodaļas [Nulles mo
 Šīs nodaļas noslēgumā ([Labākā modeļa rezultāti](#Chapter7.4)) sniegtas komandu 
 rindas rezultātu nodaļā izmantoto attēlu sagatavošanai.
 
-## Sākotnēji izvēlēto pazīmju neatkarība un EGV atlases otrā kārta (VIF)  {#Chapter7.1}
+## Sākotnēji izvēlēto pazīmju neatkarība un EGV atlases otrā kārta {#Chapter7.1}
 
 Jebkurā prognostiskā statistiskajā modelī, kuram ir nepieciešama gan ekstrapolācijas, 
 gan skaidrošanas spēja, regresoriem ir jābūt savstarpēji neatkarīgiem [@McElreathBook],
