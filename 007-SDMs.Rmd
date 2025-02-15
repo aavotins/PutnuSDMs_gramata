@@ -205,18 +205,18 @@ vienmēr izpildās. Tādēļ šajā solī iestrādāta automātiska izvēle neda
 modelim - LQP -, ja neizpildās variabilitātes nosacījumi. Sākotnējais modelis veidots un 
 EGV indikatīvā nozīme vērtēta, procesa vadībai izmantojot R pakotni {SDMtune} [@SDMtune].
 
-Visi modeļi veidoti kopējās informācijas telpas aprakstam (fona jeb *background* vietām), 
+Visi modeļi veidoti, kopējās informācijas telpas aprakstam (fona jeb *background* vietām) 
 pievienojot tās klātbūtnes vietas, kuras raksturo tajos jau neesošas EGV vērtību 
 kombinācijas [@PhillipsDudikSchapire2004], [@PhillipsAndersonSchapire2006], lai 
-veidotu analītisko sistēmu, kas analīti cieši saistās ar Puasona 
+veidotu statistisko kompleksu, kas matemātiski cieši saistās ar Puasona 
 punktu procesu [@GuisanThuillerZimmerman2017].
 
 Lai gan šī soļa mērķis ir vienkāršot modeļus, reducējot iekļauto pazīmju loku, tas 
 tiek darīts tikai apmācību kopā un bez iekšējās validācijas (*cross-validation*; CV), 
-kas rada potenciālu pārliekai pielipšanai datiem (*overfitting*), turklāt fokusēšanos uz 
-atsevišķām pazīmēm, tādā veidā zaudējot matricas heterogenitātes ietekmes raksturojumus. 
-Tādēļ iestrādāts kritērijs par minimālo pazīmju skaitu sākotnējā modelī pēc vidējās 
-indikatīvās permutāciju (n=9) ietekmes:
+kas rada potenciālu pārliekai pielipšanai datiem (*overfitting*), turklāt risku 
+fokusam uz atsevišķām pazīmēm, tādā veidā zaudējot matricas heterogenitātes 
+ietekmes raksturojumus. Tādēļ iestrādāts kritērijs par minimālo pazīmju skaitu 
+sākotnējā modelī, tam izmantojot indikāciju no vidējās ietekmes deviņās permutācijās:
 
 - ja vidējā indikatīvā ietekme bija vismaz 1% un pazīmju skaits bija vismaz 16, 
 izvēlētas šīs pazīmes un izvēle beigta. Ja pazīmju skaits bija mazāks, turpināta izvēle;
@@ -412,7 +412,53 @@ stopCluster(cl)
 
 ## Modeļa parametrizācija, izvēle un izvērtēšanas apraksti  {#Chapter7.2}
 
+Sugas izplatības modeļi veidoti maksimuma entropijas anlīzes ietvarā [@PhillipsDudikSchapire2004], 
+[@PhillipsAndersonSchapire2006], izmantojot {maxnet} pakotni [@Maxnet], kas 
+vadīta ar {SDMtune} pakotni [@SDMtune]. Modeļu apmācībai izmantotas tam atlasītās 
+sugu klātbūtnes vietas un 20 000 nejauši izvēlētu fona punktu, savukārt to 
+neatkarīgai testēšanai - atsevišķi modelī ne reizi neiekļauti neatkarīgās testēšanas 
+dati (to izvēles apraksts - [Modelēšanas datu saglabāšana un procesa vizualizēšana](#Chapter6.2)). 
+No visiem pieejamajiem klātbūtnes punktiem 25% (noapaļojot uz augšu) izmantoti 
+neatkarīgajai testēšanai, atlikušie - modeļa apmācībai. Fona jeb vides kopumā 
+raksturošanai sākotnēji izlozēti 27500 punkti, no kuriem 7500 iekļauti neatkarīgās 
+testēšanas kopā, pārējos izmanttojot modeļa apmācībai. Izņēmums ir vistu vanags, 
+kuram neatkarīgās testēšanas klātbūtnes vietām izmantoti 2024. gada lauka darbu 
+rezultāti ([Modelēšanas datu saglabāšana un procesa vizualizēšana](#Chapter6.2)).
 
+Sugu izplatības modelēšanā ar klātbūtnes-fona vietām, nozīmīgs izaicinājums ir 
+klātbūtnes vietu reprezentativitāte. Optimālā situācijā, būtu jābūt pieejamai 
+informācijai par sugu meklēšanas piepūli [@Phillipsetal2009], [@Fourcadeetal2014], 
+[@Johnstonetal2020], [@Backstrometal2024], kurai būtu 
+jābūt iegūtai un aprakstītai tā, lai varētu izmantot nepilnīgas konstatēšanas modeļus 
+[@KeryRoyle2016], [@KeryRoyle2021] vai integrētās pieejas [@Dorazio2014], [@Fletcheretal2019], [@Ogawaetal2024]. 
+Tomēr pilnvērtīgā formā - iegūta statistiski robustas paraugošanas ietvarā un detalizēti 
+aprakstīta - tā nav pieejama gandrīz nevienai sugai, jo konvencionālo 
+monitoringu programmas, kurās tāda tiek iegūta, šobrīd nspēj radīt tādu informācijas 
+bagātību, lai detalizēti analizētu visu sugu loku, turklāt nav sagaidāms, ka ar šīm 
+metodēm būtu iespējams izstrādāt vienotu analīzes plūsmu, nodrošinot ērtu replicējamību. 
+Šādās situācijās, simulāciju eksperimentos un reālās vides datu pētījumos ir noskaidrots, 
+ka, ja nav iespējams nodrošināt **uzticamu** piepūles telpisko raksturojumu (*biasfile*) 
+[@Phillipsetal2009], [@Johnstonetal2020], pieeja ar augstāko stabilitāti 
+pārparaugošanas (*oversampling*) ietekmju samazināšanā modeļa rezultātu projekcijā 
+un pazīmju atbildes funkcijās ir sistemātiska retināšana [@Fourcadeetal2014]. 
+
+Sistemātiska retināšana par faktoru 10 (nodelēšana norisinās rastra šūnā ar malas 
+garumu 100 m, bet modeļa apmācībai izmantots tikai viens novērojums tīklā ar malas 
+garumu 1 km) ir iestrādāta [Novērojumu atlase](#Chapter6) beigās. Šāda retināša ir 
+nozīmīga ne tikai pārparaugošanas ietekmes mazināšanai, tā spēlē arī nozīmīgu lomu maza 
+mēroga telpiskās autokorelācijas ietekmju mazināšanā [@Moundryetal2024]. Savukārt plaša 
+mēroga autokorālcijas ietekmju samazināšanai un apmācītā modeļa stabilitātes novērtēšanai, 
+izmantojama iekšējā krosvalidācija (*cross-validation*, CV).
+
+Dažādos pētījumos ir noskaidrots, ka sugu izplatības modeļi var gan uzrādīt ciešu 
+saistību ar pazīmēm, kas tikai nejauši vai ļoti netieši ir saistītas ar sugu izplatību 
+[@Dormannetal2012], gan nejauši ģenerētām vērtībām [@BahnMcgill2007], [@Bealeetal2008], 
+[@Chapman2010], gan pat renesances gleznojumiem [@Fourcadeetal2018]. Tas nozīmē, ka 
+modeļu izveides un izvērtēšanas procedūrām ir liela nozīme, lai samazinātu šādu 
+nejaušību ietekmi. Cik tas attiecas uz plaša mēroga autokorelācijām, kas sevišķi 
+izteiktas saistībā ar klimatu un raksturīgas renesances gleznojumos, telpisko bloku 
+krosvalidācija ir atzīta par labāk performējošo, jo sevišķi, ja apvienota ar 
+neatkarīgas testēšanas datiem [@Fourcadeetal2018].
 
 
 
@@ -434,7 +480,7 @@ suga="abcdef" # sugas sešu burtu kods
 # nepieļauj īsti labu uzdevuma sagatavošanu, tādēļ šī materiāla tapšanas laikā SDM 
 # parametrizācija veidota sugai-specifisku uzdevumu veidā HPC, paredzot ik sugai 
 # individuālu resursu pieprasīšanu (sākot no 20 GB RAM, to iteratīvi palielinot 
-# par 10 GB līdz ar katru nepietiekama operatīvās atmiņas apjoma dēļ apstādinātu 
+# par 10 GB līdz ar katru nepietiekama operatīvās atmiņas apjoma dēļ pārtrauktu 
 # uzdevuma izpildi)
 
 

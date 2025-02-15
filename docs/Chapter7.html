@@ -1019,18 +1019,18 @@ gan ekoloģiski pamatots dažādās situācijās, {maxnet} pakotnē <span class=
 tikai EGV inofrmācijas telpā, kurā ik pazīmei ir pietiekoša variabilitāte, kas ne
 vienmēr izpildās. Tādēļ šajā solī iestrādāta automātiska izvēle nedaudz vienkāršākam
 modelim - LQP -, ja neizpildās variabilitātes nosacījumi. Sākotnējais modelis veidots un
-EGV indikatīvā nozīme vērtēta, procesa vadībai izmantojot R pakotni {SDMtune} <span class="citation">(<a href="#ref-SDMtune">Sergio Vignali et al., 2020</a>)</span>.</p>
-<p>Visi modeļi veidoti kopējās informācijas telpas aprakstam (fona jeb <em>background</em> vietām),
+EGV indikatīvā nozīme vērtēta, procesa vadībai izmantojot R pakotni {SDMtune} <span class="citation">(<a href="#ref-SDMtune">Vignali et al., 2020</a>)</span>.</p>
+<p>Visi modeļi veidoti, kopējās informācijas telpas aprakstam (fona jeb <em>background</em> vietām)
 pievienojot tās klātbūtnes vietas, kuras raksturo tajos jau neesošas EGV vērtību
 kombinācijas <span class="citation">(<a href="#ref-PhillipsDudikSchapire2004">Phillips et al., 2004</a>)</span>, <span class="citation">(<a href="#ref-PhillipsAndersonSchapire2006">Phillips et al., 2006</a>)</span>, lai
-veidotu analītisko sistēmu, kas analīti cieši saistās ar Puasona
+veidotu statistisko kompleksu, kas matemātiski cieši saistās ar Puasona
 punktu procesu <span class="citation">(<a href="#ref-GuisanThuillerZimmerman2017">Guisan et al., 2017</a>)</span>.</p>
 <p>Lai gan šī soļa mērķis ir vienkāršot modeļus, reducējot iekļauto pazīmju loku, tas
 tiek darīts tikai apmācību kopā un bez iekšējās validācijas (<em>cross-validation</em>; CV),
-kas rada potenciālu pārliekai pielipšanai datiem (<em>overfitting</em>), turklāt fokusēšanos uz
-atsevišķām pazīmēm, tādā veidā zaudējot matricas heterogenitātes ietekmes raksturojumus.
-Tādēļ iestrādāts kritērijs par minimālo pazīmju skaitu sākotnējā modelī pēc vidējās
-indikatīvās permutāciju (n=9) ietekmes:</p>
+kas rada potenciālu pārliekai pielipšanai datiem (<em>overfitting</em>), turklāt risku
+fokusam uz atsevišķām pazīmēm, tādā veidā zaudējot matricas heterogenitātes
+ietekmes raksturojumus. Tādēļ iestrādāts kritērijs par minimālo pazīmju skaitu
+sākotnējā modelī, tam izmantojot indikāciju no vidējās ietekmes deviņās permutācijās:</p>
 <ul>
 <li><p>ja vidējā indikatīvā ietekme bija vismaz 1% un pazīmju skaits bija vismaz 16,
 izvēlētas šīs pazīmes un izvēle beigta. Ja pazīmju skaits bija mazāks, turpināta izvēle;</p></li>
@@ -1222,6 +1222,50 @@ atkārtoti, lai precīzāk informētu par statistisko kompleksu parametrizētajo
 </div>
 <div id="Chapter7.2" class="section level2 hasAnchor" number="7.2">
 <h2><span class="header-section-number">7.2</span> Modeļa parametrizācija, izvēle un izvērtēšanas apraksti<a href="Chapter7.html#Chapter7.2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Sugas izplatības modeļi veidoti maksimuma entropijas anlīzes ietvarā <span class="citation">(<a href="#ref-PhillipsDudikSchapire2004">Phillips et al., 2004</a>)</span>,
+<span class="citation">(<a href="#ref-PhillipsAndersonSchapire2006">Phillips et al., 2006</a>)</span>, izmantojot {maxnet} pakotni <span class="citation">(<a href="#ref-Maxnet">Phillips, 2021</a>)</span>, kas
+vadīta ar {SDMtune} pakotni <span class="citation">(<a href="#ref-SDMtune">Vignali et al., 2020</a>)</span>. Modeļu apmācībai izmantotas tam atlasītās
+sugu klātbūtnes vietas un 20 000 nejauši izvēlētu fona punktu, savukārt to
+neatkarīgai testēšanai - atsevišķi modelī ne reizi neiekļauti neatkarīgās testēšanas
+dati (to izvēles apraksts - <a href="Chapter6.html#Chapter6.2">Modelēšanas datu saglabāšana un procesa vizualizēšana</a>).
+No visiem pieejamajiem klātbūtnes punktiem 25% (noapaļojot uz augšu) izmantoti
+neatkarīgajai testēšanai, atlikušie - modeļa apmācībai. Fona jeb vides kopumā
+raksturošanai sākotnēji izlozēti 27500 punkti, no kuriem 7500 iekļauti neatkarīgās
+testēšanas kopā, pārējos izmanttojot modeļa apmācībai. Izņēmums ir vistu vanags,
+kuram neatkarīgās testēšanas klātbūtnes vietām izmantoti 2024. gada lauka darbu
+rezultāti (<a href="Chapter6.html#Chapter6.2">Modelēšanas datu saglabāšana un procesa vizualizēšana</a>).</p>
+<p>Sugu izplatības modelēšanā ar klātbūtnes-fona vietām, nozīmīgs izaicinājums ir
+klātbūtnes vietu reprezentativitāte. Optimālā situācijā, būtu jābūt pieejamai
+informācijai par sugu meklēšanas piepūli <span class="citation">(<a href="#ref-Phillipsetal2009">Miroslav Dudik et al., 2009</a>)</span>, <span class="citation">(<a href="#ref-Fourcadeetal2014">Fourcade et al., 2014</a>)</span>,
+<span class="citation">(<a href="#ref-Johnstonetal2020">Johnston et al., 2020</a>)</span>, <span class="citation">(<a href="#ref-Backstrometal2024">BACKSTROM et al., 2024</a>)</span>, kurai būtu
+jābūt iegūtai un aprakstītai tā, lai varētu izmantot nepilnīgas konstatēšanas modeļus
+<span class="citation">(<a href="#ref-KeryRoyle2016">Kéry and Royle, 2017</a>)</span>, <span class="citation">(<a href="#ref-KeryRoyle2021">Kéry and Royle, 2021</a>)</span> vai integrētās pieejas <span class="citation">(<a href="#ref-Dorazio2014">Dorazio, 2014</a>)</span>, <span class="citation">(<a href="#ref-Fletcheretal2019">FLETCHER et al., 2019</a>)</span>, <span class="citation">(<a href="#ref-Ogawaetal2024">Ogawa et al., 2024</a>)</span>.
+Tomēr pilnvērtīgā formā - iegūta statistiski robustas paraugošanas ietvarā un detalizēti
+aprakstīta - tā nav pieejama gandrīz nevienai sugai, jo konvencionālo
+monitoringu programmas, kurās tāda tiek iegūta, šobrīd nspēj radīt tādu informācijas
+bagātību, lai detalizēti analizētu visu sugu loku, turklāt nav sagaidāms, ka ar šīm
+metodēm būtu iespējams izstrādāt vienotu analīzes plūsmu, nodrošinot ērtu replicējamību.
+Šādās situācijās, simulāciju eksperimentos un reālās vides datu pētījumos ir noskaidrots,
+ka, ja nav iespējams nodrošināt <strong>uzticamu</strong> piepūles telpisko raksturojumu (<em>biasfile</em>)
+<span class="citation">(<a href="#ref-Phillipsetal2009">Miroslav Dudik et al., 2009</a>)</span>, <span class="citation">(<a href="#ref-Johnstonetal2020">Johnston et al., 2020</a>)</span>, pieeja ar augstāko stabilitāti
+pārparaugošanas (<em>oversampling</em>) ietekmju samazināšanā modeļa rezultātu projekcijā
+un pazīmju atbildes funkcijās ir sistemātiska retināšana <span class="citation">(<a href="#ref-Fourcadeetal2014">Fourcade et al., 2014</a>)</span>.</p>
+<p>Sistemātiska retināšana par faktoru 10 (nodelēšana norisinās rastra šūnā ar malas
+garumu 100 m, bet modeļa apmācībai izmantots tikai viens novērojums tīklā ar malas
+garumu 1 km) ir iestrādāta <a href="Chapter6.html#Chapter6">Novērojumu atlase</a> beigās. Šāda retināša ir
+nozīmīga ne tikai pārparaugošanas ietekmes mazināšanai, tā spēlē arī nozīmīgu lomu maza
+mēroga telpiskās autokorelācijas ietekmju mazināšanā <span class="citation">(<a href="#ref-Moundryetal2024">Moudrý et al., 2024</a>)</span>. Savukārt plaša
+mēroga autokorālcijas ietekmju samazināšanai un apmācītā modeļa stabilitātes novērtēšanai,
+izmantojama iekšējā krosvalidācija (<em>cross-validation</em>, CV).</p>
+<p>Dažādos pētījumos ir noskaidrots, ka sugu izplatības modeļi var gan uzrādīt ciešu
+saistību ar pazīmēm, kas tikai nejauši vai ļoti netieši ir saistītas ar sugu izplatību
+<span class="citation">(<a href="#ref-Dormannetal2012">Dormann et al., 2012</a>)</span>, gan nejauši ģenerētām vērtībām <span class="citation">(<a href="#ref-BahnMcgill2007">Bahn and Mcgill, 2007</a>)</span>, <span class="citation">(<a href="#ref-Bealeetal2008">Beale et al., 2008</a>)</span>,
+<span class="citation">(<a href="#ref-Chapman2010">Chapman, 2010</a>)</span>, gan pat renesances gleznojumiem <span class="citation">(<a href="#ref-Fourcadeetal2018">Fourcade et al., 2018</a>)</span>. Tas nozīmē, ka
+modeļu izveides un izvērtēšanas procedūrām ir liela nozīme, lai samazinātu šādu
+nejaušību ietekmi. Cik tas attiecas uz plaša mēroga autokorelācijām, kas sevišķi
+izteiktas saistībā ar klimatu un raksturīgas renesances gleznojumos, telpisko bloku
+krosvalidācija ir atzīta par labāk performējošo, jo sevišķi, ja apvienota ar
+neatkarīgas testēšanas datiem <span class="citation">(<a href="#ref-Fourcadeetal2018">Fourcade et al., 2018</a>)</span>.</p>
 <p>Feature types and algorithms</p>
 <p>Regularization multipliers</p>
 <p>Krosvalidācija</p>
@@ -1234,7 +1278,7 @@ atkārtoti, lai precīzāk informētu par statistisko kompleksu parametrizētajo
 <span id="cb474-5"><a href="Chapter7.html#cb474-5" tabindex="-1"></a><span class="co"># nepieļauj īsti labu uzdevuma sagatavošanu, tādēļ šī materiāla tapšanas laikā SDM </span></span>
 <span id="cb474-6"><a href="Chapter7.html#cb474-6" tabindex="-1"></a><span class="co"># parametrizācija veidota sugai-specifisku uzdevumu veidā HPC, paredzot ik sugai </span></span>
 <span id="cb474-7"><a href="Chapter7.html#cb474-7" tabindex="-1"></a><span class="co"># individuālu resursu pieprasīšanu (sākot no 20 GB RAM, to iteratīvi palielinot </span></span>
-<span id="cb474-8"><a href="Chapter7.html#cb474-8" tabindex="-1"></a><span class="co"># par 10 GB līdz ar katru nepietiekama operatīvās atmiņas apjoma dēļ apstādinātu </span></span>
+<span id="cb474-8"><a href="Chapter7.html#cb474-8" tabindex="-1"></a><span class="co"># par 10 GB līdz ar katru nepietiekama operatīvās atmiņas apjoma dēļ pārtrauktu </span></span>
 <span id="cb474-9"><a href="Chapter7.html#cb474-9" tabindex="-1"></a><span class="co"># uzdevuma izpildi)</span></span>
 <span id="cb474-10"><a href="Chapter7.html#cb474-10" tabindex="-1"></a></span>
 <span id="cb474-11"><a href="Chapter7.html#cb474-11" tabindex="-1"></a></span>
@@ -1577,26 +1621,71 @@ Avotins, A., Kerus, V., Aunins, A., 2022. National scale habitat suitability ana
 <div id="ref-PucuPlans" class="csl-entry">
 Avotiņš, A., 2019a. Apodziņa <em><span>Glaucidium</span> passerinum</em>, bikšainā apoga <em><span>Aegolius</span> funereus</em>, meža pūces <em><span>Strix</span> aluco</em>, urālpūces <em><span>Strix</span> uralensis</em>, ausainās pūces <em><span>Asio</span> otus</em> un ūpja <em><span>Bubo</span> bubo</em> aizsardzības plāns. Latvijas Ornitoloģijas biedrība, Rīga, Latvija.
 </div>
+<div id="ref-Backstrometal2024" class="csl-entry">
+BACKSTROM, L.J., CALLAGHAN, C.T., WORTHINGTON, H., FULLER, R.A., JOHNSTON, A., 2024. Estimating sampling biases in citizen science datasets. Ibis 1–15. <a href="https://doi.org/10.1111/ibi.13343">https://doi.org/10.1111/ibi.13343</a>
+</div>
+<div id="ref-BahnMcgill2007" class="csl-entry">
+Bahn, V., Mcgill, B.J., 2007. Can niche-based based distribution models outperform spatial interpolation? Global Ecology and Biogeography 16, 733–742. <a href="https://doi.org/10.1111/j.1466-8238.2007.00331.x">https://doi.org/10.1111/j.1466-8238.2007.00331.x</a>
+</div>
+<div id="ref-Bealeetal2008" class="csl-entry">
+Beale, C.M., Lennon, J.J., Gimona, A., 2008. Opening the climate envelope reveals no macroscale associations with climate in european birds. PNAS 105, 14908–14912. <a href="https://doi.org/10.1073/pnas.080350610">https://doi.org/10.1073/pnas.080350610</a>
+</div>
 <div id="ref-DzenuPlans" class="csl-entry">
 Bergmanis, M., Priednieks, J., Avotiņš, A., Priedniece, I., 2021. Mazā dzeņa <em><span>Dryobates</span> minor</em>, vidējā dzeņa <em><span>Leiopicus</span> medius</em>, baltmugurdzeņa <em><span>Dendrocopos</span> leucotos</em>, dižraibā dzeņa <em><span>Dendrocopos</span> major</em>, trīspirkstu dzeņa <em><span>Picoides</span> tridactylus</em>, melnās dzilnas <em><span>Dryocopus</span> martius</em> un pelēkās dzilnas <em><span>Picus</span> canus</em> aizsardzības plāns. Latvijas Ornitoloģijas biedrība, Rīga, Latvija.
 </div>
 <div id="ref-Bjorklundetal2020" class="csl-entry">
-Björklund, H., Parkkinen, A., Hakkari, T., Heikkinen, R.K., Virkkala, R., Lensu, A., 2020. Predicting valuable forest habitats using an indicator species for biodiversity. Biological Conservation journal 249, 108682. <a href="https://doi.org/10.1016/j.biocon.2020.108682">https://doi.org/10.1016/j.biocon.2020.108682</a>
+Björklund, H., Parkkinen, A., Hakkari, T., Heikkinen, R.K., Virkkala, R., Lensu, A., 2020. Predicting valuable forest habitats using an indicator species for biodiversity. Biological Conservation 249, 108682. <a href="https://doi.org/10.1016/j.biocon.2020.108682">https://doi.org/10.1016/j.biocon.2020.108682</a>
+</div>
+<div id="ref-Chapman2010" class="csl-entry">
+Chapman, D.S., 2010. Weak climatic associations among britishplant distributions. Global Ecology and Biogeography 19, 831–841. <a href="https://doi.org/10.1111/j.1466-8238.2010.00561.x">https://doi.org/10.1111/j.1466-8238.2010.00561.x</a>
+</div>
+<div id="ref-Dorazio2014" class="csl-entry">
+Dorazio, R.M., 2014. Accounting for imperfect detection and survey bias in statistical analysis of presence-only data. Global Ecology and Biogeography 23, 1472–1484. <a href="https://doi.org/10.1111/geb.12216">https://doi.org/10.1111/geb.12216</a>
+</div>
+<div id="ref-Dormannetal2012" class="csl-entry">
+Dormann, C.F., Schymanski, S.J., Cabral, J., Chuine, I., Graham, C., Hartig, F., Kearney, M., Morin, X., Römermann, C., Schröder, B., Singer, A., 2012. Correlation and process in speciesdistribution models: Bridging adichotomy. Journal of Biogeography 39, 2119–2131. <a href="https://doi.org/10.1111/j.1365-2699.2011.02659.x">https://doi.org/10.1111/j.1365-2699.2011.02659.x</a>
+</div>
+<div id="ref-Fletcheretal2019" class="csl-entry">
+FLETCHER, R.J.JR., HEFLEY, T.J., ROBERTSON, E.P., ZUCKERBERG, B., MCCLEERY, R.A., Dorazio, R.M., 2019. A practical guide for combining data to model species distributions. Ecology 100, 1–15. <a href="https://doi.org/10.1002/ecy.2710">https://doi.org/10.1002/ecy.2710</a>
+</div>
+<div id="ref-Fourcadeetal2018" class="csl-entry">
+Fourcade, Y., Besnard, A.G., Secondi, J., 2018. Paintings predict the distribution of species, or the challenge of selecting environmental predictors and evaluation statistics. Global Ecology and Biogeography 27, 245–256. <a href="https://doi.org/10.1111/geb.12684">https://doi.org/10.1111/geb.12684</a>
+</div>
+<div id="ref-Fourcadeetal2014" class="csl-entry">
+Fourcade, Y., Engler, J.O., Rödder, D., Secondi, J., 2014. Mapping species distributions with MAXENT using a geographically biased sample of presence data: A performance assessment of methods for correcting sampling bias. PLoS ONE 9, 1–13. <a href="https://doi.org/10.1371/journal.pone.0097122">https://doi.org/10.1371/journal.pone.0097122</a>
 </div>
 <div id="ref-GuisanThuillerZimmerman2017" class="csl-entry">
 Guisan, A., Thuiller, W., Zimmermann, N.E., 2017. Habitat suitability and distribution models: With applications in <span>R</span>. Cambridge University Press, Cornwall, UK.
 </div>
+<div id="ref-Johnstonetal2020" class="csl-entry">
+Johnston, A., Moran, N., Musgrove, A., Fink, D., Baillie, S.R., 2020. Estimating species distributions from spatially biased citizen science data. Ecological Modelling 420, 108927. <a href="https://doi.org/10.1016/j.ecolmodel.2019.108927">https://doi.org/10.1016/j.ecolmodel.2019.108927</a>
+</div>
 <div id="ref-ENMeval2.0" class="csl-entry">
 Kass, J.M., Muscarella, R., Galante, P.J., Bohl, C.L., Pinilla-Buitrago, G.E., Boria, R.A., Soley-Guardia, M., Anderson, R.P., 2021. ENMeval 2.0: Redesigned for customizable and reproducible modeling of species’ niches and distributions. Methods in Ecology and Evolution 12, 1602–1608. <a href="https://doi.org/10.1111/2041-210X.13628">https://doi.org/10.1111/2041-210X.13628</a>
+</div>
+<div id="ref-KeryRoyle2021" class="csl-entry">
+Kéry, M., Royle, J.A., 2021. Applied hierarchical modeling in ecology: Analysis of distribution, abundance and species richness in r and BUGS. Volume 2: Dynamic and advanced models. Elsevier, London, UK.
+</div>
+<div id="ref-KeryRoyle2016" class="csl-entry">
+Kéry, M., Royle, J.A., 2017. Applied hierarchical modeling in ecology: Analysis of distribution, abundance and species richness in r and BUGS. Volume 1: Prelude and static models. Elsevier, London, UK.
 </div>
 <div id="ref-McElreathBook" class="csl-entry">
 McElreath, R., 2020. Statistical <span>Rethinking</span>. A <span>Bayesian</span> course with examples in <span>R</span> and <span>Stan</span>. Second edition. CRC Press, Boca Raton, FL.
 </div>
+<div id="ref-Phillipsetal2009" class="csl-entry">
+Miroslav Dudik, S.J.P. nad, Elith, J., Graham, C.H., Lehmann, A., Leathwick, J., Ferrier, S., 2009. <a href="">Sample selection bias and presence-only distribution models: Implications for background and pseudo-absence data</a>. Ecological Applications 19, 181–197.
+</div>
 <div id="ref-Montgomeryetal2012" class="csl-entry">
 Montgomery, D.C., Peck, E.A., Vining, G.G., 2012. Introduction to <span>Linear</span> <span>Regression</span> <span>Analysis</span>. Fifth edition. Wiley, New Jersey.
 </div>
+<div id="ref-Moundryetal2024" class="csl-entry">
+Moudrý, V., Bazzichetto, M., Remelgado, R., Devillers, R., Lenoir, J., Mateo, R.G., Lembrechts, J.J., Sillero, N., Lecours, V., Cord, A.F., Barták, V., Balej, P., Rocchini, D., Torresani, M., Arenas-Castro, S., Man, M., Prajzlerová, D., Gdulová, K., Prošek, J., Marchetto, E., Zarzo-Arias, A., Gábor, L., Leroy, F., Martini, M., Malavasi, M., Gatti, R.C., Wild, J., Šímová, P., 2024. Optimising occurrence data in species distribution models: Sample size, positional uncertainty, and sampling bias matter vítězslav. Ecography e07294. <a href="https://doi.org/10.1111/ecog.07294">https://doi.org/10.1111/ecog.07294</a>
+</div>
 <div id="ref-usdm_pakotne" class="csl-entry">
 Naimi, B., Hamm, N. a.s., Groen, T.A., Skidmore, A.K., Toxopeus, A.G., 2014. Where is positional uncertainty a problem for species distribution modelling. Ecography 37, 191–203. <a href="https://doi.org/10.1111/j.1600-0587.2013.00205.x">https://doi.org/10.1111/j.1600-0587.2013.00205.x</a>
+</div>
+<div id="ref-Ogawaetal2024" class="csl-entry">
+Ogawa, R., Wang, G., Burger, L.W., Strickland, B.K., Davis, J.B., Cunningham, F.L., 2024. Bayesian integrated species distribution models for hierarchical resource selection by a soaring bird. Ecological Informatics 82, 102787. <a href="https://doi.org/10.1016/j.ecoinf.2024.102787">https://doi.org/10.1016/j.ecoinf.2024.102787</a>
 </div>
 <div id="ref-Maxnet" class="csl-entry">
 Phillips, S., 2021. <a href="https://CRAN.R-project.org/package=maxnet">Maxnet: Fitting ’maxent’ species distribution models with ’glmnet’</a>.
@@ -1608,7 +1697,7 @@ Phillips, S.J., Anderson, R.P., Schapire, R.E., 2006. Maximum entropy modeling o
 Phillips, S.J., Dudik, M., Schapire, R.E., 2004. A <span>Maximum</span> <span>Entropy</span> <span>Approach</span> to <span>Species</span> <span>Distribution</span> <span>Modeling</span>. Proceedings of the Twenty-First International Conference on Machine Learning 655–662.
 </div>
 <div id="ref-SDMtune" class="csl-entry">
-Sergio Vignali, Arnaud G. Barras, Raphaël Arlettaz, Veronika Braunisch, 2020. SDMtune: An r package to tune and evaluate species distribution models. Ecology and Evolution 10, 11488–11506. <a href="https://doi.org/10.1002/ece3.6786">https://doi.org/10.1002/ece3.6786</a>
+Vignali, S., Barras, A.G., Arlettaz, R., Braunisch, V., 2020. SDMtune: An <span>R</span> package to tune and evaluate species distribution models. Ecology and Evolution 10, 11488–11506. <a href="https://doi.org/10.1002/ece3.6786">https://doi.org/10.1002/ece3.6786</a>
 </div>
 <div id="ref-Wikleetal2019" class="csl-entry">
 Wikle, C.K., Zammit-Mangion, A., Cressie, N., 2019. Spatio-<span>Temporal</span> <span>Statistics</span> with <span>R</span>. Chapman &amp; Hall/CRC, Boca Raton, FL.
