@@ -200,7 +200,8 @@ No izmantotajām pazīmju-algoritmu kombinācijām zemākā sliekšņa līmeņa 
 gan ekoloģiski pamatots dažādās situācijās, {maxnet} pakotnē [@Maxnet] ir lietojams 
 tikai EGV inofrmācijas telpā, kurā ik pazīmei ir pietiekoša variabilitāte, kas ne 
 vienmēr izpildās. Tādēļ šajā solī iestrādāta automātiska izvēle nedaudz vienkāršākam 
-modelim - LQP -, ja neizpildās variabilitātes nosacījumi.
+modelim - LQP -, ja neizpildās variabilitātes nosacījumi. Sākotnējais modelis veidots un 
+EGV indikatīvā nozīme vērtēta, procesa vadībai izmantojot R pakotni {SDMtune} [@SDMtune].
 
 Visi modeļi veidoti kopējās informācijas telpas aprakstam (fona jeb *background* vietām), 
 pievienojot tās klātbūtnes vietas, kuras raksturo tajos jau neesošas EGV vērtību 
@@ -410,6 +411,10 @@ stopCluster(cl)
 
 ## Modeļa parametrizācija, izvēle un izvērtēšanas apraksti  {#Chapter7.2}
 
+
+
+
+
 Feature types and algorithms
 
 Regularization multipliers
@@ -418,9 +423,345 @@ Krosvalidācija
 
 TSS neatkarīgos testa datos
 
+
+
+``` r
+suga="abcdef" # sugas sešu burtu kods
+# viss sekojošais, protams, ir ieliekams ciklā, kura vadībai izmantojams sugas kods,
+# tomēr ir jārēķinās, ka ik vienas sugas SDM parametrizācija aizņem no dažām stundām 
+# līdz pāris diennaktīm, pieprasot starp 20 un 200 GB operatīvās atmiņas. 
+
+# Šī materiāla tapšanas laikā SDM parametrizācija veidota sugai-specifisku uzdevumu veidā HPC
+
+
+
+# pakotnes darbam
+suppressPackageStartupMessages(library(plotROC))
+suppressPackageStartupMessages(library(ecospat))
+suppressPackageStartupMessages(library(maxnet))
+suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(terra))
+suppressPackageStartupMessages(library(arrow))
+suppressPackageStartupMessages(library(usdm))
+suppressPackageStartupMessages(library(maps))
+suppressPackageStartupMessages(library(rasterVis))
+suppressPackageStartupMessages(library(readxl))
+suppressPackageStartupMessages(library(SDMtune))
+suppressPackageStartupMessages(library(ENMeval))
+suppressPackageStartupMessages(library(zeallot))
+suppressPackageStartupMessages(library(openxlsx))
+
+
+
+# vadibas faili
+print(paste0("Ielasu un sagatavoju datus: ",Sys.time()))
+
+PresTrain=data.frame(PresTrain_fails=list.files(path="./SuguModeli/ApmacibuDati/TrainingPresence/",
+                                                pattern=".parquet"),
+                     PresTrain_cels=list.files(path="./SuguModeli/ApmacibuDati/TrainingPresence/",
+                                               pattern=".parquet",full.names = TRUE))
+PresTrain=PresTrain %>% 
+  separate(PresTrain_fails,into=c("veids","kods","paplasinajums"),remove = FALSE) %>% 
+  dplyr::select(-paplasinajums,-veids)
+
+BgTrain=data.frame(BgTrain_fails=list.files(path="./SuguModeli/ApmacibuDati/TrainingBackground/",
+                                            pattern=".parquet"),
+                   BgTrain_cels=list.files(path="./SuguModeli/ApmacibuDati/TrainingBackground/",
+                                           pattern=".parquet",full.names = TRUE))
+BgTrain=BgTrain %>% 
+  separate(BgTrain_fails,into=c("veids","kods","paplasinajums"),remove = FALSE) %>% 
+  dplyr::select(-paplasinajums,-veids)
+
+
+PresTest=data.frame(PresTest_fails=list.files(path="./SuguModeli/ApmacibuDati/TestingPresence/",
+                                              pattern=".parquet"),
+                    PresTest_cels=list.files(path="./SuguModeli/ApmacibuDati/TestingPresence/",
+                                             pattern=".parquet",full.names = TRUE))
+PresTest=PresTest %>% 
+  separate(PresTest_fails,into=c("veids","kods","paplasinajums"),remove = FALSE) %>% 
+  dplyr::select(-paplasinajums,-veids)
+
+BgTest=data.frame(BgTest_fails=list.files(path="./SuguModeli/ApmacibuDati/TestingBackground/",
+                                          pattern=".parquet"),
+                  BgTest_cels=list.files(path="./SuguModeli/ApmacibuDati/TestingBackground/",
+                                         pattern=".parquet",full.names = TRUE))
+BgTest=BgTest %>% 
+  separate(BgTest_fails,into=c("veids","kods","paplasinajums"),remove = FALSE) %>% 
+  dplyr::select(-paplasinajums,-veids)
+
+egv_izvelem=data.frame(izvelu_fails=list.files(path="./SuguModeli/EGVselection/",
+                                               pattern=".xlsx"),
+                       izvelu_cels=list.files(path="./SuguModeli/EGVselection/",
+                                              pattern=".xlsx",full.names = TRUE))
+egv_izvelem=egv_izvelem %>% 
+  separate(izvelu_fails,into=c("veids","kods","paplasinajums"),remove = FALSE) %>% 
+  dplyr::select(-paplasinajums,-veids)
+savienoti=PresTrain %>% 
+  left_join(BgTrain,by="kods") %>% 
+  left_join(PresTest,by="kods") %>% 
+  left_join(BgTest,by="kods") %>% 
+  left_join(egv_izvelem,by="kods")
+savsugai=savienoti %>% 
+  filter(kods==suga)
+
+# egvs
+egv_faili=data.frame(egv_fails=list.files(path="./Rastri_100m/Scaled/",
+                                          pattern=".tif$"),
+                     egv_cels=list.files(path="./Rastri_100m/Scaled/",
+                                         pattern=".tif$",full.names = TRUE))
+egv_izvelei=read_excel(savsugai$izvelu_cels)
+egv_izvelei2=egv_izvelei %>% 
+  filter(!is.na(final_VIF))
+egv_faili=egv_faili %>% 
+  right_join(egv_izvelei2,by=c("egv_fails"="scale_NAME"))
+egvs=terra::rast(egv_faili$egv_cels)
+names(egvs)=egv_faili$egv_id
+
+# apmācību dati
+treninklatbutnes=read_parquet(savsugai$PresTrain_cels)
+treninklatbutnes=treninklatbutnes %>% 
+  mutate(y=as.numeric(y)) %>% 
+  dplyr::select(x,y)
+treninfons=read_parquet(savsugai$BgTrain_cels)
+treninfons=treninfons %>% 
+  mutate(y=as.numeric(y)) %>% 
+  dplyr::select(x,y)
+
+
+trenin_dati <- prepareSWD(species = suga,
+                          p = treninklatbutnes,
+                          a = treninfons,
+                          env = egvs)
+trenin_dati=addSamplesToBg(trenin_dati)
+
+block_folds <- get.block(occ = trenin_dati@coords[trenin_dati@pa == 1, ], 
+                         bg = trenin_dati@coords[trenin_dati@pa == 0, ])
+
+# testa dati
+testklatbutnes=read_parquet(savsugai$PresTest_cels)
+testklatbutnes=testklatbutnes %>% 
+  ungroup() %>% 
+  mutate(y=as.numeric(y)) %>% 
+  dplyr::select(x,y)
+testfons=read_parquet(savsugai$BgTest_cels)
+testfons=testfons %>% 
+  mutate(y=as.numeric(y)) %>% 
+  dplyr::select(x,y)
+
+testa_dati=prepareSWD(species=suga,
+                      p = testklatbutnes,
+                      a = testfons,
+                      env = egvs)
+
+rm(treninklatbutnes)
+rm(treninfons)
+rm(testklatbutnes)
+rm(testfons)
+rm(BgTest)
+rm(BgTrain)
+rm(PresTest)
+rm(PresTrain)
+rm(egv_izvelem)
+
+# Grid Search
+print(paste0("Uzsāku modelēšanu: ",Sys.time()))
+
+sakummodelis <- train(method = "Maxnet", 
+                      data = trenin_dati,
+                      test=testa_dati,
+                      fc="lq",
+                      folds = block_folds)
+
+print(paste0("Uzsāku grid search: ",Sys.time()))
+
+# burtu secībai ir nozīme!
+fc_lqph <- list(reg = c(0.2, 1/3, 0.5, 0.75, 1, 1.25, 2, 3, 5, 7.5, 10), 
+                fc = c("l", "lq", "lp", "lqp", "qp","lh","qh","lqh","lhp","qhp","lqhp"))
+fc_lqp <- list(reg = c(0.2, 1/3, 0.5, 0.75, 1, 1.25, 2, 3, 5, 7.5, 10), 
+               fc = c("l", "lq", "lp", "lqp", "qp","q"))
+fc_lq <- list(reg = c(0.2, 1/3, 0.5, 0.75, 1, 1.25, 2, 3, 5, 7.5, 10), 
+              fc = c("l", "lq", "q"))
+
+izveles_rezgis <- function(objekts) {
+  rezA <- try(gridSearch(objekts, 
+                         hypers = fc_lqph, 
+                         metric = "tss"), silent = TRUE)
+  if (inherits(rezA, 'try-error')) {
+    rezB <- try(gridSearch(objekts, 
+                           hypers = fc_lqp, 
+                           metric = "tss"), silent = TRUE)
+    if (inherits(rezB, 'try-error')) {
+      rezC <- gridSearch(objekts, 
+                         hypers = fc_lq, 
+                         metric = "tss")
+      return(rezC)
+    }
+    return(rezB)
+  }
+  return(rezA)
+}
+
+meklesanas_rezgis <- izveles_rezgis(sakummodelis)
+write_rds(meklesanas_rezgis,paste0("./SuguModeli/GridSearch_Models/GSModeli_",suga,".RDS"))
+rm(sakummodelis)
+
+# izveles tabula
+print(paste0("Uzsāku izvēles tabulu: ",Sys.time()))
+
+izveles_tabula=meklesanas_rezgis@results
+izveles_tabula$IndepTest_auc=NA_real_
+izveles_tabula$IndepTest_tss=NA_real_
+
+darbiba_auc=function(numurs){
+  rez=try(auc(combineCV(meklesanas_rezgis@models[[numurs]]),test=testa_dati))
+  if (inherits(rez, 'try-error')) {
+    return(NA)
+  }
+  return(rez)
+}
+darbiba_tss=function(numurs){
+  rez=try(tss(combineCV(meklesanas_rezgis@models[[numurs]]),test=testa_dati))
+  if (inherits(rez, 'try-error')) {
+    return(NA)
+  }
+  return(rez)
+}
+
+for(i in 1:nrow(izveles_tabula)){
+  print(i)
+  fin_auc=darbiba_auc(i)
+  izveles_tabula$IndepTest_auc[i]=fin_auc
+  fin_tss=darbiba_tss(i)
+  izveles_tabula$IndepTest_tss[i]=fin_tss
+  #print(paste0("independent AUC: ",fin_auc))
+  #print(paste0("independent TSS: ",fin_tss))
+}
+names(izveles_tabula)=c("fc","reg","train_TSS","validation_TSS","diff_TSS","IndepTest_auc","IndepTest_tss")
+write.xlsx(izveles_tabula,paste0("./SuguModeli/GridSearch_Tables/GSTabula_",suga,".xlsx"))
+
+# labaka noskaidrosana
+print(paste0("Izvēlos labāko: ",Sys.time()))
+
+labakajam_modelim=izveles_tabula %>% 
+  mutate(rinda=as.numeric(rownames(.))) %>% 
+  filter(IndepTest_tss==max(IndepTest_tss,na.rm=TRUE)) %>% 
+  filter(diff_TSS==min(diff_TSS,na.rm=TRUE)) %>% 
+  filter(validation_TSS==max(validation_TSS,na.rm=TRUE)) %>% 
+  filter(nchar(fc)==min(nchar(fc)))
+labaka_numurs=labakajam_modelim$rinda
+
+# krosvalidetais
+print(paste0("Saglabāju labāko CV: ",Sys.time()))
+
+labakais_CV=meklesanas_rezgis@models[[labaka_numurs]]
+write_rds(labakais_CV,paste0("./SuguModeli/BestCV/BestCV_",suga,".RDS"))
+
+# kombinetais
+print(paste0("Saglabāju labāko kombinēto: ",Sys.time()))
+
+labakais_comb=combineCV(meklesanas_rezgis@models[[labaka_numurs]])
+write_rds(labakais_comb,paste0("./SuguModeli/BestComb/BestComb_",suga,".RDS"))
+rm(meklesanas_rezgis)
+
+
+# projekcija
+print(paste0("Saglabāju HS projekciju: ",Sys.time()))
+
+map_best <- predict(labakais_comb,
+                    data = egvs,
+                    type = "cloglog",
+                    file = paste0("./SuguModeli/BestHSmap/BestHSmap_",suga,".tif"),
+                    overwrite=TRUE)
+
+#terra::plot(map_best)
+rm(map_best)
+
+# thresholds
+print(paste0("Saglabāju sliekšņa līmeņus: ",Sys.time()))
+
+ths <- SDMtune::thresholds(labakais_comb, 
+                           type = "cloglog",
+                           test=testa_dati)
+ths$suga=suga
+write.xlsx(ths,paste0("./SuguModeli/BestThresholds/BestThs_",suga,".xlsx"))
+rm(ths)
+
+
+# pROC
+print(paste0("Saglabāju ROC līkni: ",Sys.time()))
+
+labakais_proc=SDMtune::plotROC(labakais_comb,test = testa_dati)
+labakais_proc
+write_rds(labakais_proc,paste0("./SuguModeli/BestROCs/BestROC_",suga,".RDS"))
+rm(labakais_proc)
+
+# var importance
+print(paste0("Uzsāku egv nozīmi: ",Sys.time()))
+
+vi_tss <- varImp(labakais_CV,permut = 99)
+names(vi_tss)=c("egv_id","final_PermImp_avg","final_PermImp_sd")
+egv_importance=egv_izvelei %>% 
+  left_join(vi_tss,by="egv_id")
+write.xlsx(egv_importance,paste0("./SuguModeli/BestVarImp/BestVarImp_",suga,".xlsx"))
+rm(vi_tss)
+rm(egv_importance)
+
+# faktiskā sugai specifiskā uzdevuma izpildē HPC, komandu rindas turpinās ar nākošo koda apgabalu
+```
+
+
+
 ## Nulles modelis  {#Chapter7.3}
 
 salīdzinājums ar nulles modeli
+
+[@ENMeval2.0]
+
+
+``` r
+# šis ir turpinājums iepriekšējam koda apgalam un izmantojams tajā pašā uzdevumā ik sugai
+
+
+# Nulles reference
+print(paste0("Uzsāku nulles referenci: ",Sys.time()))
+
+
+ref_fc=labakais_comb@model@fc
+ref_rm=labakais_comb@model@reg
+
+occs=trenin_dati@coords[trenin_dati@pa==1,]
+bg=trenin_dati@coords[trenin_dati@pa==0,]
+
+
+rm(testa_dati)
+rm(trenin_dati)
+rm(labakais_CV)
+rm(labakais_comb)
+rm(izveles_tabula)
+rm(fc_lqp)
+rm(fc_lqph)
+rm(egv_faili)
+rm(egv_izvelei)
+rm(egv_izvelei2)
+rm(savienoti)
+rm(savsugai)
+rm(labakajam_modelim)
+rm(block_folds)
+
+tune.args <- list(fc = ref_fc, rm = ref_rm)
+nulles_reference <- ENMevaluate(occs = occs, envs = egvs, bg = bg,
+                                algorithm = 'maxnet', partitions = 'block', 
+                                tune.args = tune.args)
+write_rds(nulles_reference,paste0("./SuguModeli/Null_reference/NullRef_",suga,".RDS"))
+
+# Nulles salidzinajumi
+print(paste0("Uzsāku nulles salīdzinājumus: ",Sys.time()))
+
+nulles_modeli <- ENMnulls(nulles_reference, mod.settings = list(fc = ref_fc, rm = ref_rm), no.iter = 100)
+write_rds(nulles_modeli,paste0("./SuguModeli/Null_models/NullModels_",suga,".RDS"))
+
+print(paste0("Beidzu: ",Sys.time()))
+```
 
 
 ## Labākā modeļa rezultāti  {#Chapter7.4}

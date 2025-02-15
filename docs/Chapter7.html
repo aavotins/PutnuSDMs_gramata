@@ -1018,7 +1018,8 @@ reducēšanai <span class="citation">(<a href="#ref-PhillipsAndersonSchapire2006
 gan ekoloģiski pamatots dažādās situācijās, {maxnet} pakotnē <span class="citation">(<a href="#ref-Maxnet">Phillips, 2021</a>)</span> ir lietojams
 tikai EGV inofrmācijas telpā, kurā ik pazīmei ir pietiekoša variabilitāte, kas ne
 vienmēr izpildās. Tādēļ šajā solī iestrādāta automātiska izvēle nedaudz vienkāršākam
-modelim - LQP -, ja neizpildās variabilitātes nosacījumi.</p>
+modelim - LQP -, ja neizpildās variabilitātes nosacījumi. Sākotnējais modelis veidots un
+EGV indikatīvā nozīme vērtēta, procesa vadībai izmantojot R pakotni {SDMtune} <span class="citation">(<a href="#ref-SDMtune">Sergio Vignali et al., 2020</a>)</span>.</p>
 <p>Visi modeļi veidoti kopējās informācijas telpas aprakstam (fona jeb <em>background</em> vietām),
 pievienojot tās klātbūtnes vietas, kuras raksturo tajos jau neesošas EGV vērtību
 kombinācijas <span class="citation">(<a href="#ref-PhillipsDudikSchapire2004">Phillips et al., 2004</a>)</span>, <span class="citation">(<a href="#ref-PhillipsAndersonSchapire2006">Phillips et al., 2006</a>)</span>, lai
@@ -1225,10 +1226,338 @@ atkārtoti, lai precīzāk informētu par statistisko kompleksu parametrizētajo
 <p>Regularization multipliers</p>
 <p>Krosvalidācija</p>
 <p>TSS neatkarīgos testa datos</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb474"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb474-1"><a href="Chapter7.html#cb474-1" tabindex="-1"></a>suga<span class="ot">=</span><span class="st">&quot;abcdef&quot;</span> <span class="co"># sugas sešu burtu kods</span></span>
+<span id="cb474-2"><a href="Chapter7.html#cb474-2" tabindex="-1"></a><span class="co"># viss sekojošais, protams, ir ieliekams ciklā, kura vadībai izmantojams sugas kods,</span></span>
+<span id="cb474-3"><a href="Chapter7.html#cb474-3" tabindex="-1"></a><span class="co"># tomēr ir jārēķinās, ka ik vienas sugas SDM parametrizācija aizņem no dažām stundām </span></span>
+<span id="cb474-4"><a href="Chapter7.html#cb474-4" tabindex="-1"></a><span class="co"># līdz pāris diennaktīm, pieprasot starp 20 un 200 GB operatīvās atmiņas. </span></span>
+<span id="cb474-5"><a href="Chapter7.html#cb474-5" tabindex="-1"></a></span>
+<span id="cb474-6"><a href="Chapter7.html#cb474-6" tabindex="-1"></a><span class="co"># Šī materiāla tapšanas laikā SDM parametrizācija veidota sugai-specifisku uzdevumu veidā HPC</span></span>
+<span id="cb474-7"><a href="Chapter7.html#cb474-7" tabindex="-1"></a></span>
+<span id="cb474-8"><a href="Chapter7.html#cb474-8" tabindex="-1"></a></span>
+<span id="cb474-9"><a href="Chapter7.html#cb474-9" tabindex="-1"></a></span>
+<span id="cb474-10"><a href="Chapter7.html#cb474-10" tabindex="-1"></a><span class="co"># pakotnes darbam</span></span>
+<span id="cb474-11"><a href="Chapter7.html#cb474-11" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(plotROC))</span>
+<span id="cb474-12"><a href="Chapter7.html#cb474-12" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(ecospat))</span>
+<span id="cb474-13"><a href="Chapter7.html#cb474-13" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(maxnet))</span>
+<span id="cb474-14"><a href="Chapter7.html#cb474-14" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(tidyverse))</span>
+<span id="cb474-15"><a href="Chapter7.html#cb474-15" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(terra))</span>
+<span id="cb474-16"><a href="Chapter7.html#cb474-16" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(arrow))</span>
+<span id="cb474-17"><a href="Chapter7.html#cb474-17" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(usdm))</span>
+<span id="cb474-18"><a href="Chapter7.html#cb474-18" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(maps))</span>
+<span id="cb474-19"><a href="Chapter7.html#cb474-19" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(rasterVis))</span>
+<span id="cb474-20"><a href="Chapter7.html#cb474-20" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(readxl))</span>
+<span id="cb474-21"><a href="Chapter7.html#cb474-21" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(SDMtune))</span>
+<span id="cb474-22"><a href="Chapter7.html#cb474-22" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(ENMeval))</span>
+<span id="cb474-23"><a href="Chapter7.html#cb474-23" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(zeallot))</span>
+<span id="cb474-24"><a href="Chapter7.html#cb474-24" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(openxlsx))</span>
+<span id="cb474-25"><a href="Chapter7.html#cb474-25" tabindex="-1"></a></span>
+<span id="cb474-26"><a href="Chapter7.html#cb474-26" tabindex="-1"></a></span>
+<span id="cb474-27"><a href="Chapter7.html#cb474-27" tabindex="-1"></a></span>
+<span id="cb474-28"><a href="Chapter7.html#cb474-28" tabindex="-1"></a><span class="co"># vadibas faili</span></span>
+<span id="cb474-29"><a href="Chapter7.html#cb474-29" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">&quot;Ielasu un sagatavoju datus: &quot;</span>,<span class="fu">Sys.time</span>()))</span>
+<span id="cb474-30"><a href="Chapter7.html#cb474-30" tabindex="-1"></a></span>
+<span id="cb474-31"><a href="Chapter7.html#cb474-31" tabindex="-1"></a>PresTrain<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">PresTrain_fails=</span><span class="fu">list.files</span>(<span class="at">path=</span><span class="st">&quot;./SuguModeli/ApmacibuDati/TrainingPresence/&quot;</span>,</span>
+<span id="cb474-32"><a href="Chapter7.html#cb474-32" tabindex="-1"></a>                                                <span class="at">pattern=</span><span class="st">&quot;.parquet&quot;</span>),</span>
+<span id="cb474-33"><a href="Chapter7.html#cb474-33" tabindex="-1"></a>                     <span class="at">PresTrain_cels=</span><span class="fu">list.files</span>(<span class="at">path=</span><span class="st">&quot;./SuguModeli/ApmacibuDati/TrainingPresence/&quot;</span>,</span>
+<span id="cb474-34"><a href="Chapter7.html#cb474-34" tabindex="-1"></a>                                               <span class="at">pattern=</span><span class="st">&quot;.parquet&quot;</span>,<span class="at">full.names =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb474-35"><a href="Chapter7.html#cb474-35" tabindex="-1"></a>PresTrain<span class="ot">=</span>PresTrain <span class="sc">%&gt;%</span> </span>
+<span id="cb474-36"><a href="Chapter7.html#cb474-36" tabindex="-1"></a>  <span class="fu">separate</span>(PresTrain_fails,<span class="at">into=</span><span class="fu">c</span>(<span class="st">&quot;veids&quot;</span>,<span class="st">&quot;kods&quot;</span>,<span class="st">&quot;paplasinajums&quot;</span>),<span class="at">remove =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb474-37"><a href="Chapter7.html#cb474-37" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>paplasinajums,<span class="sc">-</span>veids)</span>
+<span id="cb474-38"><a href="Chapter7.html#cb474-38" tabindex="-1"></a></span>
+<span id="cb474-39"><a href="Chapter7.html#cb474-39" tabindex="-1"></a>BgTrain<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">BgTrain_fails=</span><span class="fu">list.files</span>(<span class="at">path=</span><span class="st">&quot;./SuguModeli/ApmacibuDati/TrainingBackground/&quot;</span>,</span>
+<span id="cb474-40"><a href="Chapter7.html#cb474-40" tabindex="-1"></a>                                            <span class="at">pattern=</span><span class="st">&quot;.parquet&quot;</span>),</span>
+<span id="cb474-41"><a href="Chapter7.html#cb474-41" tabindex="-1"></a>                   <span class="at">BgTrain_cels=</span><span class="fu">list.files</span>(<span class="at">path=</span><span class="st">&quot;./SuguModeli/ApmacibuDati/TrainingBackground/&quot;</span>,</span>
+<span id="cb474-42"><a href="Chapter7.html#cb474-42" tabindex="-1"></a>                                           <span class="at">pattern=</span><span class="st">&quot;.parquet&quot;</span>,<span class="at">full.names =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb474-43"><a href="Chapter7.html#cb474-43" tabindex="-1"></a>BgTrain<span class="ot">=</span>BgTrain <span class="sc">%&gt;%</span> </span>
+<span id="cb474-44"><a href="Chapter7.html#cb474-44" tabindex="-1"></a>  <span class="fu">separate</span>(BgTrain_fails,<span class="at">into=</span><span class="fu">c</span>(<span class="st">&quot;veids&quot;</span>,<span class="st">&quot;kods&quot;</span>,<span class="st">&quot;paplasinajums&quot;</span>),<span class="at">remove =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb474-45"><a href="Chapter7.html#cb474-45" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>paplasinajums,<span class="sc">-</span>veids)</span>
+<span id="cb474-46"><a href="Chapter7.html#cb474-46" tabindex="-1"></a></span>
+<span id="cb474-47"><a href="Chapter7.html#cb474-47" tabindex="-1"></a></span>
+<span id="cb474-48"><a href="Chapter7.html#cb474-48" tabindex="-1"></a>PresTest<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">PresTest_fails=</span><span class="fu">list.files</span>(<span class="at">path=</span><span class="st">&quot;./SuguModeli/ApmacibuDati/TestingPresence/&quot;</span>,</span>
+<span id="cb474-49"><a href="Chapter7.html#cb474-49" tabindex="-1"></a>                                              <span class="at">pattern=</span><span class="st">&quot;.parquet&quot;</span>),</span>
+<span id="cb474-50"><a href="Chapter7.html#cb474-50" tabindex="-1"></a>                    <span class="at">PresTest_cels=</span><span class="fu">list.files</span>(<span class="at">path=</span><span class="st">&quot;./SuguModeli/ApmacibuDati/TestingPresence/&quot;</span>,</span>
+<span id="cb474-51"><a href="Chapter7.html#cb474-51" tabindex="-1"></a>                                             <span class="at">pattern=</span><span class="st">&quot;.parquet&quot;</span>,<span class="at">full.names =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb474-52"><a href="Chapter7.html#cb474-52" tabindex="-1"></a>PresTest<span class="ot">=</span>PresTest <span class="sc">%&gt;%</span> </span>
+<span id="cb474-53"><a href="Chapter7.html#cb474-53" tabindex="-1"></a>  <span class="fu">separate</span>(PresTest_fails,<span class="at">into=</span><span class="fu">c</span>(<span class="st">&quot;veids&quot;</span>,<span class="st">&quot;kods&quot;</span>,<span class="st">&quot;paplasinajums&quot;</span>),<span class="at">remove =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb474-54"><a href="Chapter7.html#cb474-54" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>paplasinajums,<span class="sc">-</span>veids)</span>
+<span id="cb474-55"><a href="Chapter7.html#cb474-55" tabindex="-1"></a></span>
+<span id="cb474-56"><a href="Chapter7.html#cb474-56" tabindex="-1"></a>BgTest<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">BgTest_fails=</span><span class="fu">list.files</span>(<span class="at">path=</span><span class="st">&quot;./SuguModeli/ApmacibuDati/TestingBackground/&quot;</span>,</span>
+<span id="cb474-57"><a href="Chapter7.html#cb474-57" tabindex="-1"></a>                                          <span class="at">pattern=</span><span class="st">&quot;.parquet&quot;</span>),</span>
+<span id="cb474-58"><a href="Chapter7.html#cb474-58" tabindex="-1"></a>                  <span class="at">BgTest_cels=</span><span class="fu">list.files</span>(<span class="at">path=</span><span class="st">&quot;./SuguModeli/ApmacibuDati/TestingBackground/&quot;</span>,</span>
+<span id="cb474-59"><a href="Chapter7.html#cb474-59" tabindex="-1"></a>                                         <span class="at">pattern=</span><span class="st">&quot;.parquet&quot;</span>,<span class="at">full.names =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb474-60"><a href="Chapter7.html#cb474-60" tabindex="-1"></a>BgTest<span class="ot">=</span>BgTest <span class="sc">%&gt;%</span> </span>
+<span id="cb474-61"><a href="Chapter7.html#cb474-61" tabindex="-1"></a>  <span class="fu">separate</span>(BgTest_fails,<span class="at">into=</span><span class="fu">c</span>(<span class="st">&quot;veids&quot;</span>,<span class="st">&quot;kods&quot;</span>,<span class="st">&quot;paplasinajums&quot;</span>),<span class="at">remove =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb474-62"><a href="Chapter7.html#cb474-62" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>paplasinajums,<span class="sc">-</span>veids)</span>
+<span id="cb474-63"><a href="Chapter7.html#cb474-63" tabindex="-1"></a></span>
+<span id="cb474-64"><a href="Chapter7.html#cb474-64" tabindex="-1"></a>egv_izvelem<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">izvelu_fails=</span><span class="fu">list.files</span>(<span class="at">path=</span><span class="st">&quot;./SuguModeli/EGVselection/&quot;</span>,</span>
+<span id="cb474-65"><a href="Chapter7.html#cb474-65" tabindex="-1"></a>                                               <span class="at">pattern=</span><span class="st">&quot;.xlsx&quot;</span>),</span>
+<span id="cb474-66"><a href="Chapter7.html#cb474-66" tabindex="-1"></a>                       <span class="at">izvelu_cels=</span><span class="fu">list.files</span>(<span class="at">path=</span><span class="st">&quot;./SuguModeli/EGVselection/&quot;</span>,</span>
+<span id="cb474-67"><a href="Chapter7.html#cb474-67" tabindex="-1"></a>                                              <span class="at">pattern=</span><span class="st">&quot;.xlsx&quot;</span>,<span class="at">full.names =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb474-68"><a href="Chapter7.html#cb474-68" tabindex="-1"></a>egv_izvelem<span class="ot">=</span>egv_izvelem <span class="sc">%&gt;%</span> </span>
+<span id="cb474-69"><a href="Chapter7.html#cb474-69" tabindex="-1"></a>  <span class="fu">separate</span>(izvelu_fails,<span class="at">into=</span><span class="fu">c</span>(<span class="st">&quot;veids&quot;</span>,<span class="st">&quot;kods&quot;</span>,<span class="st">&quot;paplasinajums&quot;</span>),<span class="at">remove =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb474-70"><a href="Chapter7.html#cb474-70" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>paplasinajums,<span class="sc">-</span>veids)</span>
+<span id="cb474-71"><a href="Chapter7.html#cb474-71" tabindex="-1"></a>savienoti<span class="ot">=</span>PresTrain <span class="sc">%&gt;%</span> </span>
+<span id="cb474-72"><a href="Chapter7.html#cb474-72" tabindex="-1"></a>  <span class="fu">left_join</span>(BgTrain,<span class="at">by=</span><span class="st">&quot;kods&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb474-73"><a href="Chapter7.html#cb474-73" tabindex="-1"></a>  <span class="fu">left_join</span>(PresTest,<span class="at">by=</span><span class="st">&quot;kods&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb474-74"><a href="Chapter7.html#cb474-74" tabindex="-1"></a>  <span class="fu">left_join</span>(BgTest,<span class="at">by=</span><span class="st">&quot;kods&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb474-75"><a href="Chapter7.html#cb474-75" tabindex="-1"></a>  <span class="fu">left_join</span>(egv_izvelem,<span class="at">by=</span><span class="st">&quot;kods&quot;</span>)</span>
+<span id="cb474-76"><a href="Chapter7.html#cb474-76" tabindex="-1"></a>savsugai<span class="ot">=</span>savienoti <span class="sc">%&gt;%</span> </span>
+<span id="cb474-77"><a href="Chapter7.html#cb474-77" tabindex="-1"></a>  <span class="fu">filter</span>(kods<span class="sc">==</span>suga)</span>
+<span id="cb474-78"><a href="Chapter7.html#cb474-78" tabindex="-1"></a></span>
+<span id="cb474-79"><a href="Chapter7.html#cb474-79" tabindex="-1"></a><span class="co"># egvs</span></span>
+<span id="cb474-80"><a href="Chapter7.html#cb474-80" tabindex="-1"></a>egv_faili<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">egv_fails=</span><span class="fu">list.files</span>(<span class="at">path=</span><span class="st">&quot;./Rastri_100m/Scaled/&quot;</span>,</span>
+<span id="cb474-81"><a href="Chapter7.html#cb474-81" tabindex="-1"></a>                                          <span class="at">pattern=</span><span class="st">&quot;.tif$&quot;</span>),</span>
+<span id="cb474-82"><a href="Chapter7.html#cb474-82" tabindex="-1"></a>                     <span class="at">egv_cels=</span><span class="fu">list.files</span>(<span class="at">path=</span><span class="st">&quot;./Rastri_100m/Scaled/&quot;</span>,</span>
+<span id="cb474-83"><a href="Chapter7.html#cb474-83" tabindex="-1"></a>                                         <span class="at">pattern=</span><span class="st">&quot;.tif$&quot;</span>,<span class="at">full.names =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb474-84"><a href="Chapter7.html#cb474-84" tabindex="-1"></a>egv_izvelei<span class="ot">=</span><span class="fu">read_excel</span>(savsugai<span class="sc">$</span>izvelu_cels)</span>
+<span id="cb474-85"><a href="Chapter7.html#cb474-85" tabindex="-1"></a>egv_izvelei2<span class="ot">=</span>egv_izvelei <span class="sc">%&gt;%</span> </span>
+<span id="cb474-86"><a href="Chapter7.html#cb474-86" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(final_VIF))</span>
+<span id="cb474-87"><a href="Chapter7.html#cb474-87" tabindex="-1"></a>egv_faili<span class="ot">=</span>egv_faili <span class="sc">%&gt;%</span> </span>
+<span id="cb474-88"><a href="Chapter7.html#cb474-88" tabindex="-1"></a>  <span class="fu">right_join</span>(egv_izvelei2,<span class="at">by=</span><span class="fu">c</span>(<span class="st">&quot;egv_fails&quot;</span><span class="ot">=</span><span class="st">&quot;scale_NAME&quot;</span>))</span>
+<span id="cb474-89"><a href="Chapter7.html#cb474-89" tabindex="-1"></a>egvs<span class="ot">=</span>terra<span class="sc">::</span><span class="fu">rast</span>(egv_faili<span class="sc">$</span>egv_cels)</span>
+<span id="cb474-90"><a href="Chapter7.html#cb474-90" tabindex="-1"></a><span class="fu">names</span>(egvs)<span class="ot">=</span>egv_faili<span class="sc">$</span>egv_id</span>
+<span id="cb474-91"><a href="Chapter7.html#cb474-91" tabindex="-1"></a></span>
+<span id="cb474-92"><a href="Chapter7.html#cb474-92" tabindex="-1"></a><span class="co"># apmācību dati</span></span>
+<span id="cb474-93"><a href="Chapter7.html#cb474-93" tabindex="-1"></a>treninklatbutnes<span class="ot">=</span><span class="fu">read_parquet</span>(savsugai<span class="sc">$</span>PresTrain_cels)</span>
+<span id="cb474-94"><a href="Chapter7.html#cb474-94" tabindex="-1"></a>treninklatbutnes<span class="ot">=</span>treninklatbutnes <span class="sc">%&gt;%</span> </span>
+<span id="cb474-95"><a href="Chapter7.html#cb474-95" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">y=</span><span class="fu">as.numeric</span>(y)) <span class="sc">%&gt;%</span> </span>
+<span id="cb474-96"><a href="Chapter7.html#cb474-96" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(x,y)</span>
+<span id="cb474-97"><a href="Chapter7.html#cb474-97" tabindex="-1"></a>treninfons<span class="ot">=</span><span class="fu">read_parquet</span>(savsugai<span class="sc">$</span>BgTrain_cels)</span>
+<span id="cb474-98"><a href="Chapter7.html#cb474-98" tabindex="-1"></a>treninfons<span class="ot">=</span>treninfons <span class="sc">%&gt;%</span> </span>
+<span id="cb474-99"><a href="Chapter7.html#cb474-99" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">y=</span><span class="fu">as.numeric</span>(y)) <span class="sc">%&gt;%</span> </span>
+<span id="cb474-100"><a href="Chapter7.html#cb474-100" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(x,y)</span>
+<span id="cb474-101"><a href="Chapter7.html#cb474-101" tabindex="-1"></a></span>
+<span id="cb474-102"><a href="Chapter7.html#cb474-102" tabindex="-1"></a></span>
+<span id="cb474-103"><a href="Chapter7.html#cb474-103" tabindex="-1"></a>trenin_dati <span class="ot">&lt;-</span> <span class="fu">prepareSWD</span>(<span class="at">species =</span> suga,</span>
+<span id="cb474-104"><a href="Chapter7.html#cb474-104" tabindex="-1"></a>                          <span class="at">p =</span> treninklatbutnes,</span>
+<span id="cb474-105"><a href="Chapter7.html#cb474-105" tabindex="-1"></a>                          <span class="at">a =</span> treninfons,</span>
+<span id="cb474-106"><a href="Chapter7.html#cb474-106" tabindex="-1"></a>                          <span class="at">env =</span> egvs)</span>
+<span id="cb474-107"><a href="Chapter7.html#cb474-107" tabindex="-1"></a>trenin_dati<span class="ot">=</span><span class="fu">addSamplesToBg</span>(trenin_dati)</span>
+<span id="cb474-108"><a href="Chapter7.html#cb474-108" tabindex="-1"></a></span>
+<span id="cb474-109"><a href="Chapter7.html#cb474-109" tabindex="-1"></a>block_folds <span class="ot">&lt;-</span> <span class="fu">get.block</span>(<span class="at">occ =</span> trenin_dati<span class="sc">@</span>coords[trenin_dati<span class="sc">@</span>pa <span class="sc">==</span> <span class="dv">1</span>, ], </span>
+<span id="cb474-110"><a href="Chapter7.html#cb474-110" tabindex="-1"></a>                         <span class="at">bg =</span> trenin_dati<span class="sc">@</span>coords[trenin_dati<span class="sc">@</span>pa <span class="sc">==</span> <span class="dv">0</span>, ])</span>
+<span id="cb474-111"><a href="Chapter7.html#cb474-111" tabindex="-1"></a></span>
+<span id="cb474-112"><a href="Chapter7.html#cb474-112" tabindex="-1"></a><span class="co"># testa dati</span></span>
+<span id="cb474-113"><a href="Chapter7.html#cb474-113" tabindex="-1"></a>testklatbutnes<span class="ot">=</span><span class="fu">read_parquet</span>(savsugai<span class="sc">$</span>PresTest_cels)</span>
+<span id="cb474-114"><a href="Chapter7.html#cb474-114" tabindex="-1"></a>testklatbutnes<span class="ot">=</span>testklatbutnes <span class="sc">%&gt;%</span> </span>
+<span id="cb474-115"><a href="Chapter7.html#cb474-115" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb474-116"><a href="Chapter7.html#cb474-116" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">y=</span><span class="fu">as.numeric</span>(y)) <span class="sc">%&gt;%</span> </span>
+<span id="cb474-117"><a href="Chapter7.html#cb474-117" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(x,y)</span>
+<span id="cb474-118"><a href="Chapter7.html#cb474-118" tabindex="-1"></a>testfons<span class="ot">=</span><span class="fu">read_parquet</span>(savsugai<span class="sc">$</span>BgTest_cels)</span>
+<span id="cb474-119"><a href="Chapter7.html#cb474-119" tabindex="-1"></a>testfons<span class="ot">=</span>testfons <span class="sc">%&gt;%</span> </span>
+<span id="cb474-120"><a href="Chapter7.html#cb474-120" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">y=</span><span class="fu">as.numeric</span>(y)) <span class="sc">%&gt;%</span> </span>
+<span id="cb474-121"><a href="Chapter7.html#cb474-121" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(x,y)</span>
+<span id="cb474-122"><a href="Chapter7.html#cb474-122" tabindex="-1"></a></span>
+<span id="cb474-123"><a href="Chapter7.html#cb474-123" tabindex="-1"></a>testa_dati<span class="ot">=</span><span class="fu">prepareSWD</span>(<span class="at">species=</span>suga,</span>
+<span id="cb474-124"><a href="Chapter7.html#cb474-124" tabindex="-1"></a>                      <span class="at">p =</span> testklatbutnes,</span>
+<span id="cb474-125"><a href="Chapter7.html#cb474-125" tabindex="-1"></a>                      <span class="at">a =</span> testfons,</span>
+<span id="cb474-126"><a href="Chapter7.html#cb474-126" tabindex="-1"></a>                      <span class="at">env =</span> egvs)</span>
+<span id="cb474-127"><a href="Chapter7.html#cb474-127" tabindex="-1"></a></span>
+<span id="cb474-128"><a href="Chapter7.html#cb474-128" tabindex="-1"></a><span class="fu">rm</span>(treninklatbutnes)</span>
+<span id="cb474-129"><a href="Chapter7.html#cb474-129" tabindex="-1"></a><span class="fu">rm</span>(treninfons)</span>
+<span id="cb474-130"><a href="Chapter7.html#cb474-130" tabindex="-1"></a><span class="fu">rm</span>(testklatbutnes)</span>
+<span id="cb474-131"><a href="Chapter7.html#cb474-131" tabindex="-1"></a><span class="fu">rm</span>(testfons)</span>
+<span id="cb474-132"><a href="Chapter7.html#cb474-132" tabindex="-1"></a><span class="fu">rm</span>(BgTest)</span>
+<span id="cb474-133"><a href="Chapter7.html#cb474-133" tabindex="-1"></a><span class="fu">rm</span>(BgTrain)</span>
+<span id="cb474-134"><a href="Chapter7.html#cb474-134" tabindex="-1"></a><span class="fu">rm</span>(PresTest)</span>
+<span id="cb474-135"><a href="Chapter7.html#cb474-135" tabindex="-1"></a><span class="fu">rm</span>(PresTrain)</span>
+<span id="cb474-136"><a href="Chapter7.html#cb474-136" tabindex="-1"></a><span class="fu">rm</span>(egv_izvelem)</span>
+<span id="cb474-137"><a href="Chapter7.html#cb474-137" tabindex="-1"></a></span>
+<span id="cb474-138"><a href="Chapter7.html#cb474-138" tabindex="-1"></a><span class="co"># Grid Search</span></span>
+<span id="cb474-139"><a href="Chapter7.html#cb474-139" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">&quot;Uzsāku modelēšanu: &quot;</span>,<span class="fu">Sys.time</span>()))</span>
+<span id="cb474-140"><a href="Chapter7.html#cb474-140" tabindex="-1"></a></span>
+<span id="cb474-141"><a href="Chapter7.html#cb474-141" tabindex="-1"></a>sakummodelis <span class="ot">&lt;-</span> <span class="fu">train</span>(<span class="at">method =</span> <span class="st">&quot;Maxnet&quot;</span>, </span>
+<span id="cb474-142"><a href="Chapter7.html#cb474-142" tabindex="-1"></a>                      <span class="at">data =</span> trenin_dati,</span>
+<span id="cb474-143"><a href="Chapter7.html#cb474-143" tabindex="-1"></a>                      <span class="at">test=</span>testa_dati,</span>
+<span id="cb474-144"><a href="Chapter7.html#cb474-144" tabindex="-1"></a>                      <span class="at">fc=</span><span class="st">&quot;lq&quot;</span>,</span>
+<span id="cb474-145"><a href="Chapter7.html#cb474-145" tabindex="-1"></a>                      <span class="at">folds =</span> block_folds)</span>
+<span id="cb474-146"><a href="Chapter7.html#cb474-146" tabindex="-1"></a></span>
+<span id="cb474-147"><a href="Chapter7.html#cb474-147" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">&quot;Uzsāku grid search: &quot;</span>,<span class="fu">Sys.time</span>()))</span>
+<span id="cb474-148"><a href="Chapter7.html#cb474-148" tabindex="-1"></a></span>
+<span id="cb474-149"><a href="Chapter7.html#cb474-149" tabindex="-1"></a><span class="co"># burtu secībai ir nozīme!</span></span>
+<span id="cb474-150"><a href="Chapter7.html#cb474-150" tabindex="-1"></a>fc_lqph <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">reg =</span> <span class="fu">c</span>(<span class="fl">0.2</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>, <span class="dv">1</span>, <span class="fl">1.25</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="fl">7.5</span>, <span class="dv">10</span>), </span>
+<span id="cb474-151"><a href="Chapter7.html#cb474-151" tabindex="-1"></a>                <span class="at">fc =</span> <span class="fu">c</span>(<span class="st">&quot;l&quot;</span>, <span class="st">&quot;lq&quot;</span>, <span class="st">&quot;lp&quot;</span>, <span class="st">&quot;lqp&quot;</span>, <span class="st">&quot;qp&quot;</span>,<span class="st">&quot;lh&quot;</span>,<span class="st">&quot;qh&quot;</span>,<span class="st">&quot;lqh&quot;</span>,<span class="st">&quot;lhp&quot;</span>,<span class="st">&quot;qhp&quot;</span>,<span class="st">&quot;lqhp&quot;</span>))</span>
+<span id="cb474-152"><a href="Chapter7.html#cb474-152" tabindex="-1"></a>fc_lqp <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">reg =</span> <span class="fu">c</span>(<span class="fl">0.2</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>, <span class="dv">1</span>, <span class="fl">1.25</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="fl">7.5</span>, <span class="dv">10</span>), </span>
+<span id="cb474-153"><a href="Chapter7.html#cb474-153" tabindex="-1"></a>               <span class="at">fc =</span> <span class="fu">c</span>(<span class="st">&quot;l&quot;</span>, <span class="st">&quot;lq&quot;</span>, <span class="st">&quot;lp&quot;</span>, <span class="st">&quot;lqp&quot;</span>, <span class="st">&quot;qp&quot;</span>,<span class="st">&quot;q&quot;</span>))</span>
+<span id="cb474-154"><a href="Chapter7.html#cb474-154" tabindex="-1"></a>fc_lq <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">reg =</span> <span class="fu">c</span>(<span class="fl">0.2</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>, <span class="dv">1</span>, <span class="fl">1.25</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="fl">7.5</span>, <span class="dv">10</span>), </span>
+<span id="cb474-155"><a href="Chapter7.html#cb474-155" tabindex="-1"></a>              <span class="at">fc =</span> <span class="fu">c</span>(<span class="st">&quot;l&quot;</span>, <span class="st">&quot;lq&quot;</span>, <span class="st">&quot;q&quot;</span>))</span>
+<span id="cb474-156"><a href="Chapter7.html#cb474-156" tabindex="-1"></a></span>
+<span id="cb474-157"><a href="Chapter7.html#cb474-157" tabindex="-1"></a>izveles_rezgis <span class="ot">&lt;-</span> <span class="cf">function</span>(objekts) {</span>
+<span id="cb474-158"><a href="Chapter7.html#cb474-158" tabindex="-1"></a>  rezA <span class="ot">&lt;-</span> <span class="fu">try</span>(<span class="fu">gridSearch</span>(objekts, </span>
+<span id="cb474-159"><a href="Chapter7.html#cb474-159" tabindex="-1"></a>                         <span class="at">hypers =</span> fc_lqph, </span>
+<span id="cb474-160"><a href="Chapter7.html#cb474-160" tabindex="-1"></a>                         <span class="at">metric =</span> <span class="st">&quot;tss&quot;</span>), <span class="at">silent =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb474-161"><a href="Chapter7.html#cb474-161" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">inherits</span>(rezA, <span class="st">&#39;try-error&#39;</span>)) {</span>
+<span id="cb474-162"><a href="Chapter7.html#cb474-162" tabindex="-1"></a>    rezB <span class="ot">&lt;-</span> <span class="fu">try</span>(<span class="fu">gridSearch</span>(objekts, </span>
+<span id="cb474-163"><a href="Chapter7.html#cb474-163" tabindex="-1"></a>                           <span class="at">hypers =</span> fc_lqp, </span>
+<span id="cb474-164"><a href="Chapter7.html#cb474-164" tabindex="-1"></a>                           <span class="at">metric =</span> <span class="st">&quot;tss&quot;</span>), <span class="at">silent =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb474-165"><a href="Chapter7.html#cb474-165" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">inherits</span>(rezB, <span class="st">&#39;try-error&#39;</span>)) {</span>
+<span id="cb474-166"><a href="Chapter7.html#cb474-166" tabindex="-1"></a>      rezC <span class="ot">&lt;-</span> <span class="fu">gridSearch</span>(objekts, </span>
+<span id="cb474-167"><a href="Chapter7.html#cb474-167" tabindex="-1"></a>                         <span class="at">hypers =</span> fc_lq, </span>
+<span id="cb474-168"><a href="Chapter7.html#cb474-168" tabindex="-1"></a>                         <span class="at">metric =</span> <span class="st">&quot;tss&quot;</span>)</span>
+<span id="cb474-169"><a href="Chapter7.html#cb474-169" tabindex="-1"></a>      <span class="fu">return</span>(rezC)</span>
+<span id="cb474-170"><a href="Chapter7.html#cb474-170" tabindex="-1"></a>    }</span>
+<span id="cb474-171"><a href="Chapter7.html#cb474-171" tabindex="-1"></a>    <span class="fu">return</span>(rezB)</span>
+<span id="cb474-172"><a href="Chapter7.html#cb474-172" tabindex="-1"></a>  }</span>
+<span id="cb474-173"><a href="Chapter7.html#cb474-173" tabindex="-1"></a>  <span class="fu">return</span>(rezA)</span>
+<span id="cb474-174"><a href="Chapter7.html#cb474-174" tabindex="-1"></a>}</span>
+<span id="cb474-175"><a href="Chapter7.html#cb474-175" tabindex="-1"></a></span>
+<span id="cb474-176"><a href="Chapter7.html#cb474-176" tabindex="-1"></a>meklesanas_rezgis <span class="ot">&lt;-</span> <span class="fu">izveles_rezgis</span>(sakummodelis)</span>
+<span id="cb474-177"><a href="Chapter7.html#cb474-177" tabindex="-1"></a><span class="fu">write_rds</span>(meklesanas_rezgis,<span class="fu">paste0</span>(<span class="st">&quot;./SuguModeli/GridSearch_Models/GSModeli_&quot;</span>,suga,<span class="st">&quot;.RDS&quot;</span>))</span>
+<span id="cb474-178"><a href="Chapter7.html#cb474-178" tabindex="-1"></a><span class="fu">rm</span>(sakummodelis)</span>
+<span id="cb474-179"><a href="Chapter7.html#cb474-179" tabindex="-1"></a></span>
+<span id="cb474-180"><a href="Chapter7.html#cb474-180" tabindex="-1"></a><span class="co"># izveles tabula</span></span>
+<span id="cb474-181"><a href="Chapter7.html#cb474-181" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">&quot;Uzsāku izvēles tabulu: &quot;</span>,<span class="fu">Sys.time</span>()))</span>
+<span id="cb474-182"><a href="Chapter7.html#cb474-182" tabindex="-1"></a></span>
+<span id="cb474-183"><a href="Chapter7.html#cb474-183" tabindex="-1"></a>izveles_tabula<span class="ot">=</span>meklesanas_rezgis<span class="sc">@</span>results</span>
+<span id="cb474-184"><a href="Chapter7.html#cb474-184" tabindex="-1"></a>izveles_tabula<span class="sc">$</span>IndepTest_auc<span class="ot">=</span><span class="cn">NA_real_</span></span>
+<span id="cb474-185"><a href="Chapter7.html#cb474-185" tabindex="-1"></a>izveles_tabula<span class="sc">$</span>IndepTest_tss<span class="ot">=</span><span class="cn">NA_real_</span></span>
+<span id="cb474-186"><a href="Chapter7.html#cb474-186" tabindex="-1"></a></span>
+<span id="cb474-187"><a href="Chapter7.html#cb474-187" tabindex="-1"></a>darbiba_auc<span class="ot">=</span><span class="cf">function</span>(numurs){</span>
+<span id="cb474-188"><a href="Chapter7.html#cb474-188" tabindex="-1"></a>  rez<span class="ot">=</span><span class="fu">try</span>(<span class="fu">auc</span>(<span class="fu">combineCV</span>(meklesanas_rezgis<span class="sc">@</span>models[[numurs]]),<span class="at">test=</span>testa_dati))</span>
+<span id="cb474-189"><a href="Chapter7.html#cb474-189" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">inherits</span>(rez, <span class="st">&#39;try-error&#39;</span>)) {</span>
+<span id="cb474-190"><a href="Chapter7.html#cb474-190" tabindex="-1"></a>    <span class="fu">return</span>(<span class="cn">NA</span>)</span>
+<span id="cb474-191"><a href="Chapter7.html#cb474-191" tabindex="-1"></a>  }</span>
+<span id="cb474-192"><a href="Chapter7.html#cb474-192" tabindex="-1"></a>  <span class="fu">return</span>(rez)</span>
+<span id="cb474-193"><a href="Chapter7.html#cb474-193" tabindex="-1"></a>}</span>
+<span id="cb474-194"><a href="Chapter7.html#cb474-194" tabindex="-1"></a>darbiba_tss<span class="ot">=</span><span class="cf">function</span>(numurs){</span>
+<span id="cb474-195"><a href="Chapter7.html#cb474-195" tabindex="-1"></a>  rez<span class="ot">=</span><span class="fu">try</span>(<span class="fu">tss</span>(<span class="fu">combineCV</span>(meklesanas_rezgis<span class="sc">@</span>models[[numurs]]),<span class="at">test=</span>testa_dati))</span>
+<span id="cb474-196"><a href="Chapter7.html#cb474-196" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">inherits</span>(rez, <span class="st">&#39;try-error&#39;</span>)) {</span>
+<span id="cb474-197"><a href="Chapter7.html#cb474-197" tabindex="-1"></a>    <span class="fu">return</span>(<span class="cn">NA</span>)</span>
+<span id="cb474-198"><a href="Chapter7.html#cb474-198" tabindex="-1"></a>  }</span>
+<span id="cb474-199"><a href="Chapter7.html#cb474-199" tabindex="-1"></a>  <span class="fu">return</span>(rez)</span>
+<span id="cb474-200"><a href="Chapter7.html#cb474-200" tabindex="-1"></a>}</span>
+<span id="cb474-201"><a href="Chapter7.html#cb474-201" tabindex="-1"></a></span>
+<span id="cb474-202"><a href="Chapter7.html#cb474-202" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(izveles_tabula)){</span>
+<span id="cb474-203"><a href="Chapter7.html#cb474-203" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
+<span id="cb474-204"><a href="Chapter7.html#cb474-204" tabindex="-1"></a>  fin_auc<span class="ot">=</span><span class="fu">darbiba_auc</span>(i)</span>
+<span id="cb474-205"><a href="Chapter7.html#cb474-205" tabindex="-1"></a>  izveles_tabula<span class="sc">$</span>IndepTest_auc[i]<span class="ot">=</span>fin_auc</span>
+<span id="cb474-206"><a href="Chapter7.html#cb474-206" tabindex="-1"></a>  fin_tss<span class="ot">=</span><span class="fu">darbiba_tss</span>(i)</span>
+<span id="cb474-207"><a href="Chapter7.html#cb474-207" tabindex="-1"></a>  izveles_tabula<span class="sc">$</span>IndepTest_tss[i]<span class="ot">=</span>fin_tss</span>
+<span id="cb474-208"><a href="Chapter7.html#cb474-208" tabindex="-1"></a>  <span class="co">#print(paste0(&quot;independent AUC: &quot;,fin_auc))</span></span>
+<span id="cb474-209"><a href="Chapter7.html#cb474-209" tabindex="-1"></a>  <span class="co">#print(paste0(&quot;independent TSS: &quot;,fin_tss))</span></span>
+<span id="cb474-210"><a href="Chapter7.html#cb474-210" tabindex="-1"></a>}</span>
+<span id="cb474-211"><a href="Chapter7.html#cb474-211" tabindex="-1"></a><span class="fu">names</span>(izveles_tabula)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;fc&quot;</span>,<span class="st">&quot;reg&quot;</span>,<span class="st">&quot;train_TSS&quot;</span>,<span class="st">&quot;validation_TSS&quot;</span>,<span class="st">&quot;diff_TSS&quot;</span>,<span class="st">&quot;IndepTest_auc&quot;</span>,<span class="st">&quot;IndepTest_tss&quot;</span>)</span>
+<span id="cb474-212"><a href="Chapter7.html#cb474-212" tabindex="-1"></a><span class="fu">write.xlsx</span>(izveles_tabula,<span class="fu">paste0</span>(<span class="st">&quot;./SuguModeli/GridSearch_Tables/GSTabula_&quot;</span>,suga,<span class="st">&quot;.xlsx&quot;</span>))</span>
+<span id="cb474-213"><a href="Chapter7.html#cb474-213" tabindex="-1"></a></span>
+<span id="cb474-214"><a href="Chapter7.html#cb474-214" tabindex="-1"></a><span class="co"># labaka noskaidrosana</span></span>
+<span id="cb474-215"><a href="Chapter7.html#cb474-215" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">&quot;Izvēlos labāko: &quot;</span>,<span class="fu">Sys.time</span>()))</span>
+<span id="cb474-216"><a href="Chapter7.html#cb474-216" tabindex="-1"></a></span>
+<span id="cb474-217"><a href="Chapter7.html#cb474-217" tabindex="-1"></a>labakajam_modelim<span class="ot">=</span>izveles_tabula <span class="sc">%&gt;%</span> </span>
+<span id="cb474-218"><a href="Chapter7.html#cb474-218" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">rinda=</span><span class="fu">as.numeric</span>(<span class="fu">rownames</span>(.))) <span class="sc">%&gt;%</span> </span>
+<span id="cb474-219"><a href="Chapter7.html#cb474-219" tabindex="-1"></a>  <span class="fu">filter</span>(IndepTest_tss<span class="sc">==</span><span class="fu">max</span>(IndepTest_tss,<span class="at">na.rm=</span><span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb474-220"><a href="Chapter7.html#cb474-220" tabindex="-1"></a>  <span class="fu">filter</span>(diff_TSS<span class="sc">==</span><span class="fu">min</span>(diff_TSS,<span class="at">na.rm=</span><span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb474-221"><a href="Chapter7.html#cb474-221" tabindex="-1"></a>  <span class="fu">filter</span>(validation_TSS<span class="sc">==</span><span class="fu">max</span>(validation_TSS,<span class="at">na.rm=</span><span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb474-222"><a href="Chapter7.html#cb474-222" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">nchar</span>(fc)<span class="sc">==</span><span class="fu">min</span>(<span class="fu">nchar</span>(fc)))</span>
+<span id="cb474-223"><a href="Chapter7.html#cb474-223" tabindex="-1"></a>labaka_numurs<span class="ot">=</span>labakajam_modelim<span class="sc">$</span>rinda</span>
+<span id="cb474-224"><a href="Chapter7.html#cb474-224" tabindex="-1"></a></span>
+<span id="cb474-225"><a href="Chapter7.html#cb474-225" tabindex="-1"></a><span class="co"># krosvalidetais</span></span>
+<span id="cb474-226"><a href="Chapter7.html#cb474-226" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">&quot;Saglabāju labāko CV: &quot;</span>,<span class="fu">Sys.time</span>()))</span>
+<span id="cb474-227"><a href="Chapter7.html#cb474-227" tabindex="-1"></a></span>
+<span id="cb474-228"><a href="Chapter7.html#cb474-228" tabindex="-1"></a>labakais_CV<span class="ot">=</span>meklesanas_rezgis<span class="sc">@</span>models[[labaka_numurs]]</span>
+<span id="cb474-229"><a href="Chapter7.html#cb474-229" tabindex="-1"></a><span class="fu">write_rds</span>(labakais_CV,<span class="fu">paste0</span>(<span class="st">&quot;./SuguModeli/BestCV/BestCV_&quot;</span>,suga,<span class="st">&quot;.RDS&quot;</span>))</span>
+<span id="cb474-230"><a href="Chapter7.html#cb474-230" tabindex="-1"></a></span>
+<span id="cb474-231"><a href="Chapter7.html#cb474-231" tabindex="-1"></a><span class="co"># kombinetais</span></span>
+<span id="cb474-232"><a href="Chapter7.html#cb474-232" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">&quot;Saglabāju labāko kombinēto: &quot;</span>,<span class="fu">Sys.time</span>()))</span>
+<span id="cb474-233"><a href="Chapter7.html#cb474-233" tabindex="-1"></a></span>
+<span id="cb474-234"><a href="Chapter7.html#cb474-234" tabindex="-1"></a>labakais_comb<span class="ot">=</span><span class="fu">combineCV</span>(meklesanas_rezgis<span class="sc">@</span>models[[labaka_numurs]])</span>
+<span id="cb474-235"><a href="Chapter7.html#cb474-235" tabindex="-1"></a><span class="fu">write_rds</span>(labakais_comb,<span class="fu">paste0</span>(<span class="st">&quot;./SuguModeli/BestComb/BestComb_&quot;</span>,suga,<span class="st">&quot;.RDS&quot;</span>))</span>
+<span id="cb474-236"><a href="Chapter7.html#cb474-236" tabindex="-1"></a><span class="fu">rm</span>(meklesanas_rezgis)</span>
+<span id="cb474-237"><a href="Chapter7.html#cb474-237" tabindex="-1"></a></span>
+<span id="cb474-238"><a href="Chapter7.html#cb474-238" tabindex="-1"></a></span>
+<span id="cb474-239"><a href="Chapter7.html#cb474-239" tabindex="-1"></a><span class="co"># projekcija</span></span>
+<span id="cb474-240"><a href="Chapter7.html#cb474-240" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">&quot;Saglabāju HS projekciju: &quot;</span>,<span class="fu">Sys.time</span>()))</span>
+<span id="cb474-241"><a href="Chapter7.html#cb474-241" tabindex="-1"></a></span>
+<span id="cb474-242"><a href="Chapter7.html#cb474-242" tabindex="-1"></a>map_best <span class="ot">&lt;-</span> <span class="fu">predict</span>(labakais_comb,</span>
+<span id="cb474-243"><a href="Chapter7.html#cb474-243" tabindex="-1"></a>                    <span class="at">data =</span> egvs,</span>
+<span id="cb474-244"><a href="Chapter7.html#cb474-244" tabindex="-1"></a>                    <span class="at">type =</span> <span class="st">&quot;cloglog&quot;</span>,</span>
+<span id="cb474-245"><a href="Chapter7.html#cb474-245" tabindex="-1"></a>                    <span class="at">file =</span> <span class="fu">paste0</span>(<span class="st">&quot;./SuguModeli/BestHSmap/BestHSmap_&quot;</span>,suga,<span class="st">&quot;.tif&quot;</span>),</span>
+<span id="cb474-246"><a href="Chapter7.html#cb474-246" tabindex="-1"></a>                    <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
+<span id="cb474-247"><a href="Chapter7.html#cb474-247" tabindex="-1"></a></span>
+<span id="cb474-248"><a href="Chapter7.html#cb474-248" tabindex="-1"></a><span class="co">#terra::plot(map_best)</span></span>
+<span id="cb474-249"><a href="Chapter7.html#cb474-249" tabindex="-1"></a><span class="fu">rm</span>(map_best)</span>
+<span id="cb474-250"><a href="Chapter7.html#cb474-250" tabindex="-1"></a></span>
+<span id="cb474-251"><a href="Chapter7.html#cb474-251" tabindex="-1"></a><span class="co"># thresholds</span></span>
+<span id="cb474-252"><a href="Chapter7.html#cb474-252" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">&quot;Saglabāju sliekšņa līmeņus: &quot;</span>,<span class="fu">Sys.time</span>()))</span>
+<span id="cb474-253"><a href="Chapter7.html#cb474-253" tabindex="-1"></a></span>
+<span id="cb474-254"><a href="Chapter7.html#cb474-254" tabindex="-1"></a>ths <span class="ot">&lt;-</span> SDMtune<span class="sc">::</span><span class="fu">thresholds</span>(labakais_comb, </span>
+<span id="cb474-255"><a href="Chapter7.html#cb474-255" tabindex="-1"></a>                           <span class="at">type =</span> <span class="st">&quot;cloglog&quot;</span>,</span>
+<span id="cb474-256"><a href="Chapter7.html#cb474-256" tabindex="-1"></a>                           <span class="at">test=</span>testa_dati)</span>
+<span id="cb474-257"><a href="Chapter7.html#cb474-257" tabindex="-1"></a>ths<span class="sc">$</span>suga<span class="ot">=</span>suga</span>
+<span id="cb474-258"><a href="Chapter7.html#cb474-258" tabindex="-1"></a><span class="fu">write.xlsx</span>(ths,<span class="fu">paste0</span>(<span class="st">&quot;./SuguModeli/BestThresholds/BestThs_&quot;</span>,suga,<span class="st">&quot;.xlsx&quot;</span>))</span>
+<span id="cb474-259"><a href="Chapter7.html#cb474-259" tabindex="-1"></a><span class="fu">rm</span>(ths)</span>
+<span id="cb474-260"><a href="Chapter7.html#cb474-260" tabindex="-1"></a></span>
+<span id="cb474-261"><a href="Chapter7.html#cb474-261" tabindex="-1"></a></span>
+<span id="cb474-262"><a href="Chapter7.html#cb474-262" tabindex="-1"></a><span class="co"># pROC</span></span>
+<span id="cb474-263"><a href="Chapter7.html#cb474-263" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">&quot;Saglabāju ROC līkni: &quot;</span>,<span class="fu">Sys.time</span>()))</span>
+<span id="cb474-264"><a href="Chapter7.html#cb474-264" tabindex="-1"></a></span>
+<span id="cb474-265"><a href="Chapter7.html#cb474-265" tabindex="-1"></a>labakais_proc<span class="ot">=</span>SDMtune<span class="sc">::</span><span class="fu">plotROC</span>(labakais_comb,<span class="at">test =</span> testa_dati)</span>
+<span id="cb474-266"><a href="Chapter7.html#cb474-266" tabindex="-1"></a>labakais_proc</span>
+<span id="cb474-267"><a href="Chapter7.html#cb474-267" tabindex="-1"></a><span class="fu">write_rds</span>(labakais_proc,<span class="fu">paste0</span>(<span class="st">&quot;./SuguModeli/BestROCs/BestROC_&quot;</span>,suga,<span class="st">&quot;.RDS&quot;</span>))</span>
+<span id="cb474-268"><a href="Chapter7.html#cb474-268" tabindex="-1"></a><span class="fu">rm</span>(labakais_proc)</span>
+<span id="cb474-269"><a href="Chapter7.html#cb474-269" tabindex="-1"></a></span>
+<span id="cb474-270"><a href="Chapter7.html#cb474-270" tabindex="-1"></a><span class="co"># var importance</span></span>
+<span id="cb474-271"><a href="Chapter7.html#cb474-271" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">&quot;Uzsāku egv nozīmi: &quot;</span>,<span class="fu">Sys.time</span>()))</span>
+<span id="cb474-272"><a href="Chapter7.html#cb474-272" tabindex="-1"></a></span>
+<span id="cb474-273"><a href="Chapter7.html#cb474-273" tabindex="-1"></a>vi_tss <span class="ot">&lt;-</span> <span class="fu">varImp</span>(labakais_CV,<span class="at">permut =</span> <span class="dv">99</span>)</span>
+<span id="cb474-274"><a href="Chapter7.html#cb474-274" tabindex="-1"></a><span class="fu">names</span>(vi_tss)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;egv_id&quot;</span>,<span class="st">&quot;final_PermImp_avg&quot;</span>,<span class="st">&quot;final_PermImp_sd&quot;</span>)</span>
+<span id="cb474-275"><a href="Chapter7.html#cb474-275" tabindex="-1"></a>egv_importance<span class="ot">=</span>egv_izvelei <span class="sc">%&gt;%</span> </span>
+<span id="cb474-276"><a href="Chapter7.html#cb474-276" tabindex="-1"></a>  <span class="fu">left_join</span>(vi_tss,<span class="at">by=</span><span class="st">&quot;egv_id&quot;</span>)</span>
+<span id="cb474-277"><a href="Chapter7.html#cb474-277" tabindex="-1"></a><span class="fu">write.xlsx</span>(egv_importance,<span class="fu">paste0</span>(<span class="st">&quot;./SuguModeli/BestVarImp/BestVarImp_&quot;</span>,suga,<span class="st">&quot;.xlsx&quot;</span>))</span>
+<span id="cb474-278"><a href="Chapter7.html#cb474-278" tabindex="-1"></a><span class="fu">rm</span>(vi_tss)</span>
+<span id="cb474-279"><a href="Chapter7.html#cb474-279" tabindex="-1"></a><span class="fu">rm</span>(egv_importance)</span>
+<span id="cb474-280"><a href="Chapter7.html#cb474-280" tabindex="-1"></a></span>
+<span id="cb474-281"><a href="Chapter7.html#cb474-281" tabindex="-1"></a><span class="co"># faktiskā sugai specifiskā uzdevuma izpildē HPC, komandu rindas turpinās ar nākošo koda apgabalu</span></span></code></pre></div>
+</details>
 </div>
 <div id="Chapter7.3" class="section level2 hasAnchor" number="7.3">
 <h2><span class="header-section-number">7.3</span> Nulles modelis<a href="Chapter7.html#Chapter7.3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>salīdzinājums ar nulles modeli</p>
+<p><span class="citation">(<a href="#ref-ENMeval2.0">Kass et al., 2021</a>)</span></p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
+<div class="sourceCode" id="cb475"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb475-1"><a href="Chapter7.html#cb475-1" tabindex="-1"></a><span class="co"># šis ir turpinājums iepriekšējam koda apgalam un izmantojams tajā pašā uzdevumā ik sugai</span></span>
+<span id="cb475-2"><a href="Chapter7.html#cb475-2" tabindex="-1"></a></span>
+<span id="cb475-3"><a href="Chapter7.html#cb475-3" tabindex="-1"></a></span>
+<span id="cb475-4"><a href="Chapter7.html#cb475-4" tabindex="-1"></a><span class="co"># Nulles reference</span></span>
+<span id="cb475-5"><a href="Chapter7.html#cb475-5" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">&quot;Uzsāku nulles referenci: &quot;</span>,<span class="fu">Sys.time</span>()))</span>
+<span id="cb475-6"><a href="Chapter7.html#cb475-6" tabindex="-1"></a></span>
+<span id="cb475-7"><a href="Chapter7.html#cb475-7" tabindex="-1"></a></span>
+<span id="cb475-8"><a href="Chapter7.html#cb475-8" tabindex="-1"></a>ref_fc<span class="ot">=</span>labakais_comb<span class="sc">@</span>model<span class="sc">@</span>fc</span>
+<span id="cb475-9"><a href="Chapter7.html#cb475-9" tabindex="-1"></a>ref_rm<span class="ot">=</span>labakais_comb<span class="sc">@</span>model<span class="sc">@</span>reg</span>
+<span id="cb475-10"><a href="Chapter7.html#cb475-10" tabindex="-1"></a></span>
+<span id="cb475-11"><a href="Chapter7.html#cb475-11" tabindex="-1"></a>occs<span class="ot">=</span>trenin_dati<span class="sc">@</span>coords[trenin_dati<span class="sc">@</span>pa<span class="sc">==</span><span class="dv">1</span>,]</span>
+<span id="cb475-12"><a href="Chapter7.html#cb475-12" tabindex="-1"></a>bg<span class="ot">=</span>trenin_dati<span class="sc">@</span>coords[trenin_dati<span class="sc">@</span>pa<span class="sc">==</span><span class="dv">0</span>,]</span>
+<span id="cb475-13"><a href="Chapter7.html#cb475-13" tabindex="-1"></a></span>
+<span id="cb475-14"><a href="Chapter7.html#cb475-14" tabindex="-1"></a></span>
+<span id="cb475-15"><a href="Chapter7.html#cb475-15" tabindex="-1"></a><span class="fu">rm</span>(testa_dati)</span>
+<span id="cb475-16"><a href="Chapter7.html#cb475-16" tabindex="-1"></a><span class="fu">rm</span>(trenin_dati)</span>
+<span id="cb475-17"><a href="Chapter7.html#cb475-17" tabindex="-1"></a><span class="fu">rm</span>(labakais_CV)</span>
+<span id="cb475-18"><a href="Chapter7.html#cb475-18" tabindex="-1"></a><span class="fu">rm</span>(labakais_comb)</span>
+<span id="cb475-19"><a href="Chapter7.html#cb475-19" tabindex="-1"></a><span class="fu">rm</span>(izveles_tabula)</span>
+<span id="cb475-20"><a href="Chapter7.html#cb475-20" tabindex="-1"></a><span class="fu">rm</span>(fc_lqp)</span>
+<span id="cb475-21"><a href="Chapter7.html#cb475-21" tabindex="-1"></a><span class="fu">rm</span>(fc_lqph)</span>
+<span id="cb475-22"><a href="Chapter7.html#cb475-22" tabindex="-1"></a><span class="fu">rm</span>(egv_faili)</span>
+<span id="cb475-23"><a href="Chapter7.html#cb475-23" tabindex="-1"></a><span class="fu">rm</span>(egv_izvelei)</span>
+<span id="cb475-24"><a href="Chapter7.html#cb475-24" tabindex="-1"></a><span class="fu">rm</span>(egv_izvelei2)</span>
+<span id="cb475-25"><a href="Chapter7.html#cb475-25" tabindex="-1"></a><span class="fu">rm</span>(savienoti)</span>
+<span id="cb475-26"><a href="Chapter7.html#cb475-26" tabindex="-1"></a><span class="fu">rm</span>(savsugai)</span>
+<span id="cb475-27"><a href="Chapter7.html#cb475-27" tabindex="-1"></a><span class="fu">rm</span>(labakajam_modelim)</span>
+<span id="cb475-28"><a href="Chapter7.html#cb475-28" tabindex="-1"></a><span class="fu">rm</span>(block_folds)</span>
+<span id="cb475-29"><a href="Chapter7.html#cb475-29" tabindex="-1"></a></span>
+<span id="cb475-30"><a href="Chapter7.html#cb475-30" tabindex="-1"></a>tune.args <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">fc =</span> ref_fc, <span class="at">rm =</span> ref_rm)</span>
+<span id="cb475-31"><a href="Chapter7.html#cb475-31" tabindex="-1"></a>nulles_reference <span class="ot">&lt;-</span> <span class="fu">ENMevaluate</span>(<span class="at">occs =</span> occs, <span class="at">envs =</span> egvs, <span class="at">bg =</span> bg,</span>
+<span id="cb475-32"><a href="Chapter7.html#cb475-32" tabindex="-1"></a>                                <span class="at">algorithm =</span> <span class="st">&#39;maxnet&#39;</span>, <span class="at">partitions =</span> <span class="st">&#39;block&#39;</span>, </span>
+<span id="cb475-33"><a href="Chapter7.html#cb475-33" tabindex="-1"></a>                                <span class="at">tune.args =</span> tune.args)</span>
+<span id="cb475-34"><a href="Chapter7.html#cb475-34" tabindex="-1"></a><span class="fu">write_rds</span>(nulles_reference,<span class="fu">paste0</span>(<span class="st">&quot;./SuguModeli/Null_reference/NullRef_&quot;</span>,suga,<span class="st">&quot;.RDS&quot;</span>))</span>
+<span id="cb475-35"><a href="Chapter7.html#cb475-35" tabindex="-1"></a></span>
+<span id="cb475-36"><a href="Chapter7.html#cb475-36" tabindex="-1"></a><span class="co"># Nulles salidzinajumi</span></span>
+<span id="cb475-37"><a href="Chapter7.html#cb475-37" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">&quot;Uzsāku nulles salīdzinājumus: &quot;</span>,<span class="fu">Sys.time</span>()))</span>
+<span id="cb475-38"><a href="Chapter7.html#cb475-38" tabindex="-1"></a></span>
+<span id="cb475-39"><a href="Chapter7.html#cb475-39" tabindex="-1"></a>nulles_modeli <span class="ot">&lt;-</span> <span class="fu">ENMnulls</span>(nulles_reference, <span class="at">mod.settings =</span> <span class="fu">list</span>(<span class="at">fc =</span> ref_fc, <span class="at">rm =</span> ref_rm), <span class="at">no.iter =</span> <span class="dv">100</span>)</span>
+<span id="cb475-40"><a href="Chapter7.html#cb475-40" tabindex="-1"></a><span class="fu">write_rds</span>(nulles_modeli,<span class="fu">paste0</span>(<span class="st">&quot;./SuguModeli/Null_models/NullModels_&quot;</span>,suga,<span class="st">&quot;.RDS&quot;</span>))</span>
+<span id="cb475-41"><a href="Chapter7.html#cb475-41" tabindex="-1"></a></span>
+<span id="cb475-42"><a href="Chapter7.html#cb475-42" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">&quot;Beidzu: &quot;</span>,<span class="fu">Sys.time</span>()))</span></code></pre></div>
+</details>
 </div>
 <div id="Chapter7.4" class="section level2 hasAnchor" number="7.4">
 <h2><span class="header-section-number">7.4</span> Labākā modeļa rezultāti<a href="Chapter7.html#Chapter7.4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -1254,6 +1583,9 @@ Björklund, H., Parkkinen, A., Hakkari, T., Heikkinen, R.K., Virkkala, R., Lensu
 <div id="ref-GuisanThuillerZimmerman2017" class="csl-entry">
 Guisan, A., Thuiller, W., Zimmermann, N.E., 2017. Habitat suitability and distribution models: With applications in <span>R</span>. Cambridge University Press, Cornwall, UK.
 </div>
+<div id="ref-ENMeval2.0" class="csl-entry">
+Kass, J.M., Muscarella, R., Galante, P.J., Bohl, C.L., Pinilla-Buitrago, G.E., Boria, R.A., Soley-Guardia, M., Anderson, R.P., 2021. <a href="https://doi.org/10.1111/2041-210X.13628">ENMeval 2.0: Redesigned for customizable and reproducible modeling of species’ niches and distributions</a>. Methods in Ecology and Evolution 12, 1602–1608.
+</div>
 <div id="ref-McElreathBook" class="csl-entry">
 McElreath, R., 2020. Statistical <span>Rethinking</span>. A <span>Bayesian</span> course with examples in <span>R</span> and <span>Stan</span>. Second edition. CRC Press, Boca Raton, FL.
 </div>
@@ -1271,6 +1603,9 @@ Phillips, S.J., Anderson, R.P., Schapire, R.E., 2006. Maximum entropy modeling o
 </div>
 <div id="ref-PhillipsDudikSchapire2004" class="csl-entry">
 Phillips, S.J., Dudik, M., Schapire, R.E., 2004. A <span>Maximum</span> <span>Entropy</span> <span>Approach</span> to <span>Species</span> <span>Distribution</span> <span>Modeling</span>. Proceedings of the Twenty-First International Conference on Machine Learning 655–662.
+</div>
+<div id="ref-SDMtune" class="csl-entry">
+Sergio Vignali, Arnaud G. Barras, Raphaël Arlettaz, Veronika Braunisch, 2020. SDMtune: An r package to tune and evaluate species distribution models. Ecology and Evolution 10, 11488–11506. <a href="https://doi.org/10.1002/ece3.6786">https://doi.org/10.1002/ece3.6786</a>
 </div>
 <div id="ref-Wikleetal2019" class="csl-entry">
 Wikle, C.K., Zammit-Mangion, A., Cressie, N., 2019. Spatio-<span>Temporal</span> <span>Statistics</span> with <span>R</span>. Chapman &amp; Hall/CRC, Boca Raton, FL.
