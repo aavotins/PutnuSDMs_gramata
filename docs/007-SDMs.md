@@ -429,9 +429,12 @@ TSS neatkarīgos testa datos
 suga="abcdef" # sugas sešu burtu kods
 # viss sekojošais, protams, ir ieliekams ciklā, kura vadībai izmantojams sugas kods,
 # tomēr ir jārēķinās, ka ik vienas sugas SDM parametrizācija aizņem no dažām stundām 
-# līdz pāris diennaktīm, pieprasot starp 20 un 200 GB operatīvās atmiņas. 
-
-# Šī materiāla tapšanas laikā SDM parametrizācija veidota sugai-specifisku uzdevumu veidā HPC
+# līdz pāris diennaktīm, pieprasot starp 20 un 200 GB operatīvās atmiņas. Šī nevienmērība 
+# nepieļauj īsti labu uzdevuma sagatavošanu, tādēļ šī materiāla tapšanas laikā SDM 
+# parametrizācija veidota sugai-specifisku uzdevumu veidā HPC, paredzot ik sugai 
+# individuālu resursu pieprasīšanu (sākot no 20 GB RAM, to iteratīvi palielinot 
+# par 10 GB līdz ar katru nepietiekama operatīvās atmiņas apjoma dēļ apstādinātu 
+# uzdevuma izpildi)
 
 
 
