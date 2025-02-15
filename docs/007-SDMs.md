@@ -207,7 +207,7 @@ Visi modeļi veidoti, kopējās informācijas telpas aprakstam (fona jeb *backgr
 pievienojot tās klātbūtnes vietas, kuras raksturo tajos jau neesošas EGV vērtību 
 kombinācijas [@PhillipsDudikSchapire2004], [@PhillipsAndersonSchapire2006], lai 
 veidotu statistisko kompleksu, kas matemātiski cieši saistās ar Puasona 
-punktu procesu [@GuisanThuillerZimmerman2017].
+punktu procesu [@GuisanThuillerZimmerman2017],  [@Phillipsetal2017].
 
 Lai gan šī soļa mērķis ir vienkāršot modeļus, reducējot iekļauto pazīmju loku, tas 
 tiek darīts tikai apmācību kopā un bez iekšējās validācijas (*cross-validation*; CV), 
@@ -457,17 +457,107 @@ modeļu izveides un izvērtēšanas procedūrām ir liela nozīme, lai samazinā
 nejaušību ietekmi. Cik tas attiecas uz plaša mēroga autokorelācijām, kas sevišķi 
 izteiktas saistībā ar klimatu un raksturīgas renesances gleznojumos, telpisko bloku 
 krosvalidācija ir atzīta par labāk performējošo, jo sevišķi, ja apvienota ar 
-neatkarīgas testēšanas datiem [@Fourcadeetal2018].
+neatkarīgas testēšanas datiem [@Veloz2009], [@WengerOlden2012], [@Robertsetal2017], 
+[@Fourcadeetal2018]. Šī procedūra - telpisko bloku krosvalidācija un modeļa 
+izvērtēšana neatkarīgos testa datos - ir ieviesta šajā materiālā.
 
+Ir neapšaubāmi skaidrs, ka neviens viens mērs nav spējīgs pilnvērtīgi raksturot 
+sugu izplatības modeli. Tāpat arī ir skaidrs, ka nevienas programmas vai modelēšanas 
+pieejas noklusējuma uzstādījumu, lai cik kalibrēti, nav piemēroti visām situācijām. 
+Attiecībā uz maksimuma entropijas analīzi, kas ir kļuvusi par vienu no populārākajām 
+sugu izplatības modelēšanas pieejām, plaši izmantota nekorekta prakse ir izmantot 
+noklusējuma algoritmus ar noklusējuma regularizāciju un modeļa spēju raksturot ar 
+AUC (*Area Under receiver operating Curve*) [@WarrenSeifert2011], [@RadosavljevicAnderson2014]. 
+Šī prakse ir nekorekta, jo reti, kad atgriež konkrētās sugas izplatību vai tās 
+ekoloģisko nišu konkrētā pētījuma teriotrijā labāk raksturojošo un labāk vispārinošo 
+modeli [@WarrenSeifert2011], turklāt AUC kā metrika ir daudz pamatoti kritizēta, 
+tostarp tās tieksmes augstāk vērtēt pārpielāgotus modeļus dēļ [@Loboetal2008], 
+[@WarrenSeifert2011]. Tomēr nevar noliegt tā piemērotību, piemēram, telpiski 
+krosvalidētu modeļu daļu stabilitātes novērtēšanā [@RadosavljevicAnderson2014]. 
+Kā alternatīva ir ietekts izlases apjomam koriģētais Akaike informācijas kritērijs 
+[@WarrenSeifert2011], kura aprēķināšai izstrādāta gan patstāvīga [@ENMTools0], 
+gan R vadāma programmatūra [@ENMTools1_R], [@ENMToolsR]. Tomēr arī šī metrika 
+ir saņēmusi kritiku, gan tās aprēķināšanai nepieciešamo skaitļošanas 
+resursu un datu apjoma dēļ, gan informācijas kritēriju parsimoniskās dabas, gan 
+ģeogrāfiski vispārinātās projekcijas akurātuma dēļ, starp citiem apsvērumiem 
+[@VelascoGonzales_Salazar2019]. Par šobrīd izplatītāko labākā modeļa izvēles pieeju 
+ir kļuvusi TSS (patiesās spējas statisktika, *True Skill Statistic*), kas ir 
+orientēta klasifikācijas spējas novērtējumā un tam izmanto informāciju gan par 
+sensitivitāti, gan specifiskumu [@TSSieviesanaSDM]. Šī metrika ir plaši izmantota 
+labākās modeļa parametrizācijas izvēlei dažādos statistiskajos kompleksos un, ja 
+labākais modelis ir vērtēts pēc tā TSS neatkarīgos testa datos, ir uzskatāms, ka 
+tā raksturo pietuvinātu rezultātu dabā sagaidāmajam caur pārceļamību (*transferability*) 
+[@WengerOlden2012], [@Wrightetal2014], [@Soley_Guardiaetal2019]. Tomēr arī tā nav 
+visaptveroša pati par sevi un ir nepieciešami papildus raksturojumi un izvērtējumi.
 
+Šajā materiālā izmantoju četru telpisko bloku krosvalidāciju, kuras ietvaros 
+izvērtēju TSS, gan modeļa apmācības, gan validācijas kopā un pēc visu modeļa 
+variantu sagatavošanas, arī neatkarīgos testa datos. Neatkarīgos testa datos 
+aprēķināju arī AUC vērtību modeļu papildus raksturošanai. Modeļu veidošanā 
+izmantoju režģa pieeju labākās parametrizācijas noskaidrošanai: 
 
-Feature types and algorithms
+1. izmēģināju regularizācijas multiplikatora vērtības 0.2, 1/3, 0.5, 0.75, 1, 
+1.25, 2, 3, 5, 7.5 un 10;
 
-Regularization multipliers
+2. sekojošus algoritmus:
 
-Krosvalidācija
+a. visām sugām tika izmēģināta algoritmu "l", "lq", "lp", "lqp", "qp", "lh", 
+"qh", "lqh", "lhp", "qhp" un "lqhp" kopa, tomēr ne visām tā bija iespēja EGV vērtību 
+variabilitātes dēļ, tādēļ pēc kļūdas paziņojuma automātiski ieviesta cita algoritmu kopa;
 
-TSS neatkarīgos testa datos
+b. pēc kļūdas paziņojuma 2.a algoritmiem, izmēģināta "l", "lq", "lp", "lqp", "qp" 
+un "q" kopa, kas vienai sugai nišas kompleksitātes dēļ nespēja konverģēt;
+
+c. vienai sugai pēc konverģences kļūdām 2.b algoritmu kopā ieviesta "l", "lq" un "q" 
+kopa. 
+
+Tas nozīmē, ka ik sugai izmēģināts relatīvi liels apjoms modeļu:
+
+- 2.a gadījumā tā ir 121 parametrizācija, kas ieviesta četros telpiskajos blokos, 
+veidojot 484 modeļus. Katrai no 121 parametrizācijas izveidots krosvalidāciju 
+kombinētais modelis, kurš atkārtoti pielāgots un izvērtēts neatkarīgās testēšanas kopā, 
+kas nozīmē vēl 121 modeļa gatavošanu;
+
+- 2.b gadījumā tās ir 66 parametrizācijas, kas ieviestas četros telpiskajos blokos, 
+veidojot 264 modeļus. Katrai no 66 parametrizācijām izveidots krosvalidāciju 
+kombinētais modelis, kurš atkārtoti pielāgots un izvērtēts neatkarīgās testēšanas kopā, 
+kas nozīmē vēl 66 modeļu gatavošanu;
+
+- 2.c gadījumā tās ir 33 parametrizācijas, kas ieviestas četros telpiskajos blokos, 
+veidojot 132 modeļus. Katrai no 33 parametrizācijām izveidots krosvalidāciju 
+kombinētais modelis, kurš atkārtoti pielāgots un izvērtēts neatkarīgās testēšanas kopā, 
+kas nozīmē vēl 33 modeļu gatavošanu.
+
+Ik sugai kā R objekts saglabāts gan viss izveidoto modeļu loks, gan par labāko 
+atzītais modelis - gan kā telpisko bloku krosvalidāciju, gan to apvienojuma objekts, 
+un, protams, parametrizāciju raksturojuma tabula labākās izvēlei. Par labāko 
+parametrizāciju (sugas izplatības modeli) atzīts tas, ar augstāko TSS neatkarīgās 
+testēšanas datos. Ja vairākiem modeļiem tā bija vienāda, tad tas ar mazāko starpību 
+validācijas un apmācības datu kopās (labāko vispārināšanās spēju un mazāko 
+pārpielāgošanu). Ja šie kritēriji atgrieza vairākus modeļus, izvēlēts tas ar 
+augstāko validācijas TSS un izvēle, tās turpināšanas gadījumā, noslēgta ar 
+parametrizāciju, kurai ir vienkāršākā algoritmu kombinācija.
+
+Par labāko atzītajam modelim:
+
+- sagatavota *cloglog* tranformēta dzīvotņu piemērotības 
+projekcija [@Phillipsetal2017] kā GeoTIFF fails;
+
+- Excel failā piedāvāti biežākie sliekšņa līmeņi dzīvotņu piemērotības binārai 
+klasifikācijai piemērotās un nepiemērotās ar kļūdu matricas raksturojumu un statistiskā 
+nozīmīguma līmeni klasifikācijai (salīdzinājumā ar nejaušu līdzvērtīga apjoma telpas izlozi);
+
+- R objektā saglabāts attēls ar AUC līkni plašākai vērtēšanai; 
+
+- labākajam modelim (kā krosvalidāciju objektam, lai labāk novērtētu stabilitāti) 
+sagatavots pazīmju ietekmes novērtējums 99 permutāciju procedūrā, kura vērtības 
+(vidējais aritmēriskais un standartnovirze) saglabātas excel failos ar sugai 
+specifisko EGV izvēles gaitu.
+
+Par labāko atzītais modelis tālāk nodots detalizētai vērtēšanai dažādos salīdzinājumos 
+ar nejaušību, kas ģenerēta tieši sugai specifisko EGV informācijas telpā - [Nulles modelis](#Chapter7.3).
+
+Sekojošajā koda apgabalā ir sniegtas izmantotās komandu rindas.
 
 
 
