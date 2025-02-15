@@ -230,11 +230,11 @@ raksturojumu detalizācijai, gan klātbūtnes vietu skaitam [@GuisanThuillerZimm
 Tomēr sugām ar mazāku novērojumu skaitu ir augstāka varbūtība modelim pielipt kādām no
 konkrētām situācijām (to raksturojumiem EGV informācijas telpā). Apskatot visu modelēšanā 
 iekļauto sugu klātbūtnes vietu apmācību kopā skaitu saistībā ar izvēlēto EGV skaitu, 
-šī vērtība ("16") iezīmējas gan sugām ar lielu, gan vidēju novērojumu skaitu \@ref(fig:EGVskaiti)).
+šī vērtība ("16") iezīmējas gan sugām ar lielu, gan vidēju novērojumu skaitu (\@ref(fig:EGVskaiti) att.).
 
 <div class="figure">
-<img src="./Atteli/ch007_EGVminSkaitam.png" alt="Sugu izplatības modeļu parametrizācijai izvļāmo ekoģeogrāfisko mainīgo skaits, atkarībā no klātbūtnes datu skaita modeļa apmācību kopā un indikatīvās permutāciju ietekmes." width="80%" />
-<p class="caption">(\#fig:EGVskaiti)Sugu izplatības modeļu parametrizācijai izvļāmo ekoģeogrāfisko mainīgo skaits, atkarībā no klātbūtnes datu skaita modeļa apmācību kopā un indikatīvās permutāciju ietekmes.</p>
+<img src="./Atteli/ch007_EGVminSkaitam.png" alt="Sugu izplatības modeļu parametrizācijai izvēlāmo ekoģeogrāfisko mainīgo skaits, atkarībā no klātbūtnes datu skaita modeļa apmācību kopā un indikatīvās permutāciju ietekmes." width="80%" />
+<p class="caption">(\#fig:EGVskaiti)Sugu izplatības modeļu parametrizācijai izvēlāmo ekoģeogrāfisko mainīgo skaits, atkarībā no klātbūtnes datu skaita modeļa apmācību kopā un indikatīvās permutāciju ietekmes.</p>
 </div>
 
 

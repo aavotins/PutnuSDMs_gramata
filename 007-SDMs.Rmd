@@ -232,9 +232,9 @@ raksturojumu detalizācijai, gan klātbūtnes vietu skaitam [@GuisanThuillerZimm
 Tomēr sugām ar mazāku novērojumu skaitu ir augstāka varbūtība modelim pielipt kādām no
 konkrētām situācijām (to raksturojumiem EGV informācijas telpā). Apskatot visu modelēšanā 
 iekļauto sugu klātbūtnes vietu apmācību kopā skaitu saistībā ar izvēlēto EGV skaitu, 
-šī vērtība ("16") iezīmējas gan sugām ar lielu, gan vidēju novērojumu skaitu \@ref(fig:EGVskaiti)).
+šī vērtība ("16") iezīmējas gan sugām ar lielu, gan vidēju novērojumu skaitu (\@ref(fig:EGVskaiti) att.).
 
-```{r EGVskaiti, echo=FALSE, fig.cap="Sugu izplatības modeļu parametrizācijai izvļāmo ekoģeogrāfisko mainīgo skaits, atkarībā no klātbūtnes datu skaita modeļa apmācību kopā un indikatīvās permutāciju ietekmes.", out.width = '80%'}
+```{r EGVskaiti, echo=FALSE, fig.cap="Sugu izplatības modeļu parametrizācijai izvēlāmo ekoģeogrāfisko mainīgo skaits, atkarībā no klātbūtnes datu skaita modeļa apmācību kopā un indikatīvās permutāciju ietekmes.", out.width = '80%'}
 knitr::include_graphics("./Atteli/ch007_EGVminSkaitam.png")
 ```
 
