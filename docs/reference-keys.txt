@@ -31,6 +31,7 @@ fig:DWq52
 fig:DWq6
 fig:LaikaMerogojums
 fig:ZonalStatsPrec
+fig:EGVskaiti
 fig:NovAtlaseCOTCOT
 fig:ModelaRaksturojumsCOTCOT
 tab:SlieksniCOTCOT
