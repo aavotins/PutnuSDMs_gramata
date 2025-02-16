@@ -529,6 +529,12 @@ veidojot 132 modeļus. Katrai no 33 parametrizācijām izveidots krosvalidāciju
 kombinētais modelis, kurš atkārtoti pielāgots un izvērtēts neatkarīgās testēšanas kopā, 
 kas nozīmē vēl 33 modeļu gatavošanu.
 
+Visi modeļi sagatavoti, limitējot atbildes funkcijas telpai, kas raksturota ar vērtībām 
+modeļa apmācībā izmantotajos klātbūtnes un fona punktos. Ārpus šo vērtību apgabala 
+projicētā dzīvotņu piemērotība limitēta ekspektācijai pie EGV kombināciju vērtību 
+robežām [@PhillipsDudikSchapire2004], [@PhillipsAndersonSchapire2006], [@Phillipsetal2009], 
+[@Phillipsetal2017].
+
 Ik sugai kā R objekts saglabāts gan viss izveidoto modeļu loks, gan par labāko 
 atzītais modelis - gan kā telpisko bloku krosvalidāciju, gan to apvienojuma objekts, 
 un, protams, parametrizāciju raksturojuma tabula labākās izvēlei. Par labāko 
@@ -853,12 +859,38 @@ rm(egv_importance)
 
 ## Nulles modelis  {#Chapter7.3}
 
-salīdzinājums ar nulles modeli
+Tā kā vēl joprojām zinātnē nav īstas skaidrības par sugu izplatības modeļu (un 
+kopumā dažādu vispārināto modeļu) kvalitātes un uzticamības raksturojumu patiesumu, 
+jo sevišķi klātbūtnes-fona modeļos, ir introducēta nulles modeļu pieeja. Šīs 
+pieejas pamatā ir dažādu raksturojumu aprēķināšana empīriskajos datos un to pašu 
+metriku aprēķināšana nejauši ģenerētās vērtībās tajā pašā (EGV) informācijas telpā. 
+Sākotnējās implementācijas sugu izplatības modeļos spēja empīriskās vērtības saalīdzināt 
+ar nejauši ģenerētu vietu prognozēšanas spēju tikai, izmantojot nejaušo 
+krosvalidāciju [@RaesSteege2007]. Kopš tā laika ir izstrādātas pieejas neatkarīgas 
+testēšanas datu kopas izmantošanai [@BohlKassAnderson2019] un telpisko bloku 
+krosvalidācijai [@Kassetal2020]. Šīs pieejas ir ieviestas R pakotnē {ENMeval} 
+[@ENMeval2.0] un izmantotas šajā materiālā.
 
-[@ENMeval2.0]
+Kā jau iepriekš rakstīts, sugu izplatības modeļi var nosacīti labi aprakstīties 
+gan ar nejaušām saistībām, gan pat ar renesances glezonojumiem 
+(skatīt nodaļā [Modeļa parametrizācija, izvēle un izvērtēšanas apraksti](#Chapter7.2)), 
+tādēļ saprotams, ka arī nejauši ģenerētas vietas var relatīvi labi aprakstīties. 
+Daudzas modeļa izvērtējumos izmantotās metrikas ir klasifikācijas sliekšņa līmeņa 
+atkarīgas, tādēļ vērtējot izstrādāto modeļu spēju salīdzinājumā ar nulles modeļiem, 
+vēlamies redzēt, ka tiem ir labākas vērtības, tomēr par pieņemamiem modeļiem var tikt 
+uzskatīti arī tie empīriskie modeļi, kuriem tās nav sliktākas par nulles modeļiem 
+[@Muscarellaetal2014]. Vairāk par aprēķinātajām metrikām un to interpretāciju 
+rezultātu nodaļas [Individuālu sugu rezultāti](#Chapter10.1) apakšnodaļā.
+
+Empīriskā modeļa (ierpiekš par labāko atzītā) salīdzinājums ar tā EGV veidotajā 
+informācijas telpā ģenerētiem katrai sugai 100 nulles modeļiem, ir sekojošajā koda 
+apgabalā. Šajā materiālā tas ir nodalīts arsevišķi no iepriekšējā 
+([Modeļa parametrizācija, izvēle un izvērtēšanas apraksti](#Chapter7.2)), tomēr 
+tie ir izpildāmi kopā.
+
 
 ```{r, eval=FALSE}
-# šis ir turpinājums iepriekšējam koda apgalam un izmantojams tajā pašā uzdevumā ik sugai
+# šis ir turpinājums iepriekšējam koda apgabalam un izmantojams tajā pašā uzdevumā ik sugai
 
 
 # Nulles reference
@@ -906,9 +938,433 @@ print(paste0("Beidzu: ",Sys.time()))
 
 ## Labākā modeļa rezultāti  {#Chapter7.4}
 
-Dažādu failu ģenerēšana un modeļa spējas apraksti
+Pēc labākā modeļa izvēles un tā salīdzinājuma ar nulles modeli, sagatavotas ilustrācijas 
+[Rezultāti](#Chapter10) nodaļai, sniedzot iespēju katram lietotājam pašam pieņemt 
+lēmumu par kādu modeļu lietošanu konkrētiem mērķiem. Starp modeļu vērtēšanas un 
+aprakstīšanas materiāliem, sniegti arī īsi komentāri.
 
-Marginālās atbildes funkciju attēli
+Modeļu izvērtēšanai sagatavots ar visu parametrizāciju aprakstu, to raksturojot ar 
+neatkarīgās testēšanas TSS, starpību starp validēšanas un apmācības TSS, validēšanas TSS, 
+apmācību TSS un neatkarīgās testēšanas kopas AUC. Šim attēlam pievienots ROC līkņu 
+attēls par labāko atzītajā modelī, kurā attēla modeļa spēja patiesi piemēroto un 
+viltus piemēroto dzīvotņu telpā. Papildus tam, pievienots attēls ar labākākā modeļa 
+salīdzinājumu ar nulles modeļiem, vērtējot validācijas AUC, nepārtraukti 
+variējošo Boisa indeksu un divus apmācību kopas klātbūtnes vietu pareizas klasifikācijas 
+rādītājus. To interpretācija raksturota nodaļas [Individuālu sugu rezultāti](#Chapter10.1) 
+sākumā.
 
+```{r, eval=FALSE}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(ENMeval)) {install.packages("ENMeval"); require(ENMeval)}
+if(!require(patchwork)) {install.packages("patchwork"); require(patchwork)}
+if(!require(ggview)) {install.packages("ggview"); require(ggview)}
+if(!require(ggtext)) {install.packages("ggtext"); require(ggtext)}
+if(!require(scales)) {install.packages("scales"); require(scales)}
+
+failiem=data.frame(faili=list.files("./SuguModeli/GridSearch_Tables/",
+                                    pattern=".xlsx"))
+failiem=failiem %>% 
+  separate(faili,into=c("sakums","kods","beigas"),remove = FALSE)
+
+sugas=levels(factor(failiem$kods))
+
+for(i in seq_along(sugas)){
+  print(i)
+  suga=sugas[i]
+  print(suga)
+  
+  izveles_tabula=read_excel(paste0("./SuguModeli/GridSearch_Tables/GSTabula_",
+                                   suga,
+                                   ".xlsx"))
+  izveles_tabula_long=izveles_tabula %>% 
+    pivot_longer(cols=train_TSS:IndepTest_tss,
+                 names_to = "veids",
+                 values_to = "vertibas") %>% 
+    mutate(veids_long=case_when(veids=="train_TSS"~"Apmācību\nTSS",
+                                veids=="validation_TSS"~"Validācijas\nTSS",
+                                veids=="diff_TSS"~"Apmācību un\nvalidācijas\nTSS starpība",
+                                veids=="IndepTest_auc"~"Neatkarīgā\ntesta\nAUC",
+                                veids=="IndepTest_tss"~"Neatkarīgā\ntesta\nTSS")) %>% 
+    mutate(sec_veids=case_when(veids=="train_TSS"~4,
+                               veids=="validation_TSS"~3,
+                               veids=="diff_TSS"~2,
+                               veids=="IndepTest_auc"~5,
+                               veids=="IndepTest_tss"~1))
+  
+
+  
+  izveles_labakais=izveles_tabula %>% 
+    mutate(rinda=as.numeric(rownames(.))) %>% 
+    filter(IndepTest_tss==max(IndepTest_tss,na.rm=TRUE)) %>% 
+    filter(diff_TSS==min(diff_TSS,na.rm=TRUE)) %>% 
+    filter(validation_TSS==max(validation_TSS,na.rm=TRUE)) %>% 
+    filter(nchar(fc)==min(nchar(fc)))
+  
+  izveles_labakais_long=izveles_labakais %>% 
+    pivot_longer(cols=train_TSS:IndepTest_tss,
+                 names_to = "veids",
+                 values_to = "vertibas") %>% 
+    mutate(veids_long=case_when(veids=="train_TSS"~"Apmācību\nTSS",
+                                veids=="validation_TSS"~"Validācijas\nTSS",
+                                veids=="diff_TSS"~"Apmācību un\nvalidācijas\nTSS starpība",
+                                veids=="IndepTest_auc"~"Neatkarīgā\ntesta\nAUC",
+                                veids=="IndepTest_tss"~"Neatkarīgā\ntesta\nTSS")) %>% 
+    mutate(sec_veids=case_when(veids=="train_TSS"~4,
+                               veids=="validation_TSS"~3,
+                               veids=="diff_TSS"~2,
+                               veids=="IndepTest_auc"~5,
+                               veids=="IndepTest_tss"~1))
+  
+  
+  # roci
+  rociem=read_rds(paste0("./SuguModeli/BestROCs/BestROC_",
+                         suga,
+                         ".RDS"))
+
+  
+  nullem=read_rds(paste0("./SuguModeli/Null_models/NullModels_",
+                         suga,
+                         ".RDS"))
+  nullu_tabula_apkopots=nullem@null.emp.results
+  nullu_tabula_nulles=nullem@null.results
+  
+  nullu_tabulai=evalplot.nulls(nullem, 
+                               stats = c("auc.val","cbi.val","or.mtp","or.10p"), 
+                               plot.type = "violin",
+                               return.tbl = TRUE)
+  nulles=nullu_tabulai$null.avgs %>% 
+    mutate(nosaukumi=case_when(metric=="auc.val"~"AUC\n(validācijas)",
+                               metric=="cbi.val"~"Continuous\nBoyce index\n(validācijas)",
+                               metric=="or.10p"~"10% training\nomission rate",
+                               metric=="or.mtp"~"Minimum\ntraining presence\nomission rate")) %>% 
+    mutate(secibai=case_when(metric=="auc.val"~1,
+                             metric=="cbi.val"~2,
+                             metric=="or.10p"~3,
+                             metric=="or.mtp"~4))
+  empiriskie=nullu_tabulai$empirical.results %>% 
+    mutate(nosaukumi=case_when(metric=="auc.val"~"AUC\n(validācijas)",
+                               metric=="cbi.val"~"Continuous\nBoyce index\n(validācijas)",
+                               metric=="or.10p"~"10% training\nomission rate",
+                               metric=="or.mtp"~"Minimum\ntraining presence\nomission rate")) %>% 
+    mutate(secibai=case_when(metric=="auc.val"~1,
+                             metric=="cbi.val"~2,
+                             metric=="or.10p"~3,
+                             metric=="or.mtp"~4))
+
+  kreisais=ggplot()+
+    geom_violin(data=izveles_tabula_long,
+                aes(reorder(veids_long,sec_veids),vertibas),
+                col="grey",
+                fill="grey",
+                alpha=0.2)+
+    geom_jitter(data=izveles_tabula_long,
+                aes(reorder(veids_long,sec_veids),vertibas),
+                col="grey",
+                width=0.25)+
+    geom_point(data=izveles_labakais_long,
+               aes(reorder(veids_long,sec_veids),vertibas),
+               col="black",
+               size=3)+
+    theme_classic()+
+    coord_cartesian(ylim=c(0,1))+
+    scale_y_continuous(breaks=seq(0,1,by=0.1))+
+    labs(x="Metrika",
+         y="Vērtība",
+         subtitle="Modeļa izvēle")+
+    theme(axis.title = element_text(size=14),
+          axis.text = element_text(size=11),
+          plot.subtitle = element_text(size=14))
+  
+  vidus=rociem+
+    theme_bw()+
+    labs(subtitle="ROC līkne")+
+    theme(axis.title = element_text(size=14),
+          axis.text = element_text(size=11),
+          plot.subtitle = element_text(size=14),
+          legend.title = element_text(size=14),
+          legend.text = element_text(size=11),
+          legend.position="inside",
+          legend.position.inside = c(0.8,0.15))
+  
+  labais=ggplot()+
+    geom_violin(data=nulles,
+                aes(reorder(nosaukumi,secibai),avg),
+                col="grey",
+                fill="grey",
+                alpha=0.2)+
+    geom_jitter(data=nulles,
+                aes(reorder(nosaukumi,secibai),avg),
+                col="grey",
+                width=0.2,
+                shape=3)+
+    geom_point(data=empiriskie,
+               aes(reorder(nosaukumi,secibai),avg),
+               col="black",
+               size=3)+
+    coord_cartesian(ylim=c(0,1))+
+    theme_classic()+
+    scale_y_continuous(breaks=seq(0,1,0.1))+
+    labs(x="Metrika",y="Vērtība",subtitle="Izvēlētā modeļa salīdzinājums ar nejaušību")+
+    theme(axis.title = element_text(size=14),
+          axis.text = element_text(size=11),
+          plot.subtitle = element_text(size=14))
+  
+  izveles_attelam=kreisais+vidus+labais+plot_annotation(tag_levels="A")+
+    ggview::canvas(width=1750,height=500,units="px",dpi=100)
+  izveles_attels=kreisais+vidus+labais+plot_annotation(tag_levels="A")
+  ggsave(izveles_attels,filename=paste0("./SuguModeli/Beigam_IzvelesAttels/IzvelesAttels_",
+                                        suga,
+                                        ".png"),
+         width=1750,height=500,units="px",dpi=100)
+}
+
+```
+
+
+Ātram izvērtējumam, sagatavots projicētās dzīvotņu piemērotības attēls, to vizualizējot 
+MexEnt krāsu gammā [@PhillipsDudikSchapire2004], [@PhillipsAndersonSchapire2006], 
+par viduspunktu nosakot vienādas sensitivitātes un specifiskuma sliekšņa līmeni. 
+Šis sliekšņa līmenis nav piedāvāts kā obligāti labākais. Tas izvēlēts uzskatāmībai 
+un interpretācijas ērtībai, lietotāji var izvēlēties citus, piemēram, no rezultātu nodaļā 
+sniegtajiem vai citiem. Vairāk - [Individuālu sugu rezultāti](#Chapter10.1) 
+sākumā.
+
+```{r, eval=FALSE}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(terra)) {install.packages("terra"); require(terra)}
+if(!require(ENMeval)) {install.packages("ENMeval"); require(ENMeval)}
+if(!require(patchwork)) {install.packages("patchwork"); require(patchwork)}
+if(!require(ggview)) {install.packages("ggview"); require(ggview)}
+if(!require(ggtext)) {install.packages("ggtext"); require(ggtext)}
+if(!require(scales)) {install.packages("scales"); require(scales)}
+
+
+failiem=data.frame(faili=list.files("./SuguModeli/GridSearch_Tables/",
+                                    pattern=".xlsx"))
+failiem=failiem %>% 
+  separate(faili,into=c("sakums","kods","beigas"),remove = FALSE)
+
+sugas=levels(factor(failiem$kods))
+
+for(i in seq_along(sugas)){
+  print(i)
+  suga=sugas[i]
+  print(suga)
+  
+  slieksni=read_excel(paste0("./SuguModeli/BestThresholds/BestThs_",
+                             suga,
+                             ".xlsx"))
+  slieksnis=slieksni[2,2]
+  slieksnis_vert=as.numeric(slieksnis)
+  apaksdala=mean(c(0,slieksnis_vert))
+  augsdala=mean(c(1,slieksnis_vert))
+  
+  
+  slanis=terra::rast(paste0("./SuguModeli/BestHSmap/BestHSmap_",
+                            suga,
+                            ".tif"))
+
+  slanis_df=terra::as.data.frame(slanis,xy=TRUE)
+  
+  slanis_df_augstie=slanis_df[slanis_df$lyr1>=slieksnis_vert,]
+  slanis_df_zemie=slanis_df[slanis_df$lyr1<slieksnis_vert,]
+  
+  krasas <- c("#2c7bb6", "#abd9e9", "#ffffbf", "#fdae61", "#d7191c")
+  parejas <- c(0, apaksdala, slieksnis_vert, augsdala, 1)
+  
+  
+  karte=ggplot(slanis_df,aes(x=x,y=y,fill=lyr1))+
+    geom_raster() +
+    coord_fixed(ratio=1)+
+    scale_fill_gradientn("",
+                         colors = krasas,
+                         values = parejas,
+                         breaks=c(0,round(slieksnis_vert,3),1),
+                         limits=c(0,1))+
+    ggthemes::theme_map()+
+    theme(legend.position = "inside",
+          legend.position.inside=c(0,0.6),
+          plot.background = element_rect(fill="white",color="white"))
+  
+  ggsave(karte,
+         filename=paste0("./SuguModeli/Beigam_KarteNebal/BeiguKarteiNebal_",
+                         suga,
+                         ".png"),
+         width=900,height=550,units="px",dpi=100)
+  
+  
+}
+
+```
+
+
+Katrai sugai sagatavotas EGV atbildes funkcijas, raksturojot ik EGV ietekmi uz 
+*cloglog* projicēto dzīvotņu piemērotību, pieņemot, ka visas pārējās pazīmes 
+atrodas to  vidējā aritmētiskajā stāvoklī.
+
+```{r, eval=FALSE}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(Matrix)) {install.packages("Matrix"); require(Matrix)}
+if(!require(maxnet)) {install.packages("maxnet"); require(maxnet)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(SDMtune)) {install.packages("SDMtune"); require(SDMtune)}
+if(!require(ENMeval)) {install.packages("ENMeval"); require(ENMeval)}
+if(!require(ggtext)) {install.packages("ggtext"); require(ggtext)}
+if(!require(usdm)) {install.packages("usdm"); require(usdm)}
+if(!require(maps)) {install.packages("maps"); require(maps)}
+if(!require(rasterVis)) {install.packages("rasterVis"); require(rasterVis)}
+if(!require(zeallot)) {install.packages("zeallot"); require(zeallot)}
+
+sugam=data.frame(faili=list.files("./SuguModeli/BestCV/"))
+sugam=sugam %>% 
+  separate(faili,into=c("sakums","suga","beigas"),remove = FALSE)
+sugas=sugam$suga
+
+for(j in seq_along(sugas)){
+  print(j)
+  sakums=Sys.time()
+  suga=sugas[j]
+  print(suga)
+  modelis_CV=read_rds(paste0("./SuguModeli/BestCV/BestCV_",suga,".RDS"))
+  mainigo_tabula=read_excel(paste0("./SuguModeli/BestVarImp/BestVarImp_",suga,".xlsx"))
+  
+  mainigie=mainigo_tabula %>% 
+    filter(!is.na(final_PermImp_avg))
+  
+  augstums=ceiling(length(mainigie$Nosaukums)/7)*300
+  
+  a=plotResponse(modelis_CV, 
+                 var = mainigie$egv_id[1], 
+                 type = "cloglog",
+                 only_presence = TRUE,
+                 marginal = TRUE, 
+                 rug = TRUE,
+                 col="black")
+  b=ggplot2::ggplot_build(a)
+  
+  saistibas_funkcija=b$plot$data
+  saistibas_funkcija$nosaukums=mainigie$Nosaukums[1]
+  saistibas_funkcija$egv=mainigie$egv_id[1]
+  vietas_presence=b$data[[3]]
+  vietas_presence$y=1
+  vietas_presence$nosaukums=mainigie$Nosaukums[1]
+  vietas_presence$egv=mainigie$egv_id[1]
+  vietas_absence=b$data[[4]]
+  vietas_absence$y=-0.03
+  vietas_absence$nosaukums=mainigie$Nosaukums[1]
+  vietas_absence$egv=mainigie$egv_id[1]
+  
+  for(i in 2:length(mainigie$egv_id)){
+    a=plotResponse(modelis_CV, 
+                   var = mainigie$egv_id[i], 
+                   type = "cloglog",
+                   only_presence = TRUE,
+                   marginal = TRUE, 
+                   rug = TRUE,
+                   col="black")
+    b=ggplot2::ggplot_build(a)
+    
+    saistibas_funkcija_i=b$plot$data
+    saistibas_funkcija_i$nosaukums=mainigie$Nosaukums[i]
+    saistibas_funkcija_i$egv=mainigie$egv_id[i]
+    vietas_presence_i=b$data[[3]]
+    vietas_presence_i$y=1
+    vietas_presence_i$nosaukums=mainigie$Nosaukums[i]
+    vietas_presence_i$egv=mainigie$egv_id[i]
+    vietas_absence_i=b$data[[4]]
+    vietas_absence_i$y=-0.03
+    vietas_absence_i$nosaukums=mainigie$Nosaukums[i]
+    vietas_absence_i$egv=mainigie$egv_id[i]
+    
+    saistibas_funkcija=bind_rows(saistibas_funkcija,saistibas_funkcija_i)
+    vietas_presence=bind_rows(vietas_presence,vietas_presence_i)
+    vietas_absence=bind_rows(vietas_absence,vietas_absence_i)
+  }
+  
+
+  attels=ggplot(saistibas_funkcija)+
+    geom_ribbon(data=saistibas_funkcija,aes(x=x,y=y,ymin=y_min,ymax=y_max),alpha=0.5)+
+    geom_line(data=saistibas_funkcija,aes(x=x,y=y))+
+    facet_wrap(~nosaukums,scales = "free_x",ncol=7,
+               labeller = label_wrap_gen(width=25,multi_line = TRUE))+
+    geom_point(data=vietas_presence,aes(x=x,y=y),size=0.5,alpha=0.5)+
+    geom_point(data=vietas_absence,aes(x=x,y=y),size=0.5,alpha=0.5)+
+    coord_cartesian(ylim=c(0,1))+
+    scale_y_continuous(breaks=seq(0,1,0.25))+
+    theme_bw()+
+    theme(panel.grid.minor = element_blank(),
+          axis.title.x = element_blank())+
+    labs(y="Marginālo atbilžu funkcijas (cloglog)")
+  ggsave(attels,
+         filename=paste0("./SuguModeli/MarginalResponses/MargResp_",suga,".png"),
+         width=2000,height=augstums,units="px",dpi=120)
+  beigas=Sys.time()
+  ilgums=beigas-sakums
+  print(ilgums)
+}
+
+
+
+
+```
+
+
+Rezultātu uzskatāmībai sagatavots arī pazīmju ietekmes raksturojums 99 permutāciju 
+procdūrā, kas attēlots kopā ar EGV VIF vērtībām.
+
+```{r, eval=FALSE}
+if(!require(tidyverse)) {install.packages("tidyverse"); require(tidyverse)}
+if(!require(readxl)) {install.packages("readxl"); require(readxl)}
+if(!require(ggtext)) {install.packages("ggtext"); require(ggtext)}
+
+
+sugam=data.frame(faili=list.files("./SuguModeli/BestVarImp/"))
+sugam=sugam %>% 
+  separate(faili,into=c("sakums","suga","beigas"),remove = FALSE)
+sugas=sugam$suga
+
+for(j in seq_along(sugas)){
+  print(j)
+  sakums=Sys.time()
+  suga=sugas[j]
+  print(suga)
+  
+  mainigo_tabula=read_excel(paste0("./SuguModeli/BestVarImp/BestVarImp_",suga,".xlsx"))
+  mainigie=mainigo_tabula %>% 
+    filter(!is.na(final_PermImp_avg))
+  
+  augstums=ceiling(length(mainigie$Nosaukums)/10)*300
+  
+  pic_varimp=ggplot(mainigie,aes(x=reorder(Nosaukums,final_PermImp_avg),y=final_PermImp_avg))+
+    geom_col()+
+    geom_pointrange(data=mainigie,aes(x=reorder(Nosaukums,final_PermImp_avg),
+                                      y=final_PermImp_avg,
+                                      ymin=final_PermImp_avg-final_PermImp_sd,
+                                      ymax=final_PermImp_avg+final_PermImp_sd))+
+    scale_y_continuous("Pazīmes ietekme (%)",breaks=seq(0,100,10))+
+    scale_x_discrete(labels = function(x) stringr::str_wrap(x, width = 75))+
+    geom_text(data=mainigie,aes(x=reorder(Nosaukums,final_PermImp_avg),
+                                y=103,
+                                label=round(final_VIF,3)),hjust=0,size=3)+
+    coord_flip(ylim=c(0,105))+
+    theme_classic()+
+    theme(axis.title.y = element_blank(),
+          panel.grid.major.x = element_line(colour="grey"))
+  
+  ggsave(pic_varimp,
+         filename=paste0("./SuguModeli/Pic_VarImp/PicVarImp_",suga,".png"),
+         width=1250,height=augstums,units="px",dpi=120)
+  
+
+  beigas=Sys.time()
+  ilgums=beigas-sakums
+  print(ilgums)
+}
+
+
+```
 
 

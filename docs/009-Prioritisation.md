@@ -6,6 +6,11 @@ All chapters start with a first-level heading followed by your chapter title, li
 
 Vienas sugas zonation
 
+
+Site and distribution smoothed
+
+
+
 ## Daudzsugu pieeja dabas aizsardzības plānošanai
 
 Šajā nodaļā demonstrēta izmantotā pieeja
@@ -22,13 +27,7 @@ Par lauku putniem, kuri iekļaujami plašākā
 
 Par mitrāju putniem, kuri iekļaujami plašākā 
 
-### Ūdeņu (putnu) aizsardzībai prioritārās vietas 
 
-Par ūdeņu putniem, kuri iekļaujami plašākā 
-
-### Vietu ar skraju veģetāciju (putnu) aizsardzībai prioritārās vietas
-
-Par šo vietu putniem, kuri iekļaujami plašākā 
 
 ### Valstī kopumā
 
