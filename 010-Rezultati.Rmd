@@ -601,6 +601,21 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_BONBON.png")
 
 
 
+```{r PriorBONBON, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_BONBON.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
 
 ### TETURO - mednis *Tetrao urogallus* {#Chapter10.1.004}
 
@@ -691,6 +706,23 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_TETURO.png")
 
 
 
+```{r PriorTETURO, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_TETURO.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
+
+
 
 
 
@@ -778,6 +810,24 @@ knitr::include_graphics("./Atteli/Pic_VarImp/PicVarImp_LYRTET.png")
 ```{r PrefsLYRTET, echo=FALSE, out.width = '100%', fig.cap='Par labāko atzītā modeļa sugai piemēroto dzīvotņu izvietojums (piemēroto dzīvotņu īpatsvars (%) ar skaitļiem attēla daļu augšdaļā) dažādos telpiskajos griezumos (to platīvas īpatsvars (%) ar skaitļiem attēla daļu apakšdaļā) un no tā aprēķinātā preference: A - Zemes seguma/lietojuma veidu klasēs; B - Natura 2000 teritoriju tīklā; C - Eiropas Savienībā aizsargājamo biotopu grupās; D - īpaši aizsargājamo dabas teritoriju funkcionālo zonu un mikroliegumu grupās.'}
 knitr::include_graphics("./Atteli/PicsPrefs/PicPref_LYRTET.png")
 ```
+
+
+<br>
+
+
+
+
+
+```{r PriorLYRTET, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_LYRTET.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
 
 
 <br>
@@ -877,6 +927,23 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_CYGCYG.png")
 
 
 
+```{r PriorCYGCYG, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_CYGCYG.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
+
+
 
 
 
@@ -967,6 +1034,24 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_ANSANS.png")
 
 
 <br>
+
+
+
+```{r PriorANSANS, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_ANSANS.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
 
 
 
@@ -1434,6 +1519,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_SPACLY.png")
 
 
 
+```{r PriorSPACLY, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_SPACLY.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
+
+
+
+
 
 
 ### MARSTR - pelēkā pīle *Mareca strepera* {#Chapter10.1.013}
@@ -1521,6 +1625,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_MARSTR.png")
 
 
 <br>
+
+
+
+
+```{r PriorMARSTR, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_MARSTR.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
 
 
 
@@ -1613,6 +1736,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_MARPEN.png")
 
 
 <br>
+
+
+
+
+```{r PriorMARPEN, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_MARPEN.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
 
 
 
@@ -1796,6 +1938,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_PODGRI.png")
 
 
 <br>
+
+
+
+
+```{r PriorPODGRI, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_PODGRI.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
 
 
 
@@ -2074,6 +2235,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_CAPEUR.png")
 
 
 
+```{r PriorCAPEUR, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_CAPEUR.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
+
+
+
+
 
 
 ### RALAQU - dumbrcālis *Rallus aquaticus* {#Chapter10.1.020}
@@ -2257,6 +2437,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_CRECRE.png")
 
 
 
+```{r PriorCRECRE, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_CRECRE.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
+
+
+
+
 
 
 ### PORPOR - ormanītis *Porzana porzana* {#Chapter10.1.022}
@@ -2344,6 +2543,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_PORPOR.png")
 
 
 <br>
+
+
+
+```{r PriorPORPOR, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_PORPOR.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
+
 
 
 
@@ -2438,6 +2656,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_ZAPPAR.png")
 
 
 
+```{r PriorZAPPAR, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_ZAPPAR.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
+
+
+
+
 
 
 
@@ -2526,6 +2763,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_FULATR.png")
 
 
 <br>
+
+
+
+
+```{r PriorFULATR, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_FULATR.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
 
 
 
@@ -2806,6 +3062,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_CICCIC.png")
 
 
 
+```{r PriorCICCIC, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_CICCIC.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
+
+
+
+
 
 
 ### BOTSTE - lielais dumpis *Botaurus stellaris* {#Chapter10.1.028}
@@ -2894,6 +3169,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_BOTSTE.png")
 
 
 <br>
+
+
+
+
+```{r PriorBOTSTE, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_BOTSTE.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
 
 
 
@@ -3168,6 +3462,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_PLUAPR.png")
 
 
 <br>
+
+
+
+
+```{r PriorPLUAPR, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_PLUAPR.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
 
 
 
@@ -3792,6 +4105,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_TRITOT.png")
 
 
 
+```{r PriorTRITOT, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_TRITOT.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
+
+
+
+
 
 
 
@@ -3881,6 +4213,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_TRIGLA.png")
 
 
 <br>
+
+
+
+
+```{r PriorTRIGLA, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_TRIGLA.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
 
 
 
@@ -3979,6 +4330,27 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_GLAPAS.png")
 
 
 
+```{r PriorGLAPAS, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_GLAPAS.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
+
+
+
+
+
+
 
 ### AEGFUN - bikšainais apogs *Aegolius funereus* {#Chapter10.1.044}
 
@@ -4066,6 +4438,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_AEGFUN.png")
 
 
 <br>
+
+
+
+
+```{r PriorAEGFUN, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_AEGFUN.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
 
 
 
@@ -4347,6 +4738,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_STRURA.png")
 
 
 
+```{r PriorSTRURA, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_STRURA.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
+
+
+
+
 
 
 ### BUBBUB - ūpis *Bubo bubo* {#Chapter10.1.048}
@@ -4434,6 +4844,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_BUBBUB.png")
 
 
 <br>
+
+
+
+
+
+```{r PriorBUBBUB, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_BUBBUB.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
 
 
 
@@ -4712,6 +5141,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_CLAPOM.png")
 
 
 
+```{r PriorCLAPOM, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_CLAPOM.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
+
+
+
+
 
 
 ### CIRAER - niedru lija *Circus aeruginosus* {#Chapter10.1.052}
@@ -4799,6 +5247,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_CIRAER.png")
 
 
 <br>
+
+
+
+
+
+```{r PriorCIRAER, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_CIRAER.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
 
 
 
@@ -4985,6 +5452,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_ACCGEN.png")
 
 
 
+```{r PriorACCGEN, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_ACCGEN.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
+
+
+
+
 
 
 ### HALALB - jūras ērglis *Haliaeetus albicilla* {#Chapter10.1.055}
@@ -5073,6 +5559,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_HALALB.png")
 
 
 <br>
+
+
+
+
+```{r PriorHALALB, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_HALALB.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
 
 
 
@@ -5257,6 +5762,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_MILMIG.png")
 
 
 <br>
+
+
+
+
+```{r PriorMILMIG, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_MILMIG.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
 
 
 
@@ -5716,6 +6240,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_PICCAN.png")
 
 
 
+```{r PriorPICCAN, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_PICCAN.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
+
+
+
+
 
 
 ### DRYMAR - melnā dzilna *Dryocopus martius* {#Chapter10.1.063}
@@ -5803,6 +6346,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_DRYMAR.png")
 
 
 <br>
+
+
+
+
+```{r PriorDRYMAR, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_DRYMAR.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
 
 
 
@@ -5899,6 +6461,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_PICTRI.png")
 
 
 
+```{r PriorPICTRI, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_PICTRI.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
+
+
+
+
 
 
 
@@ -5987,6 +6568,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_LEIMED.png")
 
 
 <br>
+
+
+
+
+```{r PriorLEIMED, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_LEIMED.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
 
 
 
@@ -6083,6 +6683,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_DRYMIN.png")
 
 
 
+```{r PriorDRYMIN, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_DRYMIN.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
+
+
+
+
 
 
 ### DENLEU - baltmugurdzenis *Dendrocopos leucotos* {#Chapter10.1.067}
@@ -6171,6 +6790,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_DENLEU.png")
 
 
 <br>
+
+
+
+
+```{r PriorDENLEU, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_DENLEU.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
 
 
 
@@ -6554,6 +7192,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_LANCOL.png")
 
 
 <br>
+
+
+
+
+```{r PriorLANCOL, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_LANCOL.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
 
 
 
@@ -7189,6 +7846,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_LULARB.png")
 
 
 <br>
+
+
+
+
+```{r PriorLULARB, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_LULARB.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
 
 
 
@@ -8093,6 +8769,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_CURNIS.png")
 
 
 
+```{r PriorCURNIS, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_CURNIS.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
+
+
+
+
 
 ### CURCOM - brūnspārnu ķauķis *Curruca communis* {#Chapter10.1.090}
 
@@ -8822,6 +9517,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_FICPAR.png")
 
 
 <br>
+
+
+
+
+```{r PriorFICPAR, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_FICPAR.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
 
 
 
@@ -10310,6 +11024,25 @@ knitr::include_graphics("./Atteli/PicsPrefs/PicPref_EMBHOR.png")
 
 
 <br>
+
+
+
+
+```{r PriorEMBHOR, echo=FALSE, out.width = '100%', fig.cap='Vietu prioritizēšanas sugas aizsardzībai rezultāti, izmantojot saskaitāmo ieguvumu funkciju (*additive benefit function*) iteratīvā izslēgšanas procesā (100 šūnas ik solī), uzskaiti veicot tikai šūnu vērtībām (A, B, C daļās) un šūnu vērtības, izlīdzinot ar Gausa funkciju, kuras mēroga parametrs ir sugas ligzdošanas iecirkņa rādiuss (D, E, F daļās). Augšējā rindā (A un D) - vietu nozīmes aizsardzībā ranki; vidējā rindā (B un E)  - aizsargātās dzīvotņu piemērotības (populācijas daļas) un populācijas izzušanas telpiskā riska saistība ar aizsardzībai plānojamo telpas daļu (nozīmes aizsardzībā ranku), kurai ar fona tonējumu ieviesta klasifikācija, kas piedāvāta apakšējā rindā; apakšējā rindā (C un F) - variants domāšanai par kategorizētu vietu nozīmi sugas aizsardzībā, kur "prioritārās" vietas ir no "aizsargātās populācijas" un "izzušanas riska" līkņu krustpunkta (C un E daļās) pa labi, "augstas nozīmes" ir zemāka ranka par "prioritārajām" sākot ar to vietu nozīmes aizsardzībā ranku, kurš atrodas labākā modeļa projicētajās sugai piemērotajās vietās (sliekšņa līmenis "Equal sentivity and specificity" kā pārējās šī materiāla daļās) procentilē, kura raksturo viltus par piemērotām atzīto vietu īpatsvaru.'}
+knitr::include_graphics("./Atteli/PicsPrior/SingleSpecies_EMBHOR.png")
+```
+
+
+<br>
+
+[**Vēl nē:** Vietas līmeņa prioritizācijas rezultāti (.zip arhīvs)]()
+
+[**Vēl nē:** Iecirkņa līmenim izlīdzinātas prioritizācijas rezultāti (.zip arhīvs)]()
+
+
+<br>
+
+
 
 
 

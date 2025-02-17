@@ -53,6 +53,7 @@ fig:HSprojBONBON
 fig:MarginalResponsesBONBON
 fig:VarImpBONBON
 fig:PrefsBONBON
+fig:PriorBONBON
 fig:NovAtlaseTETURO
 fig:ModelaRaksturojumsTETURO
 tab:SlieksniTETURO
@@ -60,6 +61,7 @@ fig:HSprojTETURO
 fig:MarginalResponsesTETURO
 fig:VarImpTETURO
 fig:PrefsTETURO
+fig:PriorTETURO
 fig:NovAtlaseLYRTET
 fig:ModelaRaksturojumsLYRTET
 tab:SlieksniLYRTET
@@ -67,6 +69,7 @@ fig:HSprojLYRTET
 fig:MarginalResponsesLYRTET
 fig:VarImpLYRTET
 fig:PrefsLYRTET
+fig:PriorLYRTET
 fig:NovAtlaseCYGCYG
 fig:ModelaRaksturojumsCYGCYG
 tab:SlieksniCYGCYG
@@ -74,6 +77,7 @@ fig:HSprojCYGCYG
 fig:MarginalResponsesCYGCYG
 fig:VarImpCYGCYG
 fig:PrefsCYGCYG
+fig:PriorCYGCYG
 fig:NovAtlaseANSANS
 fig:ModelaRaksturojumsANSANS
 tab:SlieksniANSANS
@@ -81,6 +85,7 @@ fig:HSprojANSANS
 fig:MarginalResponsesANSANS
 fig:VarImpANSANS
 fig:PrefsANSANS
+fig:PriorANSANS
 fig:NovAtlaseTADTAD
 fig:ModelaRaksturojumsTADTAD
 tab:SlieksniTADTAD
@@ -116,6 +121,7 @@ fig:HSprojSPACLY
 fig:MarginalResponsesSPACLY
 fig:VarImpSPACLY
 fig:PrefsSPACLY
+fig:PriorSPACLY
 fig:NovAtlaseMARSTR
 fig:ModelaRaksturojumsMARSTR
 tab:SlieksniMARSTR
@@ -123,6 +129,7 @@ fig:HSprojMARSTR
 fig:MarginalResponsesMARSTR
 fig:VarImpMARSTR
 fig:PrefsMARSTR
+fig:PriorMARSTR
 fig:NovAtlaseMARPEN
 fig:ModelaRaksturojumsMARPEN
 tab:SlieksniMARPEN
@@ -130,6 +137,7 @@ fig:HSprojMARPEN
 fig:MarginalResponsesMARPEN
 fig:VarImpMARPEN
 fig:PrefsMARPEN
+fig:PriorMARPEN
 fig:NovAtlaseTACRUF
 fig:ModelaRaksturojumsTACRUF
 tab:SlieksniTACRUF
@@ -144,6 +152,7 @@ fig:HSprojPODGRI
 fig:MarginalResponsesPODGRI
 fig:VarImpPODGRI
 fig:PrefsPODGRI
+fig:PriorPODGRI
 fig:NovAtlasePODCRI
 fig:ModelaRaksturojumsPODCRI
 tab:SlieksniPODCRI
@@ -165,6 +174,7 @@ fig:HSprojCAPEUR
 fig:MarginalResponsesCAPEUR
 fig:VarImpCAPEUR
 fig:PrefsCAPEUR
+fig:PriorCAPEUR
 fig:NovAtlaseRALAQU
 fig:ModelaRaksturojumsRALAQU
 tab:SlieksniRALAQU
@@ -179,6 +189,7 @@ fig:HSprojCRECRE
 fig:MarginalResponsesCRECRE
 fig:VarImpCRECRE
 fig:PrefsCRECRE
+fig:PriorCRECRE
 fig:NovAtlasePORPOR
 fig:ModelaRaksturojumsPORPOR
 tab:SlieksniPORPOR
@@ -186,6 +197,7 @@ fig:HSprojPORPOR
 fig:MarginalResponsesPORPOR
 fig:VarImpPORPOR
 fig:PrefsPORPOR
+fig:PriorPORPOR
 fig:NovAtlaseZAPPAR
 fig:ModelaRaksturojumsZAPPAR
 tab:SlieksniZAPPAR
@@ -193,6 +205,7 @@ fig:HSprojZAPPAR
 fig:MarginalResponsesZAPPAR
 fig:VarImpZAPPAR
 fig:PrefsZAPPAR
+fig:PriorZAPPAR
 fig:NovAtlaseFULATR
 fig:ModelaRaksturojumsFULATR
 tab:SlieksniFULATR
@@ -200,6 +213,7 @@ fig:HSprojFULATR
 fig:MarginalResponsesFULATR
 fig:VarImpFULATR
 fig:PrefsFULATR
+fig:PriorFULATR
 fig:NovAtlaseGRUGRU
 fig:ModelaRaksturojumsGRUGRU
 tab:SlieksniGRUGRU
@@ -221,6 +235,7 @@ fig:HSprojCICCIC
 fig:MarginalResponsesCICCIC
 fig:VarImpCICCIC
 fig:PrefsCICCIC
+fig:PriorCICCIC
 fig:NovAtlaseBOTSTE
 fig:ModelaRaksturojumsBOTSTE
 tab:SlieksniBOTSTE
@@ -228,6 +243,7 @@ fig:HSprojBOTSTE
 fig:MarginalResponsesBOTSTE
 fig:VarImpBOTSTE
 fig:PrefsBOTSTE
+fig:PriorBOTSTE
 fig:NovAtlaseIXOMIN
 fig:ModelaRaksturojumsIXOMIN
 tab:SlieksniIXOMIN
@@ -249,6 +265,7 @@ fig:HSprojPLUAPR
 fig:MarginalResponsesPLUAPR
 fig:VarImpPLUAPR
 fig:PrefsPLUAPR
+fig:PriorPLUAPR
 fig:NovAtlaseCHAHIA
 fig:ModelaRaksturojumsCHAHIA
 tab:SlieksniCHAHIA
@@ -295,6 +312,7 @@ fig:HSprojTRITOT
 fig:MarginalResponsesTRITOT
 fig:VarImpTRITOT
 fig:PrefsTRITOT
+fig:PriorTRITOT
 fig:NovAtlaseTRIGLA
 fig:ModelaRaksturojumsTRIGLA
 tab:SlieksniTRIGLA
@@ -302,6 +320,7 @@ fig:HSprojTRIGLA
 fig:MarginalResponsesTRIGLA
 fig:VarImpTRIGLA
 fig:PrefsTRIGLA
+fig:PriorTRIGLA
 fig:NovAtlaseGLAPAS
 fig:ModelaRaksturojumsGLAPAS
 tab:SlieksniGLAPAS
@@ -309,6 +328,7 @@ fig:HSprojGLAPAS
 fig:MarginalResponsesGLAPAS
 fig:VarImpGLAPAS
 fig:PrefsGLAPAS
+fig:PriorGLAPAS
 fig:NovAtlaseAEGFUN
 fig:ModelaRaksturojumsAEGFUN
 tab:SlieksniAEGFUN
@@ -316,6 +336,7 @@ fig:HSprojAEGFUN
 fig:MarginalResponsesAEGFUN
 fig:VarImpAEGFUN
 fig:PrefsAEGFUN
+fig:PriorAEGFUN
 fig:NovAtlaseASIOTU
 fig:ModelaRaksturojumsASIOTU
 tab:SlieksniASIOTU
@@ -337,6 +358,7 @@ fig:HSprojSTRURA
 fig:MarginalResponsesSTRURA
 fig:VarImpSTRURA
 fig:PrefsSTRURA
+fig:PriorSTRURA
 fig:NovAtlaseBUBBUB
 fig:ModelaRaksturojumsBUBBUB
 tab:SlieksniBUBBUB
@@ -344,6 +366,7 @@ fig:HSprojBUBBUB
 fig:MarginalResponsesBUBBUB
 fig:VarImpBUBBUB
 fig:PrefsBUBBUB
+fig:PriorBUBBUB
 fig:NovAtlasePANHAL
 fig:ModelaRaksturojumsPANHAL
 tab:SlieksniPANHAL
@@ -365,6 +388,7 @@ fig:HSprojCLAPOM
 fig:MarginalResponsesCLAPOM
 fig:VarImpCLAPOM
 fig:PrefsCLAPOM
+fig:PriorCLAPOM
 fig:NovAtlaseCIRAER
 fig:ModelaRaksturojumsCIRAER
 tab:SlieksniCIRAER
@@ -372,6 +396,7 @@ fig:HSprojCIRAER
 fig:MarginalResponsesCIRAER
 fig:VarImpCIRAER
 fig:PrefsCIRAER
+fig:PriorCIRAER
 fig:NovAtlaseACCNIS
 fig:ModelaRaksturojumsACCNIS
 tab:SlieksniACCNIS
@@ -386,6 +411,7 @@ fig:HSprojACCGEN
 fig:MarginalResponsesACCGEN
 fig:VarImpACCGEN
 fig:PrefsACCGEN
+fig:PriorACCGEN
 fig:NovAtlaseHALALB
 fig:ModelaRaksturojumsHALALB
 tab:SlieksniHALALB
@@ -393,6 +419,7 @@ fig:HSprojHALALB
 fig:MarginalResponsesHALALB
 fig:VarImpHALALB
 fig:PrefsHALALB
+fig:PriorHALALB
 fig:NovAtlaseMILMIL
 fig:ModelaRaksturojumsMILMIL
 tab:SlieksniMILMIL
@@ -407,6 +434,7 @@ fig:HSprojMILMIG
 fig:MarginalResponsesMILMIG
 fig:VarImpMILMIG
 fig:PrefsMILMIG
+fig:PriorMILMIG
 fig:NovAtlaseBUTBUT
 fig:ModelaRaksturojumsBUTBUT
 tab:SlieksniBUTBUT
@@ -442,6 +470,7 @@ fig:HSprojPICCAN
 fig:MarginalResponsesPICCAN
 fig:VarImpPICCAN
 fig:PrefsPICCAN
+fig:PriorPICCAN
 fig:NovAtlaseDRYMAR
 fig:ModelaRaksturojumsDRYMAR
 tab:SlieksniDRYMAR
@@ -449,6 +478,7 @@ fig:HSprojDRYMAR
 fig:MarginalResponsesDRYMAR
 fig:VarImpDRYMAR
 fig:PrefsDRYMAR
+fig:PriorDRYMAR
 fig:NovAtlasePICTRI
 fig:ModelaRaksturojumsPICTRI
 tab:SlieksniPICTRI
@@ -456,6 +486,7 @@ fig:HSprojPICTRI
 fig:MarginalResponsesPICTRI
 fig:VarImpPICTRI
 fig:PrefsPICTRI
+fig:PriorPICTRI
 fig:NovAtlaseLEIMED
 fig:ModelaRaksturojumsLEIMED
 tab:SlieksniLEIMED
@@ -463,6 +494,7 @@ fig:HSprojLEIMED
 fig:MarginalResponsesLEIMED
 fig:VarImpLEIMED
 fig:PrefsLEIMED
+fig:PriorLEIMED
 fig:NovAtlaseDRYMIN
 fig:ModelaRaksturojumsDRYMIN
 tab:SlieksniDRYMIN
@@ -470,6 +502,7 @@ fig:HSprojDRYMIN
 fig:MarginalResponsesDRYMIN
 fig:VarImpDRYMIN
 fig:PrefsDRYMIN
+fig:PriorDRYMIN
 fig:NovAtlaseDENLEU
 fig:ModelaRaksturojumsDENLEU
 tab:SlieksniDENLEU
@@ -477,6 +510,7 @@ fig:HSprojDENLEU
 fig:MarginalResponsesDENLEU
 fig:VarImpDENLEU
 fig:PrefsDENLEU
+fig:PriorDENLEU
 fig:NovAtlaseDENMAJ
 fig:ModelaRaksturojumsDENMAJ
 tab:SlieksniDENMAJ
@@ -506,6 +540,7 @@ fig:HSprojLANCOL
 fig:MarginalResponsesLANCOL
 fig:VarImpLANCOL
 fig:PrefsLANCOL
+fig:PriorLANCOL
 fig:NovAtlaseLANEXC
 fig:ModelaRaksturojumsLANEXC
 tab:SlieksniLANEXC
@@ -555,6 +590,7 @@ fig:HSprojLULARB
 fig:MarginalResponsesLULARB
 fig:VarImpLULARB
 fig:PrefsLULARB
+fig:PriorLULARB
 fig:NovAtlaseALAARV
 fig:ModelaRaksturojumsALAARV
 tab:SlieksniALAARV
@@ -625,6 +661,7 @@ fig:HSprojCURNIS
 fig:MarginalResponsesCURNIS
 fig:VarImpCURNIS
 fig:PrefsCURNIS
+fig:PriorCURNIS
 fig:NovAtlaseCURCOM
 fig:ModelaRaksturojumsCURCOM
 tab:SlieksniCURCOM
@@ -682,6 +719,7 @@ fig:HSprojFICPAR
 fig:MarginalResponsesFICPAR
 fig:VarImpFICPAR
 fig:PrefsFICPAR
+fig:PriorFICPAR
 fig:NovAtlaseFICHYP
 fig:ModelaRaksturojumsFICHYP
 tab:SlieksniFICHYP
@@ -801,6 +839,7 @@ fig:HSprojEMBHOR
 fig:MarginalResponsesEMBHOR
 fig:VarImpEMBHOR
 fig:PrefsEMBHOR
+fig:PriorEMBHOR
 fig:NovAtlaseEMBCIT
 fig:ModelaRaksturojumsEMBCIT
 tab:SlieksniEMBCIT
