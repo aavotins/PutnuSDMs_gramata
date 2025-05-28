@@ -7,10 +7,10 @@ grupās pēc datu rakstura un būtības:
 - pētnieki, eksperti, gredzenotāji:
 
   - ar sistemātisku datu ieguvi un padziļinātu sugu izpēti strādājošu putnu 
-  pētnieku (D. Ūlanda, A. Avotiņa, E. Lediņa, I. Jakovļeva, A. Kalvāna, J. Ķuzes, 
-  E. Račinska) personīgo un uzturētajās datubāzēs (daļa, kuras atvēršana nepārkāpj 
-  sugu aizsardzības un datu drošības normas, personu līgumsaistības) esošo lauka novērojumu 
-  apkopojums;
+  pētnieku (D. Ūlanda, K. Millera, M. Zilgalvja, A. Avotiņa, E. Lediņa, 
+  I. Jakovļeva, A. Kalvāna, J. Ķuzes, E. Račinska) personīgo un uzturētajās 
+  datubāzēs (daļa, kuras atvēršana nepārkāpj sugu aizsardzības un datu drošības 
+  normas, personu līgumsaistības) esošo lauka novērojumu apkopojums;
   
   - nozīmīgāko ar lielo ligzdu apdzīvošanu saistīto sugu aizsardzības un izpētes 
   projektu, kuros notikuši apjomīgi lauka darbi kopš 2016. gada, novērojumi. Šie 
